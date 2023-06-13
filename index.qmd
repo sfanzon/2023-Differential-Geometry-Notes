@@ -5,9 +5,9 @@ $$
 :::
 
 
-# Preface {.unnumbered}
+# Welcome {.unnumbered}
 
-Welcome to the Lecture Notes of **Differential Geometry 600727** for T1 2023 at the University of Hull. I will follow these lecture notes during the course. If you have any question or find any typo, please email me at
+These are the Lecture Notes of **Differential Geometry 600727** for T1 2023 at the University of Hull. I will follow these lecture notes during the course. If you have any question or find any typo, please email me at
 
 <div style="text-align: center;">
 **[S.Fanzon@hull.ac.uk](mailto: S.Fanzon@hull.ac.uk)**

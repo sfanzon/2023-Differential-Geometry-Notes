@@ -27,6 +27,8 @@ book:
     pinned: false
     background: black
     foreground: "#E8E8E8"
+  sidebar:
+    search: false
 
 
 
