@@ -1,0 +1,75 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Differential Geometry"
+  subtitle: "Lecture Notes, T1 2023"
+  author: 
+    - name: "Silvio Fanzon"
+      affiliations: "University of Hull"
+      email: "S.Fanzon@hull.ac.uk"
+      url: "https://www.silviofanzon.com"
+  date: "1/9/2023"
+  downloads: pdf
+  favicon: images/favicon.png
+  search:
+    location: navbar
+    type: overlay
+  page-footer:
+    center: 
+      - text: "License"
+        href: sections/license.qmd
+      - text: "Contact" 
+        href: https://www.silviofanzon.com/contact
+  navbar:
+    search: true
+    pinned: false
+    background: black
+    foreground: "#E8E8E8"
+
+
+
+  chapters:
+    - index.qmd
+    - sections/license.qmd
+    - sections/chap1.qmd
+    - sections/chap2.qmd
+    - sections/references.qmd
+
+
+bibliography: teaching.bib
+csl: comptes-rendus-mathematique.csl
+
+
+format:
+  html:
+    theme:
+      light: [flatly, theme-custom.scss]
+      dark: [darkly]
+  pdf:
+    documentclass: scrreprt
+    geometry:
+      - top=30mm
+      - left=20mm
+      - right=20mm
+      - bottom=20mm
+      - heightrounded
+    link-citations: true
+    linkcolor: magenta
+    urlcolor: magenta
+    citecolor: magenta
+    cite-method: biblatex
+    biblatexoptions: maxbibnames=99, style=numeric, giveninits=true, url=true
+    include-in-header:
+      - text: |
+          \usepackage{scrlayer-scrpage}
+          \lohead{Differential Geometry}
+          \cohead{}
+          \rohead{\pagemark}
+          \lofoot{}
+          \cofoot{}
+          \rofoot{}
+          \setheadsepline{0.5pt}
+          \addtokomafont{pageheadfoot}{\color{gray}\textnormal}
+          \setkomafont{pagenumber}{} 

@@ -1,0 +1,196 @@
+::: {.content-hidden}
+$$
+{{< include macros.tex >}}
+$$
+:::
+
+
+
+
+# Surfaces
+
+
+
+
+
+
+## Plotting surfaces with Python
+
+
+Suppose we want to plot the parabola $y=t^2$ for $t$ in the interval $[-3,3]$. In our language, this is the two-dimensional curve
+$$
+\g(t) = ( t, t^2 ) \,, \quad  t \in [-3,3] \,.
+$$
+The two Python libraries we use to plot $\g$ are **numpy** and **matplotlib**. In short, **numpy** handles multi-dimensional arrays and matrices, and can perform high-level mathematical functions on them. For any question you may have about numpy, answers can be found in the searchable documentation available [here](https://numpy.org/doc/stable/index.html). Instead **matplotlib** is a plotting library, with documentation [here](https://matplotlib.org). 
+Python libraries need to be imported every time you want to use them. In our case we will import:
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+```
+
+The above imports **numpy** and the module **pyplot** from **matplotlib**, and renames them to `np` and `plt`, respectively. These shorthands are standard in the literature, and they make code much more readable.  
+The module for plotting 2D graphs is called `plot(x,y)` and is contained in `plt`. As the syntax suggests, `plot` takes as arguments two arrays $x=[x_1, \ldots, x_n]$ and $y=[y_1,\ldots,y_n]$. As output it produces a graph which is the linear interpolation of the points $(x_i,y_i)$ in $\R^2$, that is, consecutive points $(x_i,y_i)$ and $(x_{i+1},y_{i+1})$ are connected by a segment. Using `plot`, we can graph the curve $\g(t)=(t,t^2)$ like so:
+
+
+```{python} 
+#| echo: true
+
+# Code for plotting gamma
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+t = np.array([-3,-2,-1,0,1,2,3])
+f = t**2
+plt.plot(t,f)
+plt.plot(t,f,"ko")
+plt.show()
+```
+
+Let us comment the above code. The variable `t` is a numpy array containing the ordered values 
+$$ 
+t = [-3,-2,-1,0,1,2,3]\,.
+$$ {#eq-numpy-array-t}
+This array is then squared entry-by-entry via the operation $t\ast\!\ast 2$ and saved in the new numpy array `f`, that is,
+$$
+f = [9,4,1,0,1,4,9] \,.
+$$
+The arrays `t` and `f` are then passed to `plot(t,f)`, which produces the above linear interpolation, with `t` on the *x-axis* and `f` on the *y-axis*. The command `plot(t,f,'ko')` instead plots a black dot at each point $(t_i,f_i)$. The latter is clearly not needed to obtain a plot, and it was only included to highlight the fact that `plot` is actually producing a linear interpolation between points. Finally `plt.show()` displays the figure in the user window[^1].  
+Of course one can refine the plot so that it resembles the continuous curve $\g(t)=(t,t^2)$ that we all have in mind. This is achieved by generating a numpy array `t` with a finer stepsize, invoking the function `np.linspace(a,b,n)`. Such call will return a numpy array which contains `n` evenly spaced points, starts at `a`, and ends in `b`. For example `np.linspace(-3,3,7)` returns our original array `t` at @eq-numpy-array-t, 
+as shown below 
+
+```{python} 
+#| echo: true
+
+# Displaying output of np.linspace
+
+import numpy as np
+
+t = np.linspace(-3,3, 7)
+print("t =", t)
+```
+
+In order to have a more refined plot of $\gamma$, we just need to increase $n$.
+
+```{python} 
+#| echo: true
+
+# Plotting gamma with finer step-size
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+t = np.linspace(-3,3, 100)
+f = t**2
+plt.plot(t,f)
+plt.show()
+```
+
+
+
+[^1]: The command `plt.show()` can be omitted if working in [Jupyter Notebook](https://jupyter.org), as it is called by default.
+
+
+
+
+Let us now plot something more interesting, such as  the two-dimensional curve known as the [Fermat's spiral](https://en.wikipedia.org/wiki/Fermat%27s_spiral)
+$$
+\g(t) = ( \sqrt{t}  \cos(t) , \sqrt{t}  \sin(t) ) \quad 
+\text{ for } \quad t \in [0,50] \,.
+$$
+Clearly we need to modify the above code. The variable `t` will still be a numpy array produced by `linspace`. We then need to introduce the arrays `x` and `y` which ecode the first and second components of $\gamma$, respectively. 
+
+```python
+# Plotting Fermat's spiral
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+t = np.linspace(0,50, 500)
+x = np.sqrt(t) * np.cos(t)
+y = np.sqrt(t) * np.sin(t)
+
+plt.plot(x,y)
+plt.show()
+```
+
+Before displaying the output of the above code, a few comments are in order. The array `t` has size 500, due to the behavior of `linspace`. You can also fact check this information by printing `np.size(t)`, which is the numpy function that returns the size of an array. We then use the numpy function `np.sqrt` to compute the square root of the array `t`. The outcome is still an array with the same size of `t`, that is, 
+$$
+t=[t_1,\ldots,t_n]   \quad \implies \quad \sqrt{t} = [\sqrt{t_1}, \ldots, \sqrt{t_n}] \,.
+$$
+Similary, the call `np.cos(t)` returns the array
+$$
+\cos(t) = [\cos(t_1), \ldots, \cos(t_n)] \,.
+$$
+The two arrays `np.sqrt(t)` and `np.cos(t)` are then multiplied, term-by-term, and saved in the array `x`. The array `y` is computed similarly. The command `plt.plot(x,y)` then yields the graph of the Fermat's spiral:
+
+
+
+```{python} 
+#| echo: false
+#| fig-cap: "Fermat's spiral" 
+# Plotting gamma with finer step-size
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+t = np.linspace(0,50, 500)
+x = np.sqrt(t) * np.cos(t)
+y = np.sqrt(t) * np.sin(t)
+
+plt.plot(x,y)
+plt.show()
+```
+
+The above plots can be styled a bit. For example we can give a title to the plot, label the axes, plot the spiral by means of green dots, and add a plot legend, as coded below:
+
+
+```{python} 
+#| echo: true
+#| fig-cap: "Adding a bit of style" 
+#| code-overflow: wrap
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+t = np.linspace(0,50, 500)
+x = np.sqrt(t) * np.cos(t)
+y = np.sqrt(t) * np.sin(t)
+
+plt.figure(1, figsize = (5,5))
+
+plt.plot(x, y, "--", color="deeppink", linewidth=1.5, label="Spiral")
+plt.grid(True, color="lightgray")
+plt.title("Fermat's spiral for t between 0 and 50")
+plt.xlabel("x-axis", fontsize = 15)
+plt.ylabel("y-axis", fontsize = 15)
+plt.legend()
+plt.show()
+```
+
+Let us go over the novel part of the above code:
+
+- `plt.figure()`: This command generates a figure object. If you are planning on plotting just one figure at a time, then this command is optional: a figure object is generated implicitly when calling `plt.plot`. Otherwise, if working with `n` figures, you need to generate a figure object with `plt.figure(i)` for each `i` between `1` and `n`. The number `i` uniquely identifies the i-th figure: whenever you call `plt.figure(i)`, Python knows that the next commands will refer to the i-th figure. In our case we only have one figure, so we have used the identifier `1`. The second argument `figsize = (a,b)` in `plt.figure()` specifies the size of figure `1` in inches. In this case we generated a figure 5 by 5 inches.
+- `plt.plot`: This is plotting the arrays `x` and `y`, as usual. However we are adding a few aestethic touches: the curve is plotted in *dashed* style with `--`, in *deep pink* color and with a line width of 1.5. Finally this plot is labelled *Spiral*. 
+- `plt.grid`: This enables a grid in *light gray* color.
+- `plt.title`: This gives a title to the figure, displayed on top.
+- `plt.xlabel` and `plt.ylabel`: These assign labels to the axes, with font size 15 points.
+- `plt.legend()`: This plots the legend, with all the labels assigned in the `plt.plot` call. In this case the only label is *Spiral*.
+
+
+::: {.callout-tip title="Matplotlib styles"}
+There are countless plot types and options you can specify in **matplotlib**, see for example the [Matplotlib Gallery](https://matplotlib.org/stable/gallery/index.html). Of course there is no need to  remember every single command: a quick Google search can do wonders.
+:::
+
+::: {.callout-note title="Generating arrays"}
+There are several ways of generating evenly spaced arrays in Python. For example the function `np.arange(a,b,s)` returns an array with values within the half-open interval $[a,b)$, with spacing between values given by `s`. For example
+```{python} 
+#| echo: true
+
+import numpy as np
+
+t = np.arange(0,1, 0.2)
+print("t =",t)
+```
+:::

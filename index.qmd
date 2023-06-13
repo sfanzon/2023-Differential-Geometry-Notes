@@ -1,0 +1,39 @@
+::: {.content-hidden}
+$$
+{{< include sections/macros.tex >}}
+$$
+:::
+
+
+# Preface {.unnumbered}
+
+Welcome to the Lecture Notes of **Differential Geometry 600727** for T1 2023 at the University of Hull. I will follow these lecture notes during the course. If you have any question or find any typo, please email me at
+
+<div style="text-align: center;">
+**[S.Fanzon@hull.ac.uk](mailto: S.Fanzon@hull.ac.uk)**
+</div>
+
+Up to date informations about the course and homework will be published on the course webpage
+
+
+<div style="text-align: center;">
+**[silviofanzon.com/blog/2023/Differential-Geometry](https://www.silviofanzon.com/blog/2023/Differential-Geometry/)**
+</div>
+
+
+A **pdf** version of the notes is available to download on the top-right.
+
+
+
+
+## References {.unnumbered}
+
+We will study curves and surfaces in $\R^3$. I will follow mainly the textbook by Pressley [@pressley]. Other references that inspired these notes are the books by do Carmo [@do-carmo], O'Neill [@o-neill] and Bär [@bar].
+
+
+I will assume some knowledge from Analysis and Linear Algebra. A good place to revise these topics are the books by Zorich [@zorich-1; @zorich-2]. In addition, it can be helpful to plot curves and surfaces to aid visualization. I will do this with Python 3. I recommend installation through [Anaconda](https://www.anaconda.com) or [Miniconda](https://docs.conda.io/en/latest/miniconda.html). The actual coding can then be done through, for example, [Jupyter Notebook](https://jupyter.org). Good references for scientific Python programming are [@johansson;@KSB-Python].
+
+
+::: {.callout-important}
+You are not expected to purchase any of the above books. These lecture notes will cover 100% of the topics you are expected to known in order to excel in the final exam.
+:::
