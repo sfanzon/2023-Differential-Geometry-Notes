@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Differential Geometry - 2&nbsp; Plotting curves with Python</title>
+<title>Differential Geometry - 3&nbsp; Plotting surfaces with Python</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../sections/chap3.html" rel="next">
-<link href="../sections/chap1.html" rel="prev">
+<link href="../sections/license.html" rel="next">
+<link href="../sections/chap2.html" rel="prev">
 <link href="../images/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -127,7 +127,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sections/chap2.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Plotting curves with Python</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sections/chap3.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Plotting surfaces with Python</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -153,13 +153,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/chap2.html" class="sidebar-item-text sidebar-link active">
+  <a href="../sections/chap2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Plotting curves with Python</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/chap3.html" class="sidebar-item-text sidebar-link">
+  <a href="../sections/chap3.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Plotting surfaces with Python</span></span></a>
   </div>
 </li>
@@ -181,22 +181,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#sec-plot-2d-curves" id="toc-sec-plot-2d-curves" class="nav-link active" data-scroll-target="#sec-plot-2d-curves"><span class="header-section-number">2.1</span> Curves in 2D</a></li>
-  <li><a href="#implicit-curves-2d" id="toc-implicit-curves-2d" class="nav-link" data-scroll-target="#implicit-curves-2d"><span class="header-section-number">2.2</span> Implicit curves 2D</a></li>
-  <li><a href="#curves-in-3d" id="toc-curves-in-3d" class="nav-link" data-scroll-target="#curves-in-3d"><span class="header-section-number">2.3</span> Curves in 3D</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Plotting curves with Python</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Plotting surfaces with Python</span></h1>
 </div>
 
 
@@ -211,8 +203,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="sec-plot-2d-curves" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="sec-plot-2d-curves"><span class="header-section-number">2.1</span> Curves in 2D</h2>
 <p>Suppose we want to plot the parabola <span class="math inline">\(y=t^2\)</span> for <span class="math inline">\(t\)</span> in the interval <span class="math inline">\([-3,3]\)</span>. In our language, this is the two-dimensional curve <span class="math display">\[
 \gamma(t) = ( t, t^2 ) \,, \quad  t \in [-3,3] \,.
 \]</span> The two Python libraries we use to plot <span class="math inline">\(\gamma\)</span> are <strong>numpy</strong> and <strong>matplotlib</strong>. In short, <strong>numpy</strong> handles multi-dimensional arrays and matrices, and can perform high-level mathematical functions on them. For any question you may have about numpy, answers can be found in the searchable documentation available <a href="https://numpy.org/doc/stable/index.html">here</a>. Instead <strong>matplotlib</strong> is a plotting library, with documentation <a href="https://matplotlib.org">here</a>. Python libraries need to be imported every time you want to use them. In our case we will import:</p>
@@ -232,15 +222,15 @@ The module for plotting 2D graphs is called <code>plot(x,y)</code> and is contai
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>plt.plot(t,f,<span class="st">"ko"</span>)</span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="chap2_files/figure-html/cell-2-output-1.png" width="558" height="411"></p>
+<p><img src="chap3_files/figure-html/cell-2-output-1.png" width="558" height="411"></p>
 </div>
 </div>
 <p>Let us comment the above code. The variable <code>t</code> is a numpy array containing the ordered values <span id="eq-numpy-array-t"><span class="math display">\[
 t = [-3,-2,-1,0,1,2,3]\,.
-\tag{2.1}\]</span></span> This array is then squared entry-by-entry via the operation <span class="math inline">\(t\ast\!\ast 2\)</span> and saved in the new numpy array <code>f</code>, that is, <span class="math display">\[
+\tag{3.1}\]</span></span> This array is then squared entry-by-entry via the operation <span class="math inline">\(t\ast\!\ast 2\)</span> and saved in the new numpy array <code>f</code>, that is, <span class="math display">\[
 f = [9,4,1,0,1,4,9] \,.
 \]</span> The arrays <code>t</code> and <code>f</code> are then passed to <code>plot(t,f)</code>, which produces the above linear interpolation, with <code>t</code> on the <em>x-axis</em> and <code>f</code> on the <em>y-axis</em>. The command <code>plot(t,f,'ko')</code> instead plots a black dot at each point <span class="math inline">\((t_i,f_i)\)</span>. The latter is clearly not needed to obtain a plot, and it was only included to highlight the fact that <code>plot</code> is actually producing a linear interpolation between points. Finally <code>plt.show()</code> displays the figure in the user window<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.<br>
-Of course one can refine the plot so that it resembles the continuous curve <span class="math inline">\(\gamma(t)=(t,t^2)\)</span> that we all have in mind. This is achieved by generating a numpy array <code>t</code> with a finer stepsize, invoking the function <code>np.linspace(a,b,n)</code>. Such call will return a numpy array which contains <code>n</code> evenly spaced points, starts at <code>a</code>, and ends in <code>b</code>. For example <code>np.linspace(-3,3,7)</code> returns our original array <code>t</code> at <a href="chap3.html#eq-numpy-array-t">Equation&nbsp;<span>3.1</span></a>, as shown below</p>
+Of course one can refine the plot so that it resembles the continuous curve <span class="math inline">\(\gamma(t)=(t,t^2)\)</span> that we all have in mind. This is achieved by generating a numpy array <code>t</code> with a finer stepsize, invoking the function <code>np.linspace(a,b,n)</code>. Such call will return a numpy array which contains <code>n</code> evenly spaced points, starts at <code>a</code>, and ends in <code>b</code>. For example <code>np.linspace(-3,3,7)</code> returns our original array <code>t</code> at <a href="#eq-numpy-array-t">Equation&nbsp;<span>3.1</span></a>, as shown below</p>
 <div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Displaying output of np.linspace</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -264,7 +254,7 @@ Of course one can refine the plot so that it resembles the continuous curve <spa
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>plt.plot(t,f)</span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="chap2_files/figure-html/cell-4-output-1.png" width="558" height="411"></p>
+<p><img src="chap3_files/figure-html/cell-4-output-1.png" width="558" height="411"></p>
 </div>
 </div>
 <p>Let us now plot something more interesting, such as the two-dimensional curve known as the <a href="https://en.wikipedia.org/wiki/Fermat%27s_spiral">Fermat’s spiral</a> <span class="math display">\[
@@ -291,7 +281,7 @@ t=[t_1,\ldots,t_n]   \quad \implies \quad \sqrt{t} = [\sqrt{t_1}, \ldots, \sqrt{
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="chap2_files/figure-html/cell-5-output-1.png" width="569" height="411" class="figure-img"></p>
+<p><img src="chap3_files/figure-html/cell-5-output-1.png" width="569" height="411" class="figure-img"></p>
 <figcaption class="figure-caption">Fermat’s spiral</figcaption>
 </figure>
 </div>
@@ -318,7 +308,7 @@ t=[t_1,\ldots,t_n]   \quad \implies \quad \sqrt{t} = [\sqrt{t_1}, \ldots, \sqrt{
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="chap2_files/figure-html/cell-6-output-1.png" width="446" height="456" class="figure-img"></p>
+<p><img src="chap3_files/figure-html/cell-6-output-1.png" width="446" height="456" class="figure-img"></p>
 <figcaption class="figure-caption">Adding a bit of style</figcaption>
 </figure>
 </div>
@@ -368,125 +358,8 @@ Generating arrays
 </div>
 </div>
 </div>
-</section>
-<section id="implicit-curves-2d" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="implicit-curves-2d"><span class="header-section-number">2.2</span> Implicit curves 2D</h2>
-<p>A curve <span class="math inline">\(\gamma\)</span> in <span class="math inline">\(\mathbb{R}^2\)</span> can also be defined as the set of points <span class="math inline">\((x,y) \in \mathbb{R}^2\)</span> satisfying <span class="math display">\[
-f(x,y)=0
-\]</span> for some given <span class="math inline">\(f \colon \mathbb{R}^2 \to \mathbb{R}\)</span>. For example let us plot the curve <span class="math inline">\(\gamma\)</span> implicitly defined by <span class="math display">\[
-f(x,y) =( 3 x^2 - y^2 )^2 \ y^2  -  (x^2 + y^2 )^4
-\]</span> for <span class="math inline">\(-1 \leq x,y \leq 1\)</span>. First, we need a way to generate a grid in <span class="math inline">\(\mathbb{R}^2\)</span> so that we can evaluate <span class="math inline">\(f\)</span> on such grid. To illustrate how to do this, let us generate a grid of spacing 1 in the 2D square <span class="math inline">\([0,4]^2\)</span>. The goal is to obtain the 5 x 5 matrix of coordinates <span class="math display">\[
-A = \left(
-\begin{matrix}
-(0,0) &amp;  (1,0)  &amp;  (2,0) &amp; (3,0) &amp; (4,0) \\
-(0,1) &amp;  (1,1)  &amp;  (2,1) &amp; (3,1) &amp; (4,1) \\
-(0,2) &amp;  (1,2)  &amp;  (2,2) &amp; (2,3) &amp; (2,4) \\
-(0,3) &amp;  (1,3)  &amp;  (2,3) &amp; (3,3) &amp; (3,4) \\
-(0,4) &amp;  (1,4)  &amp;  (2,4) &amp; (3,4) &amp; (4,4) \\
-\end{matrix}
-\right)    
-\]</span> which corresponds to the grid of points</p>
-<div class="cell" data-execution_count="7">
-<div class="cell-output cell-output-display">
-<div id="fig-grid-example" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="chap2_files/figure-html/fig-grid-example-output-1.png" width="422" height="411" class="figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;2.1: The 5 x 5 grid corresponding to the matrix A</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>To achieve this, first generate <code>x</code> and <code>y</code> coordinates using <code>linspace(0,4, 5)</code>. We would then obtain coordinates <span class="math display">\[
-x = [0, 1, 2, 3, 4] \,, \quad  y = [0, 1, 2, 3, 4] \,.
-\]</span> We then need to obtain two matrices <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>: one for the <span class="math inline">\(x\)</span> coordinates in <span class="math inline">\(A\)</span>, and one for the <span class="math inline">\(y\)</span> coordinates in <span class="math inline">\(A\)</span>. Thus <span class="math display">\[
-X = \left(
-\begin{matrix}
-0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\
-0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\
-0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\
-0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\
-\end{matrix}
-\right)   \,, \quad
-Y =
-\left(
-\begin{matrix}
-0 &amp;  0 &amp;  0 &amp; 0 &amp; 0 \\
-1 &amp;  1 &amp;  1 &amp; 1 &amp; 1 \\
-2 &amp;  2 &amp;  2 &amp; 2 &amp; 2 \\
-3 &amp;  3 &amp;  3 &amp; 3 &amp; 3 \\
-4 &amp;  4 &amp;  4 &amp; 4 &amp; 4 \\
-\end{matrix}
-\right)   
-\]</span></p>
-<p>If now we plot <span class="math inline">\(X\)</span> against <span class="math inline">\(Y\)</span> via the command</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>plt.plot(X,Y, marker<span class="op">=</span><span class="st">'.'</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'none'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>we obtain <a href="#fig-grid-example">Figure&nbsp;<span>2.1</span></a>. This would be very tedious to do with large vectors. Thankfully there is a function in numpy doing exactly what we need: <code>np.meshgrid</code>.</p>
-<div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Demonstrating np.meshgrid</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>xlist <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>ylist <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>X, Y <span class="op">=</span> np.meshgrid(xlist, ylist)</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co"># np.array2string is only needed to align outputs</span></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'X ='</span>, np.array2string(X, prefix<span class="op">=</span><span class="st">'X= '</span>))</span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)  </span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Y ='</span>, np.array2string(Y, prefix<span class="op">=</span><span class="st">'Y= '</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>X = [[0. 1. 2. 3. 4.]
-    [0. 1. 2. 3. 4.]
-    [0. 1. 2. 3. 4.]
-    [0. 1. 2. 3. 4.]
-    [0. 1. 2. 3. 4.]]
 
 
-Y = [[0. 0. 0. 0. 0.]
-    [1. 1. 1. 1. 1.]
-    [2. 2. 2. 2. 2.]
-    [3. 3. 3. 3. 3.]
-    [4. 4. 4. 4. 4.]]</code></pre>
-</div>
-</div>
-<p>Now that we have our grid, we can evaluate the function <span class="math inline">\(f\)</span> on it. This is simply done with the command</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span>((<span class="dv">3</span><span class="op">*</span>(X<span class="op">**</span><span class="dv">2</span>) <span class="op">-</span> Y<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span>)<span class="op">*</span>(Y<span class="op">**</span><span class="dv">2</span>) <span class="op">-</span> (X<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> Y<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">4</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This will return the matrix <span class="math inline">\(Z\)</span> containing the values <span class="math inline">\(f(x_i,y_i)\)</span> for all <span class="math inline">\((x_i,y_i)\)</span> in the grid <span class="math inline">\([X,Y]\)</span>. We are now interested in plotting the points in the grid <span class="math inline">\([X,Y]\)</span> for which <span class="math inline">\(Z\)</span> is zero. This is achieved with the command</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>plt.contour(X, Y, Z, [<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Putting the above observations together, we have the code for plotting the curve <span class="math inline">\(f=0\)</span> for <span class="math inline">\(-1 \leq x,y \leq 1\)</span>.</p>
-<div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting f=0</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>xlist <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">5000</span>)</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>ylist <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">5000</span>)</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>X, Y <span class="op">=</span> np.meshgrid(xlist, ylist)</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span>((<span class="dv">3</span><span class="op">*</span>(X<span class="op">**</span><span class="dv">2</span>) <span class="op">-</span> Y<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span>)<span class="op">*</span>(Y<span class="op">**</span><span class="dv">2</span>) <span class="op">-</span> (X<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> Y<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">4</span> </span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize <span class="op">=</span> (<span class="fl">5.5</span>,<span class="fl">5.5</span>))</span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>plt.contour(X, Y, Z, [<span class="dv">0</span>])</span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"x-axis"</span>, fontsize <span class="op">=</span> <span class="dv">15</span>)</span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"y-axis"</span>, fontsize <span class="op">=</span> <span class="dv">15</span>)</span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="chap2_files/figure-html/cell-10-output-1.png" width="519" height="478" class="figure-img"></p>
-<figcaption class="figure-caption">Plot of the curve defined by f=0</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="curves-in-3d" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="curves-in-3d"><span class="header-section-number">2.3</span> Curves in 3D</h2>
-<p>If you have understood how to plot 2D curves in <a href="#sec-plot-2d-curves"><span>Section&nbsp;2.1</span></a>, then plotting 3D curves will not be much more difficult.</p>
-
-
-</section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
@@ -845,13 +718,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../sections/chap1.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Curves</span></span>
+      <a href="../sections/chap2.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Plotting curves with Python</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../sections/chap3.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Plotting surfaces with Python</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../sections/license.html" class="pagination-link">
+        <span class="nav-page-text">License</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -34,9 +34,10 @@ book:
 
   chapters:
     - index.qmd
-    - sections/license.qmd
     - sections/chap1.qmd
     - sections/chap2.qmd
+    - sections/chap3.qmd
+    - sections/license.qmd
     - sections/references.qmd
 
 
