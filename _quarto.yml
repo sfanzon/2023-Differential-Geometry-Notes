@@ -85,3 +85,5 @@ format:
           \setheadsepline{0.5pt}
           \addtokomafont{pageheadfoot}{\color{gray}\textnormal}
           \setkomafont{pagenumber}{} 
+          \usepackage{fvextra}
+          \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}

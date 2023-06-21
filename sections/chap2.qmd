@@ -208,7 +208,7 @@ x = np.sqrt(t) * np.cos(t)
 y = np.sqrt(t) * np.sin(t)
 
 # Generating figure
-plt.figure(1, figsize = (5,5))
+plt.figure(1, figsize = (4,4))
 
 # Plotting the Spiral with some options
 plt.plot(x, y, '--', color = 'deeppink', linewidth = 1.5, label = 'Spiral')
@@ -232,7 +232,7 @@ plt.show()
 
 Let us go over the novel part of the above code:
 
-- `plt.figure()`: This command generates a figure object. If you are planning on plotting just one figure at a time, then this command is optional: a figure object is generated implicitly when calling `plt.plot`. Otherwise, if working with `n` figures, you need to generate a figure object with `plt.figure(i)` for each `i` between `1` and `n`. The number `i` uniquely identifies the i-th figure: whenever you call `plt.figure(i)`, Python knows that the next commands will refer to the i-th figure. In our case we only have one figure, so we have used the identifier `1`. The second argument `figsize = (a,b)` in `plt.figure()` specifies the size of `figure 1` in inches. In this case we generated a figure 5 by 5 inches.
+- `plt.figure()`: This command generates a figure object. If you are planning on plotting just one figure at a time, then this command is optional: a figure object is generated implicitly when calling `plt.plot`. Otherwise, if working with `n` figures, you need to generate a figure object with `plt.figure(i)` for each `i` between `1` and `n`. The number `i` uniquely identifies the i-th figure: whenever you call `plt.figure(i)`, Python knows that the next commands will refer to the i-th figure. In our case we only have one figure, so we have used the identifier `1`. The second argument `figsize = (a,b)` in `plt.figure()` specifies the size of `figure 1` in inches. In this case we generated a figure 4 x 4 inches.
 - `plt.plot`: This is plotting the arrays `x` and `y`, as usual. However we are adding a few aestethic touches: the curve is plotted in *dashed* style with `--`, in *deep pink* color and with a line width of 1.5. Finally this plot is labelled *Spiral*. 
 - `plt.grid`: This enables a grid in *light gray* color.
 - `plt.title`: This gives a title to the figure, displayed on top.
@@ -295,7 +295,7 @@ y_list = np.linspace(0, 4, 5)
 
 X, Y = np.meshgrid(x_list, y_list)
 
-plt.figure(figsize = (5,5))
+plt.figure(figsize = (4,4))
 plt.plot(X,Y, 'k.')
 ```
 
@@ -406,7 +406,7 @@ X, Y = np.meshgrid(xlist, ylist)
 Z =((3*(X**2) - Y**2)**2)*(Y**2) - (X**2 + Y**2)**4 
 
 # Creates figure object
-plt.figure(figsize = (5.5,5.5))
+plt.figure(figsize = (4,4))
 
 # Plots level set Z = 0
 plt.contour(X, Y, Z, [0])
@@ -447,7 +447,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits import mplot3d
 
 # Creates figure object
-fig = plt.figure(figsize = (6,6))
+fig = plt.figure(figsize = (4,4))
 
 # Creates 3D axes object
 ax = plt.axes(projection = '3d')
@@ -550,7 +550,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits import mplot3d
 
 # Generates figure and 3D axes
-fig = plt.figure(figsize = (6,6))
+fig = plt.figure(figsize = (4,4))
 ax = plt.axes(projection = '3d')
 
 # Plots grid
@@ -595,7 +595,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits import mplot3d
 
 # Generates figure object
-fig = plt.figure(figsize = (6,6))
+fig = plt.figure(figsize = (4,4))
 
 # Generates 2 sets of 3D axes
 ax1 = fig.add_subplot(1, 2, 1, projection = '3d')

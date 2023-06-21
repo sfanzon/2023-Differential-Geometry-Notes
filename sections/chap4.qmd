@@ -101,8 +101,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits import mplot3d
 
-# Generates figure object of size 6 x 6
-fig = plt.figure(figsize = (6,6))
+# Generates figure object of size 4 x 4
+fig = plt.figure(figsize = (4,4))
 
 # Generates 3D axes
 ax = plt.axes(projection = '3d')
@@ -163,8 +163,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits import mplot3d
 
-# Generates figure object of size 6 x 10
-fig = plt.figure(figsize = (6,10))
+# Generates figure object of size 5 x 9
+fig = plt.figure(figsize = (5,9))
 
 # Generates 2 sets of 3D axes
 ax1 = fig.add_subplot(2, 1, 1, projection = '3d')
@@ -229,8 +229,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits import mplot3d
 
-# Generates figure object of size 10 x 10
-fig = plt.figure(figsize = (7,7))
+# Generates figure object of size 6 x 6
+fig = plt.figure(figsize = (6,6))
 
 # Generates 2 sets of 3D axes
 ax1 = fig.add_subplot(2, 2, 1, projection = '3d')
