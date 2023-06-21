@@ -2,6 +2,7 @@ project:
   type: book
   output-dir: docs
 
+
 book:
   title: "Differential Geometry"
   subtitle: "Lecture Notes, T1 2023"
@@ -29,7 +30,7 @@ book:
     foreground: "#E8E8E8"
   sidebar:
     search: false
-
+  
 
 
   chapters:
@@ -37,6 +38,7 @@ book:
     - sections/chap1.qmd
     - sections/chap2.qmd
     - sections/chap3.qmd
+    - sections/chap4.qmd
     - sections/license.qmd
     - sections/references.qmd
 
@@ -47,16 +49,23 @@ csl: comptes-rendus-mathematique.csl
 
 format:
   html:
+    toc: true
+    toc-title: On this page
+    toc-location: right
+    code-overflow: wrap
+    execute:
+      freeze: auto
     theme:
       light: [flatly, theme-custom.scss]
       dark: [darkly]
   pdf:
     documentclass: scrreprt
+    fontsize: 13pt
     geometry:
-      - top=30mm
-      - left=20mm
-      - right=20mm
-      - bottom=20mm
+      - top=25mm
+      - left=15mm
+      - right=15mm
+      - bottom=15mm
       - heightrounded
     link-citations: true
     linkcolor: magenta

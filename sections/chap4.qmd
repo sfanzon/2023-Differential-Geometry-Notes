@@ -1,0 +1,355 @@
+::: {.content-hidden}
+$$
+{{< include macros.tex >}}
+$$
+:::
+
+
+
+
+# Plotting surfaces
+
+
+## Plots with Matplotlib
+
+I will take for granted all the commands explained in @sec-plot-curves. Suppose we want to plot a surface $S$ which is defined by the parametric equations
+$$
+x = x(u,v) \,, \quad 
+y = y(u,v) \,, \quad 
+z = z(u,v)
+$$
+for $u \in (a,b)$ and $v \in (c,d)$. This can be done via the function called `plot_surface` contained in the [mplot3d Toolkit](https://matplotlib.org/3.5.3/tutorials/toolkits/mplot3d.html). This function works as follows: first we generate a mesh-grid $[U,V]$ from the coordinates $(u,v)$ via the command
+
+```python
+[U, V] = np.meshgrid(u, v)
+```
+Then we compute the parametric surface on the mesh
+```python
+x = x (U, V)
+y = y (U, V)
+z = z (U, V)
+```
+Finally we can plot the surface with the command
+```python
+plt.plot_surface(x, y, z)
+```
+The complete code looks as follows. 
+
+```python
+# Plotting surface S
+
+# Importing numpy, matplotlib and mplot3d
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits import mplot3d
+
+# Generates figure object of size m x n
+fig = plt.figure(figsize = (m,n))
+
+# Generates 3D axes
+ax = plt.axes(projection = '3d')
+
+# Shows axes grid
+ax.grid(True)
+
+# Generates coordinates u and v
+# by dividing the interval (a,b) in n parts
+# and the interval (c,d) in m parts
+u = np.linspace(a, b, m)
+v = np.linspace(c, d, n)
+
+# Generates grid [U,V] from the coordinates u, v
+U, V = np.meshgrid(u, v)
+
+# Computes S given the functions x, y, z
+# on the grid [U,V]
+x = x(U,V)
+y = y(U,V)
+z = z(U,V)
+
+# Plots the surface S
+ax.plot_surface(x, y, z)
+
+# Setting plot title 
+ax.set_title('The surface S')
+
+# Setting axes labels
+ax.set_xlabel('x', labelpad=10)
+ax.set_ylabel('y', labelpad=10)
+ax.set_zlabel('z', labelpad=10)
+
+# Setting viewing angle
+ax.view_init(elev = e, azim = a)
+
+# Showing the plot
+plt.show()
+```
+
+For example let us plot a cone described parametrically by:
+$$
+x = u \cos(v) \,, \quad 
+y = u \sin(v) \,, \quad 
+z = u
+$$
+for $u \in (0,1)$ and $v \in (0,2\pi)$. We adapt the above code:
+
+```{python}
+# Plotting a cone
+
+# Importing numpy, matplotlib and mplot3d
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits import mplot3d
+
+# Generates figure object of size 6 x 6
+fig = plt.figure(figsize = (6,6))
+
+# Generates 3D axes
+ax = plt.axes(projection = '3d')
+
+# Shows axes grid
+ax.grid(True)
+
+# Generates coordinates u and v by dividing
+# the intervals (0,1) and (0,2pi) in 100 parts
+u = np.linspace(0, 1, 100)
+v = np.linspace(0, 2*np.pi, 100)
+
+# Generates grid [U,V] from the coordinates u, v
+U, V = np.meshgrid(u, v)
+
+# Computes the surface on grid [U,V]
+x = U * np.cos(V)
+y = U * np.sin(V)
+z = U
+
+# Plots the cone
+ax.plot_surface(x, y, z)
+
+# Setting plot title 
+ax.set_title('Plot of a cone')
+
+# Setting axes labels
+ax.set_xlabel('x', labelpad=10)
+ax.set_ylabel('y', labelpad=10)
+ax.set_zlabel('z', labelpad=10)
+
+# Setting viewing angle
+ax.view_init(elev = 25, azim = 45)
+
+# Showing the plot
+plt.show()
+```
+
+As discussed in @sec-plot-curves, we can have multiple plots in the same figure. For example let us plot the torus viewed from 2 angles. The parametric equations are:
+$$
+\begin{aligned}
+x & = (R + r \cos(u)) \cos(v)  \\
+y & = (R + r \cos(u)) \sin(v)  \\
+z & = r \sin(u)
+\end{aligned}
+$$
+for $u, v \in (0,2\pi)$ and with
+
+- $R$ distance from the center of the tube to the center of the torus
+- $r$ radius of the tube
+
+
+```{python}
+# Plotting torus seen from 2 angles
+
+# Importing numpy, matplotlib and mplot3d
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits import mplot3d
+
+# Generates figure object of size 6 x 10
+fig = plt.figure(figsize = (6,10))
+
+# Generates 2 sets of 3D axes
+ax1 = fig.add_subplot(2, 1, 1, projection = '3d')
+ax2 = fig.add_subplot(2, 1, 2, projection = '3d')
+
+# Shows axes grid
+ax1.grid(True)
+ax2.grid(True)
+
+# Generates coordinates u and v by dividing
+# the interval (0,2pi) in 100 parts
+u = np.linspace(0, 2*np.pi, 100)
+v = np.linspace(0, 2*np.pi, 100)
+
+# Generates grid [U,V] from the coordinates u, v
+U, V = np.meshgrid(u, v)
+
+# Computes the torus on grid [U,V]
+# with radii r = 1 and R = 2
+R = 2
+r = 1
+
+x = (R + r * np.cos(U)) * np.cos(V)
+y = (R + r * np.cos(U)) * np.sin(V)
+z = r * np.sin(U)
+
+# Plots the torus on both axes
+ax1.plot_surface(x, y, z, rstride = 5, cstride = 5, color = 'dimgray', edgecolors = 'snow')
+
+ax2.plot_surface(x, y, z, rstride = 5, cstride = 5, color = 'dimgray', edgecolors = 'snow')
+
+# Setting plot titles 
+ax1.set_title('Torus')
+ax2.set_title('Torus from above')
+
+# Setting range for z axis in ax1
+ax1.set_zlim(-3,3)
+
+# Setting viewing angles
+ax1.view_init(elev = 35, azim = 45)
+ax2.view_init(elev = 90, azim = 0)
+
+# Showing the plot
+plt.show()
+```
+
+Notice that we have added some customization to the `plot_surface` command. Namely, we have set the color of the figure with `color = 'dimgray'` and of the edges with `edgecolors = 'snow'`. Moreover the commands `rstride` and `cstride` set the number of *wires* you see in the plot. More precisely, they set by how much the data in the mesh $[U,V]$ is downsampled in each direction, where rstride sets the row direction, and cstride sets the column direction. On the torus this is a bit difficult to visualize, due to the fact that $[U,V]$ represents angular coordinates. To appreciate the effect, we can plot for example the paraboiloid
+$$
+\begin{aligned}
+x & = u  \\
+y & = v  \\
+z & = - u^2 - v^2 
+\end{aligned}
+$$
+for $u,v \in [-1,1]$. 
+
+```{python}
+# Showing the effect of rstride and cstride
+
+# Importing numpy, matplotlib and mplot3d
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits import mplot3d
+
+# Generates figure object of size 10 x 10
+fig = plt.figure(figsize = (7,7))
+
+# Generates 2 sets of 3D axes
+ax1 = fig.add_subplot(2, 2, 1, projection = '3d')
+ax2 = fig.add_subplot(2, 2, 2, projection = '3d')
+ax3 = fig.add_subplot(2, 2, 3, projection = '3d')
+ax4 = fig.add_subplot(2, 2, 4, projection = '3d')
+
+# Generates coordinates u and v by dividing
+# the interval (-1,1) in 100 parts
+u = np.linspace(-1, 1, 100)
+v = np.linspace(-1, 1, 100)
+
+# Generates grid [U,V] from the coordinates u, v
+U, V = np.meshgrid(u, v)
+
+# Computes the paraboloid on grid [U,V]
+x = U
+y = V
+z = - U**2 - V**2
+
+# Plots the paraboloid on the 4 axes
+# but with different stride settings
+ax1.plot_surface(x, y, z, rstride = 5, cstride = 5, color = 'dimgray', edgecolors = 'snow')
+
+ax2.plot_surface(x, y, z, rstride = 5, cstride = 20, color = 'dimgray', edgecolors = 'snow')
+
+ax3.plot_surface(x, y, z, rstride = 20, cstride = 5, color = 'dimgray', edgecolors = 'snow')
+
+ax4.plot_surface(x, y, z, rstride = 10, cstride = 10, color = 'dimgray', edgecolors = 'snow')
+
+# Setting plot titles 
+ax1.set_title('rstride = 5, cstride = 5')
+ax2.set_title('rstride = 5, cstride = 20')
+ax3.set_title('rstride = 20, cstride = 5')
+ax4.set_title('rstride = 10, cstride = 10')
+
+# We do not plot axes, to get cleaner pictures
+ax1.axis('off')
+ax2.axis('off')
+ax3.axis('off')
+ax4.axis('off')
+
+# Showing the plot
+plt.show()
+```
+
+In this case our mesh is `100 x 100`, since `u` and `v` both have 100 components. Therefore setting `rstride` and `cstride` to 5 implies that each row and column of the mesh is sampled one time every 5 elements, for a total of 
+$$
+100/5 = 20
+$$ 
+samples in each direction. This is why in the first picture you see a `20 x 20` grid. If instead one sets `rstride` and `cstride` to 10, then each row and column of the mesh is sampled one time every 10 elements, for a total of 
+$$
+100/10 = 10 
+$$
+samples in each direction. This is why in the fourth figure you see a `10x10` grid. 
+
+
+## Plots with Plotly
+
+As done in @sec-plot-2d-interactive, we now see how to use `Plotly` to generate an interactive 3D plot of a surface. This can be done by means of functions contained in the `Plotly` module `graph_objects`, usually imported as `go`. Specifically, we will use the function `go.Surface`. The code will look similar to the one used to plot surfaces with `matplotlib`: 
+
+- generate meshgrid on which to compute the parametric surface,
+- store such surface in the numpy array `[x,y,z]`,
+- pass the array `[x,y,z]` to `go.Surface` to produce the plot. 
+
+The full code is below. 
+
+```{python}
+# Plotting a Torus with Plotly
+
+# Import "numpy" and the "graph_objects" module from Plotly
+import numpy as np
+import plotly.graph_objects as go
+
+# Generates coordinates u and v by dividing
+# the interval (0,2pi) in 100 parts
+u = np.linspace(0, 2*np.pi, 100)
+v = np.linspace(0, 2*np.pi, 100)
+
+# Generates grid [U,V] from the coordinates u, v
+U, V = np.meshgrid(u, v)
+
+# Computes the torus on grid [U,V]
+# with radii r = 1 and R = 2
+R = 2
+r = 1
+
+x = (R + r * np.cos(U)) * np.cos(V)
+y = (R + r * np.cos(U)) * np.sin(V)
+z = r * np.sin(U)
+
+# Generate and empty figure object with Plotly
+# and saves it to the variable called "fig"
+fig = go.Figure()
+
+# Plot the torus with go.Surface and store it
+# in the variable "data". We also do now show the
+# plot scale, and set the color map to "teal"
+data = go.Surface(x = x , y = y, z = z, showscale = False, colorscale='teal')
+
+# Add the plot stored in "data" to the figure "fig"
+# This is done with the command add_trace
+fig.add_trace(data)
+
+# Set the title of the figure in "fig"
+fig.update_layout(title_text="Plotting a Torus with Plotly")
+
+# Show the figure
+fig.show()
+```
+
+
+
+::: {.content-visible when-format="html"}
+You can rotate the above image by clicking on it and dragging the cursor.
+To further customize your plots, you can check out the documentation of `go.Surface` at this [link](https://plotly.github.io/plotly.py-docs/generated/plotly.graph_objects.Surface.html).
+:::
+
+
+::: {.content-visible when-format="pdf"}
+The above code generates an image that cannot be rendered in pdf. To see the output, please refer to the [digital version](https://www.silviofanzon.com/2023-Differential-Geometry-Notes/sections/chap2.html) of these notes. To further customize your plots, you can check out the documentation of `go.Surface` at this [link](https://plotly.github.io/plotly.py-docs/generated/plotly.graph_objects.Surface.html).
+:::

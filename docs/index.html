@@ -140,13 +140,19 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sections/chap2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Plotting curves with Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Plotting curves</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sections/chap3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Plotting surfaces with Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Surfaces</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sections/chap4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Plotting surfaces</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -168,12 +174,13 @@ div.csl-indent {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
   <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a>
   <ul class="collapse">
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#visualization" id="toc-visualization" class="nav-link" data-scroll-target="#visualization">Visualization</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -220,19 +227,23 @@ div.csl-indent {
 
 <section id="welcome" class="level1 unnumbered">
 <h1 class="unnumbered">Welcome</h1>
-<p>These are the Lecture Notes of <strong>Differential Geometry 600727</strong> for T1 2023 at the University of Hull. I will follow these lecture notes during the course. If you have any question or find any typo, please email me at</p>
+<p>These are the Lecture Notes of <strong>Differential Geometry 600727</strong> for T1 2023 at the University of Hull. We will study curves and surfaces in <span class="math inline">\(\mathbb{R}^3\)</span>. I will follow these lecture notes during the course. If you have any question or find any typo, please email me at</p>
 <div style="text-align: center;">
 <p><strong><a href="mailto:%20S.Fanzon@hull.ac.uk">S.Fanzon@hull.ac.uk</a></strong></p>
 </div>
-<p>Up to date informations about the course and homework will be published on the course webpage</p>
+<p>Up to date informations about the course and homework will be published on the <strong><code>course webpage</code></strong></p>
 <div style="text-align: center;">
 <p><strong><a href="https://www.silviofanzon.com/blog/2023/Differential-Geometry/">silviofanzon.com/blog/2023/Differential-Geometry</a></strong></p>
 </div>
 <p>A <strong>pdf</strong> version of the notes is available to download on the top-right.</p>
 <section id="references" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
-<p>We will study curves and surfaces in <span class="math inline">\(\mathbb{R}^3\)</span>. I will follow mainly the textbook by Pressley <span class="citation" data-cites="pressley">[<a href="sections/references.html#ref-pressley" role="doc-biblioref">1</a>]</span>. Other references that inspired these notes are the books by do Carmo <span class="citation" data-cites="do-carmo">[<a href="sections/references.html#ref-do-carmo" role="doc-biblioref">2</a>]</span>, O’Neill <span class="citation" data-cites="o-neill">[<a href="sections/references.html#ref-o-neill" role="doc-biblioref">3</a>]</span> and Bär <span class="citation" data-cites="bar">[<a href="sections/references.html#ref-bar" role="doc-biblioref">4</a>]</span>.</p>
-<p>I will assume some knowledge from Analysis and Linear Algebra. A good place to revise these topics are the books by Zorich <span class="citation" data-cites="zorich-1 zorich-2">[<a href="sections/references.html#ref-zorich-1" role="doc-biblioref">5</a>,<a href="sections/references.html#ref-zorich-2" role="doc-biblioref">6</a>]</span>. In addition, it can be helpful to plot curves and surfaces to aid visualization. I will do this with Python 3. I recommend installation through <a href="https://www.anaconda.com">Anaconda</a> or <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>. The actual coding can then be done through, for example, <a href="https://jupyter.org">Jupyter Notebook</a>. Good references for scientific Python programming are <span class="citation" data-cites="johansson KSB-Python">[<a href="sections/references.html#ref-johansson" role="doc-biblioref">7</a>,<a href="sections/references.html#ref-KSB-Python" role="doc-biblioref">8</a>]</span>.</p>
+<p>The main textbook of the course is Pressley <span class="citation" data-cites="pressley">[<a href="sections/references.html#ref-pressley" role="doc-biblioref">1</a>]</span>. Other useful references are the books by do Carmo <span class="citation" data-cites="do-carmo">[<a href="sections/references.html#ref-do-carmo" role="doc-biblioref">2</a>]</span> and Bär <span class="citation" data-cites="bar">[<a href="sections/references.html#ref-bar" role="doc-biblioref">3</a>]</span>. I will assume some knowledge from Analysis and Linear Algebra. A good place to revise these topics are the books by Zorich <span class="citation" data-cites="zorich-1 zorich-2">[<a href="sections/references.html#ref-zorich-1" role="doc-biblioref">4</a>,<a href="sections/references.html#ref-zorich-2" role="doc-biblioref">5</a>]</span>.</p>
+</section>
+<section id="visualization" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="visualization">Visualization</h2>
+<p>It is important to visualize the geometrical objects and concepts we are going to talk about in this course. I will show basic Python code to plot curves and surfaces. This part of the course is <strong><code>not required</code></strong> for the final examination. If you want to have fun plotting with Pyhton, I recommend installation through <a href="https://www.anaconda.com">Anaconda</a> or <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>. The actual coding can then be done through <a href="https://jupyter.org">Jupyter Notebook</a>. Good references for scientific Python programming are <span class="citation" data-cites="johansson KSB-Python">[<a href="sections/references.html#ref-johansson" role="doc-biblioref">6</a>,<a href="sections/references.html#ref-KSB-Python" role="doc-biblioref">7</a>]</span>.<br>
+If you do not want to mess around with Python, do not despair. You can still visualize pretty much everything we will do in this course using the excellent online 3D grapher tool <a href="https://c3d.libretexts.org/CalcPlot3D/index.html">CalcPlot3D</a>. To understand how it works, please refer to the <a href="https://c3d.libretexts.org/CalcPlot3D/CalcPlot3D-Help/front.html">help manual</a> or to the short <a href="https://c3d.libretexts.org/CalcPlot3D/CalcPlot3D-Help/section-1.html">video introduction</a>.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -255,23 +266,20 @@ Important
 <div id="ref-do-carmo" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[2] </div><div class="csl-right-inline">M.P. do Carmo, Differential geometry of curves and surfaces, Second Edition, Dover Books on Mathematics, 2017.</div>
 </div>
-<div id="ref-o-neill" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[3] </div><div class="csl-right-inline">B. O’Neill, Elementary differential geometry, Second Edition, Academic Press, 2006.</div>
-</div>
 <div id="ref-bar" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[4] </div><div class="csl-right-inline">C. Bär, Elementary differential geometry, Cambridge University Press, 2010.</div>
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">C. Bär, Elementary differential geometry, Cambridge University Press, 2010.</div>
 </div>
 <div id="ref-zorich-1" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[5] </div><div class="csl-right-inline">V.A. Zorich, Mathematical analysis i, Second Edition, Springer, 2015.</div>
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">V.A. Zorich, Mathematical analysis i, Second Edition, Springer, 2015.</div>
 </div>
 <div id="ref-zorich-2" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[6] </div><div class="csl-right-inline">V.A. Zorich, Mathematical analysis II, Second Edition, Springer, 2016.</div>
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">V.A. Zorich, Mathematical analysis II, Second Edition, Springer, 2016.</div>
 </div>
 <div id="ref-johansson" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[7] </div><div class="csl-right-inline">R. Johansson, Numerical python. Scientific computing and data science applications with numpy, SciPy and matplotlib, Second Edition, Apress, 2019.</div>
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">R. Johansson, Numerical python. Scientific computing and data science applications with numpy, SciPy and matplotlib, Second Edition, Apress, 2019.</div>
 </div>
 <div id="ref-KSB-Python" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[8] </div><div class="csl-right-inline">Q. Kong, T. Siauw, A. Bayen, Python programming and numerical methods, Academic Press, 2020.</div>
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">Q. Kong, T. Siauw, A. Bayen, Python programming and numerical methods, Academic Press, 2020.</div>
 </div>
 </div>
 </section>

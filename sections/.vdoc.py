@@ -37,138 +37,105 @@
 #
 #
 #
-#| echo: true
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+# Plotting a cone
 
-# Code for plotting gamma
-
+# Importing numpy, matplotlib and mplot3d
 import numpy as np
 import matplotlib.pyplot as plt
+from mpl_toolkits import mplot3d
 
-t = np.array([-3,-2,-1,0,1,2,3])
-f = t**2
-plt.plot(t,f)
-plt.plot(t,f,"ko")
-plt.show()
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#| echo: true
+# Generates figure object of size 6 x 6
+fig = plt.figure(figsize = (6,6))
 
-# Displaying output of np.linspace
+# Generates 3D axes
+ax = plt.axes(projection = '3d')
 
-import numpy as np
+# Shows axes grid
+ax.grid(True)
 
-t = np.linspace(-3,3, 7)
-print("t =", t)
-#
-#
-#
-#
-#
-#| echo: true
+# Generates coordinates u and v by dividing
+# the intervals (0,1) and (0,2pi) in 100 parts
+u = np.linspace(0, 1, 100)
+v = np.linspace(0, 2*np.pi, 100)
 
-# Plotting gamma with finer step-size
+# Generates grid [U,V] from the coordinates u, v
+U, V = np.meshgrid(u, v)
 
-import numpy as np
-import matplotlib.pyplot as plt
+# Computes the surface on grid [U,V]
+x = U * np.cos(V)
+y = U * np.sin(V)
+z = U
 
-t = np.linspace(-3,3, 100)
-f = t**2
-plt.plot(t,f)
-plt.show()
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#| echo: false
-#| fig-cap: "Fermat's spiral" 
-# Plotting gamma with finer step-size
+# Plots the cone
+ax.plot_surface(x, y, z)
 
-import numpy as np
-import matplotlib.pyplot as plt
+# Setting plot title 
+ax.set_title('Plot of a cone')
 
-t = np.linspace(0,50, 500)
-x = np.sqrt(t) * np.cos(t)
-y = np.sqrt(t) * np.sin(t)
+# Setting axes labels
+ax.set_xlabel('x', labelpad=10)
+ax.set_ylabel('y', labelpad=10)
+ax.set_zlabel('z', labelpad=10)
 
-plt.plot(x,y)
-plt.show()
-#
-#
-#
-#
-#
-#
-#| echo: true
-#| fig-cap: "Adding a bit of style" 
-#| code-overflow: wrap
+# Setting viewing angle
+ax.view_init(elev = 25, azim = 45)
 
-import numpy as np
-import matplotlib.pyplot as plt
-
-t = np.linspace(0,50, 500)
-x = np.sqrt(t) * np.cos(t)
-y = np.sqrt(t) * np.sin(t)
-
-plt.figure(1, figsize = (5,5))
-
-plt.plot(x, y, "--", color="deeppink", linewidth=1.5, label="Spiral")
-plt.grid(True, color="lightgray")
-plt.title("Fermat's spiral for t between 0 and 50")
-plt.xlabel("x-axis", fontsize = 15)
-plt.ylabel("y-axis", fontsize = 15)
-plt.legend()
+# Showing the plot
 plt.show()
 #
 #
@@ -187,102 +154,91 @@ plt.show()
 #
 #
 #
-#
-#
-#| echo: true
+# Plotting torus seen from 2 angles
 
-import numpy as np
-
-t = np.arange(0,1, 0.2)
-print("t =",t)
-```
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#| echo: false
-#| fig-cap: "The 5 x 5 grid corresponding to the matrix A"
- 
+# Importing numpy, matplotlib and mplot3d
 import numpy as np
 import matplotlib.pyplot as plt
+from mpl_toolkits import mplot3d
 
-x_list = np.linspace(0, 4, 5)
-y_list = np.linspace(0, 4, 5)
+# Generates figure object of size 6 x 10
+fig = plt.figure(figsize = (6,10))
 
-X, Y = np.meshgrid(x_list, y_list)
+# Generates 2 sets of 3D axes
+ax1 = fig.add_subplot(2, 1, 1, projection = '3d')
+ax2 = fig.add_subplot(2, 1, 2, projection = '3d')
 
-plt.figure(figsize = (5,5))
-plt.plot(X,Y, marker='.', color='k', linestyle='none')
-#
-#
-#
-#
-#
-#
-#
-import numpy as np
+# Shows axes grid
+ax1.grid(True)
+ax2.grid(True)
 
-x_list = np.linspace(0, 4, 5)
-y_list = np.linspace(0, 4, 5)
+# Generates coordinates u and v by dividing
+# the interval (0,2pi) in 100 parts
+u = np.linspace(0, 2*np.pi, 100)
+v = np.linspace(0, 2*np.pi, 100)
 
-print("x = ", x_list)
-print("y = ", y_list)
-```
-#
-#
-#
-#
-#
-#| echo: true
-#| fig-cap: "Plot of the curve defined by f=0" 
+# Generates grid [U,V] from the coordinates u, v
+U, V = np.meshgrid(u, v)
 
-# Plotting f=0
+# Computes the torus on grid [U,V]
+# with radii r = 1 and R = 2
+R = 2
+r = 1
 
-import numpy as np
-import matplotlib.pyplot as plt
+x = (R + r * np.cos(U)) * np.cos(V)
+y = (R + r * np.cos(U)) * np.sin(V)
+z = r * np.sin(U)
 
-xlist = np.linspace(-1, 1, 5000)
-ylist = np.linspace(-1, 1, 5000)
-X, Y = np.meshgrid(xlist, ylist)
+# Plots the torus on both axes
+ax1.plot_surface(x, y, z, rstride = 5, cstride = 5, color = 'dimgray', edgecolors='snow')
 
-Z =((3*(X**2) - Y**2)**2)*(Y**2) - (X**2 + Y**2)**4 
+ax2.plot_surface(x, y, z, rstride = 5, cstride = 5, color = 'dimgray', edgecolors='snow')
 
-plt.figure(figsize = (5.5,5.5))
-plt.contour(X, Y, Z, [0])
-plt.xlabel("x-axis", fontsize = 15)
-plt.ylabel("y-axis", fontsize = 15)
+# Setting plot titles 
+ax1.set_title('Torus')
+ax2.set_title('Torus from above')
+
+# Setting range for z axis in ax1
+ax1.set_zlim(-3,3)
+
+# Setting viewing angles
+ax1.view_init(elev = 35, azim = 45)
+ax2.view_init(elev = 90, azim = 0)
+
+# Showing the plot
 plt.show()
 #
 #
 #
 #
-#
-#
+
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+n = 100
+
+theta = np.linspace(0, 2.*np.pi, n)
+phi = np.linspace(0, 2.*np.pi, n)
+theta, phi = np.meshgrid(theta, phi)
+c, a = 2, 1
+x = (c + a*np.cos(theta)) * np.cos(phi)
+y = (c + a*np.cos(theta)) * np.sin(phi)
+z = a * np.sin(theta)
+
+fig = plt.figure()
+ax1 = fig.add_subplot(121, projection='3d')
+ax1.set_zlim(-3,3)
+ax1.plot_surface(x, y, z, rstride=5, cstride=5, color='k', edgecolors='w')
+ax1.view_init(36, 26)
+ax2 = fig.add_subplot(122, projection='3d')
+ax2.set_zlim(-3,3)
+ax2.plot_surface(x, y, z, rstride=5, cstride=5, color='k', edgecolors='w')
+ax2.view_init(0, 0)
+ax2.set_xticks([])
+plt.show()
+
+
 #
 #
 #
