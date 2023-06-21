@@ -9,20 +9,43 @@ $$
 
 These are the Lecture Notes of **Differential Geometry 600727** for T1 2023 at the University of Hull. We will study curves and surfaces in $\R^3$. I will follow these lecture notes during the course. If you have any question or find any typo, please email me at
 
+
+::: {.content-visible when-format="html"}
 <div style="text-align: center;">
 **[S.Fanzon@hull.ac.uk](mailto: S.Fanzon@hull.ac.uk)**
 </div>
+:::
+
+
+::: {.content-visible when-format="pdf"}
+\begin{center}
+\textbf{
+\href{mailto: S.Fanzon@hull.ac.uk}{S.Fanzon@hull.ac.uk}
+}
+\end{center}
+:::
 
 Up to date informations about the course and homework will be published on the **`course webpage`**
 
-
+::: {.content-visible when-format="html"}
 <div style="text-align: center;">
 **[silviofanzon.com/blog/2023/Differential-Geometry](https://www.silviofanzon.com/blog/2023/Differential-Geometry/)**
 </div>
+:::
 
 
-A **pdf** version of the notes is available to download on the top-right.
+::: {.content-visible when-format="pdf"}
+\begin{center}
+\textbf{
+\href{https://www.silviofanzon.com/blog/2023/Differential-Geometry/}{silviofanzon.com/blog/2023/Differential-Geometry}
+}
+\end{center}
+:::
 
+
+::: {.content-visible when-format="html"}
+A **pdf** version of these notes is available to download on the top-right.
+:::
 
 
 
