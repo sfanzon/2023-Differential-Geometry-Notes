@@ -719,19 +719,169 @@ fig.update_layout(title_text = "Plotting Fermat's Spiral with Plotly")
 # Adjust figure size
 fig.update_layout(autosize = False, width = 600, height = 600)
 
-# 
-fig.update_layout(paper_bgcolor = "lightgrey")
+# Change background canvas color
+fig.update_layout(paper_bgcolor = "snow")
+
+# Axes styling 
+fig.update_layout(
+xaxis=dict(
+        title_text="X-axis Title",
+        titlefont=dict(size=20),
+        tickvals=[-6,-4,-2,0,2,4,6],
+        ), 
+
+yaxis=dict(
+        title_text="Y-axis Title",
+        titlefont=dict(size=20),
+        tickvals=[-6,-4,-2,0,2,4,6],
+        )
+)
 
 # Display the figure
 fig.show()
 ```
 
 
+
 ::: {.content-visible when-format="html"}
-As you can examine by moving the mouse pointer, the above plot is interactive. Note that the style customizations could be listed in a single call of the function `update_layout`. 
+As you can examine by moving the mouse pointer, the above plot is interactive. Note that the style customizations could be listed in a single call of the function `update_layout`. There are also pretty buit-in themes available, see [here](https://plotly.com/python/templates/). The layout can be specified with the command
+```python
+fig.update_layout(template = template_name)
+```
+where `template_name` can be `"plotly"`, `"plotly_white"`, `"plotly_dark"`, `"ggplot2"`, `"seaborn"`, `"simple_white`".
 :::
+
+
 
 ::: {.content-visible when-format="pdf"}
-The above code generates an image that cannot be rendered in pdf. To see the output, please click for the digital version of these notes. Note that the style customizations could be listed in a single call of the function `update_layout`.
+The above code generates an image that cannot be rendered in pdf. To see the output, please click [here](https://www.silviofanzon.com/2023-Differential-Geometry-Notes/sections/appendix_1.html#sec-plot-2d-curves-interactive) for the digital version of these notes. Note that the style customizations could be listed in a single call of the function `update_layout`. There are also pretty buit-in themes available, see [here](https://plotly.com/python/templates/). The layout can be specified with the command
+```python
+fig.update_layout(template = template_name)
+```
+where `template_name` can be `"plotly"`, `"plotly_white"`, `"plotly_dark"`, `"ggplot2"`, `"seaborn"`, `"simple_white`".
 :::
 
+
+
+
+### 3D Plots   {#sec-plot-3d-curves-interactive}
+
+
+Say we want to plot the curve $\gamma \colon (a,b) \to \R^2$ parametrized by
+$$
+\gamma(t) = ( x(t) , y(t) ) \,.
+$$
+The `Plotly` module needed is called `graph_objects`, usually imported as `go`. The function for line plots is called `Scatter`. For documentation and examples see [link](https://plotly.com/python/line-and-scatter/). The code for plotting $\gamma$ is as follows.
+
+```python
+# Plotting gamma
+
+# Import libraries
+import numpy as np
+import plotly.graph_objects as go
+
+# Compute times grid by dividing (a,b) in 
+# n equal parts
+t = np.linspace(a, b, n)
+
+# Compute the parametric curve gamma
+# for given functions x(t) and y(t)
+x = x(t)
+y = y(t)
+
+# Create empty figure object and saves 
+# it in the variable "fig"
+fig = go.Figure()
+
+# Create the line plot object
+data = go.Scatter(x = x, y = y, mode = 'lines', name = 'gamma')
+
+# Add "data" plot to the figure "fig"
+fig.add_trace(data)
+
+# Display the figure
+fig.show()
+```
+
+Some comments about the functions called above:
+
+- `go.Figure`: generates an empty Plotly figure
+- `go.Scatter`: generates the actual plot. By default a scatter plot is produced. To obtain linear interpolation of the points, set `mode = 'lines'`. You can also label the plot with `name = "string"`
+- `add_trace`: adds a plot to a figure
+- `show`: displays a figure
+
+As an example, let us plot the Fermat's Spiral defined at @eq-Fermat-Spiral. Compared to the above code, we also add a bit of styling.
+
+```{python}
+# Plotting Fermat's Spiral
+
+# Import libraries
+import numpy as np
+import plotly.graph_objects as go
+
+# Compute times grid by dividing (0,50) in 
+# 500 equal parts
+t = np.linspace(0, 50, 500)
+
+# Computes Fermat's Spiral
+x = np.sqrt(t) * np.cos(t)
+y = np.sqrt(t) * np.sin(t)
+
+# Create empty figure object and saves 
+# it in the variable "fig"
+fig = go.Figure()
+
+# Create the line plot object
+data = go.Scatter(x = x, y = y, mode = 'lines', name = 'gamma')
+
+# Add "data" plot to the figure "fig"
+fig.add_trace(data)
+
+# Here we start with the styling options
+# First we set a figure title
+fig.update_layout(title_text = "Plotting Fermat's Spiral with Plotly")
+
+# Adjust figure size
+fig.update_layout(autosize = False, width = 600, height = 600)
+
+# Change background canvas color
+fig.update_layout(paper_bgcolor = "snow")
+
+# Axes styling 
+fig.update_layout(
+xaxis=dict(
+        title_text="X-axis Title",
+        titlefont=dict(size=20),
+        tickvals=[-6,-4,-2,0,2,4,6],
+        ), 
+
+yaxis=dict(
+        title_text="Y-axis Title",
+        titlefont=dict(size=20),
+        tickvals=[-6,-4,-2,0,2,4,6],
+        )
+)
+
+# Display the figure
+fig.show()
+```
+
+
+
+::: {.content-visible when-format="html"}
+As you can examine by moving the mouse pointer, the above plot is interactive. Note that the style customizations could be listed in a single call of the function `update_layout`. There are also pretty buit-in themes available, see [here](https://plotly.com/python/templates/). The layout can be specified with the command
+```python
+fig.update_layout(template = template_name)
+```
+where `template_name` can be `"plotly"`, `"plotly_white"`, `"plotly_dark"`, `"ggplot2"`, `"seaborn"`, `"simple_white`".
+:::
+
+
+
+::: {.content-visible when-format="pdf"}
+The above code generates an image that cannot be rendered in pdf. To see the output, please click [here](https://www.silviofanzon.com/2023-Differential-Geometry-Notes/sections/appendix_1.html#sec-plot-2d-curves-interactive) for the digital version of these notes. Note that the style customizations could be listed in a single call of the function `update_layout`. There are also pretty buit-in themes available, see [here](https://plotly.com/python/templates/). The layout can be specified with the command
+```python
+fig.update_layout(template = template_name)
+```
+where `template_name` can be `"plotly"`, `"plotly_white"`, `"plotly_dark"`, `"ggplot2"`, `"seaborn"`, `"simple_white`".
+:::
