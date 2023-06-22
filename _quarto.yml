@@ -14,7 +14,7 @@ book:
   date: "03 09 2023" 
   # To enter today's date replace by today
   # Enter date formatted as dd MM yyyy
-  date-format: "D MMMM YYYY"
+  date-format: "D MMM YYYY"
   downloads: pdf
   favicon: images/favicon.png
   search:
@@ -56,6 +56,7 @@ csl: comptes-rendus-mathematique.csl
 
 
 format:
+
   html:
     toc: true
     toc-title: On this page
@@ -66,6 +67,9 @@ format:
     theme:
       light: [flatly, theme-custom.scss]
       dark: [darkly]
+    fig-align: center
+    fig-cap-location: bottom
+
   pdf:
     documentclass: scrreprt
     fontsize: 13pt

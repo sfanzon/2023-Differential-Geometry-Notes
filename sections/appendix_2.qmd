@@ -163,12 +163,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits import mplot3d
 
-# Generates figure object of size 5 x 9
-fig = plt.figure(figsize = (5,9))
+# Generates figure object of size 9 x 5
+fig = plt.figure(figsize = (9,5))
 
 # Generates 2 sets of 3D axes
-ax1 = fig.add_subplot(2, 1, 1, projection = '3d')
-ax2 = fig.add_subplot(2, 1, 2, projection = '3d')
+ax1 = fig.add_subplot(1, 2, 1, projection = '3d')
+ax2 = fig.add_subplot(1, 2, 2, projection = '3d')
 
 # Shows axes grid
 ax1.grid(True)
@@ -351,5 +351,5 @@ To further customize your plots, you can check out the documentation of `go.Surf
 
 
 ::: {.content-visible when-format="pdf"}
-The above code generates an image that cannot be rendered in pdf. To see the output, please refer to the [digital version](https://www.silviofanzon.com/2023-Differential-Geometry-Notes/sections/chap4.html) of these notes. To further customize your plots, you can check out the documentation of `go.Surface` at this [link](https://plotly.github.io/plotly.py-docs/generated/plotly.graph_objects.Surface.html).
+The above code generates an image that cannot be rendered in pdf. To see the output, see the [link](https://www.silviofanzon.com/2023-Differential-Geometry-Notes/sections/appendix_2.html#plots-with-plotly) to the digital version of these notes. To further customize your plots, you can check out the documentation of `go.Surface` at this [link](https://plotly.github.io/plotly.py-docs/generated/plotly.graph_objects.Surface.html).
 :::

@@ -640,7 +640,7 @@ plt.show()
 `Matplotlib` produces beautiful static plots; however it lacks built in interactivity. For this reason I would also like to show you how to plot curves with `Plotly`, a very popular Python graphic library which has built in interactivity. Documentation for `Plotly` and lots of examples can be found [here](https://plotly.com/python/).
 
 
-### 2D Plots
+### 2D Plots   {#sec-plot-2d-curves-interactive}
 
 Say we want to plot the curve $\gamma \colon (a,b) \to \R^2$ parametrized by
 $$
@@ -720,60 +720,18 @@ fig.update_layout(title_text = "Plotting Fermat's Spiral with Plotly")
 fig.update_layout(autosize = False, width = 600, height = 600)
 
 # 
-fig.update_layout(paper_bgcolor = "LightSteelBlue")
+fig.update_layout(paper_bgcolor = "lightgrey")
 
 # Display the figure
 fig.show()
 ```
 
-As you can examine by moving the mouse pointer, the above plot is interactive. 
-
-::: {.content-visible when-format="pdf"}
-The above code generates an image that cannot be rendered in pdf. To see the output, please refer to the [digital version](https://www.silviofanzon.com/2023-Differential-Geometry-Notes/sections/chap2.html) of these notes. To further customize your plots, you can check out the documentation of `go.Surface` at this [link](https://plotly.github.io/plotly.py-docs/generated/plotly.graph_objects.Surface.html).
-:::
-
-
-```{python}
-# Plotting 2D curve with Plotly
-
-import numpy as np
-import plotly.graph_objects as go
-
-# Generates coordinates u and v by dividing
-# the interval (0,2pi) in 100 parts
-u = np.linspace(0, 2*np.pi, 100)
-v = np.linspace(0, 2*np.pi, 100)
-
-# Generates grid [U,V] from the coordinates u, v
-U, V = np.meshgrid(u, v)
-
-# Computes the torus on grid [U,V]
-# with radii r = 1 and R = 2
-R = 2
-r = 1
-
-x = (R + r * np.cos(U)) * np.cos(V)
-y = (R + r * np.cos(U)) * np.sin(V)
-z = r * np.sin(U)
-
-
-
-fig = go.Figure()
-data = go.Surface(x=x,y=y,z=z,showscale=False, colorscale='teal')
-fig.add_trace(data)
-fig.update_layout(title_text="Torus with Plotly")
-fig.show()
-```
-
-Documentation of the function `Surface` can be found [here](https://plotly.github.io/plotly.py-docs/generated/plotly.graph_objects.Surface.html).
-
-
 
 ::: {.content-visible when-format="html"}
-You can rotate the above image by clicking on it and dragging the cursor.
+As you can examine by moving the mouse pointer, the above plot is interactive. Note that the style customizations could be listed in a single call of the function `update_layout`. 
 :::
-
 
 ::: {.content-visible when-format="pdf"}
-The above code generates an image that cannot be rendered in pdf. To see the output, checkout the [digital version](https://www.silviofanzon.com/2023-Differential-Geometry-Notes/sections/chap2.html) of these notes.
+The above code generates an image that cannot be rendered in pdf. To see the output, please click for the digital version of these notes. Note that the style customizations could be listed in a single call of the function `update_layout`.
 :::
+
