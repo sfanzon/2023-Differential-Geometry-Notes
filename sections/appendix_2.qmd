@@ -329,7 +329,11 @@ fig = go.Figure()
 # Plot the torus with go.Surface and store it
 # in the variable "data". We also do now show the
 # plot scale, and set the color map to "teal"
-data = go.Surface(x = x , y = y, z = z, showscale = False, colorscale='teal')
+data = go.Surface(
+    x = x , y = y, z = z, 
+    showscale = False, 
+    colorscale='teal'
+    )
 
 # Add the plot stored in "data" to the figure "fig"
 # This is done with the command add_trace
@@ -346,10 +350,74 @@ fig.show()
 
 ::: {.content-visible when-format="html"}
 You can rotate the above image by clicking on it and dragging the cursor.
-To further customize your plots, you can check out the documentation of `go.Surface` at this [link](https://plotly.github.io/plotly.py-docs/generated/plotly.graph_objects.Surface.html).
+To further customize your plots, you can check out the documentation of `go.Surface` at this [link](https://plotly.github.io/plotly.py-docs/generated/plotly.graph_objects.Surface.html). For example, note that we have set the colormap to `teal`: for all the pretty colorscales available in Plotly, see this [page](https://plotly.com/python/builtin-colorscales/).
 :::
 
 
 ::: {.content-visible when-format="pdf"}
-The above code generates an image that cannot be rendered in pdf. To see the output, see the [link](https://www.silviofanzon.com/2023-Differential-Geometry-Notes/sections/appendix_2.html#plots-with-plotly) to the digital version of these notes. To further customize your plots, you can check out the documentation of `go.Surface` at this [link](https://plotly.github.io/plotly.py-docs/generated/plotly.graph_objects.Surface.html).
+The above code generates an image that cannot be rendered in pdf. To see the output, see the [link](https://www.silviofanzon.com/2023-Differential-Geometry-Notes/sections/appendix_2.html#plots-with-plotly) to the digital version of these notes. To further customize your plots, you can check out the documentation of `go.Surface` at this [link](https://plotly.github.io/plotly.py-docs/generated/plotly.graph_objects.Surface.html). For example, note that we have set the colormap to `teal`: for all the pretty colorscales available in Plotly, see this [page](https://plotly.com/python/builtin-colorscales/).
+:::
+
+
+One could go even fancier and use the tri-surf plots in `Plotly`. This is done with the function `create_trisurf` contained in the module `figure_factory` of `Plotly`, usually imported as `ff`. The documentation can be found [here](https://plotly.github.io/plotly.py-docs/generated/plotly.figure_factory.create_trisurf.html?highlight=trisurf). We also need to import the Python library `scipy`, which we use to generate a *Delaunay triangulation* for our plot. Let us for example plot the torus.  
+
+```{python}
+# Plotting Torus with tri-surf
+
+# Importing libraries
+import numpy as np
+import plotly.figure_factory as ff
+from scipy.spatial import Delaunay
+
+# Generates coordinates u and v by dividing
+# the interval (0,2pi) in 100 parts
+u = np.linspace(0, 2*np.pi, 20)
+v = np.linspace(0, 2*np.pi, 20)
+
+# Generates grid [U,V] from the coordinates u, v
+U, V = np.meshgrid(u, v)
+
+# Collapse meshes to 1D array
+# This is needed for create_trisurf 
+U = U.flatten()
+V = V.flatten()
+
+# Computes the torus on grid [U,V]
+# with radii r = 1 and R = 2
+R = 2
+r = 1
+
+x = (R + r * np.cos(U)) * np.cos(V)
+y = (R + r * np.cos(U)) * np.sin(V)
+z = r * np.sin(U)
+
+# Generate Delaunay triangulation
+points2D = np.vstack([U,V]).T
+tri = Delaunay(points2D)
+simplices = tri.simplices
+
+# Plot the Torus
+fig = ff.create_trisurf(
+    x=x, y=y, z=z,
+    colormap = "Portland",
+    simplices=simplices,
+    title="Torus with tri-surf", 
+    aspectratio=dict(x=1, y=1, z=0.3),
+    show_colorbar = False
+    )
+
+# Adjust figure size
+fig.update_layout(autosize = False, width = 700, height = 700)
+
+# Show the figure
+fig.show()
+```
+
+
+::: {.content-visible when-format="html"}
+Again, the above figure is interactive. Try rotating the torus with the pointer. 
+:::
+
+::: {.content-visible when-format="pdf"}
+Again, the above code generates an image that cannot be rendered in pdf. To see the output, see the [link](https://www.silviofanzon.com/2023-Differential-Geometry-Notes/sections/appendix_2.html#plots-with-plotly) to the digital version of these notes. 
 :::

@@ -724,18 +724,133 @@ fig.update_layout(autosize = False, width = 600, height = 600)
 # Change background canvas color
 fig.update_layout(paper_bgcolor = "snow")
 
-# Axes styling 
+# Axes styling: adding title and ticks positions 
+fig.update_layout(
+xaxis=dict(
+        title_text="X-axis Title",
+        titlefont=dict(size=20),
+        tickvals=[-6,-4,-2,0,2,4,6],
+        ), 
+
 yaxis=dict(
         title_text="Y-axis Title",
-        ticktext=["Very long label", "long label", "3", "label"],
-        tickvals=[1, 2, 3, 4],
-        tickmode="array",
-        titlefont=dict(size=30),
+        titlefont=dict(size=20),
+        tickvals=[-6,-4,-2,0,2,4,6],
+        )
+)
 
 # Display the figure
 fig.show()
 #
 #
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+# Plotting 3D Helix
+
+# Import libraries
+import numpy as np
+import plotly.graph_objects as go
+
+# Divides time interval (0,6pi) in 100 parts 
+t = np.linspace(0, 6*np.pi, 100)
+
+# Computes Helix
+x = np.cos(t) 
+y = np.sin(t)
+z = t
+
+# Create empty figure object and saves 
+# it in the variable "fig"
+fig = go.Figure()
+
+# Create the line plot object
+data = go.Scatter3d(x = x, y = y, z = z, mode = 'lines', name = 'gamma')
+
+# Add "data" plot to the figure "fig"
+fig.add_trace(data)
+
+# Here we start with the styling options
+# First we set a figure title
+fig.update_layout(title_text = "Plotting 3D Helix with Plotly")
+
+# Adjust figure size
+fig.update_layout(autosize = False, width = 600, height = 600)
+
+# Set pre-defined template
+fig.update_layout(template = "seaborn")
+
+# Options for curve line style
+line_options = dict(width = 3, color = "magenta")
+fig.u
+# Display the figure
+fig.show()
 #
 #
 #
