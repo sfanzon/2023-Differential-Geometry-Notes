@@ -11,7 +11,10 @@ book:
       affiliations: "University of Hull"
       email: "S.Fanzon@hull.ac.uk"
       url: "https://www.silviofanzon.com"
-  date: "1/9/2023"
+  date: "03 09 2023" 
+  # To enter today's date replace by today
+  # Enter date formatted as dd MM yyyy
+  date-format: "D MMMM YYYY"
   downloads: pdf
   favicon: images/favicon.png
   search:
@@ -35,12 +38,17 @@ book:
 
   chapters:
     - index.qmd
-    - sections/chap1.qmd
-    - sections/chap2.qmd
-    - sections/chap3.qmd
-    - sections/chap4.qmd
+    - part: sections/part_1.qmd
+      chapters:
+        - sections/chap_1_1.qmd
+    - part: sections/part_2.qmd
+      chapters:
+        - sections/chap_2_1.qmd
     - sections/license.qmd
     - sections/references.qmd
+  appendices: 
+    - sections/appendix_1.qmd
+    - sections/appendix_2.qmd
 
 
 bibliography: teaching.bib
@@ -73,6 +81,8 @@ format:
     citecolor: magenta
     cite-method: biblatex
     biblatexoptions: maxbibnames=99, style=numeric, giveninits=true, url=true
+    callout-appearance: simple
+    callout-icon: true
     include-in-header:
       - text: |
           \usepackage{scrlayer-scrpage}
