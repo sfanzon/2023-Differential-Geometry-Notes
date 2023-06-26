@@ -44,7 +44,12 @@ Up to date informations about the course and homework will be published on the *
 
 
 ::: {.content-visible when-format="html"}
-A **pdf** version of these notes is available to download on the top-right.
+Features of these digital notes:
+
+- Navigation bar is available on the left
+- A `search function` is available on the top-right 
+- You can toggle `dark mode` on top-right
+- A `pdf` version of these notes is available to download on the top-right
 :::
 
 

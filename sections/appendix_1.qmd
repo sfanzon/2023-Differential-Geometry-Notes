@@ -844,7 +844,11 @@ fig.add_trace(data)
 fig.update_layout(title_text = "Plotting 3D Helix with Plotly")
 
 # Adjust figure size
-fig.update_layout(autosize = False, width = 600, height = 600)
+fig.update_layout(
+    autosize = False, 
+    width = 600, 
+    height = 600
+    )
 
 # Set pre-defined template
 fig.update_layout(template = "seaborn")
