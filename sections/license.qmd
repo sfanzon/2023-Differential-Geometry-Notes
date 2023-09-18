@@ -16,7 +16,7 @@ This work is licensed under a
 For attribution, please cite this work as:
 
 > Fanzon, Silvio. (2023). *Lecture Notes on Differential Geometry*.  
-[https://silviofanzon.quarto.pub/2023-differential-geometry/](https://silviofanzon.quarto.pub/2023-differential-geometry/)
+[https://www.silviofanzon.com/2023-Differential-Geometry-Notes/](https://www.silviofanzon.com/2023-Differential-Geometry-Notes/)
 
 
 BibTex citation:
@@ -26,6 +26,6 @@ BibTex citation:
 @electronic{fanzon-diff-geom-2023,
 	author = {Fanzon, Silvio},
 	title = {Lecture Notes on Differential Geometry},
-	url = {https://silviofanzon.quarto.pub/2023-differential-geometry/},
+	url = {https://www.silviofanzon.com/2023-Differential-Geometry-Notes/},
 	year = {2023}}
 ```
