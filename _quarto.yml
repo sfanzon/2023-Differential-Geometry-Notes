@@ -5,10 +5,10 @@ project:
 
 book:
   title: "Differential Geometry"
-  subtitle: "Lecture Notes, T1 2023"
+  subtitle: "Lecture Notes, T1 2023/24"
   author: 
     - name: "Silvio Fanzon"
-      affiliations: "University of Hull"
+      affiliations: "University of Hull, UK"
       email: "S.Fanzon@hull.ac.uk"
       url: "https://www.silviofanzon.com"
   date: "03 09 2023" 
