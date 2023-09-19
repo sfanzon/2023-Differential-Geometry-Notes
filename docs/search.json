@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Differential Geometry",
     "section": "",
-    "text": "Welcome\nThese are the Lecture Notes of Differential Geometry 661955 for T1 2023 at the University of Hull. We will study curves and surfaces in \\(\\mathbb{R}^3\\). I will follow these lecture notes during the course. If you have any question or find any typo, please email me at\nUp to date information about the course and homework will be published on the course webpage\nHomework will also be released on the Hull Canvas webpage\nFeatures of these digital notes:"
+    "text": "Welcome\nThese are the Lecture Notes of Differential Geometry 661955 for T1 2023/23 at the University of Hull. We will study curves and surfaces in \\(\\mathbb{R}^3\\). I will follow these lecture notes during the course. If you have any question or find any typo, please email me at\nUp to date information about the course and Homework will be published on the University of Hull Canvas Website\nand on the Course Webpage hosted on my website\nFeatures of these digital notes:"
   },
   {
     "objectID": "index.html#references",
@@ -39,7 +39,7 @@
     "href": "sections/license.html#citation",
     "title": "License",
     "section": "Citation",
-    "text": "Citation\nFor attribution, please cite this work as:\n\nFanzon, Silvio. (2023). Lecture Notes on Differential Geometry.\nhttps://www.silviofanzon.com/2023-Differential-Geometry-Notes/\n\nBibTex citation:\n@electronic{fanzon-diff-geom-2023,\n    author = {Fanzon, Silvio},\n    title = {Lecture Notes on Differential Geometry},\n    url = {https://www.silviofanzon.com/2023-Differential-Geometry-Notes/},\n    year = {2023}}"
+    "text": "Citation\nFor attribution, please cite this work as:\n\nFanzon, Silvio. (2023). Lecture Notes on Differential Geometry.\nhttps://www.silviofanzon.com/2023-Differential-Geometry-Notes/\n\nBibTex citation:\n@electronic{Danzon-Diff-Geom-2023,\n    author = {Fanzon, Silvio},\n    title = {Lecture Notes on Differential Geometry},\n    url = {https://www.silviofanzon.com/2023-Differential-Geometry-Notes/},\n    year = {2023}}"
   },
   {
     "objectID": "sections/references.html",
