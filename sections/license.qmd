@@ -1,0 +1,31 @@
+# License {.unnumbered}
+
+## Reuse {.unnumbered}
+
+This work is licensed under a 
+[Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](http://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+
+
+![](/images/by-nc-nd.png){width=1.3in}
+
+
+
+## Citation {.unnumbered}
+
+For attribution, please cite this work as:
+
+> Fanzon, Silvio. (2023). *Lecture Notes on Numbers, Sequences and Series*.  
+[https://www.silviofanzon.com/2023-NSS-Notes/](https://www.silviofanzon.com/2023-NSS-Notes/)
+
+
+BibTex citation:
+
+
+```bibtex
+@electronic{Fanzon-NSS-2023,
+	author = {Fanzon, Silvio},
+	title = {Lecture Notes on Numbers, Sequences and Series},
+	url = {https://www.silviofanzon.com/2023-NSS-Notes/},
+	year = {2023}}
+```

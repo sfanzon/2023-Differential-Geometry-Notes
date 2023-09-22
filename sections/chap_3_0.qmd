@@ -1,0 +1,14 @@
+::: {.content-hidden}
+$$
+{{< include macros.tex >}}
+$$
+
+:::
+
+
+
+
+# Series
+
+Coming soon
+

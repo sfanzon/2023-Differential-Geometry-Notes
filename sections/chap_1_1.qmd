@@ -1,0 +1,58 @@
+::: {.content-hidden}
+$$
+{{< include macros.tex >}}
+$$
+:::
+
+
+# Preliminaries
+
+Before introducing $\R$ we want to make sure that we cover all the basics needed for the task.
+
+## Sets
+
+A sets is a **collection** of objects. These objects are called **elements** of the set. For example in the previous section we mentioned the following sets:
+* $\N$ the set of natural numbers
+* $\Z$ the set of integers
+* $\Q$ the set of rational numbers
+* $\R$ the set of real numbers
+Given an arbitrary set $A$, we write 
+$$
+x \in A
+$$ 
+
+if the element $x$ belongs to the set (collection) $A$. If an element $x$ is not contained in $A$, we say that 
+
+$$
+x \notin A \,.
+$$
+
+::: Remark
+
+A set can contain all sorts of elements. For example the students in a classroom can be modelled by a set $S$. The elements of the set are the students. For example
+
+$$
+S = \{ 
+    \text{Alice, Olivia, Jake, Sahab}   
+     \}
+$$
+
+In this case we have
+
+$$
+\text{Alice} \in S 
+$$
+but instead
+
+$$
+\text{Silvio} \notin S \,. 
+$$
+
+:::
+
+
+ IfxisnotanelementofA,thenwewritex∈/A. GiventwosetsAandB,the union is written A ∪ B and is defined by asserting that
+x∈A∪B provided that x∈A or x∈B (or potentially both). The intersection A ∩ B is the set defined by the rule
+x∈A∩B provided x∈A and x∈B.
+
+

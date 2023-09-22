@@ -1,0 +1,98 @@
+::: {.content-hidden}
+$$
+{{< include sections/macros.tex >}}
+$$
+:::
+
+
+# Welcome {.unnumbered}
+
+These are the Lecture Notes of **Numbers, Sequences & Series 400297** for T1 2023/24 at the University of Hull. I will follow these lecture notes during the course. 
+If you have any question or find any typo, please email me at
+
+
+::: {.content-visible when-format="html"}
+<div style="text-align: center;">
+**[S.Fanzon@hull.ac.uk](mailto: S.Fanzon@hull.ac.uk)**
+</div>
+:::
+
+
+::: {.content-visible when-format="pdf"}
+\begin{center}
+\textbf{
+\href{mailto: S.Fanzon@hull.ac.uk}{S.Fanzon@hull.ac.uk}
+}
+\end{center}
+:::
+
+
+Up to date information about the course, Tutorials and Homework will be published on the University of Hull **Canvas Website**
+
+
+::: {.content-visible when-format="html"}
+<div style="text-align: center;">
+**[canvas.hull.ac.uk/courses/67551](https://canvas.hull.ac.uk/courses/67551)**
+</div>
+:::
+
+
+::: {.content-visible when-format="pdf"}
+\begin{center}
+\textbf{
+\href{https://canvas.hull.ac.uk/courses/67551}{canvas.hull.ac.uk/courses/67551}
+}
+\end{center}
+:::
+
+
+and on the **Course Webpage** hosted on my website
+
+
+::: {.content-visible when-format="html"}
+<div style="text-align: center;">
+**[silviofanzon.com/blog/2023/NSS](https://www.silviofanzon.com/blog/2023/NSS/)**
+</div>
+:::
+
+
+::: {.content-visible when-format="pdf"}
+\begin{center}
+\textbf{
+\href{https://www.silviofanzon.com/blog/2023/NSS/}{silviofanzon.com/blog/2023/NSS}
+}
+\end{center}
+:::
+
+
+
+
+
+
+
+
+
+::: {.content-visible when-format="html"}
+Features of these digital notes:
+
+- **Navigation** bar is available on the left
+- A **search function** is available on the top-right 
+- You can toggle **dark mode** on the top-right
+- A **pdf** version of these notes is available to download on the top-right
+:::
+
+
+
+
+
+
+## Readings {.unnumbered}
+
+We will study the set of real numbers $\R$, and then sequences and series in $\R$. I will follow mainly the textbook by Bartle and Sherbert [@bartle]. Another good reading is the book by Abbott [@abbott]. I also point out the classic book by Rudin [@rudin_introduction], although this is more difficult to understand.
+
+
+
+
+::: {.callout-important}
+You are not expected to purchase any of the above books. These lecture notes will cover 100% of the topics you are expected to known in order to excel in the final exam.
+:::

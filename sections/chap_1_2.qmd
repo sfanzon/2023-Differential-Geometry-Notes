@@ -1,0 +1,11 @@
+::: {.content-hidden}
+$$
+{{< include macros.tex >}}
+$$
+
+:::
+
+
+# Real Numbers: axioms
+
+Coming soon
