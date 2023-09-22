@@ -5,13 +5,13 @@ project:
 
 book:
   title: "Differential Geometry"
-  subtitle: "Lecture Notes, T1 2023/24"
+  subtitle: "Lecture Notes"
   author: 
-    - name: "Silvio Fanzon"
+    - name: "Dr. Silvio Fanzon"
       affiliations: "University of Hull, UK"
       email: "S.Fanzon@hull.ac.uk"
       url: "https://www.silviofanzon.com"
-  date: "03 09 2023" 
+  date: "20 09 2023" 
   # To enter today's date replace by today
   # Enter date formatted as dd MM yyyy
   date-format: "D MMM YYYY"
@@ -52,7 +52,7 @@ book:
 
 
 bibliography: teaching.bib
-csl: comptes-rendus-mathematique.csl
+csl: elsevier-with-titles.csl
 
 
 format:
@@ -69,6 +69,8 @@ format:
       dark: [darkly]
     fig-align: center
     fig-cap-location: bottom
+    link-external-icon: true
+
 
   pdf:
     documentclass: scrreprt
@@ -80,6 +82,7 @@ format:
       - bottom=15mm
       - heightrounded
     link-citations: true
+    link-external-icon: true
     linkcolor: magenta
     urlcolor: magenta
     citecolor: magenta
@@ -92,7 +95,7 @@ format:
           \usepackage{scrlayer-scrpage}
           \lohead{Differential Geometry}
           \cohead{}
-          \rohead{\pagemark}
+          \rohead{Page \pagemark}
           \lofoot{}
           \cofoot{}
           \rofoot{}
@@ -101,3 +104,67 @@ format:
           \setkomafont{pagenumber}{} 
           \usepackage{fvextra}
           \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+
+crossref:
+  eq-prefix: ""
+
+
+filters:
+  - custom-numbered-blocks
+
+custom-numbered-blocks:
+  groups:
+    thmlike:
+      colors: [f4cce0, db4d92]
+      boxstyle: foldbox.simple
+      collapse: false
+      listin: [mathstuff]
+    todos: default  
+  
+  classes:
+    
+    Theorem:
+      group: thmlike
+    
+    Corollary:
+      group: thmlike
+    
+    Conjecture:
+      group: thmlike
+
+    Proposition:
+      group: thmlike
+    
+    Question: 
+      group: thmlike
+
+    Definition:
+      group: thmlike
+      colors: [c6e6ed, 1995ad]
+
+    Remark: 
+      group: thmlike
+      colors: [bce5de, 21aa93]
+
+    Example: 
+      group: thmlike
+      colors: [bce5de, 21aa93]
+      numbered: false
+
+    Proof:
+      group: thmlike
+      colors: [f1f1f2, c0c0c1]
+      numbered: false
+
+    TODO:
+      label: "To do"
+      colors: [e7b1b4, 8c3236]
+      group: todos
+      listin: [stilltodo]
+      
+    DONE:
+      label: "Done"
+      colors: [cce7b1, 86b754]  
+      group: todos
+
+  
