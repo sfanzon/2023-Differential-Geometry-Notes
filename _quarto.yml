@@ -39,7 +39,10 @@ book:
   chapters:
     - index.qmd
 
-  
+
+    
+    - sections/license.qmd
+    - sections/references.qmd
 
 
 bibliography: teaching.bib

@@ -33,5 +33,12 @@
     "title": "License",
     "section": "Citation",
     "text": "Citation\nFor attribution, please cite this work as:\n\nFanzon, Silvio. (2023). Lecture Notes on Differential Geometry.\nhttps://www.silviofanzon.com/2023-Differential-Geometry-Notes/\n\nBibTex citation:\n@electronic{Danzon-Diff-Geom-2023,\n    author = {Fanzon, Silvio},\n    title = {Lecture Notes on Differential Geometry},\n    url = {https://www.silviofanzon.com/2023-Differential-Geometry-Notes/},\n    year = {2023}}"
+  },
+  {
+    "objectID": "sections/references.html",
+    "href": "sections/references.html",
+    "title": "References",
+    "section": "",
+    "text": "[1] R.\nJohansson, Numerical python. Scientific computing and data science\napplications with numpy, SciPy and matplotlib, Second Edition, Apress,\n2019.\n\n\n[2] Q.\nKong, T. Siauw, A. Bayen, Python programming and numerical methods,\nAcademic Press, 2020.\n\n\n[3] C.\nBär, Elementary differential geometry, Cambridge University Press,\n2010.\n\n\n[4] M.P. do Carmo, Differential geometry of curves\nand surfaces, Second Edition, Dover Books on Mathematics, 2017.\n\n\n[5] A.\nPressley, Elementary differential geometry, Second Edition, Springer,\n2010.\n\n\n[6] V.A. Zorich, Mathematical analysis II, Second\nEdition, Springer, 2016.\n\n\n[7] V.A. Zorich, Mathematical analysis i, Second\nEdition, Springer, 2015."
   }
 ]
