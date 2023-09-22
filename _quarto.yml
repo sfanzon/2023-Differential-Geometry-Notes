@@ -100,9 +100,9 @@ format:
           \lohead{Differential Geometry}
           \cohead{}
           \rohead{Page \pagemark}
-          \lofoot{Dr.~Silvio Fanzon-~-S.Fanzon@hull.ac.uk}
+          \lofoot{}
           \cofoot{}
-          \rofoot{University of Hull}
+          \rofoot{}
           \setheadsepline{0.5pt}
           \addtokomafont{pageheadfoot}{\color{gray}\textnormal}
           \setkomafont{pagenumber}{} 
