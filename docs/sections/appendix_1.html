@@ -314,7 +314,7 @@ t = [-3,-2,-1,0,1,2,3]\,.
 \tag{A.1}\]</span></span> This array is then squared entry-by-entry via the operation <span class="math inline">\(t\ast\!\ast 2\)</span> and saved in the new numpy array <code>f</code>, that is, <span class="math display">\[
 f = [9,4,1,0,1,4,9] \,.
 \]</span> The arrays <code>t</code> and <code>f</code> are then passed to <code>plot(t,f)</code>, which produces the above linear interpolation, with <code>t</code> on the <em>x-axis</em> and <code>f</code> on the <em>y-axis</em>. The command <code>plot(t,f,'ko')</code> instead plots a black dot at each point <span class="math inline">\((t_i,f_i)\)</span>. The latter is clearly not needed to obtain a plot, and it was only included to highlight the fact that <code>plot</code> is actually producing a linear interpolation between points. Finally <code>plt.show()</code> displays the figure in the user window<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.<br>
-Of course one can refine the plot so that it resembles the continuous curve <span class="math inline">\(\gamma(t)=(t,t^2)\)</span> that we all have in mind. This is achieved by generating a numpy array <code>t</code> with a finer stepsize, invoking the function <code>np.linspace(a,b,n)</code>. Such call will return a numpy array which contains <code>n</code> evenly spaced points, starts at <code>a</code>, and ends in <code>b</code>. For example <code>np.linspace(-3,3,7)</code> returns our original array <code>t</code> at <a href="#eq-numpy-array-t">Equation&nbsp;<span>A.1</span></a>, as shown below</p>
+Of course one can refine the plot so that it resembles the continuous curve <span class="math inline">\(\gamma(t)=(t,t^2)\)</span> that we all have in mind. This is achieved by generating a numpy array <code>t</code> with a finer stepsize, invoking the function <code>np.linspace(a,b,n)</code>. Such call will return a numpy array which contains <code>n</code> evenly spaced points, starts at <code>a</code>, and ends in <code>b</code>. For example <code>np.linspace(-3,3,7)</code> returns our original array <code>t</code> at <a href="#eq-numpy-array-t"><span>A.1</span></a>, as shown below</p>
 <div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Displaying output of np.linspace</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -862,7 +862,7 @@ z(t) = t
 <li><code>add_trace</code>: adds a plot to a figure</li>
 <li><code>show</code>: displays a figure</li>
 </ul>
-<p>As an example, let us plot the Fermat’s Spiral defined at <a href="#eq-Fermat-Spiral">Equation&nbsp;<span>A.2</span></a>. Compared to the above code, we also add a bit of styling.</p>
+<p>As an example, let us plot the Fermat’s Spiral defined at <a href="#eq-Fermat-Spiral"><span>A.2</span></a>. Compared to the above code, we also add a bit of styling.</p>
 <div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting Fermat's Spiral</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -982,7 +982,7 @@ if (outputEl) {{
 <span id="cb30-27"><a href="#cb30-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the figure</span></span>
 <span id="cb30-28"><a href="#cb30-28" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The functions <code>go.Figure</code>, <code>add_trace</code> and <code>show</code> appearing above are described in the previous Section. The new addition is <code>go.Scatter3d</code>, which generates a 3D scatter plot of the points stored in the array <code>[x,y,z]</code>. Setting <code>mode = 'lines'</code> results in a linear interpolation of such points. As before, the curve can be labeled by setting <code>name = "string"</code>.</p>
-<p>As an example, we plot the 3D Helix defined at <a href="#eq-helix-curve">Equation&nbsp;<span>A.3</span></a>. We also add some styling. We can also use the same pre-defined templates descirbed for <code>go.Scatter</code> in the previous section, see <a href="https://plotly.com/python/templates/">here</a> for official documentation.</p>
+<p>As an example, we plot the 3D Helix defined at <a href="#eq-helix-curve"><span>A.3</span></a>. We also add some styling. We can also use the same pre-defined templates descirbed for <code>go.Scatter</code> in the previous section, see <a href="https://plotly.com/python/templates/">here</a> for official documentation.</p>
 <div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting 3D Helix</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
