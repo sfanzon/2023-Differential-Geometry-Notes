@@ -4,7 +4,7 @@ project:
 
 
 book:
-  title: "Numbers, Sequences and Series"
+  title: "Differential Geometry"
   subtitle: "Lecture Notes"
   author: 
     - name: "Dr. Silvio Fanzon"
@@ -38,16 +38,6 @@ book:
     
   chapters:
     - index.qmd
-
-    - sections/chap_1_0.qmd
-    - sections/chap_1_1.qmd
-    - sections/chap_1_2.qmd
-
-    
-    - sections/chap_2_0.qmd
-
-
-    - sections/chap_3_0.qmd
 
     - sections/license.qmd
     
@@ -99,7 +89,7 @@ format:
     include-in-header:
       - text: |
           \usepackage{scrlayer-scrpage}
-          \lohead{Numbers, Sequences and Series}
+          \lohead{Differential Geometry}
           \cohead{}
           \rohead{Page \pagemark}
           \lofoot{}
