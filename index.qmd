@@ -75,16 +75,16 @@ Features of these digital notes:
 
 
 
-## References {.unnumbered}
+## Readings {.unnumbered}
 
-The main textbook of the course is Pressley [@pressley]. Other useful references are the books by do Carmo [@do-carmo] and Bär [@bar]. I will assume some knowledge from Analysis and Linear Algebra. A good place to revise these topics are the books by Zorich [@zorich-1; @zorich-2]. 
+The main textbook of the course is Pressley [@pressley]. Other interesting readings are the books by do Carmo [@do-carmo] and Bär [@bar]. I will assume some knowledge from Analysis and Linear Algebra. A good place to revise these topics are the books by Zorich [@zorich-1; @zorich-2]. 
 
 
 ## Visualization {.unnumbered} 
 
 It is important to visualize the geometrical objects and concepts we are 
 going to talk about in this course. I will show basic Python code to plot curves and surfaces. This part of the course is **`not required`** for the final examination. If you want to have fun plotting with Pyhton, I recommend installation through [Anaconda](https://www.anaconda.com) or [Miniconda](https://docs.conda.io/en/latest/miniconda.html). The actual coding can then be done through [Jupyter Notebook](https://jupyter.org). Good references for scientific Python programming are [@johansson;@KSB-Python].   
-If you do not want to mess around with Python, do not despair. You can still visualize pretty much everything we will do in this course using the excellent online 3D grapher tool [CalcPlot3D](https://c3d.libretexts.org/CalcPlot3D/index.html). To understand how it works, please refer to the [help manual](https://c3d.libretexts.org/CalcPlot3D/CalcPlot3D-Help/front.html) or to the short [video introduction](https://c3d.libretexts.org/CalcPlot3D/CalcPlot3D-Help/section-1.html).
+If you do not want to mess around with Python, do not despair. You can still visualize pretty much everything we will do in this course using the excellent online 3D grapher tool [CalcPlot3D](https://c3d.libretexts.org/CalcPlot3D/index.html/). To understand how it works, please refer to the [help manual](https://c3d.libretexts.org/CalcPlot3D/CalcPlot3D-Help/front.html) or to the short [video introduction](https://c3d.libretexts.org/CalcPlot3D/CalcPlot3D-Help/section-1.html).
 
 
 ::: {.callout-important}

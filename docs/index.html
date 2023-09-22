@@ -6,7 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Silvio Fanzon">
+<meta name="author" content="Dr.&nbsp;Silvio Fanzon">
+<meta name="dcterms.date" content="2023-09-20">
 
 <title>Differential Geometry</title>
 <style>
@@ -50,7 +51,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./sections/part_1.html" rel="next">
+<link href="./sections/chap_1_0.html" rel="next">
 <link href="./images/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -63,6 +64,7 @@ div.csl-indent {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/quarto-contrib/foldbox/foldbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -83,6 +85,52 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
+<style>
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+</style>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -130,40 +178,36 @@ div.csl-indent {
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./sections/part_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Curves</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sections/chap_1_0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sections/chap_1_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Definition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Plotting curves</span></span></a>
   </div>
 </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./sections/part_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Surfaces</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sections/chap_2_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Definition</span></span></a>
+  <a href="./sections/chap_1_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Plotting surfaces</span></span></a>
   </div>
 </li>
-      </ul>
-  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sections/chap_2_0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Curves</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sections/chap_3_0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Surfaces</span></span></a>
+  </div>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sections/license.html" class="sidebar-item-text sidebar-link">
@@ -176,29 +220,6 @@ div.csl-indent {
  <span class="menu-text">References</span></a>
   </div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sections/appendix_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Plotting curves</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sections/appendix_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Plotting surfaces</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -211,7 +232,7 @@ div.csl-indent {
   <ul>
   <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a>
   <ul class="collapse">
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#readings" id="toc-readings" class="nav-link" data-scroll-target="#readings">Readings</a></li>
   <li><a href="#visualization" id="toc-visualization" class="nav-link" data-scroll-target="#visualization">Visualization</a></li>
   </ul></li>
   </ul>
@@ -223,7 +244,7 @@ div.csl-indent {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Differential Geometry</h1>
-<p class="subtitle lead">Lecture Notes, T1 2023/24</p>
+<p class="subtitle lead">Lecture Notes</p>
 </div>
 
 
@@ -232,7 +253,7 @@ div.csl-indent {
   <div class="quarto-title-meta-heading">Affiliation</div>
   
     <div class="quarto-title-meta-contents">
-    <p class="author"><a href="https://www.silviofanzon.com">Silvio Fanzon</a> </p>
+    <p class="author"><a href="https://www.silviofanzon.com">Dr.&nbsp;Silvio Fanzon</a> </p>
   </div>
     <div class="quarto-title-meta-contents">
         <p class="affiliation">
@@ -247,7 +268,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">3 Sep 2023</p>
+      <p class="date">20 Sep 2023</p>
     </div>
   </div>
   
@@ -278,14 +299,14 @@ div.csl-indent {
 <li>You can toggle <strong>dark mode</strong> on the top-right</li>
 <li>A <strong>pdf</strong> version of these notes is available to download on the top-right</li>
 </ul>
-<section id="references" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
-<p>The main textbook of the course is Pressley <span class="citation" data-cites="pressley">[<a href="sections/references.html#ref-pressley" role="doc-biblioref">1</a>]</span>. Other useful references are the books by do Carmo <span class="citation" data-cites="do-carmo">[<a href="sections/references.html#ref-do-carmo" role="doc-biblioref">2</a>]</span> and Bär <span class="citation" data-cites="bar">[<a href="sections/references.html#ref-bar" role="doc-biblioref">3</a>]</span>. I will assume some knowledge from Analysis and Linear Algebra. A good place to revise these topics are the books by Zorich <span class="citation" data-cites="zorich-1 zorich-2">[<a href="sections/references.html#ref-zorich-1" role="doc-biblioref">4</a>,<a href="sections/references.html#ref-zorich-2" role="doc-biblioref">5</a>]</span>.</p>
+<section id="readings" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="readings">Readings</h2>
+<p>The main textbook of the course is Pressley <span class="citation" data-cites="pressley">[<a href="sections/references.html#ref-pressley" role="doc-biblioref">1</a>]</span>. Other interesting readings are the books by do Carmo <span class="citation" data-cites="do-carmo">[<a href="sections/references.html#ref-do-carmo" role="doc-biblioref">2</a>]</span> and Bär <span class="citation" data-cites="bar">[<a href="sections/references.html#ref-bar" role="doc-biblioref">3</a>]</span>. I will assume some knowledge from Analysis and Linear Algebra. A good place to revise these topics are the books by Zorich <span class="citation" data-cites="zorich-1 zorich-2">[<a href="sections/references.html#ref-zorich-1" role="doc-biblioref">4</a>,<a href="sections/references.html#ref-zorich-2" role="doc-biblioref">5</a>]</span>.</p>
 </section>
 <section id="visualization" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="visualization">Visualization</h2>
 <p>It is important to visualize the geometrical objects and concepts we are going to talk about in this course. I will show basic Python code to plot curves and surfaces. This part of the course is <strong><code>not required</code></strong> for the final examination. If you want to have fun plotting with Pyhton, I recommend installation through <a href="https://www.anaconda.com">Anaconda</a> or <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>. The actual coding can then be done through <a href="https://jupyter.org">Jupyter Notebook</a>. Good references for scientific Python programming are <span class="citation" data-cites="johansson KSB-Python">[<a href="sections/references.html#ref-johansson" role="doc-biblioref">6</a>,<a href="sections/references.html#ref-KSB-Python" role="doc-biblioref">7</a>]</span>.<br>
-If you do not want to mess around with Python, do not despair. You can still visualize pretty much everything we will do in this course using the excellent online 3D grapher tool <a href="https://c3d.libretexts.org/CalcPlot3D/index.html">CalcPlot3D</a>. To understand how it works, please refer to the <a href="https://c3d.libretexts.org/CalcPlot3D/CalcPlot3D-Help/front.html">help manual</a> or to the short <a href="https://c3d.libretexts.org/CalcPlot3D/CalcPlot3D-Help/section-1.html">video introduction</a>.</p>
+If you do not want to mess around with Python, do not despair. You can still visualize pretty much everything we will do in this course using the excellent online 3D grapher tool <a href="https://c3d.libretexts.org/CalcPlot3D/index.html/">CalcPlot3D</a>. To understand how it works, please refer to the <a href="https://c3d.libretexts.org/CalcPlot3D/CalcPlot3D-Help/front.html">help manual</a> or to the short <a href="https://c3d.libretexts.org/CalcPlot3D/CalcPlot3D-Help/section-1.html">video introduction</a>.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -674,14 +695,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // default icon
+          link.classList.add("external");
+      }
+    }
 });
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./sections/part_1.html" class="pagination-link">
-        <span class="nav-page-text">Curves</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./sections/chap_1_0.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
