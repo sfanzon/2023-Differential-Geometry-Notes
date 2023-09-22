@@ -4,14 +4,21 @@
     "href": "index.html",
     "title": "Differential Geometry",
     "section": "",
-    "text": "Welcome\nThese are the Lecture Notes of Numbers, Sequences & Series 400297 for T1 2023/24 at the University of Hull. I will follow these lecture notes during the course. If you have any question or find any typo, please email me at\nUp to date information about the course, Tutorials and Homework will be published on the University of Hull Canvas Website\nand on the Course Webpage hosted on my website\nFeatures of these digital notes:"
+    "text": "Welcome\nThese are the Lecture Notes of Differential Geometry 661955 for T1 2023/24 at the University of Hull. We will study curves and surfaces in \\(\\mathbb{R}^3\\). I will follow these lecture notes during the course. If you have any question or find any typo, please email me at\nUp to date information about the course, Tutorials and Homework will be published on the University of Hull Canvas Website\nand on the Course Webpage hosted on my website\nFeatures of these digital notes:"
   },
   {
     "objectID": "index.html#readings",
     "href": "index.html#readings",
     "title": "Differential Geometry",
     "section": "Readings",
-    "text": "Readings\nWe will study the set of real numbers \\(\\mathbb{R}\\), and then sequences and series in \\(\\mathbb{R}\\). I will follow mainly the textbook by Bartle and Sherbert [1]. Another good reading is the book by Abbott [2]. I also point out the classic book by Rudin [3], although this is more difficult to understand.\n\n\n\n\n\n\nImportant\n\n\n\nYou are not expected to purchase any of the above books. These lecture notes will cover 100% of the topics you are expected to known in order to excel in the final exam.\n\n\n\n\n\n\n[1] R.G. Bartle, D.R. Sherbert, Introduction to real analysis, Fourth Edition, Wiley, 2011.\n\n\n[2] S. Abbott, Understanding analysis, Second Edition, Springer, 2015.\n\n\n[3] W. Rudin, Principles of mathematical analysis, Third Edition, McGraw Hill, 1976."
+    "text": "Readings\nThe main textbook of the course is Pressley [1]. Other interesting readings are the books by do Carmo [2] and Bär [3]. I will assume some knowledge from Analysis and Linear Algebra. A good place to revise these topics are the books by Zorich [4,5]."
+  },
+  {
+    "objectID": "index.html#visualization",
+    "href": "index.html#visualization",
+    "title": "Differential Geometry",
+    "section": "Visualization",
+    "text": "Visualization\nIt is important to visualize the geometrical objects and concepts we are going to talk about in this course. I will show basic Python code to plot curves and surfaces. This part of the course is not required for the final examination. If you want to have fun plotting with Pyhton, I recommend installation through Anaconda or Miniconda. The actual coding can then be done through Jupyter Notebook. Good references for scientific Python programming are [6,7].\nIf you do not want to mess around with Python, you can still visualize pretty much everything we will do in this course using the excellent online 3D grapher tool CalcPlot3D. To understand how it works, please refer to the help manual or to the short video introduction.\n\n\n\n\n\n\nImportant\n\n\n\nYou are not expected to purchase any of the above books. These lecture notes will cover 100% of the topics you are expected to known in order to excel in the final exam.\n\n\n\n\n\n\n[1] A. Pressley, Elementary differential geometry, Second Edition, Springer, 2010.\n\n\n[2] M.P. do Carmo, Differential geometry of curves and surfaces, Second Edition, Dover Books on Mathematics, 2017.\n\n\n[3] C. Bär, Elementary differential geometry, Cambridge University Press, 2010.\n\n\n[4] V.A. Zorich, Mathematical analysis i, Second Edition, Springer, 2015.\n\n\n[5] V.A. Zorich, Mathematical analysis II, Second Edition, Springer, 2016.\n\n\n[6] R. Johansson, Numerical python. Scientific computing and data science applications with numpy, SciPy and matplotlib, Second Edition, Apress, 2019.\n\n\n[7] Q. Kong, T. Siauw, A. Bayen, Python programming and numerical methods, Academic Press, 2020."
   },
   {
     "objectID": "sections/license.html#reuse",
@@ -32,6 +39,6 @@
     "href": "sections/references.html",
     "title": "References",
     "section": "",
-    "text": "[1] S.\nAbbott, Understanding analysis, Second Edition, Springer, 2015.\n\n\n[2] W.\nRudin, Principles of mathematical analysis, Third Edition, McGraw Hill,\n1976.\n\n\n[3] R.G. Bartle, D.R. Sherbert, Introduction to\nreal analysis, Fourth Edition, Wiley, 2011."
+    "text": "[1] R.\nJohansson, Numerical python. Scientific computing and data science\napplications with numpy, SciPy and matplotlib, Second Edition, Apress,\n2019.\n\n\n[2] Q.\nKong, T. Siauw, A. Bayen, Python programming and numerical methods,\nAcademic Press, 2020.\n\n\n[3] C.\nBär, Elementary differential geometry, Cambridge University Press,\n2010.\n\n\n[4] M.P. do Carmo, Differential geometry of curves\nand surfaces, Second Edition, Dover Books on Mathematics, 2017.\n\n\n[5] A.\nPressley, Elementary differential geometry, Second Edition, Springer,\n2010.\n\n\n[6] V.A. Zorich, Mathematical analysis II, Second\nEdition, Springer, 2016.\n\n\n[7] V.A. Zorich, Mathematical analysis i, Second\nEdition, Springer, 2015."
   }
 ]

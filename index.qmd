@@ -7,9 +7,8 @@ $$
 
 # Welcome {.unnumbered}
 
-These are the Lecture Notes of **Numbers, Sequences & Series 400297** for T1 2023/24 at the University of Hull. I will follow these lecture notes during the course. 
+These are the Lecture Notes of **Differential Geometry 661955** for T1 2023/24 at the University of Hull. We will study curves and surfaces in $\R^3$. I will follow these lecture notes during the course. 
 If you have any question or find any typo, please email me at
-
 
 ::: {.content-visible when-format="html"}
 <div style="text-align: center;">
@@ -32,7 +31,7 @@ Up to date information about the course, Tutorials and Homework will be publishe
 
 ::: {.content-visible when-format="html"}
 <div style="text-align: center;">
-**[canvas.hull.ac.uk/courses/67551](https://canvas.hull.ac.uk/courses/67551)**
+**[canvas.hull.ac.uk/courses/67594](https://canvas.hull.ac.uk/courses/67594)**
 </div>
 :::
 
@@ -40,7 +39,7 @@ Up to date information about the course, Tutorials and Homework will be publishe
 ::: {.content-visible when-format="pdf"}
 \begin{center}
 \textbf{
-\href{https://canvas.hull.ac.uk/courses/67551}{canvas.hull.ac.uk/courses/67551}
+\href{https://canvas.hull.ac.uk/courses/67594}{canvas.hull.ac.uk/courses/67594}
 }
 \end{center}
 :::
@@ -51,7 +50,7 @@ and on the **Course Webpage** hosted on my website
 
 ::: {.content-visible when-format="html"}
 <div style="text-align: center;">
-**[silviofanzon.com/blog/2023/NSS](https://www.silviofanzon.com/blog/2023/NSS/)**
+**[silviofanzon.com/blog/2023/Differential-Geometry](https://www.silviofanzon.com/blog/2023/Differential-Geometry/)**
 </div>
 :::
 
@@ -59,7 +58,7 @@ and on the **Course Webpage** hosted on my website
 ::: {.content-visible when-format="pdf"}
 \begin{center}
 \textbf{
-\href{https://www.silviofanzon.com/blog/2023/NSS/}{silviofanzon.com/blog/2023/NSS}
+\href{https://www.silviofanzon.com/blog/2023/Differential-Geometry/}{silviofanzon.com/blog/2023/Differential-Geometry}
 }
 \end{center}
 :::
@@ -88,8 +87,30 @@ Features of these digital notes:
 
 ## Readings {.unnumbered}
 
-We will study the set of real numbers $\R$, and then sequences and series in $\R$. I will follow mainly the textbook by Bartle and Sherbert [@bartle]. Another good reading is the book by Abbott [@abbott]. I also point out the classic book by Rudin [@rudin_introduction], although this is more difficult to understand.
+The main textbook of the course is Pressley [@pressley]. 
+Other interesting readings are the books by do Carmo [@do-carmo] 
+and Bär [@bar]. I will assume some knowledge from Analysis 
+and Linear Algebra. A good place to revise these topics are 
+the books by Zorich [@zorich-1; @zorich-2]. 
 
+
+
+## Visualization {.unnumbered} 
+
+It is important to visualize the geometrical objects and concepts 
+we are going to talk about in this course. I will show basic Python 
+code to plot curves and surfaces. This part of the course is 
+**`not required`** for the final examination. If you want to 
+have fun plotting with Pyhton, I recommend installation through 
+[Anaconda](https://www.anaconda.com) or [Miniconda](https://docs.conda.io/en/latest/miniconda.html). 
+The actual coding can then be done through 
+[Jupyter Notebook](https://jupyter.org). Good references for scientific 
+Python programming are [@johansson;@KSB-Python].   
+If you do not want to mess around with Python, you can still visualize 
+pretty much everything we will do in this course using the excellent 
+online 3D grapher tool [CalcPlot3D](https://c3d.libretexts.org/CalcPlot3D/index.html/). 
+To understand how it works, please refer to the [help manual](https://c3d.libretexts.org/CalcPlot3D/CalcPlot3D-Help/front.html) 
+or to the short [video introduction](https://c3d.libretexts.org/CalcPlot3D/CalcPlot3D-Help/section-1.html).
 
 
 
