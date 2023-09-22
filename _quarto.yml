@@ -107,3 +107,7 @@ format:
 
 crossref:
   eq-prefix: ""
+
+
+filters:
+  - custom-numbered-blocks
