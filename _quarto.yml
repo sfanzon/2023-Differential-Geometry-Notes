@@ -82,7 +82,7 @@ format:
       - top=25mm
       - left=15mm
       - right=15mm
-      - bottom=15mm
+      - bottom=25mm
       - heightrounded
     link-citations: true
     link-external-icon: true
@@ -96,15 +96,18 @@ format:
     include-in-header:
       - text: |
           \usepackage{scrlayer-scrpage}
-          \lohead{Differential Geometry}
+          \lohead{Numbers, Sequences and Series}
           \cohead{}
           \rohead{Page \pagemark}
-          \lofoot{}
+          \lofoot{Dr. Silvio Fanzon}
           \cofoot{}
-          \rofoot{}
+          \rofoot{S.Fanzon@hull.ac.uk}
           \setheadsepline{0.5pt}
+          \setfootsepline{0.8pt}
           \addtokomafont{pageheadfoot}{\color{gray}\textnormal}
           \setkomafont{pagenumber}{}
+          \ModifyLayer[addvoffset=-.6ex]{scrheadings.foot.above.line}
+          \ModifyLayer[addvoffset=-.6ex]{plain.scrheadings.foot.above.line}
           \usepackage{fvextra}
           \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
 
