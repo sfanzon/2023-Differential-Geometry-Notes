@@ -41,6 +41,7 @@ book:
 
     - sections/chap_1_0.qmd
     - sections/chap_1_1.qmd
+    - sections/chap_1_2.qmd
 
 
     - sections/license.qmd
