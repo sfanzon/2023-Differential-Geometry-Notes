@@ -21,6 +21,13 @@
     "text": "Visualization\nIt is important to visualize the geometrical objects and concepts we are going to talk about in this course. I will show basic Python code to plot curves and surfaces. This part of the course is not required for the final examination. If you want to have fun plotting with Pyhton, I recommend installation through Anaconda or Miniconda. The actual coding can then be done through Jupyter Notebook. Good references for scientific Python programming are [6,7].\nIf you do not want to mess around with Python, you can still visualize pretty much everything we will do in this course using the excellent online 3D grapher tool CalcPlot3D. To understand how it works, please refer to the help manual or to the short video introduction.\n\n\n\n\n\n\nImportant\n\n\n\nYou are not expected to purchase any of the above books. These lecture notes will cover 100% of the topics you are expected to known in order to excel in the final exam.\n\n\n\n\n\n\n[1] A. Pressley, Elementary differential geometry, Second Edition, Springer, 2010.\n\n\n[2] M.P. do Carmo, Differential geometry of curves and surfaces, Second Edition, Dover Books on Mathematics, 2017.\n\n\n[3] C. Bär, Elementary differential geometry, Cambridge University Press, 2010.\n\n\n[4] V.A. Zorich, Mathematical analysis i, Second Edition, Springer, 2015.\n\n\n[5] V.A. Zorich, Mathematical analysis II, Second Edition, Springer, 2016.\n\n\n[6] R. Johansson, Numerical python. Scientific computing and data science applications with numpy, SciPy and matplotlib, Second Edition, Apress, 2019.\n\n\n[7] Q. Kong, T. Siauw, A. Bayen, Python programming and numerical methods, Academic Press, 2020."
   },
   {
+    "objectID": "sections/chap_1_0.html",
+    "href": "sections/chap_1_0.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "Coming soon"
+  },
+  {
     "objectID": "sections/license.html#reuse",
     "href": "sections/license.html#reuse",
     "title": "License",

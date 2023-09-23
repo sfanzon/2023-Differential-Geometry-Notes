@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Differential Geometry - References</title>
+<title>Differential Geometry - 1&nbsp; Introduction</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -49,7 +30,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../sections/license.html" rel="prev">
+<link href="../sections/license.html" rel="next">
+<link href="../index.html" rel="prev">
 <link href="../images/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -92,13 +74,25 @@ div.csl-indent {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
 .Proof {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .DONE {
   --color1: #cce7b1;
@@ -108,25 +102,13 @@ div.csl-indent {
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
-.Theorem {
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
-}
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
 }
 .Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
 }
 </style>
 
@@ -156,7 +138,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sections/references.html">References</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sections/chap_1_0.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -176,7 +158,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/chap_1_0.html" class="sidebar-item-text sidebar-link">
+  <a href="../sections/chap_1_0.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
@@ -188,7 +170,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/references.html" class="sidebar-item-text sidebar-link active">
+  <a href="../sections/references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -205,7 +187,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">References</h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
 </div>
 
 
@@ -220,41 +202,7 @@ div.csl-indent {
 
 </header>
 
-<div id="refs" class="references csl-bib-body" role="list">
-<div id="ref-johansson" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">R.
-Johansson, Numerical python. Scientific computing and data science
-applications with numpy, SciPy and matplotlib, Second Edition, Apress,
-2019.</div>
-</div>
-<div id="ref-KSB-Python" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[2] </div><div class="csl-right-inline">Q.
-Kong, T. Siauw, A. Bayen, Python programming and numerical methods,
-Academic Press, 2020.</div>
-</div>
-<div id="ref-bar" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[3] </div><div class="csl-right-inline">C.
-Bär, Elementary differential geometry, Cambridge University Press,
-2010.</div>
-</div>
-<div id="ref-do-carmo" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[4] </div><div class="csl-right-inline">M.P. do Carmo, Differential geometry of curves
-and surfaces, Second Edition, Dover Books on Mathematics, 2017.</div>
-</div>
-<div id="ref-pressley" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[5] </div><div class="csl-right-inline">A.
-Pressley, Elementary differential geometry, Second Edition, Springer,
-2010.</div>
-</div>
-<div id="ref-zorich-2" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[6] </div><div class="csl-right-inline">V.A. Zorich, Mathematical analysis II, Second
-Edition, Springer, 2016.</div>
-</div>
-<div id="ref-zorich-1" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[7] </div><div class="csl-right-inline">V.A. Zorich, Mathematical analysis i, Second
-Edition, Springer, 2015.</div>
-</div>
-</div>
+<p>Coming soon</p>
 
 
 
@@ -623,11 +571,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../sections/license.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">License</span>
+      <a href="../index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../sections/license.html" class="pagination-link">
+        <span class="nav-page-text">License</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
