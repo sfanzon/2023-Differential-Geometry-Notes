@@ -7,6 +7,6 @@ $$
 
 
 
-# Curves
+# Parametrized curves
 
 Coming soon
