@@ -1,21 +1,21 @@
 \providecommand{\Pageref}[1]{\hfill p.\pageref{#1}}
- [**Goal 1.1**](#Goal-1.1)\Pageref{Goal-1.1}
-
- [**Question 1.2**](#Question-1.2)\Pageref{Question-1.2}
-
- [**Problem**](#Problem*-1.1)\Pageref{Problem*-1.1}
-
- [**Definition 1.3**](#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
-
- [**Definition 1.4**](#level-curve): Level curve\Pageref{level-curve}
-
- [**Definition 1.5**](#Definition-1.5)\Pageref{Definition-1.5}
+ [**Goal**](#Goal*-1.1)\Pageref{Goal*-1.1}
 
  [**Question**](#Question*-1.2)\Pageref{Question*-1.2}
 
+ [**Problem**](#Problem*-1.3)\Pageref{Problem*-1.3}
+
+ [**Definition 1.1**](#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 1.2**](#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 1.3**](#Definition-1.3)\Pageref{Definition-1.3}
+
+ [**Question**](#Question*-1.4)\Pageref{Question*-1.4}
+
  [**Example**](#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
 
- [**Remark 1.6**](#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+ [**Remark 1.4**](#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
 
  [**Example**](#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
 

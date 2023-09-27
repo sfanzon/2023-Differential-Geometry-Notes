@@ -119,11 +119,11 @@ plt.show()
 ```
 
 
-::: {.Goal .unnambered}
+::: {.Goal .unnumbered}
 The aim of this course is to study curves by differentiating them. 
 :::
 
-::: {.Question .unnambered}
+::: {.Question .unnumbered}
 In what sense do we differentiate the above curves?
 :::
 

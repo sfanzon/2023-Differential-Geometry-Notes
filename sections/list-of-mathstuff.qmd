@@ -4106,3 +4106,29 @@
  [**Example**](chap_1.qmd#parametrizing-the-helix): Parametrizing the helix\Pageref{parametrizing-the-helix}
 
  [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Goal**](chap_1.qmd#Goal*-1)\Pageref{Goal*-1}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Problem**](chap_1.qmd#Problem*-3)\Pageref{Problem*-3}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-4)\Pageref{Question*-4}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Example**](chap_1.qmd#parametrizing-the-helix): Parametrizing the helix\Pageref{parametrizing-the-helix}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
