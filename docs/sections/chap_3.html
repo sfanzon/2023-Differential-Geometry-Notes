@@ -70,27 +70,15 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
 }
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Example {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Goal {
+.Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Proposition {
+.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -98,7 +86,27 @@ ul.task-list li input[type="checkbox"] {
   --color1: #cce7b1;
   --color2: #86b754;
 }
-.Lemma {
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -106,21 +114,17 @@ ul.task-list li input[type="checkbox"] {
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Theorem {
+.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
 .Remark {
   --color1: #bce5de;
   --color2: #21aa93;
+}
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 </style>
 
@@ -255,6 +259,78 @@ ul.task-list li input[type="checkbox"] {
 \gamma_i \ \colon (a,b) \to \mathbb{R}\,,
 \]</span> for all <span class="math inline">\(i = 1, \ldots, n\)</span>.</p>
 </div></details>
+</div>
+<p>As we already mentioned, the aim of the course is to study curves by <strong>differentiating</strong> them. Let us see what that means for curves.</p>
+<div id="smooth-functions" class="Definition" title="Smooth functions">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 2: </strong>Smooth functions</summary><div>A scalar function <span class="math inline">\(f \ \colon (a,b) \to \mathbb{R}\)</span> is called <strong>smooth</strong> if the derivative <span class="math display">\[
+\frac{d^n f}{dt^n}
+\]</span> exists for all <span class="math inline">\(n \geq 1\)</span> and <span class="math inline">\(t \in (a,b)\)</span>.<p></p>
+</div></details>
+</div>
+<p>We will denote the first and second derivatives of <span class="math inline">\(f\)</span> as follows: <span class="math display">\[
+\dot f :=  \frac{d f}{dt} \,, \quad  \ddot f := \frac{d^2 f}{dt^2} \,.
+\]</span></p>
+<div id="Example*-1" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example</strong></summary><div>The function <span class="math inline">\(f(x)=x^4\)</span> is smooth, with <span class="math display">\[\begin{align}
+&amp; \frac{d f}{dt}  = 4x^3 ,\,\, \frac{d^2 f}{dt^2}  = 12 x^2 \,, \\
+&amp; \frac{d^3 f}{dt^3}  = 24 x ,\,\, \frac{d^4 f}{dt^4} = 24  \,, \\
+&amp; \frac{d^n f}{dt^n}  = 0  \, \text{ for all } \, n \geq 5  \,.
+\end{align}\]</span> Other examples smooth functions are polynomials, as well as <span class="math display">\[
+f(t) = \cos(t) , \,\, f(t) = \sin(t) \,, \,\, f(t) = e^t \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="Definition-3" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 3</strong></summary><div>Let <span class="math inline">\(\gamma \ \colon (a,b) \to \mathbb{R}^n\)</span> with <span class="math display">\[
+\gamma(t) = ( \gamma_1(t), \ldots, \gamma_n(t) )
+\]</span> be a parametrized curve. We say that <span class="math inline">\(\gamma\)</span> is <strong>smooth</strong> if the components <span class="math display">\[
+\gamma_i \ \colon (a,b) \to \mathbb{R}
+\]</span> are smooth for all <span class="math inline">\(i=1,\ldots,n\)</span>. The derivatives of <span class="math inline">\(\gamma\)</span> are <span class="math display">\[
+\frac{d^k\gamma}{dt^k}  := \left(  \frac{d^k\gamma_1}{dt^k} , \ldots, \frac{d^k\gamma_n}{dt^k} \right)  
+\]</span> for all <span class="math inline">\(k \in \mathbb{N}\)</span>. As a shorthand, we will denote the first derivative of <span class="math inline">\(\gamma\)</span> as <span class="math display">\[
+\dot \gamma:= \frac{d\gamma}{dt} = \left(  \frac{d\gamma_1}{dt} , \ldots, \frac{d\gamma_n}{dt} \right)  
+\]</span> and the second by <span class="math display">\[
+\ddot \gamma:= \frac{d^2\gamma}{dt^2} = \left(  \frac{d^2\gamma_1}{dt^2} , \ldots, \frac{d^2\gamma_n}{dt^2} \right)   \,.
+\]</span><p></p>
+</div></details>
+</div>
+<p>In <a href="#fig-smooth-curve">Figure&nbsp;<span>3.1</span></a> we skectch a smooth and a non-smooth curve. Notice that the curve on the right is smooth, except for the point <span class="math inline">\(x\)</span>.</p>
+<div id="fig-smooth-curve" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../images/smooth_curve.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.1: Example of smooth and non-smooth curves</figcaption>
+</figure>
+</div>
+<p>We will work under the following assumption.</p>
+<div id="Assumption*-2" class="Assumption unnumbered">
+<p></p><details class="Assumption fbx-simplebox fbx-default" open=""><summary><strong>Assumption</strong></summary><div>All the parametrized curves in this lecture notes are assumed to be <strong>smooth</strong>.<p></p>
+</div></details>
+</div>
+<div id="Example*-3" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example</strong></summary><div>The circle <span class="math display">\[
+\gamma(t) = (\cos(t),\sin(t))
+\]</span> is a smooth parametrized curve, since both <span class="math inline">\(\cos(t)\)</span> and <span class="math inline">\(\sin(t)\)</span> are smooth functions. We have <span class="math display">\[
+\dot \gamma= (-\sin(t),\cos(t)) \,.
+\]</span> For example the derivative of <span class="math inline">\(\gamma\)</span> at the point <span class="math inline">\((0,1)\)</span> is given by <span class="math display">\[
+\dot \gamma( \pi/2) = (-\sin(\pi/2),\cos(\pi/2)) = (-1,0) \,.
+\]</span> The plot of the circle and the derivative vector at <span class="math inline">\((-1,0)\)</span> can be seen in <a href="#fig-circle-tangent">Figure&nbsp;<span>3.2</span></a>.<p></p>
+</div></details>
+</div>
+<div class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div id="fig-circle-tangent" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="chap_3_files/figure-html/fig-circle-tangent-output-1.png" width="534" height="503" class="figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.2: Plot of Circle and Tangent Vector at <span class="math inline">\((0,1)\)</span></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="fig-tangent" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../images/tangent.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.3: Approximating the tangent vector</figcaption>
+</figure>
 </div>
 
 

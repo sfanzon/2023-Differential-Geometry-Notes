@@ -40,7 +40,146 @@ for all $i = 1, \ldots, n$.
 :::
 
 
+As we already mentioned, the aim of the course is to study curves by **differentiating** them. Let us see what that means for curves.
 
+::: Definition
+### Smooth functions
+
+A scalar function $f \ \colon (a,b) \to \R$ is called **smooth** if the derivative
+$$
+\frac{d^n f}{dt^n}
+$$
+exists for all $n \geq 1$ and $t \in (a,b)$. 
+:::
+
+We will denote the first and second derivatives of $f$ as follows:
+$$
+\dot f :=  \frac{d f}{dt} \,, \quad  \ddot f := \frac{d^2 f}{dt^2} \,.
+$$
+
+
+::: Example
+The function $f(x)=x^4$ is smooth, with
+\begin{align}
+& \frac{d f}{dt}  = 4x^3 ,\,\, \frac{d^2 f}{dt^2}  = 12 x^2 \,, \\
+& \frac{d^3 f}{dt^3}  = 24 x ,\,\, \frac{d^4 f}{dt^4} = 24  \,, \\
+& \frac{d^n f}{dt^n}  = 0  \, \text{ for all } \, n \geq 5  \,.
+\end{align}
+Other examples smooth functions are polynomials, as well as
+$$
+f(t) = \cos(t) , \,\, f(t) = \sin(t) \,, \,\, f(t) = e^t \,.
+$$
+:::
+
+
+::: Definition 
+
+Let $\gamma \ \colon (a,b) \to \R^n$ with 
+$$
+\g(t) = ( \g_1(t), \ldots, \g_n(t) ) 
+$$
+be a parametrized curve. We say that $\g$ is **smooth** if the components
+$$
+\g_i \ \colon (a,b) \to \R
+$$
+are smooth for all $i=1,\ldots,n$. The derivatives of $\g$ are 
+$$
+\frac{d^k\gamma}{dt^k}  := \left(  \frac{d^k\gamma_1}{dt^k} , \ldots, \frac{d^k\gamma_n}{dt^k} \right)  
+$$
+for all $k \in \N$. As a shorthand, we will denote the first derivative of $\g$ as 
+$$
+\dot \g := \frac{d\gamma}{dt} = \left(  \frac{d\gamma_1}{dt} , \ldots, \frac{d\gamma_n}{dt} \right)  
+$$
+and the second by
+$$
+\ddot \g := \frac{d^2\gamma}{dt^2} = \left(  \frac{d^2\gamma_1}{dt^2} , \ldots, \frac{d^2\gamma_n}{dt^2} \right)   \,.
+$$
+:::
+
+In @fig-smooth-curve we skectch a smooth and a non-smooth curve. Notice that the curve on the right is smooth, except for the point $x$.
+
+
+![Example of smooth and non-smooth curves](/images/smooth_curve.png){#fig-smooth-curve width=70%}
+
+
+We will work under the following assumption.
+
+::: {.Assumption .unnumbered}
+
+All the parametrized curves in this lecture notes are assumed to be **smooth**.
+
+:::
+
+
+::: Example
+
+The circle 
+$$
+\g (t) = (\cos(t),\sin(t))
+$$
+is a smooth parametrized curve, since both $\cos(t)$ and $\sin(t)$ are smooth functions. We have
+$$
+\dot \g = (-\sin(t),\cos(t)) \,.
+$$
+For example the derivative of $\g$ at the point $(0,1)$ is given by
+$$
+\dot \g( \pi/2) = (-\sin(\pi/2),\cos(\pi/2)) = (-1,0) \,.
+$$
+The plot of the circle and the derivative vector at $(-1,0)$ can be seen in @fig-circle-tangent.
+:::
+
+
+
+
+```{python}
+#| echo: false
+#| fig-cap: "Plot of Circle and Tangent Vector at $(0,1)$" 
+#| label: fig-circle-tangent
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Create values for t ranging from 0 to 2*pi
+t = np.linspace(0, 2 * np.pi, 100)
+
+# Calculate x and y coordinates for the circle
+x = np.cos(t)
+y = np.sin(t)
+
+# Plot the circle
+plt.figure(figsize=(6, 6))
+plt.plot(x, y, color = 'deeppink',label='Circle')
+plt.axis('equal')  # Equal aspect ratio
+
+# Define the point on the circle where you want to find the tangent
+point_x = 0
+point_y = 1
+
+# Plot the point
+plt.scatter(point_x, point_y, color='black', label='Point (0,1)')
+
+# Calculate the tangent vector at the point (0,1)
+tangent_vector_x = -np.sin(np.pi/2)  # Derivative of cos(t) with respect to t at t=pi/2
+tangent_vector_y = np.cos(np.pi/2)   # Derivative of sin(t) with respect to t at t=pi/2
+
+# Plot the tangent vector at the point (0,1)
+plt.quiver(point_x, point_y, tangent_vector_x, tangent_vector_y,angles='xy', scale_units='xy', scale=1, color='blue', label='Tangent Vector')
+
+
+# Add labels and legend
+plt.xlabel('x')
+plt.ylabel('y')
+plt.legend()
+
+# Show the plot
+plt.grid(color='lightgray')
+plt.show()
+```
+
+
+
+
+![Approximating the tangent vector](/images/tangent.png){#fig-tangent width=70%}
 
 
 
