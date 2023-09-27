@@ -9,4 +9,39 @@ $$
 
 # Parametrized curves
 
-Coming soon
+Let us recall the definition of **parametrized curve**.
+
+
+::: Definition
+### Parametrized curve
+
+A **parametrized curve** in $\R^n$ is a function 
+$$
+\gamma \ \colon  (a,b) \to \R^n \,.
+$$
+where
+
+$$
+(a,b) = \{ t \in \R \ \colon \ a < t < b \} \,,
+$$
+with
+$$
+- \infty \leq a < b \leq \infty \,.
+$$
+The **components** of $\gamma(t) \in \R^n$ are denoted by 
+$$
+\gamma(t) = ( \gamma_1(t), \ldots, \gamma_n(t) ) \,,
+$$
+where the components are functions
+$$
+\gamma_i \ \colon (a,b) \to \R \,, 
+$$
+for all $i = 1, \ldots, n$.
+:::
+
+
+
+
+
+
+

@@ -66,7 +66,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Corollary {
+.Question {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -74,15 +74,19 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Remark {
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Example {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
 }
-.Example {
+.Remark {
   --color1: #bce5de;
   --color2: #21aa93;
 }
@@ -90,19 +94,7 @@ ul.task-list li input[type="checkbox"] {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proposition {
+.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -110,12 +102,30 @@ ul.task-list li input[type="checkbox"] {
   --color1: #cce7b1;
   --color2: #86b754;
 }
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 </style>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -169,7 +179,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sections/chap_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Plotting curves</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Curves in Python</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -187,7 +197,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sections/chap_5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Plotting surfaces</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Surfaces in Python</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -230,7 +240,22 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Coming soon</p>
+<p>Let us recall the definition of <strong>parametrized curve</strong>.</p>
+<div id="parametrized-curve" class="Definition" title="Parametrized curve">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 1: </strong>Parametrized curve</summary><div>A <strong>parametrized curve</strong> in <span class="math inline">\(\mathbb{R}^n\)</span> is a function <span class="math display">\[
+\gamma \ \colon  (a,b) \to \mathbb{R}^n \,.
+\]</span> where<p></p>
+<p><span class="math display">\[
+(a,b) = \{ t \in \mathbb{R}\ \colon \ a &lt; t &lt; b \} \,,
+\]</span> with <span class="math display">\[
+- \infty \leq a &lt; b \leq \infty \,.
+\]</span> The <strong>components</strong> of <span class="math inline">\(\gamma(t) \in \mathbb{R}^n\)</span> are denoted by <span class="math display">\[
+\gamma(t) = ( \gamma_1(t), \ldots, \gamma_n(t) ) \,,
+\]</span> where the components are functions <span class="math display">\[
+\gamma_i \ \colon (a,b) \to \mathbb{R}\,,
+\]</span> for all <span class="math inline">\(i = 1, \ldots, n\)</span>.</p>
+</div></details>
+</div>
 
 
 
@@ -600,7 +625,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../sections/chap_2.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Plotting curves</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Curves in Python</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

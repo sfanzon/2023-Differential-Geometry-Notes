@@ -6,7 +6,7 @@ $$
 
 
 
-# Plotting curves  {#sec-plot-curves} 
+# Curves in Python  {#sec-plot-curves} 
 
 ## Curves in 2D  {#sec-plot-2d-curves}
 

@@ -3062,3 +3062,1047 @@
  [**Theorem 9**](chap_1_0.qmd#we-will-prove-this-in-the-future-1): We will prove this in the future\Pageref{we-will-prove-this-in-the-future-1}
 
  [**Remark 1**](chap_1_1.qmd#Remark-1)\Pageref{Remark-1}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Remark 2**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Remark 2**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Remark 2**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Remark 2**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Remark 2**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Remark 2**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Remark 2**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Remark 2**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Remark 3**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Remark 3**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Question 3**](chap_1.qmd#Question-3)\Pageref{Question-3}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Remark 3**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Remark 3**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Remark 3**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Remark 3**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Remark 3**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Remark 3**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#straight-line): Straight line\Pageref{straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 4**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Question 1**](chap_1.qmd#Question-1)\Pageref{Question-1}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 2**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 3**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 4**](chap_1.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 5**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Example**](chap_1.qmd#parametrizing-the-helix): Parametrizing the helix\Pageref{parametrizing-the-helix}
+
+ [**Question 1**](chap_1.qmd#Question-1)\Pageref{Question-1}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 2**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 3**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 4**](chap_1.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 5**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Example**](chap_1.qmd#parametrizing-the-helix): Parametrizing the helix\Pageref{parametrizing-the-helix}
+
+ [**Question 1**](chap_1.qmd#Question-1)\Pageref{Question-1}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 2**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 3**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 4**](chap_1.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 5**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Example**](chap_1.qmd#parametrizing-the-helix): Parametrizing the helix\Pageref{parametrizing-the-helix}
+
+ [**Question 1**](chap_1.qmd#Question-1)\Pageref{Question-1}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 2**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 3**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 4**](chap_1.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 5**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Example**](chap_1.qmd#parametrizing-the-helix): Parametrizing the helix\Pageref{parametrizing-the-helix}
+
+ [**Goal 1**](chap_1.qmd#Goal-1)\Pageref{Goal-1}
+
+ [**Question 2**](chap_1.qmd#Question-2)\Pageref{Question-2}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 3**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 4**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 5**](chap_1.qmd#Definition-5)\Pageref{Definition-5}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 6**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Example**](chap_1.qmd#parametrizing-the-helix): Parametrizing the helix\Pageref{parametrizing-the-helix}
+
+ [**Goal 1**](chap_1.qmd#Goal-1)\Pageref{Goal-1}
+
+ [**Question 2**](chap_1.qmd#Question-2)\Pageref{Question-2}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 3**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 4**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 5**](chap_1.qmd#Definition-5)\Pageref{Definition-5}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 6**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Example**](chap_1.qmd#parametrizing-the-helix): Parametrizing the helix\Pageref{parametrizing-the-helix}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Goal 1**](chap_1.qmd#Goal-1)\Pageref{Goal-1}
+
+ [**Question 2**](chap_1.qmd#Question-2)\Pageref{Question-2}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 3**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 4**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 5**](chap_1.qmd#Definition-5)\Pageref{Definition-5}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 6**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Example**](chap_1.qmd#parametrizing-the-helix): Parametrizing the helix\Pageref{parametrizing-the-helix}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Goal 1**](chap_1.qmd#Goal-1)\Pageref{Goal-1}
+
+ [**Question 2**](chap_1.qmd#Question-2)\Pageref{Question-2}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 3**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 4**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 5**](chap_1.qmd#Definition-5)\Pageref{Definition-5}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 6**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Example**](chap_1.qmd#parametrizing-the-helix): Parametrizing the helix\Pageref{parametrizing-the-helix}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Goal 1**](chap_1.qmd#Goal-1)\Pageref{Goal-1}
+
+ [**Question 2**](chap_1.qmd#Question-2)\Pageref{Question-2}
+
+ [**Problem**](chap_1.qmd#Problem*-1)\Pageref{Problem*-1}
+
+ [**Definition 3**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 4**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 5**](chap_1.qmd#Definition-5)\Pageref{Definition-5}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Example**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 6**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Example**](chap_1.qmd#parametrizing-the-helix): Parametrizing the helix\Pageref{parametrizing-the-helix}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}

@@ -96,7 +96,7 @@ format:
     include-in-header:
       - text: |
           \usepackage{scrlayer-scrpage}
-          \lohead{Numbers, Sequences and Series}
+          \lohead{Differential Geometry}
           \cohead{}
           \rohead{Page \pagemark}
           \lofoot{Dr. Silvio Fanzon}
@@ -151,6 +151,12 @@ custom-numbered-blocks:
     Question: 
       group: thmlike
 
+    Problem: 
+      group: thmlike
+
+    Goal: 
+      group: thmlike
+    
     Definition:
       group: thmlike
       colors: [c6e6ed, 1995ad]

@@ -7,7 +7,7 @@ $$
 
 
 
-# Plotting surfaces
+# Surfaces in Python
 
 
 ## Plots with Matplotlib
