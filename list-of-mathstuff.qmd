@@ -13,22 +13,44 @@
 
  [**Question**](#Question*-1.4)\Pageref{Question*-1.4}
 
- [**Example**](#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+ [**Example 1.4**](#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
 
- [**Remark 1.4**](#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+ [**Remark 1.5**](#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
 
- [**Example**](#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+ [**Example 1.6**](#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
 
- [**Example**](#parametrizing-the-helix): Parametrizing the helix\Pageref{parametrizing-the-helix}
+ [**Example 1.7**](#parametrizing-the-helix): Parametrizing the helix\Pageref{parametrizing-the-helix}
 
  [**Definition 3.1**](#parametrized-curve-1): Parametrized curve\Pageref{parametrized-curve-1}
 
  [**Definition 3.2**](#smooth-functions): Smooth functions\Pageref{smooth-functions}
 
- [**Example**](#Example*-3.1)\Pageref{Example*-3.1}
+ [**Example 3.3**](#Example-3.3)\Pageref{Example-3.3}
 
- [**Definition 3.3**](#Definition-3.3)\Pageref{Definition-3.3}
+ [**Definition 3.4**](#Definition-3.4)\Pageref{Definition-3.4}
 
- [**Assumption**](#Assumption*-3.2)\Pageref{Assumption*-3.2}
+ [**Assumption**](#Assumption*-3.1)\Pageref{Assumption*-3.1}
 
- [**Example**](#Example*-3.3)\Pageref{Example*-3.3}
+ [**Example 3.5**](#Example-3.5)\Pageref{Example-3.5}
+
+ [**Definition 3.6**](#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 3.7**](#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 3.8**](#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 3.9**](#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 3.10**](#partition): Partition\Pageref{partition}
+
+ [**Definition 3.11**](#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 3.12**](#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 3.13**](#Question-3.13)\Pageref{Question-3.13}
+
+ [**Theorem 3.14**](#characterizing-the-length-of-gamma): Characterizing the length of $\gamma$\Pageref{characterizing-the-length-of-gamma}
+
+ [**Proof**](#Proof*-3.2)\Pageref{Proof*-3.2}
+
+ [**Example 3.15**](#length-of-a-circle): Length of a circle\Pageref{length-of-a-circle}

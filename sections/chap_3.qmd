@@ -179,8 +179,446 @@ plt.show()
 
 
 
+## Tangent vectors
+
+
+Looking at @fig-circle-tangent, it seems like the vector 
+$$
+\dot \g(\pi/2) = (-1,0)
+$$
+is **tangent** to the circle at the point
+$$
+\g(\pi/2) = (0,1) \,.
+$$
+Is this a coincidence? Not that all. Let us look at the definition of derivative at a point:
+$$
+\dot \g (t) := \lim_{\delta \to 0} \frac{\g(t + \delta) - \g(t)}{\delta} \,.
+$$
+If we just look at the quantity
+$$
+\frac{\g(t + \delta) - \g(t)}{\delta} 
+$$
+for non-negative $\delta$, we see that this vector is parallel to the chord joining $\g(t)$ to $\g(t + \delta)$, as shown in @fig-tangent below. As $\delta \to 0$, the length of the chord tends to zero. However the **direction** of the chord becomes **parallel** to that of the tangent vector of the curve $\g$ at $\g(t)$. Since 
+$$
+\frac{\g(t + \delta) - \g(t)}{\delta}  \to \dot \g(t)
+$$
+as $\delta \to 0$, we see that $\dot \g (t)$ is **parallel** to the tangent of $\g$ at $\g(t)$, as showin in @fig-tangent.
+
+
 ![Approximating the tangent vector](/images/tangent.png){#fig-tangent width=70%}
 
 
 
+The above remark motivates the following definition. 
 
+::: Definition
+### Tangent vector {#definition-tangent}
+
+Let $\g \ \colon (a,b) \to \R^n$ be a parametrized curve. The tangent vector to $\g$ at the point $\g(t)$ is defined as 
+$$
+\tau:= \dot \g(t) \,.
+$$
+:::
+
+
+
+::: Example
+### Tangent vector to helix
+
+The helix is described by the parametric curve 
+$$
+\g \ \colon \R \to \R^3
+$$
+with
+$$
+\g_1(t) = \cos (t)\, ,  \,\,
+\g_2(t) = \sin (t)\, ,  \,\,
+\g_3(t) = t . 
+$$
+This is plotted in @fig-helix-tangent below. The tangent vector at point $\g(t)$ is given by
+$$
+\dot \g (t) = ( -\sin(t), \cos(t) , 1) \,.
+$$
+For example in @fig-helix-tangent we plot the tangent vector at time $t = \pi/2$, that is,
+$$
+\dot\g(\pi/2) = (-1,0,\pi/2) \,. 
+$$
+The above looks very similar to the tangent vector to the circle. Except that there is a $z$ component, and that component is constant and equal to $1$. Intuitively this means that the helix is *lifting* from the plane $xy$ with constant speed with respect to the $z$-axis. We will soon give a name to this concept. 
+:::
+
+
+```{python}
+#| echo: false
+#| fig-cap: "Plot of Helix with tangent vector" 
+#| label: fig-helix-tangent
+
+# Plotting 3D Helix
+
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits import mplot3d
+
+# Generates figure and 3D axes
+fig = plt.figure(figsize = (4,4))
+ax = plt.axes(projection = '3d')
+
+# Plots grid
+ax.grid(True)
+
+# Divides time interval (0,6pi) in 100 parts 
+t = np.linspace(-2*np.pi, 2*np.pi, 100)
+
+# Computes Helix
+x = np.cos(t) 
+y = np.sin(t)
+z = t
+
+# Plots Helix - We added some styling
+ax.plot3D(x, y, z, color = "deeppink", linewidth = 2)
+
+
+# Point of interest (t = π/2)
+t_interest = np.pi / 2
+x_interest = np.cos(t_interest)
+y_interest = np.sin(t_interest)
+z_interest = t_interest
+
+# Calculate the tangent vector at t = π/2
+tangent_vector = np.array([-np.sin(t_interest), np.cos(t_interest), 1])
+
+# Scale the tangent vector for visualization
+scale_factor = 1
+tangent_vector *= scale_factor
+
+# Create a line representing the tangent vector at t = π/2
+ax.quiver(x_interest, y_interest, z_interest,
+          tangent_vector[0], tangent_vector[1], tangent_vector[2],
+          color='blue', label='Tangent Vector', linewidth=2)
+
+# Shows the plot
+plt.show()
+```
+
+
+::: Remark
+### Avoiding potential ambiguities
+
+Sometimes it will happen that a curve self intersects, meaning that there are two time instants $t_1$ and $t_2$ and a point $p \in \R^n$ such that
+$$
+p = \g(t_1) = \g(t_2)\,.
+$$
+In this case there is ambiguity in talking about the tangent vector at the point $p$: in principle there are two tangent vectors $\dot\g(t_1)$ and  $\dot\g(t_2)$, and it could happen that 
+$$
+ \dot\g(t_1) \neq  \dot\g(t_1)\,.
+$$
+Thus the concept of tangent at $p$ is not well-defined. 
+We need then to be more precise and talk about tangent at a certain **time-step** $t$, rather than at some **point** $p$. We however do not amend Definition \ref{definition-tangent}, but you should keep this potential ambiguity in mind.
+:::
+
+
+::: Example
+### A self intersecting curve
+
+For example consider $\g \ \colon [0,2\pi] \to \R^2$ defined as
+$$
+\g_1(t) = \sin (t)\, ,  \,\,
+\g_2(t) = \sin (t) \cos(t) \, .
+$$
+This is plotted in @fig-eight below. The orgin $(0,0)$ is a point of self-intersection, meaning that 
+$$
+\g (0) = \g (\pi) = (0,0) \,.
+$$
+The tangent vector at point $\g(t)$ is given by
+$$
+\dot \g(t) = (\cos(t), \cos^2(t) - \sin^2(t) )
+$$
+and therefore we have two tangents at $(0,0)$, that is,
+$$
+\tau_1 = \dot\g(0) = (1,1) \,, \,\,
+\tau_2 = \dot\g(\pi) = (-1,1) \,.
+$$
+:::
+
+
+
+
+```{python}
+#| echo: false
+#| fig-cap: "A self-intersecting curve" 
+#| label: fig-eight
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Create values for t ranging from 0 to 2*pi
+t = np.linspace(0, 2 * np.pi, 100)
+
+# Calculate x and y coordinates for the circle
+x = np.sin(t)
+y = np.cos(t)*np.sin(t)
+
+# Plot the circle
+plt.figure(figsize=(6, 6))
+plt.plot(x, y, color = 'deeppink',label='Curve')
+plt.axis('equal')  # Equal aspect ratio
+
+# Define the point on the circle where you want to find the tangent
+point_x = 0
+point_y = 0
+
+# Plot the point
+plt.scatter(point_x, point_y, color='black', label='Point (0,0)')
+
+# Calculate the tangent vectors at the point (0,0)
+tangent_vector_x_1 = 1
+tangent_vector_y_1 = 1
+
+tangent_vector_x_2 = -1
+tangent_vector_y_2 = 1
+
+# Plot the tangent vectors at the point (0,0)
+plt.quiver(point_x, point_y, tangent_vector_x_1, tangent_vector_y_1,angles='xy', scale_units='xy', scale=1, color='blue', label='Tangent Vector for $t=0$')
+plt.quiver(point_x, point_y, tangent_vector_x_2, tangent_vector_y_2,angles='xy', scale_units='xy', scale=1, color='blue', label='Tangent Vector for $t = \pi$')
+
+
+# Add labels and legend
+plt.xlabel('x')
+plt.ylabel('y')
+plt.legend(loc='lower right')
+
+# Show the plot
+plt.grid(color='lightgray')
+plt.show()
+```
+
+
+## Arc-length
+
+For a vector $v \in \R^n$ with components 
+$$
+v=(v_1,\ldots,v_n),
+$$
+its **length** is defined by
+$$
+\norm{v}:= \sqrt{\sum_{i=1}^n v_i^2 } \,.
+$$
+The above is just an extension of the Pythagoras theorem to $\R^n$, and the length of $v$ is computed from the origin.
+
+
+![Interpretation of $\norm{v}$ in $\R^2$](/images/pythagoras.png){width=70%}
+
+
+If we have a second vector $u \in \R^n$, then the quantity 
+$$
+\norm{u-v}:= \sqrt{\sum_{i=1}^n (u_i-v_i)^2 } 
+$$
+measures the length of the difference between $u$ and $v$.
+
+
+![Interpretation of $\norm{u-v}$ in $\R^2$](/images/length_difference.png){width=70%}
+
+
+We would like to define the concept of **length** of a curve. Intuitively, one could proceed by approximation as in the figure below.
+
+![Approximating the length of $\g$](/images/length_approx.png){width=70%}
+
+In formulae, this means choosing some time instants
+$$
+t_0, \ldots, t_m \in (a,b) \,.
+$$
+The length of the segment connecting $\g(t_{i-1})$ to $\g(t_i)$ is given by 
+$$
+\norm{ \g(t_i) - \g(t_{i-1}) } \,.
+$$
+Thus 
+$$
+{\rm Length}(\g) \approx \sum_{i=1}^m \norm{ \g(t_i) - \g(t_{i-1}) } \,.  
+$$ {#eq-approx-length}
+Intuitively, if we increase the number of points $t_i$, the quantity on the RHS of (@eq-approx-length) should approximate ${\rm Length}(\g)$ better and better. Let us make this precise.
+
+::: Definition
+### Partition
+
+Let $(a,b)$ be an interval. A partition $\mathcal{P}$ of $[a,b]$ is a vector of time instants
+$$
+\mathbb{P} = (t_0,\ldots, t_k) \in [a,b]^{m+1}
+$$
+with 
+$$
+t_0 = a < t_1 < \ldots < t_{m-1} < t_m = b \,.
+$$
+If $\mathcal{P}$ is a partition of $[a,b]$, we define its maximum length as
+$$
+\norm{\mathcal{P}} := \max_{1 \leq i \leq m} |t_{i} - t_{i-1}| \,.
+$$
+:::
+
+Note that $\norm{\mathcal{P}}$ measures how fine the partition $\mathcal{P}$ is.
+
+
+
+::: Definition
+### Length of approximating polygonal curve
+
+Suppose $\g \colon (a,b) \to \R^n$ is a parametrized curve and $\mathcal{P}$ a partition of $[a,b]$. We define the length of the polygonal curve connecting the points
+$$
+\g(t_0)\,, \,\, \g(t_1) \,,  \,\, \ldots, \,\, \g(t_m)
+$$
+as
+$$
+L(\g, \mathcal{P}) := \sum_{i=1}^m \norm{ \g(t_i) - \g(t_{i-1}) } \,.
+$$
+:::
+
+
+If $\norm{\mathcal{P}}$ becomes smaller and smaller, that is, the partition $\mathcal{P}$ is finer and finer, it is reasonable to say that 
+$$
+L(\g, \mathcal{P})
+$$
+is approximating the length of $\g$. We take this as definition of length.
+
+
+::: Definition
+### Rectifiable curve and length
+
+Suppose $\g \colon (a,b) \to \R^n$ is a parametrized curve. We say that $\g$ is **rectifiable** if the limit
+$$
+L(\g) = \lim_{ \norm{P} \to 0}   \ L(\g,\mathcal{P})
+$$
+exists finite. In such case we call $L(\g)$ the **length** of $\gamma$.
+:::
+
+
+This definition definitely corresponds to our geometrical intuition of length of a curve. 
+
+::: Question
+How do we use such definition in practice to compute the length of a given curve $\g$?
+:::
+
+Thankfully, when $\g$ is smooth, the length $L(\g)$ can be characterized in terms of $\dot\g$. Indeed, when $\delta$ is small, then the quantity 
+$$
+\norm{\g(t + \delta) - \g(t)}
+$$
+is approximating the length of $\g$ between $\g(t)$ and $\g(t + \delta)$. Multiplying and dividing by $\delta$ we obtain
+$$
+\frac{\norm{\g(t + \delta) - \g(t)}}{\delta} \, \delta 
+$$
+which for small $\delta$ is close to 
+$$
+\norm{\dot\g(t)} \,\delta \,.
+$$
+We can now divide the time interval $(a,b)$ in steps $t_0, \ldots, t_m$ with $|t_{i}-t_{i-1}| < \delta$ and obtain 
+\begin{align}
+\norm{\g(t_{i}) - \g(t_{i-1}) } & = \frac{\norm{\g(t_{i}) - \g(t_{i-1})}}{ |t_{i}-t_{i-1}| } |t_{i}-t_{i-1}| \\
+& \approx \norm{ \dot\g(t_i)} \delta 
+\end{align}
+since $\delta$ is small. Therefore
+$$
+L(\g) \approx \sum_{i=1}^m  \norm{\g(t_{i}) - \g(t_{i-1})} 
+\approx \sum_{i=1}^m   \norm{\dot\g(t_i)} \,\delta \,.
+$$
+The RHS is a Riemann sum, therefore 
+$$
+  L(\g) \approx \int_a^b  \norm{\dot\g(t)} \, dt \,.
+$$
+
+The above argument can be made rigorous, as we see in the next theorem.
+
+
+![Approximating $L(\g)$ via $\dot\g$](/images/length_derivative.png){width=70%}
+
+
+
+
+::: Theorem
+### Characterizing the length of $\g$
+
+Assume $\g \ \colon [a,b] \to \R^n$ is a parametrized curve, with $[a,b]$ bounded. Then $\g$ is rectifiable and
+$$
+L(\g) = \int_a^b  \norm{\dot\g(t)} \, dt \,. 
+$$ {#eq-length-formula}
+
+:::
+
+::: Proof
+
+Since $\g$ is smooth, in particular $\dot \g$ is continuous. Since $[a,b]$ is bounded, then $\dot \g$ is bounded, that is 
+$$
+\sup_{t \in [a,b]} \norm{\g(t)} \leq C
+$$
+for some constant $C \geq 0$. Therefore 
+$$
+\int_a^b  \norm{\dot\g(t)} \, dt \leq C (b-a) < \infty \,.
+$$
+Recalling that 
+$$
+L(\g) = \lim_{\norm{\mathcal{P}} \to 0} \ L(\g,\mathcal{P}) \,,
+$$
+whenever the limit is finite, in order to show (@eq-length-formula)  we then need to prove
+$$
+L(\g,\mathcal{P}) \to \int_a^b  \norm{\dot\g(t)} \, dt
+$$
+as $\norm{\mathcal{P}} \to 0$. Showing the above means proving that: for every $\e > 0$ there exists a $\delta > 0$ such that, if $\mathcal{P}$ is a partition of $[a,b]$ such that $\norm{ \mathcal{P} }<\delta$, then 
+$$
+\left|    \int_a^b  \norm{\dot\g(t)} \, dt -  L(\g , \mathcal{P} )        \right| < \e \,.
+$${#eq-length-formula-1}
+
+First, take an arbitrary partition $\mathcal{P} = (t_0, \ldots, t_m)$ of $[a,b]$. Then for each $i = 1,\ldots,m$ we have
+$$
+\norm{  \g(t_i) - \g (t_{i-1}) } = \norm{  \int_{t_{i-1}}^{t_i}  \dot\g (t)\, dt } \leq   \int_{t_{i-1}}^{t_i}\norm{   \dot\g (t)} \, dt   
+$$
+where we used the Fundamental Theorem of calculus, and usual integral properties. Therefore by definition
+\begin{align}
+L(\g,\mathcal{P} ) & = \sum_{i=1}^m  \norm{  \g(t_i) - \g (t_{i-1}) } \\ 
+& \leq \sum_{i=1}^m  \int_{t_{i-1}}^{t_i} \norm{   \dot\g (t)} \, dt \\
+& = \int_{a}^b \norm{   \dot\g (t)} \, dt \,.
+\end{align}
+We have then shown 
+$$
+L(\g, \mathcal{P}) \leq \int_{a}^b \norm{   \dot\g (t)} \, dt
+$${#eq-length-formula-2}
+for all $\mathcal{P}$.  
+
+Now, note that $\dot \g$ is continuous on the compact set $[a,b]$. Therefore it is uniformly continuous by the Heine-Borel Theorem. Fix $\e>0$. By uniform continuity of $\dot \g$ there exists $\delta >0$ such that
+$$
+|t-s| < \delta \implies \norm{ \dot\g(t)-\dot\g(s) } < \frac{ \e }{b-a} \,.
+$$
+for all $t,s \in [a,b]$. Let $\mathcal{P} = (t_0, \ldots, t_m)$ be a partition of $[a,b]$ with $\norm{\mathcal{P}} < \delta$. Recall that 
+$$
+\norm{\mathcal{P}} = \max_{i=1,\ldots ,m} |t_i - t_{i-1}| \,.
+$$
+Therefore the condition  $\norm{\mathcal{P}} < \delta$ implies 
+$$
+|t_i - t_{i-1}| < \delta 
+$$ {#eq-length-formula-3}
+for each $i = 1, \ldots, m$. For all $i = 1, \ldots, m$ and $s \in [t_{i-1},t_i]$ we have
+$$
+\g(t_i) - \g(t_{i-1}) = 
+$$
+:::
+
+
+Let us check that we have given a meaningful definition of $L(\g)$, by testing it on a few examples.
+
+::: Example
+### Length of a circle
+
+The circle is parametrized by $\g \ \colon [0,2\pi] \to \R^2$ defined by 
+$$
+\g(t) = (\cos(t), \sin(t)) \,.
+$$
+Then 
+$$
+\dot \g(t) = (-\sin(t), \cos(t))
+$$
+and 
+\begin{align}
+\norm{\dot\g(t)} & = \sqrt{ \dot \g_1^2(t) +   \dot \g_2^2(t)      } \\
+                & = \sqrt{ \sin^2(t) + \cos^2 (t)} = 1\,.
+\end{align}
+Therefore 
+$$
+L(\g) = \int_{0}^{2\pi}  \norm{  \dot\g(t)} \, dt = \int_0^{2\pi} 1 \, dt = 2 \pi
+$$
+as expected.
+:::

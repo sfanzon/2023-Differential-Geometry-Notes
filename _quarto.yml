@@ -46,6 +46,8 @@ book:
     - sections/chap_4.qmd
 
     - sections/chap_5.qmd
+    - sections/chap_6.qmd
+    - sections/chap_7.qmd
 
     - sections/license.qmd
     - sections/references.qmd
@@ -147,7 +149,7 @@ custom-numbered-blocks:
 
     Assumption:
       group: thmlike
-      
+
     Proposition:
       group: thmlike
     
@@ -171,7 +173,6 @@ custom-numbered-blocks:
     Example: 
       group: thmlike
       colors: [bce5de, 21aa93]
-      numbered: false
 
     Proof:
       group: thmlike

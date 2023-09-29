@@ -66,47 +66,11 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
 .Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -118,11 +82,47 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Remark {
   --color1: #bce5de;
   --color2: #21aa93;
 }
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
 .Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -195,13 +195,25 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sections/chap_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Surfaces</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Topology</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sections/chap_5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Surfaces in Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Global properties of curves</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/chap_6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Surfaces</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/chap_7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Surfaces in Python</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -222,7 +234,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#tangent-vectors" id="toc-tangent-vectors" class="nav-link active" data-scroll-target="#tangent-vectors"><span class="header-section-number">3.1</span> Tangent vectors</a></li>
+  <li><a href="#arc-length" id="toc-arc-length" class="nav-link" data-scroll-target="#arc-length"><span class="header-section-number">3.2</span> Arc-length</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -270,8 +289,8 @@ ul.task-list li input[type="checkbox"] {
 <p>We will denote the first and second derivatives of <span class="math inline">\(f\)</span> as follows: <span class="math display">\[
 \dot f :=  \frac{d f}{dt} \,, \quad  \ddot f := \frac{d^2 f}{dt^2} \,.
 \]</span></p>
-<div id="Example*-1" class="Example">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example</strong></summary><div>The function <span class="math inline">\(f(x)=x^4\)</span> is smooth, with <span class="math display">\[\begin{align}
+<div id="Example-3" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 3</strong></summary><div>The function <span class="math inline">\(f(x)=x^4\)</span> is smooth, with <span class="math display">\[\begin{align}
 &amp; \frac{d f}{dt}  = 4x^3 ,\,\, \frac{d^2 f}{dt^2}  = 12 x^2 \,, \\
 &amp; \frac{d^3 f}{dt^3}  = 24 x ,\,\, \frac{d^4 f}{dt^4} = 24  \,, \\
 &amp; \frac{d^n f}{dt^n}  = 0  \, \text{ for all } \, n \geq 5  \,.
@@ -280,8 +299,8 @@ f(t) = \cos(t) , \,\, f(t) = \sin(t) \,, \,\, f(t) = e^t \,.
 \]</span><p></p>
 </div></details>
 </div>
-<div id="Definition-3" class="Definition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 3</strong></summary><div>Let <span class="math inline">\(\gamma \ \colon (a,b) \to \mathbb{R}^n\)</span> with <span class="math display">\[
+<div id="Definition-4" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 4</strong></summary><div>Let <span class="math inline">\(\gamma \ \colon (a,b) \to \mathbb{R}^n\)</span> with <span class="math display">\[
 \gamma(t) = ( \gamma_1(t), \ldots, \gamma_n(t) )
 \]</span> be a parametrized curve. We say that <span class="math inline">\(\gamma\)</span> is <strong>smooth</strong> if the components <span class="math display">\[
 \gamma_i \ \colon (a,b) \to \mathbb{R}
@@ -302,12 +321,12 @@ f(t) = \cos(t) , \,\, f(t) = \sin(t) \,, \,\, f(t) = e^t \,.
 </figure>
 </div>
 <p>We will work under the following assumption.</p>
-<div id="Assumption*-2" class="Assumption unnumbered">
+<div id="Assumption*-1" class="Assumption unnumbered">
 <p></p><details class="Assumption fbx-simplebox fbx-default" open=""><summary><strong>Assumption</strong></summary><div>All the parametrized curves in this lecture notes are assumed to be <strong>smooth</strong>.<p></p>
 </div></details>
 </div>
-<div id="Example*-3" class="Example">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example</strong></summary><div>The circle <span class="math display">\[
+<div id="Example-5" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 5</strong></summary><div>The circle <span class="math display">\[
 \gamma(t) = (\cos(t),\sin(t))
 \]</span> is a smooth parametrized curve, since both <span class="math inline">\(\cos(t)\)</span> and <span class="math inline">\(\sin(t)\)</span> are smooth functions. We have <span class="math display">\[
 \dot \gamma= (-\sin(t),\cos(t)) \,.
@@ -326,14 +345,235 @@ f(t) = \cos(t) , \,\, f(t) = \sin(t) \,, \,\, f(t) = e^t \,.
 </div>
 </div>
 </div>
+<section id="tangent-vectors" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="tangent-vectors"><span class="header-section-number">3.1</span> Tangent vectors</h2>
+<p>Looking at <a href="#fig-circle-tangent">Figure&nbsp;<span>3.2</span></a>, it seems like the vector <span class="math display">\[
+\dot \gamma(\pi/2) = (-1,0)
+\]</span> is <strong>tangent</strong> to the circle at the point <span class="math display">\[
+\gamma(\pi/2) = (0,1) \,.
+\]</span> Is this a coincidence? Not that all. Let us look at the definition of derivative at a point: <span class="math display">\[
+\dot \gamma(t) := \lim_{\delta \to 0} \frac{\gamma(t + \delta) - \gamma(t)}{\delta} \,.
+\]</span> If we just look at the quantity <span class="math display">\[
+\frac{\gamma(t + \delta) - \gamma(t)}{\delta}
+\]</span> for non-negative <span class="math inline">\(\delta\)</span>, we see that this vector is parallel to the chord joining <span class="math inline">\(\gamma(t)\)</span> to <span class="math inline">\(\gamma(t + \delta)\)</span>, as shown in <a href="#fig-tangent">Figure&nbsp;<span>3.3</span></a> below. As <span class="math inline">\(\delta \to 0\)</span>, the length of the chord tends to zero. However the <strong>direction</strong> of the chord becomes <strong>parallel</strong> to that of the tangent vector of the curve <span class="math inline">\(\gamma\)</span> at <span class="math inline">\(\gamma(t)\)</span>. Since <span class="math display">\[
+\frac{\gamma(t + \delta) - \gamma(t)}{\delta}  \to \dot \gamma(t)
+\]</span> as <span class="math inline">\(\delta \to 0\)</span>, we see that <span class="math inline">\(\dot \gamma(t)\)</span> is <strong>parallel</strong> to the tangent of <span class="math inline">\(\gamma\)</span> at <span class="math inline">\(\gamma(t)\)</span>, as showin in <a href="#fig-tangent">Figure&nbsp;<span>3.3</span></a>.</p>
 <div id="fig-tangent" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../images/tangent.png" class="img-fluid figure-img" style="width:70.0%"></p>
 <figcaption class="figure-caption">Figure&nbsp;3.3: Approximating the tangent vector</figcaption>
 </figure>
 </div>
+<p>The above remark motivates the following definition.</p>
+<div id="definition-tangent" class="Definition" title="Tangent vector">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 6: </strong>Tangent vector</summary><div>Let <span class="math inline">\(\gamma\ \colon (a,b) \to \mathbb{R}^n\)</span> be a parametrized curve. The tangent vector to <span class="math inline">\(\gamma\)</span> at the point <span class="math inline">\(\gamma(t)\)</span> is defined as <span class="math display">\[
+\tau:= \dot \gamma(t) \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="tangent-vector-to-helix" class="Example" title="Tangent vector to helix">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 7: </strong>Tangent vector to helix</summary><div>The helix is described by the parametric curve <span class="math display">\[
+\gamma\ \colon \mathbb{R}\to \mathbb{R}^3
+\]</span> with <span class="math display">\[
+\gamma_1(t) = \cos (t)\, ,  \,\,
+\gamma_2(t) = \sin (t)\, ,  \,\,
+\gamma_3(t) = t .
+\]</span> This is plotted in <a href="#fig-helix-tangent">Figure&nbsp;<span>3.4</span></a> below. The tangent vector at point <span class="math inline">\(\gamma(t)\)</span> is given by <span class="math display">\[
+\dot \gamma(t) = ( -\sin(t), \cos(t) , 1) \,.
+\]</span> For example in <a href="#fig-helix-tangent">Figure&nbsp;<span>3.4</span></a> we plot the tangent vector at time <span class="math inline">\(t = \pi/2\)</span>, that is, <span class="math display">\[
+\dot\gamma(\pi/2) = (-1,0,\pi/2) \,.
+\]</span> The above looks very similar to the tangent vector to the circle. Except that there is a <span class="math inline">\(z\)</span> component, and that component is constant and equal to <span class="math inline">\(1\)</span>. Intuitively this means that the helix is <em>lifting</em> from the plane <span class="math inline">\(xy\)</span> with constant speed with respect to the <span class="math inline">\(z\)</span>-axis. We will soon give a name to this concept.<p></p>
+</div></details>
+</div>
+<div class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div id="fig-helix-tangent" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="chap_3_files/figure-html/fig-helix-tangent-output-1.png" width="332" height="328" class="figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.4: Plot of Helix with tangent vector</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="avoiding-potential-ambiguities" class="Remark" title="Avoiding potential ambiguities">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 8: </strong>Avoiding potential ambiguities</summary><div>Sometimes it will happen that a curve self intersects, meaning that there are two time instants <span class="math inline">\(t_1\)</span> and <span class="math inline">\(t_2\)</span> and a point <span class="math inline">\(p \in \mathbb{R}^n\)</span> such that <span class="math display">\[
+p = \gamma(t_1) = \gamma(t_2)\,.
+\]</span> In this case there is ambiguity in talking about the tangent vector at the point <span class="math inline">\(p\)</span>: in principle there are two tangent vectors <span class="math inline">\(\dot\gamma(t_1)\)</span> and <span class="math inline">\(\dot\gamma(t_2)\)</span>, and it could happen that <span class="math display">\[
+\dot\gamma(t_1) \neq  \dot\gamma(t_1)\,.
+\]</span> Thus the concept of tangent at <span class="math inline">\(p\)</span> is not well-defined. We need then to be more precise and talk about tangent at a certain <strong>time-step</strong> <span class="math inline">\(t\)</span>, rather than at some <strong>point</strong> <span class="math inline">\(p\)</span>. We however do not amend Definition <a href="chap_3.html#definition-tangent">6</a>, but you should keep this potential ambiguity in mind.<p></p>
+</div></details>
+</div>
+<div id="a-self-intersecting-curve" class="Example" title="A self intersecting curve">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 9: </strong>A self intersecting curve</summary><div>For example consider <span class="math inline">\(\gamma\ \colon [0,2\pi] \to \mathbb{R}^2\)</span> defined as <span class="math display">\[
+\gamma_1(t) = \sin (t)\, ,  \,\,
+\gamma_2(t) = \sin (t) \cos(t) \, .
+\]</span> This is plotted in <a href="#fig-eight">Figure&nbsp;<span>3.5</span></a> below. The orgin <span class="math inline">\((0,0)\)</span> is a point of self-intersection, meaning that <span class="math display">\[
+\gamma(0) = \gamma(\pi) = (0,0) \,.
+\]</span> The tangent vector at point <span class="math inline">\(\gamma(t)\)</span> is given by <span class="math display">\[
+\dot \gamma(t) = (\cos(t), \cos^2(t) - \sin^2(t) )
+\]</span> and therefore we have two tangents at <span class="math inline">\((0,0)\)</span>, that is, <span class="math display">\[
+\tau_1 = \dot\gamma(0) = (1,1) \,, \,\,
+\tau_2 = \dot\gamma(\pi) = (-1,1) \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div id="fig-eight" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="chap_3_files/figure-html/fig-eight-output-1.png" width="534" height="503" class="figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.5: A self-intersecting curve</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="arc-length" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="arc-length"><span class="header-section-number">3.2</span> Arc-length</h2>
+<p>For a vector <span class="math inline">\(v \in \mathbb{R}^n\)</span> with components <span class="math display">\[
+v=(v_1,\ldots,v_n),
+\]</span> its <strong>length</strong> is defined by <span class="math display">\[
+\left\| v \right\|:= \sqrt{\sum_{i=1}^n v_i^2 } \,.
+\]</span> The above is just an extension of the Pythagoras theorem to <span class="math inline">\(\mathbb{R}^n\)</span>, and the length of <span class="math inline">\(v\)</span> is computed from the origin.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/pythagoras.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Interpretation of <span class="math inline">\(\left\| v \right\|\)</span> in <span class="math inline">\(\mathbb{R}^2\)</span></figcaption>
+</figure>
+</div>
+<p>If we have a second vector <span class="math inline">\(u \in \mathbb{R}^n\)</span>, then the quantity <span class="math display">\[
+\left\| u-v \right\|:= \sqrt{\sum_{i=1}^n (u_i-v_i)^2 }
+\]</span> measures the length of the difference between <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/length_difference.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Interpretation of <span class="math inline">\(\left\| u-v \right\|\)</span> in <span class="math inline">\(\mathbb{R}^2\)</span></figcaption>
+</figure>
+</div>
+<p>We would like to define the concept of <strong>length</strong> of a curve. Intuitively, one could proceed by approximation as in the figure below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/length_approx.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Approximating the length of <span class="math inline">\(\gamma\)</span></figcaption>
+</figure>
+</div>
+<p>In formulae, this means choosing some time instants <span class="math display">\[
+t_0, \ldots, t_m \in (a,b) \,.
+\]</span> The length of the segment connecting <span class="math inline">\(\gamma(t_{i-1})\)</span> to <span class="math inline">\(\gamma(t_i)\)</span> is given by <span class="math display">\[
+\left\|  \gamma(t_i) - \gamma(t_{i-1})  \right\| \,.
+\]</span> Thus <span id="eq-approx-length"><span class="math display">\[
+{\rm Length}(\gamma) \approx \sum_{i=1}^m \left\|  \gamma(t_i) - \gamma(t_{i-1})  \right\| \,.  
+\tag{3.1}\]</span></span> Intuitively, if we increase the number of points <span class="math inline">\(t_i\)</span>, the quantity on the RHS of (<a href="#eq-approx-length"><span>3.1</span></a>) should approximate <span class="math inline">\({\rm Length}(\gamma)\)</span> better and better. Let us make this precise.</p>
+<div id="partition" class="Definition" title="Partition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 10: </strong>Partition</summary><div>Let <span class="math inline">\((a,b)\)</span> be an interval. A partition <span class="math inline">\(\mathcal{P}\)</span> of <span class="math inline">\([a,b]\)</span> is a vector of time instants <span class="math display">\[
+\mathbb{P} = (t_0,\ldots, t_k) \in [a,b]^{m+1}
+\]</span> with <span class="math display">\[
+t_0 = a &lt; t_1 &lt; \ldots &lt; t_{m-1} &lt; t_m = b \,.
+\]</span> If <span class="math inline">\(\mathcal{P}\)</span> is a partition of <span class="math inline">\([a,b]\)</span>, we define its maximum length as <span class="math display">\[
+\left\| \mathcal{P} \right\| := \max_{1 \leq i \leq m} |t_{i} - t_{i-1}| \,.
+\]</span><p></p>
+</div></details>
+</div>
+<p>Note that <span class="math inline">\(\left\| \mathcal{P} \right\|\)</span> measures how fine the partition <span class="math inline">\(\mathcal{P}\)</span> is.</p>
+<div id="length-of-approximating-polygonal-curve" class="Definition" title="Length of approximating polygonal curve">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 11: </strong>Length of approximating polygonal curve</summary><div>Suppose <span class="math inline">\(\gamma\colon (a,b) \to \mathbb{R}^n\)</span> is a parametrized curve and <span class="math inline">\(\mathcal{P}\)</span> a partition of <span class="math inline">\([a,b]\)</span>. We define the length of the polygonal curve connecting the points <span class="math display">\[
+\gamma(t_0)\,, \,\, \gamma(t_1) \,,  \,\, \ldots, \,\, \gamma(t_m)
+\]</span> as <span class="math display">\[
+L(\gamma, \mathcal{P}) := \sum_{i=1}^m \left\|  \gamma(t_i) - \gamma(t_{i-1})  \right\| \,.
+\]</span><p></p>
+</div></details>
+</div>
+<p>If <span class="math inline">\(\left\| \mathcal{P} \right\|\)</span> becomes smaller and smaller, that is, the partition <span class="math inline">\(\mathcal{P}\)</span> is finer and finer, it is reasonable to say that <span class="math display">\[
+L(\gamma, \mathcal{P})
+\]</span> is approximating the length of <span class="math inline">\(\gamma\)</span>. We take this as definition of length.</p>
+<div id="rectifiable-curve-and-length" class="Definition" title="Rectifiable curve and length">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 12: </strong>Rectifiable curve and length</summary><div>Suppose <span class="math inline">\(\gamma\colon (a,b) \to \mathbb{R}^n\)</span> is a parametrized curve. We say that <span class="math inline">\(\gamma\)</span> is <strong>rectifiable</strong> if the limit <span class="math display">\[
+L(\gamma) = \lim_{ \left\| P \right\| \to 0}   \ L(\gamma,\mathcal{P})
+\]</span> exists finite. In such case we call <span class="math inline">\(L(\gamma)\)</span> the <strong>length</strong> of <span class="math inline">\(\gamma\)</span>.<p></p>
+</div></details>
+</div>
+<p>This definition definitely corresponds to our geometrical intuition of length of a curve.</p>
+<div id="Question-13" class="Question">
+<p></p><details class="Question fbx-simplebox fbx-default" open=""><summary><strong>Question 13</strong></summary><div>How do we use such definition in practice to compute the length of a given curve <span class="math inline">\(\gamma\)</span>?<p></p>
+</div></details>
+</div>
+<p>Thankfully, when <span class="math inline">\(\gamma\)</span> is smooth, the length <span class="math inline">\(L(\gamma)\)</span> can be characterized in terms of <span class="math inline">\(\dot\gamma\)</span>. Indeed, when <span class="math inline">\(\delta\)</span> is small, then the quantity <span class="math display">\[
+\left\| \gamma(t + \delta) - \gamma(t) \right\|
+\]</span> is approximating the length of <span class="math inline">\(\gamma\)</span> between <span class="math inline">\(\gamma(t)\)</span> and <span class="math inline">\(\gamma(t + \delta)\)</span>. Multiplying and dividing by <span class="math inline">\(\delta\)</span> we obtain <span class="math display">\[
+\frac{\left\| \gamma(t + \delta) - \gamma(t) \right\|}{\delta} \, \delta
+\]</span> which for small <span class="math inline">\(\delta\)</span> is close to <span class="math display">\[
+\left\| \dot\gamma(t) \right\| \,\delta \,.
+\]</span> We can now divide the time interval <span class="math inline">\((a,b)\)</span> in steps <span class="math inline">\(t_0, \ldots, t_m\)</span> with <span class="math inline">\(|t_{i}-t_{i-1}| &lt; \delta\)</span> and obtain <span class="math display">\[\begin{align}
+\left\| \gamma(t_{i}) - \gamma(t_{i-1})  \right\| &amp; = \frac{\left\| \gamma(t_{i}) - \gamma(t_{i-1}) \right\|}{ |t_{i}-t_{i-1}| } |t_{i}-t_{i-1}| \\
+&amp; \approx \left\|  \dot\gamma(t_i) \right\| \delta
+\end{align}\]</span> since <span class="math inline">\(\delta\)</span> is small. Therefore <span class="math display">\[
+L(\gamma) \approx \sum_{i=1}^m  \left\| \gamma(t_{i}) - \gamma(t_{i-1}) \right\|
+\approx \sum_{i=1}^m   \left\| \dot\gamma(t_i) \right\| \,\delta \,.
+\]</span> The RHS is a Riemann sum, therefore <span class="math display">\[
+  L(\gamma) \approx \int_a^b  \left\| \dot\gamma(t) \right\| \, dt \,.
+\]</span></p>
+<p>The above argument can be made rigorous, as we see in the next theorem.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/length_derivative.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Approximating <span class="math inline">\(L(\gamma)\)</span> via <span class="math inline">\(\dot\gamma\)</span></figcaption>
+</figure>
+</div>
+<div id="characterizing-the-length-of-gamma" class="Theorem" title="Characterizing the length of \gamma">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 14: </strong>Characterizing the length of <span class="math inline">\(\gamma\)</span></summary><div>Assume <span class="math inline">\(\gamma\ \colon [a,b] \to \mathbb{R}^n\)</span> is a parametrized curve, with <span class="math inline">\([a,b]\)</span> bounded. Then <span class="math inline">\(\gamma\)</span> is rectifiable and <span id="eq-length-formula"><span class="math display">\[
+L(\gamma) = \int_a^b  \left\| \dot\gamma(t) \right\| \, dt \,.
+\tag{3.2}\]</span></span><p></p>
+</div></details>
+</div>
+<div id="Proof*-2" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Since <span class="math inline">\(\gamma\)</span> is smooth, in particular <span class="math inline">\(\dot \gamma\)</span> is continuous. Since <span class="math inline">\([a,b]\)</span> is bounded, then <span class="math inline">\(\dot \gamma\)</span> is bounded, that is <span class="math display">\[
+\sup_{t \in [a,b]} \left\| \gamma(t) \right\| \leq C
+\]</span> for some constant <span class="math inline">\(C \geq 0\)</span>. Therefore <span class="math display">\[
+\int_a^b  \left\| \dot\gamma(t) \right\| \, dt \leq C (b-a) &lt; \infty \,.
+\]</span> Recalling that <span class="math display">\[
+L(\gamma) = \lim_{\left\| \mathcal{P} \right\| \to 0} \ L(\gamma,\mathcal{P}) \,,
+\]</span> whenever the limit is finite, in order to show (<a href="#eq-length-formula"><span>3.2</span></a>) we then need to prove <span class="math display">\[
+L(\gamma,\mathcal{P}) \to \int_a^b  \left\| \dot\gamma(t) \right\| \, dt
+\]</span> as <span class="math inline">\(\left\| \mathcal{P} \right\| \to 0\)</span>. Showing the above means proving that: for every <span class="math inline">\(\varepsilon&gt; 0\)</span> there exists a <span class="math inline">\(\delta &gt; 0\)</span> such that, if <span class="math inline">\(\mathcal{P}\)</span> is a partition of <span class="math inline">\([a,b]\)</span> such that <span class="math inline">\(\left\|  \mathcal{P}  \right\|&lt;\delta\)</span>, then <span id="eq-length-formula-1"><span class="math display">\[
+\left|    \int_a^b  \left\| \dot\gamma(t) \right\| \, dt -  L(\gamma, \mathcal{P} )        \right| &lt; \varepsilon\,.
+\tag{3.3}\]</span></span><p></p>
+<p>First, take an arbitrary partition <span class="math inline">\(\mathcal{P} = (t_0, \ldots, t_m)\)</span> of <span class="math inline">\([a,b]\)</span>. Then for each <span class="math inline">\(i = 1,\ldots,m\)</span> we have <span class="math display">\[
+\left\|   \gamma(t_i) - \gamma(t_{i-1})  \right\| = \left\|   \int_{t_{i-1}}^{t_i}  \dot\gamma(t)\, dt  \right\| \leq   \int_{t_{i-1}}^{t_i}\left\|    \dot\gamma(t) \right\| \, dt   
+\]</span> where we used the Fundamental Theorem of calculus, and usual integral properties. Therefore by definition <span class="math display">\[\begin{align}
+L(\gamma,\mathcal{P} ) &amp; = \sum_{i=1}^m  \left\|   \gamma(t_i) - \gamma(t_{i-1})  \right\| \\
+&amp; \leq \sum_{i=1}^m  \int_{t_{i-1}}^{t_i} \left\|    \dot\gamma(t) \right\| \, dt \\
+&amp; = \int_{a}^b \left\|    \dot\gamma(t) \right\| \, dt \,.
+\end{align}\]</span> We have then shown <span id="eq-length-formula-2"><span class="math display">\[
+L(\gamma, \mathcal{P}) \leq \int_{a}^b \left\|    \dot\gamma(t) \right\| \, dt
+\tag{3.4}\]</span></span> for all <span class="math inline">\(\mathcal{P}\)</span>.</p>
+<p>Now, note that <span class="math inline">\(\dot \gamma\)</span> is continuous on the compact set <span class="math inline">\([a,b]\)</span>. Therefore it is uniformly continuous by the Heine-Borel Theorem. Fix <span class="math inline">\(\varepsilon&gt;0\)</span>. By uniform continuity of <span class="math inline">\(\dot \gamma\)</span> there exists <span class="math inline">\(\delta &gt;0\)</span> such that <span class="math display">\[
+|t-s| &lt; \delta \implies \left\|  \dot\gamma(t)-\dot\gamma(s)  \right\| &lt; \frac{ \varepsilon}{b-a} \,.
+\]</span> for all <span class="math inline">\(t,s \in [a,b]\)</span>. Let <span class="math inline">\(\mathcal{P} = (t_0, \ldots, t_m)\)</span> be a partition of <span class="math inline">\([a,b]\)</span> with <span class="math inline">\(\left\| \mathcal{P} \right\| &lt; \delta\)</span>. Recall that <span class="math display">\[
+\left\| \mathcal{P} \right\| = \max_{i=1,\ldots ,m} |t_i - t_{i-1}| \,.
+\]</span> Therefore the condition <span class="math inline">\(\left\| \mathcal{P} \right\| &lt; \delta\)</span> implies <span id="eq-length-formula-3"><span class="math display">\[
+|t_i - t_{i-1}| &lt; \delta
+\tag{3.5}\]</span></span> for each <span class="math inline">\(i = 1, \ldots, m\)</span>. For all <span class="math inline">\(i = 1, \ldots, m\)</span> and <span class="math inline">\(s \in [t_{i-1},t_i]\)</span> we have <span class="math display">\[
+\gamma(t_i) - \gamma(t_{i-1}) =
+\]</span></p>
+</div></details>
+</div>
+<p>Let us check that we have given a meaningful definition of <span class="math inline">\(L(\gamma)\)</span>, by testing it on a few examples.</p>
+<div id="length-of-a-circle" class="Example" title="Length of a circle">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 15: </strong>Length of a circle</summary><div>The circle is parametrized by <span class="math inline">\(\gamma\ \colon [0,2\pi] \to \mathbb{R}^2\)</span> defined by <span class="math display">\[
+\gamma(t) = (\cos(t), \sin(t)) \,.
+\]</span> Then <span class="math display">\[
+\dot \gamma(t) = (-\sin(t), \cos(t))
+\]</span> and <span class="math display">\[\begin{align}
+\left\| \dot\gamma(t) \right\| &amp; = \sqrt{ \dot \gamma_1^2(t) +   \dot \gamma_2^2(t)      } \\
+                &amp; = \sqrt{ \sin^2(t) + \cos^2 (t)} = 1\,.
+\end{align}\]</span> Therefore <span class="math display">\[
+L(\gamma) = \int_{0}^{2\pi}  \left\|   \dot\gamma(t) \right\| \, dt = \int_0^{2\pi} 1 \, dt = 2 \pi
+\]</span> as expected.<p></p>
+</div></details>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -706,7 +946,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="../sections/chap_4.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Surfaces</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Topology</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

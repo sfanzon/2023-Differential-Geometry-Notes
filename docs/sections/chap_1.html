@@ -66,19 +66,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .Question {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
 .Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Lemma {
+.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -90,9 +106,13 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
 }
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .Proposition {
   --color1: #f4cce0;
@@ -101,26 +121,6 @@ ul.task-list li input[type="checkbox"] {
 .Remark {
   --color1: #bce5de;
   --color2: #21aa93;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
 }
 .Problem {
   --color1: #f4cce0;
@@ -195,13 +195,25 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sections/chap_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Surfaces</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Topology</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sections/chap_5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Surfaces in Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Global properties of curves</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/chap_6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Surfaces</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/chap_7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Surfaces in Python</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -385,7 +397,7 @@ C = \{ (\gamma_1(t), \ldots, \gamma_n(t) ) \ \colon \ t \in (a,b)   \} \,.
 </div>
 <p>The answer is YES, as shown in the following examples.</p>
 <div id="parametrizing-the-straight-line" class="Example" title="Parametrizing the straight line">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example: </strong>Parametrizing the straight line</summary><div>The straight line <span class="math display">\[
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 4: </strong>Parametrizing the straight line</summary><div>The straight line <span class="math display">\[
 y = 2x + 1
 \]</span><p></p>
 <p>is a <strong>level curve</strong> with <span class="math display">\[
@@ -421,7 +433,7 @@ C &amp; = \{ (x,2x+1) \ \colon \ x \in \mathbb{R}\} \\
 </div></details>
 </div>
 <div id="parametrization-is-not-unique" class="Remark" title="Parametrization is not unique">
-<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 4: </strong>Parametrization is not unique</summary><div>Let us consider again the straight line <span class="math display">\[
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 5: </strong>Parametrization is not unique</summary><div>Let us consider again the straight line <span class="math display">\[
 C = \{ (x,y) \in \mathbb{R}^2 \ \colon \  2x+1 = y \} \,.
 \]</span> We saw that <span class="math inline">\(\gamma\colon (-\infty,\infty) \to \mathbb{R}^2\)</span> defined by <span class="math display">\[
 \gamma(t):=(t,2t+1)
@@ -435,7 +447,7 @@ C = \{ (x,y) \in \mathbb{R}^2 \ \colon \  2x+1 = y \} \,.
 </div></details>
 </div>
 <div id="parametrizing-the-circle" class="Example" title="Parametrizing the circle">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example: </strong>Parametrizing the circle</summary><div>
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 6: </strong>Parametrizing the circle</summary><div>
 <p>The circle <span class="math inline">\(C\)</span> is described by all the points <span class="math inline">\((x,y) \in \mathbb{R}^2\)</span> such that <span class="math display">\[
 x^2 + y^2 = 1\,.
 \]</span> Therefore if we want to find a curve <span class="math display">\[
@@ -509,7 +521,7 @@ How to find such curve? We could proceed as in the previous example, and set <sp
 </div>
 <p>Finally we are also able to give a mathematical description of the 3D Helix.</p>
 <div id="parametrizing-the-helix" class="Example" title="Parametrizing the helix">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example: </strong>Parametrizing the helix</summary><div>The Helix plotted above can be parametrized by <span class="math display">\[
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 7: </strong>Parametrizing the helix</summary><div>The Helix plotted above can be parametrized by <span class="math display">\[
 \gamma\ \colon (-\infty,\infty) \to \mathbb{R}^3
 \]</span> defined by <span class="math display">\[
 \gamma_1(t) = \cos(t)\,, \,\,
