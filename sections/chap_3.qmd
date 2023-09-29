@@ -392,7 +392,8 @@ plt.show()
 ```
 
 
-## Arc-length
+## Length of curves
+
 
 For a vector $v \in \R^n$ with components 
 $$
@@ -577,12 +578,12 @@ We have then shown
 $$
 L(\g, \mathcal{P}) \leq \int_{a}^b \norm{   \dot\g (t)} \, dt
 $${#eq-length-formula-2}
-for all $\mathcal{P}$.  
+for all partitions $\mathcal{P}$.  
 
 Now, note that $\dot \g$ is continuous on the compact set $[a,b]$. Therefore it is uniformly continuous by the Heine-Borel Theorem. Fix $\e>0$. By uniform continuity of $\dot \g$ there exists $\delta >0$ such that
 $$
 |t-s| < \delta \implies \norm{ \dot\g(t)-\dot\g(s) } < \frac{ \e }{b-a} \,.
-$$
+$$ {#eq-length-formula-uc}
 for all $t,s \in [a,b]$. Let $\mathcal{P} = (t_0, \ldots, t_m)$ be a partition of $[a,b]$ with $\norm{\mathcal{P}} < \delta$. Recall that 
 $$
 \norm{\mathcal{P}} = \max_{i=1,\ldots ,m} |t_i - t_{i-1}| \,.
@@ -592,33 +593,131 @@ $$
 |t_i - t_{i-1}| < \delta 
 $$ {#eq-length-formula-3}
 for each $i = 1, \ldots, m$. For all $i = 1, \ldots, m$ and $s \in [t_{i-1},t_i]$ we have
+\begin{align}
+\g(t_i) - \g(t_{i-1}) & = \int_{t_{i-1}}^{ t_i }  \dot\g(t)\, dt \\
+                      & =  \int_{t_{i-1}}^{ t_i } \dot\g(s) +  (\dot\g(t) - \dot\g(s))    \, dt \\
+                      & = ( t_i - t_{i-1} ) \dot\g(s) + \int_{t_{i-1}}^{ t_i }   (\dot\g(t) - \dot\g(s))    \, dt
+\end{align}
+Therefore
 $$
-\g(t_i) - \g(t_{i-1}) = 
+\norm{ \g(t_i) - \g(t_{i-1}) }  = \norm{ ( t_i - t_{i-1} ) \dot\g(s) + 
+ \int_{t_{i-1}}^{ t_i }   (\dot\g(t) - \dot\g(s))    \, dt }
+$${#eq-length-formula-4}
+We can now use the reverse triangle inequality
 $$
+| \| x\| - \norm{y}| \leq \norm{x-y}
+$$
+and hence 
+$$
+ \norm{x+y}  = \norm{x - (-y)} \geq \| x \| - \norm{y}
+$$
+for all $x,y \in \R^n$. Applying the above to (@eq-length-formula-4) we get
+$$
+\norm{ \g(t_i) - \g(t_{i-1}) }  \geq
+ ( t_i - t_{i-1} ) \norm{\dot\g(s)} - 
+\norm{ \int_{t_{i-1}}^{ t_i }   (\dot\g(t) - \dot\g(s))    \, dt }
+$${#eq-length-formula-5}
+By standard properties of integral we also have
+$$
+\norm{ \int_{t_{i-1}}^{ t_i }   (\dot\g(t) - \dot\g(s))    \, dt }
+\leq 
+\int_{t_{i-1}}^{ t_i }   \norm{\dot\g(t) - \dot\g(s)}    \, dt\,,
+$$
+so that (@eq-length-formula-5) implies
+$$
+\norm{ \g(t_i) - \g(t_{i-1}) } \geq ( t_i - t_{i-1} ) \norm{\dot\g(s)}   - \int_{t_{i-1}}^{ t_i }   \norm{\dot\g(t) - \dot\g(s)}    \, dt\,.
+$${#eq-length-formula-6}
+Since $t,s \in [t_{i-1},t_i]$, then 
+$$
+|t-s| \leq | t_{i} - t_{i-1} |   <  \delta
+$$ 
+where the last inequality follows by (@eq-length-formula-3). Thus by uniform continuity (@eq-length-formula-uc) we get
+$$
+\norm{ \dot\g(t) - \dot\g(s) } < \frac{\e}{b-a} \,.
+$$
+We can therefore further estimate (@eq-length-formula-6) and obtain
+\begin{align}
+\norm{ \g(t_i) - \g(t_{i-1}) } & \geq ( t_i - t_{i-1} ) \norm{\dot\g(s)}   - \int_{t_{i-1}}^{ t_i }   \norm{\dot\g(t) - \dot\g(s)}    \, dt \\
+& \geq  ( t_i - t_{i-1} ) \norm{\dot\g(s)} -  ( t_i - t_{i-1} ) \frac{\e}{b-a}    \, dt \,.
+\end{align}
+Dividing the above by $t_i - t_{i-1}$ we get
+$$
+\frac{ \norm{ \g(t_i) - \g(t_{i-1}) } }{ t_i - t_{i-1}  } \geq
+ \norm{\dot\g(s)} - \frac{\e}{b-a}  \,.
+$$
+Integrating the above over $s$ in the interval $[t_{i-1}, t_i ]$ we get
+$$
+\norm{ \g(t_i) - \g(t_{i-1}) }  \geq \int_{t_{i-1}}^{ t_i } \norm{\dot\g(s)} \, ds  - \frac{\e}{b-a} (t_i - t_{i-1}) \,.
+$$
+Summing over $i=1,\ldots,m$ we get
+$$
+L(\mathcal{P},\g) \geq \int_{a}^b \norm{\dot\g(s)} \, ds - \e
+$$ {#eq-length-formula-7}
+since
+$$
+\sum_{i=1}^m (t_i - t_{i-1}) = t_m - t_0 = b - a \,. 
+$$
+Putting together (@eq-length-formula-2) and (@eq-length-formula-7) we get 
+$$
+\int_{a}^b \norm{\dot\g(s)} \, ds - \e   \leq L(\mathcal{P},\g) 
+\leq  \int_{a}^b \norm{\dot\g(s)} \, ds
+$$
+which implies (@eq-length-formula-1), concluding the proof.
 :::
 
 
-Let us check that we have given a meaningful definition of $L(\g)$, by testing it on a few examples.
+Thanks to the above theorem we have now a way to compute $L(\g)$. 
+Let us check that we have given a meaningful definition of length by computing $L(\g)$ on known examples.
+
+
 
 ::: Example
-### Length of a circle
+### Length of Circle
 
-The circle is parametrized by $\g \ \colon [0,2\pi] \to \R^2$ defined by 
+The circle of radius $R$ is parametrized by $\g \ \colon [0,2\pi] \to \R^2$ defined by 
 $$
-\g(t) = (\cos(t), \sin(t)) \,.
+\g(t) = (R\cos(t), R\sin(t)) \,.
 $$
 Then 
 $$
-\dot \g(t) = (-\sin(t), \cos(t))
+\dot \g(t) = (-R\sin(t), R\cos(t))
 $$
 and 
 \begin{align}
 \norm{\dot\g(t)} & = \sqrt{ \dot \g_1^2(t) +   \dot \g_2^2(t)      } \\
-                & = \sqrt{ \sin^2(t) + \cos^2 (t)} = 1\,.
+                & = R \sqrt{ \sin^2(t) + \cos^2 (t)} = 1\,.
 \end{align}
 Therefore 
 $$
-L(\g) = \int_{0}^{2\pi}  \norm{  \dot\g(t)} \, dt = \int_0^{2\pi} 1 \, dt = 2 \pi
+L(\g) = \int_{0}^{2\pi}  \norm{  \dot\g(t)} \, dt = \int_0^{2\pi} R \, dt = 2 \pi R
 $$
 as expected.
 :::
+
+
+
+
+::: Example
+### Length of helix
+
+Let us consider one full turn of the Helix of radius $R$ and rise $H$. This is parametrized by 
+$$
+\g(t) = (R\cos(t), R\sin(t) ,Ht)
+$$
+for $t \in [0,2\pi]$. Then 
+$$
+\dot \g(t) = (-R\sin(t), R\cos(t) , H) \,,
+$$
+and 
+\begin{align}
+\norm{ \dot \g(t)  } & = \sqrt{  \dot\g_1^2 + \dot\g_2^2 + \dot\g_3^2 } \\
+                    & = \sqrt{ R^2\sin^2(t) + R^2\cos^2(t) + H^2 } = \sqrt{R^2 + H^2} \,.
+\end{align}
+Therefore 
+$$
+L(\g) = \int_0^{2\pi} \norm{ \dot\g(t) } \, dt = 2 \pi \sqrt{R^2 + H^2} \,. 
+$$
+:::
+
+
+## Arc-length

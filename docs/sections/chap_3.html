@@ -66,11 +66,19 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Corollary {
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Assumption {
+.Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -78,7 +86,11 @@ ul.task-list li input[type="checkbox"] {
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
-.Goal {
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -86,23 +98,23 @@ ul.task-list li input[type="checkbox"] {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.Problem {
+.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
 }
 .DONE {
   --color1: #cce7b1;
   --color2: #86b754;
 }
-.Theorem {
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -110,19 +122,7 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Lemma {
+.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -239,7 +239,8 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#tangent-vectors" id="toc-tangent-vectors" class="nav-link active" data-scroll-target="#tangent-vectors"><span class="header-section-number">3.1</span> Tangent vectors</a></li>
-  <li><a href="#arc-length" id="toc-arc-length" class="nav-link" data-scroll-target="#arc-length"><span class="header-section-number">3.2</span> Arc-length</a></li>
+  <li><a href="#length-of-curves" id="toc-length-of-curves" class="nav-link" data-scroll-target="#length-of-curves"><span class="header-section-number">3.2</span> Length of curves</a></li>
+  <li><a href="#arc-length" id="toc-arc-length" class="nav-link" data-scroll-target="#arc-length"><span class="header-section-number">3.3</span> Arc-length</a></li>
   </ul>
 </nav>
     </div>
@@ -428,8 +429,8 @@ p = \gamma(t_1) = \gamma(t_2)\,.
 </div>
 </div>
 </section>
-<section id="arc-length" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="arc-length"><span class="header-section-number">3.2</span> Arc-length</h2>
+<section id="length-of-curves" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="length-of-curves"><span class="header-section-number">3.2</span> Length of curves</h2>
 <p>For a vector <span class="math inline">\(v \in \mathbb{R}^n\)</span> with components <span class="math display">\[
 v=(v_1,\ldots,v_n),
 \]</span> its <strong>length</strong> is defined by <span class="math display">\[
@@ -545,32 +546,86 @@ L(\gamma,\mathcal{P} ) &amp; = \sum_{i=1}^m  \left\|   \gamma(t_i) - \gamma(t_{i
 &amp; = \int_{a}^b \left\|    \dot\gamma(t) \right\| \, dt \,.
 \end{align}\]</span> We have then shown <span id="eq-length-formula-2"><span class="math display">\[
 L(\gamma, \mathcal{P}) \leq \int_{a}^b \left\|    \dot\gamma(t) \right\| \, dt
-\tag{3.4}\]</span></span> for all <span class="math inline">\(\mathcal{P}\)</span>.</p>
-<p>Now, note that <span class="math inline">\(\dot \gamma\)</span> is continuous on the compact set <span class="math inline">\([a,b]\)</span>. Therefore it is uniformly continuous by the Heine-Borel Theorem. Fix <span class="math inline">\(\varepsilon&gt;0\)</span>. By uniform continuity of <span class="math inline">\(\dot \gamma\)</span> there exists <span class="math inline">\(\delta &gt;0\)</span> such that <span class="math display">\[
+\tag{3.4}\]</span></span> for all partitions <span class="math inline">\(\mathcal{P}\)</span>.</p>
+<p>Now, note that <span class="math inline">\(\dot \gamma\)</span> is continuous on the compact set <span class="math inline">\([a,b]\)</span>. Therefore it is uniformly continuous by the Heine-Borel Theorem. Fix <span class="math inline">\(\varepsilon&gt;0\)</span>. By uniform continuity of <span class="math inline">\(\dot \gamma\)</span> there exists <span class="math inline">\(\delta &gt;0\)</span> such that <span id="eq-length-formula-uc"><span class="math display">\[
 |t-s| &lt; \delta \implies \left\|  \dot\gamma(t)-\dot\gamma(s)  \right\| &lt; \frac{ \varepsilon}{b-a} \,.
-\]</span> for all <span class="math inline">\(t,s \in [a,b]\)</span>. Let <span class="math inline">\(\mathcal{P} = (t_0, \ldots, t_m)\)</span> be a partition of <span class="math inline">\([a,b]\)</span> with <span class="math inline">\(\left\| \mathcal{P} \right\| &lt; \delta\)</span>. Recall that <span class="math display">\[
+\tag{3.5}\]</span></span> for all <span class="math inline">\(t,s \in [a,b]\)</span>. Let <span class="math inline">\(\mathcal{P} = (t_0, \ldots, t_m)\)</span> be a partition of <span class="math inline">\([a,b]\)</span> with <span class="math inline">\(\left\| \mathcal{P} \right\| &lt; \delta\)</span>. Recall that <span class="math display">\[
 \left\| \mathcal{P} \right\| = \max_{i=1,\ldots ,m} |t_i - t_{i-1}| \,.
 \]</span> Therefore the condition <span class="math inline">\(\left\| \mathcal{P} \right\| &lt; \delta\)</span> implies <span id="eq-length-formula-3"><span class="math display">\[
 |t_i - t_{i-1}| &lt; \delta
-\tag{3.5}\]</span></span> for each <span class="math inline">\(i = 1, \ldots, m\)</span>. For all <span class="math inline">\(i = 1, \ldots, m\)</span> and <span class="math inline">\(s \in [t_{i-1},t_i]\)</span> we have <span class="math display">\[
-\gamma(t_i) - \gamma(t_{i-1}) =
-\]</span></p>
+\tag{3.6}\]</span></span> for each <span class="math inline">\(i = 1, \ldots, m\)</span>. For all <span class="math inline">\(i = 1, \ldots, m\)</span> and <span class="math inline">\(s \in [t_{i-1},t_i]\)</span> we have <span class="math display">\[\begin{align}
+\gamma(t_i) - \gamma(t_{i-1}) &amp; = \int_{t_{i-1}}^{ t_i }  \dot\gamma(t)\, dt \\
+                      &amp; =  \int_{t_{i-1}}^{ t_i } \dot\gamma(s) +  (\dot\gamma(t) - \dot\gamma(s))    \, dt \\
+                      &amp; = ( t_i - t_{i-1} ) \dot\gamma(s) + \int_{t_{i-1}}^{ t_i }   (\dot\gamma(t) - \dot\gamma(s))    \, dt
+\end{align}\]</span> Therefore <span id="eq-length-formula-4"><span class="math display">\[
+\left\|  \gamma(t_i) - \gamma(t_{i-1})  \right\|  = \left\|  ( t_i - t_{i-1} ) \dot\gamma(s) +
+\int_{t_{i-1}}^{ t_i }   (\dot\gamma(t) - \dot\gamma(s))    \, dt  \right\|
+\tag{3.7}\]</span></span> We can now use the reverse triangle inequality <span class="math display">\[
+| \| x\| - \left\| y \right\|| \leq \left\| x-y \right\|
+\]</span> and hence <span class="math display">\[
+\left\| x+y \right\|  = \left\| x - (-y) \right\| \geq \| x \| - \left\| y \right\|
+\]</span> for all <span class="math inline">\(x,y \in \mathbb{R}^n\)</span>. Applying the above to (<a href="#eq-length-formula-4"><span>3.7</span></a>) we get <span id="eq-length-formula-5"><span class="math display">\[
+\left\|  \gamma(t_i) - \gamma(t_{i-1})  \right\|  \geq
+( t_i - t_{i-1} ) \left\| \dot\gamma(s) \right\| -
+\left\|  \int_{t_{i-1}}^{ t_i }   (\dot\gamma(t) - \dot\gamma(s))    \, dt  \right\|
+\tag{3.8}\]</span></span> By standard properties of integral we also have <span class="math display">\[
+\left\|  \int_{t_{i-1}}^{ t_i }   (\dot\gamma(t) - \dot\gamma(s))    \, dt  \right\|
+\leq
+\int_{t_{i-1}}^{ t_i }   \left\| \dot\gamma(t) - \dot\gamma(s) \right\|    \, dt\,,
+\]</span> so that (<a href="#eq-length-formula-5"><span>3.8</span></a>) implies <span id="eq-length-formula-6"><span class="math display">\[
+\left\|  \gamma(t_i) - \gamma(t_{i-1})  \right\| \geq ( t_i - t_{i-1} ) \left\| \dot\gamma(s) \right\|   - \int_{t_{i-1}}^{ t_i }   \left\| \dot\gamma(t) - \dot\gamma(s) \right\|    \, dt\,.
+\tag{3.9}\]</span></span> Since <span class="math inline">\(t,s \in [t_{i-1},t_i]\)</span>, then <span class="math display">\[
+|t-s| \leq | t_{i} - t_{i-1} |   &lt;  \delta
+\]</span> where the last inequality follows by (<a href="#eq-length-formula-3"><span>3.6</span></a>). Thus by uniform continuity (<a href="#eq-length-formula-uc"><span>3.5</span></a>) we get <span class="math display">\[
+\left\|  \dot\gamma(t) - \dot\gamma(s)  \right\| &lt; \frac{\varepsilon}{b-a} \,.
+\]</span> We can therefore further estimate (<a href="#eq-length-formula-6"><span>3.9</span></a>) and obtain <span class="math display">\[\begin{align}
+\left\|  \gamma(t_i) - \gamma(t_{i-1})  \right\| &amp; \geq ( t_i - t_{i-1} ) \left\| \dot\gamma(s) \right\|   - \int_{t_{i-1}}^{ t_i }   \left\| \dot\gamma(t) - \dot\gamma(s) \right\|    \, dt \\
+&amp; \geq  ( t_i - t_{i-1} ) \left\| \dot\gamma(s) \right\| -  ( t_i - t_{i-1} ) \frac{\varepsilon}{b-a}    \, dt \,.
+\end{align}\]</span> Dividing the above by <span class="math inline">\(t_i - t_{i-1}\)</span> we get <span class="math display">\[
+\frac{ \left\|  \gamma(t_i) - \gamma(t_{i-1})  \right\| }{ t_i - t_{i-1}  } \geq
+\left\| \dot\gamma(s) \right\| - \frac{\varepsilon}{b-a}  \,.
+\]</span> Integrating the above over <span class="math inline">\(s\)</span> in the interval <span class="math inline">\([t_{i-1}, t_i ]\)</span> we get <span class="math display">\[
+\left\|  \gamma(t_i) - \gamma(t_{i-1})  \right\|  \geq \int_{t_{i-1}}^{ t_i } \left\| \dot\gamma(s) \right\| \, ds  - \frac{\varepsilon}{b-a} (t_i - t_{i-1}) \,.
+\]</span> Summing over <span class="math inline">\(i=1,\ldots,m\)</span> we get <span id="eq-length-formula-7"><span class="math display">\[
+L(\mathcal{P},\gamma) \geq \int_{a}^b \left\| \dot\gamma(s) \right\| \, ds - \varepsilon
+\tag{3.10}\]</span></span> since <span class="math display">\[
+\sum_{i=1}^m (t_i - t_{i-1}) = t_m - t_0 = b - a \,.
+\]</span> Putting together (<a href="#eq-length-formula-2"><span>3.4</span></a>) and (<a href="#eq-length-formula-7"><span>3.10</span></a>) we get <span class="math display">\[
+\int_{a}^b \left\| \dot\gamma(s) \right\| \, ds - \varepsilon\leq L(\mathcal{P},\gamma)
+\leq  \int_{a}^b \left\| \dot\gamma(s) \right\| \, ds
+\]</span> which implies (<a href="#eq-length-formula-1"><span>3.3</span></a>), concluding the proof.</p>
 </div></details>
 </div>
-<p>Let us check that we have given a meaningful definition of <span class="math inline">\(L(\gamma)\)</span>, by testing it on a few examples.</p>
-<div id="length-of-a-circle" class="Example" title="Length of a circle">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 15: </strong>Length of a circle</summary><div>The circle is parametrized by <span class="math inline">\(\gamma\ \colon [0,2\pi] \to \mathbb{R}^2\)</span> defined by <span class="math display">\[
-\gamma(t) = (\cos(t), \sin(t)) \,.
+<p>Thanks to the above theorem we have now a way to compute <span class="math inline">\(L(\gamma)\)</span>. Let us check that we have given a meaningful definition of length by computing <span class="math inline">\(L(\gamma)\)</span> on known examples.</p>
+<div id="length-of-circle" class="Example" title="Length of Circle">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 15: </strong>Length of Circle</summary><div>The circle of radius <span class="math inline">\(R\)</span> is parametrized by <span class="math inline">\(\gamma\ \colon [0,2\pi] \to \mathbb{R}^2\)</span> defined by <span class="math display">\[
+\gamma(t) = (R\cos(t), R\sin(t)) \,.
 \]</span> Then <span class="math display">\[
-\dot \gamma(t) = (-\sin(t), \cos(t))
+\dot \gamma(t) = (-R\sin(t), R\cos(t))
 \]</span> and <span class="math display">\[\begin{align}
 \left\| \dot\gamma(t) \right\| &amp; = \sqrt{ \dot \gamma_1^2(t) +   \dot \gamma_2^2(t)      } \\
-                &amp; = \sqrt{ \sin^2(t) + \cos^2 (t)} = 1\,.
+                &amp; = R \sqrt{ \sin^2(t) + \cos^2 (t)} = 1\,.
 \end{align}\]</span> Therefore <span class="math display">\[
-L(\gamma) = \int_{0}^{2\pi}  \left\|   \dot\gamma(t) \right\| \, dt = \int_0^{2\pi} 1 \, dt = 2 \pi
+L(\gamma) = \int_{0}^{2\pi}  \left\|   \dot\gamma(t) \right\| \, dt = \int_0^{2\pi} R \, dt = 2 \pi R
 \]</span> as expected.<p></p>
 </div></details>
 </div>
+<div id="length-of-helix" class="Example" title="Length of helix">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 16: </strong>Length of helix</summary><div>Let us consider one full turn of the Helix of radius <span class="math inline">\(R\)</span> and rise <span class="math inline">\(H\)</span>. This is parametrized by <span class="math display">\[
+\gamma(t) = (R\cos(t), R\sin(t) ,Ht)
+\]</span> for <span class="math inline">\(t \in [0,2\pi]\)</span>. Then <span class="math display">\[
+\dot \gamma(t) = (-R\sin(t), R\cos(t) , H) \,,
+\]</span> and <span class="math display">\[\begin{align}
+\left\|  \dot \gamma(t)   \right\| &amp; = \sqrt{  \dot\gamma_1^2 + \dot\gamma_2^2 + \dot\gamma_3^2 } \\
+                    &amp; = \sqrt{ R^2\sin^2(t) + R^2\cos^2(t) + H^2 } = \sqrt{R^2 + H^2} \,.
+\end{align}\]</span> Therefore <span class="math display">\[
+L(\gamma) = \int_0^{2\pi} \left\|  \dot\gamma(t)  \right\| \, dt = 2 \pi \sqrt{R^2 + H^2} \,.
+\]</span><p></p>
+</div></details>
+</div>
+</section>
+<section id="arc-length" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="arc-length"><span class="header-section-number">3.3</span> Arc-length</h2>
 
 
 </section>
