@@ -9120,3 +9120,2303 @@
  [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
 
  [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 21**](chap_3.qmd#Definition-21)\Pageref{Definition-21}
+
+ [**Remark 22**](chap_3.qmd#Remark-22)\Pageref{Remark-22}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 21**](chap_3.qmd#Definition-21)\Pageref{Definition-21}
+
+ [**Remark 22**](chap_3.qmd#Remark-22)\Pageref{Remark-22}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 21**](chap_3.qmd#Definition-21)\Pageref{Definition-21}
+
+ [**Remark 22**](chap_3.qmd#Remark-22)\Pageref{Remark-22}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 21**](chap_3.qmd#Definition-21)\Pageref{Definition-21}
+
+ [**Remark 22**](chap_3.qmd#Remark-22)\Pageref{Remark-22}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 21**](chap_3.qmd#Definition-21)\Pageref{Definition-21}
+
+ [**Remark 22**](chap_3.qmd#Remark-22)\Pageref{Remark-22}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 21**](chap_3.qmd#Definition-21)\Pageref{Definition-21}
+
+ [**Remark 22**](chap_3.qmd#Remark-22)\Pageref{Remark-22}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 21**](chap_3.qmd#Definition-21)\Pageref{Definition-21}
+
+ [**Remark 22**](chap_3.qmd#Remark-22)\Pageref{Remark-22}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 21**](chap_3.qmd#Definition-21)\Pageref{Definition-21}
+
+ [**Remark 22**](chap_3.qmd#Remark-22)\Pageref{Remark-22}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 21**](chap_3.qmd#Definition-21)\Pageref{Definition-21}
+
+ [**Remark 22**](chap_3.qmd#Remark-22)\Pageref{Remark-22}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 21**](chap_3.qmd#Definition-21)\Pageref{Definition-21}
+
+ [**Remark 22**](chap_3.qmd#Remark-22)\Pageref{Remark-22}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 21**](chap_3.qmd#Definition-21)\Pageref{Definition-21}
+
+ [**Remark 22**](chap_3.qmd#Remark-22)\Pageref{Remark-22}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 21**](chap_3.qmd#Definition-21)\Pageref{Definition-21}
+
+ [**Remark 22**](chap_3.qmd#Remark-22)\Pageref{Remark-22}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 21**](chap_3.qmd#Definition-21)\Pageref{Definition-21}
+
+ [**Remark 22**](chap_3.qmd#Remark-22)\Pageref{Remark-22}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 21**](chap_3.qmd#Definition-21)\Pageref{Definition-21}
+
+ [**Remark 22**](chap_3.qmd#Remark-22)\Pageref{Remark-22}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 21**](chap_3.qmd#Definition-21)\Pageref{Definition-21}
+
+ [**Remark 22**](chap_3.qmd#Remark-22)\Pageref{Remark-22}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 21**](chap_3.qmd#Definition-21)\Pageref{Definition-21}
+
+ [**Remark 22**](chap_3.qmd#Remark-22)\Pageref{Remark-22}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 21**](chap_3.qmd#Definition-21)\Pageref{Definition-21}
+
+ [**Remark 22**](chap_3.qmd#Remark-22)\Pageref{Remark-22}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 21**](chap_3.qmd#Definition-21)\Pageref{Definition-21}
+
+ [**Remark 22**](chap_3.qmd#Remark-22)\Pageref{Remark-22}
+
+ [**Goal**](chap_1.qmd#Goal*-1)\Pageref{Goal*-1}
+
+ [**Question**](chap_1.qmd#Question*-2)\Pageref{Question*-2}
+
+ [**Problem**](chap_1.qmd#Problem*-3)\Pageref{Problem*-3}
+
+ [**Definition 1**](chap_1.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_1.qmd#level-curve): Level curve\Pageref{level-curve}
+
+ [**Definition 3**](chap_1.qmd#Definition-3)\Pageref{Definition-3}
+
+ [**Question**](chap_1.qmd#Question*-4)\Pageref{Question*-4}
+
+ [**Example 4**](chap_1.qmd#parametrizing-the-straight-line): Parametrizing the straight line\Pageref{parametrizing-the-straight-line}
+
+ [**Remark 5**](chap_1.qmd#parametrization-is-not-unique): Parametrization is not unique\Pageref{parametrization-is-not-unique}
+
+ [**Example 6**](chap_1.qmd#parametrizing-the-circle): Parametrizing the circle\Pageref{parametrizing-the-circle}
+
+ [**Example 7**](chap_1.qmd#parametrizing-the-helix): Parametrizing the helix\Pageref{parametrizing-the-helix}
+
+ [**Definition 1**](chap_3.qmd#parametrized-curve): Parametrized curve\Pageref{parametrized-curve}
+
+ [**Definition 2**](chap_3.qmd#smooth-functions): Smooth functions\Pageref{smooth-functions}
+
+ [**Example 3**](chap_3.qmd#Example-3)\Pageref{Example-3}
+
+ [**Definition 4**](chap_3.qmd#Definition-4)\Pageref{Definition-4}
+
+ [**Assumption**](chap_3.qmd#Assumption*-1)\Pageref{Assumption*-1}
+
+ [**Example 5**](chap_3.qmd#Example-5)\Pageref{Example-5}
+
+ [**Definition 6**](chap_3.qmd#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 7**](chap_3.qmd#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 8**](chap_3.qmd#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 9**](chap_3.qmd#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+
+ [**Definition 10**](chap_3.qmd#partition): Partition\Pageref{partition}
+
+ [**Definition 11**](chap_3.qmd#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 12**](chap_3.qmd#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 13**](chap_3.qmd#Question-13)\Pageref{Question-13}
+
+ [**Theorem 14**](chap_3.qmd#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+
+ [**Proof**](chap_3.qmd#Proof*-2)\Pageref{Proof*-2}
+
+ [**Example 15**](chap_3.qmd#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 16**](chap_3.qmd#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 17**](chap_3.qmd#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 18**](chap_3.qmd#Remark-18)\Pageref{Remark-18}
+
+ [**Example 19**](chap_3.qmd#circle): Circle\Pageref{circle}
+
+ [**Example 20**](chap_3.qmd#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 21**](chap_3.qmd#Definition-21)\Pageref{Definition-21}
+
+ [**Remark 22**](chap_3.qmd#Remark-22)\Pageref{Remark-22}

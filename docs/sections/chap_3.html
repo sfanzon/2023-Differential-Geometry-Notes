@@ -70,6 +70,14 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
 }
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
 .Example {
   --color1: #bce5de;
   --color2: #21aa93;
@@ -78,7 +86,15 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Corollary {
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -86,11 +102,19 @@ ul.task-list li input[type="checkbox"] {
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
-.Theorem {
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -98,31 +122,7 @@ ul.task-list li input[type="checkbox"] {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -241,6 +241,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#tangent-vectors" id="toc-tangent-vectors" class="nav-link active" data-scroll-target="#tangent-vectors"><span class="header-section-number">3.1</span> Tangent vectors</a></li>
   <li><a href="#length-of-curves" id="toc-length-of-curves" class="nav-link" data-scroll-target="#length-of-curves"><span class="header-section-number">3.2</span> Length of curves</a></li>
   <li><a href="#arc-length" id="toc-arc-length" class="nav-link" data-scroll-target="#arc-length"><span class="header-section-number">3.3</span> Arc-length</a></li>
+  <li><a href="#scalar-product-in-mathbbrn" id="toc-scalar-product-in-mathbbrn" class="nav-link" data-scroll-target="#scalar-product-in-mathbbrn"><span class="header-section-number">3.4</span> Scalar product in <span class="math inline">\(\mathbb{R}^n\)</span></a></li>
+  <li><a href="#speed-of-a-curve" id="toc-speed-of-a-curve" class="nav-link" data-scroll-target="#speed-of-a-curve"><span class="header-section-number">3.5</span> Speed of a curve</a></li>
+  <li><a href="#vector-product-in-mathbbr3" id="toc-vector-product-in-mathbbr3" class="nav-link" data-scroll-target="#vector-product-in-mathbbr3"><span class="header-section-number">3.6</span> Vector product in <span class="math inline">\(\mathbb{R}^3\)</span></a></li>
   </ul>
 </nav>
     </div>
@@ -467,7 +470,7 @@ t_0, \ldots, t_m \in (a,b) \,.
 \tag{3.1}\]</span></span> Intuitively, if we increase the number of points <span class="math inline">\(t_i\)</span>, the quantity on the RHS of (<a href="#eq-approx-length"><span>3.1</span></a>) should approximate <span class="math inline">\({\rm Length}(\gamma)\)</span> better and better. Let us make this precise.</p>
 <div id="partition" class="Definition" title="Partition">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 10: </strong>Partition</summary><div>Let <span class="math inline">\((a,b)\)</span> be an interval. A partition <span class="math inline">\(\mathcal{P}\)</span> of <span class="math inline">\([a,b]\)</span> is a vector of time instants <span class="math display">\[
-\mathbb{P} = (t_0,\ldots, t_k) \in [a,b]^{m+1}
+\mathcal{P} = (t_0,\ldots, t_k) \in [a,b]^{m+1}
 \]</span> with <span class="math display">\[
 t_0 = a &lt; t_1 &lt; \ldots &lt; t_{m-1} &lt; t_m = b \,.
 \]</span> If <span class="math inline">\(\mathcal{P}\)</span> is a partition of <span class="math inline">\([a,b]\)</span>, we define its maximum length as <span class="math display">\[
@@ -520,7 +523,7 @@ L(\gamma) \approx \sum_{i=1}^m  \left\| \gamma(t_{i}) - \gamma(t_{i-1}) \right\|
 <figcaption class="figure-caption">Approximating <span class="math inline">\(L(\gamma)\)</span> via <span class="math inline">\(\dot\gamma\)</span></figcaption>
 </figure>
 </div>
-<div id="characterizing-the-length-of-gamma" class="Theorem" title="Characterizing the length of \gamma">
+<div id="theorem-length" class="Theorem" title="Characterizing the length of \gamma">
 <p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 14: </strong>Characterizing the length of <span class="math inline">\(\gamma\)</span></summary><div>Assume <span class="math inline">\(\gamma\ \colon [a,b] \to \mathbb{R}^n\)</span> is a parametrized curve, with <span class="math inline">\([a,b]\)</span> bounded. Then <span class="math inline">\(\gamma\)</span> is rectifiable and <span id="eq-length-formula"><span class="math display">\[
 L(\gamma) = \int_a^b  \left\| \dot\gamma(t) \right\| \, dt \,.
 \tag{3.2}\]</span></span><p></p>
@@ -604,7 +607,7 @@ L(\mathcal{P},\gamma) \geq \int_{a}^b \left\| \dot\gamma(s) \right\| \, ds - \va
 \dot \gamma(t) = (-R\sin(t), R\cos(t))
 \]</span> and <span class="math display">\[\begin{align}
 \left\| \dot\gamma(t) \right\| &amp; = \sqrt{ \dot \gamma_1^2(t) +   \dot \gamma_2^2(t)      } \\
-                &amp; = R \sqrt{ \sin^2(t) + \cos^2 (t)} = 1\,.
+                &amp; = R \sqrt{ \sin^2(t) + \cos^2 (t)} = R\,.
 \end{align}\]</span> Therefore <span class="math display">\[
 L(\gamma) = \int_{0}^{2\pi}  \left\|   \dot\gamma(t) \right\| \, dt = \int_0^{2\pi} R \, dt = 2 \pi R
 \]</span> as expected.<p></p>
@@ -626,6 +629,119 @@ L(\gamma) = \int_0^{2\pi} \left\|  \dot\gamma(t)  \right\| \, dt = 2 \pi \sqrt{R
 </section>
 <section id="arc-length" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="arc-length"><span class="header-section-number">3.3</span> Arc-length</h2>
+<p>We have just shown in Theorem <a href="chap_3.html#theorem-length">14</a> that the length of a regular curve <span class="math inline">\(\gamma\ \colon [a,b] \to \mathbb{R}^n\)</span> with <span class="math inline">\([a,b]\)</span> bounded is given by <span class="math display">\[
+L(\gamma) = \int_a^b \left\|  \dot\gamma(t) \right\| \,t \,.
+\]</span> Using this formula, we introduce the notion of length of a portion of <span class="math inline">\(\gamma\)</span>.</p>
+<div id="arc-length-1" class="Definition" title="Arc-length">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 17: </strong>Arc-length</summary><div>Let <span class="math inline">\(\gamma\, \colon (a,b) \to \mathbb{R}^n\)</span> be a curve, with <span class="math inline">\((a,b)\)</span> possibly unbounded. We define the <strong>arc-length</strong> of <span class="math inline">\(\gamma\)</span> starting at the point <span class="math inline">\(\gamma(t_0)\)</span> as the function <span class="math inline">\(s \colon \mathbb{R}\to \mathbb{R}\)</span> defined by <span class="math display">\[
+s(t) := \int_{t_0}^t  \left\|   \gamma(\tau)  \right\|\, d\tau \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/arc_length.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Arc-length of <span class="math inline">\(\gamma\)</span> starting at <span class="math inline">\(\gamma(t_0)\)</span></figcaption>
+</figure>
+</div>
+<div id="Remark-18" class="Remark">
+<details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 18</strong></summary><div>
+<p>A few remarks:</p>
+<ul>
+<li><p>Arc-length is well-defined: Indeed, <span class="math inline">\(\gamma\)</span> is smooth, and so <span class="math inline">\(\dot \gamma\)</span> is continuous. WLOG assume <span class="math inline">\(t \geq t_0\)</span>. Then <span class="math display">\[
+s(t) = \int_{t_0}^t  \left\|   \gamma(\tau)  \right\|\, d\tau \leq (t-t_0) \max_{ \tau \in [t_0,t] } \left\| \dot\gamma(\tau) \right\| &lt; \infty \,.
+\]</span></p></li>
+<li><p>We always have <span class="math display">\[
+s(t_0)=0\,.
+\]</span></p></li>
+<li><p>We have <span class="math display">\[
+t &gt; t_0   \implies  s(t) \geq 0
+\]</span> and <span class="math display">\[
+t &lt; t_0   \implies  s(t) \leq 0 \,.
+\]</span></p></li>
+<li><p>Choosing a different starting point changes the arc-length by a <strong>constant</strong>: For example define <span class="math inline">\(\tilde{s}\)</span> as the arc-length starting from <span class="math inline">\(\tilde{t}_0\)</span>, that is, <span class="math display">\[
+\tilde{s}(t) := \int_{\tilde{t}_0}^t \left\|  \dot\gamma(\tau)  \right\| \, d\tau  \,.
+\]</span> Then by the properties of integral <span class="math display">\[\begin{align}
+s(t) &amp; = \int_{t_0}^t \left\|  \dot\gamma(\tau)  \right\| \, d\tau \\
+   &amp; = \int_{t_0}^{\tilde{t}_0} \left\|  \dot\gamma(\tau)  \right\| \, d\tau +
+       \int_{\tilde{t}_0}^{t} \left\|  \dot\gamma(\tau)  \right\| \, d\tau \\
+   &amp; = \int_{t_0}^{\tilde{t}_0} \left\|  \dot\gamma(\tau)  \right\| \, d\tau + \tilde{s}(t) \,.
+\end{align}\]</span> Hence <span class="math display">\[
+s = c + \tilde{s}
+\]</span> with <span class="math display">\[
+c := \int_{t_0}^{\tilde{t}_0} \left\|  \dot\gamma(\tau)  \right\| \, d\tau \,.
+\]</span> Note that <span class="math inline">\(c\)</span> is the arc-length of <span class="math inline">\(\gamma\)</span> between the starting points <span class="math inline">\(\gamma(t_0)\)</span> and <span class="math inline">\(\gamma(\tilde{t}_0)\)</span>.</p></li>
+<li><p>The arc-length is a differentiable function: Since <span class="math inline">\(\dot\gamma\)</span> is continuous, by the Fundamental Theorem of Calculus we have <span class="math display">\[
+\dot s(t) = \frac{d}{dt} \int_{t_0}^t \left\| \dot\gamma(\tau) \right\| \, d\tau =
+\left\| \dot\gamma(t) \right\| \,.
+\]</span></p></li>
+</ul>
+</div></details>
+</div>
+<div id="circle" class="Example" title="Circle">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 19: </strong>Circle</summary><div>The circle of radius <span class="math inline">\(R\)</span> is parametrized by <span class="math inline">\(\gamma\ \colon [0,2\pi] \to \mathbb{R}^2\)</span> defined by <span class="math display">\[
+\gamma(t) = (R\cos(t), R\sin(t)) \,.
+\]</span> Then <span class="math display">\[
+\dot \gamma(t) = (-R\sin(t), R\cos(t)) \,, \quad \left\| \dot\gamma(t) \right\| = R \,.
+\]</span> Therefore, for any fixed <span class="math inline">\(t_0 \in [0,2\pi]\)</span> we have <span class="math display">\[
+s(t) = \int_{t_0}^{t}  \left\|   \dot\gamma(\tau) \right\| \, d\tau = \int_{t_0}^{t} R \, d\tau = (t - t_0)  R \,.
+\]</span> In particular we see that <span class="math inline">\(\dot s = R\)</span> is constant.<p></p>
+</div></details>
+</div>
+<div id="logarithmic-spiral" class="Example" title="Logarithmic spiral">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 20: </strong>Logarithmic spiral</summary><div>The Logarithmic spiral is defined by <span class="math inline">\(\gamma\ \colon [0,2\pi] \to \mathbb{R}^2\)</span> with <span class="math display">\[
+\gamma(t) = (e^{kt} \cos(t), e^{kt} \sin(t)) \,,
+\]</span> where <span class="math inline">\(k \in \mathbb{R}\)</span>, <span class="math inline">\(k \neq 0\)</span>, is called the <strong>growth factor</strong>. Then <span class="math display">\[
+\dot \gamma_1(t) = e^{kt} ( k \cos(t) - \sin(t) )
+\]</span> <span class="math display">\[
+\dot \gamma_2(t) = e^{kt} ( k \sin(t) + \cos(t) )
+\]</span> and so, after some calculations, <span class="math display">\[
+\left\| \dot\gamma(t) \right\|^2   =  \dot\gamma_1^2 + \dot\gamma_2^2 = (k^2 + 1) e^{2kt} \,.
+\]</span> The arc-length starting from <span class="math inline">\(t_0\)</span> is <span class="math display">\[\begin{align}
+s(t) &amp; = \int_{t_0}^t \left\| \dot\gamma(\tau) \right\| \, d \tau \\
+     &amp; = \sqrt{k^2 + 1} \int_{t_0}^t e^{k \tau} \, d \tau  \\
+     &amp; = \frac{\sqrt{k^2 + 1}}{k} ( e^t - e^{t_0} ) \,.
+\end{align}\]</span><p></p>
+</div></details>
+</div>
+<div class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<div id="fig-log-spiral" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="chap_3_files/figure-html/fig-log-spiral-output-1.png" width="528" height="503" class="figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.6: Plot of Logarithmic Spiral with <span class="math inline">\(k=0.1\)</span></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="scalar-product-in-mathbbrn" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="scalar-product-in-mathbbrn"><span class="header-section-number">3.4</span> Scalar product in <span class="math inline">\(\mathbb{R}^n\)</span></h2>
+</section>
+<section id="speed-of-a-curve" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="speed-of-a-curve"><span class="header-section-number">3.5</span> Speed of a curve</h2>
+<p>Given a curve <span class="math inline">\(\gamma\)</span> we defined the tangent vector at <span class="math inline">\(\gamma(t)\)</span> to be <span class="math display">\[
+\dot \gamma(t) \,.
+\]</span> The tangent vector measures the change of direction of the curve. Therefore the magnitude of <span class="math inline">\(\dot \gamma\)</span> can be interpreted as the <strong>speed</strong> of the curve.</p>
+<div id="Definition-21" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 21</strong></summary><div>Let <span class="math inline">\(\gamma\ \colon (a,b) \to \mathbb{R}^n\)</span> be a curve. We define the speed of <span class="math inline">\(\gamma\)</span> at the point <span class="math inline">\(\gamma(t)\)</span> by <span class="math display">\[
+\left\| \dot \gamma(t) \right\| \,.
+\]</span> We say that <span class="math inline">\(\gamma\)</span> is a <strong>unit-speed</strong> curve if <span class="math display">\[
+\left\| \dot \gamma(t) \right\|  = 1
+\]</span> for all <span class="math inline">\(t \in (a,b)\)</span>.<p></p>
+</div></details>
+</div>
+<div id="Remark-22" class="Remark">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 22</strong></summary><div>The derivative of the arc-length <span class="math inline">\(s\)</span> gives the speed of <span class="math inline">\(\gamma\)</span>: indeed recall that <span class="math display">\[
+s(t) = \int_{t_0}^t \left\|   \dot\gamma(\tau)  \right\| \, d\tau \,.
+\]</span> Then <span class="math display">\[
+\dot s(t) = \left\|   \dot\gamma(t)  \right\| \,.
+\]</span><p></p>
+</div></details>
+</div>
+</section>
+<section id="vector-product-in-mathbbr3" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="vector-product-in-mathbbr3"><span class="header-section-number">3.6</span> Vector product in <span class="math inline">\(\mathbb{R}^3\)</span></h2>
 
 
 </section>

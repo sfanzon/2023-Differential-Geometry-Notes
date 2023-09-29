@@ -392,6 +392,8 @@ plt.show()
 ```
 
 
+
+
 ## Length of curves
 
 
@@ -442,7 +444,7 @@ Intuitively, if we increase the number of points $t_i$, the quantity on the RHS 
 
 Let $(a,b)$ be an interval. A partition $\mathcal{P}$ of $[a,b]$ is a vector of time instants
 $$
-\mathbb{P} = (t_0,\ldots, t_k) \in [a,b]^{m+1}
+\mathcal{P} = (t_0,\ldots, t_k) \in [a,b]^{m+1}
 $$
 with 
 $$
@@ -532,7 +534,7 @@ The above argument can be made rigorous, as we see in the next theorem.
 
 
 ::: Theorem
-### Characterizing the length of $\g$
+### Characterizing the length of $\g$  {#theorem-length}
 
 Assume $\g \ \colon [a,b] \to \R^n$ is a parametrized curve, with $[a,b]$ bounded. Then $\g$ is rectifiable and
 $$
@@ -685,7 +687,7 @@ $$
 and 
 \begin{align}
 \norm{\dot\g(t)} & = \sqrt{ \dot \g_1^2(t) +   \dot \g_2^2(t)      } \\
-                & = R \sqrt{ \sin^2(t) + \cos^2 (t)} = 1\,.
+                & = R \sqrt{ \sin^2(t) + \cos^2 (t)} = R\,.
 \end{align}
 Therefore 
 $$
@@ -720,4 +722,214 @@ $$
 :::
 
 
+
+
+
 ## Arc-length
+
+We have just shown in Theorem \ref{theorem-length} that the length of a regular curve $\g \ \colon [a,b] \to \R^n$ with $[a,b]$ bounded is given by
+$$
+L(\g) = \int_a^b \norm{ \dot\g (t)} \,t \,.
+$$
+Using this formula, we introduce the notion of length of a portion of $\g$.
+
+
+
+
+::: Definition
+### Arc-length
+
+Let $\g \, \colon (a,b) \to \R^n$ be a curve, with $(a,b)$ possibly unbounded. We define the **arc-length** of $\g$ starting at the point $\g(t_0)$ as the function $s \colon \R \to \R$ defined by
+$$
+s(t) := \int_{t_0}^t  \norm{  \g(\tau) }\, d\tau \,.
+$$
+
+:::
+
+
+![Arc-length of $\g$ starting at $\g(t_0)$](/images/arc_length.png){width=70%}
+
+
+::: Remark
+
+A few remarks:
+
+- Arc-length is well-defined: Indeed, $\g$ is smooth, and so $\dot \g$ is continuous. WLOG assume $t \geq t_0$. Then
+$$
+s(t) = \int_{t_0}^t  \norm{  \g(\tau) }\, d\tau \leq (t-t_0) \max_{ \tau \in [t_0,t] } \norm{\dot\g(\tau)} < \infty \,.
+$$
+
+- We always have
+$$
+s(t_0)=0\,.
+$$
+
+- We have
+$$
+t > t_0   \implies  s(t) \geq 0 
+$$
+and 
+$$
+t < t_0   \implies  s(t) \leq 0 \,.
+$$
+
+- Choosing a different starting point changes the arc-length by a **constant**: For example define $\tilde{s}$ as the arc-length starting from $\tilde{t}_0$, that is, 
+$$
+\tilde{s}(t) := \int_{\tilde{t}_0}^t \norm{ \dot\g(\tau) } \, d\tau  \,.
+$$
+Then by the properties of integral
+\begin{align}
+s(t) & = \int_{t_0}^t \norm{ \dot\g(\tau) } \, d\tau \\
+     & = \int_{t_0}^{\tilde{t}_0} \norm{ \dot\g(\tau) } \, d\tau +
+         \int_{\tilde{t}_0}^{t} \norm{ \dot\g(\tau) } \, d\tau \\
+     & = \int_{t_0}^{\tilde{t}_0} \norm{ \dot\g(\tau) } \, d\tau + \tilde{s}(t) \,.
+\end{align}
+Hence 
+$$
+s = c + \tilde{s} 
+$$
+with 
+$$
+c := \int_{t_0}^{\tilde{t}_0} \norm{ \dot\g(\tau) } \, d\tau \,.
+$$
+Note that $c$ is the arc-length of $\g$ between the starting points $\g(t_0)$ and $\g(\tilde{t}_0)$.
+
+- The arc-length is a differentiable function: Since $\dot\g$ is continuous, by the Fundamental Theorem of Calculus we have
+$$
+\dot s(t) = \frac{d}{dt} \int_{t_0}^t \norm{\dot\g (\tau)} \, d\tau =
+ \norm{\dot\g (t)} \,.
+$$
+:::
+
+
+
+::: Example
+### Circle
+
+The circle of radius $R$ is parametrized by $\g \ \colon [0,2\pi] \to \R^2$ defined by 
+$$
+\g(t) = (R\cos(t), R\sin(t)) \,.
+$$
+Then 
+$$
+\dot \g(t) = (-R\sin(t), R\cos(t)) \,, \quad \norm{\dot\g(t)} = R \,.
+$$
+Therefore, for any fixed $t_0 \in [0,2\pi]$ we have
+$$
+s(t) = \int_{t_0}^{t}  \norm{  \dot\g(\tau)} \, d\tau = \int_{t_0}^{t} R \, d\tau = (t - t_0)  R \,.
+$$
+In particular we see that $\dot s = R$ is constant.
+:::
+
+
+::: Example
+### Logarithmic spiral
+
+The Logarithmic spiral is defined by $\g \ \colon [0,2\pi] \to \R^2$ with
+$$
+\g(t) = (e^{kt} \cos(t), e^{kt} \sin(t)) \,,
+$$
+where $k \in \R$, $k \neq 0$, is called the **growth factor**.
+Then 
+$$
+\dot \g_1(t) = e^{kt} ( k \cos(t) - \sin(t) )
+$$
+$$ 
+\dot \g_2(t) = e^{kt} ( k \sin(t) + \cos(t) ) 
+$$
+and so, after some calculations,
+$$
+\norm{\dot\g(t)}^2   =  \dot\g_1^2 + \dot\g_2^2 = (k^2 + 1) e^{2kt} \,.
+$$
+The arc-length starting from $t_0$ is
+\begin{align}
+s(t) & = \int_{t_0}^t \norm{\dot\g(\tau)} \, d \tau \\
+     & = \sqrt{k^2 + 1} \int_{t_0}^t e^{k \tau} \, d \tau  \\
+     & = \frac{\sqrt{k^2 + 1}}{k} ( e^t - e^{t_0} ) \,.
+\end{align}
+:::
+
+
+```{python}
+#| echo: false
+#| fig-cap: "Plot of Logarithmic Spiral with $k=0.1$" 
+#| label: fig-log-spiral
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Create values for t
+t = np.linspace(0, 10*np.pi, 1000)
+
+# Calculate x and y coordinates of the curve
+
+# Define the parameters for the logarithmic spiral
+k = 0.1  # Growth factor
+
+x = np.exp(k * t) * np.cos(t)
+y = np.exp(k * t) * np.sin(t)
+
+
+# Plot the curve
+plt.figure(figsize=(6, 6))
+plt.plot(x, y, color = 'deeppink',label='Log Spiral')
+plt.axis('equal')  # Equal aspect ratio
+
+
+# Add labels and legend
+plt.xlabel('x')
+plt.ylabel('y')
+plt.legend()
+
+# Show the plot
+plt.grid(color='lightgray')
+plt.show()
+```
+
+
+
+## Scalar product in $\R^n$
+
+
+
+
+## Speed of a curve
+
+Given a curve $\g$ we defined the tangent vector at $\g(t)$ to be
+$$
+\dot \g (t) \,.
+$$
+The tangent vector measures the change of direction of the curve. Therefore the magnitude of $\dot \g$ can be interpreted as the **speed** of the curve.
+
+::: Definition
+
+Let $\g \ \colon (a,b) \to \R^n$ be a curve. We define the speed of $\g$ at the point $\g(t)$ by
+$$
+\norm{\dot \g (t)} \,.
+$$
+We say that $\g$ is a **unit-speed** curve if
+$$
+\norm{\dot \g (t)}  = 1
+$$
+for all $t \in (a,b)$.
+
+:::
+
+
+::: Remark
+
+The derivative of the arc-length $s$ gives the speed of $\g$: indeed recall that 
+$$
+s(t) = \int_{t_0}^t \norm{  \dot\g (\tau) } \, d\tau \,.
+$$
+Then 
+$$
+\dot s(t) = \norm{  \dot\g (t) } \,.
+$$
+
+:::
+
+
+
+
+## Vector product in $\R^3$

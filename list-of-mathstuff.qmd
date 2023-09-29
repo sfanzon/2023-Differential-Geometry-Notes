@@ -49,10 +49,22 @@
 
  [**Question 3.13**](#Question-3.13)\Pageref{Question-3.13}
 
- [**Theorem 3.14**](#characterizing-the-length-of-gamma): Characterizing the length of $\gamma$\Pageref{characterizing-the-length-of-gamma}
+ [**Theorem 3.14**](#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
 
  [**Proof**](#Proof*-3.2)\Pageref{Proof*-3.2}
 
  [**Example 3.15**](#length-of-circle): Length of Circle\Pageref{length-of-circle}
 
  [**Example 3.16**](#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 3.17**](#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 3.18**](#Remark-3.18)\Pageref{Remark-3.18}
+
+ [**Example 3.19**](#circle): Circle\Pageref{circle}
+
+ [**Example 3.20**](#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 3.21**](#Definition-3.21)\Pageref{Definition-3.21}
+
+ [**Remark 3.22**](#Remark-3.22)\Pageref{Remark-3.22}
