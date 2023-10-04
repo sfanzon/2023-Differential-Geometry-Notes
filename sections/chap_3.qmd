@@ -435,9 +435,11 @@ $$
 $$
 Thus 
 $$
-{\rm Length}(\g) \approx \sum_{i=1}^m \norm{ \g(t_i) - \g(t_{i-1}) } \,.  
+L(\g) \approx \sum_{i=1}^m \norm{ \g(t_i) - \g(t_{i-1}) } \,.  
 $$ {#eq-approx-length}
-Intuitively, if we increase the number of points $t_i$, the quantity on the RHS of (@eq-approx-length) should approximate ${\rm Length}(\g)$ better and better. Let us make this precise.
+Intuitively, if we increase the number of points $t_i$, the quantity on the RHS of (@eq-approx-length) should approximate $L(\g)$ better and better. Let us make this precise.
+
+
 
 ::: Definition
 ### Partition
@@ -457,6 +459,8 @@ $$
 :::
 
 Note that $\norm{\mathcal{P}}$ measures how fine the partition $\mathcal{P}$ is.
+
+
 
 
 
@@ -545,14 +549,17 @@ $$ {#eq-length-formula}
 
 ::: Proof
 
+*Step 1. The integral in (@eq-length-formula) is bounded.*  
 Since $\g$ is smooth, in particular $\dot \g$ is continuous. Since $[a,b]$ is bounded, then $\dot \g$ is bounded, that is 
 $$
-\sup_{t \in [a,b]} \norm{\g(t)} \leq C
+\sup_{t \in [a,b]} \norm{\dot \g(t)} \leq C
 $$
 for some constant $C \geq 0$. Therefore 
 $$
 \int_a^b  \norm{\dot\g(t)} \, dt \leq C (b-a) < \infty \,.
 $$
+
+*Step 2. Writing (@eq-length-formula) as limit.*  
 Recalling that 
 $$
 L(\g) = \lim_{\norm{\mathcal{P}} \to 0} \ L(\g,\mathcal{P}) \,,
@@ -566,7 +573,9 @@ $$
 \left|    \int_a^b  \norm{\dot\g(t)} \, dt -  L(\g , \mathcal{P} )        \right| < \e \,.
 $${#eq-length-formula-1}
 
-First, take an arbitrary partition $\mathcal{P} = (t_0, \ldots, t_m)$ of $[a,b]$. Then for each $i = 1,\ldots,m$ we have
+
+*Step 3. First estimate in (@eq-length-formula-1).*  
+This first estimate is easy, and only relies on the Fundamental Theorem of Calculus. To be more precise, we will show that each polygonal has shorter length than $\int_{a}^b \norm{   \dot\g (t)} \, dt$. To this end, take an arbitrary partition $\mathcal{P} = (t_0, \ldots, t_m)$ of $[a,b]$. Then for each $i = 1,\ldots,m$ we have
 $$
 \norm{  \g(t_i) - \g (t_{i-1}) } = \norm{  \int_{t_{i-1}}^{t_i}  \dot\g (t)\, dt } \leq   \int_{t_{i-1}}^{t_i}\norm{   \dot\g (t)} \, dt   
 $$
@@ -582,7 +591,9 @@ L(\g, \mathcal{P}) \leq \int_{a}^b \norm{   \dot\g (t)} \, dt
 $${#eq-length-formula-2}
 for all partitions $\mathcal{P}$.  
 
-Now, note that $\dot \g$ is continuous on the compact set $[a,b]$. Therefore it is uniformly continuous by the Heine-Borel Theorem. Fix $\e>0$. By uniform continuity of $\dot \g$ there exists $\delta >0$ such that
+
+*Step 4. Second estimate in (@eq-length-formula-1).*  
+The second estimate is more delicate. We need to carefully construct a polygonal so that its length is close to $\int_a^b \norm{ \dot \g} \,dt$. This will be possible by uniform continuity of $\dot\g$. Indeed, note that $\dot \g$ is continuous on the compact set $[a,b]$. Therefore it is uniformly continuous by the Heine-Borel Theorem. Fix $\e>0$. By uniform continuity of $\dot \g$ there exists $\delta >0$ such that
 $$
 |t-s| < \delta \implies \norm{ \dot\g(t)-\dot\g(s) } < \frac{ \e }{b-a} \,.
 $$ {#eq-length-formula-uc}
@@ -607,9 +618,9 @@ $$
 $${#eq-length-formula-4}
 We can now use the reverse triangle inequality
 $$
-| \| x\| - \norm{y}| \leq \norm{x-y}
+| \| x\| - \norm{y}| \leq \norm{x-y}\,, 
 $$
-and hence 
+for all $x,y \in \R^n$, which implies
 $$
  \norm{x+y}  = \norm{x - (-y)} \geq \| x \| - \norm{y}
 $$
@@ -659,6 +670,8 @@ since
 $$
 \sum_{i=1}^m (t_i - t_{i-1}) = t_m - t_0 = b - a \,. 
 $$
+
+*Conclusion.*    
 Putting together (@eq-length-formula-2) and (@eq-length-formula-7) we get 
 $$
 \int_{a}^b \norm{\dot\g(s)} \, ds - \e   \leq L(\mathcal{P},\g) 
@@ -729,7 +742,7 @@ $$
 
 We have just shown in Theorem \ref{theorem-length} that the length of a regular curve $\g \ \colon [a,b] \to \R^n$ with $[a,b]$ bounded is given by
 $$
-L(\g) = \int_a^b \norm{ \dot\g (t)} \,t \,.
+L(\g) = \int_a^b \norm{ \dot\g (t)} \,dt \,.
 $$
 Using this formula, we introduce the notion of length of a portion of $\g$.
 
@@ -741,7 +754,7 @@ Using this formula, we introduce the notion of length of a portion of $\g$.
 
 Let $\g \, \colon (a,b) \to \R^n$ be a curve, with $(a,b)$ possibly unbounded. We define the **arc-length** of $\g$ starting at the point $\g(t_0)$ as the function $s \colon \R \to \R$ defined by
 $$
-s(t) := \int_{t_0}^t  \norm{  \g(\tau) }\, d\tau \,.
+s(t) := \int_{t_0}^t  \norm{  \dot\g(\tau) }\, d\tau \,.
 $$
 
 :::
@@ -754,10 +767,12 @@ $$
 
 A few remarks:
 
-- Arc-length is well-defined: Indeed, $\g$ is smooth, and so $\dot \g$ is continuous. WLOG assume $t \geq t_0$. Then
-$$
-s(t) = \int_{t_0}^t  \norm{  \g(\tau) }\, d\tau \leq (t-t_0) \max_{ \tau \in [t_0,t] } \norm{\dot\g(\tau)} < \infty \,.
-$$
+- Arc-length is well-defined 
+
+     >Indeed, $\g$ is smooth, and so $\dot \g$ is continuous. WLOG assume $t \geq t_0$. Then
+     $$
+     s(t) = \int_{t_0}^t  \norm{  \dot\g(\tau) }\, d\tau \leq (t-t_0) \max_{ \tau \in [t_0,t] } \norm{\dot\g(\tau)} < \infty \,.
+     $$
 
 - We always have
 $$
@@ -773,32 +788,37 @@ $$
 t < t_0   \implies  s(t) \leq 0 \,.
 $$
 
-- Choosing a different starting point changes the arc-length by a **constant**: For example define $\tilde{s}$ as the arc-length starting from $\tilde{t}_0$, that is, 
-$$
-\tilde{s}(t) := \int_{\tilde{t}_0}^t \norm{ \dot\g(\tau) } \, d\tau  \,.
-$$
-Then by the properties of integral
-\begin{align}
-s(t) & = \int_{t_0}^t \norm{ \dot\g(\tau) } \, d\tau \\
-     & = \int_{t_0}^{\tilde{t}_0} \norm{ \dot\g(\tau) } \, d\tau +
-         \int_{\tilde{t}_0}^{t} \norm{ \dot\g(\tau) } \, d\tau \\
-     & = \int_{t_0}^{\tilde{t}_0} \norm{ \dot\g(\tau) } \, d\tau + \tilde{s}(t) \,.
-\end{align}
-Hence 
-$$
-s = c + \tilde{s} 
-$$
-with 
-$$
-c := \int_{t_0}^{\tilde{t}_0} \norm{ \dot\g(\tau) } \, d\tau \,.
-$$
-Note that $c$ is the arc-length of $\g$ between the starting points $\g(t_0)$ and $\g(\tilde{t}_0)$.
+- Choosing a different starting point changes the arc-length by a **constant**: 
 
-- The arc-length is a differentiable function: Since $\dot\g$ is continuous, by the Fundamental Theorem of Calculus we have
+     >For example define $\tilde{s}$ as the arc-length starting from $\tilde{t}_0$
+     $$
+     \tilde{s}(t) := \int_{\tilde{t}_0}^t \norm{ \dot\g(\tau) } \, d\tau  \,.
+     $$
+     Then by the properties of integral
+     \begin{align}
+     s(t) & = \int_{t_0}^t \norm{ \dot\g(\tau) } \, d\tau \\
+      & = \int_{t_0}^{\tilde{t}_0} \norm{ \dot\g(\tau) } \, d\tau +
+         \int_{\tilde{t}_0}^{t} \norm{ \dot\g(\tau) } \, d\tau \\
+      & = \int_{t_0}^{\tilde{t}_0} \norm{ \dot\g(\tau) } \, d\tau + \tilde{s}(t) \,.
+     \end{align}
+     Hence 
+     $$
+     s = c + \tilde{s} 
+     $$
+     with 
+     $$
+     c := \int_{t_0}^{\tilde{t}_0} \norm{ \dot\g(\tau) } \, d\tau \,.
+     $$
+     Note that $c$ is the arc-length of $\g$ between the starting points $\g(t_0)$ and $\g(\tilde{t}_0)$.
+
+- The arc-length is a differentiable function, with
 $$
 \dot s(t) = \frac{d}{dt} \int_{t_0}^t \norm{\dot\g (\tau)} \, d\tau =
  \norm{\dot\g (t)} \,.
 $$
+     
+     >Since $\dot\g$ is continuous, the above follows by the Fundamental Theorem of Calculus.
+
 :::
 
 
@@ -890,12 +910,174 @@ plt.show()
 
 ## Scalar product in $\R^n$
 
+Let us start by defining the scalar product in $\R^2$. 
+
+::: Definition
+### Scalar product in $\R^2$
+
+Let $u, v \in \R^2$ and denote by $\theta \in [0,\pi]$ the angle formed by $u$ and $v$. The *scalar product* between $u$ and $v$ is defined by 
+$$
+u \cdot v := |u| |v| \cos(\theta) \,. 
+$$
+
+:::
+
+
+![Vectors $u$ and $v$ in $\R^2$ forming angle $\theta$](/images/scalar_product.png){width=60%}
+
+
+::: Remark 
+
+The scalar product is maximized for $\theta = 0$, for which we have
+$$
+u \cdot v := |u| |v| \cos(\theta) =  |u| |v| \,.
+$$
+It is instead minimized for $\theta = \pi$, for which 
+$$
+u \cdot v := |u| |v| \cos(\theta) =  -|u| |v| \,.
+$$
+:::
+
+
+
+::: Definition 
+### Orthogonal vectors
+
+Let $u, v \in \R^2$. If 
+$$
+u \cdot v = 0
+$$
+we say that $u$ and $v$ are **orthogonal**.
+:::
+
+
+
+
+::: Proposition
+### Bilinearity and symmetry of scalar product
+
+Let $u, v, w \in \R^2$ and $\lambda \in \R$. Then
+
+- $u \cdot v = v \cdot u$
+- $\lambda (u \cdot v) = (\lambda u) \cdot v = u \cdot (\lambda v)$
+- $u \cdot (v + w) = u \cdot v  + u \cdot w$
+
+
+:::
+
+
+We leave the proof to the reader. The above proposition is saying that the scalar product is **bilinear** and **symmetric**.
+
+
+::: Proposition
+### Scalar products written wrt euclidean coordinates
+
+Denote by 
+$$
+e_1 = (1,0) \,, \quad e_2 = (0,1)
+$$
+the euclidean basis of $\R^2$. Let $u,v \in \R^2$ and denote by 
+$$
+u = (u_1,u_2) = u_1 e_1 + u_2 e_2 
+$$
+$$
+v = (v_1,v_2) = v_1 e_1 + v_2 e_2 
+$$
+their coordinates with respect to $e_1,e_2$. Then
+$$
+u \cdot v = u_1v_2 + u_2 v_2 \,.
+$$
+:::
+
+
+::: Proof
+
+Note that 
+$$
+e_1 \cdot e_1 = 1 \,, \quad e_2 \cdot e_2 = 1 \,, \quad 
+e_1 \cdot e_2 = e_2 \cdot e_1 = 0 \,.
+$$
+Using the bilinearity of scalar product we have
+\begin{align}
+u \cdot v & = (u_1 e_1 + u_2 e_2) \cdot (v_1 e_1 + v_2 e_2) \\
+          & = u_1 v_1 e_1 \cdot e_1 +  u_1 v_2 e_1 \cdot e_2 +
+              u_2 v_1 e_2 \cdot e_1 + u_2 v_2  e_2 \cdot e_2 \\
+          & = u_1 v_1  + u_2 v_2 \,.
+\end{align}
+:::
+
+
+
+
+The above proposition provides a way to generalize of the scalar product to $\R^n$..
+
+::: Definition
+### Scalar product in $\R^n$
+
+Let $u,v \in \R^n$ and denote their coordinates by
+$$
+u = (u_1, \ldots, u_n) \,, \quad
+u = (v_1, \ldots, v_n) \,. 
+$$
+We define the scalar product between $u$ and $v$ by
+$$
+u \cdot v := \sum_{i=1}^n u_i v_i \,.
+$$
+
+
+:::
+
+
+
+
+::: Proposition
+### Differentiating scalar product  {#proposition-diff-scalar}
+
+
+Let $\gamma , \eta \ \colon (a,b) \to \R^n$ be parametrized curves. Then the scalar map 
+$$
+\gamma \cdot \eta \ \colon (a,b) \to \R
+$$
+is smooth, and
+$$
+\frac{d}{dt} (\gamma \cdot \eta)  = \dot\g \cdot \eta + \g \cdot \dot \eta 
+$$
+for all $t \in (a,b)$.
+
+:::
+
+
+::: Proof
+
+Denote by 
+$$
+\g = (\g_1 ,\ldots , \g_n) \,, \quad \eta = (\eta_1, \ldots , \eta_n)
+$$
+the coordinates of $\g$ and $\eta$. Clearly the map
+$$
+t \mapsto \g \cdot \eta = \sum_{i=1}^n \g_i \eta_i
+$$
+is smooth, being sum and product of smooth functions.  
+Concerning the formula, by definition of scalar product and linearity of the derivative we have
+\begin{align}
+\frac{d}{dt} (\gamma \cdot \eta) & = \frac{d}{dt} \left( \sum_{i=1}^n \g_i \eta_i \right) \\
+& = \sum_{i=1}^n \frac{d}{dt} ( \g_i \eta_i ) \\
+& = \sum_{i=1}^n  \dot\g_i \eta_i + \g_i \dot\eta_i \\
+& = \dot\g \cdot \eta + \g \cdot \dot\eta \,,
+\end{align}
+where in the second to last equality we used the product rule of differentiation.
+:::
+
+
+
+
+
 
 
 
 ## Speed of a curve
 
-Given a curve $\g$ we defined the tangent vector at $\g(t)$ to be
+Given a curve $\g$ we defined the **tangent** vector at $\g(t)$ to be
 $$
 \dot \g (t) \,.
 $$
@@ -909,25 +1091,36 @@ $$
 $$
 We say that $\g$ is a **unit-speed** curve if
 $$
-\norm{\dot \g (t)}  = 1
+\norm{\dot \g (t)}  = 1 \,, \quad \forall \, t \in (a,b) \,.
 $$
-for all $t \in (a,b)$.
 
 :::
 
 
 ::: Remark
 
-The derivative of the arc-length $s$ gives the speed of $\g$: indeed recall that 
+The derivative of the arc-length $s$ gives the speed of $\g$: 
 $$
-s(t) = \int_{t_0}^t \norm{  \dot\g (\tau) } \, d\tau \,.
-$$
-Then 
-$$
+s(t) := \int_{t_0}^t \norm{  \dot\g (\tau) } \, d\tau  \,\, \implies \,\,
 \dot s(t) = \norm{  \dot\g (t) } \,.
 $$
 
 :::
+
+
+
+The reason why we introduce unit speed curves is because they make calculations easy. This is essentially because of the next proposition.
+
+
+::: Proposition
+Let $\g \ \colon (a,b) \to \R^n$ be a unit speed curve. Then
+$$
+\dot \g \cdot \ddot \g = 0 
+$$
+for all $t \in (a,b)$.
+:::
+
+
 
 
 

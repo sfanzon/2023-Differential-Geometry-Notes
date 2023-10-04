@@ -11,7 +11,7 @@ book:
       affiliations: "University of Hull, UK"
       email: "S.Fanzon@hull.ac.uk"
       url: "https://www.silviofanzon.com"
-  date: "20 09 2023" 
+  date: today 
   # To enter today's date replace by today
   # Enter date formatted as dd MM yyyy
   date-format: "D MMM YYYY"
@@ -79,7 +79,7 @@ format:
   
   pdf:
     documentclass: scrreprt
-    fontsize: 13pt
+    fontsize: 12pt
     geometry:
       - top=25mm
       - left=15mm

@@ -66,11 +66,11 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
-.Conjecture {
+.Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -78,11 +78,35 @@ ul.task-list li input[type="checkbox"] {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
 .Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -98,31 +122,7 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
 .Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -466,8 +466,8 @@ t_0, \ldots, t_m \in (a,b) \,.
 \]</span> The length of the segment connecting <span class="math inline">\(\gamma(t_{i-1})\)</span> to <span class="math inline">\(\gamma(t_i)\)</span> is given by <span class="math display">\[
 \left\|  \gamma(t_i) - \gamma(t_{i-1})  \right\| \,.
 \]</span> Thus <span id="eq-approx-length"><span class="math display">\[
-{\rm Length}(\gamma) \approx \sum_{i=1}^m \left\|  \gamma(t_i) - \gamma(t_{i-1})  \right\| \,.  
-\tag{3.1}\]</span></span> Intuitively, if we increase the number of points <span class="math inline">\(t_i\)</span>, the quantity on the RHS of (<a href="#eq-approx-length"><span>3.1</span></a>) should approximate <span class="math inline">\({\rm Length}(\gamma)\)</span> better and better. Let us make this precise.</p>
+L(\gamma) \approx \sum_{i=1}^m \left\|  \gamma(t_i) - \gamma(t_{i-1})  \right\| \,.  
+\tag{3.1}\]</span></span> Intuitively, if we increase the number of points <span class="math inline">\(t_i\)</span>, the quantity on the RHS of (<a href="#eq-approx-length"><span>3.1</span></a>) should approximate <span class="math inline">\(L(\gamma)\)</span> better and better. Let us make this precise.</p>
 <div id="partition" class="Definition" title="Partition">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 10: </strong>Partition</summary><div>Let <span class="math inline">\((a,b)\)</span> be an interval. A partition <span class="math inline">\(\mathcal{P}\)</span> of <span class="math inline">\([a,b]\)</span> is a vector of time instants <span class="math display">\[
 \mathcal{P} = (t_0,\ldots, t_k) \in [a,b]^{m+1}
@@ -530,18 +530,22 @@ L(\gamma) = \int_a^b  \left\| \dot\gamma(t) \right\| \, dt \,.
 </div></details>
 </div>
 <div id="Proof*-2" class="Proof">
-<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Since <span class="math inline">\(\gamma\)</span> is smooth, in particular <span class="math inline">\(\dot \gamma\)</span> is continuous. Since <span class="math inline">\([a,b]\)</span> is bounded, then <span class="math inline">\(\dot \gamma\)</span> is bounded, that is <span class="math display">\[
-\sup_{t \in [a,b]} \left\| \gamma(t) \right\| \leq C
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Step 1. The integral in (<a href="#eq-length-formula"><span>3.2</span></a>) is bounded.</em><br>
+Since <span class="math inline">\(\gamma\)</span> is smooth, in particular <span class="math inline">\(\dot \gamma\)</span> is continuous. Since <span class="math inline">\([a,b]\)</span> is bounded, then <span class="math inline">\(\dot \gamma\)</span> is bounded, that is <span class="math display">\[
+\sup_{t \in [a,b]} \left\| \dot \gamma(t) \right\| \leq C
 \]</span> for some constant <span class="math inline">\(C \geq 0\)</span>. Therefore <span class="math display">\[
 \int_a^b  \left\| \dot\gamma(t) \right\| \, dt \leq C (b-a) &lt; \infty \,.
-\]</span> Recalling that <span class="math display">\[
+\]</span><p></p>
+<p><em>Step 2. Writing (<a href="#eq-length-formula"><span>3.2</span></a>) as limit.</em><br>
+Recalling that <span class="math display">\[
 L(\gamma) = \lim_{\left\| \mathcal{P} \right\| \to 0} \ L(\gamma,\mathcal{P}) \,,
 \]</span> whenever the limit is finite, in order to show (<a href="#eq-length-formula"><span>3.2</span></a>) we then need to prove <span class="math display">\[
 L(\gamma,\mathcal{P}) \to \int_a^b  \left\| \dot\gamma(t) \right\| \, dt
 \]</span> as <span class="math inline">\(\left\| \mathcal{P} \right\| \to 0\)</span>. Showing the above means proving that: for every <span class="math inline">\(\varepsilon&gt; 0\)</span> there exists a <span class="math inline">\(\delta &gt; 0\)</span> such that, if <span class="math inline">\(\mathcal{P}\)</span> is a partition of <span class="math inline">\([a,b]\)</span> such that <span class="math inline">\(\left\|  \mathcal{P}  \right\|&lt;\delta\)</span>, then <span id="eq-length-formula-1"><span class="math display">\[
 \left|    \int_a^b  \left\| \dot\gamma(t) \right\| \, dt -  L(\gamma, \mathcal{P} )        \right| &lt; \varepsilon\,.
-\tag{3.3}\]</span></span><p></p>
-<p>First, take an arbitrary partition <span class="math inline">\(\mathcal{P} = (t_0, \ldots, t_m)\)</span> of <span class="math inline">\([a,b]\)</span>. Then for each <span class="math inline">\(i = 1,\ldots,m\)</span> we have <span class="math display">\[
+\tag{3.3}\]</span></span></p>
+<p><em>Step 3. First estimate in (<a href="#eq-length-formula-1"><span>3.3</span></a>).</em><br>
+This first estimate is easy, and only relies on the Fundamental Theorem of Calculus. To be more precise, we will show that each polygonal has shorter length than <span class="math inline">\(\int_{a}^b \left\|  \dot\gamma(t) \right\| \, dt\)</span>. To this end, take an arbitrary partition <span class="math inline">\(\mathcal{P} = (t_0, \ldots, t_m)\)</span> of <span class="math inline">\([a,b]\)</span>. Then for each <span class="math inline">\(i = 1,\ldots,m\)</span> we have <span class="math display">\[
 \left\|   \gamma(t_i) - \gamma(t_{i-1})  \right\| = \left\|   \int_{t_{i-1}}^{t_i}  \dot\gamma(t)\, dt  \right\| \leq   \int_{t_{i-1}}^{t_i}\left\|    \dot\gamma(t) \right\| \, dt   
 \]</span> where we used the Fundamental Theorem of calculus, and usual integral properties. Therefore by definition <span class="math display">\[\begin{align}
 L(\gamma,\mathcal{P} ) &amp; = \sum_{i=1}^m  \left\|   \gamma(t_i) - \gamma(t_{i-1})  \right\| \\
@@ -550,7 +554,8 @@ L(\gamma,\mathcal{P} ) &amp; = \sum_{i=1}^m  \left\|   \gamma(t_i) - \gamma(t_{i
 \end{align}\]</span> We have then shown <span id="eq-length-formula-2"><span class="math display">\[
 L(\gamma, \mathcal{P}) \leq \int_{a}^b \left\|    \dot\gamma(t) \right\| \, dt
 \tag{3.4}\]</span></span> for all partitions <span class="math inline">\(\mathcal{P}\)</span>.</p>
-<p>Now, note that <span class="math inline">\(\dot \gamma\)</span> is continuous on the compact set <span class="math inline">\([a,b]\)</span>. Therefore it is uniformly continuous by the Heine-Borel Theorem. Fix <span class="math inline">\(\varepsilon&gt;0\)</span>. By uniform continuity of <span class="math inline">\(\dot \gamma\)</span> there exists <span class="math inline">\(\delta &gt;0\)</span> such that <span id="eq-length-formula-uc"><span class="math display">\[
+<p><em>Step 4. Second estimate in (<a href="#eq-length-formula-1"><span>3.3</span></a>).</em><br>
+The second estimate is more delicate. We need to carefully construct a polygonal so that its length is close to <span class="math inline">\(\int_a^b \left\|  \dot \gamma \right\| \,dt\)</span>. This will be possible by uniform continuity of <span class="math inline">\(\dot\gamma\)</span>. Indeed, note that <span class="math inline">\(\dot \gamma\)</span> is continuous on the compact set <span class="math inline">\([a,b]\)</span>. Therefore it is uniformly continuous by the Heine-Borel Theorem. Fix <span class="math inline">\(\varepsilon&gt;0\)</span>. By uniform continuity of <span class="math inline">\(\dot \gamma\)</span> there exists <span class="math inline">\(\delta &gt;0\)</span> such that <span id="eq-length-formula-uc"><span class="math display">\[
 |t-s| &lt; \delta \implies \left\|  \dot\gamma(t)-\dot\gamma(s)  \right\| &lt; \frac{ \varepsilon}{b-a} \,.
 \tag{3.5}\]</span></span> for all <span class="math inline">\(t,s \in [a,b]\)</span>. Let <span class="math inline">\(\mathcal{P} = (t_0, \ldots, t_m)\)</span> be a partition of <span class="math inline">\([a,b]\)</span> with <span class="math inline">\(\left\| \mathcal{P} \right\| &lt; \delta\)</span>. Recall that <span class="math display">\[
 \left\| \mathcal{P} \right\| = \max_{i=1,\ldots ,m} |t_i - t_{i-1}| \,.
@@ -564,8 +569,8 @@ L(\gamma, \mathcal{P}) \leq \int_{a}^b \left\|    \dot\gamma(t) \right\| \, dt
 \left\|  \gamma(t_i) - \gamma(t_{i-1})  \right\|  = \left\|  ( t_i - t_{i-1} ) \dot\gamma(s) +
 \int_{t_{i-1}}^{ t_i }   (\dot\gamma(t) - \dot\gamma(s))    \, dt  \right\|
 \tag{3.7}\]</span></span> We can now use the reverse triangle inequality <span class="math display">\[
-| \| x\| - \left\| y \right\|| \leq \left\| x-y \right\|
-\]</span> and hence <span class="math display">\[
+| \| x\| - \left\| y \right\|| \leq \left\| x-y \right\|\,,
+\]</span> for all <span class="math inline">\(x,y \in \mathbb{R}^n\)</span>, which implies <span class="math display">\[
 \left\| x+y \right\|  = \left\| x - (-y) \right\| \geq \| x \| - \left\| y \right\|
 \]</span> for all <span class="math inline">\(x,y \in \mathbb{R}^n\)</span>. Applying the above to (<a href="#eq-length-formula-4"><span>3.7</span></a>) we get <span id="eq-length-formula-5"><span class="math display">\[
 \left\|  \gamma(t_i) - \gamma(t_{i-1})  \right\|  \geq
@@ -593,7 +598,9 @@ L(\gamma, \mathcal{P}) \leq \int_{a}^b \left\|    \dot\gamma(t) \right\| \, dt
 L(\mathcal{P},\gamma) \geq \int_{a}^b \left\| \dot\gamma(s) \right\| \, ds - \varepsilon
 \tag{3.10}\]</span></span> since <span class="math display">\[
 \sum_{i=1}^m (t_i - t_{i-1}) = t_m - t_0 = b - a \,.
-\]</span> Putting together (<a href="#eq-length-formula-2"><span>3.4</span></a>) and (<a href="#eq-length-formula-7"><span>3.10</span></a>) we get <span class="math display">\[
+\]</span></p>
+<p><em>Conclusion.</em><br>
+Putting together (<a href="#eq-length-formula-2"><span>3.4</span></a>) and (<a href="#eq-length-formula-7"><span>3.10</span></a>) we get <span class="math display">\[
 \int_{a}^b \left\| \dot\gamma(s) \right\| \, ds - \varepsilon\leq L(\mathcal{P},\gamma)
 \leq  \int_{a}^b \left\| \dot\gamma(s) \right\| \, ds
 \]</span> which implies (<a href="#eq-length-formula-1"><span>3.3</span></a>), concluding the proof.</p>
@@ -630,11 +637,11 @@ L(\gamma) = \int_0^{2\pi} \left\|  \dot\gamma(t)  \right\| \, dt = 2 \pi \sqrt{R
 <section id="arc-length" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="arc-length"><span class="header-section-number">3.3</span> Arc-length</h2>
 <p>We have just shown in Theorem <a href="chap_3.html#theorem-length">14</a> that the length of a regular curve <span class="math inline">\(\gamma\ \colon [a,b] \to \mathbb{R}^n\)</span> with <span class="math inline">\([a,b]\)</span> bounded is given by <span class="math display">\[
-L(\gamma) = \int_a^b \left\|  \dot\gamma(t) \right\| \,t \,.
+L(\gamma) = \int_a^b \left\|  \dot\gamma(t) \right\| \,dt \,.
 \]</span> Using this formula, we introduce the notion of length of a portion of <span class="math inline">\(\gamma\)</span>.</p>
 <div id="arc-length-1" class="Definition" title="Arc-length">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 17: </strong>Arc-length</summary><div>Let <span class="math inline">\(\gamma\, \colon (a,b) \to \mathbb{R}^n\)</span> be a curve, with <span class="math inline">\((a,b)\)</span> possibly unbounded. We define the <strong>arc-length</strong> of <span class="math inline">\(\gamma\)</span> starting at the point <span class="math inline">\(\gamma(t_0)\)</span> as the function <span class="math inline">\(s \colon \mathbb{R}\to \mathbb{R}\)</span> defined by <span class="math display">\[
-s(t) := \int_{t_0}^t  \left\|   \gamma(\tau)  \right\|\, d\tau \,.
+s(t) := \int_{t_0}^t  \left\|   \dot\gamma(\tau)  \right\|\, d\tau \,.
 \]</span><p></p>
 </div></details>
 </div>
@@ -648,9 +655,12 @@ s(t) := \int_{t_0}^t  \left\|   \gamma(\tau)  \right\|\, d\tau \,.
 <details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 18</strong></summary><div>
 <p>A few remarks:</p>
 <ul>
-<li><p>Arc-length is well-defined: Indeed, <span class="math inline">\(\gamma\)</span> is smooth, and so <span class="math inline">\(\dot \gamma\)</span> is continuous. WLOG assume <span class="math inline">\(t \geq t_0\)</span>. Then <span class="math display">\[
-s(t) = \int_{t_0}^t  \left\|   \gamma(\tau)  \right\|\, d\tau \leq (t-t_0) \max_{ \tau \in [t_0,t] } \left\| \dot\gamma(\tau) \right\| &lt; \infty \,.
-\]</span></p></li>
+<li><p>Arc-length is well-defined</p>
+<blockquote class="blockquote">
+<p>Indeed, <span class="math inline">\(\gamma\)</span> is smooth, and so <span class="math inline">\(\dot \gamma\)</span> is continuous. WLOG assume <span class="math inline">\(t \geq t_0\)</span>. Then <span class="math display">\[
+s(t) = \int_{t_0}^t  \left\|   \dot\gamma(\tau)  \right\|\, d\tau \leq (t-t_0) \max_{ \tau \in [t_0,t] } \left\| \dot\gamma(\tau) \right\| &lt; \infty \,.
+\]</span></p>
+</blockquote></li>
 <li><p>We always have <span class="math display">\[
 s(t_0)=0\,.
 \]</span></p></li>
@@ -659,22 +669,28 @@ t &gt; t_0   \implies  s(t) \geq 0
 \]</span> and <span class="math display">\[
 t &lt; t_0   \implies  s(t) \leq 0 \,.
 \]</span></p></li>
-<li><p>Choosing a different starting point changes the arc-length by a <strong>constant</strong>: For example define <span class="math inline">\(\tilde{s}\)</span> as the arc-length starting from <span class="math inline">\(\tilde{t}_0\)</span>, that is, <span class="math display">\[
+<li><p>Choosing a different starting point changes the arc-length by a <strong>constant</strong>:</p>
+<blockquote class="blockquote">
+<p>For example define <span class="math inline">\(\tilde{s}\)</span> as the arc-length starting from <span class="math inline">\(\tilde{t}_0\)</span> <span class="math display">\[
 \tilde{s}(t) := \int_{\tilde{t}_0}^t \left\|  \dot\gamma(\tau)  \right\| \, d\tau  \,.
 \]</span> Then by the properties of integral <span class="math display">\[\begin{align}
 s(t) &amp; = \int_{t_0}^t \left\|  \dot\gamma(\tau)  \right\| \, d\tau \\
-   &amp; = \int_{t_0}^{\tilde{t}_0} \left\|  \dot\gamma(\tau)  \right\| \, d\tau +
-       \int_{\tilde{t}_0}^{t} \left\|  \dot\gamma(\tau)  \right\| \, d\tau \\
-   &amp; = \int_{t_0}^{\tilde{t}_0} \left\|  \dot\gamma(\tau)  \right\| \, d\tau + \tilde{s}(t) \,.
+&amp; = \int_{t_0}^{\tilde{t}_0} \left\|  \dot\gamma(\tau)  \right\| \, d\tau +
+\int_{\tilde{t}_0}^{t} \left\|  \dot\gamma(\tau)  \right\| \, d\tau \\
+&amp; = \int_{t_0}^{\tilde{t}_0} \left\|  \dot\gamma(\tau)  \right\| \, d\tau + \tilde{s}(t) \,.
 \end{align}\]</span> Hence <span class="math display">\[
 s = c + \tilde{s}
 \]</span> with <span class="math display">\[
 c := \int_{t_0}^{\tilde{t}_0} \left\|  \dot\gamma(\tau)  \right\| \, d\tau \,.
-\]</span> Note that <span class="math inline">\(c\)</span> is the arc-length of <span class="math inline">\(\gamma\)</span> between the starting points <span class="math inline">\(\gamma(t_0)\)</span> and <span class="math inline">\(\gamma(\tilde{t}_0)\)</span>.</p></li>
-<li><p>The arc-length is a differentiable function: Since <span class="math inline">\(\dot\gamma\)</span> is continuous, by the Fundamental Theorem of Calculus we have <span class="math display">\[
+\]</span> Note that <span class="math inline">\(c\)</span> is the arc-length of <span class="math inline">\(\gamma\)</span> between the starting points <span class="math inline">\(\gamma(t_0)\)</span> and <span class="math inline">\(\gamma(\tilde{t}_0)\)</span>.</p>
+</blockquote></li>
+<li><p>The arc-length is a differentiable function, with <span class="math display">\[
 \dot s(t) = \frac{d}{dt} \int_{t_0}^t \left\| \dot\gamma(\tau) \right\| \, d\tau =
 \left\| \dot\gamma(t) \right\| \,.
-\]</span></p></li>
+\]</span></p>
+<blockquote class="blockquote">
+<p>Since <span class="math inline">\(\dot\gamma\)</span> is continuous, the above follows by the Fundamental Theorem of Calculus.</p>
+</blockquote></li>
 </ul>
 </div></details>
 </div>
@@ -717,26 +733,126 @@ s(t) &amp; = \int_{t_0}^t \left\| \dot\gamma(\tau) \right\| \, d \tau \\
 </section>
 <section id="scalar-product-in-mathbbrn" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="scalar-product-in-mathbbrn"><span class="header-section-number">3.4</span> Scalar product in <span class="math inline">\(\mathbb{R}^n\)</span></h2>
-</section>
-<section id="speed-of-a-curve" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="speed-of-a-curve"><span class="header-section-number">3.5</span> Speed of a curve</h2>
-<p>Given a curve <span class="math inline">\(\gamma\)</span> we defined the tangent vector at <span class="math inline">\(\gamma(t)\)</span> to be <span class="math display">\[
-\dot \gamma(t) \,.
-\]</span> The tangent vector measures the change of direction of the curve. Therefore the magnitude of <span class="math inline">\(\dot \gamma\)</span> can be interpreted as the <strong>speed</strong> of the curve.</p>
-<div id="Definition-21" class="Definition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 21</strong></summary><div>Let <span class="math inline">\(\gamma\ \colon (a,b) \to \mathbb{R}^n\)</span> be a curve. We define the speed of <span class="math inline">\(\gamma\)</span> at the point <span class="math inline">\(\gamma(t)\)</span> by <span class="math display">\[
-\left\| \dot \gamma(t) \right\| \,.
-\]</span> We say that <span class="math inline">\(\gamma\)</span> is a <strong>unit-speed</strong> curve if <span class="math display">\[
-\left\| \dot \gamma(t) \right\|  = 1
+<p>Let us start by defining the scalar product in <span class="math inline">\(\mathbb{R}^2\)</span>.</p>
+<div id="scalar-product-in-mathbbr2" class="Definition" title="Scalar product in \mathbb{R}^2">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 21: </strong>Scalar product in <span class="math inline">\(\mathbb{R}^2\)</span></summary><div>Let <span class="math inline">\(u, v \in \mathbb{R}^2\)</span> and denote by <span class="math inline">\(\theta \in [0,\pi]\)</span> the angle formed by <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span>. The <em>scalar product</em> between <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> is defined by <span class="math display">\[
+u \cdot v := |u| |v| \cos(\theta) \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/scalar_product.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption class="figure-caption">Vectors <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> in <span class="math inline">\(\mathbb{R}^2\)</span> forming angle <span class="math inline">\(\theta\)</span></figcaption>
+</figure>
+</div>
+<div id="Remark-22" class="Remark">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 22</strong></summary><div>The scalar product is maximized for <span class="math inline">\(\theta = 0\)</span>, for which we have <span class="math display">\[
+u \cdot v := |u| |v| \cos(\theta) =  |u| |v| \,.
+\]</span> It is instead minimized for <span class="math inline">\(\theta = \pi\)</span>, for which <span class="math display">\[
+u \cdot v := |u| |v| \cos(\theta) =  -|u| |v| \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="orthogonal-vectors" class="Definition" title="Orthogonal vectors">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 23: </strong>Orthogonal vectors</summary><div>Let <span class="math inline">\(u, v \in \mathbb{R}^2\)</span>. If <span class="math display">\[
+u \cdot v = 0
+\]</span> we say that <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> are <strong>orthogonal</strong>.<p></p>
+</div></details>
+</div>
+<div id="bilinearity-and-symmetry-of-scalar-product" class="Proposition" title="Bilinearity and symmetry of scalar product">
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 24: </strong>Bilinearity and symmetry of scalar product</summary><div>
+<p>Let <span class="math inline">\(u, v, w \in \mathbb{R}^2\)</span> and <span class="math inline">\(\lambda \in \mathbb{R}\)</span>. Then</p>
+<ul>
+<li><span class="math inline">\(u \cdot v = v \cdot u\)</span></li>
+<li><span class="math inline">\(\lambda (u \cdot v) = (\lambda u) \cdot v = u \cdot (\lambda v)\)</span></li>
+<li><span class="math inline">\(u \cdot (v + w) = u \cdot v + u \cdot w\)</span></li>
+</ul>
+</div></details>
+</div>
+<p>We leave the proof to the reader. The above proposition is saying that the scalar product is <strong>bilinear</strong> and <strong>symmetric</strong>.</p>
+<div id="scalar-products-written-wrt-euclidean-coordinates" class="Proposition" title="Scalar products written wrt euclidean coordinates">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 25: </strong>Scalar products written wrt euclidean coordinates</summary><div>Denote by <span class="math display">\[
+e_1 = (1,0) \,, \quad e_2 = (0,1)
+\]</span> the euclidean basis of <span class="math inline">\(\mathbb{R}^2\)</span>. Let <span class="math inline">\(u,v \in \mathbb{R}^2\)</span> and denote by <span class="math display">\[
+u = (u_1,u_2) = u_1 e_1 + u_2 e_2
+\]</span> <span class="math display">\[
+v = (v_1,v_2) = v_1 e_1 + v_2 e_2
+\]</span> their coordinates with respect to <span class="math inline">\(e_1,e_2\)</span>. Then <span class="math display">\[
+u \cdot v = u_1v_2 + u_2 v_2 \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="Proof*-3" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Note that <span class="math display">\[
+e_1 \cdot e_1 = 1 \,, \quad e_2 \cdot e_2 = 1 \,, \quad
+e_1 \cdot e_2 = e_2 \cdot e_1 = 0 \,.
+\]</span> Using the bilinearity of scalar product we have <span class="math display">\[\begin{align}
+u \cdot v &amp; = (u_1 e_1 + u_2 e_2) \cdot (v_1 e_1 + v_2 e_2) \\
+          &amp; = u_1 v_1 e_1 \cdot e_1 +  u_1 v_2 e_1 \cdot e_2 +
+              u_2 v_1 e_2 \cdot e_1 + u_2 v_2  e_2 \cdot e_2 \\
+          &amp; = u_1 v_1  + u_2 v_2 \,.
+\end{align}\]</span><p></p>
+</div></details>
+</div>
+<p>The above proposition provides a way to generalize of the scalar product to <span class="math inline">\(\mathbb{R}^n\)</span>..</p>
+<div id="scalar-product-in-mathbbrn-1" class="Definition" title="Scalar product in \mathbb{R}^n">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 26: </strong>Scalar product in <span class="math inline">\(\mathbb{R}^n\)</span></summary><div>Let <span class="math inline">\(u,v \in \mathbb{R}^n\)</span> and denote their coordinates by <span class="math display">\[
+u = (u_1, \ldots, u_n) \,, \quad
+u = (v_1, \ldots, v_n) \,.
+\]</span> We define the scalar product between <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> by <span class="math display">\[
+u \cdot v := \sum_{i=1}^n u_i v_i \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="proposition-diff-scalar" class="Proposition" title="Differentiating scalar product">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 27: </strong>Differentiating scalar product</summary><div>Let <span class="math inline">\(\gamma , \eta \ \colon (a,b) \to \mathbb{R}^n\)</span> be parametrized curves. Then the scalar map <span class="math display">\[
+\gamma \cdot \eta \ \colon (a,b) \to \mathbb{R}
+\]</span> is smooth, and <span class="math display">\[
+\frac{d}{dt} (\gamma \cdot \eta)  = \dot\gamma\cdot \eta + \gamma\cdot \dot \eta
 \]</span> for all <span class="math inline">\(t \in (a,b)\)</span>.<p></p>
 </div></details>
 </div>
-<div id="Remark-22" class="Remark">
-<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 22</strong></summary><div>The derivative of the arc-length <span class="math inline">\(s\)</span> gives the speed of <span class="math inline">\(\gamma\)</span>: indeed recall that <span class="math display">\[
-s(t) = \int_{t_0}^t \left\|   \dot\gamma(\tau)  \right\| \, d\tau \,.
-\]</span> Then <span class="math display">\[
+<div id="Proof*-4" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Denote by <span class="math display">\[
+\gamma= (\gamma_1 ,\ldots , \gamma_n) \,, \quad \eta = (\eta_1, \ldots , \eta_n)
+\]</span> the coordinates of <span class="math inline">\(\gamma\)</span> and <span class="math inline">\(\eta\)</span>. Clearly the map <span class="math display">\[
+t \mapsto \gamma\cdot \eta = \sum_{i=1}^n \gamma_i \eta_i
+\]</span> is smooth, being sum and product of smooth functions.<br>
+Concerning the formula, by definition of scalar product and linearity of the derivative we have <span class="math display">\[\begin{align}
+\frac{d}{dt} (\gamma \cdot \eta) &amp; = \frac{d}{dt} \left( \sum_{i=1}^n \gamma_i \eta_i \right) \\
+&amp; = \sum_{i=1}^n \frac{d}{dt} ( \gamma_i \eta_i ) \\
+&amp; = \sum_{i=1}^n  \dot\gamma_i \eta_i + \gamma_i \dot\eta_i \\
+&amp; = \dot\gamma\cdot \eta + \gamma\cdot \dot\eta \,,
+\end{align}\]</span> where in the second to last equality we used the product rule of differentiation.<p></p>
+</div></details>
+</div>
+</section>
+<section id="speed-of-a-curve" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="speed-of-a-curve"><span class="header-section-number">3.5</span> Speed of a curve</h2>
+<p>Given a curve <span class="math inline">\(\gamma\)</span> we defined the <strong>tangent</strong> vector at <span class="math inline">\(\gamma(t)\)</span> to be <span class="math display">\[
+\dot \gamma(t) \,.
+\]</span> The tangent vector measures the change of direction of the curve. Therefore the magnitude of <span class="math inline">\(\dot \gamma\)</span> can be interpreted as the <strong>speed</strong> of the curve.</p>
+<div id="Definition-28" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 28</strong></summary><div>Let <span class="math inline">\(\gamma\ \colon (a,b) \to \mathbb{R}^n\)</span> be a curve. We define the speed of <span class="math inline">\(\gamma\)</span> at the point <span class="math inline">\(\gamma(t)\)</span> by <span class="math display">\[
+\left\| \dot \gamma(t) \right\| \,.
+\]</span> We say that <span class="math inline">\(\gamma\)</span> is a <strong>unit-speed</strong> curve if <span class="math display">\[
+\left\| \dot \gamma(t) \right\|  = 1 \,, \quad \forall \, t \in (a,b) \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="Remark-29" class="Remark">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 29</strong></summary><div>The derivative of the arc-length <span class="math inline">\(s\)</span> gives the speed of <span class="math inline">\(\gamma\)</span>: <span class="math display">\[
+s(t) := \int_{t_0}^t \left\|   \dot\gamma(\tau)  \right\| \, d\tau  \,\, \implies \,\,
 \dot s(t) = \left\|   \dot\gamma(t)  \right\| \,.
 \]</span><p></p>
+</div></details>
+</div>
+<p>The reason why we introduce unit speed curves is because they make calculations easy. This is essentially because of the next proposition.</p>
+<div id="Proposition-30" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 30</strong></summary><div>Let <span class="math inline">\(\gamma\ \colon (a,b) \to \mathbb{R}^n\)</span> be a unit speed curve. Then <span class="math display">\[
+\dot \gamma\cdot \ddot \gamma= 0
+\]</span> for all <span class="math inline">\(t \in (a,b)\)</span>.<p></p>
 </div></details>
 </div>
 </section>

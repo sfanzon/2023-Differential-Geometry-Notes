@@ -65,6 +65,26 @@
 
  [**Example 3.20**](#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
 
- [**Definition 3.21**](#Definition-3.21)\Pageref{Definition-3.21}
+ [**Definition 3.21**](#scalar-product-in-mathbbr2): Scalar product in $\mathbb{R}^2$\Pageref{scalar-product-in-mathbbr2}
 
  [**Remark 3.22**](#Remark-3.22)\Pageref{Remark-3.22}
+
+ [**Definition 3.23**](#orthogonal-vectors): Orthogonal vectors\Pageref{orthogonal-vectors}
+
+ [**Proposition 3.24**](#bilinearity-and-symmetry-of-scalar-product): Bilinearity and symmetry of scalar product\Pageref{bilinearity-and-symmetry-of-scalar-product}
+
+ [**Proposition 3.25**](#scalar-products-written-wrt-euclidean-coordinates): Scalar products written wrt euclidean coordinates\Pageref{scalar-products-written-wrt-euclidean-coordinates}
+
+ [**Proof**](#Proof*-3.3)\Pageref{Proof*-3.3}
+
+ [**Definition 3.26**](#scalar-product-in-mathbbrn-1): Scalar product in $\mathbb{R}^n$\Pageref{scalar-product-in-mathbbrn-1}
+
+ [**Proposition 3.27**](#proposition-diff-scalar): Differentiating scalar product\Pageref{proposition-diff-scalar}
+
+ [**Proof**](#Proof*-3.4)\Pageref{Proof*-3.4}
+
+ [**Definition 3.28**](#Definition-3.28)\Pageref{Definition-3.28}
+
+ [**Remark 3.29**](#Remark-3.29)\Pageref{Remark-3.29}
+
+ [**Proposition 3.30**](#Proposition-3.30)\Pageref{Proposition-3.30}
