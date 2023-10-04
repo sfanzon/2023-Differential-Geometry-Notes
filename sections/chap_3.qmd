@@ -1227,6 +1227,7 @@ Note that $\f$ can be used to **reverse the orientation** of a curve.
 
 
 ::: Example
+### Reversing orientation of circle
 
 Consider the unit circle parametrized as usual by $\g \ \colon [0,2\pi] \to \R^2$ defined as
 $$
@@ -1249,22 +1250,166 @@ $$
 :::
 
 
-![Unit circle with usual parametrization $\g$, and with reversed orientation $\tg$](/images/circle_orientation.png){width=70%}
+
+
+::: {.content-visible when-format="html"}
+
+![Unit circle with usual parametrization $\g$, and with reversed orientation $\tg$](/images/circle_orientation.gif){width=90%}
+
+:::
+
+
+::: {.content-visible when-format="pdf"}
+
+![Unit circle with usual parametrization $\g$, and with reversed orientation $\tg$](/images/circle_orientation.png){width=60%}
+
+:::
+
+
 
 
 ::: Example
+### Change of speed
 
-asoihsfaoih
+Let $k > 0$. The map $\f \colon (\tilde{a},\tilde{b}) \to (a,b)$ defined by 
+$$
+\f (t) := kt 
+$$
+is a diffeomoprhism.  The inverse of $\f$ is given by ${\f}^{-1} \colon (a,b) \to (\tilde{a},\tilde{b})$ defined by
+$$
+{\f}^{-1} (t) = \frac{t}{k} \,.
+$$
+Note that $\f$ can be used to **change the speed** of a curve:
 
+- If $k > 1$ the speed increases ,
+- If $0 < k < 1$ the speed decreases. 
+:::
+
+
+
+
+::: Example
+### Doubling the speed of Lemniscate
+
+Recall the Lemniscate
+$$
+\g (t): = (\sin(t), \sin(t)\cos(t) ) \,, \quad t \in [0,2\pi] \,.
+$$
+We can double the speed of the Lemniscate by using the Using the diffeomorphism 
+$$
+\f(t):=2t \,.
+$$
+This way we obtain $\tilde{\g}:= \g \circ \f \ \colon [0,\pi] \to [0, 2\pi]$ with
+$$
+\tg (t) = \g (\f(t)) = (\sin(2t), \sin(2t)\cos(2t)) \,. 
+$$
+In this case we have that 
+$$
+\dot{\tg}(t) = 2 \dot \g(\f(t)) \,.
+$$
+
+> The above follows by chain rule. Indeed, $\dot\f = 2$, so that 
+$$
+\dot{\tg}  = \frac{d}{dt} \left(  \g(\f(t))  \right)  = \dot\f(t) \dot\g (\f(t)) = 2 \dot\g (\f(t))\,.
+$$
 :::
 
 
 ::: {.content-visible when-format="html"}
-![Lemniscate curve](/images/lemniscate_slow.gif){width=70%}
 
+![Lemniscate curve $\g$ and Lemniscate at double speed $\tg$](/images/lemniscate_animated.gif){width=90%}
 
-![Lemniscate curve at double speed](/images/lemniscate_fast.gif){width=70%}
 :::
+
+
+::: {.content-visible when-format="pdf"}
+
+![Lemniscate curve](/images/lemniscate_static.png){width=50%}
+
+:::
+
+
+
+
+::: Important
+The main reason we are interested in reparametrizations is because we want to parametrize curves by **arc-lenght**: This means that, for a curve $\g$, we want to find a reparametrization $\tg$ such that $\tg$ is unit speed:
+$$
+\norm{ \dot{\tg} } = 1 \,, \quad  \forall t \in (a,b) \,.
+$$
+We will see that this is not always possible.
+:::
+
+
+
+::: Definition
+### Regular points
+
+Let $\g \ \colon (a,b) \to \R^n$ be a parametrized curve. We say that:
+
+- $\g(t_0)$ is a **regular point** if 
+$$
+\dot\g(t_0) \neq 0 \,.
+$$
+- A point $\g(t_0)$ is **singular** if it is not regular.
+- The curve $\g$ is regular if every point of $\g$ is regular, that is,
+$$
+\dot\g(t) \neq 0 \,, \quad \forall \, t \in (a,b) \,. 
+$$
+
+:::
+
+
+Note that when $\dot\g(t_0) = 0$, this means the curve is *stopping* at time $t_0$.
+
+
+
+::: Example
+### A curve with one singular point  {#example-stopping-curve}
+
+Consider the parabola
+$$
+\Gamma := \{ (x,y) \in \R^2 \, \colon \,  y=x^2 , \, -1 \leq x \leq 1\} \,.
+$$
+This can be parametrized in two ways by $\g, \eta \ \colon [-1,1] \to \R^2$ defined as
+$$
+\g (t) = (t,t^2) \,, \quad 
+\eta(t) = (t^3, t^6) \,.
+$$
+We will see that the above parametrizations are **not** equivalent. This is intuitively clear, since the change of variables map should be 
+$$
+\f(t) = t^3 \,,
+$$
+which is not invertible for $t = 0$.  
+Let us look at the derivatives:
+$$
+\dot \g (t) = (1,2t) \,, \quad \dot \eta (t)= (3t^2,6t^5) \,.
+$$
+We notice a difference:
+
+- $\g$ is a regular parametrization,
+- $\eta(t)$ is regular only for $t \neq 0$.
+
+Indeed if we animate the plots of the above parametrizations, we see that:
+
+- The point $\g(t)$ moves with constant horizontal speed
+- The point $\eta(t)$ is decelerating for $t < 0$, it stops at $t = 0$, and then accelerates again for $t>0$.
+:::
+
+
+
+::: {.content-visible when-format="html"}
+
+![Left: Animation of $\g$. Right: Animation of $\eta$](/images/singular_curve_animated.gif){width=90%}
+
+:::
+
+
+::: {.content-visible when-format="pdf"}
+
+![Parabola $\Gamma$](/images/singular_curve.png){width=50%}
+
+:::
+
 
 
 

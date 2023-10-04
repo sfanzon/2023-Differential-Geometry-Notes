@@ -66,39 +66,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -106,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Conjecture {
+.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -114,7 +82,39 @@ ul.task-list li input[type="checkbox"] {
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -122,9 +122,13 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 </style>
 
@@ -878,9 +882,9 @@ s(t) := \int_{t_0}^t \left\|   \dot\gamma(\tau)  \right\| \, d\tau  \,\, \implie
 <p>Let <span class="math inline">\(\phi\ \colon (a,b) \to (\tilde{a},\tilde{b})\)</span>. We say that <span class="math inline">\(\phi\)</span> is a <strong>diffeomorphism</strong> if the following conditions are satisfied:</p>
 <ol type="1">
 <li><span class="math inline">\(\phi\)</span> is invertible, with inverse <span class="math inline">\(\phi^{-1} \ \colon (a',b') \to (a,b)\)</span>. Thus <span class="math display">\[
-\phi^{-1} \circ \phi=   \phi\circ \phi^{-1} = Id\,,
-\]</span> where <span class="math inline">\(Id\colon \mathbb{R}\to \mathbb{R}\)</span> is the identity map on <span class="math inline">\(\mathbb{R}\)</span>, that is, <span class="math display">\[
-Id(t) = t \,, \quad \forall \, t \in \mathbb{R}\,.
+\phi^{-1} \circ \phi=   \phi\circ \phi^{-1} = \mathop{\mathrm{Id}}\,,
+\]</span> where <span class="math inline">\(\mathop{\mathrm{Id}}\colon \mathbb{R}\to \mathbb{R}\)</span> is the identity map on <span class="math inline">\(\mathbb{R}\)</span>, that is, <span class="math display">\[
+\mathop{\mathrm{Id}}(t) = t \,, \quad \forall \, t \in \mathbb{R}\,.
 \]</span></li>
 <li><span class="math inline">\(\phi\)</span> is smooth,</li>
 <li><span class="math inline">\(\phi^{-1}\)</span> is smooth.</li>
@@ -889,20 +893,20 @@ Id(t) = t \,, \quad \forall \, t \in \mathbb{R}\,.
 </div>
 <div id="reparametrization-1" class="Definition" title="Reparametrization">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 33: </strong>Reparametrization</summary><div>Let <span class="math inline">\(\gamma\ \colon (a,b) \to \mathbb{R}^n\)</span> be a parametrized curve. A <strong>reparametrization</strong> of <span class="math inline">\(\gamma\)</span> is another parametrized curve <span class="math inline">\(\tilde{\gamma} \ \colon (\tilde{a},\tilde{b}) \to \mathbb{R}^n\)</span> such that <span id="eq-reparametrization"><span class="math display">\[
-\tilde{\gamma}(t) = \gamma(\phi(t)) \quad \forall \, t \in (\tilde{a},\tilde{b})\,,
+\widetilde{\gamma}(t) = \gamma(\phi(t)) \quad \forall \, t \in (\tilde{a},\tilde{b})\,,
 \tag{3.14}\]</span></span> where <span class="math display">\[
 \phi\colon (\tilde{a},\tilde{b}) \to (a,b)
 \]</span> is a diffeomerphism.<p></p>
 </div></details>
 </div>
 <div id="Remark-34" class="Remark">
-<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 34</strong></summary><div>A comment about the above definition. Given a parametrized curve <span class="math inline">\(\gamma\)</span>, this identifies a 1D shape <span class="math inline">\(\Gamma \subset \mathbb{R}^n\)</span>. A reparametrization <span class="math inline">\(\tilde{\gamma}\)</span> is just an equivalent way to describe <span class="math inline">\(\Gamma\)</span>. For <span class="math inline">\(\gamma\)</span> and <span class="math inline">\(\tilde{\gamma}\)</span> to be reparametrizations of each other, there must exist a smooth rule <span class="math inline">\(\phi\)</span> to switch from one to another, according to formula (<a href="#eq-reparametrization"><span>3.14</span></a>)<p></p>
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 34</strong></summary><div>A comment about the above definition. Given a parametrized curve <span class="math inline">\(\gamma\)</span>, this identifies a 1D shape <span class="math inline">\(\Gamma \subset \mathbb{R}^n\)</span>. A reparametrization <span class="math inline">\(\widetilde{\gamma}\)</span> is just an equivalent way to describe <span class="math inline">\(\Gamma\)</span>. For <span class="math inline">\(\gamma\)</span> and <span class="math inline">\(\widetilde{\gamma}\)</span> to be reparametrizations of each other, there must exist a smooth rule <span class="math inline">\(\phi\)</span> to switch from one to another, according to formula (<a href="#eq-reparametrization"><span>3.14</span></a>)<p></p>
 </div></details>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../images/reparametrization.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Sketch of 1D shaper parametrized by <span class="math inline">\(\gamma\)</span> and <span class="math inline">\(\tilde{\gamma}\)</span></figcaption>
+<figcaption class="figure-caption">Sketch of 1D shaper parametrized by <span class="math inline">\(\gamma\)</span> and <span class="math inline">\(\widetilde{\gamma}\)</span></figcaption>
 </figure>
 </div>
 <div id="change-of-orientation" class="Example" title="Change of orientation">
@@ -913,8 +917,8 @@ Id(t) = t \,, \quad \forall \, t \in \mathbb{R}\,.
 \]</span> Note that <span class="math inline">\(\phi\)</span> can be used to <strong>reverse the orientation</strong> of a curve.<p></p>
 </div></details>
 </div>
-<div id="Example-36" class="Example">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 36</strong></summary><div>Consider the unit circle parametrized as usual by <span class="math inline">\(\gamma\ \colon [0,2\pi] \to \mathbb{R}^2\)</span> defined as <span class="math display">\[
+<div id="reversing-orientation-of-circle" class="Example" title="Reversing orientation of circle">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 36: </strong>Reversing orientation of circle</summary><div>Consider the unit circle parametrized as usual by <span class="math inline">\(\gamma\ \colon [0,2\pi] \to \mathbb{R}^2\)</span> defined as <span class="math display">\[
 \gamma(t) := (\cos (t), \sin(t)) \,.
 \]</span> To reverse the orientation we can reparametrize <span class="math inline">\(\gamma\)</span> by using the diffeomorphism <span class="math display">\[
 \phi(t):= - t \,.
@@ -929,24 +933,96 @@ Id(t) = t \,, \quad \forall \, t \in \mathbb{R}\,.
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/circle_orientation.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Unit circle with usual parametrization <span class="math inline">\(\gamma\)</span>, and with reversed orientation <span class="math inline">\(\tilde{\gamma}\)</span></figcaption>
+<p><img src="../images/circle_orientation.gif" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption class="figure-caption">Unit circle with usual parametrization <span class="math inline">\(\gamma\)</span>, and with reversed orientation <span class="math inline">\(\widetilde{\gamma}\)</span></figcaption>
 </figure>
 </div>
-<div id="Example-37" class="Example">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 37</strong></summary><div>asoihsfaoih<p></p>
+<div id="change-of-speed" class="Example" title="Change of speed">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 37: </strong>Change of speed</summary><div>
+<p>Let <span class="math inline">\(k &gt; 0\)</span>. The map <span class="math inline">\(\phi\colon (\tilde{a},\tilde{b}) \to (a,b)\)</span> defined by <span class="math display">\[
+\phi(t) := kt
+\]</span> is a diffeomoprhism. The inverse of <span class="math inline">\(\phi\)</span> is given by <span class="math inline">\({\phi}^{-1} \colon (a,b) \to (\tilde{a},\tilde{b})\)</span> defined by <span class="math display">\[
+{\phi}^{-1} (t) = \frac{t}{k} \,.
+\]</span> Note that <span class="math inline">\(\phi\)</span> can be used to <strong>change the speed</strong> of a curve:</p>
+<ul>
+<li>If <span class="math inline">\(k &gt; 1\)</span> the speed increases ,</li>
+<li>If <span class="math inline">\(0 &lt; k &lt; 1\)</span> the speed decreases.</li>
+</ul>
+</div></details>
+</div>
+<div id="doubling-the-speed-of-lemniscate" class="Example" title="Doubling the speed of Lemniscate">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 38: </strong>Doubling the speed of Lemniscate</summary><div>
+<p>Recall the Lemniscate <span class="math display">\[
+\gamma(t): = (\sin(t), \sin(t)\cos(t) ) \,, \quad t \in [0,2\pi] \,.
+\]</span> We can double the speed of the Lemniscate by using the Using the diffeomorphism <span class="math display">\[
+\phi(t):=2t \,.
+\]</span> This way we obtain <span class="math inline">\(\tilde{\gamma}:= \gamma\circ \phi\ \colon [0,\pi] \to [0, 2\pi]\)</span> with <span class="math display">\[
+\widetilde{\gamma}(t) = \gamma(\phi(t)) = (\sin(2t), \sin(2t)\cos(2t)) \,.
+\]</span> In this case we have that <span class="math display">\[
+\dot{\widetilde{\gamma}}(t) = 2 \dot \gamma(\phi(t)) \,.
+\]</span></p>
+<blockquote class="blockquote">
+<p>The above follows by chain rule. Indeed, <span class="math inline">\(\dot\phi= 2\)</span>, so that <span class="math display">\[
+\dot{\widetilde{\gamma}}  = \frac{d}{dt} \left(  \gamma(\phi(t))  \right)  = \dot\phi(t) \dot\gamma(\phi(t)) = 2 \dot\gamma(\phi(t))\,.
+\]</span></p>
+</blockquote>
 </div></details>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/lemniscate_slow.gif" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Lemniscate curve</figcaption>
+<p><img src="../images/lemniscate_animated.gif" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption class="figure-caption">Lemniscate curve <span class="math inline">\(\gamma\)</span> and Lemniscate at double speed <span class="math inline">\(\widetilde{\gamma}\)</span></figcaption>
 </figure>
+</div>
+<div id="Important*-6" class="Important">
+<p></p><details class="Important fbx-simplebox fbx-default" open=""><summary><strong>Important</strong></summary><div>The main reason we are interested in reparametrizations is because we want to parametrize curves by <strong>arc-lenght</strong>: This means that, for a curve <span class="math inline">\(\gamma\)</span>, we want to find a reparametrization <span class="math inline">\(\widetilde{\gamma}\)</span> such that <span class="math inline">\(\widetilde{\gamma}\)</span> is unit speed: <span class="math display">\[
+\left\|  \dot{\widetilde{\gamma}}  \right\| = 1 \,, \quad  \forall t \in (a,b) \,.
+\]</span> We will see that this is not always possible.<p></p>
+</div></details>
+</div>
+<div id="regular-points" class="Definition" title="Regular points">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 39: </strong>Regular points</summary><div>
+<p>Let <span class="math inline">\(\gamma\ \colon (a,b) \to \mathbb{R}^n\)</span> be a parametrized curve. We say that:</p>
+<ul>
+<li><span class="math inline">\(\gamma(t_0)\)</span> is a <strong>regular point</strong> if <span class="math display">\[
+\dot\gamma(t_0) \neq 0 \,.
+\]</span></li>
+<li>A point <span class="math inline">\(\gamma(t_0)\)</span> is <strong>singular</strong> if it is not regular.</li>
+<li>The curve <span class="math inline">\(\gamma\)</span> is regular if every point of <span class="math inline">\(\gamma\)</span> is regular, that is, <span class="math display">\[
+\dot\gamma(t) \neq 0 \,, \quad \forall \, t \in (a,b) \,.
+\]</span></li>
+</ul>
+</div></details>
+</div>
+<p>Note that when <span class="math inline">\(\dot\gamma(t_0) = 0\)</span>, this means the curve is <em>stopping</em> at time <span class="math inline">\(t_0\)</span>.</p>
+<div id="example-stopping-curve" class="Example" title="A curve with one singular point">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 40: </strong>A curve with one singular point</summary><div>
+<p>Consider the parabola <span class="math display">\[
+\Gamma := \{ (x,y) \in \mathbb{R}^2 \, \colon \,  y=x^2 , \, -1 \leq x \leq 1\} \,.
+\]</span> This can be parametrized in two ways by <span class="math inline">\(\gamma, \eta \ \colon [-1,1] \to \mathbb{R}^2\)</span> defined as <span class="math display">\[
+\gamma(t) = (t,t^2) \,, \quad
+\eta(t) = (t^3, t^6) \,.
+\]</span> We will see that the above parametrizations are <strong>not</strong> equivalent. This is intuitively clear, since the change of variables map should be <span class="math display">\[
+\phi(t) = t^3 \,,
+\]</span> which is not invertible for <span class="math inline">\(t = 0\)</span>.<br>
+Let us look at the derivatives: <span class="math display">\[
+\dot \gamma(t) = (1,2t) \,, \quad \dot \eta (t)= (3t^2,6t^5) \,.
+\]</span> We notice a difference:</p>
+<ul>
+<li><span class="math inline">\(\gamma\)</span> is a regular parametrization,</li>
+<li><span class="math inline">\(\eta(t)\)</span> is regular only for <span class="math inline">\(t \neq 0\)</span>.</li>
+</ul>
+<p>Indeed if we animate the plots of the above parametrizations, we see that:</p>
+<ul>
+<li>The point <span class="math inline">\(\gamma(t)\)</span> moves with constant horizontal speed</li>
+<li>The point <span class="math inline">\(\eta(t)\)</span> is decelerating for <span class="math inline">\(t &lt; 0\)</span>, it stops at <span class="math inline">\(t = 0\)</span>, and then accelerates again for <span class="math inline">\(t&gt;0\)</span>.</li>
+</ul>
+</div></details>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/lemniscate_fast.gif" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Lemniscate curve at double speed</figcaption>
+<p><img src="../images/singular_curve_animated.gif" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption class="figure-caption">Left: Animation of <span class="math inline">\(\gamma\)</span>. Right: Animation of <span class="math inline">\(\eta\)</span></figcaption>
 </figure>
 </div>
 </section>

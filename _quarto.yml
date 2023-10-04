@@ -158,6 +158,10 @@ custom-numbered-blocks:
 
     Problem: 
       group: thmlike
+    
+    Important:
+      group: thmlike
+      numbered: false
 
     Goal: 
       group: thmlike
