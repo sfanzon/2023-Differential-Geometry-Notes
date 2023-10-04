@@ -66,49 +66,13 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
 .Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
 .Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
 }
 .Proof {
   --color1: #f1f1f2;
@@ -118,7 +82,31 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Question {
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -126,9 +114,21 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Theorem {
+.Question {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
 }
 </style>
 
@@ -873,6 +873,12 @@ s(t) := \int_{t_0}^t \left\|   \dot\gamma(\tau)  \right\| \, d\tau  \,\, \implie
 <p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 31</strong></summary><div>Proposition <a href="chap_3.html#proposition-speed-identity">30</a> is saying that if <span class="math inline">\(\gamma\)</span> is unit speed, then its tangent vector <span class="math inline">\(\dot \gamma\)</span> is always orthogonal to the second derivative <span class="math inline">\(\ddot \gamma\)</span>. This will be very useful in the future.<p></p>
 </div></details>
 </div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/tangent_orthogonal.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption class="figure-caption">If <span class="math inline">\(\gamma\)</span> is unit speed then <span class="math inline">\(\dot \gamma\)</span> and <span class="math inline">\(\ddot \gamma\)</span> are orthogonal</figcaption>
+</figure>
+</div>
 </section>
 <section id="reparametrization" class="level2" data-number="3.6">
 <h2 data-number="3.6" class="anchored" data-anchor-id="reparametrization"><span class="header-section-number">3.6</span> Reparametrization</h2>
@@ -1024,6 +1030,101 @@ Let us look at the derivatives: <span class="math display">\[
 <p><img src="../images/singular_curve_animated.gif" class="img-fluid figure-img" style="width:90.0%"></p>
 <figcaption class="figure-caption">Left: Animation of <span class="math inline">\(\gamma\)</span>. Right: Animation of <span class="math inline">\(\eta\)</span></figcaption>
 </figure>
+</div>
+<div id="proposition-regularity-invariant" class="Proposition" title="Regularity is invariant for reparametrization">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 41: </strong>Regularity is invariant for reparametrization</summary><div>Let <span class="math inline">\(\gamma\ \colon (a,b) \to \mathbb{R}^n\)</span> be a parametrized curve and suppose that <span class="math inline">\(\gamma\)</span> is regular, that is, <span class="math display">\[
+\dot\gamma(t) \neq 0 \,, \quad  \forall \, t \in (a,b) \,.
+\]</span> Then every reparametrization of <span class="math inline">\(\gamma\)</span> is also regular.<p></p>
+</div></details>
+</div>
+<div id="Proof*-7" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Let <span class="math inline">\(\widetilde{\gamma}\ \colon (\tilde{a},\tilde{b}) \to \mathbb{R}^n\)</span> be a reparametrization of <span class="math inline">\(\gamma\)</span>. Then there exist <span class="math inline">\(\phi\ \colon (\tilde{a},\tilde{b}) \to (a,b)\)</span> diffeomorphism such that <span class="math display">\[
+\tilde \gamma(t) = \gamma(\phi(t)) \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
+\]</span> By the chain rule we have <span class="math display">\[
+\dot{\widetilde{\gamma}}(t) = \frac{d}{dt}  \left(  \gamma(\phi(t))  \right) = \dot\gamma(\phi(t)) \dot\phi(t) \,.
+\]</span> Therefore <span id="eq-regularity-invariant-1"><span class="math display">\[
+\dot{\widetilde{\gamma}}(t) \neq 0 \quad \iff \quad \dot\gamma(\phi(t)) \dot\phi(t)  \neq 0 \,.
+\tag{3.15}\]</span></span> But we are assuming that <span class="math inline">\(\gamma\)</span> is regular, so that <span class="math display">\[
+\dot\gamma(\phi(t)) \neq 0 \,, \quad \forall\, t \in (\tilde{a},\tilde{b}) \,.
+\]</span> Thus (<a href="#eq-regularity-invariant-1"><span>3.15</span></a>) is equivalent to <span id="eq-regularity-invariant-2"><span class="math display">\[
+\dot{\widetilde{\gamma}}(t) \neq 0 \quad \iff \quad  \dot\phi(t)  \neq 0 \,.
+\tag{3.16}\]</span></span> We know that <span class="math inline">\(\phi\)</span> is smooth with smooth inverse <span class="math inline">\(\psi := \phi^{-1}\)</span>. In particular <span class="math display">\[
+\psi (\phi(t)) = t \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
+\]</span> We can differentiate both sides of the above expression to get <span id="eq-regularity-invariant-3"><span class="math display">\[
+\frac{d}{dt} \left( \psi (\phi(t))  \right) = 1 \,.
+\tag{3.17}\]</span></span> On the other hand, by chain rule, <span class="math display">\[
+\frac{d}{dt} \left( \psi (\phi(t))  \right) = \dot\psi (\phi(t)) \, \dot\phi(t) \,.
+\]</span> From (<a href="#eq-regularity-invariant-3"><span>3.17</span></a>) we then get <span class="math display">\[
+\dot\psi (\phi(t)) \, \dot\phi(t) = 1 \, , \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
+\]</span> Since on the LHS we have a product, this means that none of the LHS terms vanishes, so that <span class="math display">\[
+\dot\phi(t) \neq  0 \, , \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
+\]</span> By (<a href="#eq-regularity-invariant-2"><span>3.16</span></a>) we conclude that <span class="math display">\[
+\dot{\widetilde{\gamma}}(t) \neq  0 \, , \quad \forall \, t \in (\tilde{a},\tilde{b}) \,,
+\]</span> proving that <span class="math inline">\(\widetilde{\gamma}\)</span> is regular.<p></p>
+</div></details>
+</div>
+<div id="Example-42" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 42</strong></summary><div>Let us go back to the parabola <span class="math display">\[
+\Gamma := \{ (x,y) \in \mathbb{R}^2 \, \colon \,  y=x^2 , \, -1 \leq x \leq 1\} \,,
+\]</span> with the two parametrizations <span class="math inline">\(\gamma, \eta \ \colon [-1,1] \to \mathbb{R}^2\)</span> with <span class="math display">\[
+\gamma(t) = (t,t^2) \,, \quad
+\eta(t) = (t^3, t^6) \,.
+\]</span> We have that <span class="math display">\[
+\dot \gamma(t) = (1,2t) \,, \quad \dot \eta (t)= (3t^2,6t^5) \,.
+\]</span> Therefore<p></p>
+<ul>
+<li><span class="math inline">\(\gamma\)</span> is a regular parametrization,</li>
+<li><span class="math inline">\(\eta(t)\)</span> is regular only for <span class="math inline">\(t \neq 0\)</span>.</li>
+</ul>
+<p>Proposition <a href="chap_3.html#proposition-regularity-invariant">41</a> implies that <span class="math inline">\(\eta\)</span> is <strong>NOT</strong> a reparametrization of <span class="math inline">\(\gamma\)</span>.</p>
+</div></details>
+</div>
+<div id="unit-speed-reparametrization" class="Definition" title="Unit speed reparametrization">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 43: </strong>Unit speed reparametrization</summary><div>Let <span class="math inline">\(\gamma\)</span> be a parametrized curve. A <strong>unit speed reparametrization</strong> of <span class="math inline">\(\gamma\)</span> is a reparametrization <span class="math inline">\(\widetilde{\gamma}\)</span> such that <span class="math inline">\(\widetilde{\gamma}\)</span> is unit speed.<p></p>
+</div></details>
+</div>
+<div id="theorem-regular-unit-speed" class="Theorem" title="Existence of unit speed reparametrization">
+<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 44: </strong>Existence of unit speed reparametrization</summary><div>
+<p>Let <span class="math inline">\(\gamma\)</span> be a parametrized curve. They are equivalent:</p>
+<ul>
+<li><span class="math inline">\(\gamma\)</span> is regular,</li>
+<li><span class="math inline">\(\gamma\)</span> has a unit speed reparametrization.</li>
+</ul>
+</div></details>
+</div>
+<div id="Proof*-8" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Step 1.</em><br>
+Assume <span class="math inline">\(\gamma\ \colon (a,b) \to \mathbb{R}^n\)</span> is regular. LATER<p></p>
+</div></details>
+</div>
+<p>Consider the arc-length of a curve <span class="math inline">\(\gamma\colon (a,b) \to \mathbb{R}^n\)</span>, which we recall is defined by <span class="math display">\[
+s(t):=\int_{t_0}^t \left\|  \dot \gamma(\tau)  \right\| \, d\tau \,,
+\]</span> for some <span class="math inline">\(t_0 \in (a,b)\)</span> fixed.<br>
+The proof of Theorem <a href="chap_3.html#theorem-regular-unit-speed">44</a> told us that the arc-length is essentially the only unit-speed reparametrization of a regular curve. This is worth formalizing in a proposition.</p>
+<div id="Proposition-45" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 45</strong></summary><div>Let <span class="math inline">\(\gamma\ \colon (a,b) \to \mathbb{R}^n\)</span> be a regular curve and let <span class="math inline">\(\widetilde{\gamma}\ \colon (\tilde{a},\tilde{b}) \to \mathbb{R}^n\)</span> be a unit speed reparametrization of <span class="math inline">\(\gamma\)</span>, with <span class="math display">\[
+\gamma(t) = \widetilde{\gamma}( \phi(t) )  , \quad \forall \, t \in (a,b)\,,
+\]</span> where <span class="math inline">\(\phi\ \colon (a,b) \to (\tilde{a},\tilde{b})\)</span> is a diffeomorphism. Then the arc-length of <span class="math inline">\(\gamma\)</span> is given by <span class="math display">\[
+s = \gamma+ c  
+\]</span> for a suitable constant <span class="math inline">\(c \in \mathbb{R}\)</span>.<p></p>
+</div></details>
+</div>
+<div id="Proof*-9" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>First note that a unit speed reparametrization <span class="math inline">\(\widetilde{\gamma}\)</span> of <span class="math inline">\(\gamma\)</span> exists by Theorem <a href="chap_3.html#theorem-regular-unit-speed">44</a>, since <span class="math inline">\(\gamma\)</span> is assumed to be regular.<br>
+By differentiating both sides of <span class="math display">\[
+\gamma(t) = \widetilde{\gamma}( \phi(t) )  , \quad \forall \, t \in (a,b)\,,
+\]</span> we obtain <span class="math display">\[
+\dot \gamma(t) = \frac{d}{dt} \widetilde{\gamma}( \phi(t) ) = \dot{\widetilde{\gamma}}(\phi(t)) \, \dot\phi(t)  \,.
+\]</span> Taking the norms we then have <span class="math display">\[\begin{align}
+\left\|  \dot \gamma(t)  \right\| &amp; = \left\|  \dot{\widetilde{\gamma}}(\phi(t)) \, \dot\phi(t)  \right\| \\
+                    &amp; = \left\|  \dot{\widetilde{\gamma}}(\phi(t))  \right\| \, | \dot\phi(t) | \\
+                    &amp; = | \dot\phi(t) | \,,
+\end{align}\]</span> where in the last equality we used that <span class="math inline">\(\widetilde{\gamma}\)</span> is unit speed, and so <span class="math display">\[
+\left\| \dot{\widetilde{\gamma}} \right\| \equiv 1 \,.
+\]</span> To summarize, so far we have proven that <span class="math display">\[
+\left\|  \dot \gamma(t)  \right\|  = | \dot\phi(t) | \,, \quad \forall \, t \in (a,b) \,.
+\]</span><p></p>
+</div></details>
 </div>
 </section>
 <section id="vector-product-in-mathbbr3" class="level2" data-number="3.7">

@@ -112,3 +112,19 @@
  [**Definition 3.39**](#regular-points): Regular points\Pageref{regular-points}
 
  [**Example 3.40**](#example-stopping-curve): A curve with one singular point\Pageref{example-stopping-curve}
+
+ [**Proposition 3.41**](#proposition-regularity-invariant): Regularity is invariant for reparametrization\Pageref{proposition-regularity-invariant}
+
+ [**Proof**](#Proof*-3.7)\Pageref{Proof*-3.7}
+
+ [**Example 3.42**](#Example-3.42)\Pageref{Example-3.42}
+
+ [**Definition 3.43**](#unit-speed-reparametrization): Unit speed reparametrization\Pageref{unit-speed-reparametrization}
+
+ [**Theorem 3.44**](#theorem-regular-unit-speed): Existence of unit speed reparametrization\Pageref{theorem-regular-unit-speed}
+
+ [**Proof**](#Proof*-3.8)\Pageref{Proof*-3.8}
+
+ [**Proposition 3.45**](#Proposition-3.45)\Pageref{Proposition-3.45}
+
+ [**Proof**](#Proof*-3.9)\Pageref{Proof*-3.9}

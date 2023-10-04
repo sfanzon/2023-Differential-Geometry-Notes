@@ -1158,6 +1158,9 @@ Proposition \ref{proposition-speed-identity} is saying that if $\g$ is unit spee
 
 
 
+![If $\g$ is unit speed then $\dot \g$ and $\ddot \g$ are orthogonal](/images/tangent_orthogonal.png){width=60%}
+
+
 
 
 ## Reparametrization
@@ -1411,6 +1414,171 @@ Indeed if we animate the plots of the above parametrizations, we see that:
 :::
 
 
+
+
+
+::: Proposition
+### Regularity is invariant for reparametrization  {#proposition-regularity-invariant}
+
+Let $\g \ \colon (a,b) \to \R^n$ be a parametrized curve and suppose that $\g$ is regular, that is, 
+$$
+\dot\g(t) \neq 0 \,, \quad  \forall \, t \in (a,b) \,.
+$$
+Then every reparametrization of $\g$ is also regular.
+:::
+
+
+::: Proof
+
+Let $\tg \ \colon (\tilde{a},\tilde{b}) \to \R^n$ be a reparametrization of $\g$. Then there exist $\f \ \colon (\tilde{a},\tilde{b}) \to (a,b)$ diffeomorphism such that 
+$$
+\tilde \g (t) = \g (\f (t)) \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
+$$
+By the chain rule we have 
+$$
+\dot{\tg}(t) = \frac{d}{dt}  \left(  \g (\f(t))  \right) = \dot\g (\f(t)) \dot\f(t) \,.
+$$
+Therefore
+$$
+\dot{\tg}(t) \neq 0 \quad \iff \quad \dot\g (\f(t)) \dot\f(t)  \neq 0 \,.
+$$ {#eq-regularity-invariant-1}
+But we are assuming that $\g$ is regular, so that 
+$$
+\dot\g (\f(t)) \neq 0 \,, \quad \forall\, t \in (\tilde{a},\tilde{b}) \,.
+$$
+Thus (@eq-regularity-invariant-1) is equivalent to 
+$$
+\dot{\tg}(t) \neq 0 \quad \iff \quad  \dot\f(t)  \neq 0 \,.
+$$ {#eq-regularity-invariant-2}
+We know that $\f$ is smooth with smooth inverse $\psi := \f^{-1}$. In particular 
+$$
+\psi (\f(t)) = t \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
+$$
+We can differentiate both sides of the above expression to get
+$$
+\frac{d}{dt} \left( \psi (\f(t))  \right) = 1 \,.
+$$ {#eq-regularity-invariant-3}
+On the other hand, by chain rule,
+$$
+\frac{d}{dt} \left( \psi (\f(t))  \right) = \dot\psi (\f(t)) \, \dot\f(t) \,.
+$$
+From (@eq-regularity-invariant-3) we then get
+$$
+ \dot\psi (\f(t)) \, \dot\f(t) = 1 \, , \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
+$$
+Since on the LHS we have a product, this means that none of the LHS terms vanishes, so that 
+$$
+\dot\f(t) \neq  0 \, , \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
+$$
+By (@eq-regularity-invariant-2) we conclude that 
+$$
+\dot{\tg}(t) \neq  0 \, , \quad \forall \, t \in (\tilde{a},\tilde{b}) \,, 
+$$
+proving that $\tg$ is regular.
+:::
+
+
+
+::: Example 
+
+Let us go back to the parabola
+$$
+\Gamma := \{ (x,y) \in \R^2 \, \colon \,  y=x^2 , \, -1 \leq x \leq 1\} \,,
+$$
+with the two parametrizations $\g, \eta \ \colon [-1,1] \to \R^2$ with
+$$
+\g (t) = (t,t^2) \,, \quad 
+\eta(t) = (t^3, t^6) \,.
+$$
+We have that
+$$
+\dot \g (t) = (1,2t) \,, \quad \dot \eta (t)= (3t^2,6t^5) \,.
+$$
+Therefore 
+
+- $\g$ is a regular parametrization,
+- $\eta(t)$ is regular only for $t \neq 0$.
+
+Proposition \ref{proposition-regularity-invariant} implies that $\eta$ is **NOT** a reparametrization of $\g$.
+:::
+
+
+
+::: Definition 
+### Unit speed reparametrization
+
+Let $\g$ be a parametrized curve. A **unit speed reparametrization** of $\g$ is a reparametrization $\tg$ such that $\tg$ is unit speed.
+
+:::
+
+
+
+
+::: Theorem
+### Existence of unit speed reparametrization  {#theorem-regular-unit-speed}
+
+Let $\g$ be a parametrized curve. They are equivalent:
+
+- $\g$ is regular,
+- $\g$ has a unit speed reparametrization.
+:::
+
+::: Proof
+
+*Step 1.*  
+Assume $\g \ \colon (a,b) \to \R^n$ is regular. LATER
+
+:::
+
+
+
+Consider the arc-length of a curve $\g \colon (a,b) \to \R^n$, which we recall is defined by 
+$$
+s(t):=\int_{t_0}^t \norm{ \dot \g (\tau) } \, d\tau \,,
+$$
+for some $t_0 \in (a,b)$ fixed.  
+The proof of Theorem \ref{theorem-regular-unit-speed} told us that the arc-length is essentially the only unit-speed reparametrization of a regular curve. This is worth formalizing in a proposition.
+
+
+::: Proposition
+
+Let $\g \ \colon (a,b) \to \R^n$ be a regular curve and let $\tg \ \colon (\tilde{a},\tilde{b}) \to \R^n$ be a unit speed reparametrization of $\g$, with 
+$$
+\g(t) = \tg ( \f(t) )  , \quad \forall \, t \in (a,b)\,, 
+$$
+where $\f \ \colon (a,b) \to (\tilde{a},\tilde{b})$ is a diffeomorphism. Then the arc-length of $\g$ is given by 
+$$
+s = \g + c  
+$$
+for a suitable constant $c \in \R$.
+:::
+
+::: Proof
+
+First note that a unit speed reparametrization $\tg$ of $\g$ exists by Theorem \ref{theorem-regular-unit-speed}, since $\g$ is assumed to be regular.  
+By differentiating both sides of
+$$
+\g(t) = \tg ( \f(t) )  , \quad \forall \, t \in (a,b)\,, 
+$$
+we obtain
+$$
+\dot \g(t) = \frac{d}{dt} \tg ( \f(t) ) = \dot{\tg}(\f(t)) \, \dot\f(t)  \,. 
+$$
+Taking the norms we then have
+\begin{align}
+\norm{ \dot \g(t) } & = \norm{ \dot{\tg}(\f(t)) \, \dot\f(t) } \\
+                    & = \norm{ \dot{\tg}(\f(t)) } \, | \dot\f(t) | \\
+                    & = | \dot\f(t) | \,,
+\end{align}
+where in the last equality we used that $\tg$ is unit speed, and so 
+$$
+\norm{\dot{\tg}} \equiv 1 \,.
+$$
+To summarize, so far we have proven that
+$$
+\norm{ \dot \g(t) }  = | \dot\f(t) | \,, \quad \forall \, t \in (a,b) \,.
+$$
+:::
 
 
 ## Vector product in $\R^3$
