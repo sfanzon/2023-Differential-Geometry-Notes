@@ -1200,7 +1200,7 @@ where
 $$
 \f \colon (\tilde{a},\tilde{b}) \to (a,b)
 $$
-is a diffeomerphism.
+is a diffeomerphism. We call both $\f$ and $\f^{-1}$  **reparametrization maps**.
 :::
 
 ::: Remark
@@ -1512,6 +1512,14 @@ Let $\g$ be a parametrized curve. A **unit speed reparametrization** of $\g$ is 
 :::
 
 
+The next theorem states that a curve is regular if and only if it has a unit speed reparametrization. For the proof, it is crucial to recall the definition of arc-length of a curve $\g \colon (a,b) \to \R^n$, which is given by 
+$$
+s(t):=\int_{t_0}^t \norm{ \dot \g (\tau) } \, d\tau \,,
+$$
+for some arbitrary $t_0 \in (a,b)$ fixed. Indeed, we will see that for $\f$ regular the unit speed parametrization map can be taken as 
+$$
+\f = s^{-1} \,.
+$$ 
 
 
 ::: Theorem
@@ -1523,34 +1531,113 @@ Let $\g$ be a parametrized curve. They are equivalent:
 - $\g$ has a unit speed reparametrization.
 :::
 
+
 ::: Proof
 
-*Step 1.*  
-Assume $\g \ \colon (a,b) \to \R^n$ is regular. LATER
+*Step 1. Direct implication.*  
+Assume $\g \ \colon (a,b) \to \R^n$ is regular, that is,
+$$
+\dot \g (t) \neq 0 \,, \quad \forall \, t \in (a,b)\,.
+$$
+Let $s \ \colon (a,b) \to \R$ be the arc-length of $\g$ starting at any point $t_0 \in (a,b)$. By the Fundamental Theorem of Calculus we have
+$$
+\dot s (t) = \norm{ \dot \g(t) }  
+$$ {#eq-derivative-arc}
+so that 
+$$
+\dot s (t) > 0 \,, \quad \forall \, t \in (a,b)\,.
+$$
+Since $s$ is a scalar function, the above condition and the Inverse Function Theorem guarantee the existsence of a smooth inverse
+$$
+s^{-1} \ \colon (\tilde{a},\tilde{b}) \to (a,b)
+$$
+for some $\tilde{\alpha}< \tilde{\beta}$. 
+Define the reparametrization map $\f$ as
+$$
+\f := s^{-1}
+$$
+and the corresponding reparametrization of $\g$ given by the curve
+$$
+\tg \ \colon  (\tilde{a},\tilde{b}) \to \R^n \,, \quad 
+\tg := \g \circ \f \,. 
+$$
+We claim that $\tg$ is unit speed. Indeed, by definition
+$$
+\tg := \g \circ \f \quad \implies \quad \g = \tg \circ \f^{-1} = \tg \circ s \,,
+$$
+or in other words
+$$
+\g(t) = \tg (s(t)) \,, \quad \forall t \in (a,b) \,.
+$$
+Differentiating the above expression and using the chain rule we get
+$$
+\dot \g (t) = \dot{\tg}(s(t)) \, \dot s(t) =  \dot{\tg}(s(t)) \, \norm{ \dot \g(t) }  
+$$
+where in the last equality we used (@eq-derivative-arc). Taking the absolute value of the above yileds
+$$
+ \norm{ \dot \g(t) }   = \norm{\dot{\tg}(s(t))} \, \norm{ \dot \g(t) } \,.  
+$${#eq-derivative-arc-1}
+Since $\g$ is regular, we have
+$$
+\norm{\dot \g (t)} \neq 0 \,, \quad \forall \, t \in (a,b)\,.
+$$
+Therefore we can divide (@eq-derivative-arc-1) by $\norm{\dot\g(t)}$ and obtain
+$$
+\norm{\dot{\tg}(s(t))} = 1  \,, \quad \forall \, t \in (a,b) \,.
+$$
+By invertibility of $s$, the above holds if and only if
+$$
+\norm{\dot{\tg}(t)} = 1  \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,,
+$$
+showing that $\tg$ is a unit speed reparametrization of $\g$.
 
+*Step 2. Reverse implication.*  
+Suppose there exists a unit speed reparametrization of $\g$ denoted by 
+$$
+\tg \ \colon (\tilde{a},\tilde{b})  \to \R^n \,, \quad \tg = \g \circ \f
+$$
+for some reparametrization map $\f \ \colon (\tilde{a},\tilde{b}) \to (a,b)$. Differentiating $\tg = \g \circ \f$ and using the chain rule we get
+$$
+\dot{\tg}(t) = \dot{\g} (\f(t)) \, \dot \f(t) \,.
+$$
+Taking the norm
+$$
+\norm{\dot{\tg}(t)} = \norm{\dot{\g} (\f(t)) } \, |\dot \f (t)| \,.
+$$
+Since $\tg$ is unit speed we obtain
+$$
+\norm{\dot{\g} (\f(t)) } \, |\dot \f (t)| = 1 \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
+$$
+In particular 
+$$
+\dot{\g} (\f(t))  \neq 0 \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
+$$
+Since $\f$ is a diffeomorphism from $(\tilde{a},\tilde{b})$ into $(a,b)$, we also have 
+$$
+\dot{\g} (t)  \neq 0 \,, \quad \forall \, t \in (a,b) \,,
+$$
+proving that $\g$ is regular.
 :::
 
 
-
-Consider the arc-length of a curve $\g \colon (a,b) \to \R^n$, which we recall is defined by 
+The proof of Theorem \ref{theorem-regular-unit-speed} told us that the arc-length is essentially the only unit-speed reparametrization map of a regular curve. The unit speed reparametrization is obtained via 
 $$
-s(t):=\int_{t_0}^t \norm{ \dot \g (\tau) } \, d\tau \,,
+\tg = \g \circ s^{-1} \,.
 $$
-for some $t_0 \in (a,b)$ fixed.  
-The proof of Theorem \ref{theorem-regular-unit-speed} told us that the arc-length is essentially the only unit-speed reparametrization of a regular curve. This is worth formalizing in a proposition.
+We make this statement precise in the following proposition.
 
 
 ::: Proposition
-
-Let $\g \ \colon (a,b) \to \R^n$ be a regular curve and let $\tg \ \colon (\tilde{a},\tilde{b}) \to \R^n$ be a unit speed reparametrization of $\g$, with 
+### Arc-length and unit speed parametrization  {#proposition-arc-length-unit}
+Let $\g \ \colon (a,b) \to \R^n$ be a regular curve. Let $\tg \ \colon (\tilde{a},\tilde{b}) \to \R^n$ be a unit speed reparametrization of $\g$, with reparametrization map $\f \ \colon (a,b) \to (\tilde{a},\tilde{b})$, that is,
 $$
-\g(t) = \tg ( \f(t) )  , \quad \forall \, t \in (a,b)\,, 
+\g(t) = \tg ( \f(t) )  , \quad \forall \, t \in (a,b)\,.
 $$
-where $\f \ \colon (a,b) \to (\tilde{a},\tilde{b})$ is a diffeomorphism. Then the arc-length of $\g$ is given by 
+Denote by $s$ be the arc-length of $\g$ starting at any point $t_0 \in (a,b)$. Then
 $$
-s = \g + c  
+s = \pm \f + c  
 $$
-for a suitable constant $c \in \R$.
+for a suitable constant $c \in \R$.  
 :::
 
 ::: Proof
@@ -1578,7 +1665,117 @@ To summarize, so far we have proven that
 $$
 \norm{ \dot \g(t) }  = | \dot\f(t) | \,, \quad \forall \, t \in (a,b) \,.
 $$
+Therefore 
+$$
+s(t) = \int_{t_0}^t \norm{ \dot \g(\tau) } \, d\tau =  \int_{t_0}^t | \dot \f(\tau) | \, d\tau \,.
+$$
+By the Fundamental Theorem of Calculus we get
+$$
+\dot s(t) = |\dot \f(t) | 
+$$
+and therefore 
+$$
+s = \pm \f + c
+$$
+for some $c \in \R$, concluding the proof.
 :::
+
+
+::: Remark
+The above proposition tells us that 
+$$
+\g \, \mbox{ has unit speed reparametrization}  \,\, \iff \,\,
+s \, \mbox{ is a diffeomorphism}
+$$  
+:::
+
+::: Warning
+
+Theorem \ref{theorem-regular-unit-speed} says that every regular curve has unit speed parametrization. However the unit speed reparametrization is often impossible to characterize, even for very simple curves.
+
+:::
+
+
+::: Example 
+### Twisted cubic
+
+Define the **twisted cubic** $\g \ \colon \R \to \R^3$ by 
+$$
+\g(t) = (t,t^2,t^3)\,.
+$$
+Therefore 
+$$
+\dot \g(t) = (1,2t,3t^2)\,,
+$$
+so that 
+$$
+\dot \g (t) \neq 0 \,, \quad \forall \, t \in \R  \,,
+$$
+meaning that $\g$ is regular. In particular we have
+$$
+\norm{ \dot \g(t) } = \sqrt{  1 + 4t^2 + 9t^4 }
+$$
+so that the arc-length of $\g$ is
+$$
+s(t) = \int_{t_0}^t  \sqrt{  1 + 4\tau^2 + 9\tau^4 }\, d\tau \,.
+$$
+Since $\g$ is regular, by Proposition \ref{proposition-arc-length-unit} we know that $\g$ admits a unit speed reparametrization $\tg$ such that
+$$
+\g =  \tg \circ \f
+$$
+with the diffeomorphism $\f$ given by
+$$
+\f(t) = \pm s(t) + c = \pm \int_{t_0}^t  \sqrt{  1 + 4\tau^2 + 9\tau^4 }\, d\tau + c
+$$
+for some $c \in \R$. It can be shown that the above integral does not have a closed form in terms of elementary functions. Therefore the unit speed parametrization $\tg$ cannot be computed explicitly.
+:::
+
+
+```{python}
+#| echo: false
+#| fig-cap: "Plot of Twisted Cubic for t between -2 and 2" 
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+# Define the parameter 't'
+t = np.linspace(-2, 2, 100)
+
+# Calculate the corresponding x, y, and z values
+x = t
+y = t**2
+z = t**3
+
+# Create a 3D plot
+fig = plt.figure(figsize=(5, 5))
+ax = fig.add_subplot(111, projection='3d')
+
+# Plot the curve
+ax.plot(x, y, z, color='deeppink', linewidth=2)
+
+# Set labels for the axes
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.set_zlabel('z')
+
+# Set the viewing angle to 45 degrees for both azimuthal and elevation angles
+ax.view_init(elev=20, azim=-25)
+
+# Show the plot
+plt.show()
+```
+
+
+
+
+## Closed curves
+
+
+
+
+
 
 
 ## Vector product in $\R^3$

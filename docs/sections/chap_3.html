@@ -66,19 +66,31 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Assumption {
+.Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
 }
-.Proposition {
+.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -90,27 +102,15 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Lemma {
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
 }
 .Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -118,17 +118,17 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
 }
 </style>
 
@@ -242,7 +242,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#scalar-product-in-mathbbrn" id="toc-scalar-product-in-mathbbrn" class="nav-link" data-scroll-target="#scalar-product-in-mathbbrn"><span class="header-section-number">3.4</span> Scalar product in <span class="math inline">\(\mathbb{R}^n\)</span></a></li>
   <li><a href="#speed-of-a-curve" id="toc-speed-of-a-curve" class="nav-link" data-scroll-target="#speed-of-a-curve"><span class="header-section-number">3.5</span> Speed of a curve</a></li>
   <li><a href="#reparametrization" id="toc-reparametrization" class="nav-link" data-scroll-target="#reparametrization"><span class="header-section-number">3.6</span> Reparametrization</a></li>
-  <li><a href="#vector-product-in-mathbbr3" id="toc-vector-product-in-mathbbr3" class="nav-link" data-scroll-target="#vector-product-in-mathbbr3"><span class="header-section-number">3.7</span> Vector product in <span class="math inline">\(\mathbb{R}^3\)</span></a></li>
+  <li><a href="#closed-curves" id="toc-closed-curves" class="nav-link" data-scroll-target="#closed-curves"><span class="header-section-number">3.7</span> Closed curves</a></li>
+  <li><a href="#vector-product-in-mathbbr3" id="toc-vector-product-in-mathbbr3" class="nav-link" data-scroll-target="#vector-product-in-mathbbr3"><span class="header-section-number">3.8</span> Vector product in <span class="math inline">\(\mathbb{R}^3\)</span></a></li>
   </ul>
 </nav>
     </div>
@@ -902,7 +903,7 @@ s(t) := \int_{t_0}^t \left\|   \dot\gamma(\tau)  \right\| \, d\tau  \,\, \implie
 \widetilde{\gamma}(t) = \gamma(\phi(t)) \quad \forall \, t \in (\tilde{a},\tilde{b})\,,
 \tag{3.14}\]</span></span> where <span class="math display">\[
 \phi\colon (\tilde{a},\tilde{b}) \to (a,b)
-\]</span> is a diffeomerphism.<p></p>
+\]</span> is a diffeomerphism. We call both <span class="math inline">\(\phi\)</span> and <span class="math inline">\(\phi^{-1}\)</span> <strong>reparametrization maps</strong>.<p></p>
 </div></details>
 </div>
 <div id="Remark-34" class="Remark">
@@ -1083,6 +1084,11 @@ Let us look at the derivatives: <span class="math display">\[
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 43: </strong>Unit speed reparametrization</summary><div>Let <span class="math inline">\(\gamma\)</span> be a parametrized curve. A <strong>unit speed reparametrization</strong> of <span class="math inline">\(\gamma\)</span> is a reparametrization <span class="math inline">\(\widetilde{\gamma}\)</span> such that <span class="math inline">\(\widetilde{\gamma}\)</span> is unit speed.<p></p>
 </div></details>
 </div>
+<p>The next theorem states that a curve is regular if and only if it has a unit speed reparametrization. For the proof, it is crucial to recall the definition of arc-length of a curve <span class="math inline">\(\gamma\colon (a,b) \to \mathbb{R}^n\)</span>, which is given by <span class="math display">\[
+s(t):=\int_{t_0}^t \left\|  \dot \gamma(\tau)  \right\| \, d\tau \,,
+\]</span> for some arbitrary <span class="math inline">\(t_0 \in (a,b)\)</span> fixed. Indeed, we will see that for <span class="math inline">\(\phi\)</span> regular the unit speed parametrization map can be taken as <span class="math display">\[
+\phi= s^{-1} \,.
+\]</span></p>
 <div id="theorem-regular-unit-speed" class="Theorem" title="Existence of unit speed reparametrization">
 <details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 44: </strong>Existence of unit speed reparametrization</summary><div>
 <p>Let <span class="math inline">\(\gamma\)</span> be a parametrized curve. They are equivalent:</p>
@@ -1093,19 +1099,59 @@ Let us look at the derivatives: <span class="math display">\[
 </div></details>
 </div>
 <div id="Proof*-8" class="Proof">
-<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Step 1.</em><br>
-Assume <span class="math inline">\(\gamma\ \colon (a,b) \to \mathbb{R}^n\)</span> is regular. LATER<p></p>
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Step 1. Direct implication.</em><br>
+Assume <span class="math inline">\(\gamma\ \colon (a,b) \to \mathbb{R}^n\)</span> is regular, that is, <span class="math display">\[
+\dot \gamma(t) \neq 0 \,, \quad \forall \, t \in (a,b)\,.
+\]</span> Let <span class="math inline">\(s \ \colon (a,b) \to \mathbb{R}\)</span> be the arc-length of <span class="math inline">\(\gamma\)</span> starting at any point <span class="math inline">\(t_0 \in (a,b)\)</span>. By the Fundamental Theorem of Calculus we have <span id="eq-derivative-arc"><span class="math display">\[
+\dot s (t) = \left\|  \dot \gamma(t)  \right\|  
+\tag{3.18}\]</span></span> so that <span class="math display">\[
+\dot s (t) &gt; 0 \,, \quad \forall \, t \in (a,b)\,.
+\]</span> Since <span class="math inline">\(s\)</span> is a scalar function, the above condition and the Inverse Function Theorem guarantee the existsence of a smooth inverse <span class="math display">\[
+s^{-1} \ \colon (\tilde{a},\tilde{b}) \to (a,b)
+\]</span> for some <span class="math inline">\(\tilde{\alpha}&lt; \tilde{\beta}\)</span>. Define the reparametrization map <span class="math inline">\(\phi\)</span> as <span class="math display">\[
+\phi:= s^{-1}
+\]</span> and the corresponding reparametrization of <span class="math inline">\(\gamma\)</span> given by the curve <span class="math display">\[
+\widetilde{\gamma}\ \colon  (\tilde{a},\tilde{b}) \to \mathbb{R}^n \,, \quad
+\widetilde{\gamma}:= \gamma\circ \phi\,.
+\]</span> We claim that <span class="math inline">\(\widetilde{\gamma}\)</span> is unit speed. Indeed, by definition <span class="math display">\[
+\widetilde{\gamma}:= \gamma\circ \phi\quad \implies \quad \gamma= \widetilde{\gamma}\circ \phi^{-1} = \widetilde{\gamma}\circ s \,,
+\]</span> or in other words <span class="math display">\[
+\gamma(t) = \widetilde{\gamma}(s(t)) \,, \quad \forall t \in (a,b) \,.
+\]</span> Differentiating the above expression and using the chain rule we get <span class="math display">\[
+\dot \gamma(t) = \dot{\widetilde{\gamma}}(s(t)) \, \dot s(t) =  \dot{\widetilde{\gamma}}(s(t)) \, \left\|  \dot \gamma(t)  \right\|  
+\]</span> where in the last equality we used (<a href="#eq-derivative-arc"><span>3.18</span></a>). Taking the absolute value of the above yileds <span id="eq-derivative-arc-1"><span class="math display">\[
+\left\|  \dot \gamma(t)  \right\|   = \left\| \dot{\widetilde{\gamma}}(s(t)) \right\| \, \left\|  \dot \gamma(t)  \right\| \,.  
+\tag{3.19}\]</span></span> Since <span class="math inline">\(\gamma\)</span> is regular, we have <span class="math display">\[
+\left\| \dot \gamma(t) \right\| \neq 0 \,, \quad \forall \, t \in (a,b)\,.
+\]</span> Therefore we can divide (<a href="#eq-derivative-arc-1"><span>3.19</span></a>) by <span class="math inline">\(\left\| \dot\gamma(t) \right\|\)</span> and obtain <span class="math display">\[
+\left\| \dot{\widetilde{\gamma}}(s(t)) \right\| = 1  \,, \quad \forall \, t \in (a,b) \,.
+\]</span> By invertibility of <span class="math inline">\(s\)</span>, the above holds if and only if <span class="math display">\[
+\left\| \dot{\widetilde{\gamma}}(t) \right\| = 1  \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,,
+\]</span> showing that <span class="math inline">\(\widetilde{\gamma}\)</span> is a unit speed reparametrization of <span class="math inline">\(\gamma\)</span>.<p></p>
+<p><em>Step 2. Reverse implication.</em><br>
+Suppose there exists a unit speed reparametrization of <span class="math inline">\(\gamma\)</span> denoted by <span class="math display">\[
+\widetilde{\gamma}\ \colon (\tilde{a},\tilde{b})  \to \mathbb{R}^n \,, \quad \widetilde{\gamma}= \gamma\circ \phi
+\]</span> for some reparametrization map <span class="math inline">\(\phi\ \colon (\tilde{a},\tilde{b}) \to (a,b)\)</span>. Differentiating <span class="math inline">\(\widetilde{\gamma}= \gamma\circ \phi\)</span> and using the chain rule we get <span class="math display">\[
+\dot{\widetilde{\gamma}}(t) = \dot{\gamma} (\phi(t)) \, \dot \phi(t) \,.
+\]</span> Taking the norm <span class="math display">\[
+\left\| \dot{\widetilde{\gamma}}(t) \right\| = \left\| \dot{\gamma} (\phi(t))  \right\| \, |\dot \phi(t)| \,.
+\]</span> Since <span class="math inline">\(\widetilde{\gamma}\)</span> is unit speed we obtain <span class="math display">\[
+\left\| \dot{\gamma} (\phi(t))  \right\| \, |\dot \phi(t)| = 1 \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
+\]</span> In particular <span class="math display">\[
+\dot{\gamma} (\phi(t))  \neq 0 \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
+\]</span> Since <span class="math inline">\(\phi\)</span> is a diffeomorphism from <span class="math inline">\((\tilde{a},\tilde{b})\)</span> into <span class="math inline">\((a,b)\)</span>, we also have <span class="math display">\[
+\dot{\gamma} (t)  \neq 0 \,, \quad \forall \, t \in (a,b) \,,
+\]</span> proving that <span class="math inline">\(\gamma\)</span> is regular.</p>
 </div></details>
 </div>
-<p>Consider the arc-length of a curve <span class="math inline">\(\gamma\colon (a,b) \to \mathbb{R}^n\)</span>, which we recall is defined by <span class="math display">\[
-s(t):=\int_{t_0}^t \left\|  \dot \gamma(\tau)  \right\| \, d\tau \,,
-\]</span> for some <span class="math inline">\(t_0 \in (a,b)\)</span> fixed.<br>
-The proof of Theorem <a href="chap_3.html#theorem-regular-unit-speed">44</a> told us that the arc-length is essentially the only unit-speed reparametrization of a regular curve. This is worth formalizing in a proposition.</p>
-<div id="Proposition-45" class="Proposition">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 45</strong></summary><div>Let <span class="math inline">\(\gamma\ \colon (a,b) \to \mathbb{R}^n\)</span> be a regular curve and let <span class="math inline">\(\widetilde{\gamma}\ \colon (\tilde{a},\tilde{b}) \to \mathbb{R}^n\)</span> be a unit speed reparametrization of <span class="math inline">\(\gamma\)</span>, with <span class="math display">\[
-\gamma(t) = \widetilde{\gamma}( \phi(t) )  , \quad \forall \, t \in (a,b)\,,
-\]</span> where <span class="math inline">\(\phi\ \colon (a,b) \to (\tilde{a},\tilde{b})\)</span> is a diffeomorphism. Then the arc-length of <span class="math inline">\(\gamma\)</span> is given by <span class="math display">\[
-s = \gamma+ c  
+<p>The proof of Theorem <a href="chap_3.html#theorem-regular-unit-speed">44</a> told us that the arc-length is essentially the only unit-speed reparametrization map of a regular curve. The unit speed reparametrization is obtained via <span class="math display">\[
+\widetilde{\gamma}= \gamma\circ s^{-1} \,.
+\]</span> We make this statement precise in the following proposition.</p>
+<div id="proposition-arc-length-unit" class="Proposition" title="Arc-length and unit speed parametrization">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 45: </strong>Arc-length and unit speed parametrization</summary><div>Let <span class="math inline">\(\gamma\ \colon (a,b) \to \mathbb{R}^n\)</span> be a regular curve. Let <span class="math inline">\(\widetilde{\gamma}\ \colon (\tilde{a},\tilde{b}) \to \mathbb{R}^n\)</span> be a unit speed reparametrization of <span class="math inline">\(\gamma\)</span>, with reparametrization map <span class="math inline">\(\phi\ \colon (a,b) \to (\tilde{a},\tilde{b})\)</span>, that is, <span class="math display">\[
+\gamma(t) = \widetilde{\gamma}( \phi(t) )  , \quad \forall \, t \in (a,b)\,.
+\]</span> Denote by <span class="math inline">\(s\)</span> be the arc-length of <span class="math inline">\(\gamma\)</span> starting at any point <span class="math inline">\(t_0 \in (a,b)\)</span>. Then <span class="math display">\[
+s = \pm \phi+ c  
 \]</span> for a suitable constant <span class="math inline">\(c \in \mathbb{R}\)</span>.<p></p>
 </div></details>
 </div>
@@ -1123,12 +1169,59 @@ By differentiating both sides of <span class="math display">\[
 \left\| \dot{\widetilde{\gamma}} \right\| \equiv 1 \,.
 \]</span> To summarize, so far we have proven that <span class="math display">\[
 \left\|  \dot \gamma(t)  \right\|  = | \dot\phi(t) | \,, \quad \forall \, t \in (a,b) \,.
+\]</span> Therefore <span class="math display">\[
+s(t) = \int_{t_0}^t \left\|  \dot \gamma(\tau)  \right\| \, d\tau =  \int_{t_0}^t | \dot \phi(\tau) | \, d\tau \,.
+\]</span> By the Fundamental Theorem of Calculus we get <span class="math display">\[
+\dot s(t) = |\dot \phi(t) |
+\]</span> and therefore <span class="math display">\[
+s = \pm \phi+ c
+\]</span> for some <span class="math inline">\(c \in \mathbb{R}\)</span>, concluding the proof.<p></p>
+</div></details>
+</div>
+<div id="Remark-46" class="Remark">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 46</strong></summary><div>The above proposition tells us that <span class="math display">\[
+\gamma\, \mbox{ has unit speed reparametrization}  \,\, \iff \,\,
+s \, \mbox{ is a diffeomorphism}
 \]</span><p></p>
 </div></details>
 </div>
+<div class="Warning">
+<p>Theorem <a href="chap_3.html#theorem-regular-unit-speed">44</a> says that every regular curve has unit speed parametrization. However the unit speed reparametrization is often impossible to characterize, even for very simple curves.</p>
+</div>
+<div id="twisted-cubic" class="Example" title="Twisted cubic">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 47: </strong>Twisted cubic</summary><div>Define the <strong>twisted cubic</strong> <span class="math inline">\(\gamma\ \colon \mathbb{R}\to \mathbb{R}^3\)</span> by <span class="math display">\[
+\gamma(t) = (t,t^2,t^3)\,.
+\]</span> Therefore <span class="math display">\[
+\dot \gamma(t) = (1,2t,3t^2)\,,
+\]</span> so that <span class="math display">\[
+\dot \gamma(t) \neq 0 \,, \quad \forall \, t \in \mathbb{R}\,,
+\]</span> meaning that <span class="math inline">\(\gamma\)</span> is regular. In particular we have <span class="math display">\[
+\left\|  \dot \gamma(t)  \right\| = \sqrt{  1 + 4t^2 + 9t^4 }
+\]</span> so that the arc-length of <span class="math inline">\(\gamma\)</span> is <span class="math display">\[
+s(t) = \int_{t_0}^t  \sqrt{  1 + 4\tau^2 + 9\tau^4 }\, d\tau \,.
+\]</span> Since <span class="math inline">\(\gamma\)</span> is regular, by Proposition <a href="chap_3.html#proposition-arc-length-unit">45</a> we know that <span class="math inline">\(\gamma\)</span> admits a unit speed reparametrization <span class="math inline">\(\widetilde{\gamma}\)</span> such that <span class="math display">\[
+\gamma=  \widetilde{\gamma}\circ \phi
+\]</span> with the diffeomorphism <span class="math inline">\(\phi\)</span> given by <span class="math display">\[
+\phi(t) = \pm s(t) + c = \pm \int_{t_0}^t  \sqrt{  1 + 4\tau^2 + 9\tau^4 }\, d\tau + c
+\]</span> for some <span class="math inline">\(c \in \mathbb{R}\)</span>. It can be shown that the above integral does not have a closed form in terms of elementary functions. Therefore the unit speed parametrization <span class="math inline">\(\widetilde{\gamma}\)</span> cannot be computed explicitly.<p></p>
+</div></details>
+</div>
+<div class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="chap_3_files/figure-html/cell-6-output-1.png" width="407" height="389" class="figure-img"></p>
+<figcaption class="figure-caption">Plot of Twisted Cubic for t between -2 and 2</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="vector-product-in-mathbbr3" class="level2" data-number="3.7">
-<h2 data-number="3.7" class="anchored" data-anchor-id="vector-product-in-mathbbr3"><span class="header-section-number">3.7</span> Vector product in <span class="math inline">\(\mathbb{R}^3\)</span></h2>
+<section id="closed-curves" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="closed-curves"><span class="header-section-number">3.7</span> Closed curves</h2>
+</section>
+<section id="vector-product-in-mathbbr3" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="vector-product-in-mathbbr3"><span class="header-section-number">3.8</span> Vector product in <span class="math inline">\(\mathbb{R}^3\)</span></h2>
 
 
 </section>

@@ -125,6 +125,10 @@
 
  [**Proof**](#Proof*-3.8)\Pageref{Proof*-3.8}
 
- [**Proposition 3.45**](#Proposition-3.45)\Pageref{Proposition-3.45}
+ [**Proposition 3.45**](#proposition-arc-length-unit): Arc-length and unit speed parametrization\Pageref{proposition-arc-length-unit}
 
  [**Proof**](#Proof*-3.9)\Pageref{Proof*-3.9}
+
+ [**Remark 3.46**](#Remark-3.46)\Pageref{Remark-3.46}
+
+ [**Example 3.47**](#twisted-cubic): Twisted cubic\Pageref{twisted-cubic}
