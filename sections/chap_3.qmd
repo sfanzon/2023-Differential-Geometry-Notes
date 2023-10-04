@@ -317,14 +317,14 @@ We need then to be more precise and talk about tangent at a certain **time-step*
 
 
 ::: Example
-### A self intersecting curve
+### The Lemniscate, a self intersecting curve
 
 For example consider $\g \ \colon [0,2\pi] \to \R^2$ defined as
 $$
 \g_1(t) = \sin (t)\, ,  \,\,
 \g_2(t) = \sin (t) \cos(t) \, .
 $$
-This is plotted in @fig-eight below. The orgin $(0,0)$ is a point of self-intersection, meaning that 
+Such curve is called **Lemniscate**, see [Wikipedia page](https://en.wikipedia.org/wiki/Lemniscate), and is plotted in @fig-eight below. The orgin $(0,0)$ is a point of self-intersection, meaning that 
 $$
 \g (0) = \g (\pi) = (0,0) \,.
 $$
@@ -344,7 +344,7 @@ $$
 
 ```{python}
 #| echo: false
-#| fig-cap: "A self-intersecting curve" 
+#| fig-cap: "The Lemniscate curve" 
 #| label: fig-eight
 
 import numpy as np
@@ -1112,7 +1112,8 @@ $$
 The reason why we introduce unit speed curves is because they make calculations easy. This is essentially because of the next proposition.
 
 
-::: Proposition
+::: { .Proposition #proposition-speed-identity} 
+
 Let $\g \ \colon (a,b) \to \R^n$ be a unit speed curve. Then
 $$
 \dot \g \cdot \ddot \g = 0 
@@ -1121,7 +1122,149 @@ for all $t \in (a,b)$.
 :::
 
 
+::: Proof
+Let us consider the identity
+$$
+\dot \g(t) \cdot \dot \g(t) = \sum_{i=1}^n \dot\g_i^2(t) = \norm{\dot\g(t)}^2 \,.
+$$ {#eq-speed-identity}
+Since $\g$ is unit speed we have
+$$
+\norm{\dot\g(t)}^2 = 1 \quad \forall \, t \in (a,b) \,.
+$$
+and therefore
+$$
+\frac{d}{dt} \left( \norm{\dot\g(t)}^2 \right) = 0  \quad \forall \, t \in (a,b) \,. 
+$$ {#eq-speed-identity-1}
+We can differentiate the LHS of (@eq-speed-identity) to get
+$$
+\frac{d}{dt} (\dot \g \cdot \dot \g) = \ddot \g \cdot \dot \g
++  \dot \g \cdot \ddot \g = 2 \dot \g \cdot \ddot \g\,.
+$${#eq-speed-identity-2}
+where we used Proposition \ref{proposition-diff-scalar} and symmetry of the scalar product. Differentiating (@eq-speed-identity) and using (@eq-speed-identity-1)-(@eq-speed-identity-2)  we conclude
+$$
+2 \dot \g \cdot \ddot \g = 0 \quad \forall \, t \in (a,b) \,.
+$$
+:::
 
+
+
+
+::: Remark
+
+Proposition \ref{proposition-speed-identity} is saying that if $\g$ is unit speed, then its tangent vector $\dot \g$ is always orthogonal to the second derivative $\ddot \g$. This will be very useful in the future.
+
+:::
+
+
+
+
+
+
+## Reparametrization
+
+As we have observed in the Examples of @sec-introduction, there is in general no unique way to parametrize a curve. However we would like to understand when two parametrizations are related. In other words, we want to clarify the concept of **equivalence** of two parametrizations. 
+
+
+
+::: Definition
+### Diffeomorphism
+
+Let $\f \ \colon (a,b) \to (\tilde{a},\tilde{b})$. We say that $\f$ is a **diffeomorphism** if the following conditions are satisfied:
+
+1. $\f$ is invertible, with inverse $\f^{-1} \ \colon (a',b') \to (a,b)$. Thus
+$$
+\f^{-1} \circ \f =   \f \circ \f^{-1} = \id \,,
+$$
+where $\id \colon \R \to \R$ is the identity map on $\R$, that is, 
+$$
+\id(t) = t \,, \quad \forall \, t \in \R \,.
+$$
+2. $\f$ is smooth,
+2.  $\f^{-1}$ is smooth.
+
+::: 
+
+
+
+::: Definition
+### Reparametrization
+
+Let $\g \ \colon (a,b) \to \R^n$ be a parametrized curve. A **reparametrization** of $\g$ is another parametrized curve $\tilde{\g} \ \colon (\tilde{a},\tilde{b}) \to \R^n$ such that
+$$
+\tg (t) = \g (\f(t)) \quad \forall \, t \in (\tilde{a},\tilde{b})\,, 
+$$ {#eq-reparametrization}
+where 
+$$
+\f \colon (\tilde{a},\tilde{b}) \to (a,b)
+$$
+is a diffeomerphism.
+:::
+
+::: Remark
+A comment about the above definition.
+Given a parametrized curve $\g$, this identifies a 1D shape $\Gamma \subset \R^n$. A reparametrization $\tg$ is just an equivalent way to describe $\Gamma$. For $\g$ and $\tg$ to be reparametrizations of each other, there must exist a smooth rule $\f$ to switch from one to another, according to formula (@eq-reparametrization) 
+:::
+
+
+
+![Sketch of 1D shaper \Gamma parametrized by $\g$ and $\tg$](/images/reparametrization.png){width=70%}
+
+
+
+::: Example
+### Change of orientation
+
+The map $\f \colon (\tilde{a},\tilde{b}) \to (a,b)$ defined by 
+$$
+\f (t) := - t 
+$$
+is a diffeomoprhism. The inverse of $\f$ is given by ${\f}^{-1} \colon (a,b) \to (\tilde{a},\tilde{b})$ defined by
+$$
+{\f}^{-1} (t) = - t \,.
+$$
+Note that $\f$ can be used to **reverse the orientation** of a curve.
+:::
+
+
+::: Example
+
+Consider the unit circle parametrized as usual by $\g \ \colon [0,2\pi] \to \R^2$ defined as
+$$
+\g (t) := (\cos (t), \sin(t)) \,.
+$$
+To reverse the orientation we can reparametrize $\g$ by using the diffeomorphism
+$$
+\f(t):= - t \,.
+$$
+This way we obtain $\tilde{\g}:= \g \circ \f \ \colon [0,2\pi] \to [0, 2\pi]$, 
+\begin{align}
+\tilde{\g}(t) & = \g (\f(t)) \\
+              & = (\cos(-t),\sin(-t)) \\
+              & = (\cos(t),-\sin(t)) \,,
+\end{align}
+where in the last identity we used the properties of $\cos$ and $\sin$. Notice that in this way, for example,
+$$
+\g(\pi/2) = (0,1) \,, \quad \g(\pi/2) = (0,-1) \,. 
+$$
+:::
+
+
+![Unit circle with usual parametrization $\g$, and with reversed orientation $\tg$](/images/circle_orientation.png){width=70%}
+
+
+::: Example
+
+asoihsfaoih
+
+:::
+
+
+::: {.content-visible when-format="html"}
+![Lemniscate curve](/images/lemniscate_slow.gif){width=70%}
+
+
+![Lemniscate curve at double speed](/images/lemniscate_fast.gif){width=70%}
+:::
 
 
 

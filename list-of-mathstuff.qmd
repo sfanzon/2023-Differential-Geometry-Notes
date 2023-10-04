@@ -39,7 +39,7 @@
 
  [**Remark 3.8**](#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
 
- [**Example 3.9**](#a-self-intersecting-curve): A self intersecting curve\Pageref{a-self-intersecting-curve}
+ [**Example 3.9**](#the-lemniscate-a-self-intersecting-curve): The Lemniscate, a self intersecting curve\Pageref{the-lemniscate-a-self-intersecting-curve}
 
  [**Definition 3.10**](#partition): Partition\Pageref{partition}
 
@@ -87,4 +87,20 @@
 
  [**Remark 3.29**](#Remark-3.29)\Pageref{Remark-3.29}
 
- [**Proposition 3.30**](#Proposition-3.30)\Pageref{Proposition-3.30}
+ [**Proposition 3.30**](#proposition-speed-identity)\Pageref{proposition-speed-identity}
+
+ [**Proof**](#Proof*-3.5)\Pageref{Proof*-3.5}
+
+ [**Remark 3.31**](#Remark-3.31)\Pageref{Remark-3.31}
+
+ [**Definition 3.32**](#diffeomorphism): Diffeomorphism\Pageref{diffeomorphism}
+
+ [**Definition 3.33**](#reparametrization-1): Reparametrization\Pageref{reparametrization-1}
+
+ [**Remark 3.34**](#Remark-3.34)\Pageref{Remark-3.34}
+
+ [**Example 3.35**](#change-of-orientation): Change of orientation\Pageref{change-of-orientation}
+
+ [**Example 3.36**](#Example-3.36)\Pageref{Example-3.36}
+
+ [**Example 3.37**](#Example-3.37)\Pageref{Example-3.37}

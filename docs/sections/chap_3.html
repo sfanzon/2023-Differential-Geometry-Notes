@@ -66,19 +66,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
 .Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -86,27 +74,11 @@ ul.task-list li input[type="checkbox"] {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.Assumption {
+.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -114,17 +86,45 @@ ul.task-list li input[type="checkbox"] {
   --color1: #cce7b1;
   --color2: #86b754;
 }
-.Lemma {
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Theorem {
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
 .Question {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
 </style>
 
@@ -200,20 +200,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/chap_5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Global properties of curves</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../sections/chap_6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Surfaces</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Surfaces</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sections/chap_7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Surfaces in Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Surfaces in Python</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -243,7 +237,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#arc-length" id="toc-arc-length" class="nav-link" data-scroll-target="#arc-length"><span class="header-section-number">3.3</span> Arc-length</a></li>
   <li><a href="#scalar-product-in-mathbbrn" id="toc-scalar-product-in-mathbbrn" class="nav-link" data-scroll-target="#scalar-product-in-mathbbrn"><span class="header-section-number">3.4</span> Scalar product in <span class="math inline">\(\mathbb{R}^n\)</span></a></li>
   <li><a href="#speed-of-a-curve" id="toc-speed-of-a-curve" class="nav-link" data-scroll-target="#speed-of-a-curve"><span class="header-section-number">3.5</span> Speed of a curve</a></li>
-  <li><a href="#vector-product-in-mathbbr3" id="toc-vector-product-in-mathbbr3" class="nav-link" data-scroll-target="#vector-product-in-mathbbr3"><span class="header-section-number">3.6</span> Vector product in <span class="math inline">\(\mathbb{R}^3\)</span></a></li>
+  <li><a href="#reparametrization" id="toc-reparametrization" class="nav-link" data-scroll-target="#reparametrization"><span class="header-section-number">3.6</span> Reparametrization</a></li>
+  <li><a href="#vector-product-in-mathbbr3" id="toc-vector-product-in-mathbbr3" class="nav-link" data-scroll-target="#vector-product-in-mathbbr3"><span class="header-section-number">3.7</span> Vector product in <span class="math inline">\(\mathbb{R}^3\)</span></a></li>
   </ul>
 </nav>
     </div>
@@ -407,11 +402,11 @@ p = \gamma(t_1) = \gamma(t_2)\,.
 \]</span> Thus the concept of tangent at <span class="math inline">\(p\)</span> is not well-defined. We need then to be more precise and talk about tangent at a certain <strong>time-step</strong> <span class="math inline">\(t\)</span>, rather than at some <strong>point</strong> <span class="math inline">\(p\)</span>. We however do not amend Definition <a href="chap_3.html#definition-tangent">6</a>, but you should keep this potential ambiguity in mind.<p></p>
 </div></details>
 </div>
-<div id="a-self-intersecting-curve" class="Example" title="A self intersecting curve">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 9: </strong>A self intersecting curve</summary><div>For example consider <span class="math inline">\(\gamma\ \colon [0,2\pi] \to \mathbb{R}^2\)</span> defined as <span class="math display">\[
+<div id="the-lemniscate-a-self-intersecting-curve" class="Example" title="The Lemniscate, a self intersecting curve">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 9: </strong>The Lemniscate, a self intersecting curve</summary><div>For example consider <span class="math inline">\(\gamma\ \colon [0,2\pi] \to \mathbb{R}^2\)</span> defined as <span class="math display">\[
 \gamma_1(t) = \sin (t)\, ,  \,\,
 \gamma_2(t) = \sin (t) \cos(t) \, .
-\]</span> This is plotted in <a href="#fig-eight">Figure&nbsp;<span>3.5</span></a> below. The orgin <span class="math inline">\((0,0)\)</span> is a point of self-intersection, meaning that <span class="math display">\[
+\]</span> Such curve is called <strong>Lemniscate</strong>, see <a href="https://en.wikipedia.org/wiki/Lemniscate">Wikipedia page</a>, and is plotted in <a href="#fig-eight">Figure&nbsp;<span>3.5</span></a> below. The orgin <span class="math inline">\((0,0)\)</span> is a point of self-intersection, meaning that <span class="math display">\[
 \gamma(0) = \gamma(\pi) = (0,0) \,.
 \]</span> The tangent vector at point <span class="math inline">\(\gamma(t)\)</span> is given by <span class="math display">\[
 \dot \gamma(t) = (\cos(t), \cos^2(t) - \sin^2(t) )
@@ -426,7 +421,7 @@ p = \gamma(t_1) = \gamma(t_2)\,.
 <div id="fig-eight" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="chap_3_files/figure-html/fig-eight-output-1.png" width="534" height="503" class="figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.5: A self-intersecting curve</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;3.5: The Lemniscate curve</figcaption>
 </figure>
 </div>
 </div>
@@ -849,15 +844,114 @@ s(t) := \int_{t_0}^t \left\|   \dot\gamma(\tau)  \right\| \, d\tau  \,\, \implie
 </div></details>
 </div>
 <p>The reason why we introduce unit speed curves is because they make calculations easy. This is essentially because of the next proposition.</p>
-<div id="Proposition-30" class="Proposition">
+<div id="proposition-speed-identity" class="Proposition">
 <p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 30</strong></summary><div>Let <span class="math inline">\(\gamma\ \colon (a,b) \to \mathbb{R}^n\)</span> be a unit speed curve. Then <span class="math display">\[
 \dot \gamma\cdot \ddot \gamma= 0
 \]</span> for all <span class="math inline">\(t \in (a,b)\)</span>.<p></p>
 </div></details>
 </div>
+<div id="Proof*-5" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Let us consider the identity <span id="eq-speed-identity"><span class="math display">\[
+\dot \gamma(t) \cdot \dot \gamma(t) = \sum_{i=1}^n \dot\gamma_i^2(t) = \left\| \dot\gamma(t) \right\|^2 \,.
+\tag{3.11}\]</span></span> Since <span class="math inline">\(\gamma\)</span> is unit speed we have <span class="math display">\[
+\left\| \dot\gamma(t) \right\|^2 = 1 \quad \forall \, t \in (a,b) \,.
+\]</span> and therefore <span id="eq-speed-identity-1"><span class="math display">\[
+\frac{d}{dt} \left( \left\| \dot\gamma(t) \right\|^2 \right) = 0  \quad \forall \, t \in (a,b) \,.
+\tag{3.12}\]</span></span> We can differentiate the LHS of (<a href="#eq-speed-identity"><span>3.11</span></a>) to get <span id="eq-speed-identity-2"><span class="math display">\[
+\frac{d}{dt} (\dot \gamma\cdot \dot \gamma) = \ddot \gamma\cdot \dot \gamma
++  \dot \gamma\cdot \ddot \gamma= 2 \dot \gamma\cdot \ddot \gamma\,.
+\tag{3.13}\]</span></span> where we used Proposition <a href="chap_3.html#proposition-diff-scalar">27</a> and symmetry of the scalar product. Differentiating (<a href="#eq-speed-identity"><span>3.11</span></a>) and using (<a href="#eq-speed-identity-1"><span>3.12</span></a>)-(<a href="#eq-speed-identity-2"><span>3.13</span></a>) we conclude <span class="math display">\[
+2 \dot \gamma\cdot \ddot \gamma= 0 \quad \forall \, t \in (a,b) \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="Remark-31" class="Remark">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 31</strong></summary><div>Proposition <a href="chap_3.html#proposition-speed-identity">30</a> is saying that if <span class="math inline">\(\gamma\)</span> is unit speed, then its tangent vector <span class="math inline">\(\dot \gamma\)</span> is always orthogonal to the second derivative <span class="math inline">\(\ddot \gamma\)</span>. This will be very useful in the future.<p></p>
+</div></details>
+</div>
 </section>
-<section id="vector-product-in-mathbbr3" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="vector-product-in-mathbbr3"><span class="header-section-number">3.6</span> Vector product in <span class="math inline">\(\mathbb{R}^3\)</span></h2>
+<section id="reparametrization" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="reparametrization"><span class="header-section-number">3.6</span> Reparametrization</h2>
+<p>As we have observed in the Examples of <a href="chap_1.html"><span>Chapter&nbsp;1</span></a>, there is in general no unique way to parametrize a curve. However we would like to understand when two parametrizations are related. In other words, we want to clarify the concept of <strong>equivalence</strong> of two parametrizations.</p>
+<div id="diffeomorphism" class="Definition" title="Diffeomorphism">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 32: </strong>Diffeomorphism</summary><div>
+<p>Let <span class="math inline">\(\phi\ \colon (a,b) \to (\tilde{a},\tilde{b})\)</span>. We say that <span class="math inline">\(\phi\)</span> is a <strong>diffeomorphism</strong> if the following conditions are satisfied:</p>
+<ol type="1">
+<li><span class="math inline">\(\phi\)</span> is invertible, with inverse <span class="math inline">\(\phi^{-1} \ \colon (a',b') \to (a,b)\)</span>. Thus <span class="math display">\[
+\phi^{-1} \circ \phi=   \phi\circ \phi^{-1} = Id\,,
+\]</span> where <span class="math inline">\(Id\colon \mathbb{R}\to \mathbb{R}\)</span> is the identity map on <span class="math inline">\(\mathbb{R}\)</span>, that is, <span class="math display">\[
+Id(t) = t \,, \quad \forall \, t \in \mathbb{R}\,.
+\]</span></li>
+<li><span class="math inline">\(\phi\)</span> is smooth,</li>
+<li><span class="math inline">\(\phi^{-1}\)</span> is smooth.</li>
+</ol>
+</div></details>
+</div>
+<div id="reparametrization-1" class="Definition" title="Reparametrization">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 33: </strong>Reparametrization</summary><div>Let <span class="math inline">\(\gamma\ \colon (a,b) \to \mathbb{R}^n\)</span> be a parametrized curve. A <strong>reparametrization</strong> of <span class="math inline">\(\gamma\)</span> is another parametrized curve <span class="math inline">\(\tilde{\gamma} \ \colon (\tilde{a},\tilde{b}) \to \mathbb{R}^n\)</span> such that <span id="eq-reparametrization"><span class="math display">\[
+\tilde{\gamma}(t) = \gamma(\phi(t)) \quad \forall \, t \in (\tilde{a},\tilde{b})\,,
+\tag{3.14}\]</span></span> where <span class="math display">\[
+\phi\colon (\tilde{a},\tilde{b}) \to (a,b)
+\]</span> is a diffeomerphism.<p></p>
+</div></details>
+</div>
+<div id="Remark-34" class="Remark">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 34</strong></summary><div>A comment about the above definition. Given a parametrized curve <span class="math inline">\(\gamma\)</span>, this identifies a 1D shape <span class="math inline">\(\Gamma \subset \mathbb{R}^n\)</span>. A reparametrization <span class="math inline">\(\tilde{\gamma}\)</span> is just an equivalent way to describe <span class="math inline">\(\Gamma\)</span>. For <span class="math inline">\(\gamma\)</span> and <span class="math inline">\(\tilde{\gamma}\)</span> to be reparametrizations of each other, there must exist a smooth rule <span class="math inline">\(\phi\)</span> to switch from one to another, according to formula (<a href="#eq-reparametrization"><span>3.14</span></a>)<p></p>
+</div></details>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/reparametrization.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Sketch of 1D shaper parametrized by <span class="math inline">\(\gamma\)</span> and <span class="math inline">\(\tilde{\gamma}\)</span></figcaption>
+</figure>
+</div>
+<div id="change-of-orientation" class="Example" title="Change of orientation">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 35: </strong>Change of orientation</summary><div>The map <span class="math inline">\(\phi\colon (\tilde{a},\tilde{b}) \to (a,b)\)</span> defined by <span class="math display">\[
+\phi(t) := - t
+\]</span> is a diffeomoprhism. The inverse of <span class="math inline">\(\phi\)</span> is given by <span class="math inline">\({\phi}^{-1} \colon (a,b) \to (\tilde{a},\tilde{b})\)</span> defined by <span class="math display">\[
+{\phi}^{-1} (t) = - t \,.
+\]</span> Note that <span class="math inline">\(\phi\)</span> can be used to <strong>reverse the orientation</strong> of a curve.<p></p>
+</div></details>
+</div>
+<div id="Example-36" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 36</strong></summary><div>Consider the unit circle parametrized as usual by <span class="math inline">\(\gamma\ \colon [0,2\pi] \to \mathbb{R}^2\)</span> defined as <span class="math display">\[
+\gamma(t) := (\cos (t), \sin(t)) \,.
+\]</span> To reverse the orientation we can reparametrize <span class="math inline">\(\gamma\)</span> by using the diffeomorphism <span class="math display">\[
+\phi(t):= - t \,.
+\]</span> This way we obtain <span class="math inline">\(\tilde{\gamma}:= \gamma\circ \phi\ \colon [0,2\pi] \to [0, 2\pi]\)</span>, <span class="math display">\[\begin{align}
+\tilde{\gamma}(t) &amp; = \gamma(\phi(t)) \\
+              &amp; = (\cos(-t),\sin(-t)) \\
+              &amp; = (\cos(t),-\sin(t)) \,,
+\end{align}\]</span> where in the last identity we used the properties of <span class="math inline">\(\cos\)</span> and <span class="math inline">\(\sin\)</span>. Notice that in this way, for example, <span class="math display">\[
+\gamma(\pi/2) = (0,1) \,, \quad \gamma(\pi/2) = (0,-1) \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/circle_orientation.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Unit circle with usual parametrization <span class="math inline">\(\gamma\)</span>, and with reversed orientation <span class="math inline">\(\tilde{\gamma}\)</span></figcaption>
+</figure>
+</div>
+<div id="Example-37" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 37</strong></summary><div>asoihsfaoih<p></p>
+</div></details>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/lemniscate_slow.gif" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Lemniscate curve</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/lemniscate_fast.gif" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Lemniscate curve at double speed</figcaption>
+</figure>
+</div>
+</section>
+<section id="vector-product-in-mathbbr3" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="vector-product-in-mathbbr3"><span class="header-section-number">3.7</span> Vector product in <span class="math inline">\(\mathbb{R}^3\)</span></h2>
 
 
 </section>

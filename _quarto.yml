@@ -43,9 +43,9 @@ book:
     - sections/chap_2.qmd
     - sections/chap_3.qmd
 
+
     - sections/chap_4.qmd
 
-    - sections/chap_5.qmd
     - sections/chap_6.qmd
     - sections/chap_7.qmd
 
