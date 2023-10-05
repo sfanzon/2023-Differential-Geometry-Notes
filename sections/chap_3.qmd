@@ -865,7 +865,7 @@ The arc-length starting from $t_0$ is
 \begin{align}
 s(t) & = \int_{t_0}^t \norm{\dot\g(\tau)} \, d \tau \\
      & = \sqrt{k^2 + 1} \int_{t_0}^t e^{k \tau} \, d \tau  \\
-     & = \frac{\sqrt{k^2 + 1}}{k} ( e^t - e^{t_0} ) \,.
+     & = \frac{\sqrt{k^2 + 1}}{k} ( e^{kt} - e^{k t_0} ) \,.
 \end{align}
 :::
 
@@ -930,11 +930,11 @@ $$
 
 The scalar product is maximized for $\theta = 0$, for which we have
 $$
-u \cdot v := |u| |v| \cos(\theta) =  |u| |v| \,.
+u \cdot v = |u| |v| \cos(\theta) =  |u| |v| \,.
 $$
 It is instead minimized for $\theta = \pi$, for which 
 $$
-u \cdot v := |u| |v| \cos(\theta) =  -|u| |v| \,.
+u \cdot v = |u| |v| \cos(\theta) =  -|u| |v| \,.
 $$
 :::
 
@@ -958,10 +958,14 @@ we say that $u$ and $v$ are **orthogonal**.
 
 Let $u, v, w \in \R^2$ and $\lambda \in \R$. Then
 
-- $u \cdot v = v \cdot u$
-- $\lambda (u \cdot v) = (\lambda u) \cdot v = u \cdot (\lambda v)$
-- $u \cdot (v + w) = u \cdot v  + u \cdot w$
-
+- **Symmetry**: $u \cdot v = v \cdot u$
+- **Bilinearity**: It holds
+$$
+\lambda (u \cdot v) = (\lambda u) \cdot v = u \cdot (\lambda v) \,,
+$$
+$$
+u \cdot (v + w) = u \cdot v  + u \cdot w \,.
+$$
 
 :::
 
@@ -1027,6 +1031,37 @@ $$
 
 :::
 
+
+With the above definition we still have that the scalar product is bilinear and symmetric, as detailed in the following proposition:
+
+::: Proposition
+### Bilinearity and symmetry of scalar product in $\R^n$
+
+Let $u, v, w \in \R^n$ and $\lambda \in \R$. Then
+
+- **Symmetry**: $u \cdot v = v \cdot u$
+- **Bilinearity**: It holds
+$$
+\lambda (u \cdot v) = (\lambda u) \cdot v = u \cdot (\lambda v) \,,
+$$
+$$
+u \cdot (v + w) = u \cdot v  + u \cdot w \,.
+$$
+
+:::
+
+
+The proof of the above proposition is an easy check, and is left to the reader for exercise.
+
+
+::: Definition
+
+Let $u,v \in \R^n$. We say that $u$ and $v$ are **orthogonal** if 
+$$
+u \cdot v = 0 \,.
+$$
+
+:::
 
 
 
@@ -1773,7 +1808,116 @@ plt.show()
 ## Closed curves
 
 
+So far we have seen examples of:
 
+- Curves which are infinite, or **unbounded**. This is for example the parabola
+$$
+\g(t) := (t,t^2) \,, \quad \forall \, t \in \R \,,
+$$
+- Curves which are finite and have end-points, such as the semi-circle
+$$
+\g(t) := (\cos(t),\sin(t)) \,, \quad \forall \, t \in [0,\pi] \,,
+$$
+- Curves which form **loops**, such as the circle
+$$
+\g(t) := (\cos(t),\sin(t)) \,, \quad \forall \, t \in [0,2\pi] \,.
+$$
+
+However there are examples of curves which are in between the above types. 
+
+::: Example
+For example consider the curve $\g \ \colon \R \to \R^2$
+$$
+\g(t) := (t^2-1, t^3 -t) \,.
+$$
+This curve has two main properties:
+
+- $\g$ is unbounded: If define $\tg$ as the restriction of $\g$ to the time interval $[1,\infty)$, then $\tg$ is unbounded. A point which starts at $\g (1) = (0,0)$ goes towards infinity. 
+- $\g$ contains a loop: If we define $\tg$ as the restriction of $\g$ to the time interval $[-1,1]$, then $\tg$ is a closed loop starting at $\g (-1) = (0,0)$ and returnning at $\g (1) = (0,0)$. 
+
+:::
+
+
+
+::: {.content-visible when-format="html"}
+
+![Animated plot of curve $\g(t) = (t^2-1, t^3-1)$ for $t \in [-2,2]$](/images/loop_animated.gif){width=90%}
+
+:::
+
+
+::: {.content-visible when-format="pdf"}
+
+![Plot of curve $\g(t) = (t^2-1, t^3-1)$ for $t \in [-2,2]$](/images/loop_static.png){width=60%}
+
+:::
+
+
+
+The aim of this section is to make precise the concept of **looping curve**. To do that, we need to define **periodic curves**.
+
+
+::: Definition
+### Periodic curve
+
+Let $\g \ \colon \R \to \R^n$ be a parametrized curve, and let $T \in \R$. We say that $\g$ is **T-periodic** if 
+$$
+\g(t) = \g(t+T) \,, \quad \forall \, t \in \R \,.
+$$
+:::
+
+
+Note that every curve is $0$-periodic. Therefore to define a closed curve we need to rule out this case.
+
+::: Definition
+### Closed curve
+
+Let $\g \ \colon \R \to \R^n$ be a parametrized curve. We say that $\g$ is closed if:
+
+- $\g$ is not constant,
+- $\g$ is **T-periodic** for some $T \neq 0$.
+
+:::
+
+
+::: Remark
+We have the following basic facts:
+
+- If $\g$ is $T$-periodic, then a point moving around $\g$ returns to its starting point after time $T$.
+- If $\g$ is $T$-periodic, then $\g$ is determined by its restriction to any interval of length $|T|$.
+- Conversely, suppose that $\g \ \colon [a,b] \to \R^n$ satisfies 
+$$
+\g(a) = \g(b) \,, \quad \frac{d^k \g}{dt^k} (a) =\frac{d^k \g}{dt^k}  (b)  
+$$
+for all $k \in \N$. Then $\g$ can be extended to the whole $\R$ by defining the curve $\tg \ \colon \R \to \R^n$ with
+$$
+\tg (t) := \g (\tilde{t}) \,, \quad  \tilde{t}:= t - \biggl\lfloor \frac{t-a}{b-a}  \biggr\rfloor (b-a)  \,, \quad \forall \, t \in \R \,.
+$$
+The above means that $\tg(t)$ is defined by $\g(\tilde{t})$ where $\tilde{t}$ is the unique point in $[a,b]$ such that 
+$$
+t = \tilde{t} + k(b-a) 
+$$
+for some $k \in \N$, see figure below. In this way $\tg$ is $T$-periodic with 
+$$
+T := b-a \,. 
+$$
+- If a curve $\g$ has period $T$, then it has also period $-T$.
+     
+     >Because if $\g$ is $T$-periodic then 
+     $$
+     \g (t) = \g ((t - T) + T ) = \g (t - T)
+     $$
+     where in the first equality we used the trivial identity $t = (t-T) + T$, while in the second equality we used $T$-periodicity of $\g$.
+
+- If $\g$ is $T$-periodic for some $T \neq 0$, then it is $T$-periodic for some $T>0$.
+
+     > This is an immediate consequence of the above point.
+
+
+:::
+
+
+![The points $t \in \R$ and $\tilde{t} \in [a,b]$. In this skecth $t = \tilde{t} + 3 T$, with $T = b-a$.](/images/periodic_extension.png){#fig-smooth-curve width=70%}
 
 
 

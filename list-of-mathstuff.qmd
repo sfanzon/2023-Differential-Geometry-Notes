@@ -79,56 +79,68 @@
 
  [**Definition 3.26**](#scalar-product-in-mathbbrn-1): Scalar product in $\mathbb{R}^n$\Pageref{scalar-product-in-mathbbrn-1}
 
- [**Proposition 3.27**](#proposition-diff-scalar): Differentiating scalar product\Pageref{proposition-diff-scalar}
-
- [**Proof**](#Proof*-3.4)\Pageref{Proof*-3.4}
+ [**Proposition 3.27**](#bilinearity-and-symmetry-of-scalar-product-in-mathbbrn): Bilinearity and symmetry of scalar product in $\mathbb{R}^n$\Pageref{bilinearity-and-symmetry-of-scalar-product-in-mathbbrn}
 
  [**Definition 3.28**](#Definition-3.28)\Pageref{Definition-3.28}
 
- [**Remark 3.29**](#Remark-3.29)\Pageref{Remark-3.29}
+ [**Proposition 3.29**](#proposition-diff-scalar): Differentiating scalar product\Pageref{proposition-diff-scalar}
 
- [**Proposition 3.30**](#proposition-speed-identity)\Pageref{proposition-speed-identity}
+ [**Proof**](#Proof*-3.4)\Pageref{Proof*-3.4}
 
- [**Proof**](#Proof*-3.5)\Pageref{Proof*-3.5}
+ [**Definition 3.30**](#Definition-3.30)\Pageref{Definition-3.30}
 
  [**Remark 3.31**](#Remark-3.31)\Pageref{Remark-3.31}
 
- [**Definition 3.32**](#diffeomorphism): Diffeomorphism\Pageref{diffeomorphism}
+ [**Proposition 3.32**](#proposition-speed-identity)\Pageref{proposition-speed-identity}
 
- [**Definition 3.33**](#reparametrization-1): Reparametrization\Pageref{reparametrization-1}
+ [**Proof**](#Proof*-3.5)\Pageref{Proof*-3.5}
 
- [**Remark 3.34**](#Remark-3.34)\Pageref{Remark-3.34}
+ [**Remark 3.33**](#Remark-3.33)\Pageref{Remark-3.33}
 
- [**Example 3.35**](#change-of-orientation): Change of orientation\Pageref{change-of-orientation}
+ [**Definition 3.34**](#diffeomorphism): Diffeomorphism\Pageref{diffeomorphism}
 
- [**Example 3.36**](#reversing-orientation-of-circle): Reversing orientation of circle\Pageref{reversing-orientation-of-circle}
+ [**Definition 3.35**](#reparametrization-1): Reparametrization\Pageref{reparametrization-1}
 
- [**Example 3.37**](#change-of-speed): Change of speed\Pageref{change-of-speed}
+ [**Remark 3.36**](#Remark-3.36)\Pageref{Remark-3.36}
 
- [**Example 3.38**](#doubling-the-speed-of-lemniscate): Doubling the speed of Lemniscate\Pageref{doubling-the-speed-of-lemniscate}
+ [**Example 3.37**](#change-of-orientation): Change of orientation\Pageref{change-of-orientation}
+
+ [**Example 3.38**](#reversing-orientation-of-circle): Reversing orientation of circle\Pageref{reversing-orientation-of-circle}
+
+ [**Example 3.39**](#change-of-speed): Change of speed\Pageref{change-of-speed}
+
+ [**Example 3.40**](#doubling-the-speed-of-lemniscate): Doubling the speed of Lemniscate\Pageref{doubling-the-speed-of-lemniscate}
 
  [**Important**](#Important*-3.6)\Pageref{Important*-3.6}
 
- [**Definition 3.39**](#regular-points): Regular points\Pageref{regular-points}
+ [**Definition 3.41**](#regular-points): Regular points\Pageref{regular-points}
 
- [**Example 3.40**](#example-stopping-curve): A curve with one singular point\Pageref{example-stopping-curve}
+ [**Example 3.42**](#example-stopping-curve): A curve with one singular point\Pageref{example-stopping-curve}
 
- [**Proposition 3.41**](#proposition-regularity-invariant): Regularity is invariant for reparametrization\Pageref{proposition-regularity-invariant}
+ [**Proposition 3.43**](#proposition-regularity-invariant): Regularity is invariant for reparametrization\Pageref{proposition-regularity-invariant}
 
  [**Proof**](#Proof*-3.7)\Pageref{Proof*-3.7}
 
- [**Example 3.42**](#Example-3.42)\Pageref{Example-3.42}
+ [**Example 3.44**](#Example-3.44)\Pageref{Example-3.44}
 
- [**Definition 3.43**](#unit-speed-reparametrization): Unit speed reparametrization\Pageref{unit-speed-reparametrization}
+ [**Definition 3.45**](#unit-speed-reparametrization): Unit speed reparametrization\Pageref{unit-speed-reparametrization}
 
- [**Theorem 3.44**](#theorem-regular-unit-speed): Existence of unit speed reparametrization\Pageref{theorem-regular-unit-speed}
+ [**Theorem 3.46**](#theorem-regular-unit-speed): Existence of unit speed reparametrization\Pageref{theorem-regular-unit-speed}
 
  [**Proof**](#Proof*-3.8)\Pageref{Proof*-3.8}
 
- [**Proposition 3.45**](#proposition-arc-length-unit): Arc-length and unit speed parametrization\Pageref{proposition-arc-length-unit}
+ [**Proposition 3.47**](#proposition-arc-length-unit): Arc-length and unit speed parametrization\Pageref{proposition-arc-length-unit}
 
  [**Proof**](#Proof*-3.9)\Pageref{Proof*-3.9}
 
- [**Remark 3.46**](#Remark-3.46)\Pageref{Remark-3.46}
+ [**Remark 3.48**](#Remark-3.48)\Pageref{Remark-3.48}
 
- [**Example 3.47**](#twisted-cubic): Twisted cubic\Pageref{twisted-cubic}
+ [**Example 3.49**](#twisted-cubic): Twisted cubic\Pageref{twisted-cubic}
+
+ [**Example 3.50**](#Example-3.50)\Pageref{Example-3.50}
+
+ [**Definition 3.51**](#periodic-curve): Periodic curve\Pageref{periodic-curve}
+
+ [**Definition 3.52**](#closed-curve): Closed curve\Pageref{closed-curve}
+
+ [**Remark 3.53**](#Remark-3.53)\Pageref{Remark-3.53}
