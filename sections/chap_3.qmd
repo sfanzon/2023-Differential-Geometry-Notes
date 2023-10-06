@@ -1397,8 +1397,45 @@ $$
 :::
 
 
-Note that when $\dot\g(t_0) = 0$, this means the curve is *stopping* at time $t_0$.
+Note that when $\dot\g(t_0) = 0$, this means the curve is *stopping* at time $t_0$. Before making an example, let us prove a useful lemma about diffeomorphisms.
 
+::: {.Lemma  #lemma-diffeomorphism}
+
+Let $\f \ \colon (a,b) \to (\tilde{a},\tilde{b})$ be a diffeomorphism. Then 
+$$
+\dot\f (t) \neq 0 \quad \forall \, t \in (a,b) \,.
+$$
+
+:::
+
+
+::: Proof
+
+We know that $\f$ is smooth with smooth inverse 
+$$
+\psi := \f^{-1} \ \colon (\tilde{a},\tilde{b}) \to (a,b) \,.
+$$
+In particular it holds
+$$
+\psi (\f(t)) = t \,, \quad \forall \, t \in (a,b) \,.
+$$
+We can differentiate both sides of the above expression to get
+$$
+\frac{d}{dt} \left( \psi (\f(t))  \right) = 1 \,.
+$$ {#eq-lemma-diffeomorphism-1}
+We can differentiate the LHS by chain rule
+$$
+\frac{d}{dt} \left( \psi (\f(t))  \right) = \dot\psi (\f(t)) \, \dot\f(t) \,.
+$$
+From (@eq-lemma-diffeomorphism-1) we then get
+$$
+ \dot\psi (\f(t)) \, \dot\f(t) = 1 \, , \quad \forall \, t \in (a,b) \,.
+$$
+Since on the LHS we have a product, this means that none of the LHS terms vanishes, so that 
+$$
+\dot\f(t) \neq  0 \, , \quad \forall \, t \in (a,b) \,.
+$$
+:::
 
 
 ::: Example
@@ -1421,7 +1458,12 @@ This is smooth and invertible, with inverse
 $$
 \f^{-1}(t) = \sqrt[3]{x} \,.
 $$
-However $\f^{-1}$ is not smooth at $t=0$, and thus $\f$ is not a diffeomorphism.  
+However $\f^{-1}$ is not smooth at $t=0$, and thus $\f$ is not a diffeomorphism. Alternatively we could have just noticed that 
+$$
+\dot \f (t) = 3t^2 \quad \implies \quad \dot\f(0) = 0 \,, 
+$$
+and therefore $\f$ cannot be a diffeomorphism due to Lemma \ref{lemma-diffeomorphism}.
+
 Let us look at the derivatives:
 $$
 \dot \g (t) = (1,2t) \,, \quad \dot \eta (t)= (3t^2,6t^5) \,.
@@ -1489,25 +1531,9 @@ Thus (@eq-regularity-invariant-1) is equivalent to
 $$
 \dot{\tg}(t) \neq 0 \quad \iff \quad  \dot\f(t)  \neq 0 \,.
 $$ {#eq-regularity-invariant-2}
-We know that $\f$ is smooth with smooth inverse $\psi := \f^{-1}$. In particular 
+Since $\f$ is a diffeomorphism, by Lemma \ref{lemma-diffeomorphism} we have that 
 $$
-\psi (\f(t)) = t \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
-$$
-We can differentiate both sides of the above expression to get
-$$
-\frac{d}{dt} \left( \psi (\f(t))  \right) = 1 \,.
-$$ {#eq-regularity-invariant-3}
-On the other hand, by chain rule,
-$$
-\frac{d}{dt} \left( \psi (\f(t))  \right) = \dot\psi (\f(t)) \, \dot\f(t) \,.
-$$
-From (@eq-regularity-invariant-3) we then get
-$$
- \dot\psi (\f(t)) \, \dot\f(t) = 1 \, , \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
-$$
-Since on the LHS we have a product, this means that none of the LHS terms vanishes, so that 
-$$
-\dot\f(t) \neq  0 \, , \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
+\dot \f (t) \neq 0 \,, \quad \forall\, t \in (\tilde{a},\tilde{b})  \,.
 $$
 By (@eq-regularity-invariant-2) we conclude that 
 $$
@@ -1646,12 +1672,16 @@ $$
 Since $\tg$ is unit speed we obtain
 $$
 \norm{\dot{\g} (\f(t)) } \, |\dot \f (t)| = 1 \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
+$$ {#eq-derivative-arc-3}
+Since $\f$ is a diffeomorphism from $(\tilde{a},\tilde{b})$ into $(a,b)$, Lemma \ref{lemma-diffeomorphism} guarantees that
 $$
-In particular 
+\dot{\f} (t)  \neq 0 \,, \quad \forall \, t \in (a,b) \,.
+$$
+In particular (@eq-derivative-arc-3) implies
 $$
 \dot{\g} (\f(t))  \neq 0 \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
 $$
-Since $\f$ is a diffeomorphism from $(\tilde{a},\tilde{b})$ into $(a,b)$, we also have 
+As $\f$ is invertible, we also have
 $$
 \dot{\g} (t)  \neq 0 \,, \quad \forall \, t \in (a,b) \,,
 $$
@@ -1659,30 +1689,38 @@ proving that $\g$ is regular.
 :::
 
 
-The proof of Theorem \ref{theorem-regular-unit-speed} told us that the arc-length is essentially the only unit-speed reparametrization map of a regular curve. The unit speed reparametrization is obtained via 
+The proof of Theorem \ref{theorem-regular-unit-speed} told us that, if $\g$ is regular, then 
 $$
-\tg = \g \circ s^{-1} \,.
+\tg = \g \circ s^{-1} 
 $$
-We make this statement precise in the following proposition.
+is a unit speed reparametrization of $\g$. In the next proposition we show that the arc-length $s$ is essentially the only unit-speed reparametrization of a regular curve. 
 
 
 ::: Proposition
-### Arc-length and unit speed parametrization  {#proposition-arc-length-unit}
-Let $\g \ \colon (a,b) \to \R^n$ be a regular curve. Let $\tg \ \colon (\tilde{a},\tilde{b}) \to \R^n$ be a unit speed reparametrization of $\g$, with reparametrization map $\f \ \colon (a,b) \to (\tilde{a},\tilde{b})$, that is,
+### Arc-length and unit speed reparametrization  {#proposition-arc-length-unit}
+Let $\g \ \colon (a,b) \to \R^n$ be a regular curve. Let $\tg \ \colon (\tilde{a},\tilde{b}) \to \R^n$ be reparametrization of $\g$, so that
 $$
 \g(t) = \tg ( \f(t) )  , \quad \forall \, t \in (a,b)\,.
 $$
-Denote by $s$ be the arc-length of $\g$ starting at any point $t_0 \in (a,b)$. Then
+for some diffeomorphism $\f \ \colon (a,b) \to (\tilde{a},\tilde{b})$. Denote by
 $$
-s = \pm \f + c  
+s(t):= \int_{t_0}^t  \norm{\dot\g(\tau)} \, d \tau \,, \quad t \in (a,b)
 $$
-for a suitable constant $c \in \R$.  
+the arc-length of $\g$ starting at any point $t_0 \in (a,b)$. We have:
+
+1. If $\tg$ is unit speed, then there exists $c \in \R$ such that
+$$
+\f(t) = \pm s(t) + c   \,, \quad \forall \, t \in (a,b) \,.
+$$ {#eq-proposition-unit-speed}
+
+2. If $\f$ is given by (@eq-proposition-unit-speed) for some $c \in \R$, then $\tg$ is unit speed.
+
 :::
 
-::: Proof
 
-First note that a unit speed reparametrization $\tg$ of $\g$ exists by Theorem \ref{theorem-regular-unit-speed}, since $\g$ is assumed to be regular.  
-By differentiating both sides of
+::: Proof
+*Step 1. First Point.*  
+First note that a unit speed reparametrization $\tg$ of $\g$ exists by Theorem \ref{theorem-regular-unit-speed}, since $\g$ is assumed to be regular. Thus assume $\tg$ is unit speed reparametrization of $\g$.  By differentiating both sides of
 $$
 \g(t) = \tg ( \f(t) )  , \quad \forall \, t \in (a,b)\,, 
 $$
@@ -1714,25 +1752,59 @@ $$
 $$
 and therefore 
 $$
-s = \pm \f + c
+\f = \pm s + c
 $$
 for some $c \in \R$, concluding the proof.
+
+
+*Step 2. Second Point.*  
+Suppose that 
+$$
+\f := \pm s + c
+$$
+for some $c \in \R$, so that $\phi \ \colon (a,b) \to (\tilde{a},\tilde{b})$. We have 
+$$
+\dot\f (t) =  \pm \dot s (t) = \pm \norm{ \dot\g(t) } \neq 0  
+$${#eq-proposition-unit-speed-2}
+where the last term is non-zero since $\g$ is regular. Therefore, due to the Inverse Function Theorem, $\f$ is invertible with smooth inverse. This proves that $\tg$ defined by 
+$$
+\tg := \g \circ \psi  \,, \quad \psi := \f^{-1} \,,
+$$
+is a reparametrization of $\g$. In particular 
+$$
+\g = \tg \circ \f \,.
+$$
+Differentiating the above, and recalling (@eq-proposition-unit-speed-2), we get
+$$
+\dot{\g}(t) = \dot{\tg}( \f(t) ) \, \dot\f(t) = \dot{\tg}( \f(t) ) \,\left( \pm \norm{ \dot\g(t) } \right) \,.
+$$
+Taking the absolute value of the above yields
+$$
+\norm{ \dot\g(t) } = \norm{ \dot{\tg}( \f(t) )}  \, \norm{ \dot\g(t) } \,.
+$$
+Since $\g$ is regular we can divide by $\norm{ \dot\g(t) }$ to get
+$$
+ \norm{ \dot{\tg}( \f(t) )}  = 1 \, \quad \forall \, t \in (a,b)  \, .
+$$
+Since $\f$ is invertible, the above is equivalent to
+$$
+ \norm{ \dot{\tg}( t )}  = 1 \, \quad \forall \, t \in (\tilde{a},\tilde{b})  \, ,
+$$
+proving that $\tg$ is a unit speed reparametrization.
 :::
 
 
 ::: Remark
-The above proposition tells us that 
-$$
-\g \, \mbox{ has unit speed reparametrization}  \,\, \iff \,\,
-s \, \mbox{ is a diffeomorphism}
-$$  
+Let $\g$ be regular. The above proposition tells us that they are equivalent:
+
+1. Computing a unit speed reparametrization of $\g$,
+
+2. Computing $s$ the arc-length of $\g$.
+
+In some cases however, unit speed reparametrization and arc-length are impossible to characterize in terms of elementary functions, even for very simple curves.
 :::
 
-::: Warning
 
-Theorem \ref{theorem-regular-unit-speed} says that every regular curve has unit speed parametrization. However the unit speed reparametrization is often impossible to characterize, even for very simple curves.
-
-:::
 
 
 ::: Example 
@@ -1829,10 +1901,10 @@ $$
 
 However there are examples of curves which are in between the above types. 
 
-::: Example
+::: {.Example #example-curve-loop}
 For example consider the curve $\g \ \colon \R \to \R^2$
 $$
-\g(t) := (t^2-1, t^3 -t) \,.
+\g(t) := (t^2-1, t^3 -t) \,\quad  \forall \, t \in \R \,.
 $$
 This curve has two main properties:
 
@@ -2013,11 +2085,15 @@ $$
 showing that $\g$ is $T$-periodic. Thus $T \in S$ showing that $S$ is closed. 
 - $S$ is bounded below by $0$. This is by definition of $S$.
 
-Thus, by standard real analysis results, the set $S$ admits a minimum $P$. We claim that
+Thus, by standard real analysis results, the set $S$ admits a minimum $P$. The proof is concluded if we show that:
+
+*Claim*. We have
 $$
 P > 0  \,.
 $$
-Indeed, suppose by contradiction that
+
+*Proof of claim.*  
+Suppose by contradiction that
 $$
 P = 0 \,.
 $$
@@ -2037,6 +2113,32 @@ as shown in the figure below. Indeed, it is sufficient to define
 $$
 k_n := \biggl\lfloor \frac{t}{T_n}  \biggr\rfloor \in \Z \,, \quad t_n := t - k_n T_n \,.
 $$
+Since $T_n \in S$, we know that $\g$ is $T_n$-periodic. Remark \ref{remark-closed} Point 6 implies that $\g$ is also $k_nT_n$-periodic, since $k_n \in \Z$. Thus
+\begin{align}
+\g (t) & = \g( t_n + k_nT_n )   &   \mbox{(definition of $t_n$)} \\
+       & = \g(t_n)             & \mbox{(by $k_nT_n$-periodicity)} \,.
+\end{align}
+Therefore 
+$$
+\g(t) = \g(t_n) \,, \quad \forall \, n \in \N \,.
+$${#eq-period-exists-1}
+Also notice that 
+$$
+0 \leq t_n \leq T_n \,, \quad \forall \, n \in \N \,.
+$$
+by construction. Since $T_n \to 0$, by the Squeeze Theorem we conclude that
+$$
+t_n \to 0  \quad \mbox{as } \, n \to \infty \,.
+$$
+Using the continuity of $\g$, we can pass to the limit in (@eq-period-exists-1) and obtain
+$$
+\g(t) = \lim_{n \to \infty} \g(t_n) = \g(0) \,.
+$$
+Since $t \in \R$ was arbitrary, we have shown that 
+$$
+\g(t) =  \g(0) \,, \quad \forall \, t \in \R \,.
+$$
+Therefore $\g$ is constant. This is a contradiction, as we were assuming that $\g$ is closed, and, in particular, not constant.
 :::
 
 
@@ -2045,21 +2147,46 @@ $$
 
 ::: Example
 
-of perdiodic curves.  Will's examples. 
+Some examples of closed curves: 
 
+- The circumference 
+$$
+\g (t) = (\cos(t), \sin(t)) \,, \quad t \in \R
+$$
+is not costant and is $2\pi$-periodic. Thus $\g$ is closed. The period of $\g$ is $2 \pi$.
+
+- The Lemniscate
+$$
+\g (t) = (\sin(t), \sin(t) \cos(t)) \,, \quad t \in \R
+$$
+is not costant and is $2\pi$-periodic. Thus $\g$ is closed. The period of $\g$ is $2 \pi$.
+
+- Consider again the curve from Example \ref{example-curve-loop} 
+$$
+\g(t) := (t^2-1, t^3 -t) \,, \quad \, t \in \R \,.
+$$
+According to our definition, $\g$ is not periodic. Therefore $\g$ is not closed. However there is a point of **self-intersection** on $\g$, namely 
+$$
+p := (0,0) \,,
+$$ 
+for which we have 
+$$
+p = \g (-1) = \g(1) \,.
+$$
 :::
 
 
+The last curve in the above example motivates the definition of **self-intersecting** curve. 
 
-We conclude this section with the definition of **self-intersecting** curve. 
 
 ::: Definition
+### Self-intersecting curve
 
 Let $\g \ \colon \R \to \R^n$ be a closed curve. We say that $\g$ is **self-intersecting** at a point $p$ on the curve if
 
 1. There exist two times $a \neq b$ such that 
 $$
-\g(a)=\g(b) = p \,,
+p = \g(a)=\g(b)  \,,
 $$
 2. If $\g$ is closed with period $T$, then $b-a$ is not an integer multiple of $T$.
 
@@ -2078,6 +2205,14 @@ $$
 meaning that $b-a$ is an integer multiple of $T$.
 
 :::
+
+
+::: Example
+
+Let us go back to the curve
+
+:::
+
 
 ::: Example
 ### The Limaçon

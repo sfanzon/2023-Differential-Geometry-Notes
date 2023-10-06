@@ -66,43 +66,15 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
-.Lemma {
+.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Important {
+.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -110,7 +82,39 @@ ul.task-list li input[type="checkbox"] {
   --color1: #bce5de;
   --color2: #21aa93;
 }
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
 .Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -118,17 +122,13 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
 }
-.Problem {
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Theorem {
+.Question {
   --color1: #f4cce0;
   --color2: #db4d92;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
 }
 </style>
 
@@ -1025,9 +1025,31 @@ s(t) := \int_{t_0}^t \left\|   \dot\gamma(\tau)  \right\| \, d\tau  \,\, \implie
 </ul>
 </div></details>
 </div>
-<p>Note that when <span class="math inline">\(\dot\gamma(t_0) = 0\)</span>, this means the curve is <em>stopping</em> at time <span class="math inline">\(t_0\)</span>.</p>
+<p>Note that when <span class="math inline">\(\dot\gamma(t_0) = 0\)</span>, this means the curve is <em>stopping</em> at time <span class="math inline">\(t_0\)</span>. Before making an example, let us prove a useful lemma about diffeomorphisms.</p>
+<div id="lemma-diffeomorphism" class="Lemma">
+<p></p><details class="Lemma fbx-simplebox fbx-default" open=""><summary><strong>Lemma 42</strong></summary><div>Let <span class="math inline">\(\phi\ \colon (a,b) \to (\tilde{a},\tilde{b})\)</span> be a diffeomorphism. Then <span class="math display">\[
+\dot\phi(t) \neq 0 \quad \forall \, t \in (a,b) \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="Proof*-7" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>We know that <span class="math inline">\(\phi\)</span> is smooth with smooth inverse <span class="math display">\[
+\psi := \phi^{-1} \ \colon (\tilde{a},\tilde{b}) \to (a,b) \,.
+\]</span> In particular it holds <span class="math display">\[
+\psi (\phi(t)) = t \,, \quad \forall \, t \in (a,b) \,.
+\]</span> We can differentiate both sides of the above expression to get <span id="eq-lemma-diffeomorphism-1"><span class="math display">\[
+\frac{d}{dt} \left( \psi (\phi(t))  \right) = 1 \,.
+\tag{3.15}\]</span></span> We can differentiate the LHS by chain rule <span class="math display">\[
+\frac{d}{dt} \left( \psi (\phi(t))  \right) = \dot\psi (\phi(t)) \, \dot\phi(t) \,.
+\]</span> From (<a href="#eq-lemma-diffeomorphism-1"><span>3.15</span></a>) we then get <span class="math display">\[
+\dot\psi (\phi(t)) \, \dot\phi(t) = 1 \, , \quad \forall \, t \in (a,b) \,.
+\]</span> Since on the LHS we have a product, this means that none of the LHS terms vanishes, so that <span class="math display">\[
+\dot\phi(t) \neq  0 \, , \quad \forall \, t \in (a,b) \,.
+\]</span><p></p>
+</div></details>
+</div>
 <div id="example-stopping-curve" class="Example" title="A curve with one singular point">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 42: </strong>A curve with one singular point</summary><div>
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 43: </strong>A curve with one singular point</summary><div>
 <p>Consider the parabola <span class="math display">\[
 \Gamma := \{ (x,y) \in \mathbb{R}^2 \, \colon \,  y=x^2 , \, -1 \leq x \leq 1\} \,.
 \]</span> This can be parametrized in two ways by <span class="math inline">\(\gamma, \eta \ \colon [-1,1] \to \mathbb{R}^2\)</span> defined as <span class="math display">\[
@@ -1037,8 +1059,10 @@ s(t) := \int_{t_0}^t \left\|   \dot\gamma(\tau)  \right\| \, d\tau  \,\, \implie
 \phi(t) = t^3 \,.
 \]</span> This is smooth and invertible, with inverse <span class="math display">\[
 \phi^{-1}(t) = \sqrt[3]{x} \,.
-\]</span> However <span class="math inline">\(\phi^{-1}\)</span> is not smooth at <span class="math inline">\(t=0\)</span>, and thus <span class="math inline">\(\phi\)</span> is not a diffeomorphism.<br>
-Let us look at the derivatives: <span class="math display">\[
+\]</span> However <span class="math inline">\(\phi^{-1}\)</span> is not smooth at <span class="math inline">\(t=0\)</span>, and thus <span class="math inline">\(\phi\)</span> is not a diffeomorphism. Alternatively we could have just noticed that <span class="math display">\[
+\dot \phi(t) = 3t^2 \quad \implies \quad \dot\phi(0) = 0 \,,
+\]</span> and therefore <span class="math inline">\(\phi\)</span> cannot be a diffeomorphism due to Lemma <a href="chap_3.html#lemma-diffeomorphism">42</a>.</p>
+<p>Let us look at the derivatives: <span class="math display">\[
 \dot \gamma(t) = (1,2t) \,, \quad \dot \eta (t)= (3t^2,6t^5) \,.
 \]</span> We notice a difference:</p>
 <ul>
@@ -1059,39 +1083,31 @@ Let us look at the derivatives: <span class="math display">\[
 </figure>
 </div>
 <div id="proposition-regularity-invariant" class="Proposition" title="Regularity is invariant for reparametrization">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 43: </strong>Regularity is invariant for reparametrization</summary><div>Let <span class="math inline">\(\gamma\ \colon (a,b) \to \mathbb{R}^n\)</span> be a parametrized curve and suppose that <span class="math inline">\(\gamma\)</span> is regular, that is, <span class="math display">\[
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 44: </strong>Regularity is invariant for reparametrization</summary><div>Let <span class="math inline">\(\gamma\ \colon (a,b) \to \mathbb{R}^n\)</span> be a parametrized curve and suppose that <span class="math inline">\(\gamma\)</span> is regular, that is, <span class="math display">\[
 \dot\gamma(t) \neq 0 \,, \quad  \forall \, t \in (a,b) \,.
 \]</span> Then every reparametrization of <span class="math inline">\(\gamma\)</span> is also regular.<p></p>
 </div></details>
 </div>
-<div id="Proof*-7" class="Proof">
+<div id="Proof*-8" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Let <span class="math inline">\(\widetilde{\gamma}\ \colon (\tilde{a},\tilde{b}) \to \mathbb{R}^n\)</span> be a reparametrization of <span class="math inline">\(\gamma\)</span>. Then there exist <span class="math inline">\(\phi\ \colon (\tilde{a},\tilde{b}) \to (a,b)\)</span> diffeomorphism such that <span class="math display">\[
 \tilde \gamma(t) = \gamma(\phi(t)) \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
 \]</span> By the chain rule we have <span class="math display">\[
 \dot{\widetilde{\gamma}}(t) = \frac{d}{dt}  \left(  \gamma(\phi(t))  \right) = \dot\gamma(\phi(t)) \dot\phi(t) \,.
 \]</span> Therefore <span id="eq-regularity-invariant-1"><span class="math display">\[
 \dot{\widetilde{\gamma}}(t) \neq 0 \quad \iff \quad \dot\gamma(\phi(t)) \dot\phi(t)  \neq 0 \,.
-\tag{3.15}\]</span></span> But we are assuming that <span class="math inline">\(\gamma\)</span> is regular, so that <span class="math display">\[
+\tag{3.16}\]</span></span> But we are assuming that <span class="math inline">\(\gamma\)</span> is regular, so that <span class="math display">\[
 \dot\gamma(\phi(t)) \neq 0 \,, \quad \forall\, t \in (\tilde{a},\tilde{b}) \,.
-\]</span> Thus (<a href="#eq-regularity-invariant-1"><span>3.15</span></a>) is equivalent to <span id="eq-regularity-invariant-2"><span class="math display">\[
+\]</span> Thus (<a href="#eq-regularity-invariant-1"><span>3.16</span></a>) is equivalent to <span id="eq-regularity-invariant-2"><span class="math display">\[
 \dot{\widetilde{\gamma}}(t) \neq 0 \quad \iff \quad  \dot\phi(t)  \neq 0 \,.
-\tag{3.16}\]</span></span> We know that <span class="math inline">\(\phi\)</span> is smooth with smooth inverse <span class="math inline">\(\psi := \phi^{-1}\)</span>. In particular <span class="math display">\[
-\psi (\phi(t)) = t \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
-\]</span> We can differentiate both sides of the above expression to get <span id="eq-regularity-invariant-3"><span class="math display">\[
-\frac{d}{dt} \left( \psi (\phi(t))  \right) = 1 \,.
-\tag{3.17}\]</span></span> On the other hand, by chain rule, <span class="math display">\[
-\frac{d}{dt} \left( \psi (\phi(t))  \right) = \dot\psi (\phi(t)) \, \dot\phi(t) \,.
-\]</span> From (<a href="#eq-regularity-invariant-3"><span>3.17</span></a>) we then get <span class="math display">\[
-\dot\psi (\phi(t)) \, \dot\phi(t) = 1 \, , \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
-\]</span> Since on the LHS we have a product, this means that none of the LHS terms vanishes, so that <span class="math display">\[
-\dot\phi(t) \neq  0 \, , \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
-\]</span> By (<a href="#eq-regularity-invariant-2"><span>3.16</span></a>) we conclude that <span class="math display">\[
+\tag{3.17}\]</span></span> Since <span class="math inline">\(\phi\)</span> is a diffeomorphism, by Lemma <a href="chap_3.html#lemma-diffeomorphism">42</a> we have that <span class="math display">\[
+\dot \phi(t) \neq 0 \,, \quad \forall\, t \in (\tilde{a},\tilde{b})  \,.
+\]</span> By (<a href="#eq-regularity-invariant-2"><span>3.17</span></a>) we conclude that <span class="math display">\[
 \dot{\widetilde{\gamma}}(t) \neq  0 \, , \quad \forall \, t \in (\tilde{a},\tilde{b}) \,,
 \]</span> proving that <span class="math inline">\(\widetilde{\gamma}\)</span> is regular.<p></p>
 </div></details>
 </div>
-<div id="Example-44" class="Example">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 44</strong></summary><div>Let us go back to the parabola <span class="math display">\[
+<div id="Example-45" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 45</strong></summary><div>Let us go back to the parabola <span class="math display">\[
 \Gamma := \{ (x,y) \in \mathbb{R}^2 \, \colon \,  y=x^2 , \, -1 \leq x \leq 1\} \,,
 \]</span> with the two parametrizations <span class="math inline">\(\gamma, \eta \ \colon [-1,1] \to \mathbb{R}^2\)</span> with <span class="math display">\[
 \gamma(t) = (t,t^2) \,, \quad
@@ -1103,11 +1119,11 @@ Let us look at the derivatives: <span class="math display">\[
 <li><span class="math inline">\(\gamma\)</span> is a regular parametrization,</li>
 <li><span class="math inline">\(\eta(t)\)</span> is regular only for <span class="math inline">\(t \neq 0\)</span>.</li>
 </ul>
-<p>Proposition <a href="chap_3.html#proposition-regularity-invariant">43</a> implies that <span class="math inline">\(\eta\)</span> is <strong>NOT</strong> a reparametrization of <span class="math inline">\(\gamma\)</span>.</p>
+<p>Proposition <a href="chap_3.html#proposition-regularity-invariant">44</a> implies that <span class="math inline">\(\eta\)</span> is <strong>NOT</strong> a reparametrization of <span class="math inline">\(\gamma\)</span>.</p>
 </div></details>
 </div>
 <div id="unit-speed-reparametrization" class="Definition" title="Unit speed reparametrization">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 45: </strong>Unit speed reparametrization</summary><div>Let <span class="math inline">\(\gamma\)</span> be a parametrized curve. A <strong>unit speed reparametrization</strong> of <span class="math inline">\(\gamma\)</span> is a reparametrization <span class="math inline">\(\widetilde{\gamma}\)</span> such that <span class="math inline">\(\widetilde{\gamma}\)</span> is unit speed.<p></p>
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 46: </strong>Unit speed reparametrization</summary><div>Let <span class="math inline">\(\gamma\)</span> be a parametrized curve. A <strong>unit speed reparametrization</strong> of <span class="math inline">\(\gamma\)</span> is a reparametrization <span class="math inline">\(\widetilde{\gamma}\)</span> such that <span class="math inline">\(\widetilde{\gamma}\)</span> is unit speed.<p></p>
 </div></details>
 </div>
 <p>The next theorem states that a curve is regular if and only if it has a unit speed reparametrization. For the proof, it is crucial to recall the definition of arc-length of a curve <span class="math inline">\(\gamma\colon (a,b) \to \mathbb{R}^n\)</span>, which is given by <span class="math display">\[
@@ -1116,7 +1132,7 @@ s(t):=\int_{t_0}^t \left\|  \dot \gamma(\tau)  \right\| \, d\tau \,,
 \phi= s^{-1} \,.
 \]</span></p>
 <div id="theorem-regular-unit-speed" class="Theorem" title="Existence of unit speed reparametrization">
-<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 46: </strong>Existence of unit speed reparametrization</summary><div>
+<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 47: </strong>Existence of unit speed reparametrization</summary><div>
 <p>Let <span class="math inline">\(\gamma\)</span> be a parametrized curve. They are equivalent:</p>
 <ul>
 <li><span class="math inline">\(\gamma\)</span> is regular,</li>
@@ -1124,7 +1140,7 @@ s(t):=\int_{t_0}^t \left\|  \dot \gamma(\tau)  \right\| \, d\tau \,,
 </ul>
 </div></details>
 </div>
-<div id="Proof*-8" class="Proof">
+<div id="Proof*-9" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Step 1. Direct implication.</em><br>
 Assume <span class="math inline">\(\gamma\ \colon (a,b) \to \mathbb{R}^n\)</span> is regular, that is, <span class="math display">\[
 \dot \gamma(t) \neq 0 \,, \quad \forall \, t \in (a,b)\,.
@@ -1161,29 +1177,38 @@ Suppose there exists a unit speed reparametrization of <span class="math inline"
 \dot{\widetilde{\gamma}}(t) = \dot{\gamma} (\phi(t)) \, \dot \phi(t) \,.
 \]</span> Taking the norm <span class="math display">\[
 \left\| \dot{\widetilde{\gamma}}(t) \right\| = \left\| \dot{\gamma} (\phi(t))  \right\| \, |\dot \phi(t)| \,.
-\]</span> Since <span class="math inline">\(\widetilde{\gamma}\)</span> is unit speed we obtain <span class="math display">\[
+\]</span> Since <span class="math inline">\(\widetilde{\gamma}\)</span> is unit speed we obtain <span id="eq-derivative-arc-3"><span class="math display">\[
 \left\| \dot{\gamma} (\phi(t))  \right\| \, |\dot \phi(t)| = 1 \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
-\]</span> In particular <span class="math display">\[
+\tag{3.20}\]</span></span> Since <span class="math inline">\(\phi\)</span> is a diffeomorphism from <span class="math inline">\((\tilde{a},\tilde{b})\)</span> into <span class="math inline">\((a,b)\)</span>, Lemma <a href="chap_3.html#lemma-diffeomorphism">42</a> guarantees that <span class="math display">\[
+\dot{\phi} (t)  \neq 0 \,, \quad \forall \, t \in (a,b) \,.
+\]</span> In particular (<a href="#eq-derivative-arc-3"><span>3.20</span></a>) implies <span class="math display">\[
 \dot{\gamma} (\phi(t))  \neq 0 \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
-\]</span> Since <span class="math inline">\(\phi\)</span> is a diffeomorphism from <span class="math inline">\((\tilde{a},\tilde{b})\)</span> into <span class="math inline">\((a,b)\)</span>, we also have <span class="math display">\[
+\]</span> As <span class="math inline">\(\phi\)</span> is invertible, we also have <span class="math display">\[
 \dot{\gamma} (t)  \neq 0 \,, \quad \forall \, t \in (a,b) \,,
 \]</span> proving that <span class="math inline">\(\gamma\)</span> is regular.</p>
 </div></details>
 </div>
-<p>The proof of Theorem <a href="chap_3.html#theorem-regular-unit-speed">46</a> told us that the arc-length is essentially the only unit-speed reparametrization map of a regular curve. The unit speed reparametrization is obtained via <span class="math display">\[
-\widetilde{\gamma}= \gamma\circ s^{-1} \,.
-\]</span> We make this statement precise in the following proposition.</p>
-<div id="proposition-arc-length-unit" class="Proposition" title="Arc-length and unit speed parametrization">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 47: </strong>Arc-length and unit speed parametrization</summary><div>Let <span class="math inline">\(\gamma\ \colon (a,b) \to \mathbb{R}^n\)</span> be a regular curve. Let <span class="math inline">\(\widetilde{\gamma}\ \colon (\tilde{a},\tilde{b}) \to \mathbb{R}^n\)</span> be a unit speed reparametrization of <span class="math inline">\(\gamma\)</span>, with reparametrization map <span class="math inline">\(\phi\ \colon (a,b) \to (\tilde{a},\tilde{b})\)</span>, that is, <span class="math display">\[
+<p>The proof of Theorem <a href="chap_3.html#theorem-regular-unit-speed">47</a> told us that, if <span class="math inline">\(\gamma\)</span> is regular, then <span class="math display">\[
+\widetilde{\gamma}= \gamma\circ s^{-1}
+\]</span> is a unit speed reparametrization of <span class="math inline">\(\gamma\)</span>. In the next proposition we show that the arc-length <span class="math inline">\(s\)</span> is essentially the only unit-speed reparametrization of a regular curve.</p>
+<div id="proposition-arc-length-unit" class="Proposition" title="Arc-length and unit speed reparametrization">
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 48: </strong>Arc-length and unit speed reparametrization</summary><div>
+<p>Let <span class="math inline">\(\gamma\ \colon (a,b) \to \mathbb{R}^n\)</span> be a regular curve. Let <span class="math inline">\(\widetilde{\gamma}\ \colon (\tilde{a},\tilde{b}) \to \mathbb{R}^n\)</span> be reparametrization of <span class="math inline">\(\gamma\)</span>, so that <span class="math display">\[
 \gamma(t) = \widetilde{\gamma}( \phi(t) )  , \quad \forall \, t \in (a,b)\,.
-\]</span> Denote by <span class="math inline">\(s\)</span> be the arc-length of <span class="math inline">\(\gamma\)</span> starting at any point <span class="math inline">\(t_0 \in (a,b)\)</span>. Then <span class="math display">\[
-s = \pm \phi+ c  
-\]</span> for a suitable constant <span class="math inline">\(c \in \mathbb{R}\)</span>.<p></p>
+\]</span> for some diffeomorphism <span class="math inline">\(\phi\ \colon (a,b) \to (\tilde{a},\tilde{b})\)</span>. Denote by <span class="math display">\[
+s(t):= \int_{t_0}^t  \left\| \dot\gamma(\tau) \right\| \, d \tau \,, \quad t \in (a,b)
+\]</span> the arc-length of <span class="math inline">\(\gamma\)</span> starting at any point <span class="math inline">\(t_0 \in (a,b)\)</span>. We have:</p>
+<ol type="1">
+<li><p>If <span class="math inline">\(\widetilde{\gamma}\)</span> is unit speed, then there exists <span class="math inline">\(c \in \mathbb{R}\)</span> such that <span id="eq-proposition-unit-speed"><span class="math display">\[
+\phi(t) = \pm s(t) + c   \,, \quad \forall \, t \in (a,b) \,.
+\tag{3.21}\]</span></span></p></li>
+<li><p>If <span class="math inline">\(\phi\)</span> is given by (<a href="#eq-proposition-unit-speed"><span>3.21</span></a>) for some <span class="math inline">\(c \in \mathbb{R}\)</span>, then <span class="math inline">\(\widetilde{\gamma}\)</span> is unit speed.</p></li>
+</ol>
 </div></details>
 </div>
-<div id="Proof*-9" class="Proof">
-<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>First note that a unit speed reparametrization <span class="math inline">\(\widetilde{\gamma}\)</span> of <span class="math inline">\(\gamma\)</span> exists by Theorem <a href="chap_3.html#theorem-regular-unit-speed">46</a>, since <span class="math inline">\(\gamma\)</span> is assumed to be regular.<br>
-By differentiating both sides of <span class="math display">\[
+<div id="Proof*-10" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Step 1. First Point.</em><br>
+First note that a unit speed reparametrization <span class="math inline">\(\widetilde{\gamma}\)</span> of <span class="math inline">\(\gamma\)</span> exists by Theorem <a href="chap_3.html#theorem-regular-unit-speed">47</a>, since <span class="math inline">\(\gamma\)</span> is assumed to be regular. Thus assume <span class="math inline">\(\widetilde{\gamma}\)</span> is unit speed reparametrization of <span class="math inline">\(\gamma\)</span>. By differentiating both sides of <span class="math display">\[
 \gamma(t) = \widetilde{\gamma}( \phi(t) )  , \quad \forall \, t \in (a,b)\,,
 \]</span> we obtain <span class="math display">\[
 \dot \gamma(t) = \frac{d}{dt} \widetilde{\gamma}( \phi(t) ) = \dot{\widetilde{\gamma}}(\phi(t)) \, \dot\phi(t)  \,.
@@ -1200,22 +1225,39 @@ s(t) = \int_{t_0}^t \left\|  \dot \gamma(\tau)  \right\| \, d\tau =  \int_{t_0}^
 \]</span> By the Fundamental Theorem of Calculus we get <span class="math display">\[
 \dot s(t) = |\dot \phi(t) |
 \]</span> and therefore <span class="math display">\[
-s = \pm \phi+ c
+\phi= \pm s + c
 \]</span> for some <span class="math inline">\(c \in \mathbb{R}\)</span>, concluding the proof.<p></p>
+<p><em>Step 2. Second Point.</em><br>
+Suppose that <span class="math display">\[
+\phi:= \pm s + c
+\]</span> for some <span class="math inline">\(c \in \mathbb{R}\)</span>, so that <span class="math inline">\(\phi \ \colon (a,b) \to (\tilde{a},\tilde{b})\)</span>. We have <span id="eq-proposition-unit-speed-2"><span class="math display">\[
+\dot\phi(t) =  \pm \dot s (t) = \pm \left\|  \dot\gamma(t)  \right\| \neq 0  
+\tag{3.22}\]</span></span> where the last term is non-zero since <span class="math inline">\(\gamma\)</span> is regular. Therefore, due to the Inverse Function Theorem, <span class="math inline">\(\phi\)</span> is invertible with smooth inverse. This proves that <span class="math inline">\(\widetilde{\gamma}\)</span> defined by <span class="math display">\[
+\widetilde{\gamma}:= \gamma\circ \psi  \,, \quad \psi := \phi^{-1} \,,
+\]</span> is a reparametrization of <span class="math inline">\(\gamma\)</span>. In particular <span class="math display">\[
+\gamma= \widetilde{\gamma}\circ \phi\,.
+\]</span> Differentiating the above, and recalling (<a href="#eq-proposition-unit-speed-2"><span>3.22</span></a>), we get <span class="math display">\[
+\dot{\gamma}(t) = \dot{\widetilde{\gamma}}( \phi(t) ) \, \dot\phi(t) = \dot{\widetilde{\gamma}}( \phi(t) ) \,\left( \pm \left\|  \dot\gamma(t)  \right\| \right) \,.
+\]</span> Taking the absolute value of the above yields <span class="math display">\[
+\left\|  \dot\gamma(t)  \right\| = \left\|  \dot{\widetilde{\gamma}}( \phi(t) ) \right\|  \, \left\|  \dot\gamma(t)  \right\| \,.
+\]</span> Since <span class="math inline">\(\gamma\)</span> is regular we can divide by <span class="math inline">\(\left\|  \dot\gamma(t)  \right\|\)</span> to get <span class="math display">\[
+\left\|  \dot{\widetilde{\gamma}}( \phi(t) ) \right\|  = 1 \, \quad \forall \, t \in (a,b)  \, .
+\]</span> Since <span class="math inline">\(\phi\)</span> is invertible, the above is equivalent to <span class="math display">\[
+\left\|  \dot{\widetilde{\gamma}}( t ) \right\|  = 1 \, \quad \forall \, t \in (\tilde{a},\tilde{b})  \, ,
+\]</span> proving that <span class="math inline">\(\widetilde{\gamma}\)</span> is a unit speed reparametrization.</p>
 </div></details>
 </div>
-<div id="Remark-48" class="Remark">
-<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 48</strong></summary><div>The above proposition tells us that <span class="math display">\[
-\gamma\, \mbox{ has unit speed reparametrization}  \,\, \iff \,\,
-s \, \mbox{ is a diffeomorphism}
-\]</span><p></p>
+<div id="Remark-49" class="Remark">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 49</strong></summary><div>Let <span class="math inline">\(\gamma\)</span> be regular. The above proposition tells us that they are equivalent:<p></p>
+<ol type="1">
+<li><p>Computing a unit speed reparametrization of <span class="math inline">\(\gamma\)</span>,</p></li>
+<li><p>Computing <span class="math inline">\(s\)</span> the arc-length of <span class="math inline">\(\gamma\)</span>.</p></li>
+</ol>
+<p>In some cases however, unit speed reparametrization and arc-length are impossible to characterize in terms of elementary functions, even for very simple curves.</p>
 </div></details>
-</div>
-<div class="Warning">
-<p>Theorem <a href="chap_3.html#theorem-regular-unit-speed">46</a> says that every regular curve has unit speed parametrization. However the unit speed reparametrization is often impossible to characterize, even for very simple curves.</p>
 </div>
 <div id="twisted-cubic" class="Example" title="Twisted cubic">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 49: </strong>Twisted cubic</summary><div>Define the <strong>twisted cubic</strong> <span class="math inline">\(\gamma\ \colon \mathbb{R}\to \mathbb{R}^3\)</span> by <span class="math display">\[
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 50: </strong>Twisted cubic</summary><div>Define the <strong>twisted cubic</strong> <span class="math inline">\(\gamma\ \colon \mathbb{R}\to \mathbb{R}^3\)</span> by <span class="math display">\[
 \gamma(t) = (t,t^2,t^3)\,.
 \]</span> Therefore <span class="math display">\[
 \dot \gamma(t) = (1,2t,3t^2)\,,
@@ -1225,7 +1267,7 @@ s \, \mbox{ is a diffeomorphism}
 \left\|  \dot \gamma(t)  \right\| = \sqrt{  1 + 4t^2 + 9t^4 }
 \]</span> so that the arc-length of <span class="math inline">\(\gamma\)</span> is <span class="math display">\[
 s(t) = \int_{t_0}^t  \sqrt{  1 + 4\tau^2 + 9\tau^4 }\, d\tau \,.
-\]</span> Since <span class="math inline">\(\gamma\)</span> is regular, by Proposition <a href="chap_3.html#proposition-arc-length-unit">47</a> we know that <span class="math inline">\(\gamma\)</span> admits a unit speed reparametrization <span class="math inline">\(\widetilde{\gamma}\)</span> such that <span class="math display">\[
+\]</span> Since <span class="math inline">\(\gamma\)</span> is regular, by Proposition <a href="chap_3.html#proposition-arc-length-unit">48</a> we know that <span class="math inline">\(\gamma\)</span> admits a unit speed reparametrization <span class="math inline">\(\widetilde{\gamma}\)</span> such that <span class="math display">\[
 \gamma=  \widetilde{\gamma}\circ \phi
 \]</span> with the diffeomorphism <span class="math inline">\(\phi\)</span> given by <span class="math display">\[
 \phi(t) = \pm s(t) + c = \pm \int_{t_0}^t  \sqrt{  1 + 4\tau^2 + 9\tau^4 }\, d\tau + c
@@ -1258,10 +1300,10 @@ s(t) = \int_{t_0}^t  \sqrt{  1 + 4\tau^2 + 9\tau^4 }\, d\tau \,.
 \]</span></li>
 </ul>
 <p>However there are examples of curves which are in between the above types.</p>
-<div id="Example-50" class="Example">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 50</strong></summary><div>
+<div id="example-curve-loop" class="Example">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 51</strong></summary><div>
 <p>For example consider the curve <span class="math inline">\(\gamma\ \colon \mathbb{R}\to \mathbb{R}^2\)</span> <span class="math display">\[
-\gamma(t) := (t^2-1, t^3 -t) \,.
+\gamma(t) := (t^2-1, t^3 -t) \,\quad  \forall \, t \in \mathbb{R}\,.
 \]</span> This curve has two main properties:</p>
 <ul>
 <li><span class="math inline">\(\gamma\)</span> is unbounded: If define <span class="math inline">\(\widetilde{\gamma}\)</span> as the restriction of <span class="math inline">\(\gamma\)</span> to the time interval <span class="math inline">\([1,\infty)\)</span>, then <span class="math inline">\(\widetilde{\gamma}\)</span> is unbounded. A point which starts at <span class="math inline">\(\gamma(1) = (0,0)\)</span> goes towards infinity.</li>
@@ -1277,14 +1319,14 @@ s(t) = \int_{t_0}^t  \sqrt{  1 + 4\tau^2 + 9\tau^4 }\, d\tau \,.
 </div>
 <p>The aim of this section is to make precise the concept of <strong>looping curve</strong>. To do that, we need to define <strong>periodic curves</strong>.</p>
 <div id="periodic-curve" class="Definition" title="Periodic curve">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 51: </strong>Periodic curve</summary><div>Let <span class="math inline">\(\gamma\ \colon \mathbb{R}\to \mathbb{R}^n\)</span> be a parametrized curve, and let <span class="math inline">\(T \in \mathbb{R}\)</span>. We say that <span class="math inline">\(\gamma\)</span> is <strong>T-periodic</strong> if <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 52: </strong>Periodic curve</summary><div>Let <span class="math inline">\(\gamma\ \colon \mathbb{R}\to \mathbb{R}^n\)</span> be a parametrized curve, and let <span class="math inline">\(T \in \mathbb{R}\)</span>. We say that <span class="math inline">\(\gamma\)</span> is <strong>T-periodic</strong> if <span class="math display">\[
 \gamma(t) = \gamma(t+T) \,, \quad \forall \, t \in \mathbb{R}\,.
 \]</span><p></p>
 </div></details>
 </div>
 <p>Note that every curve is <span class="math inline">\(0\)</span>-periodic. Therefore to define a closed curve we need to rule out this case.</p>
 <div id="closed-curve" class="Definition" title="Closed curve">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 52: </strong>Closed curve</summary><div>
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 53: </strong>Closed curve</summary><div>
 <p>Let <span class="math inline">\(\gamma\ \colon \mathbb{R}\to \mathbb{R}^n\)</span> be a parametrized curve. We say that <span class="math inline">\(\gamma\)</span> is <strong>closed</strong> if:</p>
 <ul>
 <li><span class="math inline">\(\gamma\)</span> is not constant,</li>
@@ -1293,7 +1335,7 @@ s(t) = \int_{t_0}^t  \sqrt{  1 + 4\tau^2 + 9\tau^4 }\, d\tau \,.
 </div></details>
 </div>
 <div id="remark-closed" class="Remark">
-<details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 53</strong></summary><div>
+<details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 54</strong></summary><div>
 <p>We have the following basic facts:</p>
 <ol type="1">
 <li><p>If <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T\)</span>-periodic, then a point moving around <span class="math inline">\(\gamma\)</span> returns to its starting point after time <span class="math inline">\(T\)</span>.</p>
@@ -1353,28 +1395,28 @@ By point 4 we can assume WLOG that <span class="math inline">\(k \geq 0\)</span>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../images/periodic_extension.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">The points <span class="math inline">\(t \in \mathbb{R}\)</span> and <span class="math inline">\(\tilde{t} \in [a,b]\)</span> from Point 3 in Remark <a href="chap_3.html#remark-closed">53</a>. In this skecth <span class="math inline">\(t = \tilde{t} + 3 T\)</span>, with <span class="math inline">\(T = b-a\)</span>.</figcaption>
+<figcaption class="figure-caption">The points <span class="math inline">\(t \in \mathbb{R}\)</span> and <span class="math inline">\(\tilde{t} \in [a,b]\)</span> from Point 3 in Remark <a href="chap_3.html#remark-closed">54</a>. In this skecth <span class="math inline">\(t = \tilde{t} + 3 T\)</span>, with <span class="math inline">\(T = b-a\)</span>.</figcaption>
 </figure>
 </div>
-<div id="Definition-54" class="Definition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 54</strong></summary><div>Let <span class="math inline">\(\gamma\)</span> be a closed curve. The <strong>period</strong> of <span class="math inline">\(\gamma\)</span> is the smallest <span class="math inline">\(T&gt;0\)</span> such that <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T\)</span>-periodic, that is <span class="math display">\[
+<div id="Definition-55" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 55</strong></summary><div>Let <span class="math inline">\(\gamma\)</span> be a closed curve. The <strong>period</strong> of <span class="math inline">\(\gamma\)</span> is the smallest <span class="math inline">\(T&gt;0\)</span> such that <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T\)</span>-periodic, that is <span class="math display">\[
 \mbox{Period of $\gamma$} := \min \{ T \, \colon \, T &gt; 0 \,, \,\, \gamma \, \mbox{ is T-periodic}    \} \,.
 \]</span><p></p>
 </div></details>
 </div>
 <p>We need to show that the above definition is well-posed, i.e., that there exists such smallest <span class="math inline">\(T&gt;0\)</span>.</p>
-<div id="Proposition-55" class="Proposition">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 55</strong></summary><div>Let <span class="math inline">\(\gamma\)</span> be a closed curve. Then there exists a smallest <span class="math inline">\(T&gt;0\)</span> such that <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T\)</span>-periodic. In other words, the set <span class="math display">\[
+<div id="Proposition-56" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 56</strong></summary><div>Let <span class="math inline">\(\gamma\)</span> be a closed curve. Then there exists a smallest <span class="math inline">\(T&gt;0\)</span> such that <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T\)</span>-periodic. In other words, the set <span class="math display">\[
 S := \{ T  \, \colon \, T &gt; 0 \,, \,\, \gamma\, \mbox{ is T-periodic} \} \,.
 \]</span> admits positive minumum <span class="math display">\[
 P = \min S \,, \quad P &gt; 0 \,.
 \]</span><p></p>
 </div></details>
 </div>
-<div id="Proof*-10" class="Proof">
+<div id="Proof*-11" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>We make 3 observations about the set <span class="math inline">\(S\)</span>:<p></p>
 <ul>
-<li>Since <span class="math inline">\(\gamma\)</span> is closed, we have that <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T\)</span>-periodic for some <span class="math inline">\(T \neq 0\)</span>. By Remark <a href="chap_3.html#remark-closed">53</a> Point 5, we know that <span class="math inline">\(T\)</span> can be chosen such that <span class="math inline">\(T&gt;0\)</span>. Therefore <span class="math display">\[
+<li>Since <span class="math inline">\(\gamma\)</span> is closed, we have that <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T\)</span>-periodic for some <span class="math inline">\(T \neq 0\)</span>. By Remark <a href="chap_3.html#remark-closed">54</a> Point 5, we know that <span class="math inline">\(T\)</span> can be chosen such that <span class="math inline">\(T&gt;0\)</span>. Therefore <span class="math display">\[
 S \neq \emptyset \,.
 \]</span></li>
 <li><span class="math inline">\(S\)</span> is a closed set. Indeed, assume that <span class="math display">\[
@@ -1386,9 +1428,12 @@ S \neq \emptyset \,.
 \]</span> showing that <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T\)</span>-periodic. Thus <span class="math inline">\(T \in S\)</span> showing that <span class="math inline">\(S\)</span> is closed.</li>
 <li><span class="math inline">\(S\)</span> is bounded below by <span class="math inline">\(0\)</span>. This is by definition of <span class="math inline">\(S\)</span>.</li>
 </ul>
-<p>Thus, by standard real analysis results, the set <span class="math inline">\(S\)</span> admits a minimum <span class="math inline">\(P\)</span>. We claim that <span class="math display">\[
+<p>Thus, by standard real analysis results, the set <span class="math inline">\(S\)</span> admits a minimum <span class="math inline">\(P\)</span>. The proof is concluded if we show that:</p>
+<p><em>Claim</em>. We have <span class="math display">\[
 P &gt; 0  \,.
-\]</span> Indeed, suppose by contradiction that <span class="math display">\[
+\]</span></p>
+<p><em>Proof of claim.</em><br>
+Suppose by contradiction that <span class="math display">\[
 P = 0 \,.
 \]</span> By definition of minimum there exists a minimizing sequence, that is, a sequence <span class="math display">\[
 \{ T_n \}_{n \in \mathbb{N}} \subset S   \,, \quad T_n \to P = 0 \,.
@@ -1398,7 +1443,20 @@ t_n \in [0,T_n] \,, \quad k_n \in \mathbb{Z}\,,
 t = t_n + k_n T_n \,,
 \]</span> as shown in the figure below. Indeed, it is sufficient to define <span class="math display">\[
 k_n := \biggl\lfloor \frac{t}{T_n}  \biggr\rfloor \in \mathbb{Z}\,, \quad t_n := t - k_n T_n \,.
-\]</span></p>
+\]</span> Since <span class="math inline">\(T_n \in S\)</span>, we know that <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T_n\)</span>-periodic. Remark <a href="chap_3.html#remark-closed">54</a> Point 6 implies that <span class="math inline">\(\gamma\)</span> is also <span class="math inline">\(k_nT_n\)</span>-periodic, since <span class="math inline">\(k_n \in \mathbb{Z}\)</span>. Thus <span class="math display">\[\begin{align}
+\gamma(t) &amp; = \gamma( t_n + k_nT_n )   &amp;   \mbox{(definition of $t_n$)} \\
+       &amp; = \gamma(t_n)             &amp; \mbox{(by $k_nT_n$-periodicity)} \,.
+\end{align}\]</span> Therefore <span id="eq-period-exists-1"><span class="math display">\[
+\gamma(t) = \gamma(t_n) \,, \quad \forall \, n \in \mathbb{N}\,.
+\tag{3.23}\]</span></span> Also notice that <span class="math display">\[
+0 \leq t_n \leq T_n \,, \quad \forall \, n \in \mathbb{N}\,.
+\]</span> by construction. Since <span class="math inline">\(T_n \to 0\)</span>, by the Squeeze Theorem we conclude that <span class="math display">\[
+t_n \to 0  \quad \mbox{as } \, n \to \infty \,.
+\]</span> Using the continuity of <span class="math inline">\(\gamma\)</span>, we can pass to the limit in (<a href="#eq-period-exists-1"><span>3.23</span></a>) and obtain <span class="math display">\[
+\gamma(t) = \lim_{n \to \infty} \gamma(t_n) = \gamma(0) \,.
+\]</span> Since <span class="math inline">\(t \in \mathbb{R}\)</span> was arbitrary, we have shown that <span class="math display">\[
+\gamma(t) =  \gamma(0) \,, \quad \forall \, t \in \mathbb{R}\,.
+\]</span> Therefore <span class="math inline">\(\gamma\)</span> is constant. This is a contradiction, as we were assuming that <span class="math inline">\(\gamma\)</span> is closed, and, in particular, not constant.</p>
 </div></details>
 </div>
 <div class="quarto-figure quarto-figure-center">
@@ -1407,32 +1465,52 @@ k_n := \biggl\lfloor \frac{t}{T_n}  \biggr\rfloor \in \mathbb{Z}\,, \quad t_n :=
 <figcaption class="figure-caption">For each <span class="math inline">\(t \in \mathbb{R}\)</span> there exist unique <span class="math inline">\(k_n \in \mathbb{Z}\)</span> and <span class="math inline">\(\tilde{t}_n \in [0,T_n]\)</span> such that <span class="math inline">\(t=\tilde{t} + k_n T_n\)</span>. In this skecth <span class="math inline">\(k_n =3\)</span>.</figcaption>
 </figure>
 </div>
-<div id="Example-56" class="Example">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 56</strong></summary><div>of perdiodic curves. Will’s examples.<p></p>
+<div id="Example-57" class="Example">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 57</strong></summary><div>
+<p>Some examples of closed curves:</p>
+<ul>
+<li><p>The circumference <span class="math display">\[
+\gamma(t) = (\cos(t), \sin(t)) \,, \quad t \in \mathbb{R}
+\]</span> is not costant and is <span class="math inline">\(2\pi\)</span>-periodic. Thus <span class="math inline">\(\gamma\)</span> is closed. The period of <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(2 \pi\)</span>.</p></li>
+<li><p>The Lemniscate <span class="math display">\[
+\gamma(t) = (\sin(t), \sin(t) \cos(t)) \,, \quad t \in \mathbb{R}
+\]</span> is not costant and is <span class="math inline">\(2\pi\)</span>-periodic. Thus <span class="math inline">\(\gamma\)</span> is closed. The period of <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(2 \pi\)</span>.</p></li>
+<li><p>Consider again the curve from Example <a href="chap_3.html#example-curve-loop">51</a> <span class="math display">\[
+\gamma(t) := (t^2-1, t^3 -t) \,, \quad \, t \in \mathbb{R}\,.
+\]</span> According to our definition, <span class="math inline">\(\gamma\)</span> is not periodic. Therefore <span class="math inline">\(\gamma\)</span> is not closed. However there is a point of <strong>self-intersection</strong> on <span class="math inline">\(\gamma\)</span>, namely <span class="math display">\[
+p := (0,0) \,,
+\]</span> for which we have <span class="math display">\[
+p = \gamma(-1) = \gamma(1) \,.
+\]</span></p></li>
+</ul>
 </div></details>
 </div>
-<p>We conclude this section with the definition of <strong>self-intersecting</strong> curve.</p>
-<div id="Definition-57" class="Definition">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 57</strong></summary><div>
+<p>The last curve in the above example motivates the definition of <strong>self-intersecting</strong> curve.</p>
+<div id="self-intersecting-curve" class="Definition" title="Self-intersecting curve">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 58: </strong>Self-intersecting curve</summary><div>
 <p>Let <span class="math inline">\(\gamma\ \colon \mathbb{R}\to \mathbb{R}^n\)</span> be a closed curve. We say that <span class="math inline">\(\gamma\)</span> is <strong>self-intersecting</strong> at a point <span class="math inline">\(p\)</span> on the curve if</p>
 <ol type="1">
 <li>There exist two times <span class="math inline">\(a \neq b\)</span> such that <span class="math display">\[
-\gamma(a)=\gamma(b) = p \,,
+p = \gamma(a)=\gamma(b)  \,,
 \]</span></li>
 <li>If <span class="math inline">\(\gamma\)</span> is closed with period <span class="math inline">\(T\)</span>, then <span class="math inline">\(b-a\)</span> is not an integer multiple of <span class="math inline">\(T\)</span>.</li>
 </ol>
 </div></details>
 </div>
-<div id="Remark-58" class="Remark">
-<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 58</strong></summary><div>The second condition in the above definition is important: if we did not require it, then any closed curve would be self-intersecting. Indeed consider a closed curve <span class="math inline">\(\gamma\ \colon \mathbb{R}\to \mathbb{R}^n\)</span> and let <span class="math inline">\(T\)</span> be its period. Then by Point 6 in Remark <a href="chap_3.html#remark-closed">53</a> we have <span class="math display">\[
+<div id="Remark-59" class="Remark">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 59</strong></summary><div>The second condition in the above definition is important: if we did not require it, then any closed curve would be self-intersecting. Indeed consider a closed curve <span class="math inline">\(\gamma\ \colon \mathbb{R}\to \mathbb{R}^n\)</span> and let <span class="math inline">\(T\)</span> be its period. Then by Point 6 in Remark <a href="chap_3.html#remark-closed">54</a> we have <span class="math display">\[
 \gamma(a) = \gamma(a + kT) \,, \quad \forall \ a \in \mathbb{R}, \, k \in \mathbb{Z}\,.
 \]</span> Therefore every point <span class="math inline">\(\gamma(a)\)</span> would be of self-intersection. Point 2 in the above definition rules this example out. Indeed set <span class="math inline">\(b:=a + kT\)</span>, then <span class="math display">\[
 b - a = k T \,,
 \]</span> meaning that <span class="math inline">\(b-a\)</span> is an integer multiple of <span class="math inline">\(T\)</span>.<p></p>
 </div></details>
 </div>
+<div id="Example-60" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 60</strong></summary><div>Let us go back to the curve<p></p>
+</div></details>
+</div>
 <div id="the-limaçon" class="Example" title="The Limaçon">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 59: </strong>The Limaçon</summary><div>DO<p></p>
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 61: </strong>The Limaçon</summary><div>DO<p></p>
 </div></details>
 </div>
 <p>Do example</p>

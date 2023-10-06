@@ -115,46 +115,52 @@
 
  [**Definition 3.41**](#regular-points): Regular points\Pageref{regular-points}
 
- [**Example 3.42**](#example-stopping-curve): A curve with one singular point\Pageref{example-stopping-curve}
-
- [**Proposition 3.43**](#proposition-regularity-invariant): Regularity is invariant for reparametrization\Pageref{proposition-regularity-invariant}
+ [**Lemma 3.42**](#lemma-diffeomorphism)\Pageref{lemma-diffeomorphism}
 
  [**Proof**](#Proof*-3.7)\Pageref{Proof*-3.7}
 
- [**Example 3.44**](#Example-3.44)\Pageref{Example-3.44}
+ [**Example 3.43**](#example-stopping-curve): A curve with one singular point\Pageref{example-stopping-curve}
 
- [**Definition 3.45**](#unit-speed-reparametrization): Unit speed reparametrization\Pageref{unit-speed-reparametrization}
-
- [**Theorem 3.46**](#theorem-regular-unit-speed): Existence of unit speed reparametrization\Pageref{theorem-regular-unit-speed}
+ [**Proposition 3.44**](#proposition-regularity-invariant): Regularity is invariant for reparametrization\Pageref{proposition-regularity-invariant}
 
  [**Proof**](#Proof*-3.8)\Pageref{Proof*-3.8}
 
- [**Proposition 3.47**](#proposition-arc-length-unit): Arc-length and unit speed parametrization\Pageref{proposition-arc-length-unit}
+ [**Example 3.45**](#Example-3.45)\Pageref{Example-3.45}
+
+ [**Definition 3.46**](#unit-speed-reparametrization): Unit speed reparametrization\Pageref{unit-speed-reparametrization}
+
+ [**Theorem 3.47**](#theorem-regular-unit-speed): Existence of unit speed reparametrization\Pageref{theorem-regular-unit-speed}
 
  [**Proof**](#Proof*-3.9)\Pageref{Proof*-3.9}
 
- [**Remark 3.48**](#Remark-3.48)\Pageref{Remark-3.48}
-
- [**Example 3.49**](#twisted-cubic): Twisted cubic\Pageref{twisted-cubic}
-
- [**Example 3.50**](#Example-3.50)\Pageref{Example-3.50}
-
- [**Definition 3.51**](#periodic-curve): Periodic curve\Pageref{periodic-curve}
-
- [**Definition 3.52**](#closed-curve): Closed curve\Pageref{closed-curve}
-
- [**Remark 3.53**](#remark-closed)\Pageref{remark-closed}
-
- [**Definition 3.54**](#Definition-3.54)\Pageref{Definition-3.54}
-
- [**Proposition 3.55**](#Proposition-3.55)\Pageref{Proposition-3.55}
+ [**Proposition 3.48**](#proposition-arc-length-unit): Arc-length and unit speed reparametrization\Pageref{proposition-arc-length-unit}
 
  [**Proof**](#Proof*-3.10)\Pageref{Proof*-3.10}
 
- [**Example 3.56**](#Example-3.56)\Pageref{Example-3.56}
+ [**Remark 3.49**](#Remark-3.49)\Pageref{Remark-3.49}
 
- [**Definition 3.57**](#Definition-3.57)\Pageref{Definition-3.57}
+ [**Example 3.50**](#twisted-cubic): Twisted cubic\Pageref{twisted-cubic}
 
- [**Remark 3.58**](#Remark-3.58)\Pageref{Remark-3.58}
+ [**Example 3.51**](#example-curve-loop)\Pageref{example-curve-loop}
 
- [**Example 3.59**](#the-limaçon): The Limaçon\Pageref{the-limaçon}
+ [**Definition 3.52**](#periodic-curve): Periodic curve\Pageref{periodic-curve}
+
+ [**Definition 3.53**](#closed-curve): Closed curve\Pageref{closed-curve}
+
+ [**Remark 3.54**](#remark-closed)\Pageref{remark-closed}
+
+ [**Definition 3.55**](#Definition-3.55)\Pageref{Definition-3.55}
+
+ [**Proposition 3.56**](#Proposition-3.56)\Pageref{Proposition-3.56}
+
+ [**Proof**](#Proof*-3.11)\Pageref{Proof*-3.11}
+
+ [**Example 3.57**](#Example-3.57)\Pageref{Example-3.57}
+
+ [**Definition 3.58**](#self-intersecting-curve): Self-intersecting curve\Pageref{self-intersecting-curve}
+
+ [**Remark 3.59**](#Remark-3.59)\Pageref{Remark-3.59}
+
+ [**Example 3.60**](#Example-3.60)\Pageref{Example-3.60}
+
+ [**Example 3.61**](#the-limaçon): The Limaçon\Pageref{the-limaçon}
