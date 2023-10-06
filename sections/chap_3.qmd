@@ -1209,7 +1209,7 @@ As we have observed in the Examples of @sec-introduction, there is in general no
 
 Let $\f \ \colon (a,b) \to (\tilde{a},\tilde{b})$. We say that $\f$ is a **diffeomorphism** if the following conditions are satisfied:
 
-1. $\f$ is invertible, with inverse $\f^{-1} \ \colon (a',b') \to (a,b)$. Thus
+1. $\f$ is invertible, with inverse $\f^{-1} \ \colon (\tilde{a},\tilde{b}) \to (a,b)$. Thus
 $$
 \f^{-1} \circ \f =   \f \circ \f^{-1} = \id \,,
 $$
@@ -1415,9 +1415,13 @@ $$
 $$
 We will see that the above parametrizations are **not** equivalent. This is intuitively clear, since the change of variables map should be 
 $$
-\f(t) = t^3 \,,
+\f(t) = t^3 \,.
 $$
-which is not invertible for $t = 0$.  
+This is smooth and invertible, with inverse 
+$$
+\f^{-1}(t) = \sqrt[3]{x} \,.
+$$
+However $\f^{-1}$ is not smooth at $t=0$, and thus $\f$ is not a diffeomorphism.  
 Let us look at the derivatives:
 $$
 \dot \g (t) = (1,2t) \,, \quad \dot \eta (t)= (3t^2,6t^5) \,.
@@ -1872,24 +1876,37 @@ Note that every curve is $0$-periodic. Therefore to define a closed curve we nee
 ::: Definition
 ### Closed curve
 
-Let $\g \ \colon \R \to \R^n$ be a parametrized curve. We say that $\g$ is closed if:
+Let $\g \ \colon \R \to \R^n$ be a parametrized curve. We say that $\g$ is **closed** if:
 
 - $\g$ is not constant,
-- $\g$ is **T-periodic** for some $T \neq 0$.
+- $\g$ is T-periodic for some $T \neq 0$.
 
 :::
 
 
-::: Remark
+::: {.Remark  #remark-closed}
+
 We have the following basic facts:
 
-- If $\g$ is $T$-periodic, then a point moving around $\g$ returns to its starting point after time $T$.
-- If $\g$ is $T$-periodic, then $\g$ is determined by its restriction to any interval of length $|T|$.
-- Conversely, suppose that $\g \ \colon [a,b] \to \R^n$ satisfies 
+1. If $\g$ is $T$-periodic, then a point moving around $\g$ returns to its starting point after time $T$.
+
+     >This is exactly the definition of $T$-periodicity. Indeed let $p = \g(a)$ be the point in question, then
+     $$
+     \g(a + T) = \g(a) = p 
+     $$ 
+     by periodicity. Thus $\g$ returns to $p$ after time $T$.
+
+2. If $\g$ is $T$-periodic, then $\g$ is determined by its restriction to any interval of length $|T|$.
+
+3. Conversely, suppose that $\g \ \colon [a,b] \to \R^n$ satisfies 
 $$
 \g(a) = \g(b) \,, \quad \frac{d^k \g}{dt^k} (a) =\frac{d^k \g}{dt^k}  (b)  
 $$
-for all $k \in \N$. Then $\g$ can be extended to the whole $\R$ by defining the curve $\tg \ \colon \R \to \R^n$ with
+for all $k \in \N$. Set
+$$
+T:=b-a \,.
+$$
+Then $\g$ can be extended to a $T$-periodic curve $\tg \ \colon \R \to \R^n$ defined by
 $$
 \tg (t) := \g (\tilde{t}) \,, \quad  \tilde{t}:= t - \biggl\lfloor \frac{t-a}{b-a}  \biggr\rfloor (b-a)  \,, \quad \forall \, t \in \R \,.
 $$
@@ -1897,11 +1914,13 @@ The above means that $\tg(t)$ is defined by $\g(\tilde{t})$ where $\tilde{t}$ is
 $$
 t = \tilde{t} + k(b-a) 
 $$
-for some $k \in \N$, see figure below. In this way $\tg$ is $T$-periodic with 
+with $k \in \Z$ defined by
 $$
-T := b-a \,. 
+k := \biggl\lfloor \frac{t-a}{b-a}  \biggr\rfloor \,,
 $$
-- If a curve $\g$ has period $T$, then it has also period $-T$.
+see figure below. In this way $\tg$ is $T$-periodic.
+
+4. If $\g$ is $T$-periodic, then it is also $(-T)$-periodic.
      
      >Because if $\g$ is $T$-periodic then 
      $$
@@ -1909,48 +1928,73 @@ $$
      $$
      where in the first equality we used the trivial identity $t = (t-T) + T$, while in the second equality we used $T$-periodicity of $\g$.
 
-- If $\g$ is $T$-periodic for some $T \neq 0$, then it is $T$-periodic for some $T>0$.
+5. If $\g$ is $T$-periodic for some $T \neq 0$, then it is $T$-periodic for some $T>0$.
 
-     > This is an immediate consequence of the above point.
+     > This is an immediate consequence of Point 4.
 
+6. If $\g$ is $T$-periodic the $\g$ is $(kT)$-periodic, for all $k \in \Z$.
+
+     > By point 4 we can assume WLOG that $k \geq 0$. We proceed by induction:   
+     > - The statement is true for $k=1$, since $\g$ is $T$-periodic. 
+     > - Assume now that $\g$ is $kT$-periodic. Then 
+     \begin{align}
+     \g(t + (k+1) T) & = \g ( (t+T)  + kT ) & \\
+                     & = \g (t + T)   &  \mbox{(by $kT$-periodicity)} \\  
+                     & = \g (t)   &  \mbox{(by $T$-periodicity)} 
+     \end{align}
+     showing that $\g$ is $(k+1)T$-periodic.  
+
+     >By induction we conclude that $\g$ is $(kT)$-periodic for all $k \in \N$.
+
+
+7. If $\g$ is $T_1$-periodic and $T_2$-periodic then $\g$ is $(k_1T_1 + k_2 T_2)$-periodic, for all $k_1, k_2 \in \Z$.
+
+     > By Point 6 we know that $\g$ is $k_1T_1$-periodic and $k_2T_2$-periodic. Set $T:=k_1T_1 + k_2T_2$. We have
+     \begin{align}
+     \g(t + T) & = \g ( (t+ k_1T_1)  + k_2T_2 ) & \\
+                     & = \g (t + k_1T_1)  &  \mbox{(by $k_2T_2$-periodicity)} \\  
+                     & = \g (t)  &  \mbox{(by $k_1T_1$-periodicity)} 
+     \end{align}
+     showing that $\g$ is $(k_1T_1 + k_2 T_2)$-periodic.
 
 :::
 
 
-![The points $t \in \R$ and $\tilde{t} \in [a,b]$. In this skecth $t = \tilde{t} + 3 T$, with $T = b-a$.](/images/periodic_extension.png){#fig-smooth-curve width=70%}
+![The points $t \in \R$ and $\tilde{t} \in [a,b]$ from Point 3 in Remark \ref{remark-closed}. In this skecth $t = \tilde{t} + 3 T$, with $T = b-a$.](/images/periodic_extension.png){width=70%}
 
 
 ::: Definition
 
-Let $\g$ be a closed curve. The **period** of $\g$ is the smallest positive number $T$ such that $\g$ is $T$-periodic.
-
+Let $\g$ be a closed curve. The **period** of $\g$ is the smallest $T>0$ such that $\g$ is $T$-periodic, that is
+$$
+\mbox{Period of $\g$} := \min \{ T \, \colon \, T > 0 \,, \,\, \gamma \, \mbox{ is T-periodic}    \} \,. 
+$$
 :::
 
 
-We need to show that the above definition is well-posed, i.e., that there exists such smallest $T$.
+We need to show that the above definition is well-posed, i.e., that there exists such smallest $T>0$.
 
 
 
 ::: Proposition
 
-Let $\g$ be a closed curve. Then there exists a smallest $T>0$ such that $\g$ is $T$-periodic.
-
+Let $\g$ be a closed curve. Then there exists a smallest $T>0$ such that $\g$ is $T$-periodic. In other words, the set 
+$$
+S := \{ T  \, \colon \, T > 0 \,, \,\, \g \, \mbox{ is T-periodic} \} \,.
+$$
+admits positive minumum 
+$$
+P = \min S \,, \quad P > 0 \,.
+$$
 :::
 
 
 ::: Proof
 
-Define the set
-$$
-S = \{ T  \, \colon \, T > 0 \,, \,\, \g \, \mbox{ is T-periodic} \} \,.
-$$
-Saying that there exists a smallest $T>0$ such that $\g$ is $T$-periodic is equivalent to saying that $S$ admits positive minimum, that is, 
-$$
-\min S = \bar{T} \,, \quad \bar{T} > 0 \,. 
-$$
+
 We make 3 observations about the set $S$:
 
-- Since $\g$ is closed, we have that $\g$ is $T$-periodic for some $T \neq 0$. By the above remark $T$ can be chosen such that $T>0$. Therefore 
+- Since $\g$ is closed, we have that $\g$ is $T$-periodic for some $T \neq 0$. By Remark \ref{remark-closed} Point 5, we know that $T$ can be chosen such that $T>0$. Therefore 
 $$
 S \neq \emptyset \,.
 $$
@@ -1958,35 +2002,56 @@ $$
 $$
 \{ T_n \}_{n \in \N} \subset S \,, \quad T_n \to T \,.
 $$
-For each fixed $n$ and $t \in \R$ we have
+As $T_n \in S$, we have that $\g$ is $T_n$-periodic. Then
 $$
-\g (t + T_n) = \g(t) \,,
+\g (t + T_n) = \g(t) \,, \quad \forall \, t \in \R \,,  \,\, n \in \N \,.
 $$
-since $\g$ is $T_n$-periodic, being $T_n \in S$. Taking the limit as $n \to \infty$ and using the continuity of $\g$ yields
+Taking the limit as $n \to \infty$ and using the continuity of $\g$ yields
 $$
-\g(t) = \lim_{n \to \infty} \ \g (t + T_n) = \g(t + T)
+\g(t) = \lim_{n \to \infty} \ \g (t + T_n) = \g(t + T) \,, \quad \forall \, t \in \R \,,
 $$
 showing that $\g$ is $T$-periodic. Thus $T \in S$ showing that $S$ is closed. 
-- $S$ is bounded below by $0$.
+- $S$ is bounded below by $0$. This is by definition of $S$.
 
-Therefore $S$ admits a minimum $\bar{T}$. We claim that
+Thus, by standard real analysis results, the set $S$ admits a minimum $P$. We claim that
 $$
-\bar{T} > 0  \,.
+P > 0  \,.
 $$
 Indeed, suppose by contradiction that
 $$
-\bar{T} = 0 \,.
+P = 0 \,.
 $$
 By definition of minimum there exists a minimizing sequence, that is, a sequence 
 $$
-\{ T_n \}_{n \in \N} \subset S   \,, \quad T_n \to \bar{T} = 0 \,.
+\{ T_n \}_{n \in \N} \subset S   \,, \quad T_n \to P = 0 \,.
 $$
-Since $T_n \in S$, by definition we have that $\g$ is $T_n$
+Fix $t \in \R$. Since $T_n > 0$, we can find unique 
+$$
+t_n \in [0,T_n] \,, \quad k_n \in \Z \,,
+$$
+such that 
+$$
+t = t_n + k_n T_n \,,
+$$
+as shown in the figure below. Indeed, it is sufficient to define
+$$
+k_n := \biggl\lfloor \frac{t}{T_n}  \biggr\rfloor \in \Z \,, \quad t_n := t - k_n T_n \,.
+$$
+:::
+
+
+![For each $t \in \R$ there exist unique $k_n \in \Z$ and $\tilde{t}_n \in [0,T_n]$ such that $t=\tilde{t} + k_n T_n$. In this skecth $k_n =3$.](/images/archimedean.png){width=70%}
+
+
+::: Example
+
+of perdiodic curves.  Will's examples. 
+
 :::
 
 
 
-We conclude with the definition of **self-intersecting** curve. 
+We conclude this section with the definition of **self-intersecting** curve. 
 
 ::: Definition
 
@@ -2002,7 +2067,7 @@ $$
 
 ::: Remark
 
-The second condition in the above definition is important: if we did not require it, then any closed curve would be self-intersecting. Indeed consider a closed curve $\g \ \colon \R \to \R^n$ and let $T$ be its period. Then by Point 5 in Remark \ref{remark-closed} we have
+The second condition in the above definition is important: if we did not require it, then any closed curve would be self-intersecting. Indeed consider a closed curve $\g \ \colon \R \to \R^n$ and let $T$ be its period. Then by Point 6 in Remark \ref{remark-closed} we have
 $$
 \g(a) = \g (a + kT) \,, \quad \forall \ a \in \R, \, k \in \Z \,. 
 $$ 

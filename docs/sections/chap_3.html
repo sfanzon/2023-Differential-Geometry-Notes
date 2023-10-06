@@ -66,39 +66,23 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
 .Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -106,7 +90,27 @@ ul.task-list li input[type="checkbox"] {
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -118,17 +122,13 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Goal {
+.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
 </style>
 
@@ -317,7 +317,7 @@ f(t) = \cos(t) , \,\, f(t) = \sin(t) \,, \,\, f(t) = e^t \,.
 \]</span><p></p>
 </div></details>
 </div>
-<p>In <a href="#fig-smooth-curve">Figure&nbsp;<span>3.7</span></a> we skectch a smooth and a non-smooth curve. Notice that the curve on the right is smooth, except for the point <span class="math inline">\(x\)</span>.</p>
+<p>In <a href="#fig-smooth-curve">Figure&nbsp;<span>3.1</span></a> we skectch a smooth and a non-smooth curve. Notice that the curve on the right is smooth, except for the point <span class="math inline">\(x\)</span>.</p>
 <div id="fig-smooth-curve" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../images/smooth_curve.png" class="img-fluid figure-img" style="width:70.0%"></p>
@@ -912,7 +912,7 @@ s(t) := \int_{t_0}^t \left\|   \dot\gamma(\tau)  \right\| \, d\tau  \,\, \implie
 <details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 34: </strong>Diffeomorphism</summary><div>
 <p>Let <span class="math inline">\(\phi\ \colon (a,b) \to (\tilde{a},\tilde{b})\)</span>. We say that <span class="math inline">\(\phi\)</span> is a <strong>diffeomorphism</strong> if the following conditions are satisfied:</p>
 <ol type="1">
-<li><span class="math inline">\(\phi\)</span> is invertible, with inverse <span class="math inline">\(\phi^{-1} \ \colon (a',b') \to (a,b)\)</span>. Thus <span class="math display">\[
+<li><span class="math inline">\(\phi\)</span> is invertible, with inverse <span class="math inline">\(\phi^{-1} \ \colon (\tilde{a},\tilde{b}) \to (a,b)\)</span>. Thus <span class="math display">\[
 \phi^{-1} \circ \phi=   \phi\circ \phi^{-1} = \mathop{\mathrm{Id}}\,,
 \]</span> where <span class="math inline">\(\mathop{\mathrm{Id}}\colon \mathbb{R}\to \mathbb{R}\)</span> is the identity map on <span class="math inline">\(\mathbb{R}\)</span>, that is, <span class="math display">\[
 \mathop{\mathrm{Id}}(t) = t \,, \quad \forall \, t \in \mathbb{R}\,.
@@ -1034,8 +1034,10 @@ s(t) := \int_{t_0}^t \left\|   \dot\gamma(\tau)  \right\| \, d\tau  \,\, \implie
 \gamma(t) = (t,t^2) \,, \quad
 \eta(t) = (t^3, t^6) \,.
 \]</span> We will see that the above parametrizations are <strong>not</strong> equivalent. This is intuitively clear, since the change of variables map should be <span class="math display">\[
-\phi(t) = t^3 \,,
-\]</span> which is not invertible for <span class="math inline">\(t = 0\)</span>.<br>
+\phi(t) = t^3 \,.
+\]</span> This is smooth and invertible, with inverse <span class="math display">\[
+\phi^{-1}(t) = \sqrt[3]{x} \,.
+\]</span> However <span class="math inline">\(\phi^{-1}\)</span> is not smooth at <span class="math inline">\(t=0\)</span>, and thus <span class="math inline">\(\phi\)</span> is not a diffeomorphism.<br>
 Let us look at the derivatives: <span class="math display">\[
 \dot \gamma(t) = (1,2t) \,, \quad \dot \eta (t)= (3t^2,6t^5) \,.
 \]</span> We notice a difference:</p>
@@ -1283,29 +1285,36 @@ s(t) = \int_{t_0}^t  \sqrt{  1 + 4\tau^2 + 9\tau^4 }\, d\tau \,.
 <p>Note that every curve is <span class="math inline">\(0\)</span>-periodic. Therefore to define a closed curve we need to rule out this case.</p>
 <div id="closed-curve" class="Definition" title="Closed curve">
 <details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 52: </strong>Closed curve</summary><div>
-<p>Let <span class="math inline">\(\gamma\ \colon \mathbb{R}\to \mathbb{R}^n\)</span> be a parametrized curve. We say that <span class="math inline">\(\gamma\)</span> is closed if:</p>
+<p>Let <span class="math inline">\(\gamma\ \colon \mathbb{R}\to \mathbb{R}^n\)</span> be a parametrized curve. We say that <span class="math inline">\(\gamma\)</span> is <strong>closed</strong> if:</p>
 <ul>
 <li><span class="math inline">\(\gamma\)</span> is not constant,</li>
-<li><span class="math inline">\(\gamma\)</span> is <strong>T-periodic</strong> for some <span class="math inline">\(T \neq 0\)</span>.</li>
+<li><span class="math inline">\(\gamma\)</span> is T-periodic for some <span class="math inline">\(T \neq 0\)</span>.</li>
 </ul>
 </div></details>
 </div>
-<div id="Remark-53" class="Remark">
+<div id="remark-closed" class="Remark">
 <details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 53</strong></summary><div>
 <p>We have the following basic facts:</p>
-<ul>
-<li><p>If <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T\)</span>-periodic, then a point moving around <span class="math inline">\(\gamma\)</span> returns to its starting point after time <span class="math inline">\(T\)</span>.</p></li>
+<ol type="1">
+<li><p>If <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T\)</span>-periodic, then a point moving around <span class="math inline">\(\gamma\)</span> returns to its starting point after time <span class="math inline">\(T\)</span>.</p>
+<blockquote class="blockquote">
+<p>This is exactly the definition of <span class="math inline">\(T\)</span>-periodicity. Indeed let <span class="math inline">\(p = \gamma(a)\)</span> be the point in question, then <span class="math display">\[
+\gamma(a + T) = \gamma(a) = p
+\]</span> by periodicity. Thus <span class="math inline">\(\gamma\)</span> returns to <span class="math inline">\(p\)</span> after time <span class="math inline">\(T\)</span>.</p>
+</blockquote></li>
 <li><p>If <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T\)</span>-periodic, then <span class="math inline">\(\gamma\)</span> is determined by its restriction to any interval of length <span class="math inline">\(|T|\)</span>.</p></li>
 <li><p>Conversely, suppose that <span class="math inline">\(\gamma\ \colon [a,b] \to \mathbb{R}^n\)</span> satisfies <span class="math display">\[
 \gamma(a) = \gamma(b) \,, \quad \frac{d^k \gamma}{dt^k} (a) =\frac{d^k \gamma}{dt^k}  (b)  
-\]</span> for all <span class="math inline">\(k \in \mathbb{N}\)</span>. Then <span class="math inline">\(\gamma\)</span> can be extended to the whole <span class="math inline">\(\mathbb{R}\)</span> by defining the curve <span class="math inline">\(\widetilde{\gamma}\ \colon \mathbb{R}\to \mathbb{R}^n\)</span> with <span class="math display">\[
+\]</span> for all <span class="math inline">\(k \in \mathbb{N}\)</span>. Set <span class="math display">\[
+T:=b-a \,.
+\]</span> Then <span class="math inline">\(\gamma\)</span> can be extended to a <span class="math inline">\(T\)</span>-periodic curve <span class="math inline">\(\widetilde{\gamma}\ \colon \mathbb{R}\to \mathbb{R}^n\)</span> defined by <span class="math display">\[
 \widetilde{\gamma}(t) := \gamma(\tilde{t}) \,, \quad  \tilde{t}:= t - \biggl\lfloor \frac{t-a}{b-a}  \biggr\rfloor (b-a)  \,, \quad \forall \, t \in \mathbb{R}\,.
 \]</span> The above means that <span class="math inline">\(\widetilde{\gamma}(t)\)</span> is defined by <span class="math inline">\(\gamma(\tilde{t})\)</span> where <span class="math inline">\(\tilde{t}\)</span> is the unique point in <span class="math inline">\([a,b]\)</span> such that <span class="math display">\[
 t = \tilde{t} + k(b-a)
-\]</span> for some <span class="math inline">\(k \in \mathbb{N}\)</span>, see figure below. In this way <span class="math inline">\(\widetilde{\gamma}\)</span> is <span class="math inline">\(T\)</span>-periodic with <span class="math display">\[
-T := b-a \,.
-\]</span></p></li>
-<li><p>If a curve <span class="math inline">\(\gamma\)</span> has period <span class="math inline">\(T\)</span>, then it has also period <span class="math inline">\(-T\)</span>.</p>
+\]</span> with <span class="math inline">\(k \in \mathbb{Z}\)</span> defined by <span class="math display">\[
+k := \biggl\lfloor \frac{t-a}{b-a}  \biggr\rfloor \,,
+\]</span> see figure below. In this way <span class="math inline">\(\widetilde{\gamma}\)</span> is <span class="math inline">\(T\)</span>-periodic.</p></li>
+<li><p>If <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T\)</span>-periodic, then it is also <span class="math inline">\((-T)\)</span>-periodic.</p>
 <blockquote class="blockquote">
 <p>Because if <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T\)</span>-periodic then <span class="math display">\[
 \gamma(t) = \gamma((t - T) + T ) = \gamma(t - T)
@@ -1313,57 +1322,98 @@ T := b-a \,.
 </blockquote></li>
 <li><p>If <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T\)</span>-periodic for some <span class="math inline">\(T \neq 0\)</span>, then it is <span class="math inline">\(T\)</span>-periodic for some <span class="math inline">\(T&gt;0\)</span>.</p>
 <blockquote class="blockquote">
-<p>This is an immediate consequence of the above point.</p>
+<p>This is an immediate consequence of Point 4.</p>
 </blockquote></li>
+<li><p>If <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T\)</span>-periodic the <span class="math inline">\(\gamma\)</span> is <span class="math inline">\((kT)\)</span>-periodic, for all <span class="math inline">\(k \in \mathbb{Z}\)</span>.</p>
+<blockquote class="blockquote">
+By point 4 we can assume WLOG that <span class="math inline">\(k \geq 0\)</span>. We proceed by induction:
+<ul>
+<li>The statement is true for <span class="math inline">\(k=1\)</span>, since <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T\)</span>-periodic.</li>
+<li>Assume now that <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(kT\)</span>-periodic. Then <span class="math display">\[\begin{align}
+\gamma(t + (k+1) T) &amp; = \gamma( (t+T)  + kT ) &amp; \\
+&amp; = \gamma(t + T)   &amp;  \mbox{(by $kT$-periodicity)} \\  
+&amp; = \gamma(t)   &amp;  \mbox{(by $T$-periodicity)}
+\end{align}\]</span> showing that <span class="math inline">\(\gamma\)</span> is <span class="math inline">\((k+1)T\)</span>-periodic.</li>
 </ul>
+</blockquote>
+<blockquote class="blockquote">
+<p>By induction we conclude that <span class="math inline">\(\gamma\)</span> is <span class="math inline">\((kT)\)</span>-periodic for all <span class="math inline">\(k \in \mathbb{N}\)</span>.</p>
+</blockquote></li>
+<li><p>If <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T_1\)</span>-periodic and <span class="math inline">\(T_2\)</span>-periodic then <span class="math inline">\(\gamma\)</span> is <span class="math inline">\((k_1T_1 + k_2 T_2)\)</span>-periodic, for all <span class="math inline">\(k_1, k_2 \in \mathbb{Z}\)</span>.</p>
+<blockquote class="blockquote">
+<p>By Point 6 we know that <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(k_1T_1\)</span>-periodic and <span class="math inline">\(k_2T_2\)</span>-periodic. Set <span class="math inline">\(T:=k_1T_1 + k_2T_2\)</span>. We have <span class="math display">\[\begin{align}
+\gamma(t + T) &amp; = \gamma( (t+ k_1T_1)  + k_2T_2 ) &amp; \\
+&amp; = \gamma(t + k_1T_1)  &amp;  \mbox{(by $k_2T_2$-periodicity)} \\  
+&amp; = \gamma(t)  &amp;  \mbox{(by $k_1T_1$-periodicity)}
+\end{align}\]</span> showing that <span class="math inline">\(\gamma\)</span> is <span class="math inline">\((k_1T_1 + k_2 T_2)\)</span>-periodic.</p>
+</blockquote></li>
+</ol>
 </div></details>
 </div>
-<div id="fig-smooth-curve" class="quarto-figure quarto-figure-center anchored">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../images/periodic_extension.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.7: The points <span class="math inline">\(t \in \mathbb{R}\)</span> and <span class="math inline">\(\tilde{t} \in [a,b]\)</span>. In this skecth <span class="math inline">\(t = \tilde{t} + 3 T\)</span>, with <span class="math inline">\(T = b-a\)</span>.</figcaption>
+<figcaption class="figure-caption">The points <span class="math inline">\(t \in \mathbb{R}\)</span> and <span class="math inline">\(\tilde{t} \in [a,b]\)</span> from Point 3 in Remark <a href="chap_3.html#remark-closed">53</a>. In this skecth <span class="math inline">\(t = \tilde{t} + 3 T\)</span>, with <span class="math inline">\(T = b-a\)</span>.</figcaption>
 </figure>
 </div>
 <div id="Definition-54" class="Definition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 54</strong></summary><div>Let <span class="math inline">\(\gamma\)</span> be a closed curve. The <strong>period</strong> of <span class="math inline">\(\gamma\)</span> is the smallest positive number <span class="math inline">\(T\)</span> such that <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T\)</span>-periodic.<p></p>
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 54</strong></summary><div>Let <span class="math inline">\(\gamma\)</span> be a closed curve. The <strong>period</strong> of <span class="math inline">\(\gamma\)</span> is the smallest <span class="math inline">\(T&gt;0\)</span> such that <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T\)</span>-periodic, that is <span class="math display">\[
+\mbox{Period of $\gamma$} := \min \{ T \, \colon \, T &gt; 0 \,, \,\, \gamma \, \mbox{ is T-periodic}    \} \,.
+\]</span><p></p>
 </div></details>
 </div>
-<p>We need to show that the above definition is well-posed, i.e., that there exists such smallest <span class="math inline">\(T\)</span>.</p>
+<p>We need to show that the above definition is well-posed, i.e., that there exists such smallest <span class="math inline">\(T&gt;0\)</span>.</p>
 <div id="Proposition-55" class="Proposition">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 55</strong></summary><div>Let <span class="math inline">\(\gamma\)</span> be a closed curve. Then there exists a smallest <span class="math inline">\(T&gt;0\)</span> such that <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T\)</span>-periodic.<p></p>
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 55</strong></summary><div>Let <span class="math inline">\(\gamma\)</span> be a closed curve. Then there exists a smallest <span class="math inline">\(T&gt;0\)</span> such that <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T\)</span>-periodic. In other words, the set <span class="math display">\[
+S := \{ T  \, \colon \, T &gt; 0 \,, \,\, \gamma\, \mbox{ is T-periodic} \} \,.
+\]</span> admits positive minumum <span class="math display">\[
+P = \min S \,, \quad P &gt; 0 \,.
+\]</span><p></p>
 </div></details>
 </div>
 <div id="Proof*-10" class="Proof">
-<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Define the set <span class="math display">\[
-S = \{ T  \, \colon \, T &gt; 0 \,, \,\, \gamma\, \mbox{ is T-periodic} \} \,.
-\]</span> Saying that there exists a smallest <span class="math inline">\(T&gt;0\)</span> such that <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T\)</span>-periodic is equivalent to saying that <span class="math inline">\(S\)</span> admits positive minimum, that is, <span class="math display">\[
-\min S = \bar{T} \,, \quad \bar{T} &gt; 0 \,.
-\]</span> We make 3 observations about the set <span class="math inline">\(S\)</span>:<p></p>
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>We make 3 observations about the set <span class="math inline">\(S\)</span>:<p></p>
 <ul>
-<li>Since <span class="math inline">\(\gamma\)</span> is closed, we have that <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T\)</span>-periodic for some <span class="math inline">\(T \neq 0\)</span>. By the above remark <span class="math inline">\(T\)</span> can be chosen such that <span class="math inline">\(T&gt;0\)</span>. Therefore <span class="math display">\[
+<li>Since <span class="math inline">\(\gamma\)</span> is closed, we have that <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T\)</span>-periodic for some <span class="math inline">\(T \neq 0\)</span>. By Remark <a href="chap_3.html#remark-closed">53</a> Point 5, we know that <span class="math inline">\(T\)</span> can be chosen such that <span class="math inline">\(T&gt;0\)</span>. Therefore <span class="math display">\[
 S \neq \emptyset \,.
 \]</span></li>
 <li><span class="math inline">\(S\)</span> is a closed set. Indeed, assume that <span class="math display">\[
 \{ T_n \}_{n \in \mathbb{N}} \subset S \,, \quad T_n \to T \,.
-\]</span> For each fixed <span class="math inline">\(n\)</span> and <span class="math inline">\(t \in \mathbb{R}\)</span> we have <span class="math display">\[
-\gamma(t + T_n) = \gamma(t) \,,
-\]</span> since <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T_n\)</span>-periodic, being <span class="math inline">\(T_n \in S\)</span>. Taking the limit as <span class="math inline">\(n \to \infty\)</span> and using the continuity of <span class="math inline">\(\gamma\)</span> yields <span class="math display">\[
-\gamma(t) = \lim_{n \to \infty} \ \gamma(t + T_n) = \gamma(t + T)
+\]</span> As <span class="math inline">\(T_n \in S\)</span>, we have that <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T_n\)</span>-periodic. Then <span class="math display">\[
+\gamma(t + T_n) = \gamma(t) \,, \quad \forall \, t \in \mathbb{R}\,,  \,\, n \in \mathbb{N}\,.
+\]</span> Taking the limit as <span class="math inline">\(n \to \infty\)</span> and using the continuity of <span class="math inline">\(\gamma\)</span> yields <span class="math display">\[
+\gamma(t) = \lim_{n \to \infty} \ \gamma(t + T_n) = \gamma(t + T) \,, \quad \forall \, t \in \mathbb{R}\,,
 \]</span> showing that <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T\)</span>-periodic. Thus <span class="math inline">\(T \in S\)</span> showing that <span class="math inline">\(S\)</span> is closed.</li>
-<li><span class="math inline">\(S\)</span> is bounded below by <span class="math inline">\(0\)</span>.</li>
+<li><span class="math inline">\(S\)</span> is bounded below by <span class="math inline">\(0\)</span>. This is by definition of <span class="math inline">\(S\)</span>.</li>
 </ul>
-<p>Therefore <span class="math inline">\(S\)</span> admits a minimum <span class="math inline">\(\bar{T}\)</span>. We claim that <span class="math display">\[
-\bar{T} &gt; 0  \,.
+<p>Thus, by standard real analysis results, the set <span class="math inline">\(S\)</span> admits a minimum <span class="math inline">\(P\)</span>. We claim that <span class="math display">\[
+P &gt; 0  \,.
 \]</span> Indeed, suppose by contradiction that <span class="math display">\[
-\bar{T} = 0 \,.
+P = 0 \,.
 \]</span> By definition of minimum there exists a minimizing sequence, that is, a sequence <span class="math display">\[
-\{ T_n \}_{n \in \mathbb{N}} \subset S   \,, \quad T_n \to \bar{T} = 0 \,.
-\]</span> Since <span class="math inline">\(T_n \in S\)</span>, by definition we have that <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T_n\)</span></p>
+\{ T_n \}_{n \in \mathbb{N}} \subset S   \,, \quad T_n \to P = 0 \,.
+\]</span> Fix <span class="math inline">\(t \in \mathbb{R}\)</span>. Since <span class="math inline">\(T_n &gt; 0\)</span>, we can find unique <span class="math display">\[
+t_n \in [0,T_n] \,, \quad k_n \in \mathbb{Z}\,,
+\]</span> such that <span class="math display">\[
+t = t_n + k_n T_n \,,
+\]</span> as shown in the figure below. Indeed, it is sufficient to define <span class="math display">\[
+k_n := \biggl\lfloor \frac{t}{T_n}  \biggr\rfloor \in \mathbb{Z}\,, \quad t_n := t - k_n T_n \,.
+\]</span></p>
 </div></details>
 </div>
-<p>We conclude with the definition of <strong>self-intersecting</strong> curve.</p>
-<div id="Definition-56" class="Definition">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 56</strong></summary><div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/archimedean.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">For each <span class="math inline">\(t \in \mathbb{R}\)</span> there exist unique <span class="math inline">\(k_n \in \mathbb{Z}\)</span> and <span class="math inline">\(\tilde{t}_n \in [0,T_n]\)</span> such that <span class="math inline">\(t=\tilde{t} + k_n T_n\)</span>. In this skecth <span class="math inline">\(k_n =3\)</span>.</figcaption>
+</figure>
+</div>
+<div id="Example-56" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 56</strong></summary><div>of perdiodic curves. Will’s examples.<p></p>
+</div></details>
+</div>
+<p>We conclude this section with the definition of <strong>self-intersecting</strong> curve.</p>
+<div id="Definition-57" class="Definition">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 57</strong></summary><div>
 <p>Let <span class="math inline">\(\gamma\ \colon \mathbb{R}\to \mathbb{R}^n\)</span> be a closed curve. We say that <span class="math inline">\(\gamma\)</span> is <strong>self-intersecting</strong> at a point <span class="math inline">\(p\)</span> on the curve if</p>
 <ol type="1">
 <li>There exist two times <span class="math inline">\(a \neq b\)</span> such that <span class="math display">\[
@@ -1373,8 +1423,8 @@ S \neq \emptyset \,.
 </ol>
 </div></details>
 </div>
-<div id="Remark-57" class="Remark">
-<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 57</strong></summary><div>The second condition in the above definition is important: if we did not require it, then any closed curve would be self-intersecting. Indeed consider a closed curve <span class="math inline">\(\gamma\ \colon \mathbb{R}\to \mathbb{R}^n\)</span> and let <span class="math inline">\(T\)</span> be its period. Then by Point 5 in Remark <span class="math inline">\(\ref{remark-closed}\)</span> we have <span class="math display">\[
+<div id="Remark-58" class="Remark">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 58</strong></summary><div>The second condition in the above definition is important: if we did not require it, then any closed curve would be self-intersecting. Indeed consider a closed curve <span class="math inline">\(\gamma\ \colon \mathbb{R}\to \mathbb{R}^n\)</span> and let <span class="math inline">\(T\)</span> be its period. Then by Point 6 in Remark <a href="chap_3.html#remark-closed">53</a> we have <span class="math display">\[
 \gamma(a) = \gamma(a + kT) \,, \quad \forall \ a \in \mathbb{R}, \, k \in \mathbb{Z}\,.
 \]</span> Therefore every point <span class="math inline">\(\gamma(a)\)</span> would be of self-intersection. Point 2 in the above definition rules this example out. Indeed set <span class="math inline">\(b:=a + kT\)</span>, then <span class="math display">\[
 b - a = k T \,,
@@ -1382,7 +1432,7 @@ b - a = k T \,,
 </div></details>
 </div>
 <div id="the-limaçon" class="Example" title="The Limaçon">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 58: </strong>The Limaçon</summary><div>DO<p></p>
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 59: </strong>The Limaçon</summary><div>DO<p></p>
 </div></details>
 </div>
 <p>Do example</p>
