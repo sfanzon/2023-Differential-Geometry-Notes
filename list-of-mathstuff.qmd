@@ -144,3 +144,15 @@
  [**Definition 3.52**](#closed-curve): Closed curve\Pageref{closed-curve}
 
  [**Remark 3.53**](#Remark-3.53)\Pageref{Remark-3.53}
+
+ [**Definition 3.54**](#Definition-3.54)\Pageref{Definition-3.54}
+
+ [**Proposition 3.55**](#Proposition-3.55)\Pageref{Proposition-3.55}
+
+ [**Proof**](#Proof*-3.10)\Pageref{Proof*-3.10}
+
+ [**Definition 3.56**](#Definition-3.56)\Pageref{Definition-3.56}
+
+ [**Remark 3.57**](#Remark-3.57)\Pageref{Remark-3.57}
+
+ [**Example 3.58**](#the-limaçon): The Limaçon\Pageref{the-limaçon}

@@ -1920,6 +1920,123 @@ $$
 ![The points $t \in \R$ and $\tilde{t} \in [a,b]$. In this skecth $t = \tilde{t} + 3 T$, with $T = b-a$.](/images/periodic_extension.png){#fig-smooth-curve width=70%}
 
 
+::: Definition
+
+Let $\g$ be a closed curve. The **period** of $\g$ is the smallest positive number $T$ such that $\g$ is $T$-periodic.
+
+:::
+
+
+We need to show that the above definition is well-posed, i.e., that there exists such smallest $T$.
+
+
+
+::: Proposition
+
+Let $\g$ be a closed curve. Then there exists a smallest $T>0$ such that $\g$ is $T$-periodic.
+
+:::
+
+
+::: Proof
+
+Define the set
+$$
+S = \{ T  \, \colon \, T > 0 \,, \,\, \g \, \mbox{ is T-periodic} \} \,.
+$$
+Saying that there exists a smallest $T>0$ such that $\g$ is $T$-periodic is equivalent to saying that $S$ admits positive minimum, that is, 
+$$
+\min S = \bar{T} \,, \quad \bar{T} > 0 \,. 
+$$
+We make 3 observations about the set $S$:
+
+- Since $\g$ is closed, we have that $\g$ is $T$-periodic for some $T \neq 0$. By the above remark $T$ can be chosen such that $T>0$. Therefore 
+$$
+S \neq \emptyset \,.
+$$
+- $S$ is a closed set. Indeed, assume that 
+$$
+\{ T_n \}_{n \in \N} \subset S \,, \quad T_n \to T \,.
+$$
+For each fixed $n$ and $t \in \R$ we have
+$$
+\g (t + T_n) = \g(t) \,,
+$$
+since $\g$ is $T_n$-periodic, being $T_n \in S$. Taking the limit as $n \to \infty$ and using the continuity of $\g$ yields
+$$
+\g(t) = \lim_{n \to \infty} \ \g (t + T_n) = \g(t + T)
+$$
+showing that $\g$ is $T$-periodic. Thus $T \in S$ showing that $S$ is closed. 
+- $S$ is bounded below by $0$.
+
+Therefore $S$ admits a minimum $\bar{T}$. We claim that
+$$
+\bar{T} > 0  \,.
+$$
+Indeed, suppose by contradiction that
+$$
+\bar{T} = 0 \,.
+$$
+By definition of minimum there exists a minimizing sequence, that is, a sequence 
+$$
+\{ T_n \}_{n \in \N} \subset S   \,, \quad T_n \to \bar{T} = 0 \,.
+$$
+Since $T_n \in S$, by definition we have that $\g$ is $T_n$
+:::
+
+
+
+We conclude with the definition of **self-intersecting** curve. 
+
+::: Definition
+
+Let $\g \ \colon \R \to \R^n$ be a closed curve. We say that $\g$ is **self-intersecting** at a point $p$ on the curve if
+
+1. There exist two times $a \neq b$ such that 
+$$
+\g(a)=\g(b) = p \,,
+$$
+2. If $\g$ is closed with period $T$, then $b-a$ is not an integer multiple of $T$.
+
+:::
+
+::: Remark
+
+The second condition in the above definition is important: if we did not require it, then any closed curve would be self-intersecting. Indeed consider a closed curve $\g \ \colon \R \to \R^n$ and let $T$ be its period. Then by Point 5 in Remark \ref{remark-closed} we have
+$$
+\g(a) = \g (a + kT) \,, \quad \forall \ a \in \R, \, k \in \Z \,. 
+$$ 
+Therefore every point $\g(a)$ would be of self-intersection. Point 2 in the above definition rules this example out. Indeed set $b:=a + kT$, then
+$$
+b - a = k T \,,
+$$
+meaning that $b-a$ is an integer multiple of $T$.
+
+:::
+
+::: Example
+### The Limaçon
+
+DO
+
+:::
+
+
+Do example
+
+Rename points remark
+
+add remark on periodicity integer
+
+add examples by will
+
+finish proof of proposition
+
+
+
+
+
+
 
 
 ## Vector product in $\R^3$

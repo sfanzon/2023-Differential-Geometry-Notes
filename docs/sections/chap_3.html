@@ -66,11 +66,19 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
-.Proposition {
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -78,25 +86,25 @@ ul.task-list li input[type="checkbox"] {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .DONE {
   --color1: #cce7b1;
   --color2: #86b754;
-}
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
 }
 .Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
 }
 .Important {
   --color1: #f4cce0;
@@ -106,27 +114,19 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
 }
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
 .Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Theorem {
+.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Conjecture {
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -1324,6 +1324,72 @@ T := b-a \,.
 <figcaption class="figure-caption">Figure&nbsp;3.7: The points <span class="math inline">\(t \in \mathbb{R}\)</span> and <span class="math inline">\(\tilde{t} \in [a,b]\)</span>. In this skecth <span class="math inline">\(t = \tilde{t} + 3 T\)</span>, with <span class="math inline">\(T = b-a\)</span>.</figcaption>
 </figure>
 </div>
+<div id="Definition-54" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 54</strong></summary><div>Let <span class="math inline">\(\gamma\)</span> be a closed curve. The <strong>period</strong> of <span class="math inline">\(\gamma\)</span> is the smallest positive number <span class="math inline">\(T\)</span> such that <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T\)</span>-periodic.<p></p>
+</div></details>
+</div>
+<p>We need to show that the above definition is well-posed, i.e., that there exists such smallest <span class="math inline">\(T\)</span>.</p>
+<div id="Proposition-55" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 55</strong></summary><div>Let <span class="math inline">\(\gamma\)</span> be a closed curve. Then there exists a smallest <span class="math inline">\(T&gt;0\)</span> such that <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T\)</span>-periodic.<p></p>
+</div></details>
+</div>
+<div id="Proof*-10" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Define the set <span class="math display">\[
+S = \{ T  \, \colon \, T &gt; 0 \,, \,\, \gamma\, \mbox{ is T-periodic} \} \,.
+\]</span> Saying that there exists a smallest <span class="math inline">\(T&gt;0\)</span> such that <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T\)</span>-periodic is equivalent to saying that <span class="math inline">\(S\)</span> admits positive minimum, that is, <span class="math display">\[
+\min S = \bar{T} \,, \quad \bar{T} &gt; 0 \,.
+\]</span> We make 3 observations about the set <span class="math inline">\(S\)</span>:<p></p>
+<ul>
+<li>Since <span class="math inline">\(\gamma\)</span> is closed, we have that <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T\)</span>-periodic for some <span class="math inline">\(T \neq 0\)</span>. By the above remark <span class="math inline">\(T\)</span> can be chosen such that <span class="math inline">\(T&gt;0\)</span>. Therefore <span class="math display">\[
+S \neq \emptyset \,.
+\]</span></li>
+<li><span class="math inline">\(S\)</span> is a closed set. Indeed, assume that <span class="math display">\[
+\{ T_n \}_{n \in \mathbb{N}} \subset S \,, \quad T_n \to T \,.
+\]</span> For each fixed <span class="math inline">\(n\)</span> and <span class="math inline">\(t \in \mathbb{R}\)</span> we have <span class="math display">\[
+\gamma(t + T_n) = \gamma(t) \,,
+\]</span> since <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T_n\)</span>-periodic, being <span class="math inline">\(T_n \in S\)</span>. Taking the limit as <span class="math inline">\(n \to \infty\)</span> and using the continuity of <span class="math inline">\(\gamma\)</span> yields <span class="math display">\[
+\gamma(t) = \lim_{n \to \infty} \ \gamma(t + T_n) = \gamma(t + T)
+\]</span> showing that <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T\)</span>-periodic. Thus <span class="math inline">\(T \in S\)</span> showing that <span class="math inline">\(S\)</span> is closed.</li>
+<li><span class="math inline">\(S\)</span> is bounded below by <span class="math inline">\(0\)</span>.</li>
+</ul>
+<p>Therefore <span class="math inline">\(S\)</span> admits a minimum <span class="math inline">\(\bar{T}\)</span>. We claim that <span class="math display">\[
+\bar{T} &gt; 0  \,.
+\]</span> Indeed, suppose by contradiction that <span class="math display">\[
+\bar{T} = 0 \,.
+\]</span> By definition of minimum there exists a minimizing sequence, that is, a sequence <span class="math display">\[
+\{ T_n \}_{n \in \mathbb{N}} \subset S   \,, \quad T_n \to \bar{T} = 0 \,.
+\]</span> Since <span class="math inline">\(T_n \in S\)</span>, by definition we have that <span class="math inline">\(\gamma\)</span> is <span class="math inline">\(T_n\)</span></p>
+</div></details>
+</div>
+<p>We conclude with the definition of <strong>self-intersecting</strong> curve.</p>
+<div id="Definition-56" class="Definition">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 56</strong></summary><div>
+<p>Let <span class="math inline">\(\gamma\ \colon \mathbb{R}\to \mathbb{R}^n\)</span> be a closed curve. We say that <span class="math inline">\(\gamma\)</span> is <strong>self-intersecting</strong> at a point <span class="math inline">\(p\)</span> on the curve if</p>
+<ol type="1">
+<li>There exist two times <span class="math inline">\(a \neq b\)</span> such that <span class="math display">\[
+\gamma(a)=\gamma(b) = p \,,
+\]</span></li>
+<li>If <span class="math inline">\(\gamma\)</span> is closed with period <span class="math inline">\(T\)</span>, then <span class="math inline">\(b-a\)</span> is not an integer multiple of <span class="math inline">\(T\)</span>.</li>
+</ol>
+</div></details>
+</div>
+<div id="Remark-57" class="Remark">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 57</strong></summary><div>The second condition in the above definition is important: if we did not require it, then any closed curve would be self-intersecting. Indeed consider a closed curve <span class="math inline">\(\gamma\ \colon \mathbb{R}\to \mathbb{R}^n\)</span> and let <span class="math inline">\(T\)</span> be its period. Then by Point 5 in Remark <span class="math inline">\(\ref{remark-closed}\)</span> we have <span class="math display">\[
+\gamma(a) = \gamma(a + kT) \,, \quad \forall \ a \in \mathbb{R}, \, k \in \mathbb{Z}\,.
+\]</span> Therefore every point <span class="math inline">\(\gamma(a)\)</span> would be of self-intersection. Point 2 in the above definition rules this example out. Indeed set <span class="math inline">\(b:=a + kT\)</span>, then <span class="math display">\[
+b - a = k T \,,
+\]</span> meaning that <span class="math inline">\(b-a\)</span> is an integer multiple of <span class="math inline">\(T\)</span>.<p></p>
+</div></details>
+</div>
+<div id="the-limaçon" class="Example" title="The Limaçon">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 58: </strong>The Limaçon</summary><div>DO<p></p>
+</div></details>
+</div>
+<p>Do example</p>
+<p>Rename points remark</p>
+<p>add remark on periodicity integer</p>
+<p>add examples by will</p>
+<p>finish proof of proposition</p>
 </section>
 <section id="vector-product-in-mathbbr3" class="level2" data-number="3.8">
 <h2 data-number="3.8" class="anchored" data-anchor-id="vector-product-in-mathbbr3"><span class="header-section-number">3.8</span> Vector product in <span class="math inline">\(\mathbb{R}^3\)</span></h2>
