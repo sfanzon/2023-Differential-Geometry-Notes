@@ -1,7 +1,7 @@
 ::: {.content-hidden}
-$$
+$
 {{< include macros.tex >}}
-$$
+$
 :::
 
 

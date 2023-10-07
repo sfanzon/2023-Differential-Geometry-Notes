@@ -109,6 +109,7 @@ format:
           \ModifyLayer[addvoffset=-.6ex]{plain.scrheadings.foot.above.line}
           \usepackage{fvextra}
           \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+          \setlength{\parindent}{0pt}
 
 
   

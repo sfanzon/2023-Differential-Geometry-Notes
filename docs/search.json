@@ -133,11 +133,18 @@
     "text": "Coming soon"
   },
   {
+    "objectID": "sections/chap_5.html#test",
+    "href": "sections/chap_5.html#test",
+    "title": "5  Isoperimetric Inequality",
+    "section": "5.1 Test",
+    "text": "5.1 Test\nTest \\(\\mathbb{R}\\), \\(\\mathbb{C}\\) \\(\\left\\| x \\right\\|\\) \\(\\| \\frac{x}{y} \\|\\)"
+  },
+  {
     "objectID": "sections/chap_6.html",
     "href": "sections/chap_6.html",
     "title": "6  Topology",
     "section": "",
-    "text": "Topology"
+    "text": "Topology \\(\\mathbb{R}\\)"
   },
   {
     "objectID": "sections/chap_7.html",
