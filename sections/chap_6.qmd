@@ -1,12 +1,3 @@
-::: {.content-hidden}
-$$
-{{< include macros.tex >}}
-$$
-:::
+# Topology
 
-
-
-
-# Surfaces
-
-Coming soon
+Topology

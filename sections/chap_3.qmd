@@ -2064,42 +2064,58 @@ $$
 ::: Proof
 
 
-We make 3 observations about the set $S$:
+We make 2 observations about the set $S$:
 
 - Since $\g$ is closed, we have that $\g$ is $T$-periodic for some $T \neq 0$. By Remark \ref{remark-closed} Point 5, we know that $T$ can be chosen such that $T>0$. Therefore 
 $$
 S \neq \emptyset \,.
 $$
-- $S$ is a closed set. Indeed, assume that 
-$$
-\{ T_n \}_{n \in \N} \subset S \,, \quad T_n \to T \,.
-$$
-As $T_n \in S$, we have that $\g$ is $T_n$-periodic. Then
-$$
-\g (t + T_n) = \g(t) \,, \quad \forall \, t \in \R \,,  \,\, n \in \N \,.
-$$
-Taking the limit as $n \to \infty$ and using the continuity of $\g$ yields
-$$
-\g(t) = \lim_{n \to \infty} \ \g (t + T_n) = \g(t + T) \,, \quad \forall \, t \in \R \,,
-$$
-showing that $\g$ is $T$-periodic. Thus $T \in S$ showing that $S$ is closed. 
 - $S$ is bounded below by $0$. This is by definition of $S$.
 
-Thus, by standard real analysis results, the set $S$ admits a minimum $P$. The proof is concluded if we show that:
+Thus, by the Axiom of Completeness of the Real Numbers, the set $S$ admits an infimum 
+$$
+P = \inf S \,.
+$$
+The proof is concluded if we show that:
 
 *Claim*. We have
 $$
-P > 0  \,.
+P = \min S  \,.
+$$
+This is equivalent to saying that 
+$$
+P \in S \,.
 $$
 
 *Proof of claim.*  
-Suppose by contradiction that
+To see that $P \in S$ we need to show that
+
+1. $\g$ is $P$-periodic,
+2. $P>0$.
+
+Since $P$ is the infimum of $S$, there exists an infimizing sequence $\{T_n\}_{n \in \N} \subset S$ such that
+$$
+T_n \to P \,.
+$$
+WLOG we can choose $T_n$ decreasing, that is, such that
+$$
+T_1 > T_2 > \ldots > T_n > \ldots > 0 \,.
+$$
+
+*Proof of Point 1.* As $T_n \in S$, we have that $\g$ is $T_n$-periodic. Then
+$$
+\g (t + T_n) = \g(t) \,, \quad \forall \, t \in \R \,,  \,\, n \in \N \,.
+$$
+Since $T_n \to P$, we can take the limit as $n \to \infty$ and use the continuity of $\g$ to obtain
+$$
+\g(t) = \lim_{n \to \infty} \ \g (t + T_n) = \g(t + P) \,, \quad \forall \, t \in \R \,,
+$$
+showing that $\g$ is $P$-periodic. 
+ 
+
+*Proof of Point 2.* Suppose by contradiction that
 $$
 P = 0 \,.
-$$
-By definition of minimum there exists a minimizing sequence, that is, a sequence 
-$$
-\{ T_n \}_{n \in \N} \subset S   \,, \quad T_n \to P = 0 \,.
 $$
 Fix $t \in \R$. Since $T_n > 0$, we can find unique 
 $$
@@ -2142,6 +2158,8 @@ Therefore $\g$ is constant. This is a contradiction, as we were assuming that $\
 :::
 
 
+
+
 ![For each $t \in \R$ there exist unique $k_n \in \Z$ and $\tilde{t}_n \in [0,T_n]$ such that $t=\tilde{t} + k_n T_n$. In this skecth $k_n =3$.](/images/archimedean.png){width=70%}
 
 
@@ -2182,7 +2200,7 @@ The last curve in the above example motivates the definition of **self-intersect
 ::: Definition
 ### Self-intersecting curve
 
-Let $\g \ \colon \R \to \R^n$ be a closed curve. We say that $\g$ is **self-intersecting** at a point $p$ on the curve if
+Let $\g \ \colon \R \to \R^n$ be a parametrized curve. We say that $\g$ is **self-intersecting** at a point $p$ on the curve if
 
 1. There exist two times $a \neq b$ such that 
 $$
@@ -2209,28 +2227,41 @@ meaning that $b-a$ is an integer multiple of $T$.
 
 ::: Example
 
-Let us go back to the curve
-
+Let us go back to the curve of Example \ref{example-curve-loop}, that is, 
+$$
+\g(t) := (t^2-1, t^3 -t) \,, \quad \, t \in \R \,.
+$$
+We have that $\g$ is not periodic, and therefore not closed. However $p = (0,0)$ is a point of **self-intersection** on $\g$, since we have
+$$
+p = \g (-1) = \g(1) \,.
+$$
 :::
 
 
 ::: Example
 ### The Limaçon
 
-DO
-
+Define the parametrized curve $\g \ \colon \R \to \R^2$ by
+$$
+\g(t) = ( (1+2\cos(t)) \cos(t) ,  (1 + 2 \cos(t)) \sin(t)   ) \,, 
+\quad \forall \, t \in \R \,.
+$$
+Such curve, plotted bolow, is called limaçon (French for snail). This curve is non constant and $2\pi$-periodic. Therefore it is closed. The period of $\g$ is $2 \pi$. Moreover we have
+$$
+\g( a ) = \g (b) = (0,0)\,.
+$$
+with $a = 2\pi/3$ and $b = 4\pi/3$. Note that 
+$$
+b-a = \frac{4\pi}{3} - \frac{2\pi}{3} = \frac{2\pi}{3} 
+$$
+which is not an integer multiple of the period $2\pi$. Therefore $\g$ is **self-intersecting** at $(0,0)$.
 :::
 
 
-Do example
 
-Rename points remark
+![Limaçon curve](/images/limacon.png){width=60%}
 
-add remark on periodicity integer
 
-add examples by will
-
-finish proof of proposition
 
 
 

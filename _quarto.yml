@@ -38,17 +38,14 @@ book:
     
   chapters:
     - index.qmd
-
     - sections/chap_1.qmd
     - sections/chap_2.qmd
     - sections/chap_3.qmd
-
-
     - sections/chap_4.qmd
-
+    - sections/chap_5.qmd
     - sections/chap_6.qmd
     - sections/chap_7.qmd
-
+    - sections/chap_8.qmd
     - sections/license.qmd
     - sections/references.qmd
 
@@ -112,6 +109,7 @@ format:
           \ModifyLayer[addvoffset=-.6ex]{plain.scrheadings.foot.above.line}
           \usepackage{fvextra}
           \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+
 
   
 

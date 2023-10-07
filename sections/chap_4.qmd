@@ -6,6 +6,6 @@ $$
 
 
 
-# Topology
+# Curvature and Torsion
 
 Coming soon
