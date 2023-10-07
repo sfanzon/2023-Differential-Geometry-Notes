@@ -4,7 +4,14 @@
     "href": "index.html",
     "title": "Differential Geometry",
     "section": "",
-    "text": "Welcome\nThese are the Lecture Notes of Differential Geometry 661955 for T1 2023/24 at the University of Hull. We will study curves and surfaces in \\(\\mathbb{R}^3\\). I will follow these lecture notes during the course. If you have any question or find any typo, please email me at\nUp to date information about the course, Tutorials and Homework will be published on the University of Hull Canvas Website\nand on the Course Webpage hosted on my website\nFeatures of these digital notes:"
+    "text": "Welcome\nThese are the Lecture Notes of Differential Geometry 661955 for T1 2023/24 at the University of Hull. We will study curves and surfaces in \\(\\mathbb{R}^3\\). I will follow these lecture notes during the course. If you have any question or find any typo, please email me at\nUp to date information about the course, Tutorials and Homework will be published on the University of Hull Canvas Website\nand on the Course Webpage hosted on my website"
+  },
+  {
+    "objectID": "index.html#digital-notes",
+    "href": "index.html#digital-notes",
+    "title": "Differential Geometry",
+    "section": "Digital Notes",
+    "text": "Digital Notes\nFeatures of these digital notes:\n\nNavigation bar is available on the left\nA search function is available on the top-right\nYou can toggle dark mode on the top-right\nA pdf version of these notes is available to download on the top-right"
   },
   {
     "objectID": "index.html#readings",
@@ -131,13 +138,6 @@
     "title": "4  Curvature and Torsion",
     "section": "",
     "text": "Coming soon"
-  },
-  {
-    "objectID": "sections/chap_5.html#test",
-    "href": "sections/chap_5.html#test",
-    "title": "5  Isoperimetric Inequality",
-    "section": "5.1 Test",
-    "text": "5.1 Test\nTest \\(\\mathbb{R}\\), \\(\\mathbb{C}\\) \\(\\left\\| x \\right\\|\\) \\(\\| \\frac{x}{y} \\|\\)"
   },
   {
     "objectID": "sections/chap_6.html",

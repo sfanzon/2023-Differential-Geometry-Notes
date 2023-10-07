@@ -68,7 +68,7 @@ and on the **Course Webpage** hosted on my website
 
 
 
-
+## Digital Notes {.unnumbered}
 
 
 ::: {.content-visible when-format="html"}
@@ -80,6 +80,17 @@ Features of these digital notes:
 - A **pdf** version of these notes is available to download on the top-right
 :::
 
+
+
+::: {.content-visible when-format="pdf"}
+Digital version of these notes available at
+
+\begin{center}
+\textbf{
+\href{https://www.silviofanzon.com/2023-Differential-Geometry-Notes/}{silviofanzon.com/2023-Differential-Geometry-Notes}
+}
+\end{center}
+:::
 
 
 

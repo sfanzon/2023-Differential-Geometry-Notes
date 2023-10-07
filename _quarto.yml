@@ -8,7 +8,9 @@ book:
   subtitle: "Lecture Notes"
   author: 
     - name: "Dr. Silvio Fanzon"
-      affiliations: "University of Hull, UK"
+      affiliations: 
+        - name: "University of Hull, UK"
+          department: "Department of Mathematics"
       email: "S.Fanzon@hull.ac.uk"
       url: "https://www.silviofanzon.com"
   date: today 
@@ -77,6 +79,8 @@ format:
   pdf:
     documentclass: scrreprt
     fontsize: 12pt
+    template-partials:
+      - before-body.tex
     geometry:
       - top=25mm
       - left=15mm
@@ -110,7 +114,6 @@ format:
           \usepackage{fvextra}
           \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
           \setlength{\parindent}{0pt}
-
 
   
 

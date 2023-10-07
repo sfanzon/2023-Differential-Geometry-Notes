@@ -7,8 +7,6 @@ $
 
 # Isoperimetric Inequality
 
-## Test
 
-Test $\R$, $\C$  $\norm{x}$ $\| \frac{x}{y} \|$
 
 
