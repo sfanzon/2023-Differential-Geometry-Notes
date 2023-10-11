@@ -2261,14 +2261,3 @@ which is not an integer multiple of the period $2\pi$. Therefore $\g$ is **self-
 
 
 ![Limaçon curve](/images/limacon.png){width=60%}
-
-
-
-
-
-
-
-
-
-
-## Vector product in $\R^3$

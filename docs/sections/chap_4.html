@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -66,15 +85,27 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .Definition {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.Proposition {
+.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -82,9 +113,29 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Corollary {
+.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
 }
 .Conjecture {
   --color1: #f4cce0;
@@ -94,44 +145,14 @@ ul.task-list li input[type="checkbox"] {
   --color1: #cce7b1;
   --color2: #86b754;
 }
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
 .Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
 </style>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -242,7 +263,16 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#curvature" id="toc-curvature" class="nav-link active" data-scroll-target="#curvature"><span class="header-section-number">4.1</span> Curvature</a></li>
+  <li><a href="#vector-product-in-mathbbr3" id="toc-vector-product-in-mathbbr3" class="nav-link" data-scroll-target="#vector-product-in-mathbbr3"><span class="header-section-number">4.2</span> Vector product in <span class="math inline">\(\mathbb{R}^3\)</span></a></li>
+  <li><a href="#curvature-formula" id="toc-curvature-formula" class="nav-link" data-scroll-target="#curvature-formula"><span class="header-section-number">4.3</span> Curvature formula</a></li>
+  <li><a href="#plane-curves" id="toc-plane-curves" class="nav-link" data-scroll-target="#plane-curves"><span class="header-section-number">4.4</span> Plane curves</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -264,9 +294,152 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Coming soon</p>
+<p>We have seen how to describe curves and reparametrized them. Now we want to look at local properties of curves:</p>
+<ul>
+<li>How much does a curve twist?</li>
+<li>How much does a curve bend?</li>
+</ul>
+<p>We will measure two quantities:</p>
+<ul>
+<li><strong>Curvature</strong>: measures how much a curve <span class="math inline">\(\gamma\)</span> deviates from a straight line.</li>
+<li><strong>Torsion</strong>: measures how much a curve <span class="math inline">\(\gamma\)</span> fails to lie on a plane.</li>
+</ul>
+<p>For example a 2D spiral is curved, but still lies in a plane. Instead the Helix both deviates from a straight line and <em>pulls away</em> from any fixed plane.</p>
+<section id="curvature" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="curvature"><span class="header-section-number">4.1</span> Curvature</h2>
+<p>We start with an informal discussion. Suppose <span class="math inline">\(\gamma\)</span> is a straight line <span class="math display">\[
+\gamma(t) = \mathbf{a} + t \mathbf{v}
+\]</span> with <span class="math inline">\(\mathbf{a}, \mathbf{v} \in \mathbb{R}^3\)</span>. The tangent vector to <span class="math inline">\(\gamma\)</span> is constant <span class="math display">\[
+\dot\gamma(t) =  \mathbf{v} \,.
+\]</span> Whatever the definition of curvature will be, it has to hold that <span class="math inline">\(\gamma\)</span> has zero curvature in this case. If we further derive the tangent vector, we obtain <span class="math display">\[
+\ddot\gamma(t) =  0 \,.
+\]</span> Thus <span class="math inline">\(\ddot \gamma\)</span> seems to be a good candidate for the definition of curvature of <span class="math inline">\(\gamma\)</span> at the point <span class="math inline">\(\gamma(t)\)</span>.</p>
+<p>Suppose now that <span class="math inline">\(\gamma\)</span> is a curve in <span class="math inline">\(\mathbb{R}^2\)</span> with unit speed. We have proven that in this case <span class="math display">\[
+\dot \gamma\cdot \ddot\gamma= 0 \,,
+\]</span> that is, the vector <span class="math inline">\(\ddot \gamma\)</span> is orthogonal to the tangent <span class="math inline">\(\dot \gamma\)</span> at all times. Now let <span class="math inline">\(\mathbf{n}(t)\)</span> be the unit vector orthogonal to <span class="math inline">\(\dot \gamma(t)\)</span> at the point <span class="math inline">\(\gamma(t)\)</span>. The amount that the curve <span class="math inline">\(\gamma\)</span> deviates from its tangent at <span class="math inline">\(\gamma(t)\)</span> after time <span class="math inline">\(t_0\)</span> is <span id="eq-curvature-heuristics"><span class="math display">\[
+( \gamma(t + t_0) - \gamma(t) ) \cdot \mathbf{n}(t) \,,
+\tag{4.1}\]</span></span> as seen in the figure below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/curvature.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Amount that <span class="math inline">\(\gamma\)</span> deviates from tangent is <span class="math inline">\((\gamma(t+t_0)-\gamma(t)) \cdot \mathbf{n}(t)\)</span></figcaption>
+</figure>
+</div>
+<p>Equation (<a href="#eq-curvature-heuristics"><span>4.1</span></a>) is what we take as measure of curvature. Since <span class="math display">\[
+\dot \gamma(t) \cdot \ddot \gamma(t) = 0 \quad \mbox{ and } \quad   \dot \gamma(t) \cdot \mathbf{n}(t)= 0 \,,
+\]</span> we conclude that <span class="math inline">\(\ddot \gamma(t)\)</span> is parallel to <span class="math inline">\(\mathbf{n}(t)\)</span>. Since <span class="math inline">\(\mathbf{n}(t)\)</span> is a unit vector, there exists a scalar <span class="math inline">\(\kappa(t)\)</span> such that <span class="math display">\[
+\ddot \gamma(t)  = \kappa(t) \, \mathbf{n}(t) \,.
+\]</span> Note that, since <span class="math inline">\(\mathbf{n}\)</span> is unitary, we have <span class="math display">\[
+\kappa(t) = \left\|  \ddot \gamma(t)  \right\|
+\]</span></p>
+<p>Now, approximate <span class="math inline">\(\gamma\)</span> at <span class="math inline">\(t\)</span> with its second order Taylor polynomial: <span class="math display">\[
+\gamma(t+t_0) = \gamma(t) + \dot\gamma(t) t_0 + \frac{\ddot\gamma(t)}{2} t_0^2 + o(t_0)
+\]</span> with the remainder <span class="math inline">\(o(t_0)\)</span> is such that <span class="math display">\[
+\lim_{t_0 \to 0} \ \frac{o(t_0)}{t_0^2} = 0 \,.
+\]</span> Therefore, forgetting about the remainder, <span class="math display">\[
+\gamma(t+t_0) - \gamma(t) \approx \dot\gamma(t) t_0 + \frac{\ddot\gamma(t)}{2} t_0^2 \,.
+\]</span> Multiplying by <span class="math inline">\(\mathbf{n}(t)\)</span> we get <span class="math display">\[
+(\gamma(t+t_0) - \gamma(t)) \cdot \mathbf{n}(t) \approx \dot\gamma(t) \cdot \mathbf{n}(t) t_0 +
+\frac{\ddot\gamma(t) \cdot \mathbf{n}(t) }{2} t_0^2\,.
+\]</span> Recalling that <span class="math display">\[
+\dot\gamma(t) \cdot \mathbf{n}(t) = 0\,, \quad  \ddot\gamma(t) \cdot \mathbf{n}(t) = \kappa(t) \,,
+\]</span> we then obtain <span class="math display">\[
+(\gamma(t+t_0) - \gamma(t)) \cdot \mathbf{n}(t) \approx
+\frac{1}{2} \, \kappa(t) \, t_0^2
+\]</span></p>
+<div id="Important*-1" class="Important">
+<p></p><details class="Important fbx-simplebox fbx-default" open=""><summary><strong>Important</strong></summary><div>The amount that <span class="math inline">\(\gamma\)</span> deviates from a straight line is proportional to <span class="math display">\[
+\kappa(t) = \left\| \ddot \gamma(t) \right\|\,.
+\]</span><p></p>
+</div></details>
+</div>
+<p>We take this as definition of curvature for a general unit speed curve in <span class="math inline">\(\mathbb{R}^n.\)</span></p>
+<div id="Definition-1" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 1</strong></summary><div>Let <span class="math inline">\(\gamma\ \colon (a,b) \to \mathbb{R}^n\)</span> be a unit speed curve. The <strong>curvature</strong> of <span class="math inline">\(\gamma\)</span> at <span class="math inline">\(\gamma(t)\)</span> is <span class="math display">\[
+\kappa(t) := \left\| \ddot \gamma(t) \right\| \,.
+\]</span><p></p>
+</div></details>
+</div>
+<p>Note that <span class="math inline">\(\kappa(t)\)</span> is a function of time. Therefore the curvature of <span class="math inline">\(\gamma\)</span> can change from point to point.</p>
+<div id="Example-2" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 2</strong></summary><div>Consider the circle of radius <span class="math inline">\(R&gt;0\)</span>: <span class="math display">\[
+\gamma(t) = (R\cos(t),R\sin(t)) \,, \quad t \in [0,2\pi] \,.
+\]</span> To compute the curvature of <span class="math inline">\(\gamma\)</span> we need to find a unit speed reparametrization. We have shown that: <span class="math display">\[
+\gamma\, \mbox{ regular } \,\,\, \implies \,\,\, \phi= s^{-1} \, \mbox{ unit speed reparametrization}
+\]</span> where <span class="math inline">\(s\)</span> is the arc length of <span class="math inline">\(\gamma\)</span>: <span class="math display">\[
+s(t):= \int_{t_0}^t \left\| \dot \gamma(\tau) \right\| \, d\tau  \,.
+\]</span> In our case <span class="math display">\[
+\dot \gamma(t) = (-R\sin(t), R\cos(t))  \quad \implies \quad
+\left\| \dot \gamma(t) \right\| = R  
+\]</span> and so <span class="math inline">\(\gamma\)</span> is regular. The arc length starting at <span class="math inline">\(t_0 = 0\)</span> is <span class="math display">\[
+s(t) = \int_{0}^t R d \tau = t R \,.
+\]</span> The inverse of <span class="math inline">\(s\)</span> is <span class="math display">\[
+\phi(t) := s^{-1} (t) = \frac{t}{R} \,.
+\]</span> Therefore a unit speed reparametrization of <span class="math inline">\(\gamma\)</span> is <span class="math display">\[
+\widetilde{\gamma}:=\gamma\circ \phi
+\]</span> which reads <span class="math display">\[
+\widetilde{\gamma}(t) :=  \left( R \cos \left( \frac{t}{R} \right) , R \sin \left( \frac{t}{R} \right)\right) \,.
+\]</span> We have <span class="math display">\[\begin{align}
+\dot{\widetilde{\gamma}} (t) &amp; =  \left( - \sin \left( \frac{t}{R} \right) ,  \cos \left( \frac{t}{R} \right)\right) \\
+\ddot{\widetilde{\gamma}} (t) &amp; =  \left( -\frac{1}{R} \cos \left( \frac{t}{R} \right) ,  - \frac{1}{R} \sin \left( \frac{t}{R} \right)\right)
+\end{align}\]</span> Therefore the curvature of <span class="math inline">\(\gamma\)</span> is <span class="math display">\[
+\kappa(t) = \left\|  \ddot{\widetilde{\gamma}} (t)  \right\| = \frac{1}{R} \,.
+\]</span> In this case <span class="math inline">\(\kappa(t)\)</span> is constant. The curvature also tells us that the smaller the circle, the higher the curvature. For a large circle, like the Earth, the curvature is barely noticeable.<p></p>
+</div></details>
+</div>
+<p>The curvature is defined for unit speed curves. To circumvent this, in the above example we computed a unit length reparametrization of the circle, and then computed the curvature of the reparametrization.<br>
+If <span class="math inline">\(\gamma\)</span> is a regular curve, then one could do the same: first compute unit speed reparametrization <span class="math inline">\(\widetilde{\gamma}\)</span>, and from this compute the curvature. When <span class="math inline">\(\gamma\)</span> is regular and has values in <span class="math inline">\(\mathbb{R}^3\)</span>, there is a way to compute <span class="math inline">\(\kappa\)</span> without reparametrizing. To do this, we will need the notion of <strong>cross product</strong>, or <strong>vector product</strong> .</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/curvature_shortcut.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Procedure for computing curvature <span class="math inline">\(\kappa\)</span></figcaption>
+</figure>
+</div>
+</section>
+<section id="vector-product-in-mathbbr3" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="vector-product-in-mathbbr3"><span class="header-section-number">4.2</span> Vector product in <span class="math inline">\(\mathbb{R}^3\)</span></h2>
+</section>
+<section id="curvature-formula" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="curvature-formula"><span class="header-section-number">4.3</span> Curvature formula</h2>
+<p>Given a unit speed curve <span class="math display">\[
+\gamma\ \colon (a,b) \to \mathbb{R}^n
+\]</span> we defined its curvature as <span class="math display">\[
+\kappa(t) = \left\|  \ddot{\gamma}(t)  \right\| \,.
+\]</span> If <span class="math inline">\(\gamma\)</span> is not unit speed then the curvature is not defined. However, when <span class="math inline">\(\gamma\)</span> is regular, then we can find a unit-speed reparametrization <span class="math inline">\(\widetilde{\gamma}\)</span> of <span class="math inline">\(\gamma\)</span>, and compute <span class="math inline">\(\kappa\)</span> as <span class="math display">\[
+\kappa(t) = \left\|  \ddot{\widetilde{\gamma}}(t)  \right\| \,.
+\]</span> If <span class="math inline">\(\gamma\)</span> is a regular curve in <span class="math inline">\(\mathbb{R}^3\)</span>, there is a way to compute <span class="math inline">\(\kappa\)</span> without passing through <span class="math inline">\(\widetilde{\gamma}\)</span>. The formula for computing <span class="math inline">\(\kappa\)</span> is as follows.</p>
+<div id="Proposition-3" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 3</strong></summary><div>Let <span class="math inline">\(\gamma\colon (a,b) \to \mathbb{R}^3\)</span> be a regular curve. Then the curvature <span class="math inline">\(\kappa(t)\)</span> of <span class="math inline">\(\gamma\)</span> at <span class="math inline">\(\gamma(t)\)</span> is given by <span class="math display">\[
+\kappa(t) = \frac{ \left\| \ddot \gamma\times \dot \gamma \right\| }{ \left\| \dot \gamma \right\|^3 } \,.
+\]</span><p></p>
+</div></details>
+</div>
+<p>We delay the proof of the above Proposition, as this will get easier when the <strong>Frenet frame</strong> is introduced. For a proof which does not make use of the Frenet frame, see the proof of Proposition 2.1.2 in <span class="citation" data-cites="pressley">[<a href="references.html#ref-pressley" role="doc-biblioref">1</a>]</span>.</p>
+<p>For now, we use the above proposition to compute the curvature on specific curves.</p>
+<div id="Example-4" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 4</strong></summary><div>Consider the Helix <span class="math display">\[
+\gamma(t) = ( \cos(t) , \sin(t) , t) \,, \quad t \in \mathbb{R}\,.
+\]</span><p></p>
+</div></details>
+</div>
+</section>
+<section id="plane-curves" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="plane-curves"><span class="header-section-number">4.4</span> Plane curves</h2>
+<p>The signed curvature is the rate at which the tangent vector <span class="math inline">\(\dot \gamma\)</span> of the curve <span class="math inline">\(\gamma\)</span> rotates. The signed curvature is:</p>
+<ul>
+<li>positive if <span class="math inline">\(\dot \gamma\)</span> is rotating anticlockwise</li>
+<li>negative if <span class="math inline">\(\dot \gamma\)</span> is rotating clockwise</li>
+</ul>
+<p>A rigorous justification of the above statement is found in Proposition 2.2.3 in <span class="citation" data-cites="pressley">[<a href="references.html#ref-pressley" role="doc-biblioref">1</a>]</span>.</p>
+<p>We do not prove the above theorem. For a proof, see Theorem 2.2.6 in <span class="citation" data-cites="pressley">[<a href="references.html#ref-pressley" role="doc-biblioref">1</a>]</span>.</p>
 
 
+<div id="refs" class="references csl-bib-body" role="list" style="display: none">
+<div id="ref-pressley" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">A. Pressley, Elementary differential geometry, Second Edition, Springer, 2010.</div>
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

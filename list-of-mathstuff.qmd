@@ -164,3 +164,13 @@
  [**Example 3.60**](#Example-3.60)\Pageref{Example-3.60}
 
  [**Example 3.61**](#the-limaçon): The Limaçon\Pageref{the-limaçon}
+
+ [**Important**](#Important*-4.1)\Pageref{Important*-4.1}
+
+ [**Definition 4.1**](#Definition-4.1)\Pageref{Definition-4.1}
+
+ [**Example 4.2**](#Example-4.2)\Pageref{Example-4.2}
+
+ [**Proposition 4.3**](#Proposition-4.3)\Pageref{Proposition-4.3}
+
+ [**Example 4.4**](#Example-4.4)\Pageref{Example-4.4}

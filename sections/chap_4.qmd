@@ -9,4 +9,235 @@ $
 
 # Curvature and Torsion
 
-Coming soon
+We have seen how to describe curves and reparametrized them. Now we want to look at local properties of curves:
+
+- How much does a curve twist?
+- How much does a curve bend?
+
+We will measure two quantities:
+
+- **Curvature**: measures how much a curve $\g$ deviates from a straight line.
+- **Torsion**: measures how much a curve $\g$ fails to lie on a plane.
+
+For example a 2D spiral is curved, but still lies in a plane. Instead the Helix both deviates from a straight line and *pulls away* from any fixed plane. 
+
+
+
+## Curvature 
+
+We start with an informal discussion. Suppose $\g$ is a straight line
+$$
+\g(t) = \mathbf{a} + t \mathbf{v}
+$$
+with $\mathbf{a}, \mathbf{v} \in \R^3$. The tangent vector to $\g$ is constant
+$$
+\dot\g(t) =  \mathbf{v} \,.
+$$
+Whatever the definition of curvature will be, it has to hold that $\g$ has zero curvature in this case. If we further derive the tangent vector, we obtain
+$$
+\ddot\g(t) =  0 \,.
+$$
+Thus $\ddot \g$ seems to be a good candidate for the definition of curvature of $\g$ at the point $\g(t)$.  
+
+
+Suppose now that $\g$ is a curve in $\R^2$ with unit speed. We have proven that in this case
+$$
+\dot \g \cdot \ddot\g = 0 \,,
+$$
+that is, the vector $\ddot \g$ is orthogonal to the tangent $\dot \g$ at all times. Now let $\mathbf{n}(t)$ be the unit vector orthogonal to $\dot \g(t)$ at the point $\g(t)$. The amount that the curve $\g$ deviates from its tangent at $\g(t)$ after time $t_0$ is
+$$
+( \g(t + t_0) - \g(t) ) \cdot \mathbf{n}(t) \,,
+$$ {#eq-curvature-heuristics}
+as seen in the figure below.
+
+
+![Amount that $\g$ deviates from tangent is $(\g(t+t_0)-\g(t)) \cdot \nn(t)$](/images/curvature.png){width=70%}
+
+
+Equation (@eq-curvature-heuristics) is what we take as measure of curvature. Since 
+$$
+\dot \g(t) \cdot \ddot \g(t) = 0 \quad \mbox{ and } \quad   \dot \g(t) \cdot \mathbf{n}(t)= 0 \,,
+$$
+we conclude that $\ddot \g(t)$ is parallel to $\mathbf{n}(t)$. Since $\mathbf{n}(t)$ is a unit vector, there exists a scalar $\kappa(t)$ such that 
+$$
+\ddot \g(t)  = \kappa(t) \, \mathbf{n}(t) \,.
+$$
+Note that, since $\nn$ is unitary, we have
+$$
+\kappa(t) = \norm{ \ddot \g(t) }
+$$
+
+
+Now, approximate $\g$ at $t$ with its second order Taylor polynomial:
+$$
+\g(t+t_0) = \g(t) + \dot\g(t) t_0 + \frac{\ddot\g(t)}{2} t_0^2 + o(t_0)
+$$
+with the remainder $o(t_0)$ is such that 
+$$
+\lim_{t_0 \to 0} \ \frac{o(t_0)}{t_0^2} = 0 \,.
+$$
+Therefore, forgetting about the remainder, 
+$$
+\g(t+t_0) - \g(t) \approx \dot\g(t) t_0 + \frac{\ddot\g(t)}{2} t_0^2 \,.
+$$
+Multiplying by $\nn(t)$ we get
+$$
+(\g(t+t_0) - \g(t)) \cdot \nn(t) \approx \dot\g(t) \cdot \nn(t) t_0 + 
+\frac{\ddot\g(t) \cdot \nn(t) }{2} t_0^2\,.
+$$
+Recalling that 
+$$
+\dot\g(t) \cdot \nn(t) = 0\,, \quad  \ddot\g(t) \cdot \nn(t) = \kappa(t) \,, 
+$$
+we then obtain
+$$
+(\g(t+t_0) - \g(t)) \cdot \nn(t) \approx 
+\frac{1}{2} \, \kappa(t) \, t_0^2
+$$
+
+
+::: Important
+
+The amount that $\g$ deviates from a straight line is proportional to 
+$$
+\kappa(t) = \norm{\ddot \g (t)}\,.
+$$
+
+:::
+
+We take this as definition of curvature for a general unit speed curve in $\R^n.$
+
+
+::: Definition 
+
+Let $\g \ \colon (a,b) \to \R^n$ be a unit speed curve. The **curvature** of $\g$ at $\g(t)$ is
+$$
+\kappa(t) := \norm{\ddot \g (t)} \,.
+$$
+
+:::
+
+
+
+Note that $\kappa(t)$ is a function of time. Therefore the curvature of $\g$ can change from point to point.
+
+
+::: Example
+
+Consider the circle of radius $R>0$:
+$$
+\g(t) = (R\cos(t),R\sin(t)) \,, \quad t \in [0,2\pi] \,.
+$$
+To compute the curvature of $\g$ we need to find a unit speed reparametrization. We have shown that:
+$$
+\g \, \mbox{ regular } \,\,\, \implies \,\,\, \f = s^{-1} \, \mbox{ unit speed reparametrization}
+$$
+where $s$ is the arc length of $\g$:
+$$
+s(t):= \int_{t_0}^t \norm{\dot \g(\tau)} \, d\tau  \,.
+$$
+In our case 
+$$
+\dot \g(t) = (-R\sin(t), R\cos(t))  \quad \implies \quad 
+\norm{\dot \g(t)} = R  
+$$
+and so $\g$ is regular. The arc length starting at $t_0 = 0$ is
+$$
+s(t) = \int_{0}^t R d \tau = t R \,.
+$$
+The inverse of $s$ is
+$$
+\f(t) := s^{-1} (t) = \frac{t}{R} \,.
+$$
+Therefore a unit speed reparametrization of $\g$ is 
+$$
+\tg :=\g \circ \f 
+$$
+which reads
+$$
+\tg(t) :=  \left( R \cos \left( \frac{t}{R} \right) , R \sin \left( \frac{t}{R} \right)\right) \,.
+$$
+We have
+\begin{align}
+\dot{\tg} (t) & =  \left( - \sin \left( \frac{t}{R} \right) ,  \cos \left( \frac{t}{R} \right)\right) \\
+\ddot{\tg} (t) & =  \left( -\frac{1}{R} \cos \left( \frac{t}{R} \right) ,  - \frac{1}{R} \sin \left( \frac{t}{R} \right)\right)
+\end{align}
+Therefore the curvature of $\g$ is
+$$
+\kappa(t) = \norm{ \ddot{\tg} (t) } = \frac{1}{R} \,.
+$$
+In this case $\kappa(t)$ is constant. The curvature also tells us that the smaller the circle, the higher the curvature. For a large circle, like the Earth, the curvature is barely noticeable. 
+:::
+
+
+
+The curvature is defined for unit speed curves. To circumvent this, in the above example we computed a unit length reparametrization of the circle, and then computed the curvature of the reparametrization.  
+If $\g$ is a regular curve, then one could do the same: first compute unit speed reparametrization $\tg$, and from this compute the curvature. When $\g$ is regular and has values in $\R^3$, there is a way to compute $\kappa$ without reparametrizing. To do this, we will need the notion of **cross product**, or **vector product** .
+
+![Procedure for computing curvature $\kappa$](/images/curvature_shortcut.png){width=70%}
+
+
+
+## Vector product in $\R^3$
+
+
+
+
+
+## Curvature formula
+
+
+Given a unit speed curve
+$$
+\g \ \colon (a,b) \to \R^n
+$$
+we defined its curvature as
+$$
+\kappa(t) = \norm{ \ddot{\g}(t) } \,.
+$$
+If $\g$ is not unit speed then the curvature is not defined. However, when $\g$ is regular, then we can find a unit-speed reparametrization $\tg$ of $\g$, and compute $\kappa$ as
+$$
+\kappa(t) = \norm{ \ddot{\tg}(t) } \,.
+$$
+If $\g$ is a regular curve in $\R^3$, there is a way to compute $\kappa$ without passing through $\tg$. The formula for computing $\kappa$ is as follows. 
+
+::: Proposition
+
+Let $\g \colon (a,b) \to \R^3$ be a regular curve. Then the curvature $\kappa(t)$ of $\g$ at $\g(t)$ is given by
+$$
+\kappa(t) = \frac{ \norm{\ddot \g \times \dot \g} }{ \norm{\dot \g}^3 } \,. 
+$$
+
+:::
+
+
+We delay the proof of the above Proposition, as this will get easier when the **Frenet frame** is introduced. For a proof which does not make use of the Frenet frame, see the proof of Proposition 2.1.2 in [@pressley].
+
+For now, we use the above proposition to compute the curvature on specific curves.
+
+::: Example
+
+Consider the Helix
+$$
+\g (t) = ( \cos(t) , \sin(t) , t) \,, \quad t \in \R \,.
+$$
+
+:::
+
+
+
+
+## Plane curves
+
+The signed curvature is the rate at which the tangent vector $\dot \g$ of the curve $\g$ rotates. The signed curvature is:
+
+- positive if $\dot \g$ is rotating anticlockwise
+- negative if $\dot \g$ is rotating clockwise
+
+A rigorous justification of the above statement is found in Proposition 2.2.3 in [@pressley].
+
+
+
+
+
+We do not prove the above theorem. For a proof, see Theorem 2.2.6 in [@pressley].
