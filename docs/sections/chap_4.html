@@ -85,35 +85,7 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -121,19 +93,35 @@ div.csl-indent {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Question {
+.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
 }
 .Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -141,7 +129,19 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Proposition {
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -398,7 +398,7 @@ If <span class="math inline">\(\gamma\)</span> is a regular curve, then one coul
 </section>
 <section id="vector-product-in-mathbbr3" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="vector-product-in-mathbbr3"><span class="header-section-number">4.2</span> Vector product in <span class="math inline">\(\mathbb{R}^3\)</span></h2>
-<p>The discussion in this section follows <span class="citation" data-cites="do-carmo">[<a href="references.html#ref-do-carmo" role="doc-biblioref">1</a>]</span>. We start by defining <strong>orientation</strong> for a vector space.</p>
+<p>The discussion in this section follows <span class="citation" data-cites="do-carmo">(<a href="references.html#ref-do-carmo" role="doc-biblioref">Carmo 2017</a>)</span>. We start by defining <strong>orientation</strong> for a vector space.</p>
 <div id="same-orientation" class="Definition" title="Same orientation">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 3: </strong>Same orientation</summary><div>Consider two ordered basis of <span class="math inline">\(\mathbb{R}^3\)</span> <span class="math display">\[
 b = (b_1,b_2,b_3) \,, \quad \tilde{b} = (\tilde{b}_1,\tilde{b}_2,\tilde{b}_3) \,.
@@ -654,7 +654,7 @@ u \cdot v &amp; v \cdot v
 \tag{4.4}\]</span></span><p></p>
 </div></details>
 </div>
-<p>We delay the proof of the above Proposition, as this will get easier when the <strong>Frenet frame</strong> is introduced. For a proof which does not make use of the Frenet frame, see the proof of Proposition 2.1.2 in <span class="citation" data-cites="pressley">[<a href="references.html#ref-pressley" role="doc-biblioref">2</a>]</span>.</p>
+<p>We delay the proof of the above Proposition, as this will get easier when the <strong>Frenet frame</strong> is introduced. For a proof which does not make use of the Frenet frame, see the proof of Proposition 2.1.2 in <span class="citation" data-cites="pressley">(<a href="references.html#ref-pressley" role="doc-biblioref">Pressley 2010</a>)</span>.</p>
 <p>For now we use (<a href="#eq-curvature"><span>4.4</span></a>) the above proposition to compute the curvature on specific curves.</p>
 <div id="Example-13" class="Example">
 <p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 13</strong></summary><div>Consider the Helix <span class="math display">\[
@@ -670,16 +670,16 @@ u \cdot v &amp; v \cdot v
 <li>positive if <span class="math inline">\(\dot \gamma\)</span> is rotating anticlockwise</li>
 <li>negative if <span class="math inline">\(\dot \gamma\)</span> is rotating clockwise</li>
 </ul>
-<p>A rigorous justification of the above statement is found in Proposition 2.2.3 in <span class="citation" data-cites="pressley">[<a href="references.html#ref-pressley" role="doc-biblioref">2</a>]</span>.</p>
-<p>We do not prove the above theorem. For a proof, see Theorem 2.2.6 in <span class="citation" data-cites="pressley">[<a href="references.html#ref-pressley" role="doc-biblioref">2</a>]</span>.</p>
+<p>A rigorous justification of the above statement is found in Proposition 2.2.3 in <span class="citation" data-cites="pressley">(<a href="references.html#ref-pressley" role="doc-biblioref">Pressley 2010</a>)</span>.</p>
+<p>We do not prove the above theorem. For a proof, see Theorem 2.2.6 in <span class="citation" data-cites="pressley">(<a href="references.html#ref-pressley" role="doc-biblioref">Pressley 2010</a>)</span>.</p>
 
 
-<div id="refs" class="references csl-bib-body" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-do-carmo" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">M.P. do Carmo, Differential geometry of curves and surfaces, Second Edition, Dover Books on Mathematics, 2017.</div>
+Carmo, Manfredo P. do. 2017. <em>Differential Geometry of Curves and Surfaces</em>. Second Edition. Dover Books on Mathematics.
 </div>
 <div id="ref-pressley" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[2] </div><div class="csl-right-inline">A. Pressley, Elementary differential geometry, Second Edition, Springer, 2010.</div>
+Pressley, Andrew. 2010. <em>Elementary Differential Geometry</em>. Second Edition. Springer.
 </div>
 </div>
 </section>

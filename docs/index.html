@@ -90,7 +90,7 @@ div.csl-indent {
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
-.Corollary {
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -98,15 +98,15 @@ div.csl-indent {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.Conjecture {
+.Question {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Lemma {
+.Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Goal {
+.Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -114,31 +114,7 @@ div.csl-indent {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -146,7 +122,31 @@ div.csl-indent {
   --color1: #cce7b1;
   --color2: #86b754;
 }
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -343,11 +343,11 @@ div.csl-indent {
 </section>
 <section id="readings" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="readings">Readings</h2>
-<p>The main textbook of the course is Pressley <span class="citation" data-cites="pressley">[<a href="sections/references.html#ref-pressley" role="doc-biblioref">1</a>]</span>. Other interesting readings are the books by do Carmo <span class="citation" data-cites="do-carmo">[<a href="sections/references.html#ref-do-carmo" role="doc-biblioref">2</a>]</span> and Bär <span class="citation" data-cites="bar">[<a href="sections/references.html#ref-bar" role="doc-biblioref">3</a>]</span>. I will assume some knowledge from Analysis and Linear Algebra. A good place to revise these topics are the books by Zorich <span class="citation" data-cites="zorich-1 zorich-2">[<a href="sections/references.html#ref-zorich-1" role="doc-biblioref">4</a>,<a href="sections/references.html#ref-zorich-2" role="doc-biblioref">5</a>]</span>.</p>
+<p>The main textbook of the course is Pressley <span class="citation" data-cites="pressley">(<a href="sections/references.html#ref-pressley" role="doc-biblioref">Pressley 2010</a>)</span>. Other interesting readings are the books by do Carmo <span class="citation" data-cites="do-carmo">(<a href="sections/references.html#ref-do-carmo" role="doc-biblioref">Carmo 2017</a>)</span> and Bär <span class="citation" data-cites="bar">(<a href="sections/references.html#ref-bar" role="doc-biblioref">Bär 2010</a>)</span>. I will assume some knowledge from Analysis and Linear Algebra. A good place to revise these topics are the books by Zorich <span class="citation" data-cites="zorich-1 zorich-2">(<a href="sections/references.html#ref-zorich-1" role="doc-biblioref">Zorich 2015</a>, <a href="sections/references.html#ref-zorich-2" role="doc-biblioref">2016</a>)</span>.</p>
 </section>
 <section id="visualization" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="visualization">Visualization</h2>
-<p>It is important to visualize the geometrical objects and concepts we are going to talk about in this course. I will show basic Python code to plot curves and surfaces. This part of the course is <strong><code>not required</code></strong> for the final examination. If you want to have fun plotting with Pyhton, I recommend installation through <a href="https://www.anaconda.com">Anaconda</a> or <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>. The actual coding can then be done through <a href="https://jupyter.org">Jupyter Notebook</a>. Good references for scientific Python programming are <span class="citation" data-cites="johansson KSB-Python">[<a href="sections/references.html#ref-johansson" role="doc-biblioref">6</a>,<a href="sections/references.html#ref-KSB-Python" role="doc-biblioref">7</a>]</span>.<br>
+<p>It is important to visualize the geometrical objects and concepts we are going to talk about in this course. I will show basic Python code to plot curves and surfaces. This part of the course is <strong><code>not required</code></strong> for the final examination. If you want to have fun plotting with Pyhton, I recommend installation through <a href="https://www.anaconda.com">Anaconda</a> or <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>. The actual coding can then be done through <a href="https://jupyter.org">Jupyter Notebook</a>. Good references for scientific Python programming are <span class="citation" data-cites="johansson KSB-Python">(<a href="sections/references.html#ref-johansson" role="doc-biblioref">Johansson 2019</a>; <a href="sections/references.html#ref-KSB-Python" role="doc-biblioref">Kong, Siauw, and Bayen 2020</a>)</span>.<br>
 If you do not want to mess around with Python, you can still visualize pretty much everything we will do in this course using the excellent online 3D grapher tool <a href="https://c3d.libretexts.org/CalcPlot3D/index.html/">CalcPlot3D</a>. To understand how it works, please refer to the <a href="https://c3d.libretexts.org/CalcPlot3D/CalcPlot3D-Help/front.html">help manual</a> or to the short <a href="https://c3d.libretexts.org/CalcPlot3D/CalcPlot3D-Help/section-1.html">video introduction</a>.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -364,27 +364,27 @@ Important
 </div>
 
 
-<div id="refs" class="references csl-bib-body" role="list" style="display: none">
-<div id="ref-pressley" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">A. Pressley, Elementary differential geometry, Second Edition, Springer, 2010.</div>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-bar" class="csl-entry" role="listitem">
+Bär, Christian. 2010. <em>Elementary Differential Geometry</em>. Cambridge University Press.
 </div>
 <div id="ref-do-carmo" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[2] </div><div class="csl-right-inline">M.P. do Carmo, Differential geometry of curves and surfaces, Second Edition, Dover Books on Mathematics, 2017.</div>
-</div>
-<div id="ref-bar" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[3] </div><div class="csl-right-inline">C. Bär, Elementary differential geometry, Cambridge University Press, 2010.</div>
-</div>
-<div id="ref-zorich-1" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[4] </div><div class="csl-right-inline">V.A. Zorich, Mathematical analysis i, Second Edition, Springer, 2015.</div>
-</div>
-<div id="ref-zorich-2" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[5] </div><div class="csl-right-inline">V.A. Zorich, Mathematical analysis II, Second Edition, Springer, 2016.</div>
+Carmo, Manfredo P. do. 2017. <em>Differential Geometry of Curves and Surfaces</em>. Second Edition. Dover Books on Mathematics.
 </div>
 <div id="ref-johansson" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[6] </div><div class="csl-right-inline">R. Johansson, Numerical python. Scientific computing and data science applications with numpy, SciPy and matplotlib, Second Edition, Apress, 2019.</div>
+Johansson, Robert. 2019. <em>Numerical Python. Scientific Computing and Data Science Applications with Numpy, SciPy and Matplotlib</em>. Second Edition. Apress.
 </div>
 <div id="ref-KSB-Python" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[7] </div><div class="csl-right-inline">Q. Kong, T. Siauw, A. Bayen, Python programming and numerical methods, Academic Press, 2020.</div>
+Kong, Qingkai, Timmy Siauw, and Alexandre Bayen. 2020. <em>Python Programming and Numerical Methods</em>. Academic Press.
+</div>
+<div id="ref-pressley" class="csl-entry" role="listitem">
+Pressley, Andrew. 2010. <em>Elementary Differential Geometry</em>. Second Edition. Springer.
+</div>
+<div id="ref-zorich-1" class="csl-entry" role="listitem">
+Zorich, Vladimir A. 2015. <em>Mathematical Analysis i</em>. Second Edition. Springer.
+</div>
+<div id="ref-zorich-2" class="csl-entry" role="listitem">
+———. 2016. <em>Mathematical Analysis II</em>. Second Edition. Springer.
 </div>
 </div>
 </section>

@@ -84,7 +84,39 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Important {
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -92,13 +124,21 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
-.Example {
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
   --color1: #bce5de;
   --color2: #21aa93;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .TODO {
   --color1: #e7b1b4;
@@ -107,46 +147,6 @@ div.csl-indent {
 .Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
 }
 </style>
 
@@ -282,39 +282,34 @@ div.csl-indent {
 
 </header>
 
-<div id="refs" class="references csl-bib-body" role="list">
-<div id="ref-johansson" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">R.
-Johansson, Numerical python. Scientific computing and data science
-applications with numpy, SciPy and matplotlib, Second Edition, Apress,
-2019.</div>
-</div>
-<div id="ref-KSB-Python" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[2] </div><div class="csl-right-inline">Q.
-Kong, T. Siauw, A. Bayen, Python programming and numerical methods,
-Academic Press, 2020.</div>
-</div>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-bar" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[3] </div><div class="csl-right-inline">C.
-Bär, Elementary differential geometry, Cambridge University Press,
-2010.</div>
+Bär, Christian. 2010. <em>Elementary Differential Geometry</em>.
+Cambridge University Press.
 </div>
 <div id="ref-do-carmo" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[4] </div><div class="csl-right-inline">M.P. do Carmo, Differential geometry of curves
-and surfaces, Second Edition, Dover Books on Mathematics, 2017.</div>
+Carmo, Manfredo P. do. 2017. <em>Differential Geometry of Curves and
+Surfaces</em>. Second Edition. Dover Books on Mathematics.
+</div>
+<div id="ref-johansson" class="csl-entry" role="listitem">
+Johansson, Robert. 2019. <em>Numerical Python. Scientific Computing and
+Data Science Applications with Numpy, SciPy and Matplotlib</em>. Second
+Edition. Apress.
+</div>
+<div id="ref-KSB-Python" class="csl-entry" role="listitem">
+Kong, Qingkai, Timmy Siauw, and Alexandre Bayen. 2020. <em>Python
+Programming and Numerical Methods</em>. Academic Press.
 </div>
 <div id="ref-pressley" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[5] </div><div class="csl-right-inline">A.
-Pressley, Elementary differential geometry, Second Edition, Springer,
-2010.</div>
-</div>
-<div id="ref-zorich-2" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[6] </div><div class="csl-right-inline">V.A. Zorich, Mathematical analysis II, Second
-Edition, Springer, 2016.</div>
+Pressley, Andrew. 2010. <em>Elementary Differential Geometry</em>.
+Second Edition. Springer.
 </div>
 <div id="ref-zorich-1" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[7] </div><div class="csl-right-inline">V.A. Zorich, Mathematical analysis i, Second
-Edition, Springer, 2015.</div>
+Zorich, Vladimir A. 2015. <em>Mathematical Analysis i</em>. Second
+Edition. Springer.
+</div>
+<div id="ref-zorich-2" class="csl-entry" role="listitem">
+———. 2016. <em>Mathematical Analysis II</em>. Second Edition. Springer.
 </div>
 </div>
 
