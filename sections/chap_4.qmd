@@ -178,13 +178,345 @@ If $\g$ is a regular curve, then one could do the same: first compute unit speed
 
 
 
+
+
+
 ## Vector product in $\R^3$
 
 
+The discussion in this section follows [@do-carmo]. We start by defining **orientation** for a vector space.
+
+
+::: Definition
+### Same orientation
+
+Consider two ordered basis of $\R^3$
+$$
+b = (b_1,b_2,b_3) \,, \quad \tilde{b} = (\tilde{b}_1,\tilde{b}_2,\tilde{b}_3) \,.
+$$
+We say that $b$ and $\tilde{b}$ have the same orientation if the matrix of change of basis has positive determinant.
+
+:::
+
+When two basis $b$ and $\tilde{b}$ have the same orientation, we write
+$$
+b \sim \tilde{b} \,.
+$$
+The above is clearly an equivalence relation on the set of ordered basis. Therefore the set of ordered basis of $\R^3$ can be decomposed into equivalence classes.
+Since the determinant of the matrix of change of basis can only be positive or negative, there are only two equivalence classes.
+
+
+::: Definition 
+### Orientation
+
+The two equivalence classes determined by $\sim$ on the set of ordered basis are called **orientations**. 
+
+:::
 
 
 
-## Curvature formula
+::: Definition 
+### Positive orientation
+
+Consider the standard basis of $\R^3$ 
+$$
+e = (e_1,e_2,e_3)
+$$
+where we set
+$$
+e_1 = (1,0,0)\,, \quad e_2 = (0,1,0) \,, \quad e_3 = (0,0,1) \,.
+$$
+Then:
+
+- The orientation corresponding to $e$ is called **positive orientation** of $\R^3$.
+- The orientation corresponding to the other equivalence class is called **negative orientation** of $\R^3$.
+
+
+For a basis $b$ of $\R^3$ we say that:
+
+- $b$ is a **positive basis** if it belongs to the class of $e$.
+- $b$ is a **negative basis** if it does not belong to the class of $e$.
+:::
+
+
+
+::: Example
+
+Since we are dealing with ordered basis, the order in which vectors appear is fundamental. For example, we defined the equivalence class of
+$$
+e = (e_1,e_2,e_3) \,,
+$$
+to be the positive orientation of $\R^3$. In particular $e$ is a positive basis.  
+Consider instead
+$$
+\tilde{e} = (e_2,e_1,e_3) \,.
+$$
+The matrix of change of variables between $\tilde{e}$ and $e$ is 
+$$
+(e_2 | e_1 | e_3 ) = \left(
+\begin{array}{ccc}
+0 & 1 & 0 \\ 
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+\end{array}
+\right)
+$$
+and the latter has negative determinant. Thus $\tilde{e}$ does not belong to the class of $e$, and is therefore a negative basis. 
+:::
+
+
+We are now ready to define the vector product in $\R^3$.
+
+
+::: Definition
+### Vector product in $\R^3$   
+
+Let $u,v \in \R^3$. The vector product of $u$ and $v$ is the unique vector 
+$$
+u \times v \in \R^3
+$$
+which satisfies the property:
+$$
+(u \times v) \cdot w = 
+\left|
+\begin{array}{ccc}
+u_1 & u_2 & u_3 \\
+v_1 & v_2 & v_3 \\
+w_1 & w_2 & w_3 \\
+\end{array}
+\right| \,, \quad \forall \, w \in \R^3 \,.
+$${#eq-def-vector-product}
+Here $|a_{ij}|$ denotes the determinant of the matrix $(a_{ij})$, and 
+$$
+u= \sum_{i=1}^3 u_i e_i \,, \quad
+v= \sum_{i=1}^3 v_i e_i \,, \quad
+w= \sum_{i=1}^3 w_i e_i \,,
+$$
+with $(e_1,e_2,e_3)$ standard basis of $\R^3$.
+:::
+
+
+The following proposition gives an explicit formula for computing $u \times v$.
+
+
+::: Proposition
+
+Let $u,v \in \R^3$. Then
+$$
+u \times v = 
+\left|
+\begin{array}{cc}
+u_2 & u_3  \\
+v_2 & v_3 
+\end{array}
+\right| e_1 -
+\left|
+\begin{array}{cc}
+u_1 & u_3  \\
+v_1 & v_3 
+\end{array}
+\right| e_2 +
+\left|
+\begin{array}{cc}
+u_1 & u_2  \\
+v_1 & v_2 
+\end{array}
+\right| e_3  \,. 
+$$ 
+:::
+
+
+::: Proof
+Denote by $(u \times v)_i$ the $i$-th component of $u \times v$ with respect to the standard basis, that is,
+$$
+u \times v = \sum_{i=1}^3  (u \times v)_i \, e_i \,.
+$$
+We can use (@eq-def-vector-product) with $w = e_1$ to obtain 
+$$
+(u \times v) \cdot e_1  = 
+\left|
+\begin{array}{ccc}
+u_1 & u_2 & u_3 \\
+v_1 & v_2 & v_3 \\
+ 1  & 0   &   0 \\
+\end{array}
+\right| =
+\left|
+\begin{array}{cc}
+u_2 & u_3  \\
+v_2 & v_3 
+\end{array}
+\right|
+$$
+where we used the Laplace expansion for computing the determinant of the $3 \times 3$ matrix. As the standard basis is orthonormal, by bilinearity of the scalar product we get
+$$
+(u \times v) \cdot e_1 = \sum_{i=1}^3  (u \times v)_i \, e_i \cdot e_1 = (u \times v)_i \,.
+$$
+Therefore we have shown
+$$
+(u \times v)_1 = \left|
+\begin{array}{cc}
+u_2 & u_3  \\
+v_2 & v_3 
+\end{array}
+\right| \,.
+$$
+Similarly we obtain
+$$
+(u \times v)_2  = \left|
+\begin{array}{ccc}
+u_1 & u_2 & u_3 \\
+v_1 & v_2 & v_3 \\
+ 0  & 1   &   0 \\
+\end{array}
+\right| = -
+\left|
+\begin{array}{cc}
+u_1 & u_3  \\
+v_1 & v_3 
+\end{array}
+\right|
+$$
+and 
+$$
+(u \times v)_3  = \left|
+\begin{array}{ccc}
+u_1 & u_2 & u_3 \\
+v_1 & v_2 & v_3 \\
+ 0  & 0   &   1 \\
+\end{array}
+\right| = 
+\left|
+\begin{array}{cc}
+u_1 & u_2  \\
+v_1 & v_2 
+\end{array}
+\right| \,,
+$$
+from which we conclude.
+:::
+
+
+
+::: {.Proposition #proposition-vector-product}
+
+The vector product in $\R^3$ satisfies the following properties: For all $u, v \in \R^3$ 
+
+1. $u \times v = - v \times u$
+2. $u \times v = 0$ if and only if $u$ and $v$ are linearly dependent
+3. $(u \times v) \cdot u = 0$, $(u \times v) \cdot v = 0$
+4. Moreover for all $w \in \R^3$, $a,b \in \R$
+$$
+(au + bw) \times v = a u \times v + bw \times w 
+$$
+
+:::
+
+The proof, which is based on the properties of determinants, is omitted.
+
+
+::: Remark
+### Geometric interpretation of vector product
+
+Let $u, v \in \R^3$ be linearly independent. We make some observations:
+
+- Property 3 in Proposition \ref{proposition-vector-product} says that
+$$
+(u \times v) \cdot u = 0 \,, \quad  (u \times v) \cdot v = 0 \,.
+$$
+Therefore $u \times v$ is orthogonal to both $u$ and $v$. 
+
+- In particular $u \times v$ is orthogonal to the plane generated by $u$ and $v$.
+
+- Since $u$ and $v$ are linearly independent, Property 2 in Proposition \ref{proposition-vector-product} says that
+$$
+u \times v \neq 0
+$$
+
+- Therefore we have
+$$
+(u \times v) \cdot (u \times v) = | u \times v |^2 > 0 
+$$
+
+- On the other hand, using the definition of $u \times v$ with $w = v \times w$ yields
+$$
+(u \times v) \cdot (u \times v) =
+\left|
+\begin{array}{ccc}
+u_1 & u_2 & u_3 \\
+v_1 & v_2 & v_3 \\
+(u \times v)_1 & (u \times v)_2 & (u \times v)_3 \\
+\end{array}
+\right| 
+$$
+
+- Therefore the determinant of the matrix
+$$
+(u | v | u \times v)
+$$
+is positive. This shows that 
+$$
+(u , v , u \times v)
+$$
+is a **positive basis** of $\R^3$.
+
+- For all $u,v,x,y \in \R^3$ it holds
+$$
+(u \times v) \cdot (x \times y ) = 
+\left|
+\begin{array}{cc}
+u \cdot x & v \cdot x  \\
+u \cdot y & v \cdot y 
+\end{array}
+\right| \,.
+$${#eq-formula-cross}
+Indeed, one can check that the above formula holds for the standard vectors $e_i$, and thus the general formula follows by linearity.
+
+- Using (@eq-formula-cross) we get
+\begin{align}
+|u \times v|^2 & = (u \times v) \cdot (u \times v) = 
+\left|
+\begin{array}{cc}
+u \cdot u & v \cdot u  \\
+u \cdot v & v \cdot v 
+\end{array}
+\right|   \\
+& = |u|^2|v|^2 - |u \cdot v|^2 \\
+& = |u|^2|v|^2 - |u|^2 |v|^2 \cos^2(\theta) \\
+& = |u|^2|v|^2 (1-\cos^2(\theta)) \\
+& = |u|^2|v|^2 \sin^2(\theta) \\
+& = A^2  
+\end{align} 
+where $A$ is the area of the parallelogram with sides $u$ and $v$.
+:::
+
+
+![For $u,v$ linearly independent, $u \times v$ is orthogonal to the plane generated by $u,v$. Moreover $|u \times v|$ is the area of the parallelogram with sides $u,v$, and $(u,v,u \times v)$ is a positive basis of $\R^3$](/images/vector_product_orthogonal.png){width=70%}
+
+
+We conclude with a summary of the above remark.
+
+::: Remark
+### Summary: Properties of $u \times v$
+
+Let $u,v \in \R^3$ be linearly independent. Then
+
+- $u \times v$ is orthogonal to the plane spanned by $u,v$
+- $|u \times v|$ is equal to the area of the parallelogram with sides $u,v$
+- $u \times v$ is such that
+$$
+(u,v,u\times v)
+$$
+is a positive basis of $\R^3$.
+
+:::
+
+
+
+
+
+
+## Curvature formula in $\R^3$
 
 
 Given a unit speed curve
@@ -206,14 +538,14 @@ If $\g$ is a regular curve in $\R^3$, there is a way to compute $\kappa$ without
 Let $\g \colon (a,b) \to \R^3$ be a regular curve. Then the curvature $\kappa(t)$ of $\g$ at $\g(t)$ is given by
 $$
 \kappa(t) = \frac{ \norm{\ddot \g \times \dot \g} }{ \norm{\dot \g}^3 } \,. 
-$$
+$${#eq-curvature}
 
 :::
 
 
 We delay the proof of the above Proposition, as this will get easier when the **Frenet frame** is introduced. For a proof which does not make use of the Frenet frame, see the proof of Proposition 2.1.2 in [@pressley].
 
-For now, we use the above proposition to compute the curvature on specific curves.
+For now we use (@eq-curvature) the above proposition to compute the curvature on specific curves.
 
 ::: Example
 
@@ -227,7 +559,7 @@ $$
 
 
 
-## Plane curves
+## Signed curvature of plane curves
 
 The signed curvature is the rate at which the tangent vector $\dot \g$ of the curve $\g$ rotates. The signed curvature is:
 

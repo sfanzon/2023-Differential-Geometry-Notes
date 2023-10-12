@@ -171,6 +171,26 @@
 
  [**Example 4.2**](#Example-4.2)\Pageref{Example-4.2}
 
- [**Proposition 4.3**](#Proposition-4.3)\Pageref{Proposition-4.3}
+ [**Definition 4.3**](#same-orientation): Same orientation\Pageref{same-orientation}
 
- [**Example 4.4**](#Example-4.4)\Pageref{Example-4.4}
+ [**Definition 4.4**](#orientation): Orientation\Pageref{orientation}
+
+ [**Definition 4.5**](#positive-orientation): Positive orientation\Pageref{positive-orientation}
+
+ [**Example 4.6**](#Example-4.6)\Pageref{Example-4.6}
+
+ [**Definition 4.7**](#vector-product-in-mathbbr3-1): Vector product in $\mathbb{R}^3$\Pageref{vector-product-in-mathbbr3-1}
+
+ [**Proposition 4.8**](#Proposition-4.8)\Pageref{Proposition-4.8}
+
+ [**Proof**](#Proof*-4.2)\Pageref{Proof*-4.2}
+
+ [**Proposition 4.9**](#proposition-vector-product)\Pageref{proposition-vector-product}
+
+ [**Remark 4.10**](#geometric-interpretation-of-vector-product): Geometric interpretation of vector product\Pageref{geometric-interpretation-of-vector-product}
+
+ [**Remark 4.11**](#summary-properties-of-u-times-v): Summary: Properties of $u \times v$\Pageref{summary-properties-of-u-times-v}
+
+ [**Proposition 4.12**](#Proposition-4.12)\Pageref{Proposition-4.12}
+
+ [**Example 4.13**](#Example-4.13)\Pageref{Example-4.13}

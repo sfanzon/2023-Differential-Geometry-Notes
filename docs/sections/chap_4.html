@@ -85,7 +85,35 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Question {
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -93,7 +121,7 @@ div.csl-indent {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Assumption {
+.Question {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -101,23 +129,11 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
 }
 .Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -125,29 +141,13 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Remark {
   --color1: #bce5de;
   --color2: #21aa93;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
 }
 </style>
 
@@ -269,8 +269,8 @@ div.csl-indent {
   <ul>
   <li><a href="#curvature" id="toc-curvature" class="nav-link active" data-scroll-target="#curvature"><span class="header-section-number">4.1</span> Curvature</a></li>
   <li><a href="#vector-product-in-mathbbr3" id="toc-vector-product-in-mathbbr3" class="nav-link" data-scroll-target="#vector-product-in-mathbbr3"><span class="header-section-number">4.2</span> Vector product in <span class="math inline">\(\mathbb{R}^3\)</span></a></li>
-  <li><a href="#curvature-formula" id="toc-curvature-formula" class="nav-link" data-scroll-target="#curvature-formula"><span class="header-section-number">4.3</span> Curvature formula</a></li>
-  <li><a href="#plane-curves" id="toc-plane-curves" class="nav-link" data-scroll-target="#plane-curves"><span class="header-section-number">4.4</span> Plane curves</a></li>
+  <li><a href="#curvature-formula-in-mathbbr3" id="toc-curvature-formula-in-mathbbr3" class="nav-link" data-scroll-target="#curvature-formula-in-mathbbr3"><span class="header-section-number">4.3</span> Curvature formula in <span class="math inline">\(\mathbb{R}^3\)</span></a></li>
+  <li><a href="#signed-curvature-of-plane-curves" id="toc-signed-curvature-of-plane-curves" class="nav-link" data-scroll-target="#signed-curvature-of-plane-curves"><span class="header-section-number">4.4</span> Signed curvature of plane curves</a></li>
   </ul>
 </nav>
     </div>
@@ -398,9 +398,249 @@ If <span class="math inline">\(\gamma\)</span> is a regular curve, then one coul
 </section>
 <section id="vector-product-in-mathbbr3" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="vector-product-in-mathbbr3"><span class="header-section-number">4.2</span> Vector product in <span class="math inline">\(\mathbb{R}^3\)</span></h2>
+<p>The discussion in this section follows <span class="citation" data-cites="do-carmo">[<a href="references.html#ref-do-carmo" role="doc-biblioref">1</a>]</span>. We start by defining <strong>orientation</strong> for a vector space.</p>
+<div id="same-orientation" class="Definition" title="Same orientation">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 3: </strong>Same orientation</summary><div>Consider two ordered basis of <span class="math inline">\(\mathbb{R}^3\)</span> <span class="math display">\[
+b = (b_1,b_2,b_3) \,, \quad \tilde{b} = (\tilde{b}_1,\tilde{b}_2,\tilde{b}_3) \,.
+\]</span> We say that <span class="math inline">\(b\)</span> and <span class="math inline">\(\tilde{b}\)</span> have the same orientation if the matrix of change of basis has positive determinant.<p></p>
+</div></details>
+</div>
+<p>When two basis <span class="math inline">\(b\)</span> and <span class="math inline">\(\tilde{b}\)</span> have the same orientation, we write <span class="math display">\[
+b \sim \tilde{b} \,.
+\]</span> The above is clearly an equivalence relation on the set of ordered basis. Therefore the set of ordered basis of <span class="math inline">\(\mathbb{R}^3\)</span> can be decomposed into equivalence classes. Since the determinant of the matrix of change of basis can only be positive or negative, there are only two equivalence classes.</p>
+<div id="orientation" class="Definition" title="Orientation">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 4: </strong>Orientation</summary><div>The two equivalence classes determined by <span class="math inline">\(\sim\)</span> on the set of ordered basis are called <strong>orientations</strong>.<p></p>
+</div></details>
+</div>
+<div id="positive-orientation" class="Definition" title="Positive orientation">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 5: </strong>Positive orientation</summary><div>
+<p>Consider the standard basis of <span class="math inline">\(\mathbb{R}^3\)</span> <span class="math display">\[
+e = (e_1,e_2,e_3)
+\]</span> where we set <span class="math display">\[
+e_1 = (1,0,0)\,, \quad e_2 = (0,1,0) \,, \quad e_3 = (0,0,1) \,.
+\]</span> Then:</p>
+<ul>
+<li>The orientation corresponding to <span class="math inline">\(e\)</span> is called <strong>positive orientation</strong> of <span class="math inline">\(\mathbb{R}^3\)</span>.</li>
+<li>The orientation corresponding to the other equivalence class is called <strong>negative orientation</strong> of <span class="math inline">\(\mathbb{R}^3\)</span>.</li>
+</ul>
+<p>For a basis <span class="math inline">\(b\)</span> of <span class="math inline">\(\mathbb{R}^3\)</span> we say that:</p>
+<ul>
+<li><span class="math inline">\(b\)</span> is a <strong>positive basis</strong> if it belongs to the class of <span class="math inline">\(e\)</span>.</li>
+<li><span class="math inline">\(b\)</span> is a <strong>negative basis</strong> if it does not belong to the class of <span class="math inline">\(e\)</span>.</li>
+</ul>
+</div></details>
+</div>
+<div id="Example-6" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 6</strong></summary><div>Since we are dealing with ordered basis, the order in which vectors appear is fundamental. For example, we defined the equivalence class of <span class="math display">\[
+e = (e_1,e_2,e_3) \,,
+\]</span> to be the positive orientation of <span class="math inline">\(\mathbb{R}^3\)</span>. In particular <span class="math inline">\(e\)</span> is a positive basis.<br>
+Consider instead <span class="math display">\[
+\tilde{e} = (e_2,e_1,e_3) \,.
+\]</span> The matrix of change of variables between <span class="math inline">\(\tilde{e}\)</span> and <span class="math inline">\(e\)</span> is <span class="math display">\[
+(e_2 | e_1 | e_3 ) = \left(
+\begin{array}{ccc}
+0 &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 \\
+\end{array}
+\right)
+\]</span> and the latter has negative determinant. Thus <span class="math inline">\(\tilde{e}\)</span> does not belong to the class of <span class="math inline">\(e\)</span>, and is therefore a negative basis.<p></p>
+</div></details>
+</div>
+<p>We are now ready to define the vector product in <span class="math inline">\(\mathbb{R}^3\)</span>.</p>
+<div id="vector-product-in-mathbbr3-1" class="Definition" title="Vector product in \mathbb{R}^3">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 7: </strong>Vector product in <span class="math inline">\(\mathbb{R}^3\)</span></summary><div>Let <span class="math inline">\(u,v \in \mathbb{R}^3\)</span>. The vector product of <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> is the unique vector <span class="math display">\[
+u \times v \in \mathbb{R}^3
+\]</span> which satisfies the property: <span id="eq-def-vector-product"><span class="math display">\[
+(u \times v) \cdot w =
+\left|
+\begin{array}{ccc}
+u_1 &amp; u_2 &amp; u_3 \\
+v_1 &amp; v_2 &amp; v_3 \\
+w_1 &amp; w_2 &amp; w_3 \\
+\end{array}
+\right| \,, \quad \forall \, w \in \mathbb{R}^3 \,.
+\tag{4.2}\]</span></span> Here <span class="math inline">\(|a_{ij}|\)</span> denotes the determinant of the matrix <span class="math inline">\((a_{ij})\)</span>, and <span class="math display">\[
+u= \sum_{i=1}^3 u_i e_i \,, \quad
+v= \sum_{i=1}^3 v_i e_i \,, \quad
+w= \sum_{i=1}^3 w_i e_i \,,
+\]</span> with <span class="math inline">\((e_1,e_2,e_3)\)</span> standard basis of <span class="math inline">\(\mathbb{R}^3\)</span>.<p></p>
+</div></details>
+</div>
+<p>The following proposition gives an explicit formula for computing <span class="math inline">\(u \times v\)</span>.</p>
+<div id="Proposition-8" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 8</strong></summary><div>Let <span class="math inline">\(u,v \in \mathbb{R}^3\)</span>. Then <span class="math display">\[
+u \times v =
+\left|
+\begin{array}{cc}
+u_2 &amp; u_3  \\
+v_2 &amp; v_3
+\end{array}
+\right| e_1 -
+\left|
+\begin{array}{cc}
+u_1 &amp; u_3  \\
+v_1 &amp; v_3
+\end{array}
+\right| e_2 +
+\left|
+\begin{array}{cc}
+u_1 &amp; u_2  \\
+v_1 &amp; v_2
+\end{array}
+\right| e_3  \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="Proof*-2" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Denote by <span class="math inline">\((u \times v)_i\)</span> the <span class="math inline">\(i\)</span>-th component of <span class="math inline">\(u \times v\)</span> with respect to the standard basis, that is, <span class="math display">\[
+u \times v = \sum_{i=1}^3  (u \times v)_i \, e_i \,.
+\]</span> We can use (<a href="#eq-def-vector-product"><span>4.2</span></a>) with <span class="math inline">\(w = e_1\)</span> to obtain <span class="math display">\[
+(u \times v) \cdot e_1  =
+\left|
+\begin{array}{ccc}
+u_1 &amp; u_2 &amp; u_3 \\
+v_1 &amp; v_2 &amp; v_3 \\
+1  &amp; 0   &amp;   0 \\
+\end{array}
+\right| =
+\left|
+\begin{array}{cc}
+u_2 &amp; u_3  \\
+v_2 &amp; v_3
+\end{array}
+\right|
+\]</span> where we used the Laplace expansion for computing the determinant of the <span class="math inline">\(3 \times 3\)</span> matrix. As the standard basis is orthonormal, by bilinearity of the scalar product we get <span class="math display">\[
+(u \times v) \cdot e_1 = \sum_{i=1}^3  (u \times v)_i \, e_i \cdot e_1 = (u \times v)_i \,.
+\]</span> Therefore we have shown <span class="math display">\[
+(u \times v)_1 = \left|
+\begin{array}{cc}
+u_2 &amp; u_3  \\
+v_2 &amp; v_3
+\end{array}
+\right| \,.
+\]</span> Similarly we obtain <span class="math display">\[
+(u \times v)_2  = \left|
+\begin{array}{ccc}
+u_1 &amp; u_2 &amp; u_3 \\
+v_1 &amp; v_2 &amp; v_3 \\
+0  &amp; 1   &amp;   0 \\
+\end{array}
+\right| = -
+\left|
+\begin{array}{cc}
+u_1 &amp; u_3  \\
+v_1 &amp; v_3
+\end{array}
+\right|
+\]</span> and <span class="math display">\[
+(u \times v)_3  = \left|
+\begin{array}{ccc}
+u_1 &amp; u_2 &amp; u_3 \\
+v_1 &amp; v_2 &amp; v_3 \\
+0  &amp; 0   &amp;   1 \\
+\end{array}
+\right| =
+\left|
+\begin{array}{cc}
+u_1 &amp; u_2  \\
+v_1 &amp; v_2
+\end{array}
+\right| \,,
+\]</span> from which we conclude.<p></p>
+</div></details>
+</div>
+<div id="proposition-vector-product" class="Proposition">
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 9</strong></summary><div>
+<p>The vector product in <span class="math inline">\(\mathbb{R}^3\)</span> satisfies the following properties: For all <span class="math inline">\(u, v \in \mathbb{R}^3\)</span></p>
+<ol type="1">
+<li><span class="math inline">\(u \times v = - v \times u\)</span></li>
+<li><span class="math inline">\(u \times v = 0\)</span> if and only if <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> are linearly dependent</li>
+<li><span class="math inline">\((u \times v) \cdot u = 0\)</span>, <span class="math inline">\((u \times v) \cdot v = 0\)</span></li>
+<li>Moreover for all <span class="math inline">\(w \in \mathbb{R}^3\)</span>, <span class="math inline">\(a,b \in \mathbb{R}\)</span> <span class="math display">\[
+(au + bw) \times v = a u \times v + bw \times w
+\]</span></li>
+</ol>
+</div></details>
+</div>
+<p>The proof, which is based on the properties of determinants, is omitted.</p>
+<div id="geometric-interpretation-of-vector-product" class="Remark" title="Geometric interpretation of vector product">
+<details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 10: </strong>Geometric interpretation of vector product</summary><div>
+<p>Let <span class="math inline">\(u, v \in \mathbb{R}^3\)</span> be linearly independent. We make some observations:</p>
+<ul>
+<li><p>Property 3 in Proposition <a href="chap_4.html#proposition-vector-product">9</a> says that <span class="math display">\[
+(u \times v) \cdot u = 0 \,, \quad  (u \times v) \cdot v = 0 \,.
+\]</span> Therefore <span class="math inline">\(u \times v\)</span> is orthogonal to both <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span>.</p></li>
+<li><p>In particular <span class="math inline">\(u \times v\)</span> is orthogonal to the plane generated by <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span>.</p></li>
+<li><p>Since <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> are linearly independent, Property 2 in Proposition <a href="chap_4.html#proposition-vector-product">9</a> says that <span class="math display">\[
+u \times v \neq 0
+\]</span></p></li>
+<li><p>Therefore we have <span class="math display">\[
+(u \times v) \cdot (u \times v) = | u \times v |^2 &gt; 0
+\]</span></p></li>
+<li><p>On the other hand, using the definition of <span class="math inline">\(u \times v\)</span> with <span class="math inline">\(w = v \times w\)</span> yields <span class="math display">\[
+(u \times v) \cdot (u \times v) =
+\left|
+\begin{array}{ccc}
+u_1 &amp; u_2 &amp; u_3 \\
+v_1 &amp; v_2 &amp; v_3 \\
+(u \times v)_1 &amp; (u \times v)_2 &amp; (u \times v)_3 \\
+\end{array}
+\right|
+\]</span></p></li>
+<li><p>Therefore the determinant of the matrix <span class="math display">\[
+(u | v | u \times v)
+\]</span> is positive. This shows that <span class="math display">\[
+(u , v , u \times v)
+\]</span> is a <strong>positive basis</strong> of <span class="math inline">\(\mathbb{R}^3\)</span>.</p></li>
+<li><p>For all <span class="math inline">\(u,v,x,y \in \mathbb{R}^3\)</span> it holds <span id="eq-formula-cross"><span class="math display">\[
+(u \times v) \cdot (x \times y ) =
+\left|
+\begin{array}{cc}
+u \cdot x &amp; v \cdot x  \\
+u \cdot y &amp; v \cdot y
+\end{array}
+\right| \,.
+\tag{4.3}\]</span></span> Indeed, one can check that the above formula holds for the standard vectors <span class="math inline">\(e_i\)</span>, and thus the general formula follows by linearity.</p></li>
+<li><p>Using (<a href="#eq-formula-cross"><span>4.3</span></a>) we get <span class="math display">\[\begin{align}
+|u \times v|^2 &amp; = (u \times v) \cdot (u \times v) =
+\left|
+\begin{array}{cc}
+u \cdot u &amp; v \cdot u  \\
+u \cdot v &amp; v \cdot v
+\end{array}
+\right|   \\
+&amp; = |u|^2|v|^2 - |u \cdot v|^2 \\
+&amp; = |u|^2|v|^2 - |u|^2 |v|^2 \cos^2(\theta) \\
+&amp; = |u|^2|v|^2 (1-\cos^2(\theta)) \\
+&amp; = |u|^2|v|^2 \sin^2(\theta) \\
+&amp; = A^2  
+\end{align}\]</span> where <span class="math inline">\(A\)</span> is the area of the parallelogram with sides <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span>.</p></li>
+</ul>
+</div></details>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/vector_product_orthogonal.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">For <span class="math inline">\(u,v\)</span> linearly independent, <span class="math inline">\(u \times v\)</span> is orthogonal to the plane generated by <span class="math inline">\(u,v\)</span>. Moreover <span class="math inline">\(|u \times v|\)</span> is the area of the parallelogram with sides <span class="math inline">\(u,v\)</span>, and <span class="math inline">\((u,v,u \times v)\)</span> is a positive basis of <span class="math inline">\(\mathbb{R}^3\)</span></figcaption>
+</figure>
+</div>
+<p>We conclude with a summary of the above remark.</p>
+<div id="summary-properties-of-u-times-v" class="Remark" title="Summary: Properties of u \times v">
+<details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 11: </strong>Summary: Properties of <span class="math inline">\(u \times v\)</span></summary><div>
+<p>Let <span class="math inline">\(u,v \in \mathbb{R}^3\)</span> be linearly independent. Then</p>
+<ul>
+<li><span class="math inline">\(u \times v\)</span> is orthogonal to the plane spanned by <span class="math inline">\(u,v\)</span></li>
+<li><span class="math inline">\(|u \times v|\)</span> is equal to the area of the parallelogram with sides <span class="math inline">\(u,v\)</span></li>
+<li><span class="math inline">\(u \times v\)</span> is such that <span class="math display">\[
+(u,v,u\times v)
+\]</span> is a positive basis of <span class="math inline">\(\mathbb{R}^3\)</span>.</li>
+</ul>
+</div></details>
+</div>
 </section>
-<section id="curvature-formula" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="curvature-formula"><span class="header-section-number">4.3</span> Curvature formula</h2>
+<section id="curvature-formula-in-mathbbr3" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="curvature-formula-in-mathbbr3"><span class="header-section-number">4.3</span> Curvature formula in <span class="math inline">\(\mathbb{R}^3\)</span></h2>
 <p>Given a unit speed curve <span class="math display">\[
 \gamma\ \colon (a,b) \to \mathbb{R}^n
 \]</span> we defined its curvature as <span class="math display">\[
@@ -408,35 +648,38 @@ If <span class="math inline">\(\gamma\)</span> is a regular curve, then one coul
 \]</span> If <span class="math inline">\(\gamma\)</span> is not unit speed then the curvature is not defined. However, when <span class="math inline">\(\gamma\)</span> is regular, then we can find a unit-speed reparametrization <span class="math inline">\(\widetilde{\gamma}\)</span> of <span class="math inline">\(\gamma\)</span>, and compute <span class="math inline">\(\kappa\)</span> as <span class="math display">\[
 \kappa(t) = \left\|  \ddot{\widetilde{\gamma}}(t)  \right\| \,.
 \]</span> If <span class="math inline">\(\gamma\)</span> is a regular curve in <span class="math inline">\(\mathbb{R}^3\)</span>, there is a way to compute <span class="math inline">\(\kappa\)</span> without passing through <span class="math inline">\(\widetilde{\gamma}\)</span>. The formula for computing <span class="math inline">\(\kappa\)</span> is as follows.</p>
-<div id="Proposition-3" class="Proposition">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 3</strong></summary><div>Let <span class="math inline">\(\gamma\colon (a,b) \to \mathbb{R}^3\)</span> be a regular curve. Then the curvature <span class="math inline">\(\kappa(t)\)</span> of <span class="math inline">\(\gamma\)</span> at <span class="math inline">\(\gamma(t)\)</span> is given by <span class="math display">\[
+<div id="Proposition-12" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 12</strong></summary><div>Let <span class="math inline">\(\gamma\colon (a,b) \to \mathbb{R}^3\)</span> be a regular curve. Then the curvature <span class="math inline">\(\kappa(t)\)</span> of <span class="math inline">\(\gamma\)</span> at <span class="math inline">\(\gamma(t)\)</span> is given by <span id="eq-curvature"><span class="math display">\[
 \kappa(t) = \frac{ \left\| \ddot \gamma\times \dot \gamma \right\| }{ \left\| \dot \gamma \right\|^3 } \,.
-\]</span><p></p>
+\tag{4.4}\]</span></span><p></p>
 </div></details>
 </div>
-<p>We delay the proof of the above Proposition, as this will get easier when the <strong>Frenet frame</strong> is introduced. For a proof which does not make use of the Frenet frame, see the proof of Proposition 2.1.2 in <span class="citation" data-cites="pressley">[<a href="references.html#ref-pressley" role="doc-biblioref">1</a>]</span>.</p>
-<p>For now, we use the above proposition to compute the curvature on specific curves.</p>
-<div id="Example-4" class="Example">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 4</strong></summary><div>Consider the Helix <span class="math display">\[
+<p>We delay the proof of the above Proposition, as this will get easier when the <strong>Frenet frame</strong> is introduced. For a proof which does not make use of the Frenet frame, see the proof of Proposition 2.1.2 in <span class="citation" data-cites="pressley">[<a href="references.html#ref-pressley" role="doc-biblioref">2</a>]</span>.</p>
+<p>For now we use (<a href="#eq-curvature"><span>4.4</span></a>) the above proposition to compute the curvature on specific curves.</p>
+<div id="Example-13" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 13</strong></summary><div>Consider the Helix <span class="math display">\[
 \gamma(t) = ( \cos(t) , \sin(t) , t) \,, \quad t \in \mathbb{R}\,.
 \]</span><p></p>
 </div></details>
 </div>
 </section>
-<section id="plane-curves" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="plane-curves"><span class="header-section-number">4.4</span> Plane curves</h2>
+<section id="signed-curvature-of-plane-curves" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="signed-curvature-of-plane-curves"><span class="header-section-number">4.4</span> Signed curvature of plane curves</h2>
 <p>The signed curvature is the rate at which the tangent vector <span class="math inline">\(\dot \gamma\)</span> of the curve <span class="math inline">\(\gamma\)</span> rotates. The signed curvature is:</p>
 <ul>
 <li>positive if <span class="math inline">\(\dot \gamma\)</span> is rotating anticlockwise</li>
 <li>negative if <span class="math inline">\(\dot \gamma\)</span> is rotating clockwise</li>
 </ul>
-<p>A rigorous justification of the above statement is found in Proposition 2.2.3 in <span class="citation" data-cites="pressley">[<a href="references.html#ref-pressley" role="doc-biblioref">1</a>]</span>.</p>
-<p>We do not prove the above theorem. For a proof, see Theorem 2.2.6 in <span class="citation" data-cites="pressley">[<a href="references.html#ref-pressley" role="doc-biblioref">1</a>]</span>.</p>
+<p>A rigorous justification of the above statement is found in Proposition 2.2.3 in <span class="citation" data-cites="pressley">[<a href="references.html#ref-pressley" role="doc-biblioref">2</a>]</span>.</p>
+<p>We do not prove the above theorem. For a proof, see Theorem 2.2.6 in <span class="citation" data-cites="pressley">[<a href="references.html#ref-pressley" role="doc-biblioref">2</a>]</span>.</p>
 
 
 <div id="refs" class="references csl-bib-body" role="list" style="display: none">
+<div id="ref-do-carmo" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">M.P. do Carmo, Differential geometry of curves and surfaces, Second Edition, Dover Books on Mathematics, 2017.</div>
+</div>
 <div id="ref-pressley" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">A. Pressley, Elementary differential geometry, Second Edition, Springer, 2010.</div>
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">A. Pressley, Elementary differential geometry, Second Edition, Springer, 2010.</div>
 </div>
 </div>
 </section>
