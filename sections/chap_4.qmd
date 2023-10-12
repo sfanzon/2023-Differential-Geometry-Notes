@@ -437,7 +437,7 @@ $$
 
 - Therefore we have
 $$
-(u \times v) \cdot (u \times v) = | u \times v |^2 > 0 
+(u \times v) \cdot (u \times v) = \norm{ u \times v }^2 > 0 
 $$
 
 - On the other hand, using the definition of $u \times v$ with $w = v \times w$ yields
@@ -476,17 +476,17 @@ Indeed, one can check that the above formula holds for the standard vectors $e_i
 
 - Using (@eq-formula-cross) we get
 \begin{align}
-|u \times v|^2 & = (u \times v) \cdot (u \times v) = 
+\norm{u \times v}^2 & = (u \times v) \cdot (u \times v) = 
 \left|
 \begin{array}{cc}
 u \cdot u & v \cdot u  \\
 u \cdot v & v \cdot v 
 \end{array}
 \right|   \\
-& = |u|^2|v|^2 - |u \cdot v|^2 \\
-& = |u|^2|v|^2 - |u|^2 |v|^2 \cos^2(\theta) \\
-& = |u|^2|v|^2 (1-\cos^2(\theta)) \\
-& = |u|^2|v|^2 \sin^2(\theta) \\
+& = \norm{u}^2 \norm{v}^2 - |u \cdot v|^2 \\
+& = \norm{u}^2 \norm{v}^2 - \norm{u}^2 \norm{v}^2 \cos^2(\theta) \\
+& = \norm{u}^2\norm{v}^2 (1-\cos^2(\theta)) \\
+& = \norm{u}^2\norm{v}^2 \sin^2(\theta) \\
 & = A^2  
 \end{align} 
 where $A$ is the area of the parallelogram with sides $u$ and $v$.
@@ -504,7 +504,7 @@ Let us summarize the above remark.
 Let $u,v \in \R^3$ be linearly independent. Then
 
 - $u \times v$ is orthogonal to the plane spanned by $u,v$
-- $|u \times v|$ is equal to the area of the parallelogram with sides $u,v$
+- $\norm{u \times v}$ is equal to the area of the parallelogram with sides $u,v$
 - $u \times v$ is such that
 $$
 (u,v,u\times v)

@@ -85,45 +85,13 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
 }
 .TODO {
   --color1: #e7b1b4;
   --color2: #8c3236;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
 }
 .Proof {
   --color1: #f1f1f2;
@@ -133,7 +101,7 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Lemma {
+.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -141,9 +109,41 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .Proposition {
   --color1: #f4cce0;
@@ -577,7 +577,7 @@ v_1 &amp; v_2
 u \times v \neq 0
 \]</span></p></li>
 <li><p>Therefore we have <span class="math display">\[
-(u \times v) \cdot (u \times v) = | u \times v |^2 &gt; 0
+(u \times v) \cdot (u \times v) = \left\|  u \times v  \right\|^2 &gt; 0
 \]</span></p></li>
 <li><p>On the other hand, using the definition of <span class="math inline">\(u \times v\)</span> with <span class="math inline">\(w = v \times w\)</span> yields <span class="math display">\[
 (u \times v) \cdot (u \times v) =
@@ -604,17 +604,17 @@ u \cdot y &amp; v \cdot y
 \right| \,.
 \tag{4.4}\]</span></span> Indeed, one can check that the above formula holds for the standard vectors <span class="math inline">\(e_i\)</span>, and thus the general formula follows by linearity.</p></li>
 <li><p>Using (<a href="#eq-formula-cross"><span>4.4</span></a>) we get <span class="math display">\[\begin{align}
-|u \times v|^2 &amp; = (u \times v) \cdot (u \times v) =
+\left\| u \times v \right\|^2 &amp; = (u \times v) \cdot (u \times v) =
 \left|
 \begin{array}{cc}
 u \cdot u &amp; v \cdot u  \\
 u \cdot v &amp; v \cdot v
 \end{array}
 \right|   \\
-&amp; = |u|^2|v|^2 - |u \cdot v|^2 \\
-&amp; = |u|^2|v|^2 - |u|^2 |v|^2 \cos^2(\theta) \\
-&amp; = |u|^2|v|^2 (1-\cos^2(\theta)) \\
-&amp; = |u|^2|v|^2 \sin^2(\theta) \\
+&amp; = \left\| u \right\|^2 \left\| v \right\|^2 - |u \cdot v|^2 \\
+&amp; = \left\| u \right\|^2 \left\| v \right\|^2 - \left\| u \right\|^2 \left\| v \right\|^2 \cos^2(\theta) \\
+&amp; = \left\| u \right\|^2\left\| v \right\|^2 (1-\cos^2(\theta)) \\
+&amp; = \left\| u \right\|^2\left\| v \right\|^2 \sin^2(\theta) \\
 &amp; = A^2  
 \end{align}\]</span> where <span class="math inline">\(A\)</span> is the area of the parallelogram with sides <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span>.</p></li>
 </ul>
@@ -632,7 +632,7 @@ u \cdot v &amp; v \cdot v
 <p>Let <span class="math inline">\(u,v \in \mathbb{R}^3\)</span> be linearly independent. Then</p>
 <ul>
 <li><span class="math inline">\(u \times v\)</span> is orthogonal to the plane spanned by <span class="math inline">\(u,v\)</span></li>
-<li><span class="math inline">\(|u \times v|\)</span> is equal to the area of the parallelogram with sides <span class="math inline">\(u,v\)</span></li>
+<li><span class="math inline">\(\left\| u \times v \right\|\)</span> is equal to the area of the parallelogram with sides <span class="math inline">\(u,v\)</span></li>
 <li><span class="math inline">\(u \times v\)</span> is such that <span class="math display">\[
 (u,v,u\times v)
 \]</span> is a positive basis of <span class="math inline">\(\mathbb{R}^3\)</span>.</li>
