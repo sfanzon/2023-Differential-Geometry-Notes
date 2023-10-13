@@ -793,10 +793,17 @@ We do not prove the above theorem. For a proof, see Theorem 2.2.6 in [@pressley]
 
 ## Space curves
 
-In this section we deal with **space curves**, that is, curves with values in $\R^3$. We have seen in the previous section that the signed curvature completely characterizes plane curves. A 3D counterpart of the signed curvature does not exist, since there is no notion of *turning left* or *turning right*. Moreover there exist space curves $\g$ and $\tg$ with the same curvature, but such that 
+In this section we deal with **space curves**, that is, curves with values in $\R^3$. There are several issues compare to the plane case:
+
+- A 3D counterpart of the signed curvature does not exist, since there is no notion of *turning left* or *turning right*.
+
+- We have seen in the previous section that the signed curvature completely characterizes plane curves. In 3D however curvature is not enough to characterize curves: there exist $\g$ and $\eta$ space curves such that 
 $$
-\g \neq \tg \,.
+\kappa^{\g} = \kappa^{\eta} \,, \quad  \g \neq \eta \,,
 $$
+that is, $\g$ and $\eta$ have same curvature but are different curves.
+
+
 
 ::: Example
 

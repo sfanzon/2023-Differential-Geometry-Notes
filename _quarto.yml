@@ -9,8 +9,9 @@ book:
   author: 
     - name: "Dr. Silvio Fanzon"
       affiliations: 
-        - name: "University of Hull, UK"
+        - name: "University of Hull"
           department: "Department of Mathematics"
+          state: "United Kingdom"
       email: "S.Fanzon@hull.ac.uk"
       url: "https://www.silviofanzon.com"
   date: today 

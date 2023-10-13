@@ -85,55 +85,15 @@ div.csl-indent {
   }
 }</script>
 <style>
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
 .Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Theorem {
+.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -145,7 +105,47 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
 .Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -822,9 +822,13 @@ RH\cos(t),
 </section>
 <section id="space-curves" class="level2" data-number="4.5">
 <h2 data-number="4.5" class="anchored" data-anchor-id="space-curves"><span class="header-section-number">4.5</span> Space curves</h2>
-<p>In this section we deal with <strong>space curves</strong>, that is, curves with values in <span class="math inline">\(\mathbb{R}^3\)</span>. We have seen in the previous section that the signed curvature completely characterizes plane curves. A 3D counterpart of the signed curvature does not exist, since there is no notion of <em>turning left</em> or <em>turning right</em>. Moreover there exist space curves <span class="math inline">\(\gamma\)</span> and <span class="math inline">\(\widetilde{\gamma}\)</span> with the same curvature, but such that <span class="math display">\[
-\gamma\neq \widetilde{\gamma}\,.
-\]</span></p>
+<p>In this section we deal with <strong>space curves</strong>, that is, curves with values in <span class="math inline">\(\mathbb{R}^3\)</span>. There are several issues compare to the plane case:</p>
+<ul>
+<li><p>A 3D counterpart of the signed curvature does not exist, since there is no notion of <em>turning left</em> or <em>turning right</em>.</p></li>
+<li><p>We have seen in the previous section that the signed curvature completely characterizes plane curves. In 3D however curvature is not enough to characterize curves: there exist <span class="math inline">\(\gamma\)</span> and <span class="math inline">\(\eta\)</span> space curves such that <span class="math display">\[
+\kappa^{\gamma} = \kappa^{\eta} \,, \quad  \gamma\neq \eta \,,
+\]</span> that is, <span class="math inline">\(\gamma\)</span> and <span class="math inline">\(\eta\)</span> have same curvature but are different curves.</p></li>
+</ul>
 <div id="Example-22" class="Example">
 <p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 22</strong></summary><div>Let <span class="math inline">\(\gamma\)</span> be a circle of radius <span class="math inline">\(R&gt;0\)</span> <span class="math display">\[
 \gamma(t) = (R\cos(t),R\sin(t),0) \,,
