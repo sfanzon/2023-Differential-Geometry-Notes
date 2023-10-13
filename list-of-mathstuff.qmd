@@ -169,46 +169,52 @@
 
  [**Definition 4.1**](#Definition-4.1)\Pageref{Definition-4.1}
 
- [**Example 4.2**](#Example-4.2)\Pageref{Example-4.2}
+ [**Definition 4.2**](#Definition-4.2)\Pageref{Definition-4.2}
 
- [**Definition 4.3**](#same-orientation): Same orientation\Pageref{same-orientation}
+ [**Remark 4.3**](#Remark-4.3)\Pageref{Remark-4.3}
 
- [**Definition 4.4**](#orientation): Orientation\Pageref{orientation}
+ [**Remark 4.4**](#methods-for-computing-curvature): Methods for computing curvature\Pageref{methods-for-computing-curvature}
 
- [**Definition 4.5**](#positive-orientation): Positive orientation\Pageref{positive-orientation}
+ [**Example 4.5**](#Example-4.5)\Pageref{Example-4.5}
 
- [**Example 4.6**](#Example-4.6)\Pageref{Example-4.6}
+ [**Definition 4.6**](#same-orientation): Same orientation\Pageref{same-orientation}
 
- [**Definition 4.7**](#vector-product-in-mathbbr3-1): Vector product in $\mathbb{R}^3$\Pageref{vector-product-in-mathbbr3-1}
+ [**Definition 4.7**](#orientation): Orientation\Pageref{orientation}
 
- [**Proposition 4.8**](#Proposition-4.8)\Pageref{Proposition-4.8}
+ [**Definition 4.8**](#positive-orientation): Positive orientation\Pageref{positive-orientation}
+
+ [**Example 4.9**](#Example-4.9)\Pageref{Example-4.9}
+
+ [**Definition 4.10**](#vector-product-in-mathbbr3-1): Vector product in $\mathbb{R}^3$\Pageref{vector-product-in-mathbbr3-1}
+
+ [**Proposition 4.11**](#Proposition-4.11)\Pageref{Proposition-4.11}
 
  [**Proof**](#Proof*-4.2)\Pageref{Proof*-4.2}
 
- [**Proposition 4.9**](#proposition-vector-product)\Pageref{proposition-vector-product}
+ [**Proposition 4.12**](#proposition-vector-product)\Pageref{proposition-vector-product}
 
- [**Remark 4.10**](#geometric-interpretation-of-vector-product): Geometric interpretation of vector product\Pageref{geometric-interpretation-of-vector-product}
+ [**Remark 4.13**](#geometric-interpretation-of-vector-product): Geometric interpretation of vector product\Pageref{geometric-interpretation-of-vector-product}
 
- [**Remark 4.11**](#summary-properties-of-u-times-v): Summary: Properties of $u \times v$\Pageref{summary-properties-of-u-times-v}
+ [**Remark 4.14**](#summary-properties-of-u-times-v): Summary: Properties of $u \times v$\Pageref{summary-properties-of-u-times-v}
 
- [**Proposition 4.12**](#Proposition-4.12)\Pageref{Proposition-4.12}
+ [**Proposition 4.15**](#Proposition-4.15)\Pageref{Proposition-4.15}
 
- [**Proposition 4.13**](#Proposition-4.13)\Pageref{Proposition-4.13}
+ [**Proposition 4.16**](#Proposition-4.16)\Pageref{Proposition-4.16}
 
- [**Example 4.14**](#Example-4.14)\Pageref{Example-4.14}
+ [**Example 4.17**](#Example-4.17)\Pageref{Example-4.17}
 
- [**Example 4.15**](#Example-4.15)\Pageref{Example-4.15}
+ [**Example 4.18**](#Example-4.18)\Pageref{Example-4.18}
 
- [**Definition 4.16**](#Definition-4.16)\Pageref{Definition-4.16}
-
- [**Definition 4.17**](#Definition-4.17)\Pageref{Definition-4.17}
-
- [**Remark 4.18**](#Remark-4.18)\Pageref{Remark-4.18}
-
- [**Remark 4.19**](#Remark-4.19)\Pageref{Remark-4.19}
+ [**Definition 4.19**](#Definition-4.19)\Pageref{Definition-4.19}
 
  [**Definition 4.20**](#Definition-4.20)\Pageref{Definition-4.20}
 
- [**Theorem 4.21**](#Theorem-4.21)\Pageref{Theorem-4.21}
+ [**Remark 4.21**](#Remark-4.21)\Pageref{Remark-4.21}
 
- [**Example 4.22**](#Example-4.22)\Pageref{Example-4.22}
+ [**Remark 4.22**](#Remark-4.22)\Pageref{Remark-4.22}
+
+ [**Definition 4.23**](#Definition-4.23)\Pageref{Definition-4.23}
+
+ [**Theorem 4.24**](#Theorem-4.24)\Pageref{Theorem-4.24}
+
+ [**Example 4.25**](#Example-4.25)\Pageref{Example-4.25}

@@ -112,7 +112,7 @@ We take this as definition of curvature for a general unit speed curve in $\R^n.
 
 Let $\g \ \colon (a,b) \to \R^n$ be a unit speed curve. The **curvature** of $\g$ at $\g(t)$ is
 $$
-\kappa(t) := \norm{\ddot \g (t)} \,.
+\kappa^\g(t) := \norm{\ddot \g (t)} \,.
 $$
 
 :::
@@ -120,6 +120,115 @@ $$
 
 
 Note that $\kappa(t)$ is a function of time. Therefore the curvature of $\g$ can change from point to point.
+
+
+We now define curvature for curves which are regular, but not necessarily unit speed.
+
+
+::: Definition 
+
+Let $\g \ \colon (a,b) \to \R^n$ be a regular. The **curvature** of $\g$ at $\g(t)$ is
+$$
+\kappa^\g(t) :=   \norm{\ddot{\tg} (\f(t))} \,, \quad \forall \, t \in (a,b)\,,
+$$
+where $\tg$ is a unit speed reparametrization of $\g$, with $\g = \tg \circ \f$.
+
+:::
+
+
+::: Remark
+
+The above definition is well posed:
+
+- Since $\g$ is regular, there exist a unit speed reparametrization $\tg$ of $\g$.
+- If $\hat{\g}$ is another unit speed reaprametrization of $\g$, with $\g = \hat{\g} \circ \hat\f$, then
+$$
+\kappa^{\g} (t) =   \norm{\ddot{\hat\g} (\hat\f(t))} \,,
+$$
+showing that there is no ambiguity in the definition of $\kappa^\g$.
+
+> Indeed, since $\tg$ and $\hat{\g}$ are both reparametrizations of $\g$, then 
+$$
+\g(t) = \tg(  \tilde{\f}(t)) \,, \quad 
+\g(t) = \hat{\g} (\hat{\f}(t)  ) 
+$$
+for some diffeomorphisms $\tilde{\f}, \hat{\f}$. Hence 
+$$
+{\tg}(t) = \hat\g(\f(t))\,, \quad \f := \hat{\f} \circ (\tilde{\f})^{-1} \,,
+$${#eq-well-posed-curvature-3}
+where $\f$ is a diffeomorphism, since it is composition of diffeomorphisms. 
+Differentiating (@eq-well-posed-curvature-3) we get
+$$
+\dot{\tg}(t) = \dot{\hat{\g}}(\f(t)) \dot\f(t) \,.
+$${#eq-well-posed-curvature-2}
+Taking the norms of the above, and recalling that $\tg$ and $\hat\g$ are unit speed, we get
+$$
+|\dot\f(t)| = 1 \,, \quad  \forall \, t \,. 
+$${#eq-well-posed-curvature}
+Since $\f$ is a diffeomorphism, we already know that $|\dot\f| \neq 0$. As $\dot\f$ is continuous, this means that the sign of $\dot\f$ is constant. Thus (@eq-well-posed-curvature) implies 
+$$
+\dot\f(t) \equiv 1 \quad \mbox{or} \quad
+\dot\f(t) \equiv -1 \,.
+$$
+In both cases, we have
+$$
+\ddot \f \equiv 0 \,.
+$$
+Differentiating (@eq-well-posed-curvature-2) we then obtain
+\begin{align}
+\ddot{\tg}(t) & = \ddot{\hat{\g}}(\f(t)) \dot\f^2(t) + 
+                         \dot{\hat{\g}}(\f(t)) \ddot\f (t) \\
+                  & = \ddot{\hat{\g}}(\f(t)) \dot\f^2(t) \,.
+\end{align}
+Taking the norms and using again that $|\dot\f| \equiv 1$, we get  that 
+$$
+\norm{  \ddot{\tg}(t)} = \norm{ \ddot{\hat{\g}}(\f(t))} \,.
+$$
+Recalling that $\phi  = \hat\f \circ (\tilde{\f})^{-1}$ we get
+$$
+\norm{  \ddot{\tg}( \tilde{\f}(t))} = \norm{ \ddot{\hat{\g}}(\hat\f(t))} \,, \quad \forall \, t \in (a,b) \,.
+$$
+Therefore 
+$$
+\kappa^\gamma(t) =  \norm{  \ddot{\tg}( \tilde{\f}(t))} = \norm{ \ddot{\hat{\g}}(\hat\f(t))} \,.
+$$
+
+:::
+
+
+
+::: Remark 
+### Methods for computing curvature
+
+In summary, the curvature of a regular curve 
+$$
+\g \ \colon (a,b) \to \R^n
+$$ 
+is defined via unit speed reparametrizations of $\g$. To compute $\kappa$ we do the following: 
+
+- We find a unit speed reparametrization $\tg$ of the regular curve $\g$
+- This can be done by computing $s$ the arc-length of $\g$, and then defining 
+$$
+\tg:= \g \circ \psi \,, \quad \psi:=s^{-1} 
+$$
+- Then we compute 
+$$
+\kappa^{\tg}(t) = \norm{\ddot{\tg}}(t)
+$$
+- We obtain the curvature of $\g$ by
+$$
+\kappa^\g (t)= \kappa^{\tg} (t) 
+$$
+
+When $\g$ is regular and has values in $\R^3$, there is a way to compute $\kappa$ without reparametrizing. To do this, we will need the notion of **cross product**, or **vector product**. We will see this in the following sections.
+:::
+
+
+![Procedure for computing curvature $\kappa$](/images/curvature_shortcut.png){width=70%}
+
+
+
+We conclude with an example where we compute $\kappa$ using reparametrizations.
 
 
 ::: Example
@@ -170,11 +279,6 @@ In this case $\kappa(t)$ is constant. The curvature also tells us that the small
 :::
 
 
-
-The curvature is defined for unit speed curves. To circumvent this, in the above example we computed a unit length reparametrization of the circle, and then computed the curvature of the reparametrization.  
-If $\g$ is a regular curve, then one could do the same: first compute unit speed reparametrization $\tg$, and from this compute the curvature. When $\g$ is regular and has values in $\R^3$, there is a way to compute $\kappa$ without reparametrizing. To do this, we will need the notion of **cross product**, or **vector product** .
-
-![Procedure for computing curvature $\kappa$](/images/curvature_shortcut.png){width=70%}
 
 
 
