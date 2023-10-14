@@ -10,4 +10,45 @@ $
 
 # Surfaces
 
-Coming soon
+
+::: Definition
+
+A set $\SSS \subset \R^3$ is a **surface** if for every point $x \in \SSS$ there exist open sets $U \subset \R^2$, $V \subset \R^3$ such that
+
+- $x \in V$,
+- $U$ is diffeomorphic to $V \cap \SSS$.
+
+Further:
+
+- A diffeomorphism of $U$ into $V \cap \SSS$, denoted by
+$$
+\sss \ \colon U \to  V \cap \SSS \,
+$$
+is called a **surface chart**. 
+- For each $i \in I$ suppose to have a surface chart
+$$
+\sss_i \ \colon U_i \to V_i \cap \SSS \,.
+$$
+We say that the family $\{ \sss_i\}_{i \in I}$ is an **atlas** of $\SSS$ if 
+$$
+\bigcup_{i \in I} (V_i \cap \SSS ) = \SSS \,.
+$$
+:::
+ 
+Note that a surface chart $\sss$ is a map from $\R^2$ into $\R^3$.
+Points in $U$ will be denoted by the pair $(u,v)$, while points in $\R^3$ by $x=(x_1,x_2,x_3)$.
+
+
+::: Definition
+
+Let $U \subset \R^2$ be open. A surface chart 
+$$
+\sss = \sss(u,v) \ \colon U \to \R^3
+$$
+is called **regular** if the partial derivatives
+$$
+\sss_u(u,v) = \frac{d\sss}{du}(u,v) \,, \quad
+\sss_v(u,v) = \frac{d\sss}{dv}(u,v) 
+$$
+are linearly independent vectors of $\R^3$ for all $(u,v) \in U$.
+:::

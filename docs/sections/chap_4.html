@@ -85,19 +85,7 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Corollary {
+.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -105,11 +93,7 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Goal {
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -117,35 +101,51 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
 .Example {
   --color1: #bce5de;
   --color2: #21aa93;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
 }
 .Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
 .Definition {
   --color1: #c6e6ed;
   --color2: #1995ad;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Theorem {
+.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -724,7 +724,7 @@ u \cdot v &amp; v \cdot v
 \]</span> If <span class="math inline">\(\gamma\)</span> is a regular curve in <span class="math inline">\(\mathbb{R}^3\)</span>, there is a way to compute <span class="math inline">\(\kappa\)</span> without passing through <span class="math inline">\(\widetilde{\gamma}\)</span>. The formula for computing <span class="math inline">\(\kappa\)</span> is as follows.</p>
 <div id="Proposition-16" class="Proposition">
 <p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 16</strong></summary><div>Let <span class="math inline">\(\gamma\colon (a,b) \to \mathbb{R}^3\)</span> be a regular curve. Then the curvature <span class="math inline">\(\kappa(t)\)</span> of <span class="math inline">\(\gamma\)</span> at <span class="math inline">\(\gamma(t)\)</span> is given by <span id="eq-curvature"><span class="math display">\[
-\kappa(t) = \frac{ \left\| \ddot \gamma\times \dot \gamma \right\| }{ \left\| \dot \gamma \right\|^3 } \,.
+\kappa(t) = \frac{ \left\| \dot \gamma\times \ddot \gamma \right\| }{ \left\| \dot \gamma \right\|^3 } \,.
 \tag{4.8}\]</span></span><p></p>
 </div></details>
 </div>
@@ -734,13 +734,13 @@ u \cdot v &amp; v \cdot v
 <p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 17</strong></summary><div>Consider the straight line <span class="math display">\[
 \gamma(t) = \mathbf{a} + t \mathbf{v}
 \]</span> for some <span class="math inline">\(\mathbf{a}, \mathbf{v} \in \mathbb{R}^3\)</span> fixed, with <span class="math inline">\(\mathbf{v} \neq 0\)</span>. Then <span class="math display">\[
-\dot \gamma(t) = \mathbf{v} \,, \quad \ddot \gamma(t) = 0 \,.
+\dot \gamma(t) = \mathbf{v} \,, \quad \ddot \gamma(t) = {\boldsymbol 0}\,.
 \]</span> Therefore <span class="math display">\[
 \left\| \dot \gamma(t) \right\| = \left\| \mathbf{v} \right\| \neq 0
 \]</span> showing that <span class="math inline">\(\gamma\)</span> is regular. We have <span class="math display">\[
-\ddot \gamma\times \dot \gamma= 0 \times \mathbf{v} = 0 \,.
+\dot \gamma\times \ddot \gamma= \mathbf{v} \times {\boldsymbol 0}= {\boldsymbol 0}\,.
 \]</span> Therefore the curvature is <span class="math display">\[
-\kappa = \frac{ \left\|  \ddot \gamma\times \dot \gamma \right\| }{ \left\| \dot\gamma \right\|^3 } = 0 \,,
+\kappa = \frac{ \left\|  \dot \gamma\times \ddot \gamma \right\| }{ \left\| \dot\gamma \right\|^3 } = 0 \,,
 \]</span> as expected.<p></p>
 </div></details>
 </div>
@@ -757,57 +757,57 @@ u \cdot v &amp; v \cdot v
 \ddot \gamma\times \dot \gamma&amp; =
 \left|
 \begin{array}{cc}
-{\ddot\gamma}_2 &amp; {\ddot\gamma}_3  \\
-{\dot\gamma}_2 &amp; {\dot\gamma}_3
+{\dot\gamma}_2 &amp; {\dot\gamma}_3  \\
+{\ddot\gamma}_2 &amp; {\ddot\gamma}_3
 \end{array}
 \right| e_1 -
 \left|
 \begin{array}{cc}
-{\ddot\gamma}_1 &amp; {\ddot\gamma}_3  \\
-{\dot\gamma}_1 &amp; {\dot\gamma}_3
+{\dot\gamma}_1 &amp; {\dot\gamma}_3  \\
+{\ddot\gamma}_1 &amp; {\ddot\gamma}_3
 \end{array}
 \right| e_2 +
 \left|
 \begin{array}{cc}
-{\ddot\gamma}_1 &amp; {\ddot\gamma}_2  \\
-{\dot\gamma}_1 &amp; {\dot\gamma}_2
+{\dot\gamma}_1 &amp; {\dot\gamma}_2  \\
+{\ddot\gamma}_1 &amp; {\ddot\gamma}_2
 \end{array}
 \right| e_3 \\
 &amp; =
 \left|
 \begin{array}{cc}
--R\sin(t) &amp; 0  \\
-R\cos(t) &amp; H
+R\cos(t) &amp; H \\
+-R\sin(t) &amp; 0
 \end{array}
 \right| e_1 -
 \left|
 \begin{array}{cc}
--R\cos(t) &amp; 0  \\
--R\sin(t) &amp; H
+-R\sin(t) &amp; H \\
+-R\cos(t) &amp; 0
 \end{array}
 \right| e_2 +
 \left|
 \begin{array}{cc}
--R\cos(t) &amp; -R\sin(t)  \\
--R\sin(t) &amp; R\cos(t)
+-R\sin(t) &amp; R\cos(t) \\
+-R\cos(t) &amp; -R\sin(t)  
 \end{array}
 \right| e_3 \\
 &amp; =
 \left(   
-- RH\sin(t),    
-RH\cos(t),
-- R^2\cos^2(t) - R^2\sin^2(t)
+RH\sin(t),    
+-RH\cos(t),
+R^2\cos^2(t) + R^2\sin^2(t)
 \right) \\
 &amp; =
 \left(   
--RH\sin(t),    
-RH\cos(t),
--R^2
+RH\sin(t),    
+-RH\cos(t),
+R^2
 \right)
 \end{align}\]</span> and therefore <span class="math display">\[
-\left\|  \ddot \gamma\times \dot \gamma \right\| =  R\sqrt{R^2 + H^2   } \,.
+\left\|  \dot \gamma\times \ddot \gamma \right\| =  R\sqrt{R^2 + H^2   } \,.
 \]</span> By the general formula we have <span class="math display">\[
-\kappa = \frac{ \left\|  \ddot \gamma\times \dot \gamma \right\| }{ \left\| \dot\gamma \right\|^3 } =
+\kappa = \frac{ \left\|  \dot \gamma\times \ddot \gamma \right\| }{ \left\| \dot\gamma \right\|^3 } =
 \frac{ R (R^2 + H^2)^{\frac12} }{  (R^2 + H^2)^{\frac32}    } =
 \frac{ R }{  R^2 + H^2   }
 \]</span></p>

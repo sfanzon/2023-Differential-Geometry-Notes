@@ -664,7 +664,7 @@ If $\g$ is a regular curve in $\R^3$, there is a way to compute $\kappa$ without
 
 Let $\g \colon (a,b) \to \R^3$ be a regular curve. Then the curvature $\kappa(t)$ of $\g$ at $\g(t)$ is given by
 $$
-\kappa(t) = \frac{ \norm{\ddot \g \times \dot \g} }{ \norm{\dot \g}^3 } \,. 
+\kappa(t) = \frac{ \norm{\dot \g \times \ddot \g} }{ \norm{\dot \g}^3 } \,. 
 $${#eq-curvature}
 
 :::
@@ -683,7 +683,7 @@ $$
 $$
 for some $\mathbf{a}, \mathbf{v} \in \R^3$ fixed, with $\mathbf{v} \neq 0$. Then
 $$
-\dot \g (t) = \mathbf{v} \,, \quad \ddot \g(t) = 0 \,. 
+\dot \g (t) = \mathbf{v} \,, \quad \ddot \g(t) = \zero \,. 
 $$
 Therefore 
 $$
@@ -691,11 +691,11 @@ $$
 $$
 showing that $\g$ is regular. We have
 $$
-\ddot \g \times \dot \g = 0 \times \mathbf{v} = 0 \,.
+\dot \g \times \ddot \g = \mathbf{v} \times \zero = \zero \,.
 $$
 Therefore the curvature is
 $$
-\kappa = \frac{ \norm{ \ddot \g \times \dot \g } }{ \norm{\dot\g}^3 } = 0 \,,
+\kappa = \frac{ \norm{ \dot \g \times \ddot \g } }{ \norm{\dot\g}^3 } = 0 \,,
 $$
 as expected.
 :::
@@ -722,61 +722,61 @@ showing that $\g$ is regular. Finally
 \ddot \g \times \dot \g & = 
 \left|
 \begin{array}{cc}
-{\ddot\g}_2 & {\ddot\g}_3  \\
-{\dot\g}_2 & {\dot\g}_3
+{\dot\g}_2 & {\dot\g}_3  \\
+{\ddot\g}_2 & {\ddot\g}_3
 \end{array}
 \right| e_1 -
 \left|
 \begin{array}{cc}
-{\ddot\g}_1 & {\ddot\g}_3  \\
-{\dot\g}_1 & {\dot\g}_3
+{\dot\g}_1 & {\dot\g}_3  \\
+{\ddot\g}_1 & {\ddot\g}_3
 \end{array}
 \right| e_2 +
 \left|
 \begin{array}{cc}
-{\ddot\g}_1 & {\ddot\g}_2  \\
-{\dot\g}_1 & {\dot\g}_2
+{\dot\g}_1 & {\dot\g}_2  \\
+{\ddot\g}_1 & {\ddot\g}_2
 \end{array}
 \right| e_3 \\
 & = 
 \left|
 \begin{array}{cc}
--R\sin(t) & 0  \\
-R\cos(t) & H
+R\cos(t) & H \\
+-R\sin(t) & 0
 \end{array}
 \right| e_1 -
 \left|
 \begin{array}{cc}
--R\cos(t) & 0  \\
--R\sin(t) & H
+-R\sin(t) & H \\
+-R\cos(t) & 0 
 \end{array}
 \right| e_2 +
 \left|
 \begin{array}{cc}
--R\cos(t) & -R\sin(t)  \\
--R\sin(t) & R\cos(t)
+-R\sin(t) & R\cos(t) \\
+-R\cos(t) & -R\sin(t)  
 \end{array}
 \right| e_3 \\
 & = 
 \left(   
-- RH\sin(t),    
-RH\cos(t),
-- R^2\cos^2(t) - R^2\sin^2(t)
+RH\sin(t),    
+-RH\cos(t),
+ R^2\cos^2(t) + R^2\sin^2(t)
 \right) \\
 & = 
 \left(   
--RH\sin(t),    
-RH\cos(t),
--R^2
+RH\sin(t),    
+-RH\cos(t),
+R^2
 \right) 
 \end{align}
 and therefore
 $$
-\norm{ \ddot \g \times \dot \g } =  R\sqrt{R^2 + H^2   } \,.
+\norm{ \dot \g \times \ddot \g } =  R\sqrt{R^2 + H^2   } \,.
 $$
 By the general formula we have
 $$
-\kappa = \frac{ \norm{ \ddot \g \times \dot \g } }{ \norm{\dot\g}^3 } =
+\kappa = \frac{ \norm{ \dot \g \times \ddot \g } }{ \norm{\dot\g}^3 } =
 \frac{ R (R^2 + H^2)^{\frac12} }{  (R^2 + H^2)^{\frac32}    } =
 \frac{ R }{  R^2 + H^2   } 
 $$

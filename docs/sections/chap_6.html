@@ -66,27 +66,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proposition {
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -94,11 +74,23 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Problem {
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Conjecture {
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -106,29 +98,37 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
 }
 .Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
 </style>
 
@@ -266,7 +266,24 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Topology <span class="math inline">\(\mathbb{R}\)</span></p>
+<div id="Definition-1" class="Definition">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 1</strong></summary><div>
+<p>Let <span class="math inline">\(X\)</span> be a set and <span class="math inline">\(\mathcal{T}\)</span> a collection of subsets of <span class="math inline">\(X\)</span>. We say that <span class="math inline">\(\mathcal{T}\)</span> is a <strong>topology</strong> on <span class="math inline">\(X\)</span> if they hold:</p>
+<ul>
+<li><p>The empty set <span class="math inline">\(\emptyset\)</span> and <span class="math inline">\(X\)</span> belong to <span class="math inline">\(\mathcal{T}\)</span>,</p></li>
+<li><p>Let <span class="math inline">\(\{A_i\}_{i \in I}\)</span> be an arbitrary family of elements of <span class="math inline">\(\mathcal{T}\)</span>. Then <span class="math display">\[
+\bigcup_{i \in I} A_i  \in \mathcal{T}\,.
+\]</span></p></li>
+<li><p>If <span class="math inline">\(A,B \in \mathcal{T}\)</span> then <span class="math display">\[
+A \cap B \in \mathcal{T}\,.
+\]</span></p></li>
+</ul>
+</div></details>
+</div>
+<div id="Definition-2" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 2</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space. We say that <span class="math inline">\(X\)</span> is <strong>connected</strong> if the only subsets of <span class="math inline">\(X\)</span> which are both open and closed are just <span class="math inline">\(\emptyset\)</span> and <span class="math inline">\(X\)</span>.<p></p>
+</div></details>
+</div>
 
 
 

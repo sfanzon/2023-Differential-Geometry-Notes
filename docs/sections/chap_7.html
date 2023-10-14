@@ -66,9 +66,13 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .Assumption {
   --color1: #f4cce0;
@@ -78,47 +82,15 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
 .Proof {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
 }
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
 .Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -126,12 +98,42 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
 </style>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -264,7 +266,36 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Coming soon</p>
+<div id="Definition-1" class="Definition">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 1</strong></summary><div>
+<p>A set <span class="math inline">\(\mathcal{S}\subset \mathbb{R}^3\)</span> is a <strong>surface</strong> if for every point <span class="math inline">\(x \in \mathcal{S}\)</span> there exist open sets <span class="math inline">\(U \subset \mathbb{R}^2\)</span>, <span class="math inline">\(V \subset \mathbb{R}^3\)</span> such that</p>
+<ul>
+<li><span class="math inline">\(x \in V\)</span>,</li>
+<li><span class="math inline">\(U\)</span> is diffeomorphic to <span class="math inline">\(V \cap \mathcal{S}\)</span>.</li>
+</ul>
+<p>Further:</p>
+<ul>
+<li>A diffeomorphism of <span class="math inline">\(U\)</span> into <span class="math inline">\(V \cap \mathcal{S}\)</span>, denoted by <span class="math display">\[
+{\boldsymbol \sigma}\ \colon U \to  V \cap \mathcal{S}\,
+\]</span> is called a <strong>surface chart</strong>.</li>
+<li>For each <span class="math inline">\(i \in I\)</span> suppose to have a surface chart <span class="math display">\[
+{\boldsymbol \sigma}_i \ \colon U_i \to V_i \cap \mathcal{S}\,.
+\]</span> We say that the family <span class="math inline">\(\{ {\boldsymbol \sigma}_i\}_{i \in I}\)</span> is an <strong>atlas</strong> of <span class="math inline">\(\mathcal{S}\)</span> if <span class="math display">\[
+\bigcup_{i \in I} (V_i \cap \mathcal{S}) = \mathcal{S}\,.
+\]</span></li>
+</ul>
+</div></details>
+</div>
+<p>Note that a surface chart <span class="math inline">\({\boldsymbol \sigma}\)</span> is a map from <span class="math inline">\(\mathbb{R}^2\)</span> into <span class="math inline">\(\mathbb{R}^3\)</span>. Points in <span class="math inline">\(U\)</span> will be denoted by the pair <span class="math inline">\((u,v)\)</span>, while points in <span class="math inline">\(\mathbb{R}^3\)</span> by <span class="math inline">\(x=(x_1,x_2,x_3)\)</span>.</p>
+<div id="Definition-2" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 2</strong></summary><div>Let <span class="math inline">\(U \subset \mathbb{R}^2\)</span> be open. A surface chart <span class="math display">\[
+{\boldsymbol \sigma}= {\boldsymbol \sigma}(u,v) \ \colon U \to \mathbb{R}^3
+\]</span> is called <strong>regular</strong> if the partial derivatives <span class="math display">\[
+{\boldsymbol \sigma}_u(u,v) = \frac{d{\boldsymbol \sigma}}{du}(u,v) \,, \quad
+{\boldsymbol \sigma}_v(u,v) = \frac{d{\boldsymbol \sigma}}{dv}(u,v)
+\]</span> are linearly independent vectors of <span class="math inline">\(\mathbb{R}^3\)</span> for all <span class="math inline">\((u,v) \in U\)</span>.<p></p>
+</div></details>
+</div>
 
 
 

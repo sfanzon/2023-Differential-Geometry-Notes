@@ -7,4 +7,29 @@ $
 
 # Topology
 
-Topology $\R$
+
+
+::: Definition
+
+Let $X$ be a set and $\TT$ a collection of subsets of $X$. We say that $\TT$ is a **topology** on $X$ if they hold:
+
+- The empty set $\emptyset$ and $X$ belong to $\TT$,
+
+- Let $\{A_i\}_{i \in I}$ be an arbitrary family of elements of $\TT$. Then
+$$
+\bigcup_{i \in I} A_i  \in \TT \,.
+$$
+
+- If $A,B \in \TT$ then
+$$
+A \cap B \in \TT \,.
+$$
+
+:::
+
+
+::: Definition
+
+Let $(X,\TT)$ be a topological space. We say that $X$ is **connected** if the only subsets of $X$ which are both open and closed are just $\emptyset$ and $X$.
+
+:::
