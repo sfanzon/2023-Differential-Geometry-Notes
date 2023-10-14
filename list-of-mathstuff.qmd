@@ -49,7 +49,7 @@
 
  [**Question 3.13**](#Question-3.13)\Pageref{Question-3.13}
 
- [**Theorem 3.14**](#theorem-length): Characterizing the length of $\gamma$\Pageref{theorem-length}
+ [**Theorem 3.14**](#theorem-length): Characterizing the length of ${\boldsymbol \gamma}$\Pageref{theorem-length}
 
  [**Proof**](#Proof*-3.2)\Pageref{Proof*-3.2}
 
@@ -195,7 +195,7 @@
 
  [**Remark 4.13**](#geometric-interpretation-of-vector-product): Geometric interpretation of vector product\Pageref{geometric-interpretation-of-vector-product}
 
- [**Remark 4.14**](#summary-properties-of-u-times-v): Summary: Properties of $u \times v$\Pageref{summary-properties-of-u-times-v}
+ [**Remark 4.14**](#summary-properties-of-mathbfutimes-mathbfv): Summary: Properties of $\mathbf{u}\times \mathbf{v}$\Pageref{summary-properties-of-mathbfutimes-mathbfv}
 
  [**Proposition 4.15**](#Proposition-4.15)\Pageref{Proposition-4.15}
 
@@ -226,3 +226,9 @@
  [**Definition 7.1**](#Definition-7.1)\Pageref{Definition-7.1}
 
  [**Definition 7.2**](#Definition-7.2)\Pageref{Definition-7.2}
+
+ [**Definition 7.3**](#Definition-7.3)\Pageref{Definition-7.3}
+
+ [**Definition 7.4**](#Definition-7.4)\Pageref{Definition-7.4}
+
+ [**Definition 7.5**](#Definition-7.5)\Pageref{Definition-7.5}

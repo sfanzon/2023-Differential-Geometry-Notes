@@ -1,7 +1,37 @@
 ::: {.content-hidden}
-$
-{{< include macros.tex >}}
-$
+$$
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}  
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\nn}{\mathbf{n}}
+\newcommand{\pp}{\mathbf{p}}
+\newcommand{\xx}{\mathbf{x}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ee}{\mathbf{e}}
+\newcommand{\uu}{\mathbf{u}}
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\ww}{\mathbf{w}}
+\newcommand{\sss}{{\boldsymbol \sigma}}
+\newcommand{\zero}{{\boldsymbol 0}}
+\newcommand{\TT}{\mathcal{T}}
+\newcommand{\SSS}{\mathcal{S}}
+\newcommand{\WW}{\mathcal{W}}
+\newcommand{\sphere}{\mathbb{S}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\g}{{\boldsymbol \gamma}}
+\newcommand{\f}{\phi}
+\newcommand{\tg}{\widetilde{\g}}
+\DeclareMathOperator{\id}{Id}
+\newcommand{\st}{\, \text{ s.t. } \, }
+\newcommand{\divider}{\, \colon \,}
+\newcommand{\closure}[2][2]{{}\mkern#1mu \overline{\mkern-#1mu #2 \mkern-#1mu}\mkern#1mu {}}
+\newcommand{\scp}[2]{\left\langle #1,#2 \right\rangle} %prodotto scalare
+\newcommand{\abs}[1]{\left| #1 \right|}  %valore assoluto
+\newcommand{\norm}[1]{\left\| #1 \right\|} %norma
+$$
 :::
 
 
@@ -82,7 +112,7 @@ t = np.linspace(-3,3, 7)
 print("t =", t)
 ```
 
-In order to have a more refined plot of $\gamma$, we just need to increase $n$.
+In order to have a more refined plot of $\g$, we just need to increase $n$.
 
 ```{python} 
 #| echo: true
@@ -108,11 +138,11 @@ plt.show()
 
 [^1]: The command `plt.show()` can be omitted if working in [Jupyter Notebook](https://jupyter.org), as it is called by default.
 
-We now want to plot a parametric curve $\gamma \colon (a,b) \to \R^2$ with
+We now want to plot a parametric curve $\g \colon (a,b) \to \R^2$ with
 $$
-\gamma(t) = (x(t), y(t)) \,.
+\g(t) = (x(t), y(t)) \,.
 $$
-Clearly we need to modify the above code. The variable `t` will still be a numpy array produced by `linspace`. We then need to introduce the arrays `x` and `y` which ecode the first and second components of $\gamma$, respectively.
+Clearly we need to modify the above code. The variable `t` will still be a numpy array produced by `linspace`. We then need to introduce the arrays `x` and `y` which ecode the first and second components of $\g$, respectively.
 
 ```python
 import numpy as np
@@ -489,9 +519,9 @@ ax6 = fig.add_subplot(3, 2, 6, projection = '3d')
 plt.show()
 ```
 
-We are now ready to plot a 3D parametric curve $\gamma \colon (a,b) \to \R^3$ of the form
+We are now ready to plot a 3D parametric curve $\g \colon (a,b) \to \R^3$ of the form
 $$
-\gamma(t) = (x(t), y(t), z(t))
+\g(t) = (x(t), y(t), z(t))
 $$
 with the code
 ```python
@@ -643,11 +673,11 @@ plt.show()
 
 ### 2D Plots   {#sec-plot-2d-curves-interactive}
 
-Say we want to plot the 2D curve $\gamma \colon (a,b) \to \R^2$ parametrized by
+Say we want to plot the 2D curve $\g \colon (a,b) \to \R^2$ parametrized by
 $$
-\gamma(t) = ( x(t) , y(t) ) \,.
+\g(t) = ( x(t) , y(t) ) \,.
 $$
-The `Plotly` module needed is called `graph_objects`, usually imported as `go`. The function for line plots is called `Scatter`. For documentation and examples see [link](https://plotly.com/python/line-and-scatter/). The code for plotting $\gamma$ is as follows.
+The `Plotly` module needed is called `graph_objects`, usually imported as `go`. The function for line plots is called `Scatter`. For documentation and examples see [link](https://plotly.com/python/line-and-scatter/). The code for plotting $\g$ is as follows.
 
 ```python
 # Plotting gamma 2D
@@ -768,11 +798,11 @@ where `template_name` can be `"plotly"`, `"plotly_white"`, `"plotly_dark"`, `"gg
 
 ### 3D Plots   {#sec-plot-3d-curves-interactive}
 
-We now want to plot a 3D curve $\gamma \colon (a,b) \to \R^3$ parametrized by
+We now want to plot a 3D curve $\g \colon (a,b) \to \R^3$ parametrized by
 $$
-\gamma(t) = ( x(t) , y(t) , z(t)) \,.
+\g(t) = ( x(t) , y(t) , z(t)) \,.
 $$
-Again we use the `Plotly` module `graph_objects`, imported as `go`. The function for 3D line plots is called `Scatter3d`, and documentation and examples can be found at [link](https://plotly.com/python/3d-scatter-plots/). The code for plotting $\gamma$ is as follows.
+Again we use the `Plotly` module `graph_objects`, imported as `go`. The function for 3D line plots is called `Scatter3d`, and documentation and examples can be found at [link](https://plotly.com/python/3d-scatter-plots/). The code for plotting $\g$ is as follows.
 
 
 ```python

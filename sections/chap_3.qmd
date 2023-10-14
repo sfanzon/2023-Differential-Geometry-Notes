@@ -1,7 +1,38 @@
 ::: {.content-hidden}
-$
-{{< include macros.tex >}}
-$
+$$
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}  
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\nn}{\mathbf{n}}
+\newcommand{\pp}{\mathbf{p}}
+\newcommand{\xx}{\mathbf{x}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ee}{\mathbf{e}}
+\newcommand{\uu}{\mathbf{u}}
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\ww}{\mathbf{w}}
+\newcommand{\sss}{{\boldsymbol \sigma}}
+\newcommand{\zero}{{\boldsymbol 0}}
+\newcommand{\TT}{\mathcal{T}}
+\newcommand{\SSS}{\mathcal{S}}
+\newcommand{\WW}{\mathcal{W}}
+\newcommand{\sphere}{\mathbb{S}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\eeta}{{\boldsymbol \eta}}
+\newcommand{\g}{{\boldsymbol \gamma}}
+\newcommand{\f}{\phi}
+\newcommand{\tg}{\widetilde{\g}}
+\DeclareMathOperator{\id}{Id}
+\newcommand{\st}{\, \text{ s.t. } \, }
+\newcommand{\divider}{\, \colon \,}
+\newcommand{\closure}[2][2]{{}\mkern#1mu \overline{\mkern-#1mu #2 \mkern-#1mu}\mkern#1mu {}}
+\newcommand{\scp}[2]{\left\langle #1,#2 \right\rangle} %prodotto scalare
+\newcommand{\abs}[1]{\left| #1 \right|}  %valore assoluto
+\newcommand{\norm}[1]{\left\| #1 \right\|} %norma
+$$
 :::
 
 
@@ -18,7 +49,7 @@ Let us recall the definition of **parametrized curve**.
 
 A **parametrized curve** in $\R^n$ is a function 
 $$
-\gamma \ \colon  (a,b) \to \R^n \,.
+\g \ \colon  (a,b) \to \R^n \,.
 $$
 where
 
@@ -29,9 +60,9 @@ with
 $$
 - \infty \leq a < b \leq \infty \,.
 $$
-The **components** of $\gamma(t) \in \R^n$ are denoted by 
+The **components** of $\g(t) \in \R^n$ are denoted by 
 $$
-\gamma(t) = ( \gamma_1(t), \ldots, \gamma_n(t) ) \,,
+\g(t) = ( \gamma_1(t), \ldots, \gamma_n(t) ) \,,
 $$
 where the components are functions
 $$
@@ -75,7 +106,7 @@ $$
 
 ::: Definition 
 
-Let $\gamma \ \colon (a,b) \to \R^n$ with 
+Let $\g \ \colon (a,b) \to \R^n$ with 
 $$
 \g(t) = ( \g_1(t), \ldots, \g_n(t) ) 
 $$
@@ -85,15 +116,15 @@ $$
 $$
 are smooth for all $i=1,\ldots,n$. The derivatives of $\g$ are 
 $$
-\frac{d^k\gamma}{dt^k}  := \left(  \frac{d^k\gamma_1}{dt^k} , \ldots, \frac{d^k\gamma_n}{dt^k} \right)  
+\frac{d^k\g}{dt^k}  := \left(  \frac{d^k\gamma_1}{dt^k} , \ldots, \frac{d^k\gamma_n}{dt^k} \right)  
 $$
 for all $k \in \N$. As a shorthand, we will denote the first derivative of $\g$ as 
 $$
-\dot \g := \frac{d\gamma}{dt} = \left(  \frac{d\gamma_1}{dt} , \ldots, \frac{d\gamma_n}{dt} \right)  
+\dot \g := \frac{d\g}{dt} = \left(  \frac{d\gamma_1}{dt} , \ldots, \frac{d\gamma_n}{dt} \right)  
 $$
 and the second by
 $$
-\ddot \g := \frac{d^2\gamma}{dt^2} = \left(  \frac{d^2\gamma_1}{dt^2} , \ldots, \frac{d^2\gamma_n}{dt^2} \right)   \,.
+\ddot \g := \frac{d^2\g}{dt^2} = \left(  \frac{d^2\gamma_1}{dt^2} , \ldots, \frac{d^2\gamma_n}{dt^2} \right)   \,.
 $$
 :::
 
@@ -493,7 +524,7 @@ Suppose $\g \colon (a,b) \to \R^n$ is a parametrized curve. We say that $\g$ is 
 $$
 L(\g) = \lim_{ \norm{P} \to 0}   \ L(\g,\mathcal{P})
 $$
-exists finite. In such case we call $L(\g)$ the **length** of $\gamma$.
+exists finite. In such case we call $L(\g)$ the **length** of $\g$.
 :::
 
 
@@ -1070,13 +1101,13 @@ $$
 ### Differentiating scalar product  {#proposition-diff-scalar}
 
 
-Let $\gamma , \eta \ \colon (a,b) \to \R^n$ be parametrized curves. Then the scalar map 
+Let $\g , \eeta \ \colon (a,b) \to \R^n$ be parametrized curves. Then the scalar map 
 $$
-\gamma \cdot \eta \ \colon (a,b) \to \R
+\g \cdot \eeta \ \colon (a,b) \to \R
 $$
 is smooth, and
 $$
-\frac{d}{dt} (\gamma \cdot \eta)  = \dot\g \cdot \eta + \g \cdot \dot \eta 
+\frac{d}{dt} (\g \cdot \eeta)  = \dot\g \cdot \eeta + \g \cdot \dot \eeta 
 $$
 for all $t \in (a,b)$.
 
@@ -1087,19 +1118,19 @@ for all $t \in (a,b)$.
 
 Denote by 
 $$
-\g = (\g_1 ,\ldots , \g_n) \,, \quad \eta = (\eta_1, \ldots , \eta_n)
+\g = (\g_1 ,\ldots , \g_n) \,, \quad \eeta = (\eta_1, \ldots , \eta_n)
 $$
-the coordinates of $\g$ and $\eta$. Clearly the map
+the coordinates of $\g$ and $\eeta$. Clearly the map
 $$
-t \mapsto \g \cdot \eta = \sum_{i=1}^n \g_i \eta_i
+t \mapsto \g \cdot \eeta = \sum_{i=1}^n \g_i \eta_i
 $$
 is smooth, being sum and product of smooth functions.  
 Concerning the formula, by definition of scalar product and linearity of the derivative we have
 \begin{align}
-\frac{d}{dt} (\gamma \cdot \eta) & = \frac{d}{dt} \left( \sum_{i=1}^n \g_i \eta_i \right) \\
+\frac{d}{dt} (\g \cdot \eeta) & = \frac{d}{dt} \left( \sum_{i=1}^n \g_i \eta_i \right) \\
 & = \sum_{i=1}^n \frac{d}{dt} ( \g_i \eta_i ) \\
 & = \sum_{i=1}^n  \dot\g_i \eta_i + \g_i \dot\eta_i \\
-& = \dot\g \cdot \eta + \g \cdot \dot\eta \,,
+& = \dot\g \cdot \eeta + \g \cdot \dot\eeta \,,
 \end{align}
 where in the second to last equality we used the product rule of differentiation.
 :::
@@ -1446,10 +1477,10 @@ Consider the parabola
 $$
 \Gamma := \{ (x,y) \in \R^2 \, \colon \,  y=x^2 , \, -1 \leq x \leq 1\} \,.
 $$
-This can be parametrized in two ways by $\g, \eta \ \colon [-1,1] \to \R^2$ defined as
+This can be parametrized in two ways by $\g, \eeta \ \colon [-1,1] \to \R^2$ defined as
 $$
 \g (t) = (t,t^2) \,, \quad 
-\eta(t) = (t^3, t^6) \,.
+\eeta(t) = (t^3, t^6) \,.
 $$
 We will see that the above parametrizations are **not** equivalent. This is intuitively clear, since the change of variables map should be 
 $$
@@ -1467,24 +1498,24 @@ and therefore $\f$ cannot be a diffeomorphism due to Lemma \ref{lemma-diffeomorp
 
 Let us look at the derivatives:
 $$
-\dot \g (t) = (1,2t) \,, \quad \dot \eta (t)= (3t^2,6t^5) \,.
+\dot \g (t) = (1,2t) \,, \quad \dot \eeta (t)= (3t^2,6t^5) \,.
 $$
 We notice a difference:
 
 - $\g$ is a regular parametrization,
-- $\eta(t)$ is regular only for $t \neq 0$.
+- $\eeta(t)$ is regular only for $t \neq 0$.
 
 Indeed if we animate the plots of the above parametrizations, we see that:
 
 - The point $\g(t)$ moves with constant horizontal speed
-- The point $\eta(t)$ is decelerating for $t < 0$, it stops at $t = 0$, and then accelerates again for $t>0$.
+- The point $\eeta(t)$ is decelerating for $t < 0$, it stops at $t = 0$, and then accelerates again for $t>0$.
 :::
 
 
 
 ::: {.content-visible when-format="html"}
 
-![Left: Animation of $\g$. Right: Animation of $\eta$](/images/singular_curve_animated.gif){width=90%}
+![Left: Animation of $\g$. Right: Animation of $\eeta$](/images/singular_curve_animated.gif){width=90%}
 
 :::
 
@@ -1551,21 +1582,21 @@ Let us go back to the parabola
 $$
 \Gamma := \{ (x,y) \in \R^2 \, \colon \,  y=x^2 , \, -1 \leq x \leq 1\} \,,
 $$
-with the two parametrizations $\g, \eta \ \colon [-1,1] \to \R^2$ with
+with the two parametrizations $\g, \eeta \ \colon [-1,1] \to \R^2$ with
 $$
 \g (t) = (t,t^2) \,, \quad 
-\eta(t) = (t^3, t^6) \,.
+\eeta(t) = (t^3, t^6) \,.
 $$
 We have that
 $$
-\dot \g (t) = (1,2t) \,, \quad \dot \eta (t)= (3t^2,6t^5) \,.
+\dot \g (t) = (1,2t) \,, \quad \dot \eeta (t)= (3t^2,6t^5) \,.
 $$
 Therefore 
 
 - $\g$ is a regular parametrization,
-- $\eta(t)$ is regular only for $t \neq 0$.
+- $\eeta(t)$ is regular only for $t \neq 0$.
 
-Proposition \ref{proposition-regularity-invariant} implies that $\eta$ is **NOT** a reparametrization of $\g$.
+Proposition \ref{proposition-regularity-invariant} implies that $\eeta$ is **NOT** a reparametrization of $\g$.
 :::
 
 
@@ -2040,7 +2071,7 @@ see figure below. In this way $\tg$ is $T$-periodic.
 
 Let $\g$ be a closed curve. The **period** of $\g$ is the smallest $T>0$ such that $\g$ is $T$-periodic, that is
 $$
-\mbox{Period of $\g$} := \min \{ T \, \colon \, T > 0 \,, \,\, \gamma \, \mbox{ is T-periodic}    \} \,. 
+\mbox{Period of $\g$} := \min \{ T \, \colon \, T > 0 \,, \,\, \g \, \mbox{ is T-periodic}    \} \,. 
 $$
 :::
 

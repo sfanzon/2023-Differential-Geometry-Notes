@@ -35,7 +35,7 @@ $$
 $$
 Whatever the definition of curvature will be, it has to hold that $\g$ has zero curvature in this case. If we further derive the tangent vector, we obtain
 $$
-\ddot\g(t) =  0 \,.
+\ddot\g(t) =  \zero \,.
 $$
 Thus $\ddot \g$ seems to be a good candidate for the definition of curvature of $\g$ at the point $\g(t)$.  
 
@@ -190,7 +190,7 @@ $$
 $$
 Therefore 
 $$
-\kappa^\gamma(t) =  \norm{  \ddot{\tg}( \tilde{\f}(t))} = \norm{ \ddot{\hat{\g}}(\hat\f(t))} \,.
+\kappa^\g(t) =  \norm{  \ddot{\tg}( \tilde{\f}(t))} = \norm{ \ddot{\hat{\g}}(\hat\f(t))} \,.
 $$
 
 :::
@@ -296,15 +296,15 @@ The discussion in this section follows [@do-carmo]. We start by defining **orien
 
 Consider two ordered basis of $\R^3$
 $$
-b = (b_1,b_2,b_3) \,, \quad \tilde{b} = (\tilde{b}_1,\tilde{b}_2,\tilde{b}_3) \,.
+B = (\bb_1,\bb_2,\bb_3) \,, \quad \tilde{B} = (\widetilde{\bb}_1,\widetilde{\bb}_2,\widetilde{\bb}_3) \,.
 $$
-We say that $b$ and $\tilde{b}$ have the same orientation if the matrix of change of basis has positive determinant.
+We say that $B$ and $\widetilde{B}$ have the same orientation if the matrix of change of basis has positive determinant.
 
 :::
 
-When two basis $b$ and $\tilde{b}$ have the same orientation, we write
+When two basis $B$ and $\widetilde{B}$ have the same orientation, we write
 $$
-b \sim \tilde{b} \,.
+\bb \sim \widetilde{\bb} \,.
 $$
 The above is clearly an equivalence relation on the set of ordered basis. Therefore the set of ordered basis of $\R^3$ can be decomposed into equivalence classes.
 Since the determinant of the matrix of change of basis can only be positive or negative, there are only two equivalence classes.
@@ -324,22 +324,22 @@ The two equivalence classes determined by $\sim$ on the set of ordered basis are
 
 Consider the standard basis of $\R^3$ 
 $$
-e = (e_1,e_2,e_3)
+E = (\ee_1,\ee_2,\ee_3)
 $$
 where we set
 $$
-e_1 = (1,0,0)\,, \quad e_2 = (0,1,0) \,, \quad e_3 = (0,0,1) \,.
+\ee_1 = (1,0,0)\,, \quad \ee_2 = (0,1,0) \,, \quad \ee_3 = (0,0,1) \,.
 $$
 Then:
 
-- The orientation corresponding to $e$ is called **positive orientation** of $\R^3$.
+- The orientation corresponding to $E$ is called **positive orientation** of $\R^3$.
 - The orientation corresponding to the other equivalence class is called **negative orientation** of $\R^3$.
 
 
-For a basis $b$ of $\R^3$ we say that:
+For a basis $B$ of $\R^3$ we say that:
 
-- $b$ is a **positive basis** if it belongs to the class of $e$.
-- $b$ is a **negative basis** if it does not belong to the class of $e$.
+- $B$ is a **positive basis** if it belongs to the class of $e$.
+- $B$ is a **negative basis** if it does not belong to the class of $e$.
 :::
 
 
@@ -348,16 +348,16 @@ For a basis $b$ of $\R^3$ we say that:
 
 Since we are dealing with ordered basis, the order in which vectors appear is fundamental. For example, we defined the equivalence class of
 $$
-e = (e_1,e_2,e_3) \,,
+E = (\ee_1,\ee_2,\ee_3) \,,
 $$
 to be the positive orientation of $\R^3$. In particular $e$ is a positive basis.  
 Consider instead
 $$
-\tilde{e} = (e_2,e_1,e_3) \,.
+\widetilde{E} = (\ee_2,\ee_1,\ee_3) \,.
 $$
-The matrix of change of variables between $\tilde{e}$ and $e$ is 
+The matrix of change of variables between $\widetilde{E}$ and $E$ is 
 $$
-(e_2 | e_1 | e_3 ) = \left(
+(\ee_2 | \ee_1 | \ee_3 ) = \left(
 \begin{array}{ccc}
 0 & 1 & 0 \\ 
 1 & 0 & 0 \\
@@ -365,7 +365,7 @@ $$
 \end{array}
 \right)
 $$
-and the latter has negative determinant. Thus $\tilde{e}$ does not belong to the class of $e$, and is therefore a negative basis. 
+and the latter has negative determinant. Thus $\widetilde{E}$ does not belong to the class of $E$, and is therefore a negative basis. 
 :::
 
 
@@ -375,69 +375,69 @@ We are now ready to define the vector product in $\R^3$.
 ::: Definition
 ### Vector product in $\R^3$   
 
-Let $u,v \in \R^3$. The vector product of $u$ and $v$ is the unique vector 
+Let $\uu,\vv \in \R^3$. The vector product of $\uu$ and $\vv$ is the unique vector 
 $$
-u \times v \in \R^3
+\uu \times \vv \in \R^3
 $$
 which satisfies the property:
 $$
-(u \times v) \cdot w = 
+(\uu \times \vv) \cdot \ww = 
 \left|
 \begin{array}{ccc}
 u_1 & u_2 & u_3 \\
 v_1 & v_2 & v_3 \\
 w_1 & w_2 & w_3 \\
 \end{array}
-\right| \,, \quad \forall \, w \in \R^3 \,.
+\right| \,, \quad \forall \, \ww \in \R^3 \,.
 $${#eq-def-vector-product}
 Here $|a_{ij}|$ denotes the determinant of the matrix $(a_{ij})$, and 
 $$
-u= \sum_{i=1}^3 u_i e_i \,, \quad
-v= \sum_{i=1}^3 v_i e_i \,, \quad
-w= \sum_{i=1}^3 w_i e_i \,,
+\uu= \sum_{i=1}^3 u_i \ee_i \,, \quad
+\vv= \sum_{i=1}^3 v_i \ee_i \,, \quad
+\ww= \sum_{i=1}^3 w_i \ee_i \,,
 $$
-with $(e_1,e_2,e_3)$ standard basis of $\R^3$.
+with $(\ee_1,\ee_2,\ee_3)$ standard basis of $\R^3$.
 :::
 
 
-The following proposition gives an explicit formula for computing $u \times v$.
+The following proposition gives an explicit formula for computing $\uu \times \vv$.
 
 
 ::: Proposition
 
-Let $u,v \in \R^3$. Then
+Let $\uu,\vv \in \R^3$. Then
 $$
-u \times v = 
+\uu \times \vv = 
 \left|
 \begin{array}{cc}
 u_2 & u_3  \\
 v_2 & v_3 
 \end{array}
-\right| e_1 -
+\right| \ee_1 -
 \left|
 \begin{array}{cc}
 u_1 & u_3  \\
 v_1 & v_3 
 \end{array}
-\right| e_2 +
+\right| \ee_2 +
 \left|
 \begin{array}{cc}
 u_1 & u_2  \\
 v_1 & v_2 
 \end{array}
-\right| e_3  \,. 
+\right| \ee_3  \,. 
 $$ {#eq-formula-cross-product}
 :::
 
 
 ::: Proof
-Denote by $(u \times v)_i$ the $i$-th component of $u \times v$ with respect to the standard basis, that is,
+Denote by $(\uu \times \vv)_i$ the $i$-th component of $\uu \times \vv$ with respect to the standard basis, that is,
 $$
-u \times v = \sum_{i=1}^3  (u \times v)_i \, e_i \,.
+\uu \times \vv = \sum_{i=1}^3  (\uu \times \vv)_i \, \ee_i \,.
 $$
-We can use (@eq-def-vector-product) with $w = e_1$ to obtain 
+We can use (@eq-def-vector-product) with $\ww = \ee_1$ to obtain 
 $$
-(u \times v) \cdot e_1  = 
+(\uu \times \vv) \cdot \ee_1  = 
 \left|
 \begin{array}{ccc}
 u_1 & u_2 & u_3 \\
@@ -454,11 +454,11 @@ v_2 & v_3
 $$
 where we used the Laplace expansion for computing the determinant of the $3 \times 3$ matrix. As the standard basis is orthonormal, by bilinearity of the scalar product we get
 $$
-(u \times v) \cdot e_1 = \sum_{i=1}^3  (u \times v)_i \, e_i \cdot e_1 = (u \times v)_i \,.
+(\uu \times \vv) \cdot \ee_1 = \sum_{i=1}^3  (\uu \times \vv)_i \, \ee_i \cdot \ee_1 = (\uu \times \vv)_i \,.
 $$
 Therefore we have shown
 $$
-(u \times v)_1 = \left|
+(\uu \times \vv)_1 = \left|
 \begin{array}{cc}
 u_2 & u_3  \\
 v_2 & v_3 
@@ -467,7 +467,7 @@ v_2 & v_3
 $$
 Similarly we obtain
 $$
-(u \times v)_2  = \left|
+(\uu \times \vv)_2  = \left|
 \begin{array}{ccc}
 u_1 & u_2 & u_3 \\
 v_1 & v_2 & v_3 \\
@@ -483,7 +483,7 @@ v_1 & v_3
 $$
 and 
 $$
-(u \times v)_3  = \left|
+(\uu \times \vv)_3  = \left|
 \begin{array}{ccc}
 u_1 & u_2 & u_3 \\
 v_1 & v_2 & v_3 \\
@@ -506,14 +506,14 @@ from which we conclude.
 
 ::: {.Proposition #proposition-vector-product}
 
-The vector product in $\R^3$ satisfies the following properties: For all $u, v \in \R^3$ 
+The vector product in $\R^3$ satisfies the following properties: For all $\uu, \vv \in \R^3$ 
 
-1. $u \times v = - v \times u$
-2. $u \times v = 0$ if and only if $u$ and $v$ are linearly dependent
-3. $(u \times v) \cdot u = 0$, $(u \times v) \cdot v = 0$
-4. Moreover for all $w \in \R^3$, $a,b \in \R$
+1. $\uu \times \vv = - \vv \times \uu$
+2. $\uu \times \vv = \zero$ if and only if $\uu$ and $\vv$ are linearly dependent
+3. $(\uu \times \vv) \cdot \uu = 0$, $(\uu \times \vv) \cdot \vv = 0$
+4. Moreover for all $\ww \in \R^3$, $a,b \in \R$
 $$
-(au + bw) \times v = a u \times v + bw \times w 
+(a\uu + b\ww) \times \vv = a \uu \times \vv + b\ww \times \ww 
 $$
 
 :::
@@ -524,94 +524,94 @@ The proof, which is based on the properties of determinants, is omitted.
 ::: Remark
 ### Geometric interpretation of vector product
 
-Let $u, v \in \R^3$ be linearly independent. We make some observations:
+Let $\uu, \vv \in \R^3$ be linearly independent. We make some observations:
 
 - Property 3 in Proposition \ref{proposition-vector-product} says that
 $$
-(u \times v) \cdot u = 0 \,, \quad  (u \times v) \cdot v = 0 \,.
+(\uu \times \vv) \cdot \uu = 0 \,, \quad  (\uu \times \vv) \cdot \vv = 0 \,.
 $$
-Therefore $u \times v$ is orthogonal to both $u$ and $v$. 
+Therefore $\uu \times \vv$ is orthogonal to both $\uu$ and $\vv$. 
 
-- In particular $u \times v$ is orthogonal to the plane generated by $u$ and $v$.
+- In particular $\uu \times \vv$ is orthogonal to the plane generated by $\uu$ and $\vv$.
 
-- Since $u$ and $v$ are linearly independent, Property 2 in Proposition \ref{proposition-vector-product} says that
+- Since $\uu$ and $\vv$ are linearly independent, Property 2 in Proposition \ref{proposition-vector-product} says that
 $$
-u \times v \neq 0
+\uu \times \vv \neq \zero
 $$
 
 - Therefore we have
 $$
-(u \times v) \cdot (u \times v) = \norm{ u \times v }^2 > 0 
+(\uu \times \vv) \cdot (\uu \times \vv) = \norm{ \uu \times \vv }^2 > 0 
 $$
 
-- On the other hand, using the definition of $u \times v$ with $w = v \times w$ yields
+- On the other hand, using the definition of $\uu \times \vv$ with $\ww = \vv \times \ww$ yields
 $$
-(u \times v) \cdot (u \times v) =
+(\uu \times \vv) \cdot (\uu \times \vv) =
 \left|
 \begin{array}{ccc}
 u_1 & u_2 & u_3 \\
 v_1 & v_2 & v_3 \\
-(u \times v)_1 & (u \times v)_2 & (u \times v)_3 \\
+(\uu \times \vv)_1 & (\uu \times \vv)_2 & (\uu \times \vv)_3 \\
 \end{array}
 \right| 
 $$
 
 - Therefore the determinant of the matrix
 $$
-(u | v | u \times v)
+(\uu | \vv | \uu \times \vv)
 $$
 is positive. This shows that 
 $$
-(u , v , u \times v)
+(\uu , \vv , \uu \times \vv)
 $$
 is a **positive basis** of $\R^3$.
 
-- For all $u,v,x,y \in \R^3$ it holds
+- For all $\uu,\vv,\xx,\yy \in \R^3$ it holds
 $$
-(u \times v) \cdot (x \times y ) = 
+(\uu \times \vv) \cdot (x \times y ) = 
 \left|
 \begin{array}{cc}
-u \cdot x & v \cdot x  \\
-u \cdot y & v \cdot y 
+\uu \cdot \xx & \vv \cdot \xx  \\
+\uu \cdot \yy & \vv \cdot \yy 
 \end{array}
 \right| \,.
 $${#eq-formula-cross}
-Indeed, one can check that the above formula holds for the standard vectors $e_i$, and thus the general formula follows by linearity.
+Indeed, one can check that the above formula holds for the standard vectors $\ee_i$, and thus the general formula follows by linearity.
 
 - Using (@eq-formula-cross) we get
 \begin{align}
-\norm{u \times v}^2 & = (u \times v) \cdot (u \times v) = 
+\norm{\uu \times \vv}^2 & = (\uu \times \vv) \cdot (\uu \times \vv) = 
 \left|
 \begin{array}{cc}
-u \cdot u & v \cdot u  \\
-u \cdot v & v \cdot v 
+\uu \cdot \uu & \vv \cdot \uu  \\
+\uu \cdot \vv & \vv \cdot \vv 
 \end{array}
 \right|   \\
-& = \norm{u}^2 \norm{v}^2 - |u \cdot v|^2 \\
-& = \norm{u}^2 \norm{v}^2 - \norm{u}^2 \norm{v}^2 \cos^2(\theta) \\
-& = \norm{u}^2\norm{v}^2 (1-\cos^2(\theta)) \\
-& = \norm{u}^2\norm{v}^2 \sin^2(\theta) \\
+& = \norm{\uu}^2 \norm{\vv}^2 - |\uu \cdot \vv|^2 \\
+& = \norm{\uu}^2 \norm{\vv}^2 - \norm{\uu}^2 \norm{\vv}^2 \cos^2(\theta) \\
+& = \norm{\uu}^2\norm{\vv}^2 (1-\cos^2(\theta)) \\
+& = \norm{\uu}^2\norm{\vv}^2 \sin^2(\theta) \\
 & = A^2  
 \end{align} 
-where $A$ is the area of the parallelogram with sides $u$ and $v$.
+where $A$ is the area of the parallelogram with sides $\uu$ and $\vv$.
 :::
 
 
-![For $u,v$ linearly independent, $u \times v$ is orthogonal to the plane generated by $u,v$. Moreover $|u \times v|$ is the area of the parallelogram with sides $u,v$, and $(u,v,u \times v)$ is a positive basis of $\R^3$](/images/vector_product_orthogonal.png){width=70%}
+![For $\uu,\vv$ linearly independent, $\uu \times \vv$ is orthogonal to the plane generated by $\uu,\vv$. Moreover $|\uu \times \vv|$ is the area of the parallelogram with sides $\uu,\vv$, and $(\uu,\vv,\uu \times \vv)$ is a positive basis of $\R^3$](/images/vector_product_orthogonal.png){width=70%}
 
 
 Let us summarize the above remark.
 
 ::: Remark
-### Summary: Properties of $u \times v$
+### Summary: Properties of $\uu \times \vv$
 
-Let $u,v \in \R^3$ be linearly independent. Then
+Let $\uu,\vv \in \R^3$ be linearly independent. Then
 
-- $u \times v$ is orthogonal to the plane spanned by $u,v$
-- $\norm{u \times v}$ is equal to the area of the parallelogram with sides $u,v$
-- $u \times v$ is such that
+- $\uu \times \vv$ is orthogonal to the plane spanned by $\uu,\vv$
+- $\norm{\uu \times \vv}$ is equal to the area of the parallelogram with sides $\uu,\vv$
+- $\uu \times \vv$ is such that
 $$
-(u,v,u\times v)
+(\uu,\vv,\uu \times \vv)
 $$
 is a positive basis of $\R^3$.
 
@@ -624,14 +624,14 @@ We conclude with a useful proposition for differentiating the cross product of c
 
 ::: Proposition
 
-Suppose $\g,\eta \ \colon (a,b) \to \R^3$ are parametrized curves. Then
+Suppose $\g,\eeta \ \colon (a,b) \to \R^3$ are parametrized curves. Then
 the curve 
 $$
-\g \times \eta \ \colon (a,b) \to \R^3
+\g \times \eeta \ \colon (a,b) \to \R^3
 $$
 is smooth, and
 $$
-\frac{d}{dt} ( \g \times \eta ) = \dot \g \times \eta + \g \times \dot \eta \,.
+\frac{d}{dt} ( \g \times \eeta ) = \dot \g \times \eeta + \g \times \dot \eeta \,.
 $$
 
 :::
@@ -681,7 +681,7 @@ Consider the straight line
 $$
 \g(t) = \mathbf{a} + t \mathbf{v}
 $$
-for some $\mathbf{a}, \mathbf{v} \in \R^3$ fixed, with $\mathbf{v} \neq 0$. Then
+for some $\mathbf{a}, \mathbf{v} \in \R^3$ fixed, with $\mathbf{v} \neq \zero$. Then
 $$
 \dot \g (t) = \mathbf{v} \,, \quad \ddot \g(t) = \zero \,. 
 $$
@@ -725,38 +725,38 @@ showing that $\g$ is regular. Finally
 {\dot\g}_2 & {\dot\g}_3  \\
 {\ddot\g}_2 & {\ddot\g}_3
 \end{array}
-\right| e_1 -
+\right| \ee_1 -
 \left|
 \begin{array}{cc}
 {\dot\g}_1 & {\dot\g}_3  \\
 {\ddot\g}_1 & {\ddot\g}_3
 \end{array}
-\right| e_2 +
+\right| \ee_2 +
 \left|
 \begin{array}{cc}
 {\dot\g}_1 & {\dot\g}_2  \\
 {\ddot\g}_1 & {\ddot\g}_2
 \end{array}
-\right| e_3 \\
+\right| \ee_3 \\
 & = 
 \left|
 \begin{array}{cc}
 R\cos(t) & H \\
 -R\sin(t) & 0
 \end{array}
-\right| e_1 -
+\right| \ee_1 -
 \left|
 \begin{array}{cc}
 -R\sin(t) & H \\
 -R\cos(t) & 0 
 \end{array}
-\right| e_2 +
+\right| \ee_2 +
 \left|
 \begin{array}{cc}
 -R\sin(t) & R\cos(t) \\
 -R\cos(t) & -R\sin(t)  
 \end{array}
-\right| e_3 \\
+\right| \ee_3 \\
 & = 
 \left(   
 RH\sin(t),    
@@ -809,7 +809,7 @@ In this section we assume to have plane curves, that is, curves with values in $
 
 ::: Definition
 
-Let $\g \ \colon (a,b) \to \R^2$ be unit speed. We define the **signed unit normal** to $\gamma$ at $\g(t)$ as the unit vector $\nn(t)$ obtained by rotating $\dot \g(t)$ anti-clockwise by an angle of $\pi/2$.
+Let $\g \ \colon (a,b) \to \R^2$ be unit speed. We define the **signed unit normal** to $\g$ at $\g(t)$ as the unit vector $\nn(t)$ obtained by rotating $\dot \g(t)$ anti-clockwise by an angle of $\pi/2$.
 
 :::
 
@@ -901,11 +901,11 @@ In this section we deal with **space curves**, that is, curves with values in $\
 
 - A 3D counterpart of the signed curvature does not exist, since there is no notion of *turning left* or *turning right*.
 
-- We have seen in the previous section that the signed curvature completely characterizes plane curves. In 3D however curvature is not enough to characterize curves: there exist $\g$ and $\eta$ space curves such that 
+- We have seen in the previous section that the signed curvature completely characterizes plane curves. In 3D however curvature is not enough to characterize curves: there exist $\g$ and $\eeta$ space curves such that 
 $$
-\kappa^{\g} = \kappa^{\eta} \,, \quad  \g \neq \eta \,,
+\kappa^{\g} = \kappa^{\eeta} \,, \quad  \g \neq \eeta \,,
 $$
-that is, $\g$ and $\eta$ have same curvature but are different curves.
+that is, $\g$ and $\eeta$ have same curvature but are different curves.
 
 
 
@@ -915,15 +915,17 @@ Let $\g$ be a circle of radius $R>0$
 $$
 \g(t) = (R\cos(t),R\sin(t),0) \,,
 $$
-and $\eta$ be a helix of radius $S>0$ and rise $H>0$
+and $\eeta$ be a helix of radius $S>0$ and rise $H>0$
 $$
-\eta(t) = (S\cos(t),S\sin(t),Ht) \,.
+\eeta(t) = (S\cos(t),S\sin(t),Ht) \,.
 $$
 We have computed that 
 $$
 \kappa^\g = \frac{1}{R}\,, \quad 
-\kappa^\eta = \frac{S}{\sqrt{S^2 + H^2}} \,.
+\kappa^\eeta = \frac{S}{\sqrt{S^2 + H^2}} \,.
 $$
 
 
 :::
+
+

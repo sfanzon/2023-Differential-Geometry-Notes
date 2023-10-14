@@ -1,7 +1,37 @@
 ::: {.content-hidden}
-$
-{{< include macros.tex >}}
-$
+$$
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}  
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\nn}{\mathbf{n}}
+\newcommand{\pp}{\mathbf{p}}
+\newcommand{\xx}{\mathbf{x}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ee}{\mathbf{e}}
+\newcommand{\uu}{\mathbf{u}}
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\ww}{\mathbf{w}}
+\newcommand{\sss}{{\boldsymbol \sigma}}
+\newcommand{\zero}{{\boldsymbol 0}}
+\newcommand{\TT}{\mathcal{T}}
+\newcommand{\SSS}{\mathcal{S}}
+\newcommand{\WW}{\mathcal{W}}
+\newcommand{\sphere}{\mathbb{S}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\g}{{\boldsymbol \gamma}}
+\newcommand{\f}{\phi}
+\newcommand{\tg}{\widetilde{\g}}
+\DeclareMathOperator{\id}{Id}
+\newcommand{\st}{\, \text{ s.t. } \, }
+\newcommand{\divider}{\, \colon \,}
+\newcommand{\closure}[2][2]{{}\mkern#1mu \overline{\mkern-#1mu #2 \mkern-#1mu}\mkern#1mu {}}
+\newcommand{\scp}[2]{\left\langle #1,#2 \right\rangle} %prodotto scalare
+\newcommand{\abs}[1]{\left| #1 \right|}  %valore assoluto
+\newcommand{\norm}[1]{\left\| #1 \right\|} %norma
+$$
 :::
 
 
@@ -200,9 +230,9 @@ We need a unified way to describe curves.
 
 ## Parametrized curves
 
-Rather than Cartesian equations, a more useful way of thinking about curves is viewing them as the *path traced out by a moving point*. If $\gamma(t)$ represents the position a point in $\R^n$ at time $t$, the whole curve can be identified by the function
+Rather than Cartesian equations, a more useful way of thinking about curves is viewing them as the *path traced out by a moving point*. If $\g(t)$ represents the position a point in $\R^n$ at time $t$, the whole curve can be identified by the function
 $$
-\gamma \ \colon \R \to \R^n \,, \,\,\, \gamma = \gamma(t) \,.
+\g \ \colon \R \to \R^n \,, \,\,\, \g = \g(t) \,.
 $$
 
 
@@ -214,7 +244,7 @@ This motivates the following definition of **parametrized curve**, which will be
 
 A **parametrized curve** in $\R^n$ is a function 
 $$
-\gamma \ \colon  (a,b) \to \R^n \,.
+\g \ \colon  (a,b) \to \R^n \,.
 $$
 
 where
@@ -237,10 +267,10 @@ $$
 -\infty \leq a < b \leq \infty
 $$
 means that the interval $(a,b)$ is possibly unbounded.
-- For each $t \in (a,b)$ the quantity $\gamma(t)$ is a vector in $\R^n$.
-- The **components** of $\gamma(t)$ are denoted by 
+- For each $t \in (a,b)$ the quantity $\g(t)$ is a vector in $\R^n$.
+- The **components** of $\g(t)$ are denoted by 
 $$
-\gamma(t) = ( \gamma_1(t), \ldots, \gamma_n(t) ) \,,
+\g(t) = ( \gamma_1(t), \ldots, \gamma_n(t) ) \,,
 $$
 where the components are functions
 $$
@@ -325,15 +355,15 @@ $$
 f(x,y) := y -2x \,, \quad c :=1 \,.
 $$
 
-How do we represent $C$ as a **parametrized curve** $\gamma$? We know that the curve is 2D, therefore we need to find a function
+How do we represent $C$ as a **parametrized curve** $\g$? We know that the curve is 2D, therefore we need to find a function
 $$
-\gamma \ \colon  (a,b) \to \R^2
+\g \ \colon  (a,b) \to \R^2
 $$
 with componenets 
 $$
-\gamma(t) = (\gamma_1(t),\gamma_2(t)) \, .
+\g(t) = (\gamma_1(t),\gamma_2(t)) \, .
 $$
-The curve $\gamma$ needs to be chosen so that it parametrizes the set $C$, in the sense that 
+The curve $\g$ needs to be chosen so that it parametrizes the set $C$, in the sense that 
 $$
 C = \{ (\g_1(t), \g_2(t)) \ \colon \ t \in (a,b)  \} \,.
 $$ {#eq-represent-line}
