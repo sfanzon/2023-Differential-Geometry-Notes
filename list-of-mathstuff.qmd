@@ -201,37 +201,63 @@
 
  [**Proposition 4.16**](#Proposition-4.16)\Pageref{Proposition-4.16}
 
- [**Example 4.17**](#Example-4.17)\Pageref{Example-4.17}
+ [**Proposition 4.17**](#Proposition-4.17)\Pageref{Proposition-4.17}
 
  [**Example 4.18**](#Example-4.18)\Pageref{Example-4.18}
 
- [**Definition 4.19**](#Definition-4.19)\Pageref{Definition-4.19}
+ [**Example 4.19**](#Example-4.19)\Pageref{Example-4.19}
 
  [**Definition 4.20**](#Definition-4.20)\Pageref{Definition-4.20}
 
- [**Remark 4.21**](#Remark-4.21)\Pageref{Remark-4.21}
+ [**Definition 4.21**](#Definition-4.21)\Pageref{Definition-4.21}
 
  [**Remark 4.22**](#Remark-4.22)\Pageref{Remark-4.22}
 
- [**Definition 4.23**](#Definition-4.23)\Pageref{Definition-4.23}
+ [**Remark 4.23**](#Remark-4.23)\Pageref{Remark-4.23}
 
- [**Theorem 4.24**](#Theorem-4.24)\Pageref{Theorem-4.24}
+ [**Definition 4.24**](#Definition-4.24)\Pageref{Definition-4.24}
 
- [**Example 4.25**](#Example-4.25)\Pageref{Example-4.25}
+ [**Theorem 4.25**](#Theorem-4.25)\Pageref{Theorem-4.25}
 
- [**Definition 4.26**](#principal-normal-vector): Principal normal vector\Pageref{principal-normal-vector}
+ [**Example 4.26**](#Example-4.26)\Pageref{Example-4.26}
 
- [**Remark 4.27**](#Remark-4.27)\Pageref{Remark-4.27}
+ [**Definition 4.27**](#principal-normal-vector): Principal normal vector\Pageref{principal-normal-vector}
 
- [**Question 4.28**](#Question-4.28)\Pageref{Question-4.28}
+ [**Remark 4.28**](#Remark-4.28)\Pageref{Remark-4.28}
 
- [**Definition 4.29**](#binormal-vector): Binormal vector\Pageref{binormal-vector}
+ [**Question 4.29**](#Question-4.29)\Pageref{Question-4.29}
 
- [**Definition 4.30**](#orthonormal-basis): Orthonormal basis\Pageref{orthonormal-basis}
+ [**Definition 4.30**](#binormal-vector): Binormal vector\Pageref{binormal-vector}
 
- [**Proposition 4.31**](#Proposition-4.31)\Pageref{Proposition-4.31}
+ [**Definition 4.31**](#orthonormal-basis): Orthonormal basis\Pageref{orthonormal-basis}
+
+ [**Proposition 4.32**](#Proposition-4.32)\Pageref{Proposition-4.32}
 
  [**Proof**](#Proof*-4.3)\Pageref{Proof*-4.3}
+
+ [**Proposition 4.33**](#Proposition-4.33)\Pageref{Proposition-4.33}
+
+ [**Proof**](#Proof*-4.4)\Pageref{Proof*-4.4}
+
+ [**Proposition 4.34**](#Proposition-4.34)\Pageref{Proposition-4.34}
+
+ [**Proof**](#Proof*-4.5)\Pageref{Proof*-4.5}
+
+ [**Definition 4.35**](#torsion-of-unit-speed-curve): Torsion of unit speed curve\Pageref{torsion-of-unit-speed-curve}
+
+ [**Remark 4.36**](#Remark-4.36)\Pageref{Remark-4.36}
+
+ [**Warning**](#Warning*-4.6)\Pageref{Warning*-4.6}
+
+ [**Definition 4.37**](#Definition-4.37)\Pageref{Definition-4.37}
+
+ [**Proposition 4.38**](#Proposition-4.38)\Pageref{Proposition-4.38}
+
+ [**Example 4.39**](#torsion-of-circle-and-helix): Torsion of Circle and Helix\Pageref{torsion-of-circle-and-helix}
+
+ [**Example 4.40**](#curvature-and-torsion-of-circle): Curvature and Torsion of Circle\Pageref{curvature-and-torsion-of-circle}
+
+ [**Example 4.41**](#Example-4.41)\Pageref{Example-4.41}
 
  [**Definition 6.1**](#Definition-6.1)\Pageref{Definition-6.1}
 

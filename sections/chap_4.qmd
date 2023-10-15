@@ -511,11 +511,10 @@ The vector product in $\R^3$ satisfies the following properties: For all $\uu, \
 1. $\uu \times \vv = - \vv \times \uu$
 2. $\uu \times \vv = \zero$ if and only if $\uu$ and $\vv$ are linearly dependent
 3. $(\uu \times \vv) \cdot \uu = 0$, $(\uu \times \vv) \cdot \vv = 0$
-4. Moreover for all $\ww \in \R^3$, $a,b \in \R$
+4. For all $\ww \in \R^3$, $a,b \in \R$
 $$
 (a\uu + b\ww) \times \vv = a \uu \times \vv + b\ww \times \ww 
 $$
-
 :::
 
 The proof, which is based on the properties of determinants, is omitted.
@@ -619,7 +618,20 @@ is a positive basis of $\R^3$.
 
 
 
-We conclude with a useful proposition for differentiating the cross product of curves in $\R^3$.
+We conclude with noting that the cross product is not associative, and with a useful proposition for differentiating the cross product of curves in $\R^3$.
+
+
+
+::: Proposition
+The vector product is not associative. In particular, for all $\uu, \vv, \ww \in \R^3$ it holds:
+$$
+(\uu \times \vv) \times \ww = ( \uu \cdot \ww ) \vv - ( \vv \cdot \ww ) \uu \,.
+$$ {#eq-cross-prod-triple}
+
+:::
+
+
+The proof is omitted. It follows by observing that both sides of (@eq-cross-prod-triple) are linear in $\uu, \vv, \ww$. Therefore it is sufficient to verify (@eq-cross-prod-triple) for the standard basis vectors $\ee_i$. This is left as an exercise.
 
 
 ::: Proposition
@@ -632,7 +644,7 @@ $$
 is smooth, and
 $$
 \frac{d}{dt} ( \g \times \eeta ) = \dot \g \times \eeta + \g \times \dot \eeta \,.
-$$
+$${#eq-cross-prod-derivative}
 
 :::
 
@@ -719,7 +731,7 @@ $$
 $$
 showing that $\g$ is regular. Finally
 \begin{align}
-\ddot \g \times \dot \g & = 
+\dot \g \times \ddot \g & = 
 \left|
 \begin{array}{cc}
 {\dot\g}_2 & {\dot\g}_3  \\
@@ -922,14 +934,13 @@ $$
 We have computed that 
 $$
 \kappa^\g = \frac{1}{R}\,, \quad 
-\kappa^\eeta = \frac{S}{\sqrt{S^2 + H^2}} \,.
+\kappa^\eeta = \frac{S}{S^2 + H^2} \,.
 $$
 If we now choose $R=2$ and we impose that $\kappa^\g = \kappa^\eeta$ we get
 $$
-\frac1R = \frac{S}{\sqrt{S^2 + H^2}} \quad \implies \quad 
- 3S^2 = H^2 
+\frac1R = \frac{S}{S^2 + H^2} \quad \implies \quad  H^2 = 2S - S^2 
 $$
-Therefore choosing $H=\sqrt{3}$ and $S=1$ yields 
+Therefore choosing $S=1$ and $H=1$ yields 
 $$
 \kappa^\g = \kappa^\eeta \,, \quad   \g \neq \eeta \,..
 $$
@@ -1071,3 +1082,273 @@ $$
 is a positive basis of $\R^3$.
 :::
 
+
+::: Proposition 
+
+Let $\g$ be a unit speed curve with $\kappa \neq 0$. Then
+$$
+\bb = \dot \g \times \nn \,, \quad
+\nn = \bb \times \dot \g \,, \quad
+\dot \g = \nn \times \bb \,.
+$$ {#eq-frenet-positive-basis}
+
+:::
+
+
+::: Proof
+
+The first equality in (@eq-frenet-positive-basis) is true by definition of $\bb$. For the other $2$ equalities, recall formula (@eq-cross-prod-triple): 
+$$
+(\uu \times \vv ) \times \ww = ( \uu \cdot \ww) \vv - ( \vv \cdot \ww ) \uu \,,
+$${#eq-cross-prod-triple-1}
+for all $\uu,\vv,\ww \in \R^3$. Applying the above with 
+$$
+\uu = \dot \g \,, \quad \vv = \nn \,, \quad \ww = \dot \g \,,
+$$
+yields
+\begin{align}
+( \dot \g \times \nn ) \times \dot \g & = ( \dot \g \cdot \dot \g ) \nn - (\nn \cdot \dot \g) \dot \g \\
+                                      & = \norm{\dot \g }^2 \nn - 0 \\
+                                      & = \nn \,,
+\end{align}
+where we used that $\dot\g$ is a unit vector and $\nn \cdot \dot \g = 0$. Therefore, by definition of $\bb$, we have
+$$
+\bb \times \dot \g = ( \dot \g \times \nn ) \times \dot \g = \nn
+$$
+showing the second equality in (@eq-frenet-positive-basis). For showing the third equality, we apply (@eq-cross-prod-triple-1) with 
+$$
+\uu = \dot \g \,, \quad \vv = \nn \,, \quad \ww = \nn \,,
+$$
+to get
+\begin{align}
+( \dot \g \times \nn ) \times \nn  & = ( \dot \g \cdot \nn ) \nn - (\nn \cdot \nn ) \dot \g \\
+                                      & = 0 - \norm{\nn }^2 \dot \g  \\
+                                      & = - \dot \g
+\end{align}
+where we used that $\nn$ is a unit vector and $\dot \g \cdot \nn= 0$. Therefore, by definition of $\bb$ and anti-commutativity of the vector product, we have
+$$
+\nn \times \bb = - \bb \times \nn = - (\dot \g \times \nn ) \times \nn = \dot \g \,,
+$$
+showing the last equality in (@eq-frenet-positive-basis).
+:::
+
+
+::: Proposition 
+
+Let $\g$ be a unit speed curve with $\kappa \neq 0$. Then
+$$
+\dot{\bb} (t) = - \tau(t) \nn(t) \,,
+$$ {#eq-binormal-derivative}
+for some $\tau(t) \in \R$. 
+
+:::
+
+
+::: Proof
+
+By definition of $\bb$ and the formula of derivation of the cross product (@eq-cross-prod-derivative) we have
+\begin{align}
+\dot{\bb} & = \frac{d}{dt} ( \dot \g \times \nn  ) \\
+          & = \ddot \g \times \nn + \dot \g \times \dot{\nn} \\
+          & =  \dot \g \times \dot{\nn} \,,
+\end{align}
+where we used that
+$$
+\ddot \g \times \nn  = 0\,,
+$$
+since $\nn$ is defined by $\nn :=  \ddot \g/\kappa$, and therefore $\nn$ and $\ddot \g$ are parallel. Hence, we have proven that
+$$
+\dot{\bb} = \dot \g \times \dot{\nn} \,.
+$${#eq-derivative-b-1}
+By the properties of the cross product we have that $\uu \times \vv$ is orthogonal to both $\uu$
+and $\vv$. Thus (@eq-derivative-b-1) implies that
+$$
+\dot{\bb} \cdot \dot \g = 0 \,.
+$$
+Further, observe that
+$$
+\frac{d}{dt}( \bb \cdot \bb ) = \dot{\bb} \cdot \bb + \bb \cdot \dot{\bb} = 2\dot{\bb} \cdot \bb \,.
+$$
+On the other hand, since $\bb$ is a unit vector, we have 
+$$
+\frac{d}{dt}( \bb \cdot \bb ) = \frac{d}{dt}( \norm{\bb}^2 ) = \frac{d}{dt}( 1 ) = 0 \,  
+$$
+Therefore 
+$$
+\dot{\bb} \cdot \bb = 0 \,.
+$$
+To summarize, we have shown that $\dot{\bb}$ is orthogonal to $\bb$ and $\dot \g$. Since 
+$$
+( \dot\g, \nn , \bb )
+$$
+is an orthonormal basis of $\R^3$ we conclude that $\dot{\bb}$ is parallel to $\nn$. Therefore there exists $\tau(t) \in \R$ such that 
+$$
+\dot{\bb} = - \tau(t) \nn(t) \,,
+$$
+concluding the proof.
+:::
+
+
+The scalar $\tau$ in equation (@eq-binormal-derivative) is called the torsion of $\g$.
+
+::: Definition
+### Torsion of unit speed curve
+
+Let $\g \colon (a,b) \to \R^3$ be a unit speed curve, with $\kappa \neq 0$. The **torsion** of $\g$ at $\g(t)$ is the unique scalar
+$$
+\tau (t) \in \R
+$$
+such that
+$$
+\dot{\bb} (t) = - \tau(t) \nn(t) \,.
+$$
+
+:::
+
+
+
+::: Remark
+In particular the torsion satisfies:
+$$
+\tau(t) = - \dot{\bb} (t) \cdot \nn (t) \,.
+$$
+
+> The above can be immediately obtained by multiplying (@eq-binormal-derivative) by $\nn$. Indeed,
+$$
+\dot{\bb} = - \tau \nn \quad \implies \quad 
+\dot{\bb} \cdot \nn = - \tau \nn \cdot \nn = \tau \,,
+$$
+since $\nn$ is a unit vector.
+
+:::
+
+
+
+::: Warning
+
+The torsion is defined only for curves  
+$$
+\g \colon (a,b) \to \R^3 \,,
+$$
+with 
+$$
+\norm{\dot \g} = 1 \,, \quad \kappa = \norm{ \ddot \g }  \neq 0 \,,
+$$
+for all $t \in (a,b)$.
+
+:::
+
+
+We can extend the definition of torsion to regular curves $\g$ with non-vanishing curvature. In this
+case the torsion of $\g$ is defined as the torsion of a unit speed reparametrization of $\g$. 
+
+
+::: Definition
+
+Let $\g \colon (a,b) \to \R^3$ be a regular curve with non-vanishing curvature. Let $\tg$ be a unit speed reparametrization of 
+$\g$, with 
+$$
+\g = \tg \circ \phi \,,  \quad \f \colon  (a,b) \to (\tilde{a},\tilde{b})  \,.
+$$
+We define the torsion of $\g$ at $\g(t)$ as
+$$
+\tau^\g(t) := \tau^{\tg} ( \f(t) ) \,,
+$$
+where ${\tau}^{\tg}(s)$ denotes the torsion of $\tg$ at $\tg(s)$.
+
+:::
+
+As usual, it is possible to check that the above definition of torsion does not depend 
+on the choice of unit speed reparametrization $\tg$. As with curvature, there is a general 
+formula to compute the torsion without having to reparametrize.
+
+
+::: Proposition 
+
+Let $\g \colon (a,b) \to \R^3$ be a regular curve with non-vanishing curvature. Then
+$$
+\tau (t) = \frac{ ( \dot\g \times \ddot \g ) \cdot \dddot \g }{ \norm{ \dot\g \times \ddot \g }^2 } \,. 
+$$
+
+:::
+
+We delay the proof of the above proposition for a bit. In the meantime, let us look at examples.
+
+
+
+
+::: Example
+### Torsion of Circle and Helix
+
+
+Consider the Helix of radius $R>0$ and rise $H>0$
+$$
+\g (t) = ( R\cos(t) , R\sin(t) , Ht) \,, \quad t \in \R \,.
+$$
+We have already shown that
+$$
+\norm{\dot\g (t)}  = \sqrt{R^2 + H^2}\,,  \quad  \kappa = \frac{R}{R^2 + H^2} \,.
+$$
+Therefore the Helix is regular with non-vanishing curvature. The torsion can be then
+computed via the formula 
+$$
+\tau (t) = \frac{ ( \dot\g \times \ddot \g ) \cdot \dddot \g }{ \norm{ \dot\g \times \ddot \g }^2 } \,. 
+$$
+Let us compute the quantities appearing in the formula for $\tau$
+\begin{align}
+\dot\g (t) & = ( -R\sin(t) , R\cos(t) , H)  \\
+\ddot\g (t) & = ( -R\cos(t) , -R\sin(t) , 0) \\
+\dddot\g (t) & = ( R\sin(t) , -R\cos(t) , 0) 
+\end{align}
+Moreover we had already computed that
+\begin{align}
+\dot \g \times \ddot \g & = \left( RH\sin(t), -RH\cos(t), R^2 \right)  \\
+\norm{ \dot \g \times \ddot \g } & =  R\sqrt{R^2 + H^2   } \,.
+\end{align}
+Finally we compute
+$$
+(\dot \g \times \ddot \g) \cdot \dddot \g = R^2 H \,.
+$$
+We are ready to find the torsion:
+$$
+\tau = \frac{ ( \dot\g \times \ddot \g ) \cdot \dddot \g }{ \norm{ \dot\g \times \ddot \g }^2 }
+       = \frac{ H }{ R^2 + H^2 } \,.
+$$
+:::
+
+
+
+
+::: Example 
+### Curvature and Torsion of Circle
+
+The Circle of radius $R>0$ is
+$$
+\g(t) := ( R \cos(t), R \sin(t) , 0 ) \,.
+$$
+The curvature and torsion of the Helix of radius $R$ and rise $H>0$ are
+$$
+\kappa = \frac{R}{R^2 + H^2}\,, \quad \tau = \frac{H}{R^2 + H^2}  \,.
+$$
+As for $H=0$ the Helix coincides with the Circle $\g$, we obtain that the 
+curvature and torsion of the Circle are
+$$
+\kappa = \frac{1}{R}\,, \quad \tau = 0  \,.
+$$
+
+:::
+
+
+From the above example we notice that the torsion of the circle is $0$. This is 
+true in general for plane curves. We will prove this claim in the next section. Let us
+see another example.
+
+
+::: Example
+Define the space curve
+$$
+\g(t) := \left( \frac45 \cos(t),   ,   \right) \,,
+$$
+for $t \in \R$.
+
+:::

@@ -164,6 +164,10 @@ custom-numbered-blocks:
     Important:
       group: thmlike
       numbered: false
+    
+    Warning:
+      group: thmlike
+      numbered: false
 
     Goal: 
       group: thmlike
