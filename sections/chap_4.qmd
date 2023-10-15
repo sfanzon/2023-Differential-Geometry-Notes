@@ -1352,3 +1352,9 @@ $$
 for $t \in \R$.
 
 :::
+
+
+
+
+
+![Summary for computing $\kappa$ and $\tau$ for regular curve $\g$.](/images/diagram_curvature_torsion.png){width=80%}
