@@ -193,7 +193,7 @@
 
  [**Proposition 4.12**](#proposition-vector-product)\Pageref{proposition-vector-product}
 
- [**Remark 4.13**](#geometric-interpretation-of-vector-product): Geometric interpretation of vector product\Pageref{geometric-interpretation-of-vector-product}
+ [**Remark 4.13**](#remark-vector-product): Geometric interpretation of vector product\Pageref{remark-vector-product}
 
  [**Remark 4.14**](#summary-properties-of-mathbfutimes-mathbfv): Summary: Properties of $\mathbf{u}\times \mathbf{v}$\Pageref{summary-properties-of-mathbfutimes-mathbfv}
 
@@ -218,6 +218,20 @@
  [**Theorem 4.24**](#Theorem-4.24)\Pageref{Theorem-4.24}
 
  [**Example 4.25**](#Example-4.25)\Pageref{Example-4.25}
+
+ [**Definition 4.26**](#principal-normal-vector): Principal normal vector\Pageref{principal-normal-vector}
+
+ [**Remark 4.27**](#Remark-4.27)\Pageref{Remark-4.27}
+
+ [**Question 4.28**](#Question-4.28)\Pageref{Question-4.28}
+
+ [**Definition 4.29**](#binormal-vector): Binormal vector\Pageref{binormal-vector}
+
+ [**Definition 4.30**](#orthonormal-basis): Orthonormal basis\Pageref{orthonormal-basis}
+
+ [**Proposition 4.31**](#Proposition-4.31)\Pageref{Proposition-4.31}
+
+ [**Proof**](#Proof*-4.3)\Pageref{Proof*-4.3}
 
  [**Definition 6.1**](#Definition-6.1)\Pageref{Definition-6.1}
 

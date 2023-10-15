@@ -85,35 +85,15 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Lemma {
+.Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
-}
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
 }
 .Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -121,25 +101,25 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Theorem {
+.Important {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
 }
 .Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
 .Conjecture {
   --color1: #f4cce0;
@@ -148,6 +128,26 @@ div.csl-indent {
 .TODO {
   --color1: #e7b1b4;
   --color2: #8c3236;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 </style>
 
@@ -628,10 +628,10 @@ v_1 &amp; v_2
 </div></details>
 </div>
 <p>The proof, which is based on the properties of determinants, is omitted.</p>
-<div id="geometric-interpretation-of-vector-product" class="Remark" title="Geometric interpretation of vector product">
+<div id="remark-vector-product" class="Remark" title="Geometric interpretation of vector product">
 <details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 13: </strong>Geometric interpretation of vector product</summary><div>
 <p>Let <span class="math inline">\(\mathbf{u}, \mathbf{v}\in \mathbb{R}^3\)</span> be linearly independent. We make some observations:</p>
-<ul>
+<ol type="1">
 <li><p>Property 3 in Proposition <a href="chap_4.html#proposition-vector-product">12</a> says that <span class="math display">\[
 (\mathbf{u}\times \mathbf{v}) \cdot \mathbf{u}= 0 \,, \quad  (\mathbf{u}\times \mathbf{v}) \cdot \mathbf{v}= 0 \,.
 \]</span> Therefore <span class="math inline">\(\mathbf{u}\times \mathbf{v}\)</span> is orthogonal to both <span class="math inline">\(\mathbf{u}\)</span> and <span class="math inline">\(\mathbf{v}\)</span>.</p></li>
@@ -658,7 +658,7 @@ v_1 &amp; v_2 &amp; v_3 \\
 (\mathbf{u}, \mathbf{v}, \mathbf{u}\times \mathbf{v})
 \]</span> is a <strong>positive basis</strong> of <span class="math inline">\(\mathbb{R}^3\)</span>.</p></li>
 <li><p>For all <span class="math inline">\(\mathbf{u},\mathbf{v},\mathbf{x},\mathbf{y}\in \mathbb{R}^3\)</span> it holds <span id="eq-formula-cross"><span class="math display">\[
-(\mathbf{u}\times \mathbf{v}) \cdot (x \times y ) =
+(\mathbf{u}\times \mathbf{v}) \cdot (\mathbf{x}\times \mathbf{y}) =
 \left|
 \begin{array}{cc}
 \mathbf{u}\cdot \mathbf{x}&amp; \mathbf{v}\cdot \mathbf{x}\\
@@ -680,7 +680,7 @@ v_1 &amp; v_2 &amp; v_3 \\
 &amp; = \left\| \mathbf{u} \right\|^2\left\| \mathbf{v} \right\|^2 \sin^2(\theta) \\
 &amp; = A^2  
 \end{align}\]</span> where <span class="math inline">\(A\)</span> is the area of the parallelogram with sides <span class="math inline">\(\mathbf{u}\)</span> and <span class="math inline">\(\mathbf{v}\)</span>.</p></li>
-</ul>
+</ol>
 </div></details>
 </div>
 <div class="quarto-figure quarto-figure-center">
@@ -900,7 +900,95 @@ R^2
 \]</span> We have computed that <span class="math display">\[
 \kappa^{\boldsymbol \gamma}= \frac{1}{R}\,, \quad
 \kappa^{\boldsymbol \eta}= \frac{S}{\sqrt{S^2 + H^2}} \,.
+\]</span> If we now choose <span class="math inline">\(R=2\)</span> and we impose that <span class="math inline">\(\kappa^{\boldsymbol \gamma}= \kappa^{\boldsymbol \eta}\)</span> we get <span class="math display">\[
+\frac1R = \frac{S}{\sqrt{S^2 + H^2}} \quad \implies \quad
+3S^2 = H^2
+\]</span> Therefore choosing <span class="math inline">\(H=\sqrt{3}\)</span> and <span class="math inline">\(S=1\)</span> yields <span class="math display">\[
+\kappa^{\boldsymbol \gamma}= \kappa^{\boldsymbol \eta}\,, \quad   {\boldsymbol \gamma}\neq {\boldsymbol \eta}\,..
 \]</span><p></p>
+</div></details>
+</div>
+<p>Therefore curvature is not enough for characterizing space curves, and we need a new quantity. As we did with curvature, we start by considering the simpler case of unit speed curves. We will also need to assume that the curvature is never zero.</p>
+<div id="principal-normal-vector" class="Definition" title="Principal normal vector">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 26: </strong>Principal normal vector</summary><div>Let <span class="math inline">\({\boldsymbol \gamma}\colon (a,b) \to \mathbb{R}^3\)</span> be a unit speed curve with <span class="math display">\[
+\kappa(t) \neq 0 \,, \quad \forall \,t \in (a,b) \,.
+\]</span> The <strong>principal normal vector</strong> to <span class="math inline">\({\boldsymbol \gamma}\)</span> at <span class="math inline">\({\boldsymbol \gamma}(t)\)</span> is <span class="math display">\[
+\mathbf{n}(t) := \frac{1}{\kappa (t)} \, \ddot {\boldsymbol \gamma}(t) \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="Remark-27" class="Remark">
+<details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 27</strong></summary><div>
+<p>Since for <span class="math inline">\({\boldsymbol \gamma}\)</span> unit speed we defined <span class="math display">\[
+\kappa (t) := \left\|  \ddot {\boldsymbol \gamma}(t)  \right\| \,,
+\]</span> we have that <span class="math display">\[
+\left\|  \mathbf{n}(t)  \right\| = 1 \,,
+\]</span> thus <span class="math inline">\(\mathbf{n}\)</span> is a unit vector. Moreover <span class="math inline">\(\mathbf{n}\)</span> is orthogonal to <span class="math inline">\(\dot{\boldsymbol \gamma}\)</span>, that is, <span class="math display">\[
+\dot {\boldsymbol \gamma}\cdot \mathbf{n}= 0 \,.
+\]</span></p>
+<blockquote class="blockquote">
+<p>This is because <span class="math display">\[
+\dot {\boldsymbol \gamma}\cdot \mathbf{n}= \frac{1}{\kappa} \, \dot {\boldsymbol \gamma}\cdot \ddot {\boldsymbol \gamma}= 0 \,,
+\]</span> where the last equality follows from <span class="math inline">\(\dot {\boldsymbol \gamma}\cdot \ddot {\boldsymbol \gamma}= 0\)</span>, being <span class="math inline">\({\boldsymbol \gamma}\)</span> unit speed.</p>
+</blockquote>
+</div></details>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/unit_normal.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Principal normal vector <span class="math inline">\(\mathbf{n}(t)\)</span> to <span class="math inline">\({\boldsymbol \gamma}\)</span> at <span class="math inline">\({\boldsymbol \gamma}(t)\)</span>.</figcaption>
+</figure>
+</div>
+<div id="Question-28" class="Question">
+<p></p><details class="Question fbx-simplebox fbx-default" open=""><summary><strong>Question 28</strong></summary><div>Why is the principal normal interesting? Because it can tell the difference beween a plane curve and a space curve. See picture below.<p></p>
+</div></details>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/unit_normal_point.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Left: Principal normal to a circle. Note that <span class="math inline">\(\mathbf{n}\)</span> always points towards the origin <span class="math inline">\({\boldsymbol 0}\)</span>. Right: Principal normal to a helix. Note that <span class="math inline">\(\mathbf{n}\)</span> points towards the <span class="math inline">\(z\)</span>-axis, but never towards the same point.</figcaption>
+</figure>
+</div>
+<div id="binormal-vector" class="Definition" title="Binormal vector">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 29: </strong>Binormal vector</summary><div>Let <span class="math inline">\({\boldsymbol \gamma}\colon (a,b) \to \mathbb{R}^3\)</span> be a unit speed curve with <span class="math display">\[
+\kappa(t) \neq 0 \,, \quad \forall \,t \in (a,b) \,.
+\]</span> The <strong>binormal vector</strong> to <span class="math inline">\({\boldsymbol \gamma}\)</span> at <span class="math inline">\({\boldsymbol \gamma}(t)\)</span> is <span class="math display">\[
+\mathbf{b}(t) := \dot {\boldsymbol \gamma}(t) \times \mathbf{n}(t) \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="orthonormal-basis" class="Definition" title="Orthonormal basis">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 30: </strong>Orthonormal basis</summary><div>Let <span class="math inline">\(\mathbf{v}_1, \mathbf{v}_2, \mathbf{v}_3\)</span> be vectors in <span class="math inline">\(\mathbb{R}^3\)</span>. We say that the triple <span class="math display">\[
+\{\mathbf{v}_1, \mathbf{v}_2,\mathbf{v}_3\}
+\]</span> is <strong>orthonormal</strong> if <span class="math display">\[
+\left\| v_i \right\| = 1 \,, \quad   v_i \cdot v_j = 0 \,, \,\, \mbox{ for } \, i \neq j \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="Proposition-31" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 31</strong></summary><div>Let <span class="math inline">\({\boldsymbol \gamma}\colon (a,b) \to \mathbb{R}^3\)</span> be a unit speed curve with <span class="math display">\[
+\kappa(t) \neq 0 \,, \quad \forall \,t \in (a,b) \,.
+\]</span> Then the triple <span class="math display">\[
+B = (  \dot {\boldsymbol \gamma}(t), \mathbf{n}(t), \mathbf{b}(t)  )
+\]</span> is a positive orthonormal basis of <span class="math inline">\(\mathbb{R}^3\)</span> for all <span class="math inline">\(t \in (a,b)\)</span>.<p></p>
+</div></details>
+</div>
+<div id="Proof*-3" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Since <span class="math inline">\({\boldsymbol \gamma}\)</span> is unit speed we have <span class="math display">\[
+\left\|  \dot {\boldsymbol \gamma}(t)  \right\| \equiv 1 \,.
+\]</span> Moreover we have already observed that <span class="math display">\[
+\left\| \mathbf{n}(t) \right\| \equiv 1 \,, \quad \dot {\boldsymbol \gamma}(t) \cdot \mathbf{n}(t) \equiv 0 \,.
+\]</span> As <span class="math inline">\(\mathbf{b}\)</span> is defined by <span class="math display">\[
+\mathbf{b}:= \dot {\boldsymbol \gamma}\times \mathbf{n}\,,
+\]</span> by the properties of the vector product, see Proposition <a href="chap_4.html#proposition-vector-product">12</a>, it follows that <span class="math display">\[
+\mathbf{b}\cdot \dot {\boldsymbol \gamma}= 0 \,, \quad  \mathbf{b}\cdot \mathbf{n}= 0  \,.
+\]</span> By the calculation in Remark <a href="chap_4.html#remark-vector-product">13</a> Point 8, we have that <span class="math display">\[
+\left\|  \mathbf{b} \right\|^2 = \| \dot {\boldsymbol \gamma}\|^2 \|\mathbf{n}\|^2 -   |\dot {\boldsymbol \gamma}\cdot \mathbf{n}|^2 = 1   \,.
+\]</span> This shows that the vectors <span class="math display">\[
+\{ \dot {\boldsymbol \gamma}, \mathbf{n}, \mathbf{b}\}
+\]</span> are orthonormal. By the properties of the vector product, see Remark <a href="chap_4.html#remark-vector-product">13</a> Point 6, we also know that <span class="math display">\[
+( \dot {\boldsymbol \gamma}, \mathbf{n}, \mathbf{b})
+\]</span> is a positive basis of <span class="math inline">\(\mathbb{R}^3\)</span>.<p></p>
 </div></details>
 </div>
 
