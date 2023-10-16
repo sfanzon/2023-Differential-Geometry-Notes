@@ -1,8 +1,4 @@
-::: {.content-hidden}
-$
-{{< include macros.tex >}}
-$
-:::
+
 
 # Plots with Python
 
@@ -12,9 +8,9 @@ $
 
 Suppose we want to plot the parabola $y=t^2$ for $t$ in the interval $[-3,3]$. In our language, this is the two-dimensional curve
 $$
-\g(t) = ( t, t^2 ) \,, \quad  t \in [-3,3] \,.
+\pmb{\gamma}(t) = ( t, t^2 ) \,, \quad  t \in [-3,3] \,.
 $$
-The two Python libraries we use to plot $\g$ are **numpy** and **matplotlib**. In short, **numpy** handles multi-dimensional arrays and matrices, and can perform high-level mathematical functions on them. For any question you may have about numpy, answers can be found in the searchable documentation available [here](https://numpy.org/doc/stable/index.html). Instead **matplotlib** is a plotting library, with documentation [here](https://matplotlib.org). 
+The two Python libraries we use to plot $\pmb{\gamma}$ are **numpy** and **matplotlib**. In short, **numpy** handles multi-dimensional arrays and matrices, and can perform high-level mathematical functions on them. For any question you may have about numpy, answers can be found in the searchable documentation available [here](https://numpy.org/doc/stable/index.html). Instead **matplotlib** is a plotting library, with documentation [here](https://matplotlib.org). 
 Python libraries need to be imported every time you want to use them. In our case we will import:
 
 ```python
@@ -27,7 +23,7 @@ The function for plotting 2D graphs is called `plot(x,y)` and is contained in `p
 $$
 x=[x_1, \ldots, x_n]\,, \quad  y=[y_1,\ldots,y_n]\,.
 $$
-As output it produces a graph which is the linear interpolation of the points $(x_i,y_i)$ in $\R^2$, that is, consecutive points $(x_i,y_i)$ and $(x_{i+1},y_{i+1})$ are connected by a segment. Using `plot`, we can graph the curve $\g(t)=(t,t^2)$ like so:
+As output it produces a graph which is the linear interpolation of the points $(x_i,y_i)$ in $\mathbb{R}^2$, that is, consecutive points $(x_i,y_i)$ and $(x_{i+1},y_{i+1})$ are connected by a segment. Using `plot`, we can graph the curve $\pmb{\gamma}(t)=(t,t^2)$ like so:
 
 
 ```{python} 
@@ -63,7 +59,7 @@ $$
 f = [9,4,1,0,1,4,9] \,.
 $$
 The arrays `t` and `f` are then passed to `plot(t,f)`, which produces the above linear interpolation, with `t` on the *x-axis* and `f` on the *y-axis*. The command `plot(t,f,'ko')` instead plots a black dot at each point $(t_i,f_i)$. The latter is clearly not needed to obtain a plot, and it was only included to highlight the fact that `plot` is actually producing a linear interpolation between points. Finally `plt.show()` displays the figure in the user window[^1].  
-Of course one can refine the plot so that it resembles the continuous curve $\g(t)=(t,t^2)$ that we all have in mind. This is achieved by generating a numpy array `t` with a finer stepsize, invoking the function `np.linspace(a,b,n)`. Such call will return a numpy array which contains `n` evenly spaced points, starts at `a`, and ends in `b`. For example `np.linspace(-3,3,7)` returns our original array `t` at @eq-numpy-array-t, 
+Of course one can refine the plot so that it resembles the continuous curve $\pmb{\gamma}(t)=(t,t^2)$ that we all have in mind. This is achieved by generating a numpy array `t` with a finer stepsize, invoking the function `np.linspace(a,b,n)`. Such call will return a numpy array which contains `n` evenly spaced points, starts at `a`, and ends in `b`. For example `np.linspace(-3,3,7)` returns our original array `t` at @eq-numpy-array-t, 
 as shown below 
 
 ```{python} 
@@ -81,7 +77,7 @@ t = np.linspace(-3,3, 7)
 print("t =", t)
 ```
 
-In order to have a more refined plot of $\g$, we just need to increase $n$.
+In order to have a more refined plot of $\pmb{\gamma}$, we just need to increase $n$.
 
 ```{python} 
 #| echo: true
@@ -107,11 +103,11 @@ plt.show()
 
 [^1]: The command `plt.show()` can be omitted if working in [Jupyter Notebook](https://jupyter.org), as it is called by default.
 
-We now want to plot a parametric curve $\g \colon (a,b) \to \R^2$ with
+We now want to plot a parametric curve $\pmb{\gamma} \colon (a,b) \to \mathbb{R}^2$ with
 $$
-\g(t) = (x(t), y(t)) \,.
+\pmb{\gamma}(t) = (x(t), y(t)) \,.
 $$
-Clearly we need to modify the above code. The variable `t` will still be a numpy array produced by `linspace`. We then need to introduce the arrays `x` and `y` which ecode the first and second components of $\g$, respectively.
+Clearly we need to modify the above code. The variable `t` will still be a numpy array produced by `linspace`. We then need to introduce the arrays `x` and `y` which ecode the first and second components of $\pmb{\gamma}$, respectively.
 
 ```python
 import numpy as np
@@ -138,7 +134,7 @@ plt.show()
 
 We use the above code to plot the 2D curve known as the [Fermat's spiral](https://en.wikipedia.org/wiki/Fermat%27s_spiral)
 $$ 
-\g(t) = ( \sqrt{t}  \cos(t) , \sqrt{t}  \sin(t) ) \quad 
+\pmb{\gamma}(t) = ( \sqrt{t}  \cos(t) , \sqrt{t}  \sin(t) ) \quad 
 \text{ for } \quad t \in [0,50] \,.
 $$ {#eq-Fermat-Spiral}
 
@@ -261,15 +257,15 @@ print("t =",t)
 
 ### Implicit curves 2D
 
-A curve $\g$ in $\R^2$ can also be defined as the set of points $(x,y) \in \R^2$ satisfying
+A curve $\pmb{\gamma}$ in $\mathbb{R}^2$ can also be defined as the set of points $(x,y) \in \mathbb{R}^2$ satisfying
 $$
 f(x,y)=0 
 $$
-for some given $f \colon \R^2 \to \R$. For example let us plot the curve $\g$ implicitly defined by 
+for some given $f \colon \mathbb{R}^2 \to \mathbb{R}$. For example let us plot the curve $\pmb{\gamma}$ implicitly defined by 
 $$
 f(x,y) =( 3 x^2 - y^2 )^2 \ y^2  -  (x^2 + y^2 )^4 
 $$
-for $-1 \leq x,y \leq 1$. First, we need a way to generate a grid in $\R^2$ so that we can evaluate $f$ on such grid. To illustrate how to do this, let us generate a grid of spacing 1 in the 2D square $[0,4]^2$. The goal is to obtain the 5 x 5 matrix of coordinates
+for $-1 \leq x,y \leq 1$. First, we need a way to generate a grid in $\mathbb{R}^2$ so that we can evaluate $f$ on such grid. To illustrate how to do this, let us generate a grid of spacing 1 in the 2D square $[0,4]^2$. The goal is to obtain the 5 x 5 matrix of coordinates
 $$
 A = \left( 
 \begin{matrix}
@@ -488,9 +484,9 @@ ax6 = fig.add_subplot(3, 2, 6, projection = '3d')
 plt.show()
 ```
 
-We are now ready to plot a 3D parametric curve $\g \colon (a,b) \to \R^3$ of the form
+We are now ready to plot a 3D parametric curve $\pmb{\gamma} \colon (a,b) \to \mathbb{R}^3$ of the form
 $$
-\g(t) = (x(t), y(t), z(t))
+\pmb{\gamma}(t) = (x(t), y(t), z(t))
 $$
 with the code
 ```python
@@ -642,11 +638,11 @@ plt.show()
 
 #### 2D Plots   {#sec-plot-2d-curves-interactive}
 
-Say we want to plot the 2D curve $\g \colon (a,b) \to \R^2$ parametrized by
+Say we want to plot the 2D curve $\pmb{\gamma} \colon (a,b) \to \mathbb{R}^2$ parametrized by
 $$
-\g(t) = ( x(t) , y(t) ) \,.
+\pmb{\gamma}(t) = ( x(t) , y(t) ) \,.
 $$
-The `Plotly` module needed is called `graph_objects`, usually imported as `go`. The function for line plots is called `Scatter`. For documentation and examples see [link](https://plotly.com/python/line-and-scatter/). The code for plotting $\g$ is as follows.
+The `Plotly` module needed is called `graph_objects`, usually imported as `go`. The function for line plots is called `Scatter`. For documentation and examples see [link](https://plotly.com/python/line-and-scatter/). The code for plotting $\pmb{\gamma}$ is as follows.
 
 ```python
 # Plotting gamma 2D
@@ -767,11 +763,11 @@ where `template_name` can be `"plotly"`, `"plotly_white"`, `"plotly_dark"`, `"gg
 
 #### 3D Plots   {#sec-plot-3d-curves-interactive}
 
-We now want to plot a 3D curve $\g \colon (a,b) \to \R^3$ parametrized by
+We now want to plot a 3D curve $\pmb{\gamma} \colon (a,b) \to \mathbb{R}^3$ parametrized by
 $$
-\g(t) = ( x(t) , y(t) , z(t)) \,.
+\pmb{\gamma}(t) = ( x(t) , y(t) , z(t)) \,.
 $$
-Again we use the `Plotly` module `graph_objects`, imported as `go`. The function for 3D line plots is called `Scatter3d`, and documentation and examples can be found at [link](https://plotly.com/python/3d-scatter-plots/). The code for plotting $\g$ is as follows.
+Again we use the `Plotly` module `graph_objects`, imported as `go`. The function for 3D line plots is called `Scatter3d`, and documentation and examples can be found at [link](https://plotly.com/python/3d-scatter-plots/). The code for plotting $\pmb{\gamma}$ is as follows.
 
 
 ```python

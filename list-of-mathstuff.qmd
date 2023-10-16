@@ -49,7 +49,7 @@
 
  [**Question 2.13**](#Question-2.13)\Pageref{Question-2.13}
 
- [**Theorem 2.14**](#theorem-length): Characterizing the length of ${\boldsymbol \gamma}$\Pageref{theorem-length}
+ [**Theorem 2.14**](#theorem-length): Characterizing the length of ${\pmb{\gamma}}$\Pageref{theorem-length}
 
  [**Proof**](#Proof*-2.2)\Pageref{Proof*-2.2}
 
@@ -253,7 +253,7 @@
 
  [**Proposition 3.38**](#Proposition-3.38)\Pageref{Proposition-3.38}
 
- [**Example 3.39**](#torsion-of-circle-and-helix): Torsion of Circle and Helix\Pageref{torsion-of-circle-and-helix}
+ [**Example 3.39**](#torsion-helix): Torsion Helix\Pageref{torsion-helix}
 
  [**Example 3.40**](#curvature-and-torsion-of-circle): Curvature and Torsion of Circle\Pageref{curvature-and-torsion-of-circle}
 

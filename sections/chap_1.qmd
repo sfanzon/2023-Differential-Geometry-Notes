@@ -1,40 +1,3 @@
-::: {.content-hidden}
-$
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\C}{\mathbb{C}}  
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\bb}{\mathbf{b}}
-\newcommand{\nn}{\mathbf{n}}
-\newcommand{\pp}{\mathbf{p}}
-\newcommand{\xx}{\mathbf{x}}
-\newcommand{\NN}{\mathbf{N}}
-\newcommand{\ee}{\mathbf{e}}
-\newcommand{\uu}{\mathbf{u}}
-\newcommand{\vv}{\mathbf{v}}
-\newcommand{\ww}{\mathbf{w}}
-\newcommand{\sss}{{\boldsymbol \sigma}}
-\newcommand{\zero}{{\boldsymbol 0}}
-\newcommand{\TT}{\mathcal{T}}
-\newcommand{\SSS}{\mathcal{S}}
-\newcommand{\WW}{\mathcal{W}}
-\newcommand{\sphere}{\mathbb{S}}
-\newcommand{\e}{\varepsilon}
-\newcommand{\g}{{\boldsymbol \gamma}}
-\newcommand{\f}{\phi}
-\newcommand{\tg}{\widetilde{\g}}
-\DeclareMathOperator{\id}{Id}
-\newcommand{\st}{\, \text{ s.t. } \, }
-\newcommand{\divider}{\, \colon \,}
-\newcommand{\closure}[2][2]{{}\mkern#1mu \overline{\mkern-#1mu #2 \mkern-#1mu}\mkern#1mu {}}
-\newcommand{\scp}[2]{\left\langle #1,#2 \right\rangle} %prodotto scalare
-\newcommand{\abs}[1]{\left| #1 \right|}  %valore assoluto
-\newcommand{\norm}[1]{\left\| #1 \right\|} %norma
-$
-:::
-
-
 
 
 # Introduction {#sec-introduction}
@@ -157,21 +120,21 @@ The aim of this course is to study curves by differentiating them.
 In what sense do we differentiate the above curves?
 :::
 
-It is clear that we need a way to mathematically describe the curves. One way of doing it is by means of Cartesian equations. This means that the curve is described as the set of points $(x,y) \in \R^2$ where the equation
+It is clear that we need a way to mathematically describe the curves. One way of doing it is by means of Cartesian equations. This means that the curve is described as the set of points $(x,y) \in \mathbb{R}^2$ where the equation
 $$
 f(x,y) = c \,,
 $$
 is satisfied, where 
 $$
-f : \R^2 \to \R \,.
+f : \mathbb{R}^2 \to \mathbb{R} \,.
 $$
 is some given function, and 
 $$
-c \in \R 
+c \in \mathbb{R} 
 $$
-some given value. In other words, the curve is identified with the subset of $\R^2$ given by
+some given value. In other words, the curve is identified with the subset of $\mathbb{R}^2$ given by
 $$
-C = \{ (x,y) \in \R^2 \, \colon \, f(x,y)=c   \} \,.
+C = \{ (x,y) \in \mathbb{R}^2 \, \colon \, f(x,y)=c   \} \,.
 $$
 For example, in the case of the straight line, we would have
 $$
@@ -230,9 +193,9 @@ We need a unified way to describe curves.
 
 ## Parametrized curves
 
-Rather than Cartesian equations, a more useful way of thinking about curves is viewing them as the *path traced out by a moving point*. If $\g(t)$ represents the position a point in $\R^n$ at time $t$, the whole curve can be identified by the function
+Rather than Cartesian equations, a more useful way of thinking about curves is viewing them as the *path traced out by a moving point*. If $\pmb{\gamma}(t)$ represents the position a point in $\mathbb{R}^n$ at time $t$, the whole curve can be identified by the function
 $$
-\g \ \colon \R \to \R^n \,, \,\,\, \g = \g(t) \,.
+\pmb{\gamma} \ \colon \mathbb{R} \to \mathbb{R}^n \,, \,\,\, \g = \pmb{\gamma}(t) \,.
 $$
 
 
@@ -242,9 +205,9 @@ This motivates the following definition of **parametrized curve**, which will be
 ::: Definition
 ### Parametrized curve
 
-A **parametrized curve** in $\R^n$ is a function 
+A **parametrized curve** in $\mathbb{R}^n$ is a function 
 $$
-\g \ \colon  (a,b) \to \R^n \,.
+\pmb{\gamma} \ \colon  (a,b) \to \mathbb{R}^n \,.
 $$
 
 where
@@ -260,21 +223,21 @@ A few remarks:
 
 - The symbol $(a,b)$ denotes an **open** interval 
 $$
-(a,b) = \{ t \in \R \ \colon \ a < t < b \}\,.
+(a,b) = \{ t \in \mathbb{R} \ \colon \ a < t < b \}\,.
 $$
 - The requirement that 
 $$
 -\infty \leq a < b \leq \infty
 $$
 means that the interval $(a,b)$ is possibly unbounded.
-- For each $t \in (a,b)$ the quantity $\g(t)$ is a vector in $\R^n$.
-- The **components** of $\g(t)$ are denoted by 
+- For each $t \in (a,b)$ the quantity $\pmb{\gamma}(t)$ is a vector in $\mathbb{R}^n$.
+- The **components** of $\pmb{\gamma}(t)$ are denoted by 
 $$
-\g(t) = ( \gamma_1(t), \ldots, \gamma_n(t) ) \,,
+\pmb{\gamma}(t) = ( \gamma_1(t), \ldots, \gamma_n(t) ) \,,
 $$
 where the components are functions
 $$
-\gamma_i \ \colon (a,b) \to \R \,, 
+\gamma_i \ \colon (a,b) \to \mathbb{R} \,, 
 $$
 for all $i = 1, \ldots, n$.
 
@@ -286,7 +249,7 @@ for all $i = 1, \ldots, n$.
 ## Parametrizing cartesian curves
 
 
-At the start we said that examples of curves in $\R^2$ were the straight line, the hyperbole and the circle, with equations
+At the start we said that examples of curves in $\mathbb{R}^2$ were the straight line, the hyperbole and the circle, with equations
 $$
 y = 2x + 1\,, \quad y = e^x  \,, \quad  x^2 + y^2 = 1 \,.
 $$
@@ -294,22 +257,22 @@ We saw that these can be represented by Cartesian equations
 $$
 f(x,y) = c
 $$
-for some function $f \ \colon \R^2 \to \R$ and value $c \in \R$. Curves that can be represented in this way are called **level curves**. Let us give a precise definition.
+for some function $f \ \colon \mathbb{R}^2 \to \mathbb{R}$ and value $c \in \mathbb{R}$. Curves that can be represented in this way are called **level curves**. Let us give a precise definition.
 
 ::: Definition
 ### Level curve
 
-A **level curve** in $\R^n$ is a set $C \subset \R^n$ which can be described as
+A **level curve** in $\mathbb{R}^n$ is a set $C \subset \mathbb{R}^n$ which can be described as
 $$
-C= \{  (x_1,\ldots,x_n) \in \R^n \ \colon \ f(x_1,\ldots,x_n) = c   \}
+C= \{  (x_1,\ldots,x_n) \in \mathbb{R}^n \ \colon \ f(x_1,\ldots,x_n) = c   \}
 $$
 for some given function
 $$
-f \ \colon \R^n \to \R 
+f \ \colon \mathbb{R}^n \to \mathbb{R} 
 $$
 and value 
 $$
-c \in \R \,.
+c \in \mathbb{R} \,.
 $$
 :::
 
@@ -318,20 +281,20 @@ $$
 We now want to represent level curves by means of parametrizations. 
 
 ::: Definition
-Suppose given a level curve $C \subset \R^n$. We say that a curve
+Suppose given a level curve $C \subset \mathbb{R}^n$. We say that a curve
 $$
-\g \ \colon (a,b) \to \R^n
+\pmb{\gamma} \ \colon (a,b) \to \mathbb{R}^n
 $$
 **parametrizes** $C$ if 
 $$
-C = \{ (\g_1(t), \ldots, \g_n(t) ) \ \colon \ t \in (a,b)   \} \,.
+C = \{ (\gamma_1(t), \ldots, \gamma_n(t) ) \ \colon \ t \in (a,b)   \} \,.
 $$
 
 :::
 
 
 ::: {.Question .unnumbered}
-Can we **represent** the level curves we saw above by means of a parametrization $\g$? 
+Can we **represent** the level curves we saw above by means of a parametrization $\pmb{\gamma}$? 
 :::
 
 
@@ -348,60 +311,60 @@ $$
 
 is a **level curve** with 
 $$
-C = \{ (x,y) \in \R^2 \ \colon \  f(x,y) = c  \} \,,
+C = \{ (x,y) \in \mathbb{R}^2 \ \colon \  f(x,y) = c  \} \,,
 $$
 where 
 $$
 f(x,y) := y -2x \,, \quad c :=1 \,.
 $$
 
-How do we represent $C$ as a **parametrized curve** $\g$? We know that the curve is 2D, therefore we need to find a function
+How do we represent $C$ as a **parametrized curve** $\pmb{\gamma}$? We know that the curve is 2D, therefore we need to find a function
 $$
-\g \ \colon  (a,b) \to \R^2
+\pmb{\gamma} \ \colon  (a,b) \to \mathbb{R}^2
 $$
 with componenets 
 $$
-\g(t) = (\gamma_1(t),\gamma_2(t)) \, .
+\pmb{\gamma}(t) = (\gamma_1(t),\gamma_2(t)) \, .
 $$
 The curve $\g$ needs to be chosen so that it parametrizes the set $C$, in the sense that 
 $$
-C = \{ (\g_1(t), \g_2(t)) \ \colon \ t \in (a,b)  \} \,.
+C = \{ (\gamma_1(t), \gamma_2(t)) \ \colon \ t \in (a,b)  \} \,.
 $$ {#eq-represent-line}
 Thus we need to have
 $$
-(x,y) = (\g_1,\g_2) \,.
+(x,y) = (\gamma_1,\gamma_2) \,.
 $$ {#eq-example-parametrization-1}
-How do we define such $\g$? Note that the points $(x,y)$ in $C$ satisfy
+How do we define such $\pmb{\gamma}$? Note that the points $(x,y)$ in $C$ satisfy
 $$
 (x,y) \in C \iff  y = 2x +1 \,.
 $$
 Therefore, using (@eq-example-parametrization-1), we have that
 $$
-\g_1 = x \,, \quad \g_2 = y = 2x + 1
+\gamma_1 = x \,, \quad \gamma_2 = y = 2x + 1
 $$
-from which we deduce that $\g$ must satisfy
+from which we deduce that $\pmb{\gamma}$ must satisfy
 $$
-\g_2(t) = 2 \g_1(t) + 1
+\gamma_2(t) = 2 \gamma_1(t) + 1
 $${#eq-example-parametrization-2}
 for all $t \in (a,b)$. We can then choose 
 $$
-\g_1(t) := t \,,
+\gamma_1(t) := t \,,
 $$
 and from (@eq-example-parametrization-2) we deduce that 
 $$
-\g_2 (t) = 2 t + 1 \,.
+\gamma_2 (t) = 2 t + 1 \,.
 $$
-This choice of $\g$ works: 
+This choice of $\pmb{\gamma}$ works: 
 \begin{align}
-C & = \{ (x,2x+1) \ \colon \ x \in \R  \} \\
+C & = \{ (x,2x+1) \ \colon \ x \in \mathbb{R}  \} \\
   & = \{ (t,2t+1) \ \colon \ - \infty < t < \infty  \} \\
-  & = \{ (\g_1(t),\g_2(t)) \ \colon \ - \infty < t < \infty  \} \,, 
+  & = \{ (\gamma_1(t),\gamma_2(t)) \ \colon \ - \infty < t < \infty  \} \,, 
 \end{align}
 where in the second line we just swapped the symbol $x$ with the symbol $t$. In this case we have to choose the time interval as 
 $$
 (a,b) = (-\infty,\infty) \,.
 $$
-In this way $\g$ satisfies (@eq-represent-line) and we have successfully parametrized the straight line $C$.
+In this way $\pmb{\gamma}$ satisfies (@eq-represent-line) and we have successfully parametrized the straight line $C$.
 :::
 
 
@@ -410,23 +373,23 @@ In this way $\g$ satisfies (@eq-represent-line) and we have successfully paramet
 
 Let us consider again the straight line
 $$
-C = \{ (x,y) \in \R^2 \ \colon \  2x+1 = y \} \,.
+C = \{ (x,y) \in \mathbb{R}^2 \ \colon \  2x+1 = y \} \,.
 $$
-We saw that $\g \colon (-\infty,\infty) \to \R^2$ defined by
+We saw that $\pmb{\gamma} \colon (-\infty,\infty) \to \mathbb{R}^2$ defined by
 $$
-\g(t):=(t,2t+1)
+\pmb{\gamma}(t):=(t,2t+1)
 $$
-is a parametrization of $C$. But of course any $\g$ satisfying
+is a parametrization of $C$. But of course any $\pmb{\gamma}$ satisfying
 $$
-\g_2(t) = 2 \g_1(t) + 1
+\gamma_2(t) = 2 \gamma_1(t) + 1
 $$
 would yield a parametrization of $C$. For example one could choose
 $$
-\g_1 (t) = 2t \,, \quad \g_2(t) = 2 \g_1(t) + 1 = 4t + 1 \,. 
+\gamma_1 (t) = 2t \,, \quad \gamma_2(t) = 2 \gamma_1(t) + 1 = 4t + 1 \,. 
 $$
-In general, any time rescaling would work: the curve $\g$ defined by
+In general, any time rescaling would work: the curve $\pmb{\gamma}$ defined by
 $$
-\g_1 (t) = nt \,, \quad \g_2(t) = 2 \g_1(t) + 1 = 2nt + 1  
+\gamma_1 (t) = nt \,, \quad \gamma_2(t) = 2 \gamma_1(t) + 1 = 2nt + 1  
 $$
 parametrizes $C$ for all $n \in \N$. Hence there are **infinitely many** parametrizations of $C$.
 :::
@@ -435,26 +398,26 @@ parametrizes $C$ for all $n \in \N$. Hence there are **infinitely many** paramet
 ::: Example
 ### Parametrizing the circle
 
-The circle $C$ is described by all the points $(x,y) \in \R^2$ such that 
+The circle $C$ is described by all the points $(x,y) \in \mathbb{R}^2$ such that 
 $$
 x^2 + y^2 = 1\,.
 $$
 Therefore if we want to find a curve 
 $$
-\g = (\g_1,\g_2)
+\pmb{\gamma} = (\gamma_1,\gamma_2)
 $$
 which parametrizes $C$, this has to satisfy
 $$
-\g_1 (t)^2 + \g_2(t)^2 = 1
+\gamma_1 (t)^2 + \gamma_2(t)^2 = 1
 $$ {#eq-parametrizing-circle}
 for all $t \in (a,b)$.  
 How to find such curve? We could proceed as in the previous example, and set
 $$
-\g_1(t):=t \,.
+\gamma_1(t):=t \,.
 $$
 Then (@eq-parametrizing-circle) implies
 $$
-\g_2 (t) = \sqrt{1-t^2}\,,
+\gamma_2 (t) = \sqrt{1-t^2}\,,
 $$
 from which we also deduce that
 $$
@@ -464,9 +427,9 @@ are the only admissible values of $t$. However this curve does not represent the
 
 
 
-Simlarly, another solution to (@eq-parametrizing-circle) would be $\g$ with
+Simlarly, another solution to (@eq-parametrizing-circle) would be $\pmb{\gamma}$ with
 $$
-\g_1(t)=t \,, \quad \g_2 (t) = - \sqrt{1-t^2}\,,
+\gamma_1(t)=t \,, \quad \gamma_2 (t) = - \sqrt{1-t^2}\,,
 $$
 for $t \in [-1,1]$. However this choice does not parametrize the full circle $C$ either, but only the bottom half, as seen in the plot below.
 
@@ -475,18 +438,18 @@ How to represent the whole circle? Recall the trigonometric identity
 $$
 \cos(t)^2 + \sin(t)^2 = 1
 $$
-for all $t \in \R$. This suggests to choose $\g$ as
+for all $t \in \mathbb{R}$. This suggests to choose $\pmb{\gamma}$ as
 $$
-\g_1(t):=\cos(t)\,, \quad \g_2(t):=\sin(t)
+\gamma_1(t):=\cos(t)\,, \quad \gamma_2(t):=\sin(t)
 $$
-for $t \in [0,2\pi)$. This way $\g$ satisfies (@eq-parametrizing-circle), and actually parametrizes $C$, as shown below.  
+for $t \in [0,2\pi)$. This way $\pmb{\gamma}$ satisfies (@eq-parametrizing-circle), and actually parametrizes $C$, as shown below.  
 
 
 Note the following:  
 
-- If we had chosen $t \in [0,4\pi]$ then $\g$ would have covered $C$ twice. 
-- If we had chosen $t \in [0,\pi]$, then $\g$ would have covered the upper semi-circle
-- If we had chosen $t \in [\pi,2\pi]$, then $\g$ would have covered the lower semi-circle
+- If we had chosen $t \in [0,4\pi]$ then $\pmb{\gamma}$ would have covered $C$ twice. 
+- If we had chosen $t \in [0,\pi]$, then $\pmb{\gamma}$ would have covered the upper semi-circle
+- If we had chosen $t \in [\pi,2\pi]$, then $\pmb{\gamma}$ would have covered the lower semi-circle
 - Similarly, we can choose $t \in [\pi/6, \pi /2]$ to cover just a portion of $C$, as shown below.
 
 :::
@@ -619,13 +582,13 @@ Finally we are also able to give a mathematical description of the 3D Helix.
 
 The Helix plotted above can be parametrized by
 $$
-\g \ \colon (-\infty,\infty) \to \R^3
+\pmb{\gamma} \ \colon (-\infty,\infty) \to \mathbb{R}^3
 $$
 defined by
 $$
-\g_1(t) = \cos(t)\,, \,\,
-\g_2(t) = \sin(t)\,, \,\,
-\g_3(t) = t \,.
+\gamma_1(t) = \cos(t)\,, \,\,
+\gamma_2(t) = \sin(t)\,, \,\,
+\gamma_3(t) = t \,.
 $$
 The above equations are in line with our intuition: the helix can be drawn by *tracing a circle while at the same time lifting the pencil*.
 

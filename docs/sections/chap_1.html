@@ -66,26 +66,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .DONE {
   --color1: #cce7b1;
   --color2: #86b754;
@@ -98,23 +78,7 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
 }
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Lemma {
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -122,7 +86,35 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
 .Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Important {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -130,7 +122,15 @@ ul.task-list li input[type="checkbox"] {
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
-.Warning {
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Question {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -309,7 +309,7 @@ y = 2x + 1\,, \quad y = e^x  \,, \quad  x^2 + y^2 = 1 \,.
 <p>It is clear that we need a way to mathematically describe the curves. One way of doing it is by means of Cartesian equations. This means that the curve is described as the set of points <span class="math inline">\((x,y) \in \mathbb{R}^2\)</span> where the equation <span class="math display">\[
 f(x,y) = c \,,
 \]</span> is satisfied, where <span class="math display">\[
-f : \mathbb{R}^2 \to \mathbb{R}\,.
+f : \mathbb{R}^2 \to \mathbb{R} \,.
 \]</span> is some given function, and <span class="math display">\[
 c \in \mathbb{R}
 \]</span> some given value. In other words, the curve is identified with the subset of <span class="math inline">\(\mathbb{R}^2\)</span> given by <span class="math display">\[
@@ -337,13 +337,13 @@ f(x,y,z) = 0
 </div>
 <section id="parametrized-curves" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="parametrized-curves"><span class="header-section-number">1.1</span> Parametrized curves</h2>
-<p>Rather than Cartesian equations, a more useful way of thinking about curves is viewing them as the <em>path traced out by a moving point</em>. If <span class="math inline">\({\boldsymbol \gamma}(t)\)</span> represents the position a point in <span class="math inline">\(\mathbb{R}^n\)</span> at time <span class="math inline">\(t\)</span>, the whole curve can be identified by the function <span class="math display">\[
-{\boldsymbol \gamma}\ \colon \mathbb{R}\to \mathbb{R}^n \,, \,\,\, {\boldsymbol \gamma}= {\boldsymbol \gamma}(t) \,.
+<p>Rather than Cartesian equations, a more useful way of thinking about curves is viewing them as the <em>path traced out by a moving point</em>. If <span class="math inline">\(\pmb{\gamma}(t)\)</span> represents the position a point in <span class="math inline">\(\mathbb{R}^n\)</span> at time <span class="math inline">\(t\)</span>, the whole curve can be identified by the function <span class="math display">\[
+\pmb{\gamma} \ \colon \mathbb{R} \to \mathbb{R}^n \,, \,\,\, \g = \pmb{\gamma}(t) \,.
 \]</span></p>
 <p>This motivates the following definition of <strong>parametrized curve</strong>, which will be our <strong>main</strong> definition of curve.</p>
 <div id="parametrized-curve" class="Definition" title="Parametrized curve">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 1: </strong>Parametrized curve</summary><div>A <strong>parametrized curve</strong> in <span class="math inline">\(\mathbb{R}^n\)</span> is a function <span class="math display">\[
-{\boldsymbol \gamma}\ \colon  (a,b) \to \mathbb{R}^n \,.
+\pmb{\gamma} \ \colon  (a,b) \to \mathbb{R}^n \,.
 \]</span><p></p>
 <p>where</p>
 <p><span class="math display">\[
@@ -354,16 +354,16 @@ f(x,y,z) = 0
 <p>A few remarks:</p>
 <ul>
 <li>The symbol <span class="math inline">\((a,b)\)</span> denotes an <strong>open</strong> interval <span class="math display">\[
-(a,b) = \{ t \in \mathbb{R}\ \colon \ a &lt; t &lt; b \}\,.
+(a,b) = \{ t \in \mathbb{R} \ \colon \ a &lt; t &lt; b \}\,.
 \]</span></li>
 <li>The requirement that <span class="math display">\[
 -\infty \leq a &lt; b \leq \infty
 \]</span> means that the interval <span class="math inline">\((a,b)\)</span> is possibly unbounded.</li>
-<li>For each <span class="math inline">\(t \in (a,b)\)</span> the quantity <span class="math inline">\({\boldsymbol \gamma}(t)\)</span> is a vector in <span class="math inline">\(\mathbb{R}^n\)</span>.</li>
-<li>The <strong>components</strong> of <span class="math inline">\({\boldsymbol \gamma}(t)\)</span> are denoted by <span class="math display">\[
-{\boldsymbol \gamma}(t) = ( \gamma_1(t), \ldots, \gamma_n(t) ) \,,
+<li>For each <span class="math inline">\(t \in (a,b)\)</span> the quantity <span class="math inline">\(\pmb{\gamma}(t)\)</span> is a vector in <span class="math inline">\(\mathbb{R}^n\)</span>.</li>
+<li>The <strong>components</strong> of <span class="math inline">\(\pmb{\gamma}(t)\)</span> are denoted by <span class="math display">\[
+\pmb{\gamma}(t) = ( \gamma_1(t), \ldots, \gamma_n(t) ) \,,
 \]</span> where the components are functions <span class="math display">\[
-\gamma_i \ \colon (a,b) \to \mathbb{R}\,,
+\gamma_i \ \colon (a,b) \to \mathbb{R} \,,
 \]</span> for all <span class="math inline">\(i = 1, \ldots, n\)</span>.</li>
 </ul>
 </section>
@@ -380,21 +380,21 @@ C= \{  (x_1,\ldots,x_n) \in \mathbb{R}^n \ \colon \ f(x_1,\ldots,x_n) = c   \}
 \]</span> for some given function <span class="math display">\[
 f \ \colon \mathbb{R}^n \to \mathbb{R}
 \]</span> and value <span class="math display">\[
-c \in \mathbb{R}\,.
+c \in \mathbb{R} \,.
 \]</span><p></p>
 </div></details>
 </div>
 <p>We now want to represent level curves by means of parametrizations.</p>
 <div id="Definition-3" class="Definition">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 3</strong></summary><div>Suppose given a level curve <span class="math inline">\(C \subset \mathbb{R}^n\)</span>. We say that a curve <span class="math display">\[
-{\boldsymbol \gamma}\ \colon (a,b) \to \mathbb{R}^n
+\pmb{\gamma} \ \colon (a,b) \to \mathbb{R}^n
 \]</span> <strong>parametrizes</strong> <span class="math inline">\(C\)</span> if <span class="math display">\[
-C = \{ ({\boldsymbol \gamma}_1(t), \ldots, {\boldsymbol \gamma}_n(t) ) \ \colon \ t \in (a,b)   \} \,.
+C = \{ (\gamma_1(t), \ldots, \gamma_n(t) ) \ \colon \ t \in (a,b)   \} \,.
 \]</span><p></p>
 </div></details>
 </div>
 <div id="Question*-4" class="Question unnumbered">
-<p></p><details class="Question fbx-simplebox fbx-default" open=""><summary><strong>Question</strong></summary><div>Can we <strong>represent</strong> the level curves we saw above by means of a parametrization <span class="math inline">\({\boldsymbol \gamma}\)</span>?<p></p>
+<p></p><details class="Question fbx-simplebox fbx-default" open=""><summary><strong>Question</strong></summary><div>Can we <strong>represent</strong> the level curves we saw above by means of a parametrization <span class="math inline">\(\pmb{\gamma}\)</span>?<p></p>
 </div></details>
 </div>
 <p>The answer is YES, as shown in the following examples.</p>
@@ -407,45 +407,45 @@ C = \{ (x,y) \in \mathbb{R}^2 \ \colon \  f(x,y) = c  \} \,,
 \]</span> where <span class="math display">\[
 f(x,y) := y -2x \,, \quad c :=1 \,.
 \]</span></p>
-<p>How do we represent <span class="math inline">\(C\)</span> as a <strong>parametrized curve</strong> <span class="math inline">\({\boldsymbol \gamma}\)</span>? We know that the curve is 2D, therefore we need to find a function <span class="math display">\[
-{\boldsymbol \gamma}\ \colon  (a,b) \to \mathbb{R}^2
+<p>How do we represent <span class="math inline">\(C\)</span> as a <strong>parametrized curve</strong> <span class="math inline">\(\pmb{\gamma}\)</span>? We know that the curve is 2D, therefore we need to find a function <span class="math display">\[
+\pmb{\gamma} \ \colon  (a,b) \to \mathbb{R}^2
 \]</span> with componenets <span class="math display">\[
-{\boldsymbol \gamma}(t) = (\gamma_1(t),\gamma_2(t)) \, .
-\]</span> The curve <span class="math inline">\({\boldsymbol \gamma}\)</span> needs to be chosen so that it parametrizes the set <span class="math inline">\(C\)</span>, in the sense that <span id="eq-represent-line"><span class="math display">\[
-C = \{ ({\boldsymbol \gamma}_1(t), {\boldsymbol \gamma}_2(t)) \ \colon \ t \in (a,b)  \} \,.
+\pmb{\gamma}(t) = (\gamma_1(t),\gamma_2(t)) \, .
+\]</span> The curve <span class="math inline">\(\g\)</span> needs to be chosen so that it parametrizes the set <span class="math inline">\(C\)</span>, in the sense that <span id="eq-represent-line"><span class="math display">\[
+C = \{ (\gamma_1(t), \gamma_2(t)) \ \colon \ t \in (a,b)  \} \,.
 \tag{1.1}\]</span></span> Thus we need to have <span id="eq-example-parametrization-1"><span class="math display">\[
-(x,y) = ({\boldsymbol \gamma}_1,{\boldsymbol \gamma}_2) \,.
-\tag{1.2}\]</span></span> How do we define such <span class="math inline">\({\boldsymbol \gamma}\)</span>? Note that the points <span class="math inline">\((x,y)\)</span> in <span class="math inline">\(C\)</span> satisfy <span class="math display">\[
+(x,y) = (\gamma_1,\gamma_2) \,.
+\tag{1.2}\]</span></span> How do we define such <span class="math inline">\(\pmb{\gamma}\)</span>? Note that the points <span class="math inline">\((x,y)\)</span> in <span class="math inline">\(C\)</span> satisfy <span class="math display">\[
 (x,y) \in C \iff  y = 2x +1 \,.
 \]</span> Therefore, using (<a href="#eq-example-parametrization-1"><span>1.2</span></a>), we have that <span class="math display">\[
-{\boldsymbol \gamma}_1 = x \,, \quad {\boldsymbol \gamma}_2 = y = 2x + 1
-\]</span> from which we deduce that <span class="math inline">\({\boldsymbol \gamma}\)</span> must satisfy <span id="eq-example-parametrization-2"><span class="math display">\[
-{\boldsymbol \gamma}_2(t) = 2 {\boldsymbol \gamma}_1(t) + 1
+\gamma_1 = x \,, \quad \gamma_2 = y = 2x + 1
+\]</span> from which we deduce that <span class="math inline">\(\pmb{\gamma}\)</span> must satisfy <span id="eq-example-parametrization-2"><span class="math display">\[
+\gamma_2(t) = 2 \gamma_1(t) + 1
 \tag{1.3}\]</span></span> for all <span class="math inline">\(t \in (a,b)\)</span>. We can then choose <span class="math display">\[
-{\boldsymbol \gamma}_1(t) := t \,,
+\gamma_1(t) := t \,,
 \]</span> and from (<a href="#eq-example-parametrization-2"><span>1.3</span></a>) we deduce that <span class="math display">\[
-{\boldsymbol \gamma}_2 (t) = 2 t + 1 \,.
-\]</span> This choice of <span class="math inline">\({\boldsymbol \gamma}\)</span> works: <span class="math display">\[\begin{align}
-C &amp; = \{ (x,2x+1) \ \colon \ x \in \mathbb{R}\} \\
+\gamma_2 (t) = 2 t + 1 \,.
+\]</span> This choice of <span class="math inline">\(\pmb{\gamma}\)</span> works: <span class="math display">\[\begin{align}
+C &amp; = \{ (x,2x+1) \ \colon \ x \in \mathbb{R}  \} \\
   &amp; = \{ (t,2t+1) \ \colon \ - \infty &lt; t &lt; \infty  \} \\
-  &amp; = \{ ({\boldsymbol \gamma}_1(t),{\boldsymbol \gamma}_2(t)) \ \colon \ - \infty &lt; t &lt; \infty  \} \,,
+  &amp; = \{ (\gamma_1(t),\gamma_2(t)) \ \colon \ - \infty &lt; t &lt; \infty  \} \,,
 \end{align}\]</span> where in the second line we just swapped the symbol <span class="math inline">\(x\)</span> with the symbol <span class="math inline">\(t\)</span>. In this case we have to choose the time interval as <span class="math display">\[
 (a,b) = (-\infty,\infty) \,.
-\]</span> In this way <span class="math inline">\({\boldsymbol \gamma}\)</span> satisfies (<a href="#eq-represent-line"><span>1.1</span></a>) and we have successfully parametrized the straight line <span class="math inline">\(C\)</span>.</p>
+\]</span> In this way <span class="math inline">\(\pmb{\gamma}\)</span> satisfies (<a href="#eq-represent-line"><span>1.1</span></a>) and we have successfully parametrized the straight line <span class="math inline">\(C\)</span>.</p>
 </div></details>
 </div>
 <div id="parametrization-is-not-unique" class="Remark" title="Parametrization is not unique">
 <p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 5: </strong>Parametrization is not unique</summary><div>Let us consider again the straight line <span class="math display">\[
 C = \{ (x,y) \in \mathbb{R}^2 \ \colon \  2x+1 = y \} \,.
-\]</span> We saw that <span class="math inline">\({\boldsymbol \gamma}\colon (-\infty,\infty) \to \mathbb{R}^2\)</span> defined by <span class="math display">\[
-{\boldsymbol \gamma}(t):=(t,2t+1)
-\]</span> is a parametrization of <span class="math inline">\(C\)</span>. But of course any <span class="math inline">\({\boldsymbol \gamma}\)</span> satisfying <span class="math display">\[
-{\boldsymbol \gamma}_2(t) = 2 {\boldsymbol \gamma}_1(t) + 1
+\]</span> We saw that <span class="math inline">\(\pmb{\gamma} \colon (-\infty,\infty) \to \mathbb{R}^2\)</span> defined by <span class="math display">\[
+\pmb{\gamma}(t):=(t,2t+1)
+\]</span> is a parametrization of <span class="math inline">\(C\)</span>. But of course any <span class="math inline">\(\pmb{\gamma}\)</span> satisfying <span class="math display">\[
+\gamma_2(t) = 2 \gamma_1(t) + 1
 \]</span> would yield a parametrization of <span class="math inline">\(C\)</span>. For example one could choose <span class="math display">\[
-{\boldsymbol \gamma}_1 (t) = 2t \,, \quad {\boldsymbol \gamma}_2(t) = 2 {\boldsymbol \gamma}_1(t) + 1 = 4t + 1 \,.
-\]</span> In general, any time rescaling would work: the curve <span class="math inline">\({\boldsymbol \gamma}\)</span> defined by <span class="math display">\[
-{\boldsymbol \gamma}_1 (t) = nt \,, \quad {\boldsymbol \gamma}_2(t) = 2 {\boldsymbol \gamma}_1(t) + 1 = 2nt + 1  
-\]</span> parametrizes <span class="math inline">\(C\)</span> for all <span class="math inline">\(n \in \mathbb{N}\)</span>. Hence there are <strong>infinitely many</strong> parametrizations of <span class="math inline">\(C\)</span>.<p></p>
+\gamma_1 (t) = 2t \,, \quad \gamma_2(t) = 2 \gamma_1(t) + 1 = 4t + 1 \,.
+\]</span> In general, any time rescaling would work: the curve <span class="math inline">\(\pmb{\gamma}\)</span> defined by <span class="math display">\[
+\gamma_1 (t) = nt \,, \quad \gamma_2(t) = 2 \gamma_1(t) + 1 = 2nt + 1  
+\]</span> parametrizes <span class="math inline">\(C\)</span> for all <span class="math inline">\(n \in \N\)</span>. Hence there are <strong>infinitely many</strong> parametrizations of <span class="math inline">\(C\)</span>.<p></p>
 </div></details>
 </div>
 <div id="parametrizing-the-circle" class="Example" title="Parametrizing the circle">
@@ -453,30 +453,30 @@ C = \{ (x,y) \in \mathbb{R}^2 \ \colon \  2x+1 = y \} \,.
 <p>The circle <span class="math inline">\(C\)</span> is described by all the points <span class="math inline">\((x,y) \in \mathbb{R}^2\)</span> such that <span class="math display">\[
 x^2 + y^2 = 1\,.
 \]</span> Therefore if we want to find a curve <span class="math display">\[
-{\boldsymbol \gamma}= ({\boldsymbol \gamma}_1,{\boldsymbol \gamma}_2)
+\pmb{\gamma} = (\gamma_1,\gamma_2)
 \]</span> which parametrizes <span class="math inline">\(C\)</span>, this has to satisfy <span id="eq-parametrizing-circle"><span class="math display">\[
-{\boldsymbol \gamma}_1 (t)^2 + {\boldsymbol \gamma}_2(t)^2 = 1
+\gamma_1 (t)^2 + \gamma_2(t)^2 = 1
 \tag{1.4}\]</span></span> for all <span class="math inline">\(t \in (a,b)\)</span>.<br>
 How to find such curve? We could proceed as in the previous example, and set <span class="math display">\[
-{\boldsymbol \gamma}_1(t):=t \,.
+\gamma_1(t):=t \,.
 \]</span> Then (<a href="#eq-parametrizing-circle"><span>1.4</span></a>) implies <span class="math display">\[
-{\boldsymbol \gamma}_2 (t) = \sqrt{1-t^2}\,,
+\gamma_2 (t) = \sqrt{1-t^2}\,,
 \]</span> from which we also deduce that <span class="math display">\[
 - 1 \leq t \leq 1
 \]</span> are the only admissible values of <span class="math inline">\(t\)</span>. However this curve does not represent the full circle <span class="math inline">\(C\)</span>, but only the upper half, as seen in the plot below.</p>
-<p>Simlarly, another solution to (<a href="#eq-parametrizing-circle"><span>1.4</span></a>) would be <span class="math inline">\({\boldsymbol \gamma}\)</span> with <span class="math display">\[
-{\boldsymbol \gamma}_1(t)=t \,, \quad {\boldsymbol \gamma}_2 (t) = - \sqrt{1-t^2}\,,
+<p>Simlarly, another solution to (<a href="#eq-parametrizing-circle"><span>1.4</span></a>) would be <span class="math inline">\(\pmb{\gamma}\)</span> with <span class="math display">\[
+\gamma_1(t)=t \,, \quad \gamma_2 (t) = - \sqrt{1-t^2}\,,
 \]</span> for <span class="math inline">\(t \in [-1,1]\)</span>. However this choice does not parametrize the full circle <span class="math inline">\(C\)</span> either, but only the bottom half, as seen in the plot below.</p>
 <p>How to represent the whole circle? Recall the trigonometric identity <span class="math display">\[
 \cos(t)^2 + \sin(t)^2 = 1
-\]</span> for all <span class="math inline">\(t \in \mathbb{R}\)</span>. This suggests to choose <span class="math inline">\({\boldsymbol \gamma}\)</span> as <span class="math display">\[
-{\boldsymbol \gamma}_1(t):=\cos(t)\,, \quad {\boldsymbol \gamma}_2(t):=\sin(t)
-\]</span> for <span class="math inline">\(t \in [0,2\pi)\)</span>. This way <span class="math inline">\({\boldsymbol \gamma}\)</span> satisfies (<a href="#eq-parametrizing-circle"><span>1.4</span></a>), and actually parametrizes <span class="math inline">\(C\)</span>, as shown below.</p>
+\]</span> for all <span class="math inline">\(t \in \mathbb{R}\)</span>. This suggests to choose <span class="math inline">\(\pmb{\gamma}\)</span> as <span class="math display">\[
+\gamma_1(t):=\cos(t)\,, \quad \gamma_2(t):=\sin(t)
+\]</span> for <span class="math inline">\(t \in [0,2\pi)\)</span>. This way <span class="math inline">\(\pmb{\gamma}\)</span> satisfies (<a href="#eq-parametrizing-circle"><span>1.4</span></a>), and actually parametrizes <span class="math inline">\(C\)</span>, as shown below.</p>
 <p>Note the following:</p>
 <ul>
-<li>If we had chosen <span class="math inline">\(t \in [0,4\pi]\)</span> then <span class="math inline">\({\boldsymbol \gamma}\)</span> would have covered <span class="math inline">\(C\)</span> twice.</li>
-<li>If we had chosen <span class="math inline">\(t \in [0,\pi]\)</span>, then <span class="math inline">\({\boldsymbol \gamma}\)</span> would have covered the upper semi-circle</li>
-<li>If we had chosen <span class="math inline">\(t \in [\pi,2\pi]\)</span>, then <span class="math inline">\({\boldsymbol \gamma}\)</span> would have covered the lower semi-circle</li>
+<li>If we had chosen <span class="math inline">\(t \in [0,4\pi]\)</span> then <span class="math inline">\(\pmb{\gamma}\)</span> would have covered <span class="math inline">\(C\)</span> twice.</li>
+<li>If we had chosen <span class="math inline">\(t \in [0,\pi]\)</span>, then <span class="math inline">\(\pmb{\gamma}\)</span> would have covered the upper semi-circle</li>
+<li>If we had chosen <span class="math inline">\(t \in [\pi,2\pi]\)</span>, then <span class="math inline">\(\pmb{\gamma}\)</span> would have covered the lower semi-circle</li>
 <li>Similarly, we can choose <span class="math inline">\(t \in [\pi/6, \pi /2]\)</span> to cover just a portion of <span class="math inline">\(C\)</span>, as shown below.</li>
 </ul>
 </div></details>
@@ -524,11 +524,11 @@ How to find such curve? We could proceed as in the previous example, and set <sp
 <p>Finally we are also able to give a mathematical description of the 3D Helix.</p>
 <div id="parametrizing-the-helix" class="Example" title="Parametrizing the helix">
 <p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 7: </strong>Parametrizing the helix</summary><div>The Helix plotted above can be parametrized by <span class="math display">\[
-{\boldsymbol \gamma}\ \colon (-\infty,\infty) \to \mathbb{R}^3
+\pmb{\gamma} \ \colon (-\infty,\infty) \to \mathbb{R}^3
 \]</span> defined by <span class="math display">\[
-{\boldsymbol \gamma}_1(t) = \cos(t)\,, \,\,
-{\boldsymbol \gamma}_2(t) = \sin(t)\,, \,\,
-{\boldsymbol \gamma}_3(t) = t \,.
+\gamma_1(t) = \cos(t)\,, \,\,
+\gamma_2(t) = \sin(t)\,, \,\,
+\gamma_3(t) = t \,.
 \]</span> The above equations are in line with our intuition: the helix can be drawn by <em>tracing a circle while at the same time lifting the pencil</em>.<p></p>
 </div></details>
 </div>

@@ -1,7 +1,7 @@
 ::: {.content-hidden}
-$
+$$
 {{< include macros.tex >}}
-$
+$$
 :::
 
 
@@ -31,20 +31,20 @@ $$
 $$
 with $\mathbf{a}, \mathbf{v} \in \R^3$. The tangent vector to $\g$ is constant
 $$
-\dot\g(t) =  \mathbf{v} \,.
+\dg(t) =  \mathbf{v} \,.
 $$
 Whatever the definition of curvature will be, it has to hold that $\g$ has zero curvature in this case. If we further derive the tangent vector, we obtain
 $$
-\ddot\g(t) =  \zero \,.
+\ddg(t) =  \zero \,.
 $$
-Thus $\ddot \g$ seems to be a good candidate for the definition of curvature of $\g$ at the point $\g(t)$.  
+Thus $\ddg$ seems to be a good candidate for the definition of curvature of $\g$ at the point $\g(t)$.  
 
 
 Suppose now that $\g$ is a curve in $\R^2$ with unit speed. We have proven that in this case
 $$
-\dot \g \cdot \ddot\g = 0 \,,
+\dg \cdot \ddg = 0 \,,
 $$
-that is, the vector $\ddot \g$ is orthogonal to the tangent $\dot \g$ at all times. Now let $\mathbf{n}(t)$ be the unit vector orthogonal to $\dot \g(t)$ at the point $\g(t)$. The amount that the curve $\g$ deviates from its tangent at $\g(t)$ after time $t_0$ is
+that is, the vector $\ddg$ is orthogonal to the tangent $\dg$ at all times. Now let $\mathbf{n}(t)$ be the unit vector orthogonal to $\dg(t)$ at the point $\g(t)$. The amount that the curve $\g$ deviates from its tangent at $\g(t)$ after time $t_0$ is
 $$
 ( \g(t + t_0) - \g(t) ) \cdot \mathbf{n}(t) \,,
 $$ {#eq-curvature-heuristics}
@@ -56,21 +56,21 @@ as seen in the figure below.
 
 Equation (@eq-curvature-heuristics) is what we take as measure of curvature. Since 
 $$
-\dot \g(t) \cdot \ddot \g(t) = 0 \quad \mbox{ and } \quad   \dot \g(t) \cdot \mathbf{n}(t)= 0 \,,
+\dg(t) \cdot \ddg(t) = 0 \quad \mbox{ and } \quad   \dg(t) \cdot \mathbf{n}(t)= 0 \,,
 $$
-we conclude that $\ddot \g(t)$ is parallel to $\mathbf{n}(t)$. Since $\mathbf{n}(t)$ is a unit vector, there exists a scalar $\kappa(t)$ such that 
+we conclude that $\ddg(t)$ is parallel to $\mathbf{n}(t)$. Since $\mathbf{n}(t)$ is a unit vector, there exists a scalar $\kappa(t)$ such that 
 $$
-\ddot \g(t)  = \kappa(t) \, \mathbf{n}(t) \,.
+\ddg(t)  = \kappa(t) \, \mathbf{n}(t) \,.
 $$
 Note that, since $\nn$ is unitary, we have
 $$
-\kappa(t) = \norm{ \ddot \g(t) }
+\kappa(t) = \norm{ \ddg(t) }
 $$
 
 
 Now, approximate $\g$ at $t$ with its second order Taylor polynomial:
 $$
-\g(t+t_0) = \g(t) + \dot\g(t) t_0 + \frac{\ddot\g(t)}{2} t_0^2 + o(t_0)
+\g(t+t_0) = \g(t) + \dg(t) t_0 + \frac{\ddg(t)}{2} t_0^2 + o(t_0)
 $$
 with the remainder $o(t_0)$ is such that 
 $$
@@ -78,16 +78,16 @@ $$
 $$
 Therefore, forgetting about the remainder, 
 $$
-\g(t+t_0) - \g(t) \approx \dot\g(t) t_0 + \frac{\ddot\g(t)}{2} t_0^2 \,.
+\g(t+t_0) - \g(t) \approx \dg(t) t_0 + \frac{\ddg(t)}{2} t_0^2 \,.
 $$
 Multiplying by $\nn(t)$ we get
 $$
-(\g(t+t_0) - \g(t)) \cdot \nn(t) \approx \dot\g(t) \cdot \nn(t) t_0 + 
-\frac{\ddot\g(t) \cdot \nn(t) }{2} t_0^2\,.
+(\g(t+t_0) - \g(t)) \cdot \nn(t) \approx \dg(t) \cdot \nn(t) t_0 + 
+\frac{\ddg(t) \cdot \nn(t) }{2} t_0^2\,.
 $$
 Recalling that 
 $$
-\dot\g(t) \cdot \nn(t) = 0\,, \quad  \ddot\g(t) \cdot \nn(t) = \kappa(t) \,, 
+\dg(t) \cdot \nn(t) = 0\,, \quad  \ddg(t) \cdot \nn(t) = \kappa(t) \,, 
 $$
 we then obtain
 $$
@@ -100,7 +100,7 @@ $$
 
 The amount that $\g$ deviates from a straight line is proportional to 
 $$
-\kappa(t) = \norm{\ddot \g (t)}\,.
+\kappa(t) = \norm{\ddg (t)}\,.
 $$
 
 :::
@@ -112,7 +112,7 @@ We take this as definition of curvature for a general unit speed curve in $\R^n.
 
 Let $\g \ \colon (a,b) \to \R^n$ be a unit speed curve. The **curvature** of $\g$ at $\g(t)$ is
 $$
-\kappa^\g(t) := \norm{\ddot \g (t)} \,.
+\kappa^\g(t) := \norm{\ddg (t)} \,.
 $$
 
 :::
@@ -129,7 +129,7 @@ We now define curvature for curves which are regular, but not necessarily unit s
 
 Let $\g \ \colon (a,b) \to \R^n$ be a regular. The **curvature** of $\g$ at $\g(t)$ is
 $$
-\kappa^\g(t) :=   \norm{\ddot{\tg} (\f(t))} \,, \quad \forall \, t \in (a,b)\,,
+\kappa^\g(t) :=   \norm{\ddtg (\f(t))} \,, \quad \forall \, t \in (a,b)\,,
 $$
 where $\tg$ is a unit speed reparametrization of $\g$, with $\g = \tg \circ \f$.
 
@@ -159,7 +159,7 @@ $${#eq-well-posed-curvature-3}
 where $\f$ is a diffeomorphism, since it is composition of diffeomorphisms. 
 Differentiating (@eq-well-posed-curvature-3) we get
 $$
-\dot{\tg}(t) = \dot{\hat{\g}}(\f(t)) \dot\f(t) \,.
+\dtg(t) = \dot{\hat{\g}}(\f(t)) \dot\f(t) \,.
 $${#eq-well-posed-curvature-2}
 Taking the norms of the above, and recalling that $\tg$ and $\hat\g$ are unit speed, we get
 $$
@@ -176,21 +176,21 @@ $$
 $$
 Differentiating (@eq-well-posed-curvature-2) we then obtain
 \begin{align}
-\ddot{\tg}(t) & = \ddot{\hat{\g}}(\f(t)) \dot\f^2(t) + 
+\ddtg(t) & = \ddot{\hat{\g}}(\f(t)) \dot\f^2(t) + 
                          \dot{\hat{\g}}(\f(t)) \ddot\f (t) \\
                   & = \ddot{\hat{\g}}(\f(t)) \dot\f^2(t) \,.
 \end{align}
 Taking the norms and using again that $|\dot\f| \equiv 1$, we get  that 
 $$
-\norm{  \ddot{\tg}(t)} = \norm{ \ddot{\hat{\g}}(\f(t))} \,.
+\norm{  \ddtg(t)} = \norm{ \ddot{\hat{\g}}(\f(t))} \,.
 $$
 Recalling that $\phi  = \hat\f \circ (\tilde{\f})^{-1}$ we get
 $$
-\norm{  \ddot{\tg}( \tilde{\f}(t))} = \norm{ \ddot{\hat{\g}}(\hat\f(t))} \,, \quad \forall \, t \in (a,b) \,.
+\norm{  \ddtg( \tilde{\f}(t))} = \norm{ \ddot{\hat{\g}}(\hat\f(t))} \,, \quad \forall \, t \in (a,b) \,.
 $$
 Therefore 
 $$
-\kappa^\g(t) =  \norm{  \ddot{\tg}( \tilde{\f}(t))} = \norm{ \ddot{\hat{\g}}(\hat\f(t))} \,.
+\kappa^\g(t) =  \norm{  \ddtg( \tilde{\f}(t))} = \norm{ \ddot{\hat{\g}}(\hat\f(t))} \,.
 $$
 
 :::
@@ -213,7 +213,7 @@ $$
 $$
 - Then we compute 
 $$
-\kappa^{\tg}(t) = \norm{\ddot{\tg}}(t)
+\kappa^{\tg}(t) = \norm{\ddtg}(t)
 $$
 - We obtain the curvature of $\g$ by
 $$
@@ -243,12 +243,12 @@ $$
 $$
 where $s$ is the arc length of $\g$:
 $$
-s(t):= \int_{t_0}^t \norm{\dot \g(\tau)} \, d\tau  \,.
+s(t):= \int_{t_0}^t \norm{\dg(\tau)} \, d\tau  \,.
 $$
 In our case 
 $$
-\dot \g(t) = (-R\sin(t), R\cos(t))  \quad \implies \quad 
-\norm{\dot \g(t)} = R  
+\dg(t) = (-R\sin(t), R\cos(t))  \quad \implies \quad 
+\norm{\dg(t)} = R  
 $$
 and so $\g$ is regular. The arc length starting at $t_0 = 0$ is
 $$
@@ -268,12 +268,12 @@ $$
 $$
 We have
 \begin{align}
-\dot{\tg} (t) & =  \left( - \sin \left( \frac{t}{R} \right) ,  \cos \left( \frac{t}{R} \right)\right) \\
-\ddot{\tg} (t) & =  \left( -\frac{1}{R} \cos \left( \frac{t}{R} \right) ,  - \frac{1}{R} \sin \left( \frac{t}{R} \right)\right)
+\dtg (t) & =  \left( - \sin \left( \frac{t}{R} \right) ,  \cos \left( \frac{t}{R} \right)\right) \\
+\ddtg (t) & =  \left( -\frac{1}{R} \cos \left( \frac{t}{R} \right) ,  - \frac{1}{R} \sin \left( \frac{t}{R} \right)\right)
 \end{align}
 Therefore the curvature of $\g$ is
 $$
-\kappa(t) = \norm{ \ddot{\tg} (t) } = \frac{1}{R} \,.
+\kappa(t) = \norm{ \ddtg (t) } = \frac{1}{R} \,.
 $$
 In this case $\kappa(t)$ is constant. The curvature also tells us that the smaller the circle, the higher the curvature. For a large circle, like the Earth, the curvature is barely noticeable. 
 :::
@@ -643,7 +643,7 @@ $$
 $$
 is smooth, and
 $$
-\frac{d}{dt} ( \g \times \eeta ) = \dot \g \times \eeta + \g \times \dot \eeta \,.
+\frac{d}{dt} ( \g \times \eeta ) = \dg \times \eeta + \g \times \dot{\eeta} \,.
 $${#eq-cross-prod-derivative}
 
 :::
@@ -664,11 +664,11 @@ $$
 $$
 we defined its curvature as
 $$
-\kappa(t) = \norm{ \ddot{\g}(t) } \,.
+\kappa(t) = \norm{ \ddg(t) } \,.
 $$
 If $\g$ is not unit speed then the curvature is not defined. However, when $\g$ is regular, then we can find a unit-speed reparametrization $\tg$ of $\g$, and compute $\kappa$ as
 $$
-\kappa(t) = \norm{ \ddot{\tg}(t) } \,.
+\kappa(t) = \norm{ \ddtg(t) } \,.
 $$
 If $\g$ is a regular curve in $\R^3$, there is a way to compute $\kappa$ without passing through $\tg$. The formula for computing $\kappa$ is as follows. 
 
@@ -676,7 +676,7 @@ If $\g$ is a regular curve in $\R^3$, there is a way to compute $\kappa$ without
 
 Let $\g \colon (a,b) \to \R^3$ be a regular curve. Then the curvature $\kappa(t)$ of $\g$ at $\g(t)$ is given by
 $$
-\kappa(t) = \frac{ \norm{\dot \g \times \ddot \g} }{ \norm{\dot \g}^3 } \,. 
+\kappa(t) = \frac{ \norm{\dg \times \ddg} }{ \norm{\dg}^3 } \,. 
 $${#eq-curvature}
 
 :::
@@ -695,19 +695,19 @@ $$
 $$
 for some $\mathbf{a}, \mathbf{v} \in \R^3$ fixed, with $\mathbf{v} \neq \zero$. Then
 $$
-\dot \g (t) = \mathbf{v} \,, \quad \ddot \g(t) = \zero \,. 
+\dg (t) = \mathbf{v} \,, \quad \ddg(t) = \zero \,. 
 $$
 Therefore 
 $$
-\norm{\dot \g (t)} = \norm{\mathbf{v}} \neq 0
+\norm{\dg (t)} = \norm{\mathbf{v}} \neq 0
 $$
 showing that $\g$ is regular. We have
 $$
-\dot \g \times \ddot \g = \mathbf{v} \times \zero = \zero \,.
+\dg \times \ddg = \mathbf{v} \times \zero = \zero \,.
 $$
 Therefore the curvature is
 $$
-\kappa = \frac{ \norm{ \dot \g \times \ddot \g } }{ \norm{\dot\g}^3 } = 0 \,,
+\kappa = \frac{ \norm{ \dg \times \ddg } }{ \norm{\dg}^3 } = 0 \,,
 $$
 as expected.
 :::
@@ -722,32 +722,32 @@ $$
 $$
 Then
 \begin{align}
-\dot\g (t) & = ( -R\sin(t) , R\cos(t) , H)  \\
-\ddot\g (t) & = ( -R\cos(t) , -R\sin(t) , 0) 
+\dg (t) & = ( -R\sin(t) , R\cos(t) , H)  \\
+\ddg (t) & = ( -R\cos(t) , -R\sin(t) , 0) 
 \end{align}
 From this we deduce that
 $$
-\norm{\dot\g (t)}  = \sqrt{R^2 + H^2}\,,
+\norm{\dg (t)}  = \sqrt{R^2 + H^2}\,,
 $$
 showing that $\g$ is regular. Finally
 \begin{align}
-\dot \g \times \ddot \g & = 
+\dg \times \ddg & = 
 \left|
 \begin{array}{cc}
-{\dot\g}_2 & {\dot\g}_3  \\
-{\ddot\g}_2 & {\ddot\g}_3
+{\dot\gamma}_2 & {\dot\gamma}_3  \\
+{\ddot\gamma}_2 & {\ddot\gamma}_3
 \end{array}
 \right| \ee_1 -
 \left|
 \begin{array}{cc}
-{\dot\g}_1 & {\dot\g}_3  \\
-{\ddot\g}_1 & {\ddot\g}_3
+{\dot\gamma}_1 & {\dot\gamma}_3  \\
+{\ddot\gamma}_1 & {\ddot\gamma}_3
 \end{array}
 \right| \ee_2 +
 \left|
 \begin{array}{cc}
-{\dot\g}_1 & {\dot\g}_2  \\
-{\ddot\g}_1 & {\ddot\g}_2
+{\dot\gamma}_1 & {\dot\gamma}_2  \\
+{\ddot\gamma}_1 & {\ddot\gamma}_2
 \end{array}
 \right| \ee_3 \\
 & = 
@@ -784,11 +784,11 @@ R^2
 \end{align}
 and therefore
 $$
-\norm{ \dot \g \times \ddot \g } =  R\sqrt{R^2 + H^2   } \,.
+\norm{ \dg \times \ddg } =  R\sqrt{R^2 + H^2   } \,.
 $$
 By the general formula we have
 $$
-\kappa = \frac{ \norm{ \dot \g \times \ddot \g } }{ \norm{\dot\g}^3 } =
+\kappa = \frac{ \norm{ \dg \times \ddg } }{ \norm{\dg}^3 } =
 \frac{ R (R^2 + H^2)^{\frac12} }{  (R^2 + H^2)^{\frac32}    } =
 \frac{ R }{  R^2 + H^2   } 
 $$
@@ -821,7 +821,7 @@ In this section we assume to have plane curves, that is, curves with values in $
 
 ::: Definition
 
-Let $\g \ \colon (a,b) \to \R^2$ be unit speed. We define the **signed unit normal** to $\g$ at $\g(t)$ as the unit vector $\nn(t)$ obtained by rotating $\dot \g(t)$ anti-clockwise by an angle of $\pi/2$.
+Let $\g \ \colon (a,b) \to \R^2$ be unit speed. We define the **signed unit normal** to $\g$ at $\g(t)$ as the unit vector $\nn(t)$ obtained by rotating $\dg(t)$ anti-clockwise by an angle of $\pi/2$.
 
 :::
 
@@ -830,14 +830,14 @@ Let $\g \ \colon (a,b) \to \R^2$ be unit speed. We define the **signed unit norm
 
 Let $\g \ \colon (a,b) \to \R^2$ be unit speed. The **signed curvature** of $\g$ at $\g(t)$ is the scalar $\kappa_s(t)$ such that
 $$
-\ddot \g(t) = k_s(t) \nn(t)
+\ddg(t) = k_s(t) \nn(t)
 $$
 :::
 
 ::: Remark
 Notice that since $\nn$ is a unit vector and $\g$ is unit speed, then
 $$
-|\kappa_s(t)| = \norm{\ddot \g(t)} = \kappa(t) \,.
+|\kappa_s(t)| = \norm{\ddg(t)} = \kappa(t) \,.
 $$
 Thus the signed curvature is related to the curvature by
 $$
@@ -847,10 +847,10 @@ $$
 
 
 ::: Remark
-It can be shown that the signed curvature is the rate at which the tangent vector $\dot \g$ of the curve $\g$ rotates. The signed curvature is:
+It can be shown that the signed curvature is the rate at which the tangent vector $\dg$ of the curve $\g$ rotates. The signed curvature is:
 
-- positive if $\dot \g$ is rotating anti-clockwise
-- negative if $\dot \g$ is rotating clockwise
+- positive if $\dg$ is rotating anti-clockwise
+- negative if $\dg$ is rotating clockwise
 
 In other words, 
 
@@ -870,9 +870,9 @@ For curves which are not unit speed, we define the signed curvature as the signe
 
 Let $\g \ \colon (a,b) \to \R^2$ be regular and let $\tg$ be a unit speed reparametrization of $\g$. The **signed curvature** of $\g$ at $\g(t)$ is the scalar $\kappa_s(t)$ such that
 $$
-\ddot{\tg}(t) = k_s(t) \nn(t) \,,
+\ddtg(t) = k_s(t) \nn(t) \,,
 $$
-where $\nn(t)$ is the unit vector obtained by rotating $\dot{\tg}(t)$ anti-clockwise by an angle $\pi/2$.
+where $\nn(t)$ is the unit vector obtained by rotating $\dtg(t)$ anti-clockwise by an angle $\pi/2$.
 :::
 
 
@@ -961,7 +961,7 @@ $$
 $$
 The **principal normal vector** to $\g$ at $\g(t)$ is 
 $$
-\nn(t) := \frac{1}{\kappa (t)} \, \ddot \g(t) \,.
+\nn(t) := \frac{1}{\kappa (t)} \, \ddg(t) \,.
 $$
 :::
 
@@ -971,22 +971,22 @@ $$
 
 Since for $\g$ unit speed we defined
 $$
-\kappa (t) := \norm{ \ddot \g(t) } \,,
+\kappa (t) := \norm{ \ddg(t) } \,,
 $$
 we have that 
 $$
 \norm{ \nn (t) } = 1 \,,
 $$
-thus $\nn$ is a unit vector. Moreover $\nn$ is orthogonal to $\dot\g$, that is,
+thus $\nn$ is a unit vector. Moreover $\nn$ is orthogonal to $\dg$, that is,
 $$
-\dot \g \cdot \nn = 0 \,.
+\dg \cdot \nn = 0 \,.
 $$
 
 >This is because
 $$
-\dot \g \cdot \nn = \frac{1}{\kappa} \, \dot \g \cdot \ddot \g = 0 \,,
+\dg \cdot \nn = \frac{1}{\kappa} \, \dg \cdot \ddg = 0 \,,
 $$
-where the last equality follows from $\dot \g \cdot \ddot \g = 0$, being $\g$ unit speed.
+where the last equality follows from $\dg \cdot \ddg = 0$, being $\g$ unit speed.
 
 :::
 
@@ -1014,7 +1014,7 @@ $$
 $$
 The **binormal vector** to $\g$ at $\g(t)$ is 
 $$
-\bb(t) := \dot \g (t) \times \nn(t) \,.
+\bb(t) := \dg (t) \times \nn(t) \,.
 $$
 :::
 
@@ -1042,7 +1042,7 @@ $$
 $$
 Then the triple
 $$
-B = (  \dot \g(t), \nn(t), \bb(t)  )
+B = (  \dg(t), \nn(t), \bb(t)  )
 $$
 is a positive orthonormal basis of $\R^3$ for all $t \in (a,b)$.
 :::
@@ -1053,31 +1053,31 @@ is a positive orthonormal basis of $\R^3$ for all $t \in (a,b)$.
 
 Since $\g$ is unit speed we have
 $$
-\norm{ \dot \g (t) } \equiv 1 \,.
+\norm{ \dg (t) } \equiv 1 \,.
 $$
 Moreover we have already observed that 
 $$
-\norm{\nn(t)} \equiv 1 \,, \quad \dot \g (t) \cdot \nn(t) \equiv 0 \,.
+\norm{\nn(t)} \equiv 1 \,, \quad \dg (t) \cdot \nn(t) \equiv 0 \,.
 $$
 As $\bb$ is defined by
 $$
-\bb:= \dot \g \times \nn \,,
+\bb:= \dg \times \nn \,,
 $$
 by the properties of the vector product, see Proposition \ref{proposition-vector-product}, it follows that
 $$
-\bb \cdot \dot \g = 0 \,, \quad  \bb \cdot \nn = 0  \,.
+\bb \cdot \dg = 0 \,, \quad  \bb \cdot \nn = 0  \,.
 $$
 By the calculation in Remark \ref{remark-vector-product} Point 8, we have that
 $$
-\norm{ \bb }^2 = \| \dot \g \|^2 \|\nn \|^2 -   |\dot \g \cdot \nn|^2 = 1   \,.
+\norm{ \bb }^2 = \| \dg \|^2 \|\nn \|^2 -   |\dg \cdot \nn|^2 = 1   \,.
 $$
 This shows that the vectors
 $$
-\{ \dot \g, \nn, \bb  \}
+\{ \dg, \nn, \bb  \}
 $$
 are orthonormal. By the properties of the vector product, see Remark \ref{remark-vector-product} Point 6, we also know that
 $$
-( \dot \g, \nn, \bb  )
+( \dg, \nn, \bb  )
 $$
 is a positive basis of $\R^3$.
 :::
@@ -1087,9 +1087,9 @@ is a positive basis of $\R^3$.
 
 Let $\g$ be a unit speed curve with $\kappa \neq 0$. Then
 $$
-\bb = \dot \g \times \nn \,, \quad
-\nn = \bb \times \dot \g \,, \quad
-\dot \g = \nn \times \bb \,.
+\bb = \dg \times \nn \,, \quad
+\nn = \bb \times \dg \,, \quad
+\dg = \nn \times \bb \,.
 $$ {#eq-frenet-positive-basis}
 
 :::
@@ -1103,31 +1103,31 @@ $$
 $${#eq-cross-prod-triple-1}
 for all $\uu,\vv,\ww \in \R^3$. Applying the above with 
 $$
-\uu = \dot \g \,, \quad \vv = \nn \,, \quad \ww = \dot \g \,,
+\uu = \dg \,, \quad \vv = \nn \,, \quad \ww = \dg \,,
 $$
 yields
 \begin{align}
-( \dot \g \times \nn ) \times \dot \g & = ( \dot \g \cdot \dot \g ) \nn - (\nn \cdot \dot \g) \dot \g \\
-                                      & = \norm{\dot \g }^2 \nn - 0 \\
+( \dg \times \nn ) \times \dg & = ( \dg \cdot \dg ) \nn - (\nn \cdot \dg) \dg \\
+                                      & = \norm{\dg }^2 \nn - 0 \\
                                       & = \nn \,,
 \end{align}
-where we used that $\dot\g$ is a unit vector and $\nn \cdot \dot \g = 0$. Therefore, by definition of $\bb$, we have
+where we used that $\dg$ is a unit vector and $\nn \cdot \dg = 0$. Therefore, by definition of $\bb$, we have
 $$
-\bb \times \dot \g = ( \dot \g \times \nn ) \times \dot \g = \nn
+\bb \times \dg = ( \dg \times \nn ) \times \dg = \nn
 $$
 showing the second equality in (@eq-frenet-positive-basis). For showing the third equality, we apply (@eq-cross-prod-triple-1) with 
 $$
-\uu = \dot \g \,, \quad \vv = \nn \,, \quad \ww = \nn \,,
+\uu = \dg \,, \quad \vv = \nn \,, \quad \ww = \nn \,,
 $$
 to get
 \begin{align}
-( \dot \g \times \nn ) \times \nn  & = ( \dot \g \cdot \nn ) \nn - (\nn \cdot \nn ) \dot \g \\
-                                      & = 0 - \norm{\nn }^2 \dot \g  \\
-                                      & = - \dot \g
+( \dg \times \nn ) \times \nn  & = ( \dg \cdot \nn ) \nn - (\nn \cdot \nn ) \dg \\
+                                      & = 0 - \norm{\nn }^2 \dg  \\
+                                      & = - \dg
 \end{align}
-where we used that $\nn$ is a unit vector and $\dot \g \cdot \nn= 0$. Therefore, by definition of $\bb$ and anti-commutativity of the vector product, we have
+where we used that $\nn$ is a unit vector and $\dg \cdot \nn= 0$. Therefore, by definition of $\bb$ and anti-commutativity of the vector product, we have
 $$
-\nn \times \bb = - \bb \times \nn = - (\dot \g \times \nn ) \times \nn = \dot \g \,,
+\nn \times \bb = - \bb \times \nn = - (\dg \times \nn ) \times \nn = \dg \,,
 $$
 showing the last equality in (@eq-frenet-positive-basis).
 :::
@@ -1148,22 +1148,22 @@ for some $\tau(t) \in \R$.
 
 By definition of $\bb$ and the formula of derivation of the cross product (@eq-cross-prod-derivative) we have
 \begin{align}
-\dot{\bb} & = \frac{d}{dt} ( \dot \g \times \nn  ) \\
-          & = \ddot \g \times \nn + \dot \g \times \dot{\nn} \\
-          & =  \dot \g \times \dot{\nn} \,,
+\dot{\bb} & = \frac{d}{dt} ( \dg \times \nn  ) \\
+          & = \ddg \times \nn + \dg \times \dot{\nn} \\
+          & =  \dg \times \dot{\nn} \,,
 \end{align}
 where we used that
 $$
-\ddot \g \times \nn  = 0\,,
+\ddg \times \nn  = 0\,,
 $$
-since $\nn$ is defined by $\nn :=  \ddot \g/\kappa$, and therefore $\nn$ and $\ddot \g$ are parallel. Hence, we have proven that
+since $\nn$ is defined by $\nn :=  \ddg/\kappa$, and therefore $\nn$ and $\ddg$ are parallel. Hence, we have proven that
 $$
-\dot{\bb} = \dot \g \times \dot{\nn} \,.
+\dot{\bb} = \dg \times \dot{\nn} \,.
 $${#eq-derivative-b-1}
 By the properties of the cross product we have that $\uu \times \vv$ is orthogonal to both $\uu$
 and $\vv$. Thus (@eq-derivative-b-1) implies that
 $$
-\dot{\bb} \cdot \dot \g = 0 \,.
+\dot{\bb} \cdot \dg = 0 \,.
 $$
 Further, observe that
 $$
@@ -1177,9 +1177,9 @@ Therefore
 $$
 \dot{\bb} \cdot \bb = 0 \,.
 $$
-To summarize, we have shown that $\dot{\bb}$ is orthogonal to $\bb$ and $\dot \g$. Since 
+To summarize, we have shown that $\dot{\bb}$ is orthogonal to $\bb$ and $\dg$. Since 
 $$
-( \dot\g, \nn , \bb )
+( \dg, \nn , \bb )
 $$
 is an orthonormal basis of $\R^3$ we conclude that $\dot{\bb}$ is parallel to $\nn$. Therefore there exists $\tau(t) \in \R$ such that 
 $$
@@ -1226,13 +1226,13 @@ since $\nn$ is a unit vector.
 
 ::: Warning
 
-The torsion is defined only for curves  
+We defined the torsion only for curves  
 $$
 \g \colon (a,b) \to \R^3 \,,
 $$
 with 
 $$
-\norm{\dot \g} = 1 \,, \quad \kappa = \norm{ \ddot \g }  \neq 0 \,,
+\norm{\dg} = 1 \,, \quad \kappa = \norm{ \ddg }  \neq 0 \,,
 $$
 for all $t \in (a,b)$.
 
@@ -1267,7 +1267,7 @@ formula to compute the torsion without having to reparametrize.
 
 Let $\g \colon (a,b) \to \R^3$ be a regular curve with non-vanishing curvature. Then
 $$
-\tau (t) = \frac{ ( \dot\g \times \ddot \g ) \cdot \dddot \g }{ \norm{ \dot\g \times \ddot \g }^2 } \,. 
+\tau (t) = \frac{ ( \dg \times \ddg ) \cdot \dddg }{ \norm{ \dg \times \ddg }^2 } \,. 
 $$
 
 :::
@@ -1278,7 +1278,7 @@ We delay the proof of the above proposition for a bit. In the meantime, let us l
 
 
 ::: Example
-### Torsion of Circle and Helix
+### Torsion Helix
 
 
 Consider the Helix of radius $R>0$ and rise $H>0$
@@ -1287,31 +1287,31 @@ $$
 $$
 We have already shown that
 $$
-\norm{\dot\g (t)}  = \sqrt{R^2 + H^2}\,,  \quad  \kappa = \frac{R}{R^2 + H^2} \,.
+\norm{\dg (t)}  = \sqrt{R^2 + H^2}\,,  \quad  \kappa = \frac{R}{R^2 + H^2} \,.
 $$
 Therefore the Helix is regular with non-vanishing curvature. The torsion can be then
 computed via the formula 
 $$
-\tau (t) = \frac{ ( \dot\g \times \ddot \g ) \cdot \dddot \g }{ \norm{ \dot\g \times \ddot \g }^2 } \,. 
+\tau (t) = \frac{ ( \dg \times \ddg ) \cdot \dddg }{ \norm{ \dg \times \ddg }^2 } \,. 
 $$
 Let us compute the quantities appearing in the formula for $\tau$
 \begin{align}
-\dot\g (t) & = ( -R\sin(t) , R\cos(t) , H)  \\
-\ddot\g (t) & = ( -R\cos(t) , -R\sin(t) , 0) \\
-\dddot\g (t) & = ( R\sin(t) , -R\cos(t) , 0) 
+\dg (t) & = ( -R\sin(t) , R\cos(t) , H)  \\
+\ddg (t) & = ( -R\cos(t) , -R\sin(t) , 0) \\
+\dddg (t) & = ( R\sin(t) , -R\cos(t) , 0) 
 \end{align}
 Moreover we had already computed that
 \begin{align}
-\dot \g \times \ddot \g & = \left( RH\sin(t), -RH\cos(t), R^2 \right)  \\
-\norm{ \dot \g \times \ddot \g } & =  R\sqrt{R^2 + H^2   } \,.
+\dg \times \ddg & = \left( RH\sin(t), -RH\cos(t), R^2 \right)  \\
+\norm{ \dg \times \ddg } & =  R\sqrt{R^2 + H^2   } \,.
 \end{align}
 Finally we compute
 $$
-(\dot \g \times \ddot \g) \cdot \dddot \g = R^2 H \,.
+(\dg \times \ddg) \cdot \dddg = R^2 H \,.
 $$
 We are ready to find the torsion:
 $$
-\tau = \frac{ ( \dot\g \times \ddot \g ) \cdot \dddot \g }{ \norm{ \dot\g \times \ddot \g }^2 }
+\tau = \frac{ ( \dg \times \ddg ) \cdot \dddg }{ \norm{ \dg \times \ddg }^2 }
        = \frac{ H }{ R^2 + H^2 } \,.
 $$
 :::
@@ -1330,8 +1330,9 @@ The curvature and torsion of the Helix of radius $R$ and rise $H>0$ are
 $$
 \kappa = \frac{R}{R^2 + H^2}\,, \quad \tau = \frac{H}{R^2 + H^2}  \,.
 $$
-As for $H=0$ the Helix coincides with the Circle $\g$, we obtain that the 
-curvature and torsion of the Circle are
+For $H=0$ the Helix coincides with the Circle $\g$. Therefore we can set $H=0$ in the 
+above formulas to obtain the 
+curvature and torsion of the Circle
 $$
 \kappa = \frac{1}{R}\,, \quad \tau = 0  \,.
 $$
@@ -1347,7 +1348,14 @@ Define the space curve
 $$
 \g(t) := \left( \frac45 \cos(t),  1 - \sin(t) , -\frac35 \cos(t)  \right) \,,
 $$
-for $t \in \R$.
+for $t \in \R$. As seen in the plot below, $\g$ is just a Circle which has been rotated an translated. We hence expect curvature and torsion to be
+$$
+\kappa = \frac1R , \quad \tau = 0\,, 
+$$
+for some $R>0$, radius of the Circle $\g$. Let us proceed with the calculations, using the formulas
+$$
+\kappa = \frac{ \norm{ \dg \times \ddg }  }{ \norm{\dg}^3 } \,, \quad \tau = \frac{ (\dg \times \ddg) \cdot \dddg }{ \norm{ \dg \times \ddg }^2 } \,.
+$$
 
 :::
 
@@ -1355,39 +1363,39 @@ for $t \in \R$.
 
 ```{python}
 #| echo: false
-#| fig-cap: "Plot of the curve in example above" 
-#| label: fig-helix-tangent
+#| fig-cap: "Plot of the curve in example above"
 
-# Plotting 3D Helix
 
 import numpy as np
 import matplotlib.pyplot as plt
-from mpl_toolkits import mplot3d
+from mpl_toolkits.mplot3d import Axes3D
 
-# Generates figure and 3D axes
-fig = plt.figure(figsize = (4,4))
-ax = plt.axes(projection = '3d')
-
-# Plots grid
-ax.grid(True)
-
-# Divides time interval (0,6pi) in 100 parts 
+# Define the parameter 't'
 t = np.linspace(0, 2*np.pi, 100)
 
-# Computes Helix
+# Calculate the corresponding x, y, and z values
 x = (4/5)*np.cos(t) 
 y = 1- np.sin(t)
 z = -(3/5)*np.sin(t)
 
-# Plots Helix - We added some styling
-ax.plot3D(x, y, z, color = "deeppink", linewidth = 2)
+# Create a 3D plot
+fig = plt.figure(figsize=(5, 5))
+ax = fig.add_subplot(111, projection='3d')
 
+# Plot the curve
+ax.plot(x, y, z, color='deeppink', linewidth=2)
 
-# Shows the plot
+# Set labels for the axes
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.set_zlabel('z')
+
+# Set the viewing angle to 45 degrees for both azimuthal and elevation angles
+ax.view_init(elev=20, azim=-25)
+
+# Show the plot
 plt.show()
 ```
-
-
 
 
 ![Summary for computing $\kappa$ and $\tau$ for regular curve $\g$.](/images/diagram_curvature_torsion.png){width=80%}

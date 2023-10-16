@@ -51,8 +51,6 @@ book:
     - sections/references.qmd
 
 
-
-
 bibliography: teaching.bib
 
 
@@ -76,6 +74,10 @@ format:
   
   pdf:
     documentclass: scrreprt
+    fontfamily: libertinus
+    fontfamilyoptions:
+      - osf
+      - p
     fontsize: 12pt
     template-partials:
       - before-body.tex
@@ -112,7 +114,6 @@ format:
           \usepackage{fvextra}
           \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
           \setlength{\parindent}{0pt}
-          \usepackage{amsmath}
 
   
 
