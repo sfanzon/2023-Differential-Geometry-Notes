@@ -13,7 +13,7 @@
 
     % Nodes
     \node (gamma) [topblock] {$\boldsymbol \gamma$ unit speed};
-    \node (yes) [rectblock, below left of=gamma, xshift=-2cm, yshift = -2.5cm] {Compute Frenet frame $\{ \dot {\boldsymbol{\gamma}}, \boldsymbol{n},\boldsymbol{b} \}$ \\  \vspace{0.3cm} $\Downarrow$  \\ \vspace{0.3cm} $\kappa = \| \ddot{\boldsymbol{\gamma}}  \|$ \vspace{0.1cm} \\  \vspace{0.1cm} $\dot{ \boldsymbol{b} } = -\tau \boldsymbol{n}$};
+    \node (yes) [rectblock, below left of=gamma, xshift=-2cm, yshift = -2.5cm] {Compute Frenet frame $\{ \dot {\boldsymbol{\gamma}}, \boldsymbol{n},\boldsymbol{b} \}$ \\  \vspace{0.3cm} $\Downarrow$  \\ \vspace{0.3cm} $\kappa = \| \ddot{\boldsymbol{\gamma}}  \|$ \vspace{0.1cm} \\  \vspace{0.1cm} $\quad\tau = - \, \dot{ \boldsymbol{b} } \cdot \boldsymbol{n}$};
     \node (no) [rectblock, below right of=gamma, xshift=2cm, yshift = -2cm] {Can you compute unit speed reparametrization?};
 	
 	\node (formulas) [rectblock, below right of=gamma, xshift=2cm, yshift = -5.0cm] {Use formulas  \\  \vspace{0.5cm}  $\kappa = \frac{ \| \dot{\boldsymbol{\gamma}}  \times \ddot{\boldsymbol{\gamma}} \|  }{  \| \dot{\boldsymbol{\gamma}}  \|^2 } $ \\ \vspace{0.3cm} $\,\,\,\,\,\,\tau = \frac{( \dot{\boldsymbol{\gamma}}  \times \ddot{\boldsymbol{\gamma}} ) \cdot \dddot{ \boldsymbol{\gamma} } }{ \| \dot{\boldsymbol{\gamma}}  \times \ddot{\boldsymbol{\gamma}} \|^2  }$}; 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Differential Geometry - 5&nbsp; Isoperimetric Inequality</title>
+<title>Differential Geometry - 5&nbsp; Surfaces</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -66,23 +66,15 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
 .Remark {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Warning {
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -90,35 +82,11 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
 .Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Assumption {
+.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -126,16 +94,50 @@ ul.task-list li input[type="checkbox"] {
   --color1: #bce5de;
   --color2: #21aa93;
 }
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Conjecture {
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
 </style>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -162,7 +164,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sections/chap_5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Isoperimetric Inequality</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sections/chap_5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Surfaces</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -183,49 +185,37 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sections/chap_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Curves</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sections/chap_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Curves in Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Parametrized curves</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sections/chap_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Parametrized curves</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Curvature and Torsion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sections/chap_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Curvature and Torsion</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Topology</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sections/chap_5.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Isoperimetric Inequality</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Surfaces</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sections/chap_6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Topology</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sections/chap_7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Surfaces</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sections/chap_8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Surfaces in Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Plots with Python</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -253,7 +243,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Isoperimetric Inequality</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Surfaces</span></h1>
 </div>
 
 
@@ -268,6 +258,59 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<div id="Definition-1" class="Definition">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 1</strong></summary><div>
+<p>A set <span class="math inline">\(\mathcal{S}\subset \mathbb{R}^3\)</span> is a <strong>surface</strong> if for every point <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span> there exist open sets <span class="math inline">\(U \subset \mathbb{R}^2\)</span>, <span class="math inline">\(V \subset \mathbb{R}^3\)</span> such that</p>
+<ul>
+<li><span class="math inline">\(\mathbf{p}\in V\)</span>,</li>
+<li><span class="math inline">\(U\)</span> is diffeomorphic to <span class="math inline">\(V \cap \mathcal{S}\)</span>.</li>
+</ul>
+<p>Further:</p>
+<ul>
+<li>A diffeomorphism of <span class="math inline">\(U\)</span> into <span class="math inline">\(V \cap \mathcal{S}\)</span>, denoted by <span class="math display">\[
+{\boldsymbol \sigma}\colon U \to  V \cap \mathcal{S}\,
+\]</span> is called a <strong>surface chart</strong>.</li>
+<li>For each <span class="math inline">\(i \in I\)</span> suppose to have a surface chart <span class="math display">\[
+{\boldsymbol \sigma}_i  \colon U_i \to V_i \cap \mathcal{S}\,.
+\]</span> We say that the family <span class="math inline">\(\{ {\boldsymbol \sigma}_i\}_{i \in I}\)</span> is an <strong>atlas</strong> of <span class="math inline">\(\mathcal{S}\)</span> if <span class="math display">\[
+\bigcup_{i \in I} (V_i \cap \mathcal{S}) = \mathcal{S}\,.
+\]</span></li>
+</ul>
+</div></details>
+</div>
+<p>Note that a surface chart <span class="math inline">\({\boldsymbol \sigma}\)</span> is a map from <span class="math inline">\(\mathbb{R}^2\)</span> into <span class="math inline">\(\mathbb{R}^3\)</span>. Points in <span class="math inline">\(U\)</span> will be denoted by the pair <span class="math inline">\((u,v)\)</span>, while points on <span class="math inline">\(\mathcal{S}\)</span> by <span class="math inline">\(\mathbf{p}\)</span> and points in <span class="math inline">\(\mathbb{R}^3\)</span> by <span class="math inline">\(\mathbf{x}\)</span>.</p>
+<div id="Definition-2" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 2</strong></summary><div>Let <span class="math inline">\(U \subset \mathbb{R}^2\)</span> be open A surface chart <span class="math display">\[
+{\boldsymbol \sigma}= {\boldsymbol \sigma}(u,v)  \colon U \to \mathbb{R}^3
+\]</span> is called <strong>regular</strong> if the partial derivatives <span class="math display">\[
+{\boldsymbol \sigma}_u(u,v) = \frac{d{\boldsymbol \sigma}}{du}(u,v) \,, \quad
+{\boldsymbol \sigma}_v(u,v) = \frac{d{\boldsymbol \sigma}}{dv}(u,v)
+\]</span> are linearly independent vectors of <span class="math inline">\(\mathbb{R}^3\)</span> for all <span class="math inline">\((u,v) \in U\)</span>.<p></p>
+</div></details>
+</div>
+<div id="Definition-3" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 3</strong></summary><div>Let <span class="math inline">\(U \subset \mathbb{R}^2\)</span> be open. A surface chart <span class="math display">\[
+{\boldsymbol \sigma}\colon U \to \mathbb{R}^3
+\]</span> is called a <strong>conformal parametrization</strong> if the first fundamental form satisfies <span class="math display">\[
+E \, du^2 + F \, du \ dv + G \, dv^2 = \lambda(u,v)  ( du^2 +  dv^2)
+\]</span> for some smooth function <span class="math inline">\(\lambda \colon U \to \mathbb{R}\)</span>.<p></p>
+</div></details>
+</div>
+<div id="Definition-4" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 4</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a surface and <span class="math inline">\({\boldsymbol \sigma}\colon U \to V \cap \mathcal{S}\)</span> a surface chart. The principal unit normal to <span class="math inline">\(\mathcal{S}\)</span> is <span class="math display">\[
+\mathbf{N} = \frac{ {\boldsymbol \sigma}_u \times {\boldsymbol \sigma}_v }{ \left\| {\boldsymbol \sigma}_u \times {\boldsymbol \sigma}_v \right\| } \,.
+\]</span><p></p>
+</div></details>
+</div>
+<p>Denote by <span class="math display">\[
+\mathbb{S}^2 = \{ \mathbf{x}\in \mathbb{R}^3 \, \colon \, \left\| \mathbf{x} \right\| = 1 \}
+\]</span> the unit sphere in <span class="math inline">\(\mathbb{R}^3\)</span>.</p>
+<div id="Definition-5" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 5</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a surface and denote by <span class="math inline">\(\mathbf{N}\)</span> the principal unit normal. The <strong>Gauss map</strong> of <span class="math inline">\(\mathcal{S}\)</span> is the map <span class="math inline">\(G \colon \mathcal{S}\to \mathbb{S}^2\)</span> defined by <span class="math display">\[
+G(\mathbf{p}):= \mathbf{N}(\mathbf{p}) \,.
+\]</span> The <strong>Weingarten map</strong> is the derivative of the Gauss map, denoted by <span class="math inline">\(\mathcal{W}\colon T_{\mathbf{p}}\mathcal{S}\to T_{G(\mathbf{p})} \mathbb{S}^2\)</span>.<p></p>
+</div></details>
+</div>
 
 
 
@@ -637,12 +680,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../sections/chap_4.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Curvature and Torsion</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Topology</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../sections/chap_6.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Topology</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Plots with Python</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

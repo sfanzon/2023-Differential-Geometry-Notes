@@ -47,8 +47,6 @@ book:
     - sections/chap_4.qmd
     - sections/chap_5.qmd
     - sections/chap_6.qmd
-    - sections/chap_7.qmd
-    - sections/chap_8.qmd
     - sections/license.qmd
     - sections/references.qmd
 
@@ -114,6 +112,7 @@ format:
           \usepackage{fvextra}
           \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
           \setlength{\parindent}{0pt}
+          \usepackage{amsmath}
 
   
 

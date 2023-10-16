@@ -1,5 +1,5 @@
 ::: {.content-hidden}
-$$
+$
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\C}{\mathbb{C}}  
@@ -31,13 +31,13 @@ $$
 \newcommand{\scp}[2]{\left\langle #1,#2 \right\rangle} %prodotto scalare
 \newcommand{\abs}[1]{\left| #1 \right|}  %valore assoluto
 \newcommand{\norm}[1]{\left\| #1 \right\|} %norma
-$$
+$
 :::
 
 
 
 
-# Curves {#sec-introduction}
+# Introduction {#sec-introduction}
 
 We all have in mind examples of curves. These are, intuitively speaking, 1D objects in the 2D or 3D space. For example in two dimensions one could think of a straight line, a hyperbole or a circle. These can be all described by an equation in the $x$ and $y$ coordinates: respectively
 $$

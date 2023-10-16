@@ -1,5 +1,5 @@
 ::: {.content-hidden}
-$$
+$
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\C}{\mathbb{C}}  
@@ -21,6 +21,7 @@ $$
 \newcommand{\WW}{\mathcal{W}}
 \newcommand{\sphere}{\mathbb{S}}
 \newcommand{\e}{\varepsilon}
+\newcommand{\eeta}{{\boldsymbol \eta}}
 \newcommand{\g}{{\boldsymbol \gamma}}
 \newcommand{\f}{\phi}
 \newcommand{\tg}{\widetilde{\g}}
@@ -31,549 +32,258 @@ $$
 \newcommand{\scp}[2]{\left\langle #1,#2 \right\rangle} %prodotto scalare
 \newcommand{\abs}[1]{\left| #1 \right|}  %valore assoluto
 \newcommand{\norm}[1]{\left\| #1 \right\|} %norma
-$$
+$
 :::
 
 
 
 
-# Curves in Python  {#sec-plot-curves} 
 
-## Curves in 2D  {#sec-plot-2d-curves}
+# Parametrized curves
 
-Suppose we want to plot the parabola $y=t^2$ for $t$ in the interval $[-3,3]$. In our language, this is the two-dimensional curve
+Let us recall the definition of **parametrized curve**.
+
+
+::: Definition
+### Parametrized curve
+
+A **parametrized curve** in $\R^n$ is a function 
 $$
-\g(t) = ( t, t^2 ) \,, \quad  t \in [-3,3] \,.
+\g \ \colon  (a,b) \to \R^n \,.
 $$
-The two Python libraries we use to plot $\g$ are **numpy** and **matplotlib**. In short, **numpy** handles multi-dimensional arrays and matrices, and can perform high-level mathematical functions on them. For any question you may have about numpy, answers can be found in the searchable documentation available [here](https://numpy.org/doc/stable/index.html). Instead **matplotlib** is a plotting library, with documentation [here](https://matplotlib.org). 
-Python libraries need to be imported every time you want to use them. In our case we will import:
+where
 
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-```
-
-The above imports **numpy** and the module **pyplot** from **matplotlib**, and renames them to `np` and `plt`, respectively. These shorthands are standard in the literature, and they make code much more readable.  
-The function for plotting 2D graphs is called `plot(x,y)` and is contained in `plt`. As the syntax suggests, `plot` takes as arguments two arrays 
 $$
-x=[x_1, \ldots, x_n]\,, \quad  y=[y_1,\ldots,y_n]\,.
+(a,b) = \{ t \in \R \ \colon \ a < t < b \} \,,
 $$
-As output it produces a graph which is the linear interpolation of the points $(x_i,y_i)$ in $\R^2$, that is, consecutive points $(x_i,y_i)$ and $(x_{i+1},y_{i+1})$ are connected by a segment. Using `plot`, we can graph the curve $\g(t)=(t,t^2)$ like so:
-
-
-```{python} 
-#| echo: true
-
-# Code for plotting gamma
-
-import numpy as np
-import matplotlib.pyplot as plt
-
-# Generating array t
-t = np.array([-3,-2,-1,0,1,2,3])
-
-# Computing array f
-f = t**2
-
-# Plotting the curve
-plt.plot(t,f)
-
-# Plotting dots
-plt.plot(t,f,"ko")
-
-# Showing the plot
-plt.show()
-```
-
-Let us comment the above code. The variable `t` is a numpy array containing the ordered values 
-$$ 
-t = [-3,-2,-1,0,1,2,3]\,.
-$$ {#eq-numpy-array-t}
-This array is then squared entry-by-entry via the operation $t\ast\!\ast 2$ and saved in the new numpy array `f`, that is,
+with
 $$
-f = [9,4,1,0,1,4,9] \,.
+- \infty \leq a < b \leq \infty \,.
 $$
-The arrays `t` and `f` are then passed to `plot(t,f)`, which produces the above linear interpolation, with `t` on the *x-axis* and `f` on the *y-axis*. The command `plot(t,f,'ko')` instead plots a black dot at each point $(t_i,f_i)$. The latter is clearly not needed to obtain a plot, and it was only included to highlight the fact that `plot` is actually producing a linear interpolation between points. Finally `plt.show()` displays the figure in the user window[^1].  
-Of course one can refine the plot so that it resembles the continuous curve $\g(t)=(t,t^2)$ that we all have in mind. This is achieved by generating a numpy array `t` with a finer stepsize, invoking the function `np.linspace(a,b,n)`. Such call will return a numpy array which contains `n` evenly spaced points, starts at `a`, and ends in `b`. For example `np.linspace(-3,3,7)` returns our original array `t` at @eq-numpy-array-t, 
-as shown below 
-
-```{python} 
-#| echo: true
-
-# Displaying output of np.linspace
-
-import numpy as np
-
-# Generates array t by dividing interval 
-# (-3,3) in 7 parts
-t = np.linspace(-3,3, 7)
-
-# Prints array t
-print("t =", t)
-```
-
-In order to have a more refined plot of $\g$, we just need to increase $n$.
-
-```{python} 
-#| echo: true
-
-# Plotting gamma with finer step-size
-
-import numpy as np
-import matplotlib.pyplot as plt
-
-# Generates array t by dividing interval 
-# (-3,3) in 100 parts
-t = np.linspace(-3,3, 100)
-
-# Computes f
-f = t**2
-
-# Plotting
-plt.plot(t,f)
-plt.show()
-```
-
-
-
-[^1]: The command `plt.show()` can be omitted if working in [Jupyter Notebook](https://jupyter.org), as it is called by default.
-
-We now want to plot a parametric curve $\g \colon (a,b) \to \R^2$ with
+The **components** of $\g(t) \in \R^n$ are denoted by 
 $$
-\g(t) = (x(t), y(t)) \,.
+\g(t) = ( \gamma_1(t), \ldots, \gamma_n(t) ) \,,
 $$
-Clearly we need to modify the above code. The variable `t` will still be a numpy array produced by `linspace`. We then need to introduce the arrays `x` and `y` which ecode the first and second components of $\g$, respectively.
-
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-
-# Divides time interval (a,b) in n parts
-# and saves output to numpy array t
-t = np.linspace(a, b, n)
-
-# Computes gamma from given functions x(y) and y(t)
-x = x(t)
-y = y(t)
-
-# Plots the curve
-plt.plot(x,y)
-
-# Shows the plot
-plt.show()
-```
-
- 
-
-
-
-We use the above code to plot the 2D curve known as the [Fermat's spiral](https://en.wikipedia.org/wiki/Fermat%27s_spiral)
-$$ 
-\g(t) = ( \sqrt{t}  \cos(t) , \sqrt{t}  \sin(t) ) \quad 
-\text{ for } \quad t \in [0,50] \,.
-$$ {#eq-Fermat-Spiral}
-
-
-```python
-# Plotting Fermat's spiral
-
-import numpy as np
-import matplotlib.pyplot as plt
-
-# Divides time interval (0,50) in 500 parts
-t = np.linspace(0, 50, 500)
-
-# Computes Fermat's Spiral
-x = np.sqrt(t) * np.cos(t)
-y = np.sqrt(t) * np.sin(t)
-
-# Plots the Spiral
-plt.plot(x,y)
-plt.show()
-```
-
-Before displaying the output of the above code, a few comments are in order. The array `t` has size 500, due to the behavior of `linspace`. You can also fact check this information by printing `np.size(t)`, which is the numpy function that returns the size of an array. We then use the numpy function `np.sqrt` to compute the square root of the array `t`. The outcome is still an array with the same size of `t`, that is, 
+where the components are functions
 $$
-t=[t_1,\ldots,t_n]   \quad \implies \quad \sqrt{t} = [\sqrt{t_1}, \ldots, \sqrt{t_n}] \,.
+\gamma_i \ \colon (a,b) \to \R \,, 
 $$
-Similary, the call `np.cos(t)` returns the array
+for all $i = 1, \ldots, n$.
+:::
+
+
+As we already mentioned, the aim of the course is to study curves by **differentiating** them. Let us see what that means for curves.
+
+::: Definition
+### Smooth functions
+
+A scalar function $f \ \colon (a,b) \to \R$ is called **smooth** if the derivative
 $$
-\cos(t) = [\cos(t_1), \ldots, \cos(t_n)] \,.
+\frac{d^n f}{dt^n}
 $$
-The two arrays `np.sqrt(t)` and `np.cos(t)` are then multiplied, term-by-term, and saved in the array `x`. The array `y` is computed similarly. The command `plt.plot(x,y)` then yields the graph of the Fermat's spiral:
+exists for all $n \geq 1$ and $t \in (a,b)$. 
+:::
+
+We will denote the first and second derivatives of $f$ as follows:
+$$
+\dot f :=  \frac{d f}{dt} \,, \quad  \ddot f := \frac{d^2 f}{dt^2} \,.
+$$
+
+
+::: Example
+The function $f(x)=x^4$ is smooth, with
+\begin{align}
+& \frac{d f}{dt}  = 4x^3 ,\,\, \frac{d^2 f}{dt^2}  = 12 x^2 \,, \\
+& \frac{d^3 f}{dt^3}  = 24 x ,\,\, \frac{d^4 f}{dt^4} = 24  \,, \\
+& \frac{d^n f}{dt^n}  = 0  \, \text{ for all } \, n \geq 5  \,.
+\end{align}
+Other examples smooth functions are polynomials, as well as
+$$
+f(t) = \cos(t) , \,\, f(t) = \sin(t) \,, \,\, f(t) = e^t \,.
+$$
+:::
+
+
+::: Definition 
+
+Let $\g \ \colon (a,b) \to \R^n$ with 
+$$
+\g(t) = ( \g_1(t), \ldots, \g_n(t) ) 
+$$
+be a parametrized curve. We say that $\g$ is **smooth** if the components
+$$
+\g_i \ \colon (a,b) \to \R
+$$
+are smooth for all $i=1,\ldots,n$. The derivatives of $\g$ are 
+$$
+\frac{d^k\g}{dt^k}  := \left(  \frac{d^k\gamma_1}{dt^k} , \ldots, \frac{d^k\gamma_n}{dt^k} \right)  
+$$
+for all $k \in \N$. As a shorthand, we will denote the first derivative of $\g$ as 
+$$
+\dot \g := \frac{d\g}{dt} = \left(  \frac{d\gamma_1}{dt} , \ldots, \frac{d\gamma_n}{dt} \right)  
+$$
+and the second by
+$$
+\ddot \g := \frac{d^2\g}{dt^2} = \left(  \frac{d^2\gamma_1}{dt^2} , \ldots, \frac{d^2\gamma_n}{dt^2} \right)   \,.
+$$
+:::
+
+In @fig-smooth-curve we skectch a smooth and a non-smooth curve. Notice that the curve on the right is smooth, except for the point $x$.
+
+
+![Example of smooth and non-smooth curves](/images/smooth_curve.png){#fig-smooth-curve width=70%}
+
+
+We will work under the following assumption.
+
+::: {.Assumption .unnumbered}
+
+All the parametrized curves in this lecture notes are assumed to be **smooth**.
+
+:::
+
+
+::: Example
+
+The circle 
+$$
+\g (t) = (\cos(t),\sin(t))
+$$
+is a smooth parametrized curve, since both $\cos(t)$ and $\sin(t)$ are smooth functions. We have
+$$
+\dot \g = (-\sin(t),\cos(t)) \,.
+$$
+For example the derivative of $\g$ at the point $(0,1)$ is given by
+$$
+\dot \g( \pi/2) = (-\sin(\pi/2),\cos(\pi/2)) = (-1,0) \,.
+$$
+The plot of the circle and the derivative vector at $(-1,0)$ can be seen in @fig-circle-tangent.
+:::
 
 
 
-```{python} 
+
+```{python}
 #| echo: false
-#| fig-cap: "Fermat's spiral" 
-# Plotting gamma with finer step-size
+#| fig-cap: "Plot of Circle and Tangent Vector at $(0,1)$" 
+#| label: fig-circle-tangent
 
 import numpy as np
 import matplotlib.pyplot as plt
 
-t = np.linspace(0, 50, 500)
-x = np.sqrt(t) * np.cos(t)
-y = np.sqrt(t) * np.sin(t)
+# Create values for t ranging from 0 to 2*pi
+t = np.linspace(0, 2 * np.pi, 100)
 
-plt.plot(x,y)
-plt.show()
-```
+# Calculate x and y coordinates for the circle
+x = np.cos(t)
+y = np.sin(t)
 
-The above plots can be styled a bit. For example we can give a title to the plot, label the axes, plot the spiral by means of green dots, and add a plot legend, as coded below:
+# Plot the circle
+plt.figure(figsize=(6, 6))
+plt.plot(x, y, color = 'deeppink',label='Circle')
+plt.axis('equal')  # Equal aspect ratio
+
+# Define the point on the circle where you want to find the tangent
+point_x = 0
+point_y = 1
+
+# Plot the point
+plt.scatter(point_x, point_y, color='black', label='Point (0,1)')
+
+# Calculate the tangent vector at the point (0,1)
+tangent_vector_x = -np.sin(np.pi/2)  # Derivative of cos(t) with respect to t at t=pi/2
+tangent_vector_y = np.cos(np.pi/2)   # Derivative of sin(t) with respect to t at t=pi/2
+
+# Plot the tangent vector at the point (0,1)
+plt.quiver(point_x, point_y, tangent_vector_x, tangent_vector_y,angles='xy', scale_units='xy', scale=1, color='blue', label='Tangent Vector')
 
 
-```{python} 
-#| echo: true
-#| fig-cap: "Adding a bit of style" 
-#| code-overflow: wrap
-
-# Adding some style
-
-import numpy as np
-import matplotlib.pyplot as plt
-
-# Computing Spiral
-t = np.linspace(0, 50, 500)
-x = np.sqrt(t) * np.cos(t)
-y = np.sqrt(t) * np.sin(t)
-
-# Generating figure
-plt.figure(1, figsize = (4,4))
-
-# Plotting the Spiral with some options
-plt.plot(x, y, '--', color = 'deeppink', linewidth = 1.5, label = 'Spiral')
-
-# Adding grid
-plt.grid(True, color = 'lightgray')
-
-# Adding title
-plt.title("Fermat's spiral for t between 0 and 50")
-
-# Adding axes labels
-plt.xlabel("x-axis", fontsize = 15)
-plt.ylabel("y-axis", fontsize = 15)
-
-# Showing plot legend
+# Add labels and legend
+plt.xlabel('x')
+plt.ylabel('y')
 plt.legend()
 
 # Show the plot
+plt.grid(color='lightgray')
 plt.show()
 ```
 
-Let us go over the novel part of the above code:
-
-- `plt.figure()`: This command generates a figure object. If you are planning on plotting just one figure at a time, then this command is optional: a figure object is generated implicitly when calling `plt.plot`. Otherwise, if working with `n` figures, you need to generate a figure object with `plt.figure(i)` for each `i` between `1` and `n`. The number `i` uniquely identifies the i-th figure: whenever you call `plt.figure(i)`, Python knows that the next commands will refer to the i-th figure. In our case we only have one figure, so we have used the identifier `1`. The second argument `figsize = (a,b)` in `plt.figure()` specifies the size of `figure 1` in inches. In this case we generated a figure 4 x 4 inches.
-- `plt.plot`: This is plotting the arrays `x` and `y`, as usual. However we are adding a few aestethic touches: the curve is plotted in *dashed* style with `--`, in *deep pink* color and with a line width of 1.5. Finally this plot is labelled *Spiral*. 
-- `plt.grid`: This enables a grid in *light gray* color.
-- `plt.title`: This gives a title to the figure, displayed on top.
-- `plt.xlabel` and `plt.ylabel`: These assign labels to the axes, with font size 15 points.
-- `plt.legend()`: This plots the legend, with all the labels assigned in the `plt.plot` call. In this case the only label is *Spiral*.
 
 
-::: {.callout-tip title="Matplotlib styles"}
-There are countless plot types and options you can specify in **matplotlib**, see for example the [Matplotlib Gallery](https://matplotlib.org/stable/gallery/index.html). Of course there is no need to  remember every single command: a quick Google search can do wonders.
+
+## Tangent vectors
+
+
+Looking at @fig-circle-tangent, it seems like the vector 
+$$
+\dot \g(\pi/2) = (-1,0)
+$$
+is **tangent** to the circle at the point
+$$
+\g(\pi/2) = (0,1) \,.
+$$
+Is this a coincidence? Not that all. Let us look at the definition of derivative at a point:
+$$
+\dot \g (t) := \lim_{\delta \to 0} \frac{\g(t + \delta) - \g(t)}{\delta} \,.
+$$
+If we just look at the quantity
+$$
+\frac{\g(t + \delta) - \g(t)}{\delta} 
+$$
+for non-negative $\delta$, we see that this vector is parallel to the chord joining $\g(t)$ to $\g(t + \delta)$, as shown in @fig-tangent below. As $\delta \to 0$, the length of the chord tends to zero. However the **direction** of the chord becomes **parallel** to that of the tangent vector of the curve $\g$ at $\g(t)$. Since 
+$$
+\frac{\g(t + \delta) - \g(t)}{\delta}  \to \dot \g(t)
+$$
+as $\delta \to 0$, we see that $\dot \g (t)$ is **parallel** to the tangent of $\g$ at $\g(t)$, as showin in @fig-tangent.
+
+
+![Approximating the tangent vector](/images/tangent.png){#fig-tangent width=70%}
+
+
+
+The above remark motivates the following definition. 
+
+::: Definition
+### Tangent vector {#definition-tangent}
+
+Let $\g \ \colon (a,b) \to \R^n$ be a parametrized curve. The tangent vector to $\g$ at the point $\g(t)$ is defined as 
+$$
+\tau:= \dot \g(t) \,.
+$$
 :::
 
-::: {.callout-note title="Generating arrays"}
-There are several ways of generating evenly spaced arrays in Python. For example the function `np.arange(a,b,s)` returns an array with values within the half-open interval $[a,b)$, with spacing between values given by `s`. For example
-```{python} 
-#| echo: true
 
-import numpy as np
 
-t = np.arange(0,1, 0.2)
-print("t =",t)
-```
+::: Example
+### Tangent vector to helix
+
+The helix is described by the parametric curve 
+$$
+\g \ \colon \R \to \R^3
+$$
+with
+$$
+\g_1(t) = \cos (t)\, ,  \,\,
+\g_2(t) = \sin (t)\, ,  \,\,
+\g_3(t) = t . 
+$$
+This is plotted in @fig-helix-tangent below. The tangent vector at point $\g(t)$ is given by
+$$
+\dot \g (t) = ( -\sin(t), \cos(t) , 1) \,.
+$$
+For example in @fig-helix-tangent we plot the tangent vector at time $t = \pi/2$, that is,
+$$
+\dot\g(\pi/2) = (-1,0,\pi/2) \,. 
+$$
+The above looks very similar to the tangent vector to the circle. Except that there is a $z$ component, and that component is constant and equal to $1$. Intuitively this means that the helix is *lifting* from the plane $xy$ with constant speed with respect to the $z$-axis. We will soon give a name to this concept. 
 :::
 
 
-
-
-## Implicit curves 2D
-
-A curve $\g$ in $\R^2$ can also be defined as the set of points $(x,y) \in \R^2$ satisfying
-$$
-f(x,y)=0 
-$$
-for some given $f \colon \R^2 \to \R$. For example let us plot the curve $\g$ implicitly defined by 
-$$
-f(x,y) =( 3 x^2 - y^2 )^2 \ y^2  -  (x^2 + y^2 )^4 
-$$
-for $-1 \leq x,y \leq 1$. First, we need a way to generate a grid in $\R^2$ so that we can evaluate $f$ on such grid. To illustrate how to do this, let us generate a grid of spacing 1 in the 2D square $[0,4]^2$. The goal is to obtain the 5 x 5 matrix of coordinates
-$$
-A = \left( 
-\begin{matrix}
-(0,0) &  (1,0)  &  (2,0) & (3,0) & (4,0) \\
-(0,1) &  (1,1)  &  (2,1) & (3,1) & (4,1) \\
-(0,2) &  (1,2)  &  (2,2) & (2,3) & (2,4) \\
-(0,3) &  (1,3)  &  (2,3) & (3,3) & (3,4) \\
-(0,4) &  (1,4)  &  (2,4) & (3,4) & (4,4) \\
-\end{matrix}
-\right)    
-$$
-which corresponds to the grid of points
 ```{python}
 #| echo: false
-#| fig-cap: "The 5 x 5 grid corresponding to the matrix A"
-#| label: fig-grid-example
- 
-import numpy as np
-import matplotlib.pyplot as plt
+#| fig-cap: "Plot of Helix with tangent vector" 
+#| label: fig-helix-tangent
 
-x_list = np.linspace(0, 4, 5)
-y_list = np.linspace(0, 4, 5)
-
-X, Y = np.meshgrid(x_list, y_list)
-
-plt.figure(figsize = (4,4))
-plt.plot(X,Y, 'k.')
-```
-
-
-To achieve this, first generate `x` and `y` coordinates using 
-
-```python
-x = np.linspace(0, 4, 5)
-y = np.linspace(0, 4, 5)
-```
-This generates coordinates
-$$
-x = [0, 1, 2, 3, 4] \,, \quad  y = [0, 1, 2, 3, 4] \,.
-$$
-We then need to obtain two matrices $X$ and $Y$: one for the $x$ coordinates in $A$, and one for the $y$ coordinates in $A$. This can be achieved with the code 
-
-```python
-X[0,0] = 0 
-X[0,1] = 1
-X[0,2] = 2
-X[0,3] = 3
-X[0,4] = 4
-X[1,0] = 0
-X[1,1] = 1
-...
-x[4,3] = 3
-x[4,4] = 4
-```
-
-and similarly for $Y$. The output would be the two matrices $X$ and $Y$
-$$
-X = \left( 
-\begin{matrix}
-0 & 1 & 2 & 3 & 4 \\
-0 & 1 & 2 & 3 & 4 \\
-0 & 1 & 2 & 3 & 4 \\
-0 & 1 & 2 & 3 & 4 \\
-\end{matrix}
-\right)   \,, \quad 
-Y = 
-\left( 
-\begin{matrix}
-0 &  0 &  0 & 0 & 0 \\
-1 &  1 &  1 & 1 & 1 \\
-2 &  2 &  2 & 2 & 2 \\
-3 &  3 &  3 & 3 & 3 \\
-4 &  4 &  4 & 4 & 4 \\
-\end{matrix}
-\right)   
-$$
-
-If now we plot $X$ against $Y$ via the command
-
-```python
-plt.plot(X, Y, 'k.')
-```
-we obtain @fig-grid-example. In the above command the style `'k.'` represents black dots. 
-This procedure would be impossible with large vectors. Thankfully there is a function in numpy doing exactly what we need: `np.meshgrid`. 
-
-```{python}
-#| echo: true
- 
-# Demonstrating np.meshgrid
-
-import numpy as np
-
-# Generating x and y coordinates
-xlist = np.linspace(0, 4, 5)
-ylist = np.linspace(0, 4, 5)
-
-# Generating grid X, Y
-X, Y = np.meshgrid(xlist, ylist)
-
-# Printing the matrices X and Y
-# np.array2string is only needed to align outputs
-print('X =', np.array2string(X, prefix='X= '))
-print('\n')  
-print('Y =', np.array2string(Y, prefix='Y= '))
-```
-
-Now that we have our grid, we can evaluate the function $f$ on it. This is simply done with the command
-```python
-Z =((3*(X**2) - Y**2)**2)*(Y**2) - (X**2 + Y**2)**4 
-```
-This will return the matrix $Z$ containing the values $f(x_i,y_i)$ for all $(x_i,y_i)$ in the grid $[X,Y]$. We are now interested in plotting the points in the grid $[X,Y]$ for which $Z$ is zero. This is achieved with the command
-
-```python
-plt.contour(X, Y, Z, [0])
-```
-
-Putting the above observations together, we have the code for plotting the curve $f=0$ for $-1 \leq x,y \leq 1$. 
-
-```{python}
-#| echo: true
-#| fig-cap: "Plot of the curve defined by f=0" 
-
-# Plotting f=0
-
-import numpy as np
-import matplotlib.pyplot as plt
-
-# Generates coordinates and grid
-xlist = np.linspace(-1, 1, 5000)
-ylist = np.linspace(-1, 1, 5000)
-X, Y = np.meshgrid(xlist, ylist)
-
-# Computes f
-Z =((3*(X**2) - Y**2)**2)*(Y**2) - (X**2 + Y**2)**4 
-
-# Creates figure object
-plt.figure(figsize = (4,4))
-
-# Plots level set Z = 0
-plt.contour(X, Y, Z, [0])
-
-# Set axes labels
-plt.xlabel("x-axis", fontsize = 15)
-plt.ylabel("y-axis", fontsize = 15)
-
-# Shows plot
-plt.show()
-```
-
-
-
-
-
-## Curves in 3D
-
-
-Plotting in 3D with matplotlib requires the `mplot3d` toolkit, see [here](https://matplotlib.org/3.5.3/tutorials/toolkits/mplot3d.html) for documentation. Therefore our first lines will always be
-
-```python
-# Packages for 3D plots
-
-import numpy as np
-import matplotlib.pyplot as plt
-from mpl_toolkits import mplot3d
-```
-
-We can now generate empty 3D axes
-
-```{python}
-#| echo: true
-# Generates and plots empty 3D axes
-
-import numpy as np
-import matplotlib.pyplot as plt
-from mpl_toolkits import mplot3d
-
-# Creates figure object
-fig = plt.figure(figsize = (4,4))
-
-# Creates 3D axes object
-ax = plt.axes(projection = '3d')
-
-# Shows the plot
-plt.show()
-```
-
-
-In the above code `fig` is a figure object, while `ax` is an axes object. In practice, the figure object contains the axes objects, and the actual plot information will be contained in axes. If you want multiple plots in the figure container, you should use the command 
-
-```python
-ax = fig.add_subplot(nrows = m, ncols = n, pos = k)
-```
-
-This generates an axes object `ax` in position `k` with respect to a `m x n` grid of plots in the container figure. For example we can create a 3 x 2 grid of empty 3D axes as follows
-
-```{python}
-#| echo: true
-# Generates 3 x 2 empty 3D axes
-
-import numpy as np
-import matplotlib.pyplot as plt
-from mpl_toolkits import mplot3d
-
-# Creates container figure object
-fig = plt.figure(figsize = (6,8))
-
-# Creates 6 empty 3D axes objects
-ax1 = fig.add_subplot(3, 2, 1, projection = '3d')
-ax2 = fig.add_subplot(3, 2, 2, projection = '3d')
-ax3 = fig.add_subplot(3, 2, 3, projection = '3d')
-ax4 = fig.add_subplot(3, 2, 4, projection = '3d')
-ax5 = fig.add_subplot(3, 2, 5, projection = '3d')
-ax6 = fig.add_subplot(3, 2, 6, projection = '3d')
-
-# Shows the plot
-plt.show()
-```
-
-We are now ready to plot a 3D parametric curve $\g \colon (a,b) \to \R^3$ of the form
-$$
-\g(t) = (x(t), y(t), z(t))
-$$
-with the code
-```python
-# Code to plot 3D curve
-
-import numpy as np
-import matplotlib.pyplot as plt
-from mpl_toolkits import mplot3d
-
-# Generates figure and 3D axes
-fig = plt.figure(figsize = (size1,size2))
-ax = plt.axes(projection = '3d')
-
-# Plots grid
-ax.grid(True)
-
-# Divides time interval (a,b)
-# into n parts and saves them in array t
-t = np.linspace(a, b, n)
-
-# Computes the curve gamma on array t
-# for given functions x(t), y(t), z(t)
-x = x(t) 
-y = y(t)
-z = z(t)
-
-# Plots gamma
-ax.plot3D(x, y, z)
-
-# Setting title for plot
-ax.set_title('3D Plot of gamma')
-
-# Setting axes labels
-ax.set_xlabel('x', labelpad = 'p')
-ax.set_ylabel('y', labelpad = 'p')
-ax.set_zlabel('z', labelpad = 'p')
-
-# Shows the plot
-plt.show()
-```
-
-For example we can use the above code to plot the Helix
-$$
-x(t) = \cos(t) \,, \quad 
-y(t) = \sin(t) \,, \quad
-z(t) = t
-$$ {#eq-helix-curve}
-for $t \in [0,6\pi]$.
-
-
-
-```{python}
 # Plotting 3D Helix
 
 import numpy as np
@@ -588,7 +298,7 @@ ax = plt.axes(projection = '3d')
 ax.grid(True)
 
 # Divides time interval (0,6pi) in 100 parts 
-t = np.linspace(0, 6*np.pi, 100)
+t = np.linspace(-2*np.pi, 2*np.pi, 100)
 
 # Computes Helix
 x = np.cos(t) 
@@ -598,307 +308,1987 @@ z = t
 # Plots Helix - We added some styling
 ax.plot3D(x, y, z, color = "deeppink", linewidth = 2)
 
-# Setting title for plot
-ax.set_title('3D Plot of Helix')
 
-# Setting axes labels
-ax.set_xlabel('x', labelpad = 20)
-ax.set_ylabel('y', labelpad = 20)
-ax.set_zlabel('z', labelpad = 20)
+# Point of interest (t = π/2)
+t_interest = np.pi / 2
+x_interest = np.cos(t_interest)
+y_interest = np.sin(t_interest)
+z_interest = t_interest
+
+# Calculate the tangent vector at t = π/2
+tangent_vector = np.array([-np.sin(t_interest), np.cos(t_interest), 1])
+
+# Scale the tangent vector for visualization
+scale_factor = 1
+tangent_vector *= scale_factor
+
+# Create a line representing the tangent vector at t = π/2
+ax.quiver(x_interest, y_interest, z_interest,
+          tangent_vector[0], tangent_vector[1], tangent_vector[2],
+          color='blue', label='Tangent Vector', linewidth=2)
 
 # Shows the plot
 plt.show()
 ```
 
-We can also change the viewing angle for a 3D plot store in `ax`. This is done via
 
-```python
-ax.view_init(elev = e, azim = a)
-```
+::: Remark
+### Avoiding potential ambiguities
 
-which displays the 3D axes with an elevation angle `elev` of `e` degrees and an azimuthal angle `azim` of `a` degrees. In other words, the 3D plot will be rotated by `e` degrees above the xy-plane and by `a` degrees around the z-axis. For example, let us plot the helix with 2 viewing angles. Note that we generate 2 sets of axes with the `add_subplot` command discussed above. 
+Sometimes it will happen that a curve self intersects, meaning that there are two time instants $t_1$ and $t_2$ and a point $p \in \R^n$ such that
+$$
+p = \g(t_1) = \g(t_2)\,.
+$$
+In this case there is ambiguity in talking about the tangent vector at the point $p$: in principle there are two tangent vectors $\dot\g(t_1)$ and  $\dot\g(t_2)$, and it could happen that 
+$$
+ \dot\g(t_1) \neq  \dot\g(t_1)\,.
+$$
+Thus the concept of tangent at $p$ is not well-defined. 
+We need then to be more precise and talk about tangent at a certain **time-step** $t$, rather than at some **point** $p$. We however do not amend Definition \ref{definition-tangent}, but you should keep this potential ambiguity in mind.
+:::
+
+
+::: Example
+### The Lemniscate, a self intersecting curve
+
+For example consider $\g \ \colon [0,2\pi] \to \R^2$ defined as
+$$
+\g_1(t) = \sin (t)\, ,  \,\,
+\g_2(t) = \sin (t) \cos(t) \, .
+$$
+Such curve is called **Lemniscate**, see [Wikipedia page](https://en.wikipedia.org/wiki/Lemniscate), and is plotted in @fig-eight below. The orgin $(0,0)$ is a point of self-intersection, meaning that 
+$$
+\g (0) = \g (\pi) = (0,0) \,.
+$$
+The tangent vector at point $\g(t)$ is given by
+$$
+\dot \g(t) = (\cos(t), \cos^2(t) - \sin^2(t) )
+$$
+and therefore we have two tangents at $(0,0)$, that is,
+$$
+\tau_1 = \dot\g(0) = (1,1) \,, \,\,
+\tau_2 = \dot\g(\pi) = (-1,1) \,.
+$$
+:::
+
+
+
 
 ```{python}
-# Plotting 3D Helix
+#| echo: false
+#| fig-cap: "The Lemniscate curve" 
+#| label: fig-eight
 
 import numpy as np
 import matplotlib.pyplot as plt
-from mpl_toolkits import mplot3d
 
-# Generates figure object
-fig = plt.figure(figsize = (4,4))
+# Create values for t ranging from 0 to 2*pi
+t = np.linspace(0, 2 * np.pi, 100)
 
-# Generates 2 sets of 3D axes
-ax1 = fig.add_subplot(1, 2, 1, projection = '3d')
-ax2 = fig.add_subplot(1, 2, 2, projection = '3d')
+# Calculate x and y coordinates for the circle
+x = np.sin(t)
+y = np.cos(t)*np.sin(t)
 
-# We will not show a grid this time
-ax1.grid(False)
-ax2.grid(False)
+# Plot the circle
+plt.figure(figsize=(6, 6))
+plt.plot(x, y, color = 'deeppink',label='Curve')
+plt.axis('equal')  # Equal aspect ratio
 
-# Divides time interval (0,6pi) in 100 parts 
-t = np.linspace(0, 6*np.pi, 100)
+# Define the point on the circle where you want to find the tangent
+point_x = 0
+point_y = 0
 
-# Computes Helix
-x = np.cos(t) 
-y = np.sin(t)
-z = t
+# Plot the point
+plt.scatter(point_x, point_y, color='black', label='Point (0,0)')
 
-# Plots Helix on both axes
-ax1.plot3D(x, y, z, color = "deeppink", linewidth = 1.5)
-ax2.plot3D(x, y, z, color = "deeppink", linewidth = 1.5)
+# Calculate the tangent vectors at the point (0,0)
+tangent_vector_x_1 = 1
+tangent_vector_y_1 = 1
 
-# Setting title for plots
-ax1.set_title('Helix from above')
-ax2.set_title('Helix from side')
+tangent_vector_x_2 = -1
+tangent_vector_y_2 = 1
 
-# Changing viewing angle of ax1
-# View from above has elev = 90 and azim = 0
-ax1.view_init(elev = 90, azim = 0)
+# Plot the tangent vectors at the point (0,0)
+plt.quiver(point_x, point_y, tangent_vector_x_1, tangent_vector_y_1,angles='xy', scale_units='xy', scale=1, color='blue', label='Tangent Vector for $t=0$')
+plt.quiver(point_x, point_y, tangent_vector_x_2, tangent_vector_y_2,angles='xy', scale_units='xy', scale=1, color='blue', label='Tangent Vector for $t = \pi$')
 
-# Changing viewing angle of ax2
-# View from side has elev = 0 and azim = 0
-ax2.view_init(elev = 0, azim = 0)
 
-# Shows the plot
+# Add labels and legend
+plt.xlabel('x')
+plt.ylabel('y')
+plt.legend(loc='lower right')
+
+# Show the plot
+plt.grid(color='lightgray')
 plt.show()
 ```
 
 
 
-## Interactive plots  {#sec-plot-2d-interactive}
 
-`Matplotlib` produces beautiful static plots; however it lacks built in interactivity. For this reason I would also like to show you how to plot curves with `Plotly`, a very popular Python graphic library which has built in interactivity. Documentation for `Plotly` and lots of examples can be found [here](https://plotly.com/python/).
+## Length of curves
 
 
-### 2D Plots   {#sec-plot-2d-curves-interactive}
-
-Say we want to plot the 2D curve $\g \colon (a,b) \to \R^2$ parametrized by
+For a vector $v \in \R^n$ with components 
 $$
-\g(t) = ( x(t) , y(t) ) \,.
+v=(v_1,\ldots,v_n),
 $$
-The `Plotly` module needed is called `graph_objects`, usually imported as `go`. The function for line plots is called `Scatter`. For documentation and examples see [link](https://plotly.com/python/line-and-scatter/). The code for plotting $\g$ is as follows.
+its **length** is defined by
+$$
+\norm{v}:= \sqrt{\sum_{i=1}^n v_i^2 } \,.
+$$
+The above is just an extension of the Pythagoras theorem to $\R^n$, and the length of $v$ is computed from the origin.
 
-```python
-# Plotting gamma 2D
 
-# Import libraries
-import numpy as np
-import plotly.graph_objects as go
+![Interpretation of $\norm{v}$ in $\R^2$](/images/pythagoras.png){width=70%}
 
-# Compute times grid by dividing (a,b) in 
-# n equal parts
-t = np.linspace(a, b, n)
 
-# Compute the parametric curve gamma
-# for given functions x(t) and y(t)
-x = x(t)
-y = y(t)
+If we have a second vector $u \in \R^n$, then the quantity 
+$$
+\norm{u-v}:= \sqrt{\sum_{i=1}^n (u_i-v_i)^2 } 
+$$
+measures the length of the difference between $u$ and $v$.
 
-# Create empty figure object and saves 
-# it in the variable "fig"
-fig = go.Figure()
 
-# Create the line plot object
-data = go.Scatter(x = x, y = y, mode = 'lines', name = 'gamma')
+![Interpretation of $\norm{u-v}$ in $\R^2$](/images/length_difference.png){width=70%}
 
-# Add "data" plot to the figure "fig"
-fig.add_trace(data)
 
-# Display the figure
-fig.show()
-```
+We would like to define the concept of **length** of a curve. Intuitively, one could proceed by approximation as in the figure below.
 
-Some comments about the functions called above:
+![Approximating the length of $\g$](/images/length_approx.png){width=70%}
 
-- `go.Figure`: generates an empty Plotly figure
-- `go.Scatter`: generates the actual plot. By default a scatter plot is produced. To obtain linear interpolation of the points, set `mode = 'lines'`. You can also label the plot with `name = "string"`
-- `add_trace`: adds a plot to a figure
-- `show`: displays a figure
+In formulae, this means choosing some time instants
+$$
+t_0, \ldots, t_m \in (a,b) \,.
+$$
+The length of the segment connecting $\g(t_{i-1})$ to $\g(t_i)$ is given by 
+$$
+\norm{ \g(t_i) - \g(t_{i-1}) } \,.
+$$
+Thus 
+$$
+L(\g) \approx \sum_{i=1}^m \norm{ \g(t_i) - \g(t_{i-1}) } \,.  
+$$ {#eq-approx-length}
+Intuitively, if we increase the number of points $t_i$, the quantity on the RHS of (@eq-approx-length) should approximate $L(\g)$ better and better. Let us make this precise.
 
-As an example, let us plot the Fermat's Spiral defined at @eq-Fermat-Spiral. Compared to the above code, we also add a bit of styling.
+
+
+::: Definition
+### Partition
+
+Let $(a,b)$ be an interval. A partition $\mathcal{P}$ of $[a,b]$ is a vector of time instants
+$$
+\mathcal{P} = (t_0,\ldots, t_k) \in [a,b]^{m+1}
+$$
+with 
+$$
+t_0 = a < t_1 < \ldots < t_{m-1} < t_m = b \,.
+$$
+If $\mathcal{P}$ is a partition of $[a,b]$, we define its maximum length as
+$$
+\norm{\mathcal{P}} := \max_{1 \leq i \leq m} |t_{i} - t_{i-1}| \,.
+$$
+:::
+
+Note that $\norm{\mathcal{P}}$ measures how fine the partition $\mathcal{P}$ is.
+
+
+
+
+
+::: Definition
+### Length of approximating polygonal curve
+
+Suppose $\g \colon (a,b) \to \R^n$ is a parametrized curve and $\mathcal{P}$ a partition of $[a,b]$. We define the length of the polygonal curve connecting the points
+$$
+\g(t_0)\,, \,\, \g(t_1) \,,  \,\, \ldots, \,\, \g(t_m)
+$$
+as
+$$
+L(\g, \mathcal{P}) := \sum_{i=1}^m \norm{ \g(t_i) - \g(t_{i-1}) } \,.
+$$
+:::
+
+
+If $\norm{\mathcal{P}}$ becomes smaller and smaller, that is, the partition $\mathcal{P}$ is finer and finer, it is reasonable to say that 
+$$
+L(\g, \mathcal{P})
+$$
+is approximating the length of $\g$. We take this as definition of length.
+
+
+::: Definition
+### Rectifiable curve and length
+
+Suppose $\g \colon (a,b) \to \R^n$ is a parametrized curve. We say that $\g$ is **rectifiable** if the limit
+$$
+L(\g) = \lim_{ \norm{P} \to 0}   \ L(\g,\mathcal{P})
+$$
+exists finite. In such case we call $L(\g)$ the **length** of $\g$.
+:::
+
+
+This definition definitely corresponds to our geometrical intuition of length of a curve. 
+
+::: Question
+How do we use such definition in practice to compute the length of a given curve $\g$?
+:::
+
+Thankfully, when $\g$ is smooth, the length $L(\g)$ can be characterized in terms of $\dot\g$. Indeed, when $\delta$ is small, then the quantity 
+$$
+\norm{\g(t + \delta) - \g(t)}
+$$
+is approximating the length of $\g$ between $\g(t)$ and $\g(t + \delta)$. Multiplying and dividing by $\delta$ we obtain
+$$
+\frac{\norm{\g(t + \delta) - \g(t)}}{\delta} \, \delta 
+$$
+which for small $\delta$ is close to 
+$$
+\norm{\dot\g(t)} \,\delta \,.
+$$
+We can now divide the time interval $(a,b)$ in steps $t_0, \ldots, t_m$ with $|t_{i}-t_{i-1}| < \delta$ and obtain 
+\begin{align}
+\norm{\g(t_{i}) - \g(t_{i-1}) } & = \frac{\norm{\g(t_{i}) - \g(t_{i-1})}}{ |t_{i}-t_{i-1}| } |t_{i}-t_{i-1}| \\
+& \approx \norm{ \dot\g(t_i)} \delta 
+\end{align}
+since $\delta$ is small. Therefore
+$$
+L(\g) \approx \sum_{i=1}^m  \norm{\g(t_{i}) - \g(t_{i-1})} 
+\approx \sum_{i=1}^m   \norm{\dot\g(t_i)} \,\delta \,.
+$$
+The RHS is a Riemann sum, therefore 
+$$
+  L(\g) \approx \int_a^b  \norm{\dot\g(t)} \, dt \,.
+$$
+
+The above argument can be made rigorous, as we see in the next theorem.
+
+
+![Approximating $L(\g)$ via $\dot\g$](/images/length_derivative.png){width=70%}
+
+
+
+
+::: Theorem
+### Characterizing the length of $\g$  {#theorem-length}
+
+Assume $\g \ \colon [a,b] \to \R^n$ is a parametrized curve, with $[a,b]$ bounded. Then $\g$ is rectifiable and
+$$
+L(\g) = \int_a^b  \norm{\dot\g(t)} \, dt \,. 
+$$ {#eq-length-formula}
+
+:::
+
+::: Proof
+
+*Step 1. The integral in (@eq-length-formula) is bounded.*  
+Since $\g$ is smooth, in particular $\dot \g$ is continuous. Since $[a,b]$ is bounded, then $\dot \g$ is bounded, that is 
+$$
+\sup_{t \in [a,b]} \norm{\dot \g(t)} \leq C
+$$
+for some constant $C \geq 0$. Therefore 
+$$
+\int_a^b  \norm{\dot\g(t)} \, dt \leq C (b-a) < \infty \,.
+$$
+
+*Step 2. Writing (@eq-length-formula) as limit.*  
+Recalling that 
+$$
+L(\g) = \lim_{\norm{\mathcal{P}} \to 0} \ L(\g,\mathcal{P}) \,,
+$$
+whenever the limit is finite, in order to show (@eq-length-formula)  we then need to prove
+$$
+L(\g,\mathcal{P}) \to \int_a^b  \norm{\dot\g(t)} \, dt
+$$
+as $\norm{\mathcal{P}} \to 0$. Showing the above means proving that: for every $\e > 0$ there exists a $\delta > 0$ such that, if $\mathcal{P}$ is a partition of $[a,b]$ such that $\norm{ \mathcal{P} }<\delta$, then 
+$$
+\left|    \int_a^b  \norm{\dot\g(t)} \, dt -  L(\g , \mathcal{P} )        \right| < \e \,.
+$${#eq-length-formula-1}
+
+
+*Step 3. First estimate in (@eq-length-formula-1).*  
+This first estimate is easy, and only relies on the Fundamental Theorem of Calculus. To be more precise, we will show that each polygonal has shorter length than $\int_{a}^b \norm{   \dot\g (t)} \, dt$. To this end, take an arbitrary partition $\mathcal{P} = (t_0, \ldots, t_m)$ of $[a,b]$. Then for each $i = 1,\ldots,m$ we have
+$$
+\norm{  \g(t_i) - \g (t_{i-1}) } = \norm{  \int_{t_{i-1}}^{t_i}  \dot\g (t)\, dt } \leq   \int_{t_{i-1}}^{t_i}\norm{   \dot\g (t)} \, dt   
+$$
+where we used the Fundamental Theorem of calculus, and usual integral properties. Therefore by definition
+\begin{align}
+L(\g,\mathcal{P} ) & = \sum_{i=1}^m  \norm{  \g(t_i) - \g (t_{i-1}) } \\ 
+& \leq \sum_{i=1}^m  \int_{t_{i-1}}^{t_i} \norm{   \dot\g (t)} \, dt \\
+& = \int_{a}^b \norm{   \dot\g (t)} \, dt \,.
+\end{align}
+We have then shown 
+$$
+L(\g, \mathcal{P}) \leq \int_{a}^b \norm{   \dot\g (t)} \, dt
+$${#eq-length-formula-2}
+for all partitions $\mathcal{P}$.  
+
+
+*Step 4. Second estimate in (@eq-length-formula-1).*  
+The second estimate is more delicate. We need to carefully construct a polygonal so that its length is close to $\int_a^b \norm{ \dot \g} \,dt$. This will be possible by uniform continuity of $\dot\g$. Indeed, note that $\dot \g$ is continuous on the compact set $[a,b]$. Therefore it is uniformly continuous by the Heine-Borel Theorem. Fix $\e>0$. By uniform continuity of $\dot \g$ there exists $\delta >0$ such that
+$$
+|t-s| < \delta \implies \norm{ \dot\g(t)-\dot\g(s) } < \frac{ \e }{b-a} \,.
+$$ {#eq-length-formula-uc}
+for all $t,s \in [a,b]$. Let $\mathcal{P} = (t_0, \ldots, t_m)$ be a partition of $[a,b]$ with $\norm{\mathcal{P}} < \delta$. Recall that 
+$$
+\norm{\mathcal{P}} = \max_{i=1,\ldots ,m} |t_i - t_{i-1}| \,.
+$$
+Therefore the condition  $\norm{\mathcal{P}} < \delta$ implies 
+$$
+|t_i - t_{i-1}| < \delta 
+$$ {#eq-length-formula-3}
+for each $i = 1, \ldots, m$. For all $i = 1, \ldots, m$ and $s \in [t_{i-1},t_i]$ we have
+\begin{align}
+\g(t_i) - \g(t_{i-1}) & = \int_{t_{i-1}}^{ t_i }  \dot\g(t)\, dt \\
+                      & =  \int_{t_{i-1}}^{ t_i } \dot\g(s) +  (\dot\g(t) - \dot\g(s))    \, dt \\
+                      & = ( t_i - t_{i-1} ) \dot\g(s) + \int_{t_{i-1}}^{ t_i }   (\dot\g(t) - \dot\g(s))    \, dt
+\end{align}
+Therefore
+$$
+\norm{ \g(t_i) - \g(t_{i-1}) }  = \norm{ ( t_i - t_{i-1} ) \dot\g(s) + 
+ \int_{t_{i-1}}^{ t_i }   (\dot\g(t) - \dot\g(s))    \, dt }
+$${#eq-length-formula-4}
+We can now use the reverse triangle inequality
+$$
+| \| x\| - \norm{y}| \leq \norm{x-y}\,, 
+$$
+for all $x,y \in \R^n$, which implies
+$$
+ \norm{x+y}  = \norm{x - (-y)} \geq \| x \| - \norm{y}
+$$
+for all $x,y \in \R^n$. Applying the above to (@eq-length-formula-4) we get
+$$
+\norm{ \g(t_i) - \g(t_{i-1}) }  \geq
+ ( t_i - t_{i-1} ) \norm{\dot\g(s)} - 
+\norm{ \int_{t_{i-1}}^{ t_i }   (\dot\g(t) - \dot\g(s))    \, dt }
+$${#eq-length-formula-5}
+By standard properties of integral we also have
+$$
+\norm{ \int_{t_{i-1}}^{ t_i }   (\dot\g(t) - \dot\g(s))    \, dt }
+\leq 
+\int_{t_{i-1}}^{ t_i }   \norm{\dot\g(t) - \dot\g(s)}    \, dt\,,
+$$
+so that (@eq-length-formula-5) implies
+$$
+\norm{ \g(t_i) - \g(t_{i-1}) } \geq ( t_i - t_{i-1} ) \norm{\dot\g(s)}   - \int_{t_{i-1}}^{ t_i }   \norm{\dot\g(t) - \dot\g(s)}    \, dt\,.
+$${#eq-length-formula-6}
+Since $t,s \in [t_{i-1},t_i]$, then 
+$$
+|t-s| \leq | t_{i} - t_{i-1} |   <  \delta
+$$ 
+where the last inequality follows by (@eq-length-formula-3). Thus by uniform continuity (@eq-length-formula-uc) we get
+$$
+\norm{ \dot\g(t) - \dot\g(s) } < \frac{\e}{b-a} \,.
+$$
+We can therefore further estimate (@eq-length-formula-6) and obtain
+\begin{align}
+\norm{ \g(t_i) - \g(t_{i-1}) } & \geq ( t_i - t_{i-1} ) \norm{\dot\g(s)}   - \int_{t_{i-1}}^{ t_i }   \norm{\dot\g(t) - \dot\g(s)}    \, dt \\
+& \geq  ( t_i - t_{i-1} ) \norm{\dot\g(s)} -  ( t_i - t_{i-1} ) \frac{\e}{b-a}    \, dt \,.
+\end{align}
+Dividing the above by $t_i - t_{i-1}$ we get
+$$
+\frac{ \norm{ \g(t_i) - \g(t_{i-1}) } }{ t_i - t_{i-1}  } \geq
+ \norm{\dot\g(s)} - \frac{\e}{b-a}  \,.
+$$
+Integrating the above over $s$ in the interval $[t_{i-1}, t_i ]$ we get
+$$
+\norm{ \g(t_i) - \g(t_{i-1}) }  \geq \int_{t_{i-1}}^{ t_i } \norm{\dot\g(s)} \, ds  - \frac{\e}{b-a} (t_i - t_{i-1}) \,.
+$$
+Summing over $i=1,\ldots,m$ we get
+$$
+L(\mathcal{P},\g) \geq \int_{a}^b \norm{\dot\g(s)} \, ds - \e
+$$ {#eq-length-formula-7}
+since
+$$
+\sum_{i=1}^m (t_i - t_{i-1}) = t_m - t_0 = b - a \,. 
+$$
+
+*Conclusion.*    
+Putting together (@eq-length-formula-2) and (@eq-length-formula-7) we get 
+$$
+\int_{a}^b \norm{\dot\g(s)} \, ds - \e   \leq L(\mathcal{P},\g) 
+\leq  \int_{a}^b \norm{\dot\g(s)} \, ds
+$$
+which implies (@eq-length-formula-1), concluding the proof.
+:::
+
+
+Thanks to the above theorem we have now a way to compute $L(\g)$. 
+Let us check that we have given a meaningful definition of length by computing $L(\g)$ on known examples.
+
+
+
+::: Example
+### Length of Circle
+
+The circle of radius $R$ is parametrized by $\g \ \colon [0,2\pi] \to \R^2$ defined by 
+$$
+\g(t) = (R\cos(t), R\sin(t)) \,.
+$$
+Then 
+$$
+\dot \g(t) = (-R\sin(t), R\cos(t))
+$$
+and 
+\begin{align}
+\norm{\dot\g(t)} & = \sqrt{ \dot \g_1^2(t) +   \dot \g_2^2(t)      } \\
+                & = R \sqrt{ \sin^2(t) + \cos^2 (t)} = R\,.
+\end{align}
+Therefore 
+$$
+L(\g) = \int_{0}^{2\pi}  \norm{  \dot\g(t)} \, dt = \int_0^{2\pi} R \, dt = 2 \pi R
+$$
+as expected.
+:::
+
+
+
+
+::: Example
+### Length of helix
+
+Let us consider one full turn of the Helix of radius $R$ and rise $H$. This is parametrized by 
+$$
+\g(t) = (R\cos(t), R\sin(t) ,Ht)
+$$
+for $t \in [0,2\pi]$. Then 
+$$
+\dot \g(t) = (-R\sin(t), R\cos(t) , H) \,,
+$$
+and 
+\begin{align}
+\norm{ \dot \g(t)  } & = \sqrt{  \dot\g_1^2 + \dot\g_2^2 + \dot\g_3^2 } \\
+                    & = \sqrt{ R^2\sin^2(t) + R^2\cos^2(t) + H^2 } = \sqrt{R^2 + H^2} \,.
+\end{align}
+Therefore 
+$$
+L(\g) = \int_0^{2\pi} \norm{ \dot\g(t) } \, dt = 2 \pi \sqrt{R^2 + H^2} \,. 
+$$
+:::
+
+
+
+
+
+## Arc-length
+
+We have just shown in Theorem \ref{theorem-length} that the length of a regular curve $\g \ \colon [a,b] \to \R^n$ with $[a,b]$ bounded is given by
+$$
+L(\g) = \int_a^b \norm{ \dot\g (t)} \,dt \,.
+$$
+Using this formula, we introduce the notion of length of a portion of $\g$.
+
+
+
+
+::: Definition
+### Arc-length
+
+Let $\g \, \colon (a,b) \to \R^n$ be a curve, with $(a,b)$ possibly unbounded. We define the **arc-length** of $\g$ starting at the point $\g(t_0)$ as the function $s \colon \R \to \R$ defined by
+$$
+s(t) := \int_{t_0}^t  \norm{  \dot\g(\tau) }\, d\tau \,.
+$$
+
+:::
+
+
+![Arc-length of $\g$ starting at $\g(t_0)$](/images/arc_length.png){width=70%}
+
+
+::: Remark
+
+A few remarks:
+
+- Arc-length is well-defined 
+
+     >Indeed, $\g$ is smooth, and so $\dot \g$ is continuous. WLOG assume $t \geq t_0$. Then
+     $$
+     s(t) = \int_{t_0}^t  \norm{  \dot\g(\tau) }\, d\tau \leq (t-t_0) \max_{ \tau \in [t_0,t] } \norm{\dot\g(\tau)} < \infty \,.
+     $$
+
+- We always have
+$$
+s(t_0)=0\,.
+$$
+
+- We have
+$$
+t > t_0   \implies  s(t) \geq 0 
+$$
+and 
+$$
+t < t_0   \implies  s(t) \leq 0 \,.
+$$
+
+- Choosing a different starting point changes the arc-length by a **constant**: 
+
+     >For example define $\tilde{s}$ as the arc-length starting from $\tilde{t}_0$
+     $$
+     \tilde{s}(t) := \int_{\tilde{t}_0}^t \norm{ \dot\g(\tau) } \, d\tau  \,.
+     $$
+     Then by the properties of integral
+     \begin{align}
+     s(t) & = \int_{t_0}^t \norm{ \dot\g(\tau) } \, d\tau \\
+      & = \int_{t_0}^{\tilde{t}_0} \norm{ \dot\g(\tau) } \, d\tau +
+         \int_{\tilde{t}_0}^{t} \norm{ \dot\g(\tau) } \, d\tau \\
+      & = \int_{t_0}^{\tilde{t}_0} \norm{ \dot\g(\tau) } \, d\tau + \tilde{s}(t) \,.
+     \end{align}
+     Hence 
+     $$
+     s = c + \tilde{s} 
+     $$
+     with 
+     $$
+     c := \int_{t_0}^{\tilde{t}_0} \norm{ \dot\g(\tau) } \, d\tau \,.
+     $$
+     Note that $c$ is the arc-length of $\g$ between the starting points $\g(t_0)$ and $\g(\tilde{t}_0)$.
+
+- The arc-length is a differentiable function, with
+$$
+\dot s(t) = \frac{d}{dt} \int_{t_0}^t \norm{\dot\g (\tau)} \, d\tau =
+ \norm{\dot\g (t)} \,.
+$$
+     
+     >Since $\dot\g$ is continuous, the above follows by the Fundamental Theorem of Calculus.
+
+:::
+
+
+
+::: Example
+### Circle
+
+The circle of radius $R$ is parametrized by $\g \ \colon [0,2\pi] \to \R^2$ defined by 
+$$
+\g(t) = (R\cos(t), R\sin(t)) \,.
+$$
+Then 
+$$
+\dot \g(t) = (-R\sin(t), R\cos(t)) \,, \quad \norm{\dot\g(t)} = R \,.
+$$
+Therefore, for any fixed $t_0 \in [0,2\pi]$ we have
+$$
+s(t) = \int_{t_0}^{t}  \norm{  \dot\g(\tau)} \, d\tau = \int_{t_0}^{t} R \, d\tau = (t - t_0)  R \,.
+$$
+In particular we see that $\dot s = R$ is constant.
+:::
+
+
+::: Example
+### Logarithmic spiral
+
+The Logarithmic spiral is defined by $\g \ \colon [0,2\pi] \to \R^2$ with
+$$
+\g(t) = (e^{kt} \cos(t), e^{kt} \sin(t)) \,,
+$$
+where $k \in \R$, $k \neq 0$, is called the **growth factor**.
+Then 
+$$
+\dot \g_1(t) = e^{kt} ( k \cos(t) - \sin(t) )
+$$
+$$ 
+\dot \g_2(t) = e^{kt} ( k \sin(t) + \cos(t) ) 
+$$
+and so, after some calculations,
+$$
+\norm{\dot\g(t)}^2   =  \dot\g_1^2 + \dot\g_2^2 = (k^2 + 1) e^{2kt} \,.
+$$
+The arc-length starting from $t_0$ is
+\begin{align}
+s(t) & = \int_{t_0}^t \norm{\dot\g(\tau)} \, d \tau \\
+     & = \sqrt{k^2 + 1} \int_{t_0}^t e^{k \tau} \, d \tau  \\
+     & = \frac{\sqrt{k^2 + 1}}{k} ( e^{kt} - e^{k t_0} ) \,.
+\end{align}
+:::
+
 
 ```{python}
-# Plotting Fermat's Spiral
+#| echo: false
+#| fig-cap: "Plot of Logarithmic Spiral with $k=0.1$" 
+#| label: fig-log-spiral
 
-# Import libraries
 import numpy as np
-import plotly.graph_objects as go
+import matplotlib.pyplot as plt
 
-# Compute times grid by dividing (0,50) in 
-# 500 equal parts
-t = np.linspace(0, 50, 500)
+# Create values for t
+t = np.linspace(0, 10*np.pi, 1000)
 
-# Computes Fermat's Spiral
-x = np.sqrt(t) * np.cos(t)
-y = np.sqrt(t) * np.sin(t)
+# Calculate x and y coordinates of the curve
 
-# Create empty figure object and saves 
-# it in the variable "fig"
-fig = go.Figure()
+# Define the parameters for the logarithmic spiral
+k = 0.1  # Growth factor
 
-# Create the line plot object
-data = go.Scatter(x = x, y = y, mode = 'lines', name = 'gamma')
+x = np.exp(k * t) * np.cos(t)
+y = np.exp(k * t) * np.sin(t)
 
-# Add "data" plot to the figure "fig"
-fig.add_trace(data)
 
-# Here we start with the styling options
-# First we set a figure title
-fig.update_layout(title_text = "Plotting Fermat's Spiral with Plotly")
+# Plot the curve
+plt.figure(figsize=(6, 6))
+plt.plot(x, y, color = 'deeppink',label='Log Spiral')
+plt.axis('equal')  # Equal aspect ratio
 
-# Adjust figure size
-fig.update_layout(autosize = False, width = 600, height = 600)
 
-# Change background canvas color
-fig.update_layout(paper_bgcolor = "snow")
+# Add labels and legend
+plt.xlabel('x')
+plt.ylabel('y')
+plt.legend()
 
-# Axes styling: adding title and ticks positions 
-fig.update_layout(
-xaxis=dict(
-        title_text="X-axis Title",
-        titlefont=dict(size=20),
-        tickvals=[-6,-4,-2,0,2,4,6],
-        ), 
-
-yaxis=dict(
-        title_text="Y-axis Title",
-        titlefont=dict(size=20),
-        tickvals=[-6,-4,-2,0,2,4,6],
-        )
-)
-
-# Display the figure
-fig.show()
+# Show the plot
+plt.grid(color='lightgray')
+plt.show()
 ```
+
+
+
+## Scalar product in $\R^n$
+
+Let us start by defining the scalar product in $\R^2$. 
+
+::: Definition
+### Scalar product in $\R^2$
+
+Let $u, v \in \R^2$ and denote by $\theta \in [0,\pi]$ the angle formed by $u$ and $v$. The *scalar product* between $u$ and $v$ is defined by 
+$$
+u \cdot v := |u| |v| \cos(\theta) \,. 
+$$
+
+:::
+
+
+![Vectors $u$ and $v$ in $\R^2$ forming angle $\theta$](/images/scalar_product.png){width=60%}
+
+
+::: Remark 
+
+The scalar product is maximized for $\theta = 0$, for which we have
+$$
+u \cdot v = |u| |v| \cos(\theta) =  |u| |v| \,.
+$$
+It is instead minimized for $\theta = \pi$, for which 
+$$
+u \cdot v = |u| |v| \cos(\theta) =  -|u| |v| \,.
+$$
+:::
+
+
+
+::: Definition 
+### Orthogonal vectors
+
+Let $u, v \in \R^2$. If 
+$$
+u \cdot v = 0
+$$
+we say that $u$ and $v$ are **orthogonal**.
+:::
+
+
+
+
+::: Proposition
+### Bilinearity and symmetry of scalar product
+
+Let $u, v, w \in \R^2$ and $\lambda \in \R$. Then
+
+- **Symmetry**: $u \cdot v = v \cdot u$
+- **Bilinearity**: It holds
+$$
+\lambda (u \cdot v) = (\lambda u) \cdot v = u \cdot (\lambda v) \,,
+$$
+$$
+u \cdot (v + w) = u \cdot v  + u \cdot w \,.
+$$
+
+:::
+
+
+We leave the proof to the reader. The above proposition is saying that the scalar product is **bilinear** and **symmetric**.
+
+
+::: Proposition
+### Scalar products written wrt euclidean coordinates
+
+Denote by 
+$$
+e_1 = (1,0) \,, \quad e_2 = (0,1)
+$$
+the euclidean basis of $\R^2$. Let $u,v \in \R^2$ and denote by 
+$$
+u = (u_1,u_2) = u_1 e_1 + u_2 e_2 
+$$
+$$
+v = (v_1,v_2) = v_1 e_1 + v_2 e_2 
+$$
+their coordinates with respect to $e_1,e_2$. Then
+$$
+u \cdot v = u_1v_2 + u_2 v_2 \,.
+$$
+:::
+
+
+::: Proof
+
+Note that 
+$$
+e_1 \cdot e_1 = 1 \,, \quad e_2 \cdot e_2 = 1 \,, \quad 
+e_1 \cdot e_2 = e_2 \cdot e_1 = 0 \,.
+$$
+Using the bilinearity of scalar product we have
+\begin{align}
+u \cdot v & = (u_1 e_1 + u_2 e_2) \cdot (v_1 e_1 + v_2 e_2) \\
+          & = u_1 v_1 e_1 \cdot e_1 +  u_1 v_2 e_1 \cdot e_2 +
+              u_2 v_1 e_2 \cdot e_1 + u_2 v_2  e_2 \cdot e_2 \\
+          & = u_1 v_1  + u_2 v_2 \,.
+\end{align}
+:::
+
+
+
+
+The above proposition provides a way to generalize of the scalar product to $\R^n$..
+
+::: Definition
+### Scalar product in $\R^n$
+
+Let $u,v \in \R^n$ and denote their coordinates by
+$$
+u = (u_1, \ldots, u_n) \,, \quad
+u = (v_1, \ldots, v_n) \,. 
+$$
+We define the scalar product between $u$ and $v$ by
+$$
+u \cdot v := \sum_{i=1}^n u_i v_i \,.
+$$
+
+
+:::
+
+
+With the above definition we still have that the scalar product is bilinear and symmetric, as detailed in the following proposition:
+
+::: Proposition
+### Bilinearity and symmetry of scalar product in $\R^n$
+
+Let $u, v, w \in \R^n$ and $\lambda \in \R$. Then
+
+- **Symmetry**: $u \cdot v = v \cdot u$
+- **Bilinearity**: It holds
+$$
+\lambda (u \cdot v) = (\lambda u) \cdot v = u \cdot (\lambda v) \,,
+$$
+$$
+u \cdot (v + w) = u \cdot v  + u \cdot w \,.
+$$
+
+:::
+
+
+The proof of the above proposition is an easy check, and is left to the reader for exercise.
+
+
+::: Definition
+
+Let $u,v \in \R^n$. We say that $u$ and $v$ are **orthogonal** if 
+$$
+u \cdot v = 0 \,.
+$$
+
+:::
+
+
+
+::: Proposition
+### Differentiating scalar product  {#proposition-diff-scalar}
+
+
+Let $\g , \eeta \ \colon (a,b) \to \R^n$ be parametrized curves. Then the scalar map 
+$$
+\g \cdot \eeta \ \colon (a,b) \to \R
+$$
+is smooth, and
+$$
+\frac{d}{dt} (\g \cdot \eeta)  = \dot\g \cdot \eeta + \g \cdot \dot \eeta 
+$$
+for all $t \in (a,b)$.
+
+:::
+
+
+::: Proof
+
+Denote by 
+$$
+\g = (\g_1 ,\ldots , \g_n) \,, \quad \eeta = (\eta_1, \ldots , \eta_n)
+$$
+the coordinates of $\g$ and $\eeta$. Clearly the map
+$$
+t \mapsto \g \cdot \eeta = \sum_{i=1}^n \g_i \eta_i
+$$
+is smooth, being sum and product of smooth functions.  
+Concerning the formula, by definition of scalar product and linearity of the derivative we have
+\begin{align}
+\frac{d}{dt} (\g \cdot \eeta) & = \frac{d}{dt} \left( \sum_{i=1}^n \g_i \eta_i \right) \\
+& = \sum_{i=1}^n \frac{d}{dt} ( \g_i \eta_i ) \\
+& = \sum_{i=1}^n  \dot\g_i \eta_i + \g_i \dot\eta_i \\
+& = \dot\g \cdot \eeta + \g \cdot \dot\eeta \,,
+\end{align}
+where in the second to last equality we used the product rule of differentiation.
+:::
+
+
+
+
+
+
+
+
+## Speed of a curve
+
+Given a curve $\g$ we defined the **tangent** vector at $\g(t)$ to be
+$$
+\dot \g (t) \,.
+$$
+The tangent vector measures the change of direction of the curve. Therefore the magnitude of $\dot \g$ can be interpreted as the **speed** of the curve.
+
+::: Definition
+
+Let $\g \ \colon (a,b) \to \R^n$ be a curve. We define the speed of $\g$ at the point $\g(t)$ by
+$$
+\norm{\dot \g (t)} \,.
+$$
+We say that $\g$ is a **unit-speed** curve if
+$$
+\norm{\dot \g (t)}  = 1 \,, \quad \forall \, t \in (a,b) \,.
+$$
+
+:::
+
+
+::: Remark
+
+The derivative of the arc-length $s$ gives the speed of $\g$: 
+$$
+s(t) := \int_{t_0}^t \norm{  \dot\g (\tau) } \, d\tau  \,\, \implies \,\,
+\dot s(t) = \norm{  \dot\g (t) } \,.
+$$
+
+:::
+
+
+
+The reason why we introduce unit speed curves is because they make calculations easy. This is essentially because of the next proposition.
+
+
+::: { .Proposition #proposition-speed-identity} 
+
+Let $\g \ \colon (a,b) \to \R^n$ be a unit speed curve. Then
+$$
+\dot \g \cdot \ddot \g = 0 
+$$
+for all $t \in (a,b)$.
+:::
+
+
+::: Proof
+Let us consider the identity
+$$
+\dot \g(t) \cdot \dot \g(t) = \sum_{i=1}^n \dot\g_i^2(t) = \norm{\dot\g(t)}^2 \,.
+$$ {#eq-speed-identity}
+Since $\g$ is unit speed we have
+$$
+\norm{\dot\g(t)}^2 = 1 \quad \forall \, t \in (a,b) \,.
+$$
+and therefore
+$$
+\frac{d}{dt} \left( \norm{\dot\g(t)}^2 \right) = 0  \quad \forall \, t \in (a,b) \,. 
+$$ {#eq-speed-identity-1}
+We can differentiate the LHS of (@eq-speed-identity) to get
+$$
+\frac{d}{dt} (\dot \g \cdot \dot \g) = \ddot \g \cdot \dot \g
++  \dot \g \cdot \ddot \g = 2 \dot \g \cdot \ddot \g\,.
+$${#eq-speed-identity-2}
+where we used Proposition \ref{proposition-diff-scalar} and symmetry of the scalar product. Differentiating (@eq-speed-identity) and using (@eq-speed-identity-1)-(@eq-speed-identity-2)  we conclude
+$$
+2 \dot \g \cdot \ddot \g = 0 \quad \forall \, t \in (a,b) \,.
+$$
+:::
+
+
+
+
+::: Remark
+
+Proposition \ref{proposition-speed-identity} is saying that if $\g$ is unit speed, then its tangent vector $\dot \g$ is always orthogonal to the second derivative $\ddot \g$. This will be very useful in the future.
+
+:::
+
+
+
+
+![If $\g$ is unit speed then $\dot \g$ and $\ddot \g$ are orthogonal](/images/tangent_orthogonal.png){width=60%}
+
+
+
+
+## Reparametrization
+
+As we have observed in the Examples of @sec-introduction, there is in general no unique way to parametrize a curve. However we would like to understand when two parametrizations are related. In other words, we want to clarify the concept of **equivalence** of two parametrizations. 
+
+
+
+::: Definition
+### Diffeomorphism
+
+Let $\f \ \colon (a,b) \to (\tilde{a},\tilde{b})$. We say that $\f$ is a **diffeomorphism** if the following conditions are satisfied:
+
+1. $\f$ is invertible, with inverse $\f^{-1} \ \colon (\tilde{a},\tilde{b}) \to (a,b)$. Thus
+$$
+\f^{-1} \circ \f =   \f \circ \f^{-1} = \id \,,
+$$
+where $\id \colon \R \to \R$ is the identity map on $\R$, that is, 
+$$
+\id(t) = t \,, \quad \forall \, t \in \R \,.
+$$
+2. $\f$ is smooth,
+2.  $\f^{-1}$ is smooth.
+
+::: 
+
+
+
+::: Definition
+### Reparametrization
+
+Let $\g \ \colon (a,b) \to \R^n$ be a parametrized curve. A **reparametrization** of $\g$ is another parametrized curve $\tilde{\g} \ \colon (\tilde{a},\tilde{b}) \to \R^n$ such that
+$$
+\tg (t) = \g (\f(t)) \quad \forall \, t \in (\tilde{a},\tilde{b})\,, 
+$$ {#eq-reparametrization}
+where 
+$$
+\f \colon (\tilde{a},\tilde{b}) \to (a,b)
+$$
+is a diffeomerphism. We call both $\f$ and $\f^{-1}$  **reparametrization maps**.
+:::
+
+::: Remark
+A comment about the above definition.
+Given a parametrized curve $\g$, this identifies a 1D shape $\Gamma \subset \R^n$. A reparametrization $\tg$ is just an equivalent way to describe $\Gamma$. For $\g$ and $\tg$ to be reparametrizations of each other, there must exist a smooth rule $\f$ to switch from one to another, according to formula (@eq-reparametrization) 
+:::
+
+
+
+![Sketch of 1D shaper \Gamma parametrized by $\g$ and $\tg$](/images/reparametrization.png){width=70%}
+
+
+
+::: Example
+### Change of orientation
+
+The map $\f \colon (\tilde{a},\tilde{b}) \to (a,b)$ defined by 
+$$
+\f (t) := - t 
+$$
+is a diffeomoprhism. The inverse of $\f$ is given by ${\f}^{-1} \colon (a,b) \to (\tilde{a},\tilde{b})$ defined by
+$$
+{\f}^{-1} (t) = - t \,.
+$$
+Note that $\f$ can be used to **reverse the orientation** of a curve.
+:::
+
+
+::: Example
+### Reversing orientation of circle
+
+Consider the unit circle parametrized as usual by $\g \ \colon [0,2\pi] \to \R^2$ defined as
+$$
+\g (t) := (\cos (t), \sin(t)) \,.
+$$
+To reverse the orientation we can reparametrize $\g$ by using the diffeomorphism
+$$
+\f(t):= - t \,.
+$$
+This way we obtain $\tilde{\g}:= \g \circ \f \ \colon [0,2\pi] \to [0, 2\pi]$, 
+\begin{align}
+\tilde{\g}(t) & = \g (\f(t)) \\
+              & = (\cos(-t),\sin(-t)) \\
+              & = (\cos(t),-\sin(t)) \,,
+\end{align}
+where in the last identity we used the properties of $\cos$ and $\sin$. Notice that in this way, for example,
+$$
+\g(\pi/2) = (0,1) \,, \quad \g(\pi/2) = (0,-1) \,. 
+$$
+:::
+
 
 
 
 ::: {.content-visible when-format="html"}
-As you can examine by moving the mouse pointer, the above plot is interactive. Note that the style customizations could be listed in a single call of the function `update_layout`. There are also pretty buit-in themes available, see [here](https://plotly.com/python/templates/). The layout can be specified with the command
-```python
-fig.update_layout(template = template_name)
-```
-where `template_name` can be `"plotly"`, `"plotly_white"`, `"plotly_dark"`, `"ggplot2"`, `"seaborn"`, `"simple_white`".
-:::
 
+![Unit circle with usual parametrization $\g$, and with reversed orientation $\tg$](/images/circle_orientation.gif){width=90%}
+
+:::
 
 
 ::: {.content-visible when-format="pdf"}
-The above code generates an image that cannot be rendered in pdf. To see the output, please click [here](https://www.silviofanzon.com/2023-Differential-Geometry-Notes/sections/appendix_1.html#sec-plot-2d-curves-interactive) for the digital version of these notes. Note that the style customizations could be listed in a single call of the function `update_layout`. There are also pretty buit-in themes available, see [here](https://plotly.com/python/templates/). The layout can be specified with the command
-```python
-fig.update_layout(template = template_name)
-```
-where `template_name` can be `"plotly"`, `"plotly_white"`, `"plotly_dark"`, `"ggplot2"`, `"seaborn"`, `"simple_white`".
+
+![Unit circle with usual parametrization $\g$, and with reversed orientation $\tg$](/images/circle_orientation.png){width=60%}
+
 :::
 
 
 
 
+::: Example
+### Change of speed
 
-### 3D Plots   {#sec-plot-3d-curves-interactive}
-
-We now want to plot a 3D curve $\g \colon (a,b) \to \R^3$ parametrized by
+Let $k > 0$. The map $\f \colon (\tilde{a},\tilde{b}) \to (a,b)$ defined by 
 $$
-\g(t) = ( x(t) , y(t) , z(t)) \,.
+\f (t) := kt 
 $$
-Again we use the `Plotly` module `graph_objects`, imported as `go`. The function for 3D line plots is called `Scatter3d`, and documentation and examples can be found at [link](https://plotly.com/python/3d-scatter-plots/). The code for plotting $\g$ is as follows.
+is a diffeomoprhism.  The inverse of $\f$ is given by ${\f}^{-1} \colon (a,b) \to (\tilde{a},\tilde{b})$ defined by
+$$
+{\f}^{-1} (t) = \frac{t}{k} \,.
+$$
+Note that $\f$ can be used to **change the speed** of a curve:
+
+- If $k > 1$ the speed increases ,
+- If $0 < k < 1$ the speed decreases. 
+:::
 
 
-```python
-# Plotting gamma 3D
-
-# Import libraries
-import numpy as np
-import plotly.graph_objects as go
-
-# Compute times grid by dividing (a,b) in 
-# n equal parts
-t = np.linspace(a, b, n)
-
-# Compute the parametric curve gamma
-# for given functions x(t), y(t), z(t)
-x = x(t)
-y = y(t)
-z = z(t)
-
-# Create empty figure object and saves 
-# it in the variable "fig"
-fig = go.Figure()
-
-# Create the line plot object
-data = go.Scatter3d(x = x, y = y, z = z, mode = 'lines', name = 'gamma')
-
-# Add "data" plot to the figure "fig"
-fig.add_trace(data)
-
-# Display the figure
-fig.show()
-```
-
-The functions `go.Figure`, `add_trace` and `show` appearing above are described in the previous Section. The new addition is `go.Scatter3d`, which generates a 3D scatter plot of the points stored in the array `[x,y,z]`. Setting  `mode = 'lines'` results in a linear interpolation of such points. As before, the curve can be labeled by setting `name = "string"`. 
-
-As an example, we plot the 3D Helix defined at @eq-helix-curve. We also add some styling. We can also use the same pre-defined templates descirbed for `go.Scatter` in the previous section, see [here](https://plotly.com/python/templates/) for official documentation.
-
-```{python}
-# Plotting 3D Helix
-
-# Import libraries
-import numpy as np
-import plotly.graph_objects as go
-
-# Divides time interval (0,6pi) in 100 parts 
-t = np.linspace(0, 6*np.pi, 100)
-
-# Computes Helix
-x = np.cos(t) 
-y = np.sin(t)
-z = t
-
-# Create empty figure object and saves 
-# it in the variable "fig"
-fig = go.Figure()
-
-# Create the line plot object
-# We add options for the line width and color
-data = go.Scatter3d(
-    x = x, y = y, z = z, 
-    mode = 'lines', name = 'gamma', 
-    line = dict(width = 10, color = "darkblue")
-    )
-
-# Add "data" plot to the figure "fig"
-fig.add_trace(data)
-
-# Here we start with the styling options
-# First we set a figure title
-fig.update_layout(title_text = "Plotting 3D Helix with Plotly")
-
-# Adjust figure size
-fig.update_layout(
-    autosize = False, 
-    width = 600, 
-    height = 600
-    )
-
-# Set pre-defined template
-fig.update_layout(template = "seaborn")
-
-# Options for curve line style
 
 
-# Display the figure
-fig.show()
-```
+::: Example
+### Doubling the speed of Lemniscate
+
+Recall the Lemniscate
+$$
+\g (t): = (\sin(t), \sin(t)\cos(t) ) \,, \quad t \in [0,2\pi] \,.
+$$
+We can double the speed of the Lemniscate by using the Using the diffeomorphism 
+$$
+\f(t):=2t \,.
+$$
+This way we obtain $\tilde{\g}:= \g \circ \f \ \colon [0,\pi] \to [0, 2\pi]$ with
+$$
+\tg (t) = \g (\f(t)) = (\sin(2t), \sin(2t)\cos(2t)) \,. 
+$$
+In this case we have that 
+$$
+\dot{\tg}(t) = 2 \dot \g(\f(t)) \,.
+$$
+
+> The above follows by chain rule. Indeed, $\dot\f = 2$, so that 
+$$
+\dot{\tg}  = \frac{d}{dt} \left(  \g(\f(t))  \right)  = \dot\f(t) \dot\g (\f(t)) = 2 \dot\g (\f(t))\,.
+$$
+:::
+
+
+::: {.content-visible when-format="html"}
+
+![Lemniscate curve $\g$ and Lemniscate at double speed $\tg$](/images/lemniscate_animated.gif){width=90%}
+
+:::
+
+
+::: {.content-visible when-format="pdf"}
+
+![Lemniscate curve](/images/lemniscate_static.png){width=50%}
+
+:::
+
+
+
+
+::: Important
+The main reason we are interested in reparametrizations is because we want to parametrize curves by **arc-lenght**: This means that, for a curve $\g$, we want to find a reparametrization $\tg$ such that $\tg$ is unit speed:
+$$
+\norm{ \dot{\tg} } = 1 \,, \quad  \forall t \in (a,b) \,.
+$$
+We will see that this is not always possible.
+:::
+
+
+
+::: Definition
+### Regular points
+
+Let $\g \ \colon (a,b) \to \R^n$ be a parametrized curve. We say that:
+
+- $\g(t_0)$ is a **regular point** if 
+$$
+\dot\g(t_0) \neq 0 \,.
+$$
+- A point $\g(t_0)$ is **singular** if it is not regular.
+- The curve $\g$ is regular if every point of $\g$ is regular, that is,
+$$
+\dot\g(t) \neq 0 \,, \quad \forall \, t \in (a,b) \,. 
+$$
+
+:::
+
+
+Note that when $\dot\g(t_0) = 0$, this means the curve is *stopping* at time $t_0$. Before making an example, let us prove a useful lemma about diffeomorphisms.
+
+::: {.Lemma  #lemma-diffeomorphism}
+
+Let $\f \ \colon (a,b) \to (\tilde{a},\tilde{b})$ be a diffeomorphism. Then 
+$$
+\dot\f (t) \neq 0 \quad \forall \, t \in (a,b) \,.
+$$
+
+:::
+
+
+::: Proof
+
+We know that $\f$ is smooth with smooth inverse 
+$$
+\psi := \f^{-1} \ \colon (\tilde{a},\tilde{b}) \to (a,b) \,.
+$$
+In particular it holds
+$$
+\psi (\f(t)) = t \,, \quad \forall \, t \in (a,b) \,.
+$$
+We can differentiate both sides of the above expression to get
+$$
+\frac{d}{dt} \left( \psi (\f(t))  \right) = 1 \,.
+$$ {#eq-lemma-diffeomorphism-1}
+We can differentiate the LHS by chain rule
+$$
+\frac{d}{dt} \left( \psi (\f(t))  \right) = \dot\psi (\f(t)) \, \dot\f(t) \,.
+$$
+From (@eq-lemma-diffeomorphism-1) we then get
+$$
+ \dot\psi (\f(t)) \, \dot\f(t) = 1 \, , \quad \forall \, t \in (a,b) \,.
+$$
+Since on the LHS we have a product, this means that none of the LHS terms vanishes, so that 
+$$
+\dot\f(t) \neq  0 \, , \quad \forall \, t \in (a,b) \,.
+$$
+:::
+
+
+::: Example
+### A curve with one singular point  {#example-stopping-curve}
+
+Consider the parabola
+$$
+\Gamma := \{ (x,y) \in \R^2 \, \colon \,  y=x^2 , \, -1 \leq x \leq 1\} \,.
+$$
+This can be parametrized in two ways by $\g, \eeta \ \colon [-1,1] \to \R^2$ defined as
+$$
+\g (t) = (t,t^2) \,, \quad 
+\eeta(t) = (t^3, t^6) \,.
+$$
+We will see that the above parametrizations are **not** equivalent. This is intuitively clear, since the change of variables map should be 
+$$
+\f(t) = t^3 \,.
+$$
+This is smooth and invertible, with inverse 
+$$
+\f^{-1}(t) = \sqrt[3]{x} \,.
+$$
+However $\f^{-1}$ is not smooth at $t=0$, and thus $\f$ is not a diffeomorphism. Alternatively we could have just noticed that 
+$$
+\dot \f (t) = 3t^2 \quad \implies \quad \dot\f(0) = 0 \,, 
+$$
+and therefore $\f$ cannot be a diffeomorphism due to Lemma \ref{lemma-diffeomorphism}.
+
+Let us look at the derivatives:
+$$
+\dot \g (t) = (1,2t) \,, \quad \dot \eeta (t)= (3t^2,6t^5) \,.
+$$
+We notice a difference:
+
+- $\g$ is a regular parametrization,
+- $\eeta(t)$ is regular only for $t \neq 0$.
+
+Indeed if we animate the plots of the above parametrizations, we see that:
+
+- The point $\g(t)$ moves with constant horizontal speed
+- The point $\eeta(t)$ is decelerating for $t < 0$, it stops at $t = 0$, and then accelerates again for $t>0$.
+:::
 
 
 
 ::: {.content-visible when-format="html"}
-The above plot is interactive: you can pan arond by dragging the pointer. Once again, the style customizations could be listed in a single call of the function `update_layout`.
-:::
 
+![Left: Animation of $\g$. Right: Animation of $\eeta$](/images/singular_curve_animated.gif){width=90%}
+
+:::
 
 
 ::: {.content-visible when-format="pdf"}
-The above code generates an image that cannot be rendered in pdf. To see the output, please click [here](https://www.silviofanzon.com/2023-Differential-Geometry-Notes/sections/appendix_1.html#sec-plot-3d-curves-interactive) for the digital version of these notes. Once again, the style customizations could be listed in a single call of the function `update_layout`.
+
+![Parabola $\Gamma$](/images/singular_curve.png){width=50%}
+
 :::
+
+
+
+
+
+::: Proposition
+### Regularity is invariant for reparametrization  {#proposition-regularity-invariant}
+
+Let $\g \ \colon (a,b) \to \R^n$ be a parametrized curve and suppose that $\g$ is regular, that is, 
+$$
+\dot\g(t) \neq 0 \,, \quad  \forall \, t \in (a,b) \,.
+$$
+Then every reparametrization of $\g$ is also regular.
+:::
+
+
+::: Proof
+
+Let $\tg \ \colon (\tilde{a},\tilde{b}) \to \R^n$ be a reparametrization of $\g$. Then there exist $\f \ \colon (\tilde{a},\tilde{b}) \to (a,b)$ diffeomorphism such that 
+$$
+\tilde \g (t) = \g (\f (t)) \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
+$$
+By the chain rule we have 
+$$
+\dot{\tg}(t) = \frac{d}{dt}  \left(  \g (\f(t))  \right) = \dot\g (\f(t)) \dot\f(t) \,.
+$$
+Therefore
+$$
+\dot{\tg}(t) \neq 0 \quad \iff \quad \dot\g (\f(t)) \dot\f(t)  \neq 0 \,.
+$$ {#eq-regularity-invariant-1}
+But we are assuming that $\g$ is regular, so that 
+$$
+\dot\g (\f(t)) \neq 0 \,, \quad \forall\, t \in (\tilde{a},\tilde{b}) \,.
+$$
+Thus (@eq-regularity-invariant-1) is equivalent to 
+$$
+\dot{\tg}(t) \neq 0 \quad \iff \quad  \dot\f(t)  \neq 0 \,.
+$$ {#eq-regularity-invariant-2}
+Since $\f$ is a diffeomorphism, by Lemma \ref{lemma-diffeomorphism} we have that 
+$$
+\dot \f (t) \neq 0 \,, \quad \forall\, t \in (\tilde{a},\tilde{b})  \,.
+$$
+By (@eq-regularity-invariant-2) we conclude that 
+$$
+\dot{\tg}(t) \neq  0 \, , \quad \forall \, t \in (\tilde{a},\tilde{b}) \,, 
+$$
+proving that $\tg$ is regular.
+:::
+
+
+
+::: Example 
+
+Let us go back to the parabola
+$$
+\Gamma := \{ (x,y) \in \R^2 \, \colon \,  y=x^2 , \, -1 \leq x \leq 1\} \,,
+$$
+with the two parametrizations $\g, \eeta \ \colon [-1,1] \to \R^2$ with
+$$
+\g (t) = (t,t^2) \,, \quad 
+\eeta(t) = (t^3, t^6) \,.
+$$
+We have that
+$$
+\dot \g (t) = (1,2t) \,, \quad \dot \eeta (t)= (3t^2,6t^5) \,.
+$$
+Therefore 
+
+- $\g$ is a regular parametrization,
+- $\eeta(t)$ is regular only for $t \neq 0$.
+
+Proposition \ref{proposition-regularity-invariant} implies that $\eeta$ is **NOT** a reparametrization of $\g$.
+:::
+
+
+
+::: Definition 
+### Unit speed reparametrization
+
+Let $\g$ be a parametrized curve. A **unit speed reparametrization** of $\g$ is a reparametrization $\tg$ such that $\tg$ is unit speed.
+
+:::
+
+
+The next theorem states that a curve is regular if and only if it has a unit speed reparametrization. For the proof, it is crucial to recall the definition of arc-length of a curve $\g \colon (a,b) \to \R^n$, which is given by 
+$$
+s(t):=\int_{t_0}^t \norm{ \dot \g (\tau) } \, d\tau \,,
+$$
+for some arbitrary $t_0 \in (a,b)$ fixed. Indeed, we will see that for $\f$ regular the unit speed parametrization map can be taken as 
+$$
+\f = s^{-1} \,.
+$$ 
+
+
+::: Theorem
+### Existence of unit speed reparametrization  {#theorem-regular-unit-speed}
+
+Let $\g$ be a parametrized curve. They are equivalent:
+
+- $\g$ is regular,
+- $\g$ has a unit speed reparametrization.
+:::
+
+
+::: Proof
+
+*Step 1. Direct implication.*  
+Assume $\g \ \colon (a,b) \to \R^n$ is regular, that is,
+$$
+\dot \g (t) \neq 0 \,, \quad \forall \, t \in (a,b)\,.
+$$
+Let $s \ \colon (a,b) \to \R$ be the arc-length of $\g$ starting at any point $t_0 \in (a,b)$. By the Fundamental Theorem of Calculus we have
+$$
+\dot s (t) = \norm{ \dot \g(t) }  
+$$ {#eq-derivative-arc}
+so that 
+$$
+\dot s (t) > 0 \,, \quad \forall \, t \in (a,b)\,.
+$$
+Since $s$ is a scalar function, the above condition and the Inverse Function Theorem guarantee the existsence of a smooth inverse
+$$
+s^{-1} \ \colon (\tilde{a},\tilde{b}) \to (a,b)
+$$
+for some $\tilde{\alpha}< \tilde{\beta}$. 
+Define the reparametrization map $\f$ as
+$$
+\f := s^{-1}
+$$
+and the corresponding reparametrization of $\g$ given by the curve
+$$
+\tg \ \colon  (\tilde{a},\tilde{b}) \to \R^n \,, \quad 
+\tg := \g \circ \f \,. 
+$$
+We claim that $\tg$ is unit speed. Indeed, by definition
+$$
+\tg := \g \circ \f \quad \implies \quad \g = \tg \circ \f^{-1} = \tg \circ s \,,
+$$
+or in other words
+$$
+\g(t) = \tg (s(t)) \,, \quad \forall t \in (a,b) \,.
+$$
+Differentiating the above expression and using the chain rule we get
+$$
+\dot \g (t) = \dot{\tg}(s(t)) \, \dot s(t) =  \dot{\tg}(s(t)) \, \norm{ \dot \g(t) }  
+$$
+where in the last equality we used (@eq-derivative-arc). Taking the absolute value of the above yileds
+$$
+ \norm{ \dot \g(t) }   = \norm{\dot{\tg}(s(t))} \, \norm{ \dot \g(t) } \,.  
+$${#eq-derivative-arc-1}
+Since $\g$ is regular, we have
+$$
+\norm{\dot \g (t)} \neq 0 \,, \quad \forall \, t \in (a,b)\,.
+$$
+Therefore we can divide (@eq-derivative-arc-1) by $\norm{\dot\g(t)}$ and obtain
+$$
+\norm{\dot{\tg}(s(t))} = 1  \,, \quad \forall \, t \in (a,b) \,.
+$$
+By invertibility of $s$, the above holds if and only if
+$$
+\norm{\dot{\tg}(t)} = 1  \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,,
+$$
+showing that $\tg$ is a unit speed reparametrization of $\g$.
+
+*Step 2. Reverse implication.*  
+Suppose there exists a unit speed reparametrization of $\g$ denoted by 
+$$
+\tg \ \colon (\tilde{a},\tilde{b})  \to \R^n \,, \quad \tg = \g \circ \f
+$$
+for some reparametrization map $\f \ \colon (\tilde{a},\tilde{b}) \to (a,b)$. Differentiating $\tg = \g \circ \f$ and using the chain rule we get
+$$
+\dot{\tg}(t) = \dot{\g} (\f(t)) \, \dot \f(t) \,.
+$$
+Taking the norm
+$$
+\norm{\dot{\tg}(t)} = \norm{\dot{\g} (\f(t)) } \, |\dot \f (t)| \,.
+$$
+Since $\tg$ is unit speed we obtain
+$$
+\norm{\dot{\g} (\f(t)) } \, |\dot \f (t)| = 1 \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
+$$ {#eq-derivative-arc-3}
+Since $\f$ is a diffeomorphism from $(\tilde{a},\tilde{b})$ into $(a,b)$, Lemma \ref{lemma-diffeomorphism} guarantees that
+$$
+\dot{\f} (t)  \neq 0 \,, \quad \forall \, t \in (a,b) \,.
+$$
+In particular (@eq-derivative-arc-3) implies
+$$
+\dot{\g} (\f(t))  \neq 0 \,, \quad \forall \, t \in (\tilde{a},\tilde{b}) \,.
+$$
+As $\f$ is invertible, we also have
+$$
+\dot{\g} (t)  \neq 0 \,, \quad \forall \, t \in (a,b) \,,
+$$
+proving that $\g$ is regular.
+:::
+
+
+The proof of Theorem \ref{theorem-regular-unit-speed} told us that, if $\g$ is regular, then 
+$$
+\tg = \g \circ s^{-1} 
+$$
+is a unit speed reparametrization of $\g$. In the next proposition we show that the arc-length $s$ is essentially the only unit-speed reparametrization of a regular curve. 
+
+
+::: Proposition
+### Arc-length and unit speed reparametrization  {#proposition-arc-length-unit}
+Let $\g \ \colon (a,b) \to \R^n$ be a regular curve. Let $\tg \ \colon (\tilde{a},\tilde{b}) \to \R^n$ be reparametrization of $\g$, so that
+$$
+\g(t) = \tg ( \f(t) )  , \quad \forall \, t \in (a,b)\,.
+$$
+for some diffeomorphism $\f \ \colon (a,b) \to (\tilde{a},\tilde{b})$. Denote by
+$$
+s(t):= \int_{t_0}^t  \norm{\dot\g(\tau)} \, d \tau \,, \quad t \in (a,b)
+$$
+the arc-length of $\g$ starting at any point $t_0 \in (a,b)$. We have:
+
+1. If $\tg$ is unit speed, then there exists $c \in \R$ such that
+$$
+\f(t) = \pm s(t) + c   \,, \quad \forall \, t \in (a,b) \,.
+$$ {#eq-proposition-unit-speed}
+
+2. If $\f$ is given by (@eq-proposition-unit-speed) for some $c \in \R$, then $\tg$ is unit speed.
+
+:::
+
+
+::: Proof
+*Step 1. First Point.*  
+First note that a unit speed reparametrization $\tg$ of $\g$ exists by Theorem \ref{theorem-regular-unit-speed}, since $\g$ is assumed to be regular. Thus assume $\tg$ is unit speed reparametrization of $\g$.  By differentiating both sides of
+$$
+\g(t) = \tg ( \f(t) )  , \quad \forall \, t \in (a,b)\,, 
+$$
+we obtain
+$$
+\dot \g(t) = \frac{d}{dt} \tg ( \f(t) ) = \dot{\tg}(\f(t)) \, \dot\f(t)  \,. 
+$$
+Taking the norms we then have
+\begin{align}
+\norm{ \dot \g(t) } & = \norm{ \dot{\tg}(\f(t)) \, \dot\f(t) } \\
+                    & = \norm{ \dot{\tg}(\f(t)) } \, | \dot\f(t) | \\
+                    & = | \dot\f(t) | \,,
+\end{align}
+where in the last equality we used that $\tg$ is unit speed, and so 
+$$
+\norm{\dot{\tg}} \equiv 1 \,.
+$$
+To summarize, so far we have proven that
+$$
+\norm{ \dot \g(t) }  = | \dot\f(t) | \,, \quad \forall \, t \in (a,b) \,.
+$$
+Therefore 
+$$
+s(t) = \int_{t_0}^t \norm{ \dot \g(\tau) } \, d\tau =  \int_{t_0}^t | \dot \f(\tau) | \, d\tau \,.
+$$
+By the Fundamental Theorem of Calculus we get
+$$
+\dot s(t) = |\dot \f(t) | 
+$$
+and therefore 
+$$
+\f = \pm s + c
+$$
+for some $c \in \R$, concluding the proof.
+
+
+*Step 2. Second Point.*  
+Suppose that 
+$$
+\f := \pm s + c
+$$
+for some $c \in \R$, so that $\phi \ \colon (a,b) \to (\tilde{a},\tilde{b})$. We have 
+$$
+\dot\f (t) =  \pm \dot s (t) = \pm \norm{ \dot\g(t) } \neq 0  
+$${#eq-proposition-unit-speed-2}
+where the last term is non-zero since $\g$ is regular. Therefore, due to the Inverse Function Theorem, $\f$ is invertible with smooth inverse. This proves that $\tg$ defined by 
+$$
+\tg := \g \circ \psi  \,, \quad \psi := \f^{-1} \,,
+$$
+is a reparametrization of $\g$. In particular 
+$$
+\g = \tg \circ \f \,.
+$$
+Differentiating the above, and recalling (@eq-proposition-unit-speed-2), we get
+$$
+\dot{\g}(t) = \dot{\tg}( \f(t) ) \, \dot\f(t) = \dot{\tg}( \f(t) ) \,\left( \pm \norm{ \dot\g(t) } \right) \,.
+$$
+Taking the absolute value of the above yields
+$$
+\norm{ \dot\g(t) } = \norm{ \dot{\tg}( \f(t) )}  \, \norm{ \dot\g(t) } \,.
+$$
+Since $\g$ is regular we can divide by $\norm{ \dot\g(t) }$ to get
+$$
+ \norm{ \dot{\tg}( \f(t) )}  = 1 \, \quad \forall \, t \in (a,b)  \, .
+$$
+Since $\f$ is invertible, the above is equivalent to
+$$
+ \norm{ \dot{\tg}( t )}  = 1 \, \quad \forall \, t \in (\tilde{a},\tilde{b})  \, ,
+$$
+proving that $\tg$ is a unit speed reparametrization.
+:::
+
+
+::: Remark
+Let $\g$ be regular. The above proposition tells us that they are equivalent:
+
+1. Computing a unit speed reparametrization of $\g$,
+
+2. Computing $s$ the arc-length of $\g$.
+
+In some cases however, unit speed reparametrization and arc-length are impossible to characterize in terms of elementary functions, even for very simple curves.
+:::
+
+
+
+
+::: Example 
+### Twisted cubic
+
+Define the **twisted cubic** $\g \ \colon \R \to \R^3$ by 
+$$
+\g(t) = (t,t^2,t^3)\,.
+$$
+Therefore 
+$$
+\dot \g(t) = (1,2t,3t^2)\,,
+$$
+so that 
+$$
+\dot \g (t) \neq 0 \,, \quad \forall \, t \in \R  \,,
+$$
+meaning that $\g$ is regular. In particular we have
+$$
+\norm{ \dot \g(t) } = \sqrt{  1 + 4t^2 + 9t^4 }
+$$
+so that the arc-length of $\g$ is
+$$
+s(t) = \int_{t_0}^t  \sqrt{  1 + 4\tau^2 + 9\tau^4 }\, d\tau \,.
+$$
+Since $\g$ is regular, by Proposition \ref{proposition-arc-length-unit} we know that $\g$ admits a unit speed reparametrization $\tg$ such that
+$$
+\g =  \tg \circ \f
+$$
+with the diffeomorphism $\f$ given by
+$$
+\f(t) = \pm s(t) + c = \pm \int_{t_0}^t  \sqrt{  1 + 4\tau^2 + 9\tau^4 }\, d\tau + c
+$$
+for some $c \in \R$. It can be shown that the above integral does not have a closed form in terms of elementary functions. Therefore the unit speed parametrization $\tg$ cannot be computed explicitly.
+:::
+
+
+```{python}
+#| echo: false
+#| fig-cap: "Plot of Twisted Cubic for t between -2 and 2" 
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+# Define the parameter 't'
+t = np.linspace(-2, 2, 100)
+
+# Calculate the corresponding x, y, and z values
+x = t
+y = t**2
+z = t**3
+
+# Create a 3D plot
+fig = plt.figure(figsize=(5, 5))
+ax = fig.add_subplot(111, projection='3d')
+
+# Plot the curve
+ax.plot(x, y, z, color='deeppink', linewidth=2)
+
+# Set labels for the axes
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.set_zlabel('z')
+
+# Set the viewing angle to 45 degrees for both azimuthal and elevation angles
+ax.view_init(elev=20, azim=-25)
+
+# Show the plot
+plt.show()
+```
+
+
+
+
+## Closed curves
+
+
+So far we have seen examples of:
+
+- Curves which are infinite, or **unbounded**. This is for example the parabola
+$$
+\g(t) := (t,t^2) \,, \quad \forall \, t \in \R \,,
+$$
+- Curves which are finite and have end-points, such as the semi-circle
+$$
+\g(t) := (\cos(t),\sin(t)) \,, \quad \forall \, t \in [0,\pi] \,,
+$$
+- Curves which form **loops**, such as the circle
+$$
+\g(t) := (\cos(t),\sin(t)) \,, \quad \forall \, t \in [0,2\pi] \,.
+$$
+
+However there are examples of curves which are in between the above types. 
+
+::: {.Example #example-curve-loop}
+For example consider the curve $\g \ \colon \R \to \R^2$
+$$
+\g(t) := (t^2-1, t^3 -t) \,\quad  \forall \, t \in \R \,.
+$$
+This curve has two main properties:
+
+- $\g$ is unbounded: If define $\tg$ as the restriction of $\g$ to the time interval $[1,\infty)$, then $\tg$ is unbounded. A point which starts at $\g (1) = (0,0)$ goes towards infinity. 
+- $\g$ contains a loop: If we define $\tg$ as the restriction of $\g$ to the time interval $[-1,1]$, then $\tg$ is a closed loop starting at $\g (-1) = (0,0)$ and returnning at $\g (1) = (0,0)$. 
+
+:::
+
+
+
+::: {.content-visible when-format="html"}
+
+![Animated plot of curve $\g(t) = (t^2-1, t^3-1)$ for $t \in [-2,2]$](/images/loop_animated.gif){width=90%}
+
+:::
+
+
+::: {.content-visible when-format="pdf"}
+
+![Plot of curve $\g(t) = (t^2-1, t^3-1)$ for $t \in [-2,2]$](/images/loop_static.png){width=60%}
+
+:::
+
+
+
+The aim of this section is to make precise the concept of **looping curve**. To do that, we need to define **periodic curves**.
+
+
+::: Definition
+### Periodic curve
+
+Let $\g \ \colon \R \to \R^n$ be a parametrized curve, and let $T \in \R$. We say that $\g$ is **T-periodic** if 
+$$
+\g(t) = \g(t+T) \,, \quad \forall \, t \in \R \,.
+$$
+:::
+
+
+Note that every curve is $0$-periodic. Therefore to define a closed curve we need to rule out this case.
+
+::: Definition
+### Closed curve
+
+Let $\g \ \colon \R \to \R^n$ be a parametrized curve. We say that $\g$ is **closed** if:
+
+- $\g$ is not constant,
+- $\g$ is T-periodic for some $T \neq 0$.
+
+:::
+
+
+::: {.Remark  #remark-closed}
+
+We have the following basic facts:
+
+1. If $\g$ is $T$-periodic, then a point moving around $\g$ returns to its starting point after time $T$.
+
+     >This is exactly the definition of $T$-periodicity. Indeed let $p = \g(a)$ be the point in question, then
+     $$
+     \g(a + T) = \g(a) = p 
+     $$ 
+     by periodicity. Thus $\g$ returns to $p$ after time $T$.
+
+2. If $\g$ is $T$-periodic, then $\g$ is determined by its restriction to any interval of length $|T|$.
+
+3. Conversely, suppose that $\g \ \colon [a,b] \to \R^n$ satisfies 
+$$
+\g(a) = \g(b) \,, \quad \frac{d^k \g}{dt^k} (a) =\frac{d^k \g}{dt^k}  (b)  
+$$
+for all $k \in \N$. Set
+$$
+T:=b-a \,.
+$$
+Then $\g$ can be extended to a $T$-periodic curve $\tg \ \colon \R \to \R^n$ defined by
+$$
+\tg (t) := \g (\tilde{t}) \,, \quad  \tilde{t}:= t - \biggl\lfloor \frac{t-a}{b-a}  \biggr\rfloor (b-a)  \,, \quad \forall \, t \in \R \,.
+$$
+The above means that $\tg(t)$ is defined by $\g(\tilde{t})$ where $\tilde{t}$ is the unique point in $[a,b]$ such that 
+$$
+t = \tilde{t} + k(b-a) 
+$$
+with $k \in \Z$ defined by
+$$
+k := \biggl\lfloor \frac{t-a}{b-a}  \biggr\rfloor \,,
+$$
+see figure below. In this way $\tg$ is $T$-periodic.
+
+4. If $\g$ is $T$-periodic, then it is also $(-T)$-periodic.
+     
+     >Because if $\g$ is $T$-periodic then 
+     $$
+     \g (t) = \g ((t - T) + T ) = \g (t - T)
+     $$
+     where in the first equality we used the trivial identity $t = (t-T) + T$, while in the second equality we used $T$-periodicity of $\g$.
+
+5. If $\g$ is $T$-periodic for some $T \neq 0$, then it is $T$-periodic for some $T>0$.
+
+     > This is an immediate consequence of Point 4.
+
+6. If $\g$ is $T$-periodic the $\g$ is $(kT)$-periodic, for all $k \in \Z$.
+
+     > By point 4 we can assume WLOG that $k \geq 0$. We proceed by induction:   
+     > - The statement is true for $k=1$, since $\g$ is $T$-periodic. 
+     > - Assume now that $\g$ is $kT$-periodic. Then 
+     \begin{align}
+     \g(t + (k+1) T) & = \g ( (t+T)  + kT ) & \\
+                     & = \g (t + T)   &  \mbox{(by $kT$-periodicity)} \\  
+                     & = \g (t)   &  \mbox{(by $T$-periodicity)} 
+     \end{align}
+     showing that $\g$ is $(k+1)T$-periodic.  
+
+     >By induction we conclude that $\g$ is $(kT)$-periodic for all $k \in \N$.
+
+
+7. If $\g$ is $T_1$-periodic and $T_2$-periodic then $\g$ is $(k_1T_1 + k_2 T_2)$-periodic, for all $k_1, k_2 \in \Z$.
+
+     > By Point 6 we know that $\g$ is $k_1T_1$-periodic and $k_2T_2$-periodic. Set $T:=k_1T_1 + k_2T_2$. We have
+     \begin{align}
+     \g(t + T) & = \g ( (t+ k_1T_1)  + k_2T_2 ) & \\
+                     & = \g (t + k_1T_1)  &  \mbox{(by $k_2T_2$-periodicity)} \\  
+                     & = \g (t)  &  \mbox{(by $k_1T_1$-periodicity)} 
+     \end{align}
+     showing that $\g$ is $(k_1T_1 + k_2 T_2)$-periodic.
+
+:::
+
+
+![The points $t \in \R$ and $\tilde{t} \in [a,b]$ from Point 3 in Remark \ref{remark-closed}. In this skecth $t = \tilde{t} + 3 T$, with $T = b-a$.](/images/periodic_extension.png){width=70%}
+
+
+::: Definition
+
+Let $\g$ be a closed curve. The **period** of $\g$ is the smallest $T>0$ such that $\g$ is $T$-periodic, that is
+$$
+\mbox{Period of $\g$} := \min \{ T \, \colon \, T > 0 \,, \,\, \g \, \mbox{ is T-periodic}    \} \,. 
+$$
+:::
+
+
+We need to show that the above definition is well-posed, i.e., that there exists such smallest $T>0$.
+
+
+
+::: Proposition
+
+Let $\g$ be a closed curve. Then there exists a smallest $T>0$ such that $\g$ is $T$-periodic. In other words, the set 
+$$
+S := \{ T  \, \colon \, T > 0 \,, \,\, \g \, \mbox{ is T-periodic} \} \,.
+$$
+admits positive minumum 
+$$
+P = \min S \,, \quad P > 0 \,.
+$$
+:::
+
+
+::: Proof
+
+
+We make 2 observations about the set $S$:
+
+- Since $\g$ is closed, we have that $\g$ is $T$-periodic for some $T \neq 0$. By Remark \ref{remark-closed} Point 5, we know that $T$ can be chosen such that $T>0$. Therefore 
+$$
+S \neq \emptyset \,.
+$$
+- $S$ is bounded below by $0$. This is by definition of $S$.
+
+Thus, by the Axiom of Completeness of the Real Numbers, the set $S$ admits an infimum 
+$$
+P = \inf S \,.
+$$
+The proof is concluded if we show that:
+
+*Claim*. We have
+$$
+P = \min S  \,.
+$$
+This is equivalent to saying that 
+$$
+P \in S \,.
+$$
+
+*Proof of claim.*  
+To see that $P \in S$ we need to show that
+
+1. $\g$ is $P$-periodic,
+2. $P>0$.
+
+Since $P$ is the infimum of $S$, there exists an infimizing sequence $\{T_n\}_{n \in \N} \subset S$ such that
+$$
+T_n \to P \,.
+$$
+WLOG we can choose $T_n$ decreasing, that is, such that
+$$
+T_1 > T_2 > \ldots > T_n > \ldots > 0 \,.
+$$
+
+*Proof of Point 1.* As $T_n \in S$, we have that $\g$ is $T_n$-periodic. Then
+$$
+\g (t + T_n) = \g(t) \,, \quad \forall \, t \in \R \,,  \,\, n \in \N \,.
+$$
+Since $T_n \to P$, we can take the limit as $n \to \infty$ and use the continuity of $\g$ to obtain
+$$
+\g(t) = \lim_{n \to \infty} \ \g (t + T_n) = \g(t + P) \,, \quad \forall \, t \in \R \,,
+$$
+showing that $\g$ is $P$-periodic. 
+ 
+
+*Proof of Point 2.* Suppose by contradiction that
+$$
+P = 0 \,.
+$$
+Fix $t \in \R$. Since $T_n > 0$, we can find unique 
+$$
+t_n \in [0,T_n] \,, \quad k_n \in \Z \,,
+$$
+such that 
+$$
+t = t_n + k_n T_n \,,
+$$
+as shown in the figure below. Indeed, it is sufficient to define
+$$
+k_n := \biggl\lfloor \frac{t}{T_n}  \biggr\rfloor \in \Z \,, \quad t_n := t - k_n T_n \,.
+$$
+Since $T_n \in S$, we know that $\g$ is $T_n$-periodic. Remark \ref{remark-closed} Point 6 implies that $\g$ is also $k_nT_n$-periodic, since $k_n \in \Z$. Thus
+\begin{align}
+\g (t) & = \g( t_n + k_nT_n )   &   \mbox{(definition of $t_n$)} \\
+       & = \g(t_n)             & \mbox{(by $k_nT_n$-periodicity)} \,.
+\end{align}
+Therefore 
+$$
+\g(t) = \g(t_n) \,, \quad \forall \, n \in \N \,.
+$${#eq-period-exists-1}
+Also notice that 
+$$
+0 \leq t_n \leq T_n \,, \quad \forall \, n \in \N \,.
+$$
+by construction. Since $T_n \to 0$, by the Squeeze Theorem we conclude that
+$$
+t_n \to 0  \quad \mbox{as } \, n \to \infty \,.
+$$
+Using the continuity of $\g$, we can pass to the limit in (@eq-period-exists-1) and obtain
+$$
+\g(t) = \lim_{n \to \infty} \g(t_n) = \g(0) \,.
+$$
+Since $t \in \R$ was arbitrary, we have shown that 
+$$
+\g(t) =  \g(0) \,, \quad \forall \, t \in \R \,.
+$$
+Therefore $\g$ is constant. This is a contradiction, as we were assuming that $\g$ is closed, and, in particular, not constant.
+:::
+
+
+
+
+![For each $t \in \R$ there exist unique $k_n \in \Z$ and $\tilde{t}_n \in [0,T_n]$ such that $t=\tilde{t} + k_n T_n$. In this skecth $k_n =3$.](/images/archimedean.png){width=70%}
+
+
+::: Example
+
+Some examples of closed curves: 
+
+- The circumference 
+$$
+\g (t) = (\cos(t), \sin(t)) \,, \quad t \in \R
+$$
+is not costant and is $2\pi$-periodic. Thus $\g$ is closed. The period of $\g$ is $2 \pi$.
+
+- The Lemniscate
+$$
+\g (t) = (\sin(t), \sin(t) \cos(t)) \,, \quad t \in \R
+$$
+is not costant and is $2\pi$-periodic. Thus $\g$ is closed. The period of $\g$ is $2 \pi$.
+
+- Consider again the curve from Example \ref{example-curve-loop} 
+$$
+\g(t) := (t^2-1, t^3 -t) \,, \quad \, t \in \R \,.
+$$
+According to our definition, $\g$ is not periodic. Therefore $\g$ is not closed. However there is a point of **self-intersection** on $\g$, namely 
+$$
+p := (0,0) \,,
+$$ 
+for which we have 
+$$
+p = \g (-1) = \g(1) \,.
+$$
+:::
+
+
+The last curve in the above example motivates the definition of **self-intersecting** curve. 
+
+
+::: Definition
+### Self-intersecting curve
+
+Let $\g \ \colon \R \to \R^n$ be a parametrized curve. We say that $\g$ is **self-intersecting** at a point $p$ on the curve if
+
+1. There exist two times $a \neq b$ such that 
+$$
+p = \g(a)=\g(b)  \,,
+$$
+2. If $\g$ is closed with period $T$, then $b-a$ is not an integer multiple of $T$.
+
+:::
+
+::: Remark
+
+The second condition in the above definition is important: if we did not require it, then any closed curve would be self-intersecting. Indeed consider a closed curve $\g \ \colon \R \to \R^n$ and let $T$ be its period. Then by Point 6 in Remark \ref{remark-closed} we have
+$$
+\g(a) = \g (a + kT) \,, \quad \forall \ a \in \R, \, k \in \Z \,. 
+$$ 
+Therefore every point $\g(a)$ would be of self-intersection. Point 2 in the above definition rules this example out. Indeed set $b:=a + kT$, then
+$$
+b - a = k T \,,
+$$
+meaning that $b-a$ is an integer multiple of $T$.
+
+:::
+
+
+::: Example
+
+Let us go back to the curve of Example \ref{example-curve-loop}, that is, 
+$$
+\g(t) := (t^2-1, t^3 -t) \,, \quad \, t \in \R \,.
+$$
+We have that $\g$ is not periodic, and therefore not closed. However $p = (0,0)$ is a point of **self-intersection** on $\g$, since we have
+$$
+p = \g (-1) = \g(1) \,.
+$$
+:::
+
+
+::: Example
+### The Limaçon
+
+Define the parametrized curve $\g \ \colon \R \to \R^2$ by
+$$
+\g(t) = ( (1+2\cos(t)) \cos(t) ,  (1 + 2 \cos(t)) \sin(t)   ) \,, 
+\quad \forall \, t \in \R \,.
+$$
+Such curve, plotted bolow, is called limaçon (French for snail). This curve is non constant and $2\pi$-periodic. Therefore it is closed. The period of $\g$ is $2 \pi$. Moreover we have
+$$
+\g( a ) = \g (b) = (0,0)\,.
+$$
+with $a = 2\pi/3$ and $b = 4\pi/3$. Note that 
+$$
+b-a = \frac{4\pi}{3} - \frac{2\pi}{3} = \frac{2\pi}{3} 
+$$
+which is not an integer multiple of the period $2\pi$. Therefore $\g$ is **self-intersecting** at $(0,0)$.
+:::
+
+
+
+![Limaçon curve](/images/limacon.png){width=60%}
