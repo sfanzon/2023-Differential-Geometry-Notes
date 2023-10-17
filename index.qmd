@@ -121,7 +121,7 @@ If you do not want to mess around with Python, you can still visualize
 pretty much everything we will do in this course using the excellent 
 online 3D grapher tool [CalcPlot3D](https://c3d.libretexts.org/CalcPlot3D/index.html/). 
 To understand how it works, please refer to the [help manual](https://c3d.libretexts.org/CalcPlot3D/CalcPlot3D-Help/front.html) 
-or to the short [video introduction](https://c3d.libretexts.org/CalcPlot3D/CalcPlot3D-Help/section-1.html).
+or to the short [video introduction](https://c3d.libretexts.org/CalcPlot3D/CalcPlot3D-Help/section-1.html). Another nice tool is [Desmos](https://www.desmos.com).
 
 
 

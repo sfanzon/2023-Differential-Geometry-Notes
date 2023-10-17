@@ -201,7 +201,7 @@
 
  [**Proposition 3.16**](#Proposition-3.16)\Pageref{Proposition-3.16}
 
- [**Proposition 3.17**](#Proposition-3.17)\Pageref{Proposition-3.17}
+ [**Proposition 3.17**](#proposition-curvature-formula): Curvature formula\Pageref{proposition-curvature-formula}
 
  [**Example 3.18**](#Example-3.18)\Pageref{Example-3.18}
 
@@ -217,7 +217,7 @@
 
  [**Definition 3.24**](#Definition-3.24)\Pageref{Definition-3.24}
 
- [**Theorem 3.25**](#Theorem-3.25)\Pageref{Theorem-3.25}
+ [**Theorem 3.25**](#theorem-characterization-plane): Characterization of plane curves\Pageref{theorem-characterization-plane}
 
  [**Example 3.26**](#Example-3.26)\Pageref{Example-3.26}
 
@@ -235,11 +235,11 @@
 
  [**Proof**](#Proof*-3.3)\Pageref{Proof*-3.3}
 
- [**Proposition 3.33**](#Proposition-3.33)\Pageref{Proposition-3.33}
+ [**Proposition 3.33**](#proposition-positive-basis)\Pageref{proposition-positive-basis}
 
  [**Proof**](#Proof*-3.4)\Pageref{Proof*-3.4}
 
- [**Proposition 3.34**](#Proposition-3.34)\Pageref{Proposition-3.34}
+ [**Proposition 3.34**](#proposition-binormal)\Pageref{proposition-binormal}
 
  [**Proof**](#Proof*-3.5)\Pageref{Proof*-3.5}
 
@@ -251,7 +251,7 @@
 
  [**Definition 3.37**](#Definition-3.37)\Pageref{Definition-3.37}
 
- [**Proposition 3.38**](#Proposition-3.38)\Pageref{Proposition-3.38}
+ [**Proposition 3.38**](#proposition-torsion-formula): Torsion formula\Pageref{proposition-torsion-formula}
 
  [**Example 3.39**](#torsion-helix): Torsion Helix\Pageref{torsion-helix}
 
@@ -259,9 +259,35 @@
 
  [**Example 3.41**](#Example-3.41)\Pageref{Example-3.41}
 
+ [**Definition 3.42**](#frenet-frame-1): Frenet frame\Pageref{frenet-frame-1}
+
+ [**Definition 3.43**](#Definition-3.43)\Pageref{Definition-3.43}
+
+ [**Remark 3.44**](#Remark-3.44)\Pageref{Remark-3.44}
+
+ [**Theorem 3.45**](#frenet-serret-equations): Frenet-Serret equations\Pageref{frenet-serret-equations}
+
+ [**Proof**](#Proof*-3.7)\Pageref{Proof*-3.7}
+
+ [**Remark 3.46**](#Remark-3.46)\Pageref{Remark-3.46}
+
+ [**Example 3.47**](#frenet-frame-of-helix): Frenet frame of helix\Pageref{frenet-frame-of-helix}
+
+ [**Theorem 3.48**](#theorem-characterization-space): Characterization of space curves\Pageref{theorem-characterization-space}
+
+ [**Example 3.49**](#Example-3.49)\Pageref{Example-3.49}
+
+ [**Proposition 3.50**](#curvature-and-torsion-formulas): Curvature and torsion formulas\Pageref{curvature-and-torsion-formulas}
+
+ [**Proof**](#Proof*-3.8)\Pageref{Proof*-3.8}
+
  [**Definition 4.1**](#Definition-4.1)\Pageref{Definition-4.1}
 
  [**Definition 4.2**](#Definition-4.2)\Pageref{Definition-4.2}
+
+ [**Definition 4.3**](#Definition-4.3)\Pageref{Definition-4.3}
+
+ [**Definition 4.4**](#topology-induced-by-the-metric): Topology induced by the metric\Pageref{topology-induced-by-the-metric}
 
  [**Definition 5.1**](#Definition-5.1)\Pageref{Definition-5.1}
 

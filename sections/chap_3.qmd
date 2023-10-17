@@ -430,6 +430,8 @@ $$ {#eq-formula-cross-product}
 :::
 
 
+
+
 ::: Proof
 Denote by $(\uu \times \vv)_i$ the $i$-th component of $\uu \times \vv$ with respect to the standard basis, that is,
 $$
@@ -500,6 +502,23 @@ $$
 from which we conclude.
 :::
 
+
+
+
+
+Sometimes we will denote formula (@eq-formula-cross-product) by
+$$
+\uu \times \vv = 
+\left|
+\begin{array}{ccc}
+\ii & \jj & \kk \\
+u_1 & u_2 & u_2 \\
+v_1 & v_2 & v_3 
+\end{array} 
+\right| \,.
+$$
+
+Let us collect some crucial properties of the vector product.
 
 
 
@@ -673,8 +692,9 @@ $$
 If $\g$ is a regular curve in $\R^3$, there is a way to compute $\kappa$ without passing through $\tg$. The formula for computing $\kappa$ is as follows. 
 
 ::: Proposition
+### Curvature formula {#proposition-curvature-formula}
 
-Let $\g \colon (a,b) \to \R^3$ be a regular curve. Then the curvature $\kappa(t)$ of $\g$ at $\g(t)$ is given by
+Let $\g \colon (a,b) \to \R^3$ be a regular curve. The curvature $\kappa(t)$ of $\g$ at $\g(t)$ is given by
 $$
 \kappa(t) = \frac{ \norm{\dg \times \ddg} }{ \norm{\dg}^3 } \,. 
 $${#eq-curvature}
@@ -880,15 +900,16 @@ The signed curvature completely characterizes plane curves, in the sense of the 
 
 
 ::: Theorem
+### Characterization of plane curves {#theorem-characterization-plane}
 
 Let $\f \ \colon \R \to \R$ be smooth. Then:
 
-1. There exists a parametrized curve $\g \ \colon \R \to \R^2$ such that its signed curvature $\kappa_s$ satisfies
+1. There exists a unit speed curve $\g \ \colon \R \to \R^2$ such that its signed curvature $\kappa_s$ satisfies
 $$
 \kappa_s(t) = \f(t) \,, \quad \forall \, t \in \R \,.
 $$
 
-2. Suppose that $\tg \ \colon \R \to \R^2$ is any curve such that its signed curvature $\tilde{\kappa}_s$ satisfies
+2. Suppose that $\tg \ \colon \R \to \R^2$ is a unit speed curve such that its signed curvature $\tilde{\kappa}_s$ satisfies
 $$
 \tilde{\kappa}_s(t) = \f(t) \,, \quad \forall \, t \in \R \,.
 $$
@@ -1083,7 +1104,8 @@ is a positive basis of $\R^3$.
 :::
 
 
-::: Proposition 
+::: {.Proposition  #proposition-positive-basis}
+
 
 Let $\g$ be a unit speed curve with $\kappa \neq 0$. Then
 $$
@@ -1133,7 +1155,8 @@ showing the last equality in (@eq-frenet-positive-basis).
 :::
 
 
-::: Proposition 
+::: {.Proposition #proposition-binormal}
+
 
 Let $\g$ be a unit speed curve with $\kappa \neq 0$. Then
 $$
@@ -1264,8 +1287,9 @@ formula to compute the torsion without having to reparametrize.
 
 
 ::: Proposition 
+### Torsion formula   {#proposition-torsion-formula}
 
-Let $\g \colon (a,b) \to \R^3$ be a regular curve with non-vanishing curvature. Then
+Let $\g \colon (a,b) \to \R^3$ be a regular curve with non-vanishing curvature. The torsion $\tau(t)$ of $\g$ at $\g(t)$ is given by
 $$
 \tau (t) = \frac{ ( \dg \times \ddg ) \cdot \dddg }{ \norm{ \dg \times \ddg }^2 } \,. 
 $$
@@ -1352,11 +1376,47 @@ for $t \in \R$. As seen in the plot below, $\g$ is just a Circle which has been 
 $$
 \kappa = \frac1R , \quad \tau = 0\,, 
 $$
-for some $R>0$, radius of the Circle $\g$. Let us proceed with the calculations, using the formulas
+for some $R>0$, radius of the Circle $\g$. Let us proceed with the calculations:
 $$
-\kappa = \frac{ \norm{ \dg \times \ddg }  }{ \norm{\dg}^3 } \,, \quad \tau = \frac{ (\dg \times \ddg) \cdot \dddg }{ \norm{ \dg \times \ddg }^2 } \,.
+\dg =   \left( -\frac45 \sin(t),  - \cos(t) , \frac35 \sin(t)  \right)
 $$
-
+so that 
+$$
+\norm{ \dg }^2 = \frac{16}{25} \sin^2(t) + \cos^2(t) + \frac{9}{25} \sin^2(t) = 1\,,
+$$
+showing that $\g$ is regular and unit speed. Further
+$$
+\ddg  =  \left( -\frac45 \cos(t),  \sin(t) , \frac35 \cos(t)  \right) \,.
+$$
+As $\g$ is unit speed, we have
+$$
+\kappa = \norm{ \ddot \g } = \frac{16}{25} \cos^2(t) + \sin^2(t) + \frac{9}{25} \cos^2(t) = 1 \,.
+$$
+As $\g$ is unit speed, the normal vector is 
+$$
+\nn = \frac{1}{\kappa}  \ddg =  \left( -\frac45 \cos(t),  \sin(t) , \frac35 \cos(t)  \right) \,.
+$$
+We can then compute the binormal
+\begin{align}
+\bb & = \dg \times \nn \\ 
+    & = 
+    \left|
+\begin{array}{ccc}
+\ii & \jj & \kk \\
+-\frac{4}{5} \sin (t)  & - \cos(t) & \frac35 \sin(t) \\
+ -\frac45 \cos(t) &  \sin(t) & \frac35 \cos(t) 
+\end{array} \right| \\
+    & = \left(  -\frac35 \cos^2(t) - \frac35 \sin^2(t), - \frac{12}{25} \cos(t) \sin(t) + \frac{12}{25} \cos(t) \sin(t), - \frac45 \sin^2(t) - \frac45 \cos^2(t)   \right) \\
+    & = \left( -\frac35, 0 ,-\frac45  \right) \,.
+\end{align}
+Therefore 
+$$
+\dot{\bb} = 0\,,
+$$
+and we obtain that the torsion is
+$$
+\tau = - \dot{\bb} \cdot \nn = 0 \,.
+$$
 :::
 
 
@@ -1398,5 +1458,463 @@ plt.show()
 ```
 
 
+
+
+## Frenet frame
+
+For a unit speed curve $\g \colon (a,b) \to \R^3$ with non-vanishing curvature we computed the triple
+$$
+\{ \dg, \nn, \bb \} \,.
+$$
+We saw that the above is a positive orthonormal basis of $\R^3$. We also used this triple to compute curvature $\kappa$ and torsion $\tau$ of $\g$:
+$$
+\kappa = \norm{ \ddg } \,, \quad \tau = - \dot{\bb} \cdot \nn \,. 
+$$
+This triple is so important that it has a name.
+
+
+::: Definition
+### Frenet frame
+
+Let $\g \colon (a,b) \to \R^3$ be unit speed with $\kappa \neq 0$. The positive orthonormal basis
+$$
+\{ \dg, \nn, \bb \}
+$$
+is called **Frenet frame** of $\g$.
+
+:::
+
+We can also define the Frenet frame for regular curves with non-vanishing curvature.
+
+::: Definition
+
+Let $\g \colon (a,b) \to \R^3$ be regular with $\kappa \neq 0$. The 
+Frenet frame of $\g$ is defined as the Frenet frame of a unit speed reparametrization $\tg$ of $\g$.
+
+:::
+
+:::Remark
+It is easy to check that the above definition is well-posed: If $\hat{\g}$ is another unit speed reparametrization of $\g$, then the Frenet frame generated by $\hat{\g}$ coincides with the one generated by $\tg$. The proof is left as an exercise.
+:::
+
+From the Frenet frame we can define the Frenet-Serret equations.
+
+::: Theorem
+### Frenet-Serret equations
+
+Let $\g \colon (a,b) \to \R^3$ be unit speed with $\kappa \neq 0$. The **Frenet-Serret** equations are
+\begin{align}  
+\ddg & = \kappa \nn \\
+\dot{\nn} & = - \kappa \dg + \tau \bb \\
+\dot{\bb} & = -\tau \nn
+\end{align}
+:::
+
+
+::: Proof 
+
+The first Frenet-Serret equation
+$$
+\ddg  = \kappa \nn
+$${#eq-proof-frenet-2}
+holds by definition of $\nn$ and $\kappa$. The third Frenet-Serret equation
+$$
+\dot{\bb} = - \tau \nn
+$${#eq-proof-frenet-3}
+holds by Proposition \ref{proposition-binormal}. Now, recall that in Proposition \ref{proposition-positive-basis} we have proven
+$$
+\bb = \dg \times \nn \,, \quad
+\nn = \bb \times \dg \,, \quad
+\dg = \nn \times \bb \,.
+$${#eq-proof-frenet-1}
+Differentiating the second equation in (@eq-proof-frenet-1) and using (@eq-proof-frenet-2)-(@eq-proof-frenet-3) we get
+\begin{align}
+\dot{\nn} & = \dot{\bb} \times \dg + \bb \times \ddg & \\
+          & = ( - \tau \nn \times \dg) + \bb \times \kappa \nn \\
+          & = \tau ( \dg \times \nn ) - \kappa (\nn \times \bb ) \\
+          & = \tau \bb - \kappa \dg \,,
+\end{align}
+where in the last equality we used the first and third equations in
+(@eq-proof-frenet-1). The above is exactly the second Frenet-Serret equation.
+
+:::
+
+
+::: Remark
+
+We can write the Frenet-Serret ODE sysyem in vectorial form. To this end, introduce the matrix
+$$
+F : =
+\left(
+\begin{array}{ccc}
+0 & \kappa & 0 \\
+- \kappa & 0 & \tau \\
+0 & \tau & 0
+\end{array}
+\right) \,.
+$$
+It is immediate to check that the Frenet-Serret equations are equivalent to
+$$
+\left(
+\begin{array}{c}
+\ddg \\
+\dot{\nn} \\
+\dot{\bb}
+\end{array}
+\right) 
+= 
+F 
+\left(
+\begin{array}{c}
+\dg \\
+\nn \\
+\bb
+\end{array}
+\right)  \,.
+$$
+
+:::
+
+
+As an example let us compute the Frenet frame of the helix.
+
+
+
+::: Example
+### Frenet frame of helix   
+
+Consider the helix of radius $1$ and rise $1$ given by
+$$
+\g (t) = ( \cos(t), \sin(t),t )\,,
+$$
+for $t \in \R$. We have that 
+$$
+\dg (t) = ( -\sin(t), \cos(t), 1 )    \,,
+$$
+and therefore 
+$$
+\norm{ \dg } = \sqrt{2} \,.
+$$
+This shows that $\g$ is regular but not unit speed. To compute the Frenet frame we first need to find a unit speed reparametrization of $\g$. To this end, compute the arc length of $\g$ starting at $t_0 = 0$
+$$
+s(t) := \int_0^t \norm{ \dg(u) } \, du = \sqrt{2} \, t \,.  
+$$
+The arc length is invertible with 
+$$
+\psi(t) := s^{-1}(t) = \frac{t}{\sqrt{2}} \,.
+$$
+Therefore a unit speed reparametrization of $\g$ is given by
+$$
+\tg(t):=\g( \psi(t)) = \left(  \cos \left( \frac{t}{\sqrt{2}}  \right) , \sin \left( \frac{t}{\sqrt{2}}  \right) , \frac{t}{\sqrt{2}}    \right) \,.
+$$
+We compute
+\begin{align}
+\dtg (t) & = \frac{1}{\sqrt{2}} \left(  -\sin \left( \frac{t}{\sqrt{2}}  \right) , \cos \left( \frac{t}{\sqrt{2}}  \right) , 1    \right) \\
+\ddtg (t) & = \frac12 \left(  -\cos \left( \frac{t}{\sqrt{2}}  \right) , -\sin \left( \frac{t}{\sqrt{2}}  \right) , 0    \right)
+\end{align}
+Therefore the curvature is
+$$
+\kappa (t) = \norm{ \ddtg(t) } = \frac12 \,.
+$$
+From the curvature we obtain the principal normal vector
+$$
+\nn(t) = \frac{1}{\kappa(t)} \, \ddtg(t) =  \left(  -\cos \left( \frac{t}{\sqrt{2}}  \right) , -\sin \left( \frac{t}{\sqrt{2}}  \right) , 0    \right) \,.
+$$
+We can now compute the binormal
+\begin{align}
+\bb(t) & = \dtg \times \nn  \\
+    & = \frac{1}{\sqrt{2}}
+    \left|
+    \begin{array}{ccc}
+    \ii & \jj & \kk \\
+    - \sin \left( \frac{t}{\sqrt{2}}  \right)  & \cos \left( \frac{t}{\sqrt{2}}  \right) & 1 \\
+    - \cos \left( \frac{t}{\sqrt{2}}  \right) & - \sin \left( \frac{t}{\sqrt{2}}  \right) & 0 
+    \end{array}
+    \right| \\
+    & =  \frac{1}{\sqrt{2}} \left(  \sin \left( \frac{t}{\sqrt{2}}  \right) , - \cos \left( \frac{t}{\sqrt{2}}  \right) , 1   \right) \,.
+\end{align}
+We have therefore computed the Frenet frame of $\g$. This is given by
+\begin{align}
+\dtg(t) & = \frac{1}{\sqrt{2}}  \left( -\sin\left( \frac{t}{\sqrt{2}}  \right) , \cos \left( \frac{t}{\sqrt{2}}  \right) , 1   \right) \\
+\nn(t) & =  \left(  -\cos \left( \frac{t}{\sqrt{2}}  \right) , -\sin \left( \frac{t}{\sqrt{2}}  \right) , 0    \right) \\
+\bb(t) & = \frac{1}{\sqrt{2}} \left(  \sin \left( \frac{t}{\sqrt{2}}  \right) , - \cos \left( \frac{t}{\sqrt{2}}  \right) , 1   \right) \,.
+\end{align}
+See below for a picture of the Frenet frame of the helix.
+Given the Frenet frame, we can compute the torsion via the formula
+$$
+\tau (t) = - \dot{\bb} \cdot \nn \,.
+$$
+Indeed, we have
+$$
+\dot{\bb} = \frac12 \left(  \cos \left( \frac{t}{\sqrt{2}}  \right) , - \sin \left( \frac{t}{\sqrt{2}}  \right) , 0   \right)
+$$
+and therefore 
+$$
+\dot{\bb} \cdot \nn = \frac12 \left( - \cos^2 \left( \frac{t}{\sqrt{2}}  \right) - \sin^2 \left( \frac{t}{\sqrt{2}}  \right) \right) = - \frac12 \,.
+$$
+The torsion is then
+$$
+\tau (t) = - \dot{\bb} \cdot \nn = \frac12 \,.
+$$
+:::
+
+![Frenet frame of the helix of radius $1$ and rise $1$.](/images/diagram_curvature_torsion.png){width=70%}
+
+```{python}
+#| echo: false
+#| fig-cap: "Plot of the Helix with Frenet frame"
+
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+# Parameters for the helix
+t = np.linspace(0, 4 * np.pi, 1000)  # Time parameter
+radius = 1.0
+pitch = 0.2
+x = radius * np.cos(t)
+y = radius * np.sin(t)
+z = pitch * t
+
+# Create a figure
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+
+# Plot the helix in magenta
+ax.plot(x, y, z, color='deeppink', linewidth=2)
+
+# Select three points on the helix: t = pi, t = 2*pi, and t = 3*pi
+t1_index = np.abs(t - np.pi).argmin()
+t2_index = np.abs(t - 2 * np.pi).argmin()
+t3_index = np.abs(t - 2.7 * np.pi).argmin()
+
+# Calculate Frenet frame at t1
+tangent1 = np.array([np.cos(t[t1_index]), np.sin(t[t1_index]), pitch])
+tangent1 /= np.linalg.norm(tangent1)
+normal1 = np.array([-np.sin(t[t1_index]), np.cos(t[t1_index]), 0])
+normal1 /= np.linalg.norm(normal1)
+binormal1 = np.cross(tangent1, normal1)
+
+# Calculate Frenet frame at t2
+tangent2 = np.array([np.cos(t[t2_index]), np.sin(t[t2_index]), pitch])
+tangent2 /= np.linalg.norm(tangent2)
+normal2 = np.array([-np.sin(t[t2_index]), np.cos(t[t2_index]), 0])
+normal2 /= np.linalg.norm(normal2)
+binormal2 = np.cross(tangent2, normal2)
+
+# Calculate Frenet frame at t3
+tangent3 = np.array([np.cos(t[t3_index]), np.sin(t[t3_index]), pitch])
+tangent3 /= np.linalg.norm(tangent3)
+normal3 = np.array([-np.sin(t[t3_index]), np.cos(t[t3_index]), 0])
+normal3 /= np.linalg.norm(normal3)
+binormal3 = np.cross(tangent3, normal3)
+
+# Plot Frenet frame at t1
+ax.quiver(x[t1_index], y[t1_index], z[t1_index],
+          tangent1[0], tangent1[1], tangent1[2],
+          color='black', label='Tangent (t1)')
+ax.quiver(x[t1_index], y[t1_index], z[t1_index],
+          normal1[0], normal1[1], normal1[2],
+          color='black', label='Normal (t1)')
+ax.quiver(x[t1_index], y[t1_index], z[t1_index],
+          binormal1[0], binormal1[1], binormal1[2],
+          color='black', label='Binormal (t1)')
+
+# Plot Frenet frame at t2
+ax.quiver(x[t2_index], y[t2_index], z[t2_index],
+          tangent2[0], tangent2[1], tangent2[2],
+          color='black', label='Tangent (t2)')
+ax.quiver(x[t2_index], y[t2_index], z[t2_index],
+          normal2[0], normal2[1], normal2[2],
+          color='black', label='Normal (t2)')
+ax.quiver(x[t2_index], y[t2_index], z[t2_index],
+          binormal2[0], binormal2[1], binormal2[2],
+          color='black', label='Binormal (t2)')
+
+# Plot Frenet frame at t3
+ax.quiver(x[t3_index], y[t3_index], z[t3_index],
+          tangent3[0], tangent3[1], tangent3[2],
+          color='black', label='Tangent (t3)')
+ax.quiver(x[t3_index], y[t3_index], z[t3_index],
+          normal3[0], normal3[1], normal3[2],
+          color='black', label='Normal (t3)')
+ax.quiver(x[t3_index], y[t3_index], z[t3_index],
+          binormal3[0], binormal3[1], binormal3[2],
+          color='black', label='Binormal (t3)')
+
+# Set axis labels
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.set_zlabel('z')
+
+# Set aspect ratio to be equal
+ax.set_box_aspect([1, 1, 1])
+
+
+# Remove axis ticks
+ax.set_xticks([])
+ax.set_yticks([])
+ax.set_zticks([])
+# Display the plot
+plt.show()
+
+
+
+```
+
+
+
+We conclude the section with a diagram on how to compute curvature and
+torsion. Recall that curvature is defined only for regular curves, while torsion is defined only for regular curves with non-vanishing curvature.
+
 ![Summary for computing $\kappa$ and $\tau$ for regular curve $\g$.](/images/diagram_curvature_torsion.png){width=80%}
 
+
+
+
+
+## Consequences of Frenet-Serret
+
+
+
+
+
+
+The most important consequence of the Frenet-Serret equations is that they allow to fully characterize space curves in terms of curvature and torsion. Precisely, the following theorem
+holds.
+
+
+::: Theorem
+### Characterization of space curves  {#theorem-characterization-space}
+
+
+Let $\kappa, \tau \ \colon \R \to \R$ be smooth functions, with $\kappa>0$. Then:
+
+1. There exists aunit speed curve $\g \ \colon \R \to \R^3$ such that its curvature $\kappa^{\g}$ and torsion $\tau^{\g}$ satisfy
+$$
+\kappa^{\g}(t) = \kappa(t) \,, \quad 
+\tau^{\g}(t) = \tau(t) \,,
+  \,\, \forall \, t \in \R \,.
+$$
+
+2. Suppose that $\tg \ \colon \R \to \R^3$ is a unit speed curve such that its curvature $\tilde{\kappa}^{\tg}$ and torsion $\tau^{\tg}$ satisfy
+$$
+\kappa^{\tg}(t) = \kappa(t) \,, \quad 
+\tau^{\tg}(t) = \tau(t) 
+  \,,\,\, \forall \, t \in \R \,.
+$$
+Then 
+$$
+\tg = \g
+$$
+up to rotations and translations.
+
+:::
+
+
+
+The proof of Theorem \ref{theorem-characterization-space} is omitted, and it can be found in Theorem 2.3.6 in [@pressley]. 
+
+Theorem \ref{theorem-characterization-space} is a very strong result. It is saying two things:
+
+1. If we prescribe curvature and torsion, then there exists a unit speed curve which has such curvature and torsion.
+
+2. If two unit speed curves have same curvature and torsion, then they must be the same curve, up to translations and rotations.
+
+In other words, curvature and torsion fully characterize space curves. This result is the 3D counterpart of
+Theorem \ref{theorem-characterization-plane}, which said that signed curvature characterizes 
+2D curves.
+
+
+
+
+::: Example
+
+In the previous section we have considered the unit speed curve
+$$
+\g(t) := \left( \frac45 \cos(t),  1 - \sin(t) , -\frac35 \cos(t)  \right) \,,
+$$
+for $t \in [0,2\pi]$. We have computed that 
+$$
+\kappa^{\g} = 1 \,, \quad \tau^{\g} = 0 \,. 
+$$
+If we plot $\g$, we clearly see that $\g$ is just obtained by translating and 
+rotating a unit circle, see plot below. Theorem \ref{theorem-characterization-space} enables
+us to rigorously prove this claim. Indeed, consider the unit speed circle
+$$
+\tg(t) := \left( \cos(t), \sin(t) , 0  \right) \,,
+$$
+for $t \in [0,2\pi]$. We have proven that curvature and torsion are  
+$$
+\kappa^{\tg} = 1 \,, \quad \tau^{\tg} = 1 \,. 
+$$
+Therefore 
+$$
+\kappa^{\g} = \kappa^{\tg} \,, \quad \tau^{\g} = \tau^{\tg}  \,,
+$$
+and by Theorem  \ref{theorem-characterization-space} we conclude that $\g$ is equal to  $\tg$ up to rotations and translations.
+
+:::
+
+
+```{python}
+#| echo: false
+#| fig-cap: "Plot of the curve in example above"
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+# Define the parameter 't'
+t = np.linspace(0, 2*np.pi, 100)
+
+# Calculate the corresponding x, y, and z values
+x = (4/5)*np.cos(t) 
+y = 1- np.sin(t)
+z = -(3/5)*np.sin(t)
+
+# Create a 3D plot
+fig = plt.figure(figsize=(5, 5))
+ax = fig.add_subplot(111, projection='3d')
+
+# Plot the curve
+ax.plot(x, y, z, color='deeppink', linewidth=2)
+
+# Set labels for the axes
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.set_zlabel('z')
+
+# Set the viewing angle to 45 degrees for both azimuthal and elevation angles
+ax.view_init(elev=20, azim=-25)
+
+# Show the plot
+plt.show()
+```
+
+
+
+Another consequence of the Frenet-Serret equations is that they allow us to finally 
+prove the curvature and torsion formulas given in Proposition \ref{proposition-curvature-formula} and Proposition \ref{proposition-torsion-formula}. For reader's convenience we recall these two results.
+
+
+::: Proposition 
+### Curvature and torsion formulas
+
+Let $\g \colon (a,b) \to \R^3$ be a regular curve. The curvature $\kappa(t)$ of $\g$ at $\g(t)$ is given by
+$$
+\kappa(t) = \frac{ \norm{\dg \times \ddg} }{ \norm{\dg}^3 } \,. 
+$$
+Suppose in addition that $\g$ has non-vanishing curvature. The torsion $\tau(t)$ of $\g$ at $\g(t)$ is given by
+$$
+\tau (t) = \frac{ ( \dg \times \ddg ) \cdot \dddg }{ \norm{ \dg \times \ddg }^2 } \,. 
+$$
+
+:::
+
+
+::: Proof
+a
+
+:::

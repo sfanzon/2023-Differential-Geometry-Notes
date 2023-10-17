@@ -33,3 +33,57 @@ $$
 Let $(X,\TT)$ be a topological space. We say that $X$ is **connected** if the only subsets of $X$ which are both open and closed are just $\emptyset$ and $X$.
 
 :::
+
+
+
+
+
+::: Definition 
+
+Let $X$ be a set. A **distance** on $X$ is a function 
+$$
+d \colon X \times X \to \R
+$$
+such that, for all $x,y,z \in X$ they hold:
+
+1. The distance is non-negative
+$$
+d(x,y) \geq 0 \,.
+$$ 
+Moreover $d(x,y) = 0$ if and only if $x=y$.
+
+2. The distance is symmetric:
+$$
+d(x,y) = d(y,x) \,.
+$$
+
+3. The triangle inequality holds:
+$$
+d(x,z) \leq d(x,y) + d(y,z) \,.
+$$
+
+
+We say that the pair $(X,d)$ is a **metric space**.
+:::
+
+
+
+
+
+
+
+::: Definition
+### Topology induced by the metric
+
+Let $(X,d)$ be a metric space. We define the topology $\TT$ **induced by the metric** as the
+collection of sets $U \subset X$ that satisfy the following property:
+$$
+\forall \, x \in U \,, \, \exists \, r \in \R, \, r > 0 \, \st \, B_r(x) \subset U \,,
+$$
+where $B_r(x)$ is the ball centered at $x$ of radius $r$. This is defined by 
+$$
+B_r(x) := \{ y \in X  \, \colon \,  d(x,y)<r  \} \,.
+$$
+
+
+:::
