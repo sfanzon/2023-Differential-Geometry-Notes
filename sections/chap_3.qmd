@@ -228,7 +228,7 @@ When $\g$ is regular and has values in $\R^3$, there is a way to compute $\kappa
 
 
 
-We conclude with an example where we compute $\kappa$ using reparametrizations.
+We conclude with two examples in which we compute the curvature $\kappa$ using unit speed reparametrizations.
 
 
 ::: Example
@@ -250,7 +250,8 @@ $$
 \dg(t) = (-R\sin(t), R\cos(t))  \quad \implies \quad 
 \norm{\dg(t)} = R  
 $$
-and so $\g$ is regular. The arc length starting at $t_0 = 0$ is
+and so $\g$ is regular. However $\g$ is not unit speed, therefore we need to find
+a unit speed reparametrization. The arc length starting at $t_0 = 0$ is
 $$
 s(t) = \int_{0}^t R d \tau = t R \,.
 $$
@@ -278,6 +279,160 @@ $$
 In this case $\kappa(t)$ is constant. The curvature also tells us that the smaller the circle, the higher the curvature. For a large circle, like the Earth, the curvature is barely noticeable. 
 :::
 
+
+
+
+Before proceeding with the next example, let us give a short overview of the **Hyperbolic functions**.
+
+
+::: Remark 
+### Hyperbolic functions    {#remark-hyperbolic-functions}
+
+The Hyperbloic functions are the analogous of the trigonometric functions, but defined using the hyperbola rather than the circle. Their formulas can be obtained by means of the exponential function $e^t$. We have:
+
+
+- Hyperbolic cosine: The **even part** of the function $e^t$, that is, 
+$$
+\cosh (t) = \frac {e^t + e^{-t}} {2} = \frac {e^{2t} + 1} {2e^t} = \frac {1 + e^{-2t}} {2e^{-t}} \,.
+$$
+
+- Hyperbolic sine: The **odd part** of the function $e^t$, that is, 
+$$
+\sinh (t) = \frac {e^t - e^{-t}} {2} = \frac {e^{2t} - 1} {2e^t} = \frac {1 - e^{-2t}} {2e^{-t}} \,.
+$$
+
+- Hyperbolic tangent: Defined by
+$$
+\tanh(t) = \frac{\sinh t}{\cosh t} = \frac {e^t - e^{-t}} {e^t + e^{-t}}
+= \frac{e^{2t} - 1} {e^{2t} + 1} \,.
+$$
+
+- Hyperbolic cotangent: The reciprocal of $\tanh$ for $t \neq 0$,
+$$
+\coth t = \frac{\cosh t}{\sinh t} = \frac {e^t + e^{-t}} {e^t - e^{-t}}
+= \frac{e^{2t} + 1} {e^{2t} - 1} \,.
+$$
+
+- Hyperbolic secant: The reciprocal of $\cosh$
+$$
+\sech (t) = \frac{1}{\cosh t} = \frac {2} {e^t + e^{-t}}
+= \frac{2e^t} {e^{2t} + 1} \,.
+$$
+
+* Hyperbolic cosecant: The reciprocal of $\sinh$ for $t \neq 0$,
+$$
+\csch (t) = \frac{1}{\sinh t} = \frac {2} {e^t - e^{-t}}
+= \frac{2e^t} {e^{2t} - 1} \,.
+$$
+
+For a plot $\cosh, \sinh, \tanh$ see @fig-hyperbolic-functions below. The properties of the
+hyperbolic functions which are of interest to us are:
+
+1. Identities: 
+\begin{align}
+&\cosh(t) + \sinh(t) = e^t \\
+&\cosh(t) - \sinh(t) = e^{-t} \\
+&\cosh^2(t) - \sinh^2(t)  = 1 \\
+&{\sech}^2(t) - \tanh^2(t)  = 1  
+\end{align}
+
+2. Derivatives: 
+\begin{align}
+\frac{d}{dt} \left[ \sinh(t) \right] & = \cosh (t) \\
+\frac{d}{dt} \left[ \cosh(t) \right] & = \sinh (t) \\
+\frac{d}{dt} \left[ \tanh(t) \right] & = 1 - \tanh^2 (t) = - {\csch}^2(t) 
+\end{align}
+
+3. Integrals: 
+\begin{align}
+\int_{t_0}^t \sinh(u) \, du & = \cosh (t) - \cosh( t_0 ) \\
+\int_{t_0}^t \cosh(u) \, du & = \sinh (t) - \sinh( t_0 ) \\
+\int_{t_0}^t \tanh(u) \, du & = \log ( \cosh (t) ) - \log ( \cosh (t_0) )
+\end{align}
+
+:::
+
+
+![Plot of $\cosh, \sinh, \tanh$.](/images/hyperbolic_functions.png){#fig-hyperbolic-functions width=70%}
+
+
+::: Example
+### The Catenary
+
+The **catenary** is the shape of a heavy chain suspended at its ends. The chain is only subjected to gravity, see @fig-catenary. This shape looks similar to a parabola, but it is not a parabola. This was first noted by Galilei, see this [Wikipedia page](https://en.wikipedia.org/wiki/Catenary). The profile of the hanging chain can be obtained via a minimization problem, and one can show it is of the form 
+$$
+\g(t) = ( t, \cosh(t) ) \,, \quad t \in \R \,.
+$$
+See @fig-catenary-plot for a plot of $\g$. Let us check if $\g$ is regular. We have
+$$
+\dg (t) = (1 , \sinh(t)) 
+$$
+so that
+$$
+\norm{ \dg }^2 = 1 + {\sinh}^2 (t) = \cosh^2 (t) 
+\quad \implies \quad
+\norm{ \dg } = \cosh (t) \,. 
+$$
+Note that 
+$$
+\cosh(t) \geq 1
+$$
+showing that $\g$ is regular. However
+$$
+\norm{\dg(1)} = \cosh (1) = \frac{e + e^{-1}}{2} \approx 1.54 \,, 
+$$
+proving that $\g$ is not unit speed. Let us then compute the arc length of $\g$ starting at $t_0 = 0$
+$$
+s(t) = \int_0^t \norm{ \dg (u) } \, du =  \int_0^t \cosh (u) \, du = \sinh (t)
+$$
+since $\sinh(0) = 0$. We need to invert $s$. We have
+$$
+s = \sinh(t) \quad \iff \quad s = \frac{e^t - e^{-t}}{2} \quad \iff \quad e^{2t} - 2s e^{t} - 1 = 0\,,
+$$
+where the last equation was obtained multuplying both sides by $e^t$. Now we substitute
+$$
+y = e^t
+$$
+and obtain
+$$
+e^{2t} - 2s e^{t} - 1 = 0 \quad \iff \quad y^{2} - 2s y - 1 = 0  \quad \iff \quad y = s \pm \sqrt{1+s^2} \,.
+$$
+Recalling that $y=e^t$, we only consider the positive solution, and obtain that
+$$
+e^t = s + \sqrt{1 + s^2 } \quad \implies \quad t = \log \left( s + \sqrt{1 + s^2} \right) \,.
+$$
+We have proven that the inverse of the arc length $s(t)$ is 
+$$
+\psi(t) := s^{-1}(t) = \log \left( t + \sqrt{ 1+ t^2} \right) \,.
+$$
+Therefore 
+$$
+\tg (t) := \g( \psi(t) )
+$$
+is a unit speed reparametrization of $\g$. Substituting $\psi$ and using the definition of $\g$ we have
+$$
+\tg(t) = \left(  \log \left( t + \sqrt{ 1+ t^2} \right) , \sqrt{1 + t^2}  \right) \,.
+$$
+We can now compute the curvature. We have:
+\begin{align}
+\dtg (t) &  = \left(  \frac{1}{ \sqrt{1 + t^2} } , \frac{t}{ \sqrt{1 + t^2}}   \right) \\
+\ddtg (t) & = \left( - \frac{t}{ (1 + t^2)^{3/2} } , \frac{1}{(1 + t^2)^{3/2} }   \right)
+\end{align}
+Moreover
+$$
+\norm{\ddtg (t)}^2 = \frac{t^2}{(1+t^2)^3} + \frac{1}{(1+t^2)^3} = \frac{1}{(1+t^2)^2} \,.
+$$
+Therefore the curvature is
+$$
+\kappa (t) = \norm{\ddtg (t)} = \frac{1}{1+t^2} \,.
+$$
+:::
+
+
+![The catenary is the shape of a heavy chain suspended at its ends. Image from [Wikipedia](https://en.wikipedia.org/wiki/Catenary).](/images/catenary.png){#fig-catenary width=70%}
+
+
+![Plot of the catenary curve $\g(t) = (t, \cosh(t))$.](/images/catenary_plot.png){#fig-catenary-plot width=70%}
 
 
 
@@ -1344,7 +1499,7 @@ $$
 
 
 ::: Example 
-### Curvature and Torsion of Circle
+### Curvature and Torsion of Circle   {#example-circle-curvature-torsion}
 
 The Circle of radius $R>0$ is
 $$
@@ -1364,15 +1519,15 @@ $$
 :::
 
 
-From the above example we notice that the torsion of the circle is $0$. This is true in general for plane curves. In the next example we see that for the torsion to be zero, it is sufficient for the image of $\g$ to be contained in a plane.
+From the above example we notice that the torsion of the circle is $0$. This is true in general for space curves which are contained in a plane: we will prove this result in general. For the moment, let us give an example for which this happens, that is, an example of space curve $\g$ which is contained in a plane. 
 
 
-::: Example
+::: {.Example  #example-circle-rotated}
 Define the space curve
 $$
 \g(t) := \left( \frac45 \cos(t),  1 - \sin(t) , -\frac35 \cos(t)  \right) \,,
 $$
-for $t \in \R$. As seen in the plot below, $\g$ is just a Circle which has been rotated an translated. We hence expect curvature and torsion to be
+for $t \in \R$. As seen in the plot below, $\g$ is just a Circle which has been rotated an translated. Therefore $\g$ is contained in a plane, and we expect curvature and torsion to be
 $$
 \kappa = \frac1R , \quad \tau = 0\,, 
 $$
@@ -1456,6 +1611,14 @@ ax.view_init(elev=20, azim=-25)
 # Show the plot
 plt.show()
 ```
+
+
+
+
+
+
+
+
 
 
 
@@ -1576,7 +1739,26 @@ $$
 :::
 
 
-As an example let us compute the Frenet frame of the helix.
+
+
+::: Important
+### Summary
+
+Recall that:
+
+1. Curvature $\kappa$ is defined only for regular curves.
+2. Torsion $\tau$ is defined only for regular curves with non-vanishing curvature.
+
+The two strategies for computing $\kappa$ and $\tau$ are discussed in the diagram below.
+
+:::
+
+![Summary for computing $\kappa$ and $\tau$ for regular curve $\g$.](/images/diagram_curvature_torsion.png){#fig-diagram width=80%}
+
+
+
+
+Let us conclude the section with an example. We compute the Frenet frame of the helix. As a consequence we obtain curvature and torsion.
 
 
 
@@ -1587,7 +1769,12 @@ Consider the helix of radius $1$ and rise $1$ given by
 $$
 \g (t) = ( \cos(t), \sin(t),t )\,,
 $$
-for $t \in \R$. We have that 
+for $t \in \R$. We now proceed following the diagram at @fig-diagram.
+We ask the first question:
+$$
+\mbox{Is $\g$ unit speed?}
+$$
+We have that
 $$
 \dg (t) = ( -\sin(t), \cos(t), 1 )    \,,
 $$
@@ -1595,7 +1782,11 @@ and therefore
 $$
 \norm{ \dg } = \sqrt{2} \,.
 $$
-This shows that $\g$ is regular but not unit speed. To compute the Frenet frame we first need to find a unit speed reparametrization of $\g$. To this end, compute the arc length of $\g$ starting at $t_0 = 0$
+This shows that $\g$ is regular but not unit speed. We ask the second question in the diagram:
+$$
+\mbox{Can we find a unit speed reparametrization of $\g$?}
+$$
+Let us try. We compute the arc length of $\g$ starting at $t_0 = 0$
 $$
 s(t) := \int_0^t \norm{ \dg(u) } \, du = \sqrt{2} \, t \,.  
 $$
@@ -1606,6 +1797,10 @@ $$
 Therefore a unit speed reparametrization of $\g$ is given by
 $$
 \tg(t):=\g( \psi(t)) = \left(  \cos \left( \frac{t}{\sqrt{2}}  \right) , \sin \left( \frac{t}{\sqrt{2}}  \right) , \frac{t}{\sqrt{2}}    \right) \,.
+$$
+The next step in the diagram is
+$$
+\mbox{Compute Frenet frame $\{ \dg, \nn, \bb \}$ and curvature $\kappa$, torsion $\tau$}
 $$
 We compute
 \begin{align}
@@ -1658,11 +1853,10 @@ $$
 $$
 :::
 
-![Frenet frame of the helix of radius $1$ and rise $1$.](/images/diagram_curvature_torsion.png){width=70%}
 
 ```{python}
 #| echo: false
-#| fig-cap: "Plot of the Helix with Frenet frame"
+#| fig-cap: "Frenet frame of the helix of radius 1 and rise 1."
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -1764,19 +1958,13 @@ plt.show()
 
 
 
-We conclude the section with a diagram on how to compute curvature and
-torsion. Recall that curvature is defined only for regular curves, while torsion is defined only for regular curves with non-vanishing curvature.
 
-![Summary for computing $\kappa$ and $\tau$ for regular curve $\g$.](/images/diagram_curvature_torsion.png){width=80%}
 
 
 
 
 
 ## Consequences of Frenet-Serret
-
-
-
 
 
 
@@ -1827,10 +2015,9 @@ Theorem \ref{theorem-characterization-plane}, which said that signed curvature c
 
 
 
-
 ::: Example
 
-In the previous section we have considered the unit speed curve
+In Example \ref{example-circle-rotated} we have considered the unit speed curve
 $$
 \g(t) := \left( \frac45 \cos(t),  1 - \sin(t) , -\frac35 \cos(t)  \right) \,,
 $$
@@ -1844,7 +2031,7 @@ us to rigorously prove this claim. Indeed, consider the unit speed circle
 $$
 \tg(t) := \left( \cos(t), \sin(t) , 0  \right) \,,
 $$
-for $t \in [0,2\pi]$. We have proven that curvature and torsion are  
+for $t \in [0,2\pi]$. In Example \ref{example-circle-curvature-torsion} we have proven that curvature and torsion are  
 $$
 \kappa^{\tg} = 1 \,, \quad \tau^{\tg} = 1 \,. 
 $$
@@ -1915,6 +2102,12 @@ $$
 
 
 ::: Proof
-a
+
+We only prove the formula for $\kappa$, as the one for $\tau$ can be obtained similarly, just with more calculations. For a proof see Proposition 2.3.1 in [@pressley].
+
+The curve $\g$ is regular. Therefore we know that its arc length $s(t)$ is invertible, with the inverse giving a unit speed reparametrization of $\g$. Using the formal notations for chain rule, we have
+$$
+\frac{ds}{dt} = \norm{\dg}
+$$
 
 :::

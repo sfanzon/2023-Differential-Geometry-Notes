@@ -8,7 +8,6 @@ $$
 # Topology
 
 
-
 ::: Definition
 
 Let $X$ be a set and $\TT$ a collection of subsets of $X$. We say that $\TT$ is a **topology** on $X$ if they hold:

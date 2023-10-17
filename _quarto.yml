@@ -3,6 +3,7 @@ project:
   output-dir: docs
 
 
+
 book:
   title: "Differential Geometry"
   subtitle: "Lecture Notes"
@@ -36,6 +37,7 @@ book:
     foreground: "#E8E8E8"
   sidebar:
     search: false
+
 
 
     

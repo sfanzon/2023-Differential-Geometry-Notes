@@ -177,109 +177,115 @@
 
  [**Example 3.5**](#Example-3.5)\Pageref{Example-3.5}
 
- [**Definition 3.6**](#same-orientation): Same orientation\Pageref{same-orientation}
+ [**Remark 3.6**](#remark-hyperbolic-functions): Hyperbolic functions\Pageref{remark-hyperbolic-functions}
 
- [**Definition 3.7**](#orientation): Orientation\Pageref{orientation}
+ [**Example 3.7**](#the-catenary): The Catenary\Pageref{the-catenary}
 
- [**Definition 3.8**](#positive-orientation): Positive orientation\Pageref{positive-orientation}
+ [**Definition 3.8**](#same-orientation): Same orientation\Pageref{same-orientation}
 
- [**Example 3.9**](#Example-3.9)\Pageref{Example-3.9}
+ [**Definition 3.9**](#orientation): Orientation\Pageref{orientation}
 
- [**Definition 3.10**](#vector-product-in-mathbbr3-1): Vector product in $\mathbb{R}^3$\Pageref{vector-product-in-mathbbr3-1}
+ [**Definition 3.10**](#positive-orientation): Positive orientation\Pageref{positive-orientation}
 
- [**Proposition 3.11**](#Proposition-3.11)\Pageref{Proposition-3.11}
+ [**Example 3.11**](#Example-3.11)\Pageref{Example-3.11}
+
+ [**Definition 3.12**](#vector-product-in-mathbbr3-1): Vector product in $\mathbb{R}^3$\Pageref{vector-product-in-mathbbr3-1}
+
+ [**Proposition 3.13**](#Proposition-3.13)\Pageref{Proposition-3.13}
 
  [**Proof**](#Proof*-3.2)\Pageref{Proof*-3.2}
 
- [**Proposition 3.12**](#proposition-vector-product)\Pageref{proposition-vector-product}
+ [**Proposition 3.14**](#proposition-vector-product)\Pageref{proposition-vector-product}
 
- [**Remark 3.13**](#remark-vector-product): Geometric interpretation of vector product\Pageref{remark-vector-product}
+ [**Remark 3.15**](#remark-vector-product): Geometric interpretation of vector product\Pageref{remark-vector-product}
 
- [**Remark 3.14**](#summary-properties-of-mathbfutimes-mathbfv): Summary: Properties of $\mathbf{u}\times \mathbf{v}$\Pageref{summary-properties-of-mathbfutimes-mathbfv}
+ [**Remark 3.16**](#summary-properties-of-mathbfutimes-mathbfv): Summary: Properties of $\mathbf{u}\times \mathbf{v}$\Pageref{summary-properties-of-mathbfutimes-mathbfv}
 
- [**Proposition 3.15**](#Proposition-3.15)\Pageref{Proposition-3.15}
+ [**Proposition 3.17**](#Proposition-3.17)\Pageref{Proposition-3.17}
 
- [**Proposition 3.16**](#Proposition-3.16)\Pageref{Proposition-3.16}
+ [**Proposition 3.18**](#Proposition-3.18)\Pageref{Proposition-3.18}
 
- [**Proposition 3.17**](#proposition-curvature-formula): Curvature formula\Pageref{proposition-curvature-formula}
+ [**Proposition 3.19**](#proposition-curvature-formula): Curvature formula\Pageref{proposition-curvature-formula}
 
- [**Example 3.18**](#Example-3.18)\Pageref{Example-3.18}
+ [**Example 3.20**](#Example-3.20)\Pageref{Example-3.20}
 
- [**Example 3.19**](#Example-3.19)\Pageref{Example-3.19}
+ [**Example 3.21**](#Example-3.21)\Pageref{Example-3.21}
 
- [**Definition 3.20**](#Definition-3.20)\Pageref{Definition-3.20}
+ [**Definition 3.22**](#Definition-3.22)\Pageref{Definition-3.22}
 
- [**Definition 3.21**](#Definition-3.21)\Pageref{Definition-3.21}
+ [**Definition 3.23**](#Definition-3.23)\Pageref{Definition-3.23}
 
- [**Remark 3.22**](#Remark-3.22)\Pageref{Remark-3.22}
+ [**Remark 3.24**](#Remark-3.24)\Pageref{Remark-3.24}
 
- [**Remark 3.23**](#Remark-3.23)\Pageref{Remark-3.23}
+ [**Remark 3.25**](#Remark-3.25)\Pageref{Remark-3.25}
 
- [**Definition 3.24**](#Definition-3.24)\Pageref{Definition-3.24}
+ [**Definition 3.26**](#Definition-3.26)\Pageref{Definition-3.26}
 
- [**Theorem 3.25**](#theorem-characterization-plane): Characterization of plane curves\Pageref{theorem-characterization-plane}
+ [**Theorem 3.27**](#theorem-characterization-plane): Characterization of plane curves\Pageref{theorem-characterization-plane}
 
- [**Example 3.26**](#Example-3.26)\Pageref{Example-3.26}
+ [**Example 3.28**](#Example-3.28)\Pageref{Example-3.28}
 
- [**Definition 3.27**](#principal-normal-vector): Principal normal vector\Pageref{principal-normal-vector}
+ [**Definition 3.29**](#principal-normal-vector): Principal normal vector\Pageref{principal-normal-vector}
 
- [**Remark 3.28**](#Remark-3.28)\Pageref{Remark-3.28}
+ [**Remark 3.30**](#Remark-3.30)\Pageref{Remark-3.30}
 
- [**Question 3.29**](#Question-3.29)\Pageref{Question-3.29}
+ [**Question 3.31**](#Question-3.31)\Pageref{Question-3.31}
 
- [**Definition 3.30**](#binormal-vector): Binormal vector\Pageref{binormal-vector}
+ [**Definition 3.32**](#binormal-vector): Binormal vector\Pageref{binormal-vector}
 
- [**Definition 3.31**](#orthonormal-basis): Orthonormal basis\Pageref{orthonormal-basis}
+ [**Definition 3.33**](#orthonormal-basis): Orthonormal basis\Pageref{orthonormal-basis}
 
- [**Proposition 3.32**](#Proposition-3.32)\Pageref{Proposition-3.32}
+ [**Proposition 3.34**](#Proposition-3.34)\Pageref{Proposition-3.34}
 
  [**Proof**](#Proof*-3.3)\Pageref{Proof*-3.3}
 
- [**Proposition 3.33**](#proposition-positive-basis)\Pageref{proposition-positive-basis}
+ [**Proposition 3.35**](#proposition-positive-basis)\Pageref{proposition-positive-basis}
 
  [**Proof**](#Proof*-3.4)\Pageref{Proof*-3.4}
 
- [**Proposition 3.34**](#proposition-binormal)\Pageref{proposition-binormal}
+ [**Proposition 3.36**](#proposition-binormal)\Pageref{proposition-binormal}
 
  [**Proof**](#Proof*-3.5)\Pageref{Proof*-3.5}
 
- [**Definition 3.35**](#torsion-of-unit-speed-curve): Torsion of unit speed curve\Pageref{torsion-of-unit-speed-curve}
+ [**Definition 3.37**](#torsion-of-unit-speed-curve): Torsion of unit speed curve\Pageref{torsion-of-unit-speed-curve}
 
- [**Remark 3.36**](#Remark-3.36)\Pageref{Remark-3.36}
+ [**Remark 3.38**](#Remark-3.38)\Pageref{Remark-3.38}
 
  [**Warning**](#Warning*-3.6)\Pageref{Warning*-3.6}
 
- [**Definition 3.37**](#Definition-3.37)\Pageref{Definition-3.37}
+ [**Definition 3.39**](#Definition-3.39)\Pageref{Definition-3.39}
 
- [**Proposition 3.38**](#proposition-torsion-formula): Torsion formula\Pageref{proposition-torsion-formula}
+ [**Proposition 3.40**](#proposition-torsion-formula): Torsion formula\Pageref{proposition-torsion-formula}
 
- [**Example 3.39**](#torsion-helix): Torsion Helix\Pageref{torsion-helix}
+ [**Example 3.41**](#torsion-helix): Torsion Helix\Pageref{torsion-helix}
 
- [**Example 3.40**](#curvature-and-torsion-of-circle): Curvature and Torsion of Circle\Pageref{curvature-and-torsion-of-circle}
+ [**Example 3.42**](#example-circle-curvature-torsion): Curvature and Torsion of Circle\Pageref{example-circle-curvature-torsion}
 
- [**Example 3.41**](#Example-3.41)\Pageref{Example-3.41}
+ [**Example 3.43**](#example-circle-rotated)\Pageref{example-circle-rotated}
 
- [**Definition 3.42**](#frenet-frame-1): Frenet frame\Pageref{frenet-frame-1}
+ [**Definition 3.44**](#frenet-frame-1): Frenet frame\Pageref{frenet-frame-1}
 
- [**Definition 3.43**](#Definition-3.43)\Pageref{Definition-3.43}
-
- [**Remark 3.44**](#Remark-3.44)\Pageref{Remark-3.44}
-
- [**Theorem 3.45**](#frenet-serret-equations): Frenet-Serret equations\Pageref{frenet-serret-equations}
-
- [**Proof**](#Proof*-3.7)\Pageref{Proof*-3.7}
+ [**Definition 3.45**](#Definition-3.45)\Pageref{Definition-3.45}
 
  [**Remark 3.46**](#Remark-3.46)\Pageref{Remark-3.46}
 
- [**Example 3.47**](#frenet-frame-of-helix): Frenet frame of helix\Pageref{frenet-frame-of-helix}
+ [**Theorem 3.47**](#frenet-serret-equations): Frenet-Serret equations\Pageref{frenet-serret-equations}
 
- [**Theorem 3.48**](#theorem-characterization-space): Characterization of space curves\Pageref{theorem-characterization-space}
+ [**Proof**](#Proof*-3.7)\Pageref{Proof*-3.7}
 
- [**Example 3.49**](#Example-3.49)\Pageref{Example-3.49}
+ [**Remark 3.48**](#Remark-3.48)\Pageref{Remark-3.48}
 
- [**Proposition 3.50**](#curvature-and-torsion-formulas): Curvature and torsion formulas\Pageref{curvature-and-torsion-formulas}
+ [**Important**](#summary): Summary\Pageref{summary}
 
- [**Proof**](#Proof*-3.8)\Pageref{Proof*-3.8}
+ [**Example 3.49**](#frenet-frame-of-helix): Frenet frame of helix\Pageref{frenet-frame-of-helix}
+
+ [**Theorem 3.50**](#theorem-characterization-space): Characterization of space curves\Pageref{theorem-characterization-space}
+
+ [**Example 3.51**](#Example-3.51)\Pageref{Example-3.51}
+
+ [**Proposition 3.52**](#curvature-and-torsion-formulas): Curvature and torsion formulas\Pageref{curvature-and-torsion-formulas}
+
+ [**Proof**](#Proof*-3.9)\Pageref{Proof*-3.9}
 
  [**Definition 4.1**](#Definition-4.1)\Pageref{Definition-4.1}
 
