@@ -2105,9 +2105,152 @@ $$
 
 We only prove the formula for $\kappa$, as the one for $\tau$ can be obtained similarly, just with more calculations. For a proof see Proposition 2.3.1 in [@pressley].
 
-The curve $\g$ is regular. Therefore we know that its arc length $s(t)$ is invertible, with the inverse giving a unit speed reparametrization of $\g$. Using the formal notations for chain rule, we have
+The curve $\g$ is regular. Therefore we know that its arc length $s(t)$ is invertible, with the inverse giving a unit speed reparametrization of $\g$. Using the Leibnitz notation we have
 $$
 \frac{ds}{dt} = \norm{\dg}
 $$
+
+:::
+
+
+
+We now state and prove another two results that directly follow from the Frenet-Serret equations. They state, respectivley:
+
+1. A curve has torsion $\tau = 0$ if and only if it is contained in a plane.
+
+2. A curve has constant curvature and zero torsion if and only if it is part of a circle.
+
+
+Before proceeding, we recall the following.
+
+::: Remark
+### Equation of a plane
+
+The general equation of a plane $\pmb{\pi}_d$ in $\R^3$ is given by
+
+$$
+\pmb{\pi}_d = \{ \xx \in \R^3 \, \colon \,  \xx \cdot \mathbf{P} = d \}\,,
+$$
+for some vector $\mathbf{P} \in \R^3$ and scalar $d \in \R$. Note that:
+
+- If $d = 0$, the condition
+$$
+\xx \cdot \mathbf{P} = 0
+$$
+is saying that the plane $\pmb{\pi}_0$ contains all the points $\xx$ in $\R^3$ which are orthogonal to $\mathbf{P}$. In particular $\pmb{\pi}_0$ contains the origin $\zero$. 
+
+- If $d \neq 0$, then $\pmb{\pi}_d$ is the translation of $\pmb{\pi}_0$ by the quantity $d$ in direction $\mathbf{P}$.
+
+ In both cases, $\mathbf{P}$ is the normal vector to the plane, as shown in @fig-general-plane below.
+:::
+
+
+![The plane $\pmb{\pi}_0$ is the set of points of $\R^3$ orthogonal to $\mathbf{P}$. The plane $\pmb{\pi}_d$ is obtained by translating $\pmb{\pi}_0$ by a quantity $d$ in direction $\mathbf{P}$.](/images/general_plane.png){#fig-general-plane width=70%}
+
+
+::: Proposition
+
+Let $\g \colon (a,b) \to \R^3$ be regular and such that $\kappa \neq 0$. They are equivalent:
+
+
+1. The torsion of $\g$ satisfies $\tau(t) = 0$ for all $t \in (a,b)$.
+
+2. The image of $\g$ is contained in a plane, that is, there exists a vector $\mathbf{P} \in \R^3$ and a scalar $d \in \R$ such that
+$$
+\g(t)\cdot \mathbf{P} = d \,, \quad \forall t \in (a,b) \,.
+$$
+
+
+:::
+
+
+
+::: Proof
+Without loss of generality we can assume that $\g$ is unit speed. Indeed, if we were to consider $\tg$ a unit speed reparametrization of $\g$, then
+
+- $\tg$ would still be contained in the same plane in which $\g$ is contained.
+- The torsion of $\tg$ would not change, i.e., it would still be identically zero.
+
+Thefore the Frenet frame of $\g$ exists. We denote it by 
+$$
+\{ \dg, \nn ,\bb \} \,.
+$$
+
+
+*Step 1.* Suppose that $\tau = 0$ for all $t$. By the Frenet-Serret equations we have
+$$
+\dot{\bb} = -\tau(t) \nn = \zero \,,
+$$
+so that $\bb(t)$ is constant. As by definition 
+$$
+\bb = \dg \times \nn \,,
+$$ 
+we conclude that the vectors $\dg(t)$ and $\nn(t)$ always span the same plane, which has constant normal vector $\bb$. Intuition suggests that $\g$ should be contained in such plane, see Figure @fig-proof-plane below. Indeed, recall that the Frenet frame is orthonormal. Hence
+$$
+\dg \cdot \bb = 0 \,, \quad \forall \, t \in (a,b) \,.
+$$
+Then
+$$
+\frac{d}{dt} ( \g \cdot \bb ) = \dg \cdot \bb + \g \cdot \dot{\bb} = 0\,,  \quad \forall \, t \in (a,b) \,,
+$$
+since $\dot{\bb}=0$. Thus $\g \cdot \bb$ is a constant scalar function, meaning that there exists costant $d \in \R$ such that
+$$
+\g(t) \cdot \bb = d \,, \,\, \forall t \in (a,b) \,.
+$$
+The says that $\g$ is contained in a plane.
+
+*Step 2.* Suppose that $\g$ is contained in a plane. Hence there exists $\mathbf{P} \in \R^3$ and $d \in \R$ such that 
+$$
+\g(t)\cdot \mathbf{P} = d \,, \quad \forall t \in (a,b) \,.
+$$
+We can differentiate the above equation twice to obtain
+$$
+\dg \cdot \mathbf{P} = 0 \quad \implies \quad  \ddg \cdot \mathbf{P} = 0 \,.
+$$
+By Frenet-Serret we have
+$$
+\ddg (t)= \kappa (t) \nn (t) \,.
+$$
+Therefore the already proven relation $\ddg \cdot \mathbf{P} = 0$ implies
+$$
+\kappa (t) \nn (t) \cdot \mathbf{P} = 0 \,.
+$$
+As we are assuming $\kappa \neq 0$, we deduce that
+$$
+\nn (t) \cdot \mathbf{P} = 0 \,, \quad \forall \, t \in (a,b) \,.
+$$
+We have shown that $\dg(t)$ and $\nn(t)$ are both orthogonal to $\mathbf{P}$. Since $\bb(t)$ is orthogonal to $\dg(t)$ and $\nn(t)$, we conclude that $\bb(t)$ is parallel to $\mathbf{P}$. Hence, there exists $\lambda \in \R$ such that
+$$
+\bb(t) = \lambda \mathbf{P} \,\forall \, t \in (a,b) \,.
+$$
+Taking the derivative we obtain
+$$
+\dot{\bb}(t) = 0 \,, \quad \forall \, t \in (a,b) \,.
+$$
+By definition of torsion we thus have
+$$
+\tau(t) = - \dot{\bb} \cdot \nn(t) = 0 \,, \quad \forall \, t \in (a,b) \,.
+$$
+:::
+
+
+
+![If $\bb$ is constant, then $\g$ lies in the plane spanned by $\dg$ and $\nn$.](/images/proof_plane_intuition.png){#fig-proof-plane width=70%}
+
+
+
+::: Proposition
+
+Let $\g \colon (a,b) \to \R^3$ be a unit speed curve. They are equivalent:
+
+
+1. The curvature and torsion of $\g$ satisfy
+$$
+\kappa (t) = c \,, \quad  \tau(t) = 0\,,  \quad \forall \, t \in (a,b)\,, 
+$$
+for some constant $c \in \R$.
+
+2. The image of $\g$ is contained in a circle of radius $1/c$.
+
 
 :::

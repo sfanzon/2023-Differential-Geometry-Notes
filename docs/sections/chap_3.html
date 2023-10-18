@@ -85,35 +85,11 @@ div.csl-indent {
   }
 }</script>
 <style>
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
 }
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Important {
+.Question {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -121,23 +97,7 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Warning {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Question {
+.Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -145,13 +105,53 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Proposition {
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
 .Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
 }
 </style>
 
@@ -1515,9 +1515,102 @@ s(t) := \int_0^t \left\|  \dot{{\pmb{\gamma}}}(u)  \right\| \, du = \sqrt{2} \, 
 </div>
 <div id="Proof*-9" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>We only prove the formula for <span class="math inline">\(\kappa\)</span>, as the one for <span class="math inline">\(\tau\)</span> can be obtained similarly, just with more calculations. For a proof see Proposition 2.3.1 in <span class="citation" data-cites="pressley">(<a href="references.html#ref-pressley" role="doc-biblioref">Pressley 2010</a>)</span>.<p></p>
-<p>The curve <span class="math inline">\({\pmb{\gamma}}\)</span> is regular. Therefore we know that its arc length <span class="math inline">\(s(t)\)</span> is invertible, with the inverse giving a unit speed reparametrization of <span class="math inline">\({\pmb{\gamma}}\)</span>. Using the formal notations for chain rule, we have <span class="math display">\[
+<p>The curve <span class="math inline">\({\pmb{\gamma}}\)</span> is regular. Therefore we know that its arc length <span class="math inline">\(s(t)\)</span> is invertible, with the inverse giving a unit speed reparametrization of <span class="math inline">\({\pmb{\gamma}}\)</span>. Using the Leibnitz notation we have <span class="math display">\[
 \frac{ds}{dt} = \left\| \dot{{\pmb{\gamma}}} \right\|
 \]</span></p>
+</div></details>
+</div>
+<p>We now state and prove another two results that directly follow from the Frenet-Serret equations. They state, respectivley:</p>
+<ol type="1">
+<li><p>A curve has torsion <span class="math inline">\(\tau = 0\)</span> if and only if it is contained in a plane.</p></li>
+<li><p>A curve has constant curvature and zero torsion if and only if it is part of a circle.</p></li>
+</ol>
+<p>Before proceeding, we recall the following.</p>
+<div id="equation-of-a-plane" class="Remark" title="Equation of a plane">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 53: </strong>Equation of a plane</summary><div>The general equation of a plane <span class="math inline">\(\pmb{\pi}_d\)</span> in <span class="math inline">\(\mathbb{R}^3\)</span> is given by<p></p>
+<p><span class="math display">\[
+\pmb{\pi}_d = \{ \mathbf{x}\in \mathbb{R}^3 \, \colon \,  \mathbf{x}\cdot \mathbf{P} = d \}\,,
+\]</span> for some vector <span class="math inline">\(\mathbf{P} \in \mathbb{R}^3\)</span> and scalar <span class="math inline">\(d \in \mathbb{R}\)</span>. Note that:</p>
+<ul>
+<li><p>If <span class="math inline">\(d = 0\)</span>, the condition <span class="math display">\[
+\mathbf{x}\cdot \mathbf{P} = 0
+\]</span> is saying that the plane <span class="math inline">\(\pmb{\pi}_0\)</span> contains all the points <span class="math inline">\(\mathbf{x}\)</span> in <span class="math inline">\(\mathbb{R}^3\)</span> which are orthogonal to <span class="math inline">\(\mathbf{P}\)</span>. In particular <span class="math inline">\(\pmb{\pi}_0\)</span> contains the origin <span class="math inline">\({\pmb{0}}\)</span>.</p></li>
+<li><p>If <span class="math inline">\(d \neq 0\)</span>, then <span class="math inline">\(\pmb{\pi}_d\)</span> is the translation of <span class="math inline">\(\pmb{\pi}_0\)</span> by the quantity <span class="math inline">\(d\)</span> in direction <span class="math inline">\(\mathbf{P}\)</span>.</p></li>
+</ul>
+<p>In both cases, <span class="math inline">\(\mathbf{P}\)</span> is the normal vector to the plane, as shown in <a href="#fig-general-plane">Figure&nbsp;<span>3.5</span></a> below.</p>
+</div></details>
+</div>
+<div id="fig-general-plane" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../images/general_plane.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.5: The plane <span class="math inline">\(\pmb{\pi}_0\)</span> is the set of points of <span class="math inline">\(\mathbb{R}^3\)</span> orthogonal to <span class="math inline">\(\mathbf{P}\)</span>. The plane <span class="math inline">\(\pmb{\pi}_d\)</span> is obtained by translating <span class="math inline">\(\pmb{\pi}_0\)</span> by a quantity <span class="math inline">\(d\)</span> in direction <span class="math inline">\(\mathbf{P}\)</span>.</figcaption>
+</figure>
+</div>
+<div id="Proposition-54" class="Proposition">
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 54</strong></summary><div>
+<p>Let <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathbb{R}^3\)</span> be regular and such that <span class="math inline">\(\kappa \neq 0\)</span>. They are equivalent:</p>
+<ol type="1">
+<li><p>The torsion of <span class="math inline">\({\pmb{\gamma}}\)</span> satisfies <span class="math inline">\(\tau(t) = 0\)</span> for all <span class="math inline">\(t \in (a,b)\)</span>.</p></li>
+<li><p>The image of <span class="math inline">\({\pmb{\gamma}}\)</span> is contained in a plane, that is, there exists a vector <span class="math inline">\(\mathbf{P} \in \mathbb{R}^3\)</span> and a scalar <span class="math inline">\(d \in \mathbb{R}\)</span> such that <span class="math display">\[
+{\pmb{\gamma}}(t)\cdot \mathbf{P} = d \,, \quad \forall t \in (a,b) \,.
+\]</span></p></li>
+</ol>
+</div></details>
+</div>
+<div id="Proof*-10" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Without loss of generality we can assume that <span class="math inline">\({\pmb{\gamma}}\)</span> is unit speed. Indeed, if we were to consider <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> a unit speed reparametrization of <span class="math inline">\({\pmb{\gamma}}\)</span>, then<p></p>
+<ul>
+<li><span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> would still be contained in the same plane in which <span class="math inline">\({\pmb{\gamma}}\)</span> is contained.</li>
+<li>The torsion of <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> would not change, i.e., it would still be identically zero.</li>
+</ul>
+<p>Thefore the Frenet frame of <span class="math inline">\({\pmb{\gamma}}\)</span> exists. We denote it by <span class="math display">\[
+\{ \dot{{\pmb{\gamma}}}, \mathbf{n},\mathbf{b}\} \,.
+\]</span></p>
+<p><em>Step 1.</em> Suppose that <span class="math inline">\(\tau = 0\)</span> for all <span class="math inline">\(t\)</span>. By the Frenet-Serret equations we have <span class="math display">\[
+\dot{\mathbf{b}} = -\tau(t) \mathbf{n}= {\pmb{0}}\,,
+\]</span> so that <span class="math inline">\(\mathbf{b}(t)\)</span> is constant. As by definition <span class="math display">\[
+\mathbf{b}= \dot{{\pmb{\gamma}}}\times \mathbf{n}\,,
+\]</span> we conclude that the vectors <span class="math inline">\(\dot{{\pmb{\gamma}}}(t)\)</span> and <span class="math inline">\(\mathbf{n}(t)\)</span> always span the same plane, which has constant normal vector <span class="math inline">\(\mathbf{b}\)</span>. Intuition suggests that <span class="math inline">\({\pmb{\gamma}}\)</span> should be contained in such plane, see Figure <a href="#fig-proof-plane">Figure&nbsp;<span>3.6</span></a> below. Indeed, recall that the Frenet frame is orthonormal. Hence <span class="math display">\[
+\dot{{\pmb{\gamma}}}\cdot \mathbf{b}= 0 \,, \quad \forall \, t \in (a,b) \,.
+\]</span> Then <span class="math display">\[
+\frac{d}{dt} ( {\pmb{\gamma}}\cdot \mathbf{b}) = \dot{{\pmb{\gamma}}}\cdot \mathbf{b}+ {\pmb{\gamma}}\cdot \dot{\mathbf{b}} = 0\,,  \quad \forall \, t \in (a,b) \,,
+\]</span> since <span class="math inline">\(\dot{\mathbf{b}}=0\)</span>. Thus <span class="math inline">\({\pmb{\gamma}}\cdot \mathbf{b}\)</span> is a constant scalar function, meaning that there exists costant <span class="math inline">\(d \in \mathbb{R}\)</span> such that <span class="math display">\[
+{\pmb{\gamma}}(t) \cdot \mathbf{b}= d \,, \,\, \forall t \in (a,b) \,.
+\]</span> The says that <span class="math inline">\({\pmb{\gamma}}\)</span> is contained in a plane.</p>
+<p><em>Step 2.</em> Suppose that <span class="math inline">\({\pmb{\gamma}}\)</span> is contained in a plane. Hence there exists <span class="math inline">\(\mathbf{P} \in \mathbb{R}^3\)</span> and <span class="math inline">\(d \in \mathbb{R}\)</span> such that <span class="math display">\[
+{\pmb{\gamma}}(t)\cdot \mathbf{P} = d \,, \quad \forall t \in (a,b) \,.
+\]</span> We can differentiate the above equation twice to obtain <span class="math display">\[
+\dot{{\pmb{\gamma}}}\cdot \mathbf{P} = 0 \quad \implies \quad  \ddot{{\pmb{\gamma}}}\cdot \mathbf{P} = 0 \,.
+\]</span> By Frenet-Serret we have <span class="math display">\[
+\ddot{{\pmb{\gamma}}}(t)= \kappa (t) \mathbf{n}(t) \,.
+\]</span> Therefore the already proven relation <span class="math inline">\(\ddot{{\pmb{\gamma}}}\cdot \mathbf{P} = 0\)</span> implies <span class="math display">\[
+\kappa (t) \mathbf{n}(t) \cdot \mathbf{P} = 0 \,.
+\]</span> As we are assuming <span class="math inline">\(\kappa \neq 0\)</span>, we deduce that <span class="math display">\[
+\mathbf{n}(t) \cdot \mathbf{P} = 0 \,, \quad \forall \, t \in (a,b) \,.
+\]</span> We have shown that <span class="math inline">\(\dot{{\pmb{\gamma}}}(t)\)</span> and <span class="math inline">\(\mathbf{n}(t)\)</span> are both orthogonal to <span class="math inline">\(\mathbf{P}\)</span>. Since <span class="math inline">\(\mathbf{b}(t)\)</span> is orthogonal to <span class="math inline">\(\dot{{\pmb{\gamma}}}(t)\)</span> and <span class="math inline">\(\mathbf{n}(t)\)</span>, we conclude that <span class="math inline">\(\mathbf{b}(t)\)</span> is parallel to <span class="math inline">\(\mathbf{P}\)</span>. Hence, there exists <span class="math inline">\(\lambda \in \mathbb{R}\)</span> such that <span class="math display">\[
+\mathbf{b}(t) = \lambda \mathbf{P} \,\forall \, t \in (a,b) \,.
+\]</span> Taking the derivative we obtain <span class="math display">\[
+\dot{\mathbf{b}}(t) = 0 \,, \quad \forall \, t \in (a,b) \,.
+\]</span> By definition of torsion we thus have <span class="math display">\[
+\tau(t) = - \dot{\mathbf{b}} \cdot \mathbf{n}(t) = 0 \,, \quad \forall \, t \in (a,b) \,.
+\]</span></p>
+</div></details>
+</div>
+<div id="fig-proof-plane" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../images/proof_plane_intuition.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.6: If <span class="math inline">\(\mathbf{b}\)</span> is constant, then <span class="math inline">\({\pmb{\gamma}}\)</span> lies in the plane spanned by <span class="math inline">\(\dot{{\pmb{\gamma}}}\)</span> and <span class="math inline">\(\mathbf{n}\)</span>.</figcaption>
+</figure>
+</div>
+<div id="Proposition-55" class="Proposition">
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 55</strong></summary><div>
+<p>Let <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathbb{R}^3\)</span> be a unit speed curve. They are equivalent:</p>
+<ol type="1">
+<li><p>The curvature and torsion of <span class="math inline">\({\pmb{\gamma}}\)</span> satisfy <span class="math display">\[
+\kappa (t) = c \,, \quad  \tau(t) = 0\,,  \quad \forall \, t \in (a,b)\,,
+\]</span> for some constant <span class="math inline">\(c \in \mathbb{R}\)</span>.</p></li>
+<li><p>The image of <span class="math inline">\({\pmb{\gamma}}\)</span> is contained in a circle of radius <span class="math inline">\(1/c\)</span>.</p></li>
+</ol>
 </div></details>
 </div>
 

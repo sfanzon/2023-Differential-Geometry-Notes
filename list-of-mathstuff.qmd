@@ -287,6 +287,14 @@
 
  [**Proof**](#Proof*-3.9)\Pageref{Proof*-3.9}
 
+ [**Remark 3.53**](#equation-of-a-plane): Equation of a plane\Pageref{equation-of-a-plane}
+
+ [**Proposition 3.54**](#Proposition-3.54)\Pageref{Proposition-3.54}
+
+ [**Proof**](#Proof*-3.10)\Pageref{Proof*-3.10}
+
+ [**Proposition 3.55**](#Proposition-3.55)\Pageref{Proposition-3.55}
+
  [**Definition 4.1**](#Definition-4.1)\Pageref{Definition-4.1}
 
  [**Definition 4.2**](#Definition-4.2)\Pageref{Definition-4.2}
