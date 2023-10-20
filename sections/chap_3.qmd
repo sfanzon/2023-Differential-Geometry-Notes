@@ -2264,7 +2264,7 @@ The Frenet-Serret equations are
 \begin{align*}
 \dot{\ttt}(s) & = \kappa(s) \nn(s) \\
 \dot{\nn}(s) & = -\kappa(s) \ttt(s) + \tau(s) \bb(s) \\
-\dot{\bb}(s) & = \tau(s) \nn(s) 
+\dot{\bb}(s) & = - \tau(s) \nn(s) 
 \end{align*}
 By chain rule
 $$
