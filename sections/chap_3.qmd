@@ -175,11 +175,11 @@ $$
 \ddot \f \equiv 0 \,.
 $$
 Differentiating (@eq-well-posed-curvature-2) we then obtain
-\begin{align}
+\begin{align*}
 \ddtg(t) & = \ddot{\hat{\g}}(\f(t)) \dot\f^2(t) + 
                          \dot{\hat{\g}}(\f(t)) \ddot\f (t) \\
                   & = \ddot{\hat{\g}}(\f(t)) \dot\f^2(t) \,.
-\end{align}
+\end{align*}
 Taking the norms and using again that $|\dot\f| \equiv 1$, we get  that 
 $$
 \norm{  \ddtg(t)} = \norm{ \ddot{\hat{\g}}(\f(t))} \,.
@@ -268,10 +268,10 @@ $$
 \tg(t) :=  \left( R \cos \left( \frac{t}{R} \right) , R \sin \left( \frac{t}{R} \right)\right) \,.
 $$
 We have
-\begin{align}
+\begin{align*}
 \dtg (t) & =  \left( - \sin \left( \frac{t}{R} \right) ,  \cos \left( \frac{t}{R} \right)\right) \\
 \ddtg (t) & =  \left( -\frac{1}{R} \cos \left( \frac{t}{R} \right) ,  - \frac{1}{R} \sin \left( \frac{t}{R} \right)\right)
-\end{align}
+\end{align*}
 Therefore the curvature of $\g$ is
 $$
 \kappa(t) = \norm{ \ddtg (t) } = \frac{1}{R} \,.
@@ -283,7 +283,7 @@ In this case $\kappa(t)$ is constant. The curvature also tells us that the small
 
 
 Before proceeding with the next example, let us give a short overview of the **Hyperbolic functions**.
-
+ 
 
 ::: Remark 
 ### Hyperbolic functions    {#remark-hyperbolic-functions}
@@ -329,26 +329,26 @@ For a plot $\cosh, \sinh, \tanh$ see @fig-hyperbolic-functions below. The proper
 hyperbolic functions which are of interest to us are:
 
 1. Identities: 
-\begin{align}
+\begin{align*}
 &\cosh(t) + \sinh(t) = e^t \\
 &\cosh(t) - \sinh(t) = e^{-t} \\
 &\cosh^2(t) - \sinh^2(t)  = 1 \\
 &{\sech}^2(t) - \tanh^2(t)  = 1  
-\end{align}
+\end{align*}
 
 2. Derivatives: 
-\begin{align}
+\begin{align*}
 \frac{d}{dt} \left[ \sinh(t) \right] & = \cosh (t) \\
 \frac{d}{dt} \left[ \cosh(t) \right] & = \sinh (t) \\
 \frac{d}{dt} \left[ \tanh(t) \right] & = 1 - \tanh^2 (t) = - {\csch}^2(t) 
-\end{align}
+\end{align*}
 
 3. Integrals: 
-\begin{align}
+\begin{align*}
 \int_{t_0}^t \sinh(u) \, du & = \cosh (t) - \cosh( t_0 ) \\
 \int_{t_0}^t \cosh(u) \, du & = \sinh (t) - \sinh( t_0 ) \\
 \int_{t_0}^t \tanh(u) \, du & = \log ( \cosh (t) ) - \log ( \cosh (t_0) )
-\end{align}
+\end{align*}
 
 :::
 
@@ -414,10 +414,10 @@ $$
 \tg(t) = \left(  \log \left( t + \sqrt{ 1+ t^2} \right) , \sqrt{1 + t^2}  \right) \,.
 $$
 We can now compute the curvature. We have:
-\begin{align}
+\begin{align*}
 \dtg (t) &  = \left(  \frac{1}{ \sqrt{1 + t^2} } , \frac{t}{ \sqrt{1 + t^2}}   \right) \\
 \ddtg (t) & = \left( - \frac{t}{ (1 + t^2)^{3/2} } , \frac{1}{(1 + t^2)^{3/2} }   \right)
-\end{align}
+\end{align*}
 Moreover
 $$
 \norm{\ddtg (t)}^2 = \frac{t^2}{(1+t^2)^3} + \frac{1}{(1+t^2)^3} = \frac{1}{(1+t^2)^2} \,.
@@ -752,7 +752,7 @@ $${#eq-formula-cross}
 Indeed, one can check that the above formula holds for the standard vectors $\ee_i$, and thus the general formula follows by linearity.
 
 8. Using (@eq-formula-cross) we get
-\begin{align}
+\begin{align*}
 \norm{\uu \times \vv}^2 & = (\uu \times \vv) \cdot (\uu \times \vv) = 
 \left|
 \begin{array}{cc}
@@ -765,7 +765,7 @@ Indeed, one can check that the above formula holds for the standard vectors $\ee
 & = \norm{\uu}^2\norm{\vv}^2 (1-\cos^2(\theta)) \\
 & = \norm{\uu}^2\norm{\vv}^2 \sin^2(\theta) \\
 & = A^2  
-\end{align} 
+\end{align*} 
 where $A$ is the area of the parallelogram with sides $\uu$ and $\vv$.
 :::
 
@@ -896,16 +896,16 @@ $$
 \g (t) = ( R\cos(t) , R\sin(t) , Ht) \,, \quad t \in \R \,.
 $$
 Then
-\begin{align}
+\begin{align*}
 \dg (t) & = ( -R\sin(t) , R\cos(t) , H)  \\
 \ddg (t) & = ( -R\cos(t) , -R\sin(t) , 0) 
-\end{align}
+\end{align*}
 From this we deduce that
 $$
 \norm{\dg (t)}  = \sqrt{R^2 + H^2}\,,
 $$
 showing that $\g$ is regular. Finally
-\begin{align}
+\begin{align*}
 \dg \times \ddg & = 
 \left|
 \begin{array}{cc}
@@ -956,7 +956,7 @@ RH\sin(t),
 -RH\cos(t),
 R^2
 \right) 
-\end{align}
+\end{align*}
 and therefore
 $$
 \norm{ \dg \times \ddg } =  R\sqrt{R^2 + H^2   } \,.
@@ -1262,7 +1262,7 @@ is a positive basis of $\R^3$.
 ::: {.Proposition  #proposition-positive-basis}
 
 
-Let $\g$ be a unit speed curve with $\kappa \neq 0$. Then
+Let $\g \colon (a,b) \to \R^3$ be a unit speed curve with $\kappa \neq 0$. Then
 $$
 \bb = \dg \times \nn \,, \quad
 \nn = \bb \times \dg \,, \quad
@@ -1283,25 +1283,25 @@ $$
 \uu = \dg \,, \quad \vv = \nn \,, \quad \ww = \dg \,,
 $$
 yields
-\begin{align}
+\begin{align*}
 ( \dg \times \nn ) \times \dg & = ( \dg \cdot \dg ) \nn - (\nn \cdot \dg) \dg \\
                                       & = \norm{\dg }^2 \nn - 0 \\
                                       & = \nn \,,
-\end{align}
+\end{align*}
 where we used that $\dg$ is a unit vector and $\nn \cdot \dg = 0$. Therefore, by definition of $\bb$, we have
 $$
 \bb \times \dg = ( \dg \times \nn ) \times \dg = \nn
 $$
-showing the second equality in (@eq-frenet-positive-basis). For showing the third equality, we apply (@eq-cross-prod-triple-1) with 
+showing the second equality in (@eq-frenet-positive-basis). For showing the third equality in (@eq-frenet-positive-basis), we apply (@eq-cross-prod-triple-1) with 
 $$
 \uu = \dg \,, \quad \vv = \nn \,, \quad \ww = \nn \,,
 $$
 to get
-\begin{align}
+\begin{align*}
 ( \dg \times \nn ) \times \nn  & = ( \dg \cdot \nn ) \nn - (\nn \cdot \nn ) \dg \\
                                       & = 0 - \norm{\nn }^2 \dg  \\
                                       & = - \dg
-\end{align}
+\end{align*}
 where we used that $\nn$ is a unit vector and $\dg \cdot \nn= 0$. Therefore, by definition of $\bb$ and anti-commutativity of the vector product, we have
 $$
 \nn \times \bb = - \bb \times \nn = - (\dg \times \nn ) \times \nn = \dg \,,
@@ -1313,7 +1313,7 @@ showing the last equality in (@eq-frenet-positive-basis).
 ::: {.Proposition #proposition-binormal}
 
 
-Let $\g$ be a unit speed curve with $\kappa \neq 0$. Then
+Let $\g \colon (a,b) \to \R^3$ be a unit speed curve with $\kappa \neq 0$. Then
 $$
 \dot{\bb} (t) = - \tau(t) \nn(t) \,,
 $$ {#eq-binormal-derivative}
@@ -1325,11 +1325,11 @@ for some $\tau(t) \in \R$.
 ::: Proof
 
 By definition of $\bb$ and the formula of derivation of the cross product (@eq-cross-prod-derivative) we have
-\begin{align}
+\begin{align*}
 \dot{\bb} & = \frac{d}{dt} ( \dg \times \nn  ) \\
           & = \ddg \times \nn + \dg \times \dot{\nn} \\
           & =  \dg \times \dot{\nn} \,,
-\end{align}
+\end{align*}
 where we used that
 $$
 \ddg \times \nn  = 0\,,
@@ -1394,7 +1394,7 @@ $$
 > The above can be immediately obtained by multiplying (@eq-binormal-derivative) by $\nn$. Indeed,
 $$
 \dot{\bb} = - \tau \nn \quad \implies \quad 
-\dot{\bb} \cdot \nn = - \tau \nn \cdot \nn = \tau \,,
+\dot{\bb} \cdot \nn = - \tau \nn \cdot \nn = - \tau \,,
 $$
 since $\nn$ is a unit vector.
 
@@ -1404,13 +1404,10 @@ since $\nn$ is a unit vector.
 
 ::: Warning
 
-We defined the torsion only for curves  
+We defined the torsion only for space curves  $\g \colon (a,b) \to \R^3$
+which are unit speed and have non-vanishing curvature, that is, such that
 $$
-\g \colon (a,b) \to \R^3 \,,
-$$
-with 
-$$
-\norm{\dg} = 1 \,, \quad \kappa = \norm{ \ddg }  \neq 0 \,,
+\norm{\dg(t)} = 1 \,, \quad \kappa(t) = \norm{ \ddg(t) }  \neq 0 \,,
 $$
 for all $t \in (a,b)$.
 
@@ -1474,16 +1471,16 @@ $$
 \tau (t) = \frac{ ( \dg \times \ddg ) \cdot \dddg }{ \norm{ \dg \times \ddg }^2 } \,. 
 $$
 Let us compute the quantities appearing in the formula for $\tau$
-\begin{align}
+\begin{align*}
 \dg (t) & = ( -R\sin(t) , R\cos(t) , H)  \\
 \ddg (t) & = ( -R\cos(t) , -R\sin(t) , 0) \\
 \dddg (t) & = ( R\sin(t) , -R\cos(t) , 0) 
-\end{align}
+\end{align*}
 Moreover we had already computed that
-\begin{align}
+\begin{align*}
 \dg \times \ddg & = \left( RH\sin(t), -RH\cos(t), R^2 \right)  \\
 \norm{ \dg \times \ddg } & =  R\sqrt{R^2 + H^2   } \,.
-\end{align}
+\end{align*}
 Finally we compute
 $$
 (\dg \times \ddg) \cdot \dddg = R^2 H \,.
@@ -1552,7 +1549,7 @@ $$
 \nn = \frac{1}{\kappa}  \ddg =  \left( -\frac45 \cos(t),  \sin(t) , \frac35 \cos(t)  \right) \,.
 $$
 We can then compute the binormal
-\begin{align}
+\begin{align*}
 \bb & = \dg \times \nn \\ 
     & = 
     \left|
@@ -1563,7 +1560,7 @@ We can then compute the binormal
 \end{array} \right| \\
     & = \left(  -\frac35 \cos^2(t) - \frac35 \sin^2(t), - \frac{12}{25} \cos(t) \sin(t) + \frac{12}{25} \cos(t) \sin(t), - \frac45 \sin^2(t) - \frac45 \cos^2(t)   \right) \\
     & = \left( -\frac35, 0 ,-\frac45  \right) \,.
-\end{align}
+\end{align*}
 Therefore 
 $$
 \dot{\bb} = 0\,,
@@ -1657,7 +1654,15 @@ Frenet frame of $\g$ is defined as the Frenet frame of a unit speed reparametriz
 :::
 
 :::Remark
-It is easy to check that the above definition is well-posed: If $\hat{\g}$ is another unit speed reparametrization of $\g$, then the Frenet frame generated by $\hat{\g}$ coincides with the one generated by $\tg$. The proof is left as an exercise.
+We should check that the above definition is well-posed: 
+
+- Note that $\tg$ is unit speed. Moreover the curvature of ${\kappa}^{\tg}$ is given by
+$$
+{\kappa}^{\tg} (t) = {\kappa}^{\g} (\f(t))
+$$
+for some $\f$ diffeomorphism. Therefore ${\kappa}^{\tg} \neq 0$ as we are assuming ${\kappa}^{\g} \neq 0$. Therefore the Frenet-Frame of $\tg$ is well defined.
+
+- If $\hat{\g}$ is another unit speed reparametrization of $\g$, then the Frenet frame generated by $\hat{\g}$ coincides with the one generated by $\tg$. The proof is left as an exercise.
 :::
 
 From the Frenet frame we can define the Frenet-Serret equations.
@@ -1666,11 +1671,11 @@ From the Frenet frame we can define the Frenet-Serret equations.
 ### Frenet-Serret equations
 
 Let $\g \colon (a,b) \to \R^3$ be unit speed with $\kappa \neq 0$. The **Frenet-Serret** equations are
-\begin{align}  
+\begin{align*}  
 \ddg & = \kappa \nn \\
 \dot{\nn} & = - \kappa \dg + \tau \bb \\
 \dot{\bb} & = -\tau \nn
-\end{align}
+\end{align*}
 :::
 
 
@@ -1691,12 +1696,12 @@ $$
 \dg = \nn \times \bb \,.
 $${#eq-proof-frenet-1}
 Differentiating the second equation in (@eq-proof-frenet-1) and using (@eq-proof-frenet-2)-(@eq-proof-frenet-3) we get
-\begin{align}
+\begin{align*}
 \dot{\nn} & = \dot{\bb} \times \dg + \bb \times \ddg & \\
           & = ( - \tau \nn \times \dg) + \bb \times \kappa \nn \\
           & = \tau ( \dg \times \nn ) - \kappa (\nn \times \bb ) \\
           & = \tau \bb - \kappa \dg \,,
-\end{align}
+\end{align*}
 where in the last equality we used the first and third equations in
 (@eq-proof-frenet-1). The above is exactly the second Frenet-Serret equation.
 
@@ -1747,9 +1752,9 @@ $$
 Recall that:
 
 1. Curvature $\kappa$ is defined only for regular curves.
-2. Torsion $\tau$ is defined only for regular curves with non-vanishing curvature.
+2. Torsion $\tau$ is defined only for regular curves with non-vanishing $\kappa$.
 
-The two strategies for computing $\kappa$ and $\tau$ are discussed in the diagram below.
+The two strategies for computing $\kappa$ and $\tau$ are discussed in the diagram in @fig-diagram below.
 
 :::
 
@@ -1803,10 +1808,10 @@ $$
 \mbox{Compute Frenet frame $\{ \dg, \nn, \bb \}$ and curvature $\kappa$, torsion $\tau$}
 $$
 We compute
-\begin{align}
+\begin{align*}
 \dtg (t) & = \frac{1}{\sqrt{2}} \left(  -\sin \left( \frac{t}{\sqrt{2}}  \right) , \cos \left( \frac{t}{\sqrt{2}}  \right) , 1    \right) \\
 \ddtg (t) & = \frac12 \left(  -\cos \left( \frac{t}{\sqrt{2}}  \right) , -\sin \left( \frac{t}{\sqrt{2}}  \right) , 0    \right)
-\end{align}
+\end{align*}
 Therefore the curvature is
 $$
 \kappa (t) = \norm{ \ddtg(t) } = \frac12 \,.
@@ -1816,7 +1821,7 @@ $$
 \nn(t) = \frac{1}{\kappa(t)} \, \ddtg(t) =  \left(  -\cos \left( \frac{t}{\sqrt{2}}  \right) , -\sin \left( \frac{t}{\sqrt{2}}  \right) , 0    \right) \,.
 $$
 We can now compute the binormal
-\begin{align}
+\begin{align*}
 \bb(t) & = \dtg \times \nn  \\
     & = \frac{1}{\sqrt{2}}
     \left|
@@ -1827,13 +1832,13 @@ We can now compute the binormal
     \end{array}
     \right| \\
     & =  \frac{1}{\sqrt{2}} \left(  \sin \left( \frac{t}{\sqrt{2}}  \right) , - \cos \left( \frac{t}{\sqrt{2}}  \right) , 1   \right) \,.
-\end{align}
+\end{align*}
 We have therefore computed the Frenet frame of $\g$. This is given by
-\begin{align}
+\begin{align*}
 \dtg(t) & = \frac{1}{\sqrt{2}}  \left( -\sin\left( \frac{t}{\sqrt{2}}  \right) , \cos \left( \frac{t}{\sqrt{2}}  \right) , 1   \right) \\
 \nn(t) & =  \left(  -\cos \left( \frac{t}{\sqrt{2}}  \right) , -\sin \left( \frac{t}{\sqrt{2}}  \right) , 0    \right) \\
 \bb(t) & = \frac{1}{\sqrt{2}} \left(  \sin \left( \frac{t}{\sqrt{2}}  \right) , - \cos \left( \frac{t}{\sqrt{2}}  \right) , 1   \right) \,.
-\end{align}
+\end{align*}
 See below for a picture of the Frenet frame of the helix.
 Given the Frenet frame, we can compute the torsion via the formula
 $$
@@ -1851,12 +1856,14 @@ The torsion is then
 $$
 \tau (t) = - \dot{\bb} \cdot \nn = \frac12 \,.
 $$
+The Frenet-Frame of the unit-speed Helix is plotted in @fig-helix-frenet. 
 :::
 
 
 ```{python}
 #| echo: false
 #| fig-cap: "Frenet frame of the helix of radius 1 and rise 1."
+#| label: fig-helix-frenet
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -2087,7 +2094,7 @@ prove the curvature and torsion formulas given in Proposition \ref{proposition-c
 
 
 ::: Proposition 
-### Curvature and torsion formulas
+### Curvature and torsion formulas  {#proposition-curvature-torsion-formulas}
 
 Let $\g \colon (a,b) \to \R^3$ be a regular curve. The curvature $\kappa(t)$ of $\g$ at $\g(t)$ is given by
 $$
@@ -2101,20 +2108,223 @@ $$
 :::
 
 
-::: Proof
+Before proceeding with the proof, we need to establish some notation.
 
-We only prove the formula for $\kappa$, as the one for $\tau$ can be obtained similarly, just with more calculations. For a proof see Proposition 2.3.1 in [@pressley].
+::: Notation
+### Compact notation for arc length reparametrization
 
-The curve $\g$ is regular. Therefore we know that its arc length $s(t)$ is invertible, with the inverse giving a unit speed reparametrization of $\g$. Using the Leibnitz notation we have
+Suppose $\g \colon (a,b) \to \R^n$ is regular and denote by 
 $$
-\frac{ds}{dt} = \norm{\dg}
+s \colon (a,b) \to (\tilde{a},\tilde{b})\,, \quad t \mapsto s(t)  
 $$
+its arc length. We already know that in this case $s$ invertible, with inverse $s^{-1}$ giving a unit speed reparametrization $\tg \colon (\tilde{a},\tilde{b}) \to \R^n$ of $\g$, defined by
+$$
+\tg = \g \circ \psi \,, \quad \psi:=s^{-1} \colon (\tilde{a},\tilde{b}) \to (a,b)
+$$
+Sometimes it is more convenient to adopt more compact notation. In the new notation the unit speed 
+reparametrization $\tg$ is denoted by $\g(s)$:
+$$
+t \mapsto \tg(t) \qquad \leadsto \qquad s \mapsto \g(s) \,.
+$$
+Thus, the reparametrization is denoted with the same symbol $\g$, but this time $\g$ is considered as
+a function of the **arc length parameter** 
+$$
+s \in (\tilde{a}, \tilde{b}) \,.
+$$ 
+We will denote:
+
+- The derivative of $s$ by
+$$
+\frac{ds}{dt}
+$$
+
+- The derivative of $\psi = s^{-1}$ by
+$$
+\frac{dt}{ds} \,.
+$$
+
+Moreover:
+
+- The derivative of $\g(t)$ is denoted by 
+$$
+\frac{d\g}{dt}(t) = \dg(t) \,, \quad  t \in (a,b)
+$$
+
+- The derivative of $\g(s)$ is denoted by
+$$
+\frac{d\g}{ds}(s) = \dg(s) \,, \quad  s \in (\tilde{a},\tilde{b}) \,.
+$$
+
+We also have new notations for the **chain rule**:
+
+- The chain rule for $\g$ is the old notations is:
+$$
+\g(t) = \tg (s(t)) \quad  \implies \quad \dg(t) = \dtg(s(t)) \, \dot{s} (t) \,, \quad t \in (a,b) \,.
+$$
+In the new notations the above chain rule is written
+$$
+\frac{d\g}{dt}(t) = \frac{d\g}{ds}(s(t)) \, \frac{ds}{dt}(t) \,, \quad t \in (a,b) \,.
+$$
+We will often omit the dependence on the point $t$ by writing
+$$
+\frac{d\g}{ds} = \frac{d\g}{dt} \, \frac{dt}{ds} \,.
+$$
+
+- The chain rule for the reparametrization $\tg$ in the old notation is:
+$$
+\tg(t) = \g( \psi (t)) \quad \implies \quad \dtg(t) = \dg( \psi(t) ) \, \dot{\psi}(t) \,, \quad 
+t \in (\tilde{a},\tilde{b}) \,.
+$$
+In the new notations the above chain rule is written
+$$
+\frac{d\g}{ds}(s) = \frac{d\g}{dt}( \psi(s) )  \, \frac{dt}{ds} ( s ) \,,\quad s \in (\ta,\tb) \,,
+$$
+since $\dot \psi$ is written $dt/ds$ in the new notations. 
+Without dependence on the point $s$, the above reads
+$$
+\frac{d\g}{ds} = \frac{d\g}{dt} \, \frac{dt}{ds}  \,.
+$$
+:::
+
+
+::: Example 
+### How to use the new notations
+
+Let $\g$ and $\tg$ be as above. We know that $\tg$ is unit speed. Thus $\g(s)$ is unit speed with respect to $s$, that is,
+$$
+\norm{\dg(s)} = 1\,, \quad \forall \, s \in (\tilde{a}, \tilde{b})  \,.
+$${#eq-new-notations-1}
+As an exercise, let us check that (@eq-new-notations-1) holds, using the new notations. By chain rule we have
+\begin{align*}
+\norm{\dg(s)} & = \norm{ \frac{d\g}{ds} (s) } \\
+              & = \norm{\frac{d\g}{dt} (\psi(s))} \, \left| \frac{dt}{ds}(s) \right| \\
+              & = \norm{\dg(\psi(s))} \, \left| \frac{dt}{ds}(s) \right| \,. 
+\end{align*}
+Now, recall that 
+$$
+\frac{ds}{dt}(t) = \dot{s}(t) = \norm{\dg (t)} \,, \quad \forall \, t \in (a,b) \,.
+$${#eq-new-notations-2}
+According to the new notations and the inverse function theorem,
+$$
+\frac{dt}{ds}(s) = \frac{1}{\left(\dfrac{ds}{dt} (\psi(s)) \right)} = 
+\frac{1}{\norm{\dg (\psi(s))}} \,, \quad \forall \, s \in (\tilde{a},\tilde{b}) \,,
+$$
+where we used (@eq-new-notations-2) evaluated at $t = \psi(s)$. Thus
+\begin{align*}
+\norm{\dg(s)} & = \norm{\dg(\psi(s))} \, \left| \frac{dt}{ds}(s) \right|  \\
+              & = \norm{\dg(\psi(s))} \, \frac{1}{\norm{\dg(\psi(s))} }  \\
+              & = 1 \,,
+\end{align*}
+concluding (@eq-new-notations-1).
+:::
+
+Let us highlight the main feature of the above notation.
+
+::: Important
+### New Notation!
+
+Let $\g \colon (a,b) \to \R^n$ be a regular curve:
+
+1. We denote by 
+$$
+t \mapsto \g(t)  \,, \quad t \in (a,b)
+$$
+the **given** curve $\g$.
+
+
+2. We denote by 
+$$
+s \mapsto \g(s)  \,, \quad s \in (\tilde{a},\tilde{b})
+$$
+the **arc length reparametrization** of the curve $\g$. The parameter $s$ is the 
+**arc length parameter**. In particular $\g(s)$ is unit speed with respect to $s$. 
 
 :::
 
 
+We will heavily rely on the new notations for proving Proposition \ref{proposition-curvature-torsion-formulas}.
 
-We now state and prove another two results that directly follow from the Frenet-Serret equations. They state, respectivley:
+::: Proof
+### Proof of Proposition \ref{proposition-curvature-torsion-formulas}
+
+We only prove the formula for $\kappa$, as the one for $\tau$ can be obtained similarly, just with more calculations. For a proof see Proposition 2.3.1 in [@pressley].
+
+
+Since $\g$ is regular, we can reparametrize $\g$ by arc length $s(t)$. We denote the arc lenght 
+reparametrization by $\g(s)$. We know that $\g(s)$ is unit speed, that is,
+$$
+\norm{  \frac{d\g}{ds}  } = 1 \,.
+$$
+Therefore is well
+define the Frenet frame
+$$
+\{\ttt (s), \nn (s), \bb (s) \}  \,, \quad \ttt (s):=\dg(s) = \frac{d \g}{ds} (s)\,.
+$$
+The Frenet-Serret equations are
+\begin{align*}
+\dot{\ttt}(s) & = \kappa(s) \nn(s) \\
+\dot{\nn}(s) & = -\kappa(s) \ttt(s) + \tau(s) \bb(s) \\
+\dot{\bb}(s) & = \tau(s) \nn(s) 
+\end{align*}
+By chain rule
+$$
+\frac{d \g}{dt} = \frac{d\g}{ds} \, \frac{ds}{dt} =\left( \frac{ds}{dt} \right) \, \ttt \,.
+$$
+Differentiating the above we infer
+\begin{align*}
+\frac{d^2 \g}{dt^2} & = \frac{d}{dt} \left[ \left( \frac{ds}{dt} \right) \, \ttt  \right] \\
+                    & = \frac{d^2 s}{dt^2} \, \ttt +  \left( \frac{ds}{dt} \right) \, \frac{d\ttt}{dt}  \,. \\
+\end{align*}
+By chain rule we have
+$$
+ \frac{d\ttt}{dt}  =  \frac{d\ttt}{ds} \, \frac{dt}{ds} \,,
+$$
+and therefore 
+\begin{align*}
+\frac{d^2 \g}{dt^2} & = \frac{d^2 s}{dt^2} \, \ttt +  \left( \frac{ds}{dt} \right) \, \frac{d\ttt}{dt}  \\
+   & = \frac{d^2 s}{dt^2} \, \ttt +  \left( \frac{ds}{dt} \right)^2 \, \frac{d\ttt}{ds} \,. 
+\end{align*}
+Hence
+\begin{align*}
+\dg(t) \times \ddg (t) & = \frac{d \g}{dt} \times  \frac{d^2 \g}{dt^2}  \\
+& =   \left(\frac{ds}{dt} \right) \ttt \times  \left[  \frac{d^2 s}{dt^2} \, \ttt +  \left( \frac{ds}{dt} \right)^2 \, \frac{d\ttt}{ds}  \right] \\
+& =  \left[ \left(\frac{ds}{dt} \right) \left(\frac{d^2s}{dt^2} \right)  \ttt \times \ttt \right] +
+     \left[ \left( \frac{ds}{dt} \right)^3  \,\, \ttt \times \frac{d\ttt}{ds} \right] \\
+& =  \left( \frac{ds}{dt} \right)^3  \,\, \ttt \times \frac{d\ttt}{ds} \,,
+\end{align*}
+since $\ttt \times \ttt = 0$ by the properties of the cross product. Now we recall that 
+$$
+\frac{d\ttt}{ds} = \kappa(s) \, \nn(s)
+$$
+by the first Frenet-Serret equation. Moreover
+$$
+\frac{ds}{dt}(t) = \norm{  \dg(t) }^2 \,.
+$$
+Therefore
+\begin{align*}
+\dg(t) \times \ddg (t) & = \left( \frac{ds}{dt} \right)^3  \,\, \ttt \times \frac{d\ttt}{ds} \\
+                       & = \norm{ \dg (t) }^3 \, \kappa(s(t)) \,\, \ttt \times \nn \\
+                       & = \norm{ \dg (t) }^3 \, \kappa(s(t)) \,\, \bb \,,
+\end{align*}
+where in the last line we used the definition of $\bb$
+$$
+\bb(s) = \dg(s) \times \nn(s) = \ttt(s) \times \nn(s) \,. 
+$$
+We can now take the norms and obtain
+\begin{align*}
+\norm{\dg(t) \times \ddg (t)} & = \norm{ \dg (t) }^3 \, \kappa(s(t)) \,  \norm{\bb} \\
+                              & = \norm{ \dg (t) }^3 \, \kappa(s(t)) 
+\end{align*}
+using that $\norm{\bb} = 1$. As $\g$ is regular, we can divide by $\norm{\dg(t)}^3$ and obtain
+$$
+\kappa(s (t)) = \frac{\norm{\dg(t) \times \ddg (t)}}{\norm{ \dg (t) }^3} \,.
+$$
+Recalling that the curvature of $\g$ at $t$ is defined as the curvature of $\g(s)$ at $s(t)$, we conclude that the above is the desired formula.
+:::
+
+
+
+We now state and prove two more results which directly follow from the Frenet-Serret equations. They state, respectivley:
 
 1. A curve has torsion $\tau = 0$ if and only if it is contained in a plane.
 
@@ -2122,6 +2332,8 @@ We now state and prove another two results that directly follow from the Frenet-
 
 
 Before proceeding, we recall the following.
+
+
 
 ::: Remark
 ### Equation of a plane
@@ -2148,7 +2360,10 @@ is saying that the plane $\pmb{\pi}_0$ contains all the points $\xx$ in $\R^3$ w
 ![The plane $\pmb{\pi}_0$ is the set of points of $\R^3$ orthogonal to $\mathbf{P}$. The plane $\pmb{\pi}_d$ is obtained by translating $\pmb{\pi}_0$ by a quantity $d$ in direction $\mathbf{P}$.](/images/general_plane.png){#fig-general-plane width=70%}
 
 
-::: Proposition
+
+
+
+::: {.Proposition  #proposition-zero-torsion}
 
 Let $\g \colon (a,b) \to \R^3$ be regular and such that $\kappa \neq 0$. They are equivalent:
 
@@ -2173,7 +2388,7 @@ Without loss of generality we can assume that $\g$ is unit speed. Indeed, if we 
 
 Thefore the Frenet frame of $\g$ exists. We denote it by 
 $$
-\{ \dg, \nn ,\bb \} \,.
+\{ \dg(t), \nn(t) ,\bb(t) \} \,.
 $$
 
 
@@ -2239,18 +2454,88 @@ $$
 
 
 
-::: Proposition
+::: {.Proposition #proposition-constant-k-zero-t}
 
 Let $\g \colon (a,b) \to \R^3$ be a unit speed curve. They are equivalent:
 
 
-1. The curvature and torsion of $\g$ satisfy
+1. The image of $\g$ is contained in a circle of radius $1/c$.
+
+
+2. The curvature and torsion of $\g$ satisfy
 $$
 \kappa (t) = c \,, \quad  \tau(t) = 0\,,  \quad \forall \, t \in (a,b)\,, 
 $$
 for some constant $c \in \R$.
 
-2. The image of $\g$ is contained in a circle of radius $1/c$.
 
+
+:::
+
+
+Proposition \ref{proposition-constant-k-zero-t} is actually a consequence of Theorem 
+\ref{theorem-characterization-space}, and of the fact that we have computed 
+that for a circle of radius $R$ one has
+$$
+\kappa  = \frac1R \,, \quad  \tau = 0\,.
+$$
+Therefore, by Theorem \ref{theorem-characterization-space}, every unit speed curve $\g$ with
+constant curvature and torsion must be equal to a circle, up to rigid motions. 
+
+Nevertheless, we still give a proof of Proposition \ref{proposition-constant-k-zero-t}, to show yet another application of the Frenet-Serret equations.
+
+
+::: Proof
+*Step 1.* Suppose the image of $\g$ is contained in a circle of radius $1/c$. Then, up to a translation, $\g$ is parametrized by 
+$$
+\g(t) = \left( \frac{1}{c} \cos(t) ,   \frac{1}{c} \sin(t) , 0 \right) 
+$$
+for $t$ in some interval $(\tilde{a},\tilde{b})$. We have already seen that in this case
+$$
+\kappa = c  \,, \quad \tau = 0 \,,
+$$
+concluding the proof.
+
+
+*Step 2.* Suppose that 
+$$
+\kappa (t) = c \,, \quad  \tau(t) = 0\,,  \quad \forall \, t \in (a,b)\,, 
+$$
+for some constant $c \in \R$. Since $\g$ is unit speed, its Frenet-Serret equations are:
+\begin{align*}
+\ddg & = \kappa \nn = c \nn \\
+\dot{\nn} & = - \kappa \dg + \tau \bb = -c \dg \\
+\dot{\bb} & = -\tau \nn = 0  
+\end{align*}
+In particular $\dot{\bb}=0$ and so $\bb$ is a constant vector. As seen in the proof Proposition \ref{proposition-zero-torsion}, this implies that $\g$ is contained in a plane $\p$ orthogonal to $\bb$, see @fig-proof-plane. As $c$ is constant we get
+$$
+\frac{d}{dt} \left(  \g  + \frac1c \nn   \right)  = \dg + \frac{1}{c} \dot{\nn} = \dg - \frac1c 
+\, c \dg = 0 \,,
+$$
+where we used the second Frenet-Serret equation. Therefore 
+$$ 
+\g(t)  + \frac1c \nn(t) = \pp \,, \quad  t \in (a,b) \,,
+$$
+for some constant point $\pp \in \R^3$. In particular
+$$
+\norm{ \g(t) - \pp } =   \norm{  -\frac1c \nn(t) } = \frac1c \,,
+$$
+since $\nn$ is a unit vector. The above shows that $\g$ is contained in a sphere of radius $1/c$ and center $\pp$. In formulas:
+$$
+\g((a,b) ) \subset \SSS := \{  \xx \in \R^3 \, \colon \,  \norm{\xx - \pp} = 1/c    \} \,.
+$$
+The intersection of $\SSS$ with the plane $\p$ is a circle $\mathcal{C}$ with some radius $R$. Since 
+$$
+\g((a,b) ) \subset \p \,, \quad \g((a,b) ) \subset \SSS \,,
+$$
+this implies 
+$$
+\g((a,b) ) \subset  \p  \cap \SSS  = \mathcal{C} \,.
+$${#eq-proof-contained-circle}
+Thus $\g$ parametrizes part of $\mathcal{C}$. From Step 1 it follows that the curvature and torsion of $\g$ must satisfy
+$$
+\kappa = \frac1R \,, \quad \tau = 0 \,.
+$$
+Since we already know that $\kappa=c$, we conclude that $R=1/c$. Therefore the circle $\mathcal{C}$ has radius $1/c$ and the thesis follows by (@eq-proof-contained-circle).
 
 :::

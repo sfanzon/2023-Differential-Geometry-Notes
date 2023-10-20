@@ -98,9 +98,13 @@ Digital version of these notes available at
 
 ## Readings {.unnumbered}
 
-The main textbook of the course is Pressley [@pressley]. 
+Main textbooks:
+
+- Pressley [@pressley] for differential geometry,
+- Manetti [@manetti] for general topology.
+
 Other interesting readings are the books by do Carmo [@do-carmo] 
-and Bär [@bar]. I will assume some knowledge from Analysis 
+and Abate, Tovena [@abate-tovena]. I will assume some knowledge from Analysis 
 and Linear Algebra. A good place to revise these topics are 
 the books by Zorich [@zorich-1; @zorich-2]. 
 

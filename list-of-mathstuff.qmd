@@ -283,17 +283,25 @@
 
  [**Example 3.51**](#Example-3.51)\Pageref{Example-3.51}
 
- [**Proposition 3.52**](#curvature-and-torsion-formulas): Curvature and torsion formulas\Pageref{curvature-and-torsion-formulas}
+ [**Proposition 3.52**](#proposition-curvature-torsion-formulas): Curvature and torsion formulas\Pageref{proposition-curvature-torsion-formulas}
 
- [**Proof**](#Proof*-3.9)\Pageref{Proof*-3.9}
+ [**Notation**](#compact-notation-for-arc-length-reparametrization): Compact notation for arc length reparametrization\Pageref{compact-notation-for-arc-length-reparametrization}
 
- [**Remark 3.53**](#equation-of-a-plane): Equation of a plane\Pageref{equation-of-a-plane}
+ [**Example 3.53**](#how-to-use-the-new-notations): How to use the new notations\Pageref{how-to-use-the-new-notations}
 
- [**Proposition 3.54**](#Proposition-3.54)\Pageref{Proposition-3.54}
+ [**Important**](#new-notation): New Notation!\Pageref{new-notation}
 
- [**Proof**](#Proof*-3.10)\Pageref{Proof*-3.10}
+ [**Proof**](#proof-of-proposition): Proof of Proposition 3.52\Pageref{proof-of-proposition}
 
- [**Proposition 3.55**](#Proposition-3.55)\Pageref{Proposition-3.55}
+ [**Remark 3.54**](#equation-of-a-plane): Equation of a plane\Pageref{equation-of-a-plane}
+
+ [**Proposition 3.55**](#proposition-zero-torsion)\Pageref{proposition-zero-torsion}
+
+ [**Proof**](#Proof*-3.12)\Pageref{Proof*-3.12}
+
+ [**Proposition 3.56**](#proposition-constant-k-zero-t)\Pageref{proposition-constant-k-zero-t}
+
+ [**Proof**](#Proof*-3.13)\Pageref{Proof*-3.13}
 
  [**Definition 4.1**](#Definition-4.1)\Pageref{Definition-4.1}
 

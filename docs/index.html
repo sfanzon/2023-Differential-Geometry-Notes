@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dr.&nbsp;Silvio Fanzon">
-<meta name="dcterms.date" content="2023-10-18">
+<meta name="dcterms.date" content="2023-10-20">
 
 <title>Differential Geometry</title>
 <style>
@@ -86,43 +86,15 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
 .Proof {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
 }
 .Definition {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.Important {
+.Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -130,7 +102,15 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Conjecture {
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -138,11 +118,31 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Question {
+.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Theorem {
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -150,7 +150,11 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Corollary {
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Question {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -299,7 +303,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">18 Oct 2023</p>
+      <p class="date">20 Oct 2023</p>
     </div>
   </div>
   
@@ -335,7 +339,12 @@ div.csl-indent {
 </section>
 <section id="readings" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="readings">Readings</h2>
-<p>The main textbook of the course is Pressley <span class="citation" data-cites="pressley">(<a href="sections/references.html#ref-pressley" role="doc-biblioref">Pressley 2010</a>)</span>. Other interesting readings are the books by do Carmo <span class="citation" data-cites="do-carmo">(<a href="sections/references.html#ref-do-carmo" role="doc-biblioref">Carmo 2017</a>)</span> and Bär <span class="citation" data-cites="bar">(<a href="sections/references.html#ref-bar" role="doc-biblioref">Bär 2010</a>)</span>. I will assume some knowledge from Analysis and Linear Algebra. A good place to revise these topics are the books by Zorich <span class="citation" data-cites="zorich-1 zorich-2">(<a href="sections/references.html#ref-zorich-1" role="doc-biblioref">Zorich 2015</a>, <a href="sections/references.html#ref-zorich-2" role="doc-biblioref">2016</a>)</span>.</p>
+<p>Main textbooks:</p>
+<ul>
+<li>Pressley <span class="citation" data-cites="pressley">(<a href="sections/references.html#ref-pressley" role="doc-biblioref">Pressley 2010</a>)</span> for differential geometry,</li>
+<li>Manetti <span class="citation" data-cites="manetti">(<a href="sections/references.html#ref-manetti" role="doc-biblioref">Manetti 2023</a>)</span> for general topology.</li>
+</ul>
+<p>Other interesting readings are the books by do Carmo <span class="citation" data-cites="do-carmo">(<a href="sections/references.html#ref-do-carmo" role="doc-biblioref">Carmo 2017</a>)</span> and Abate, Tovena <span class="citation" data-cites="abate-tovena">(<a href="sections/references.html#ref-abate-tovena" role="doc-biblioref">Abate and Tovena 2011</a>)</span>. I will assume some knowledge from Analysis and Linear Algebra. A good place to revise these topics are the books by Zorich <span class="citation" data-cites="zorich-1 zorich-2">(<a href="sections/references.html#ref-zorich-1" role="doc-biblioref">Zorich 2015</a>, <a href="sections/references.html#ref-zorich-2" role="doc-biblioref">2016</a>)</span>.</p>
 </section>
 <section id="visualization" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="visualization">Visualization</h2>
@@ -357,8 +366,8 @@ Important
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-bar" class="csl-entry" role="listitem">
-Bär, Christian. 2010. <em>Elementary Differential Geometry</em>. Cambridge University Press.
+<div id="ref-abate-tovena" class="csl-entry" role="listitem">
+Abate, M., and F. Tovena. 2011. <em>Curves and Surfaces</em>. Springer.
 </div>
 <div id="ref-do-carmo" class="csl-entry" role="listitem">
 Carmo, Manfredo P. do. 2017. <em>Differential Geometry of Curves and Surfaces</em>. Second Edition. Dover Books on Mathematics.
@@ -368,6 +377,9 @@ Johansson, Robert. 2019. <em>Numerical Python. Scientific Computing and Data Sci
 </div>
 <div id="ref-KSB-Python" class="csl-entry" role="listitem">
 Kong, Qingkai, Timmy Siauw, and Alexandre Bayen. 2020. <em>Python Programming and Numerical Methods</em>. Academic Press.
+</div>
+<div id="ref-manetti" class="csl-entry" role="listitem">
+Manetti, Marco. 2023. <em>Topology</em>. Second Edition. Springer.
 </div>
 <div id="ref-pressley" class="csl-entry" role="listitem">
 Pressley, Andrew. 2010. <em>Elementary Differential Geometry</em>. Second Edition. Springer.

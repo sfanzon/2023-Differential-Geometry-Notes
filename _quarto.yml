@@ -177,6 +177,11 @@ custom-numbered-blocks:
     Definition:
       group: thmlike
       colors: [c6e6ed, 1995ad]
+  
+    Notation:
+      group: thmlike
+      colors: [c6e6ed, 1995ad]
+      numbered: false
 
     Remark: 
       group: thmlike
