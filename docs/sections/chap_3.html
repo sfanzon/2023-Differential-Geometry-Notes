@@ -85,47 +85,11 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Important {
+.Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -133,15 +97,19 @@ div.csl-indent {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.Assumption {
+.Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
-.Warning {
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -149,11 +117,43 @@ div.csl-indent {
   --color1: #cce7b1;
   --color2: #86b754;
 }
-.Corollary {
+.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Proposition {
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -1703,21 +1703,21 @@ s \mapsto {\pmb{\gamma}}(s)  \,, \quad s \in (\tilde{a},\tilde{b})
 \]</span> Then <span class="math display">\[
 \frac{d}{dt} ( {\pmb{\gamma}}\cdot \mathbf{b}) = \dot{{\pmb{\gamma}}}\cdot \mathbf{b}+ {\pmb{\gamma}}\cdot \dot{\mathbf{b}} = 0\,,  \quad \forall \, t \in (a,b) \,,
 \]</span> since <span class="math inline">\(\dot{\mathbf{b}}=0\)</span>. Thus <span class="math inline">\({\pmb{\gamma}}\cdot \mathbf{b}\)</span> is a constant scalar function, meaning that there exists costant <span class="math inline">\(d \in \mathbb{R}\)</span> such that <span class="math display">\[
-{\pmb{\gamma}}(t) \cdot \mathbf{b}= d \,, \,\, \forall t \in (a,b) \,.
+{\pmb{\gamma}}(t) \cdot \mathbf{b}= d \,, \,\, \forall \, t \in (a,b) \,.
 \]</span> The says that <span class="math inline">\({\pmb{\gamma}}\)</span> is contained in a plane.</p>
 <p><em>Step 2.</em> Suppose that <span class="math inline">\({\pmb{\gamma}}\)</span> is contained in a plane. Hence there exists <span class="math inline">\(\mathbf{P} \in \mathbb{R}^3\)</span> and <span class="math inline">\(d \in \mathbb{R}\)</span> such that <span class="math display">\[
-{\pmb{\gamma}}(t)\cdot \mathbf{P} = d \,, \quad \forall t \in (a,b) \,.
+{\pmb{\gamma}}(t)\cdot \mathbf{P} = d \,, \quad \forall \, t \in (a,b) \,.
 \]</span> We can differentiate the above equation twice to obtain <span class="math display">\[
-\dot{{\pmb{\gamma}}}\cdot \mathbf{P} = 0 \quad \implies \quad  \ddot{{\pmb{\gamma}}}\cdot \mathbf{P} = 0 \,.
-\]</span> By Frenet-Serret we have <span class="math display">\[
+\dot{{\pmb{\gamma}}}\cdot \mathbf{P} = 0 \,, \quad   \ddot{{\pmb{\gamma}}}\cdot \mathbf{P} = 0 \,,
+\]</span> where we used that <span class="math inline">\(\mathbf{P}\)</span> and <span class="math inline">\(d\)</span> are constant. By Frenet-Serret we have <span class="math display">\[
 \ddot{{\pmb{\gamma}}}(t)= \kappa (t) \mathbf{n}(t) \,.
 \]</span> Therefore the already proven relation <span class="math inline">\(\ddot{{\pmb{\gamma}}}\cdot \mathbf{P} = 0\)</span> implies <span class="math display">\[
 \kappa (t) \mathbf{n}(t) \cdot \mathbf{P} = 0 \,.
 \]</span> As we are assuming <span class="math inline">\(\kappa \neq 0\)</span>, we deduce that <span class="math display">\[
 \mathbf{n}(t) \cdot \mathbf{P} = 0 \,, \quad \forall \, t \in (a,b) \,.
-\]</span> We have shown that <span class="math inline">\(\dot{{\pmb{\gamma}}}(t)\)</span> and <span class="math inline">\(\mathbf{n}(t)\)</span> are both orthogonal to <span class="math inline">\(\mathbf{P}\)</span>. Since <span class="math inline">\(\mathbf{b}(t)\)</span> is orthogonal to <span class="math inline">\(\dot{{\pmb{\gamma}}}(t)\)</span> and <span class="math inline">\(\mathbf{n}(t)\)</span>, we conclude that <span class="math inline">\(\mathbf{b}(t)\)</span> is parallel to <span class="math inline">\(\mathbf{P}\)</span>. Hence, there exists <span class="math inline">\(\lambda \in \mathbb{R}\)</span> such that <span class="math display">\[
-\mathbf{b}(t) = \lambda \mathbf{P} \,\forall \, t \in (a,b) \,.
-\]</span> Taking the derivative we obtain <span class="math display">\[
+\]</span> We have shown that <span class="math inline">\(\dot{{\pmb{\gamma}}}(t)\)</span> and <span class="math inline">\(\mathbf{n}(t)\)</span> are both orthogonal to <span class="math inline">\(\mathbf{P}\)</span>. Since <span class="math inline">\(\mathbf{b}(t)\)</span> is orthogonal to <span class="math inline">\(\dot{{\pmb{\gamma}}}(t)\)</span> and <span class="math inline">\(\mathbf{n}(t)\)</span>, we conclude that <span class="math inline">\(\mathbf{b}(t)\)</span> is parallel to <span class="math inline">\(\mathbf{P}\)</span>. Hence, there exists <span class="math inline">\(\lambda(t) \in \mathbb{R}\)</span> such that <span id="eq-proof-plane"><span class="math display">\[
+\mathbf{b}(t) = \lambda(t) \mathbf{P} \,\forall \, t \in (a,b) \,.
+\tag{3.20}\]</span></span> Since <span class="math inline">\(\left\| \mathbf{b} \right\| = 1\)</span> and <span class="math inline">\(\mathbf{P}\)</span> is constant, from (<a href="#eq-proof-plane"><span>3.20</span></a>) we conclude that <span class="math inline">\(\lambda(t)\)</span> is constant. Differentiating (<a href="#eq-proof-plane"><span>3.20</span></a>) we obtain <span class="math display">\[
 \dot{\mathbf{b}}(t) = 0 \,, \quad \forall \, t \in (a,b) \,.
 \]</span> By definition of torsion we thus have <span class="math display">\[
 \tau(t) = - \dot{\mathbf{b}} \cdot \mathbf{n}(t) = 0 \,, \quad \forall \, t \in (a,b) \,.
@@ -1770,9 +1770,9 @@ s \mapsto {\pmb{\gamma}}(s)  \,, \quad s \in (\tilde{a},\tilde{b})
 {\pmb{\gamma}}((a,b) ) \subset {\pmb{\pi}}\,, \quad {\pmb{\gamma}}((a,b) ) \subset \mathcal{S}\,,
 \]</span> this implies <span id="eq-proof-contained-circle"><span class="math display">\[
 {\pmb{\gamma}}((a,b) ) \subset  {\pmb{\pi}}\cap \mathcal{S}= \mathcal{C} \,.
-\tag{3.20}\]</span></span> Thus <span class="math inline">\({\pmb{\gamma}}\)</span> parametrizes part of <span class="math inline">\(\mathcal{C}\)</span>. From Step 1 it follows that the curvature and torsion of <span class="math inline">\({\pmb{\gamma}}\)</span> must satisfy <span class="math display">\[
+\tag{3.21}\]</span></span> Thus <span class="math inline">\({\pmb{\gamma}}\)</span> parametrizes part of <span class="math inline">\(\mathcal{C}\)</span>. From Step 1 it follows that the curvature and torsion of <span class="math inline">\({\pmb{\gamma}}\)</span> must satisfy <span class="math display">\[
 \kappa = \frac1R \,, \quad \tau = 0 \,.
-\]</span> Since we already know that <span class="math inline">\(\kappa=c\)</span>, we conclude that <span class="math inline">\(R=1/c\)</span>. Therefore the circle <span class="math inline">\(\mathcal{C}\)</span> has radius <span class="math inline">\(1/c\)</span> and the thesis follows by (<a href="#eq-proof-contained-circle"><span>3.20</span></a>).</p>
+\]</span> Since we already know that <span class="math inline">\(\kappa=c\)</span>, we conclude that <span class="math inline">\(R=1/c\)</span>. Therefore the circle <span class="math inline">\(\mathcal{C}\)</span> has radius <span class="math inline">\(1/c\)</span> and the thesis follows by (<a href="#eq-proof-contained-circle"><span>3.21</span></a>).</p>
 </div></details>
 </div>
 

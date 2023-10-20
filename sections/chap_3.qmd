@@ -2410,18 +2410,19 @@ $$
 $$
 since $\dot{\bb}=0$. Thus $\g \cdot \bb$ is a constant scalar function, meaning that there exists costant $d \in \R$ such that
 $$
-\g(t) \cdot \bb = d \,, \,\, \forall t \in (a,b) \,.
+\g(t) \cdot \bb = d \,, \,\, \forall \, t \in (a,b) \,.
 $$
 The says that $\g$ is contained in a plane.
 
 *Step 2.* Suppose that $\g$ is contained in a plane. Hence there exists $\mathbf{P} \in \R^3$ and $d \in \R$ such that 
 $$
-\g(t)\cdot \mathbf{P} = d \,, \quad \forall t \in (a,b) \,.
+\g(t)\cdot \mathbf{P} = d \,, \quad \forall \, t \in (a,b) \,.
 $$
 We can differentiate the above equation twice to obtain
 $$
-\dg \cdot \mathbf{P} = 0 \quad \implies \quad  \ddg \cdot \mathbf{P} = 0 \,.
+\dg \cdot \mathbf{P} = 0 \,, \quad   \ddg \cdot \mathbf{P} = 0 \,,
 $$
+where we used that $\mathbf{P}$ and $d$ are constant.
 By Frenet-Serret we have
 $$
 \ddg (t)= \kappa (t) \nn (t) \,.
@@ -2434,11 +2435,11 @@ As we are assuming $\kappa \neq 0$, we deduce that
 $$
 \nn (t) \cdot \mathbf{P} = 0 \,, \quad \forall \, t \in (a,b) \,.
 $$
-We have shown that $\dg(t)$ and $\nn(t)$ are both orthogonal to $\mathbf{P}$. Since $\bb(t)$ is orthogonal to $\dg(t)$ and $\nn(t)$, we conclude that $\bb(t)$ is parallel to $\mathbf{P}$. Hence, there exists $\lambda \in \R$ such that
+We have shown that $\dg(t)$ and $\nn(t)$ are both orthogonal to $\mathbf{P}$. Since $\bb(t)$ is orthogonal to $\dg(t)$ and $\nn(t)$, we conclude that $\bb(t)$ is parallel to $\mathbf{P}$. Hence, there exists $\lambda(t) \in \R$ such that
 $$
-\bb(t) = \lambda \mathbf{P} \,\forall \, t \in (a,b) \,.
-$$
-Taking the derivative we obtain
+\bb(t) = \lambda(t) \mathbf{P} \,\forall \, t \in (a,b) \,.
+$${#eq-proof-plane}
+Since $\norm{\bb} = 1$ and $\mathbf{P}$ is constant, from (@eq-proof-plane) we conclude that $\lambda(t)$ is constant. Differentiating (@eq-proof-plane) we obtain
 $$
 \dot{\bb}(t) = 0 \,, \quad \forall \, t \in (a,b) \,.
 $$
