@@ -66,7 +66,15 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Lemma {
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Important {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -74,31 +82,19 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
 .Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Warning {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -106,27 +102,11 @@ ul.task-list li input[type="checkbox"] {
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Important {
+.Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Remark {
+.Example {
   --color1: #bce5de;
   --color2: #21aa93;
 }
@@ -134,7 +114,27 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
 .Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -301,11 +301,11 @@ ul.task-list li input[type="checkbox"] {
 \dot f :=  \frac{d f}{dt} \,, \quad  \ddot f := \frac{d^2 f}{dt^2} \,.
 \]</span></p>
 <div id="Example-3" class="Example">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 3</strong></summary><div>The function <span class="math inline">\(f(x)=x^4\)</span> is smooth, with <span class="math display">\[\begin{align}
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 3</strong></summary><div>The function <span class="math inline">\(f(x)=x^4\)</span> is smooth, with <span class="math display">\[\begin{align*}
 &amp; \frac{d f}{dt}  = 4x^3 ,\,\, \frac{d^2 f}{dt^2}  = 12 x^2 \,, \\
 &amp; \frac{d^3 f}{dt^3}  = 24 x ,\,\, \frac{d^4 f}{dt^4} = 24  \,, \\
 &amp; \frac{d^n f}{dt^n}  = 0  \, \text{ for all } \, n \geq 5  \,.
-\end{align}\]</span> Other examples smooth functions are polynomials, as well as <span class="math display">\[
+\end{align*}\]</span> Other examples smooth functions are polynomials, as well as <span class="math display">\[
 f(t) = \cos(t) , \,\, f(t) = \sin(t) \,, \,\, f(t) = e^t \,.
 \]</span><p></p>
 </div></details>
@@ -514,10 +514,10 @@ L({\pmb{\gamma}}) = \lim_{ \left\| P \right\| \to 0}   \ L({\pmb{\gamma}},\mathc
 \frac{\left\| {\pmb{\gamma}}(t + \delta) - {\pmb{\gamma}}(t) \right\|}{\delta} \, \delta
 \]</span> which for small <span class="math inline">\(\delta\)</span> is close to <span class="math display">\[
 \left\| \dot{{\pmb{\gamma}}}(t) \right\| \,\delta \,.
-\]</span> We can now divide the time interval <span class="math inline">\((a,b)\)</span> in steps <span class="math inline">\(t_0, \ldots, t_m\)</span> with <span class="math inline">\(|t_{i}-t_{i-1}| &lt; \delta\)</span> and obtain <span class="math display">\[\begin{align}
+\]</span> We can now divide the time interval <span class="math inline">\((a,b)\)</span> in steps <span class="math inline">\(t_0, \ldots, t_m\)</span> with <span class="math inline">\(|t_{i}-t_{i-1}| &lt; \delta\)</span> and obtain <span class="math display">\[\begin{align*}
 \left\| {\pmb{\gamma}}(t_{i}) - {\pmb{\gamma}}(t_{i-1})  \right\| &amp; = \frac{\left\| {\pmb{\gamma}}(t_{i}) - {\pmb{\gamma}}(t_{i-1}) \right\|}{ |t_{i}-t_{i-1}| } |t_{i}-t_{i-1}| \\
 &amp; \approx \left\|  \dot{{\pmb{\gamma}}}(t_i) \right\| \delta
-\end{align}\]</span> since <span class="math inline">\(\delta\)</span> is small. Therefore <span class="math display">\[
+\end{align*}\]</span> since <span class="math inline">\(\delta\)</span> is small. Therefore <span class="math display">\[
 L({\pmb{\gamma}}) \approx \sum_{i=1}^m  \left\| {\pmb{\gamma}}(t_{i}) - {\pmb{\gamma}}(t_{i-1}) \right\|
 \approx \sum_{i=1}^m   \left\| \dot{{\pmb{\gamma}}}(t_i) \right\| \,\delta \,.
 \]</span> The RHS is a Riemann sum, therefore <span class="math display">\[
@@ -554,11 +554,11 @@ L({\pmb{\gamma}},\mathcal{P}) \to \int_a^b  \left\| \dot{{\pmb{\gamma}}}(t) \rig
 <p><em>Step 3. First estimate in (<a href="#eq-length-formula-1"><span>2.3</span></a>).</em><br>
 This first estimate is easy, and only relies on the Fundamental Theorem of Calculus. To be more precise, we will show that each polygonal has shorter length than <span class="math inline">\(\int_{a}^b \left\|  \dot{{\pmb{\gamma}}}(t) \right\| \, dt\)</span>. To this end, take an arbitrary partition <span class="math inline">\(\mathcal{P} = (t_0, \ldots, t_m)\)</span> of <span class="math inline">\([a,b]\)</span>. Then for each <span class="math inline">\(i = 1,\ldots,m\)</span> we have <span class="math display">\[
 \left\|   {\pmb{\gamma}}(t_i) - {\pmb{\gamma}}(t_{i-1})  \right\| = \left\|   \int_{t_{i-1}}^{t_i}  \dot{{\pmb{\gamma}}}(t)\, dt  \right\| \leq   \int_{t_{i-1}}^{t_i}\left\|    \dot{{\pmb{\gamma}}}(t) \right\| \, dt   
-\]</span> where we used the Fundamental Theorem of calculus, and usual integral properties. Therefore by definition <span class="math display">\[\begin{align}
+\]</span> where we used the Fundamental Theorem of calculus, and usual integral properties. Therefore by definition <span class="math display">\[\begin{align*}
 L({\pmb{\gamma}},\mathcal{P} ) &amp; = \sum_{i=1}^m  \left\|   {\pmb{\gamma}}(t_i) - {\pmb{\gamma}}(t_{i-1})  \right\| \\
 &amp; \leq \sum_{i=1}^m  \int_{t_{i-1}}^{t_i} \left\|    \dot{{\pmb{\gamma}}}(t) \right\| \, dt \\
 &amp; = \int_{a}^b \left\|    \dot{{\pmb{\gamma}}}(t) \right\| \, dt \,.
-\end{align}\]</span> We have then shown <span id="eq-length-formula-2"><span class="math display">\[
+\end{align*}\]</span> We have then shown <span id="eq-length-formula-2"><span class="math display">\[
 L({\pmb{\gamma}}, \mathcal{P}) \leq \int_{a}^b \left\|    \dot{{\pmb{\gamma}}}(t) \right\| \, dt
 \tag{2.4}\]</span></span> for all partitions <span class="math inline">\(\mathcal{P}\)</span>.</p>
 <p><em>Step 4. Second estimate in (<a href="#eq-length-formula-1"><span>2.3</span></a>).</em><br>
@@ -568,11 +568,11 @@ The second estimate is more delicate. We need to carefully construct a polygonal
 \left\| \mathcal{P} \right\| = \max_{i=1,\ldots ,m} |t_i - t_{i-1}| \,.
 \]</span> Therefore the condition <span class="math inline">\(\left\| \mathcal{P} \right\| &lt; \delta\)</span> implies <span id="eq-length-formula-3"><span class="math display">\[
 |t_i - t_{i-1}| &lt; \delta
-\tag{2.6}\]</span></span> for each <span class="math inline">\(i = 1, \ldots, m\)</span>. For all <span class="math inline">\(i = 1, \ldots, m\)</span> and <span class="math inline">\(s \in [t_{i-1},t_i]\)</span> we have <span class="math display">\[\begin{align}
+\tag{2.6}\]</span></span> for each <span class="math inline">\(i = 1, \ldots, m\)</span>. For all <span class="math inline">\(i = 1, \ldots, m\)</span> and <span class="math inline">\(s \in [t_{i-1},t_i]\)</span> we have <span class="math display">\[\begin{align*}
 {\pmb{\gamma}}(t_i) - {\pmb{\gamma}}(t_{i-1}) &amp; = \int_{t_{i-1}}^{ t_i }  \dot{{\pmb{\gamma}}}(t)\, dt \\
                       &amp; =  \int_{t_{i-1}}^{ t_i } \dot{{\pmb{\gamma}}}(s) +  (\dot{{\pmb{\gamma}}}(t) - \dot{{\pmb{\gamma}}}(s))    \, dt \\
                       &amp; = ( t_i - t_{i-1} ) \dot{{\pmb{\gamma}}}(s) + \int_{t_{i-1}}^{ t_i }   (\dot{{\pmb{\gamma}}}(t) - \dot{{\pmb{\gamma}}}(s))    \, dt
-\end{align}\]</span> Therefore <span id="eq-length-formula-4"><span class="math display">\[
+\end{align*}\]</span> Therefore <span id="eq-length-formula-4"><span class="math display">\[
 \left\|  {\pmb{\gamma}}(t_i) - {\pmb{\gamma}}(t_{i-1})  \right\|  = \left\|  ( t_i - t_{i-1} ) \dot{{\pmb{\gamma}}}(s) +
 \int_{t_{i-1}}^{ t_i }   (\dot{{\pmb{\gamma}}}(t) - \dot{{\pmb{\gamma}}}(s))    \, dt  \right\|
 \tag{2.7}\]</span></span> We can now use the reverse triangle inequality <span class="math display">\[
@@ -593,10 +593,10 @@ The second estimate is more delicate. We need to carefully construct a polygonal
 |t-s| \leq | t_{i} - t_{i-1} |   &lt;  \delta
 \]</span> where the last inequality follows by (<a href="#eq-length-formula-3"><span>2.6</span></a>). Thus by uniform continuity (<a href="#eq-length-formula-uc"><span>2.5</span></a>) we get <span class="math display">\[
 \left\|  \dot{{\pmb{\gamma}}}(t) - \dot{{\pmb{\gamma}}}(s)  \right\| &lt; \frac{\varepsilon}{b-a} \,.
-\]</span> We can therefore further estimate (<a href="#eq-length-formula-6"><span>2.9</span></a>) and obtain <span class="math display">\[\begin{align}
+\]</span> We can therefore further estimate (<a href="#eq-length-formula-6"><span>2.9</span></a>) and obtain <span class="math display">\[\begin{align*}
 \left\|  {\pmb{\gamma}}(t_i) - {\pmb{\gamma}}(t_{i-1})  \right\| &amp; \geq ( t_i - t_{i-1} ) \left\| \dot{{\pmb{\gamma}}}(s) \right\|   - \int_{t_{i-1}}^{ t_i }   \left\| \dot{{\pmb{\gamma}}}(t) - \dot{{\pmb{\gamma}}}(s) \right\|    \, dt \\
 &amp; \geq  ( t_i - t_{i-1} ) \left\| \dot{{\pmb{\gamma}}}(s) \right\| -  ( t_i - t_{i-1} ) \frac{\varepsilon}{b-a}    \, dt \,.
-\end{align}\]</span> Dividing the above by <span class="math inline">\(t_i - t_{i-1}\)</span> we get <span class="math display">\[
+\end{align*}\]</span> Dividing the above by <span class="math inline">\(t_i - t_{i-1}\)</span> we get <span class="math display">\[
 \frac{ \left\|  {\pmb{\gamma}}(t_i) - {\pmb{\gamma}}(t_{i-1})  \right\| }{ t_i - t_{i-1}  } \geq
 \left\| \dot{{\pmb{\gamma}}}(s) \right\| - \frac{\varepsilon}{b-a}  \,.
 \]</span> Integrating the above over <span class="math inline">\(s\)</span> in the interval <span class="math inline">\([t_{i-1}, t_i ]\)</span> we get <span class="math display">\[
@@ -619,10 +619,10 @@ Putting together (<a href="#eq-length-formula-2"><span>2.4</span></a>) and (<a h
 {\pmb{\gamma}}(t) = (R\cos(t), R\sin(t)) \,.
 \]</span> Then <span class="math display">\[
 \dot{{\pmb{\gamma}}}(t) = (-R\sin(t), R\cos(t))
-\]</span> and <span class="math display">\[\begin{align}
+\]</span> and <span class="math display">\[\begin{align*}
 \left\| \dot{{\pmb{\gamma}}}(t) \right\| &amp; = \sqrt{ {\dot\gamma}_1^2(t) +   {\dot \gamma}_2^2(t)      } \\
                 &amp; = R \sqrt{ \sin^2(t) + \cos^2 (t)} = R\,.
-\end{align}\]</span> Therefore <span class="math display">\[
+\end{align*}\]</span> Therefore <span class="math display">\[
 L({\pmb{\gamma}}) = \int_{0}^{2\pi}  \left\|   \dot{{\pmb{\gamma}}}(t) \right\| \, dt = \int_0^{2\pi} R \, dt = 2 \pi R
 \]</span> as expected.<p></p>
 </div></details>
@@ -632,10 +632,10 @@ L({\pmb{\gamma}}) = \int_{0}^{2\pi}  \left\|   \dot{{\pmb{\gamma}}}(t) \right\| 
 {\pmb{\gamma}}(t) = (R\cos(t), R\sin(t) ,Ht)
 \]</span> for <span class="math inline">\(t \in [0,2\pi]\)</span>. Then <span class="math display">\[
 \dot{{\pmb{\gamma}}}(t) = (-R\sin(t), R\cos(t) , H) \,,
-\]</span> and <span class="math display">\[\begin{align}
+\]</span> and <span class="math display">\[\begin{align*}
 \left\|  \dot{{\pmb{\gamma}}}(t)   \right\| &amp; = \sqrt{  {\dot{\gamma}}_1^2 + {\dot{\gamma}}_2^2 + {\dot{\gamma}}_3^2 } \\
                     &amp; = \sqrt{ R^2\sin^2(t) + R^2\cos^2(t) + H^2 } = \sqrt{R^2 + H^2} \,.
-\end{align}\]</span> Therefore <span class="math display">\[
+\end{align*}\]</span> Therefore <span class="math display">\[
 L({\pmb{\gamma}}) = \int_0^{2\pi} \left\|  \dot{{\pmb{\gamma}}}(t)  \right\| \, dt = 2 \pi \sqrt{R^2 + H^2} \,.
 \]</span><p></p>
 </div></details>
@@ -680,12 +680,12 @@ t &lt; t_0   \implies  s(t) \leq 0 \,.
 <blockquote class="blockquote">
 <p>For example define <span class="math inline">\(\tilde{s}\)</span> as the arc-length starting from <span class="math inline">\(\tilde{t}_0\)</span> <span class="math display">\[
 \tilde{s}(t) := \int_{\tilde{t}_0}^t \left\|  \dot{{\pmb{\gamma}}}(\tau)  \right\| \, d\tau  \,.
-\]</span> Then by the properties of integral <span class="math display">\[\begin{align}
+\]</span> Then by the properties of integral <span class="math display">\[\begin{align*}
 s(t) &amp; = \int_{t_0}^t \left\|  \dot{{\pmb{\gamma}}}(\tau)  \right\| \, d\tau \\
 &amp; = \int_{t_0}^{\tilde{t}_0} \left\|  \dot{{\pmb{\gamma}}}(\tau)  \right\| \, d\tau +
 \int_{\tilde{t}_0}^{t} \left\|  \dot{{\pmb{\gamma}}}(\tau)  \right\| \, d\tau \\
 &amp; = \int_{t_0}^{\tilde{t}_0} \left\|  \dot{{\pmb{\gamma}}}(\tau)  \right\| \, d\tau + \tilde{s}(t) \,.
-\end{align}\]</span> Hence <span class="math display">\[
+\end{align*}\]</span> Hence <span class="math display">\[
 s = c + \tilde{s}
 \]</span> with <span class="math display">\[
 c := \int_{t_0}^{\tilde{t}_0} \left\|  \dot{{\pmb{\gamma}}}(\tau)  \right\| \, d\tau \,.
@@ -720,11 +720,11 @@ s(t) = \int_{t_0}^{t}  \left\|   \dot{{\pmb{\gamma}}}(\tau) \right\| \, d\tau = 
 {\dot \gamma}_2(t) = e^{kt} ( k \sin(t) + \cos(t) )
 \]</span> and so, after some calculations, <span class="math display">\[
 \left\| \dot{{\pmb{\gamma}}}(t) \right\|^2   =  {\dot{\gamma}}_1^2 + {\dot{\gamma}}_2^2 = (k^2 + 1) e^{2kt} \,.
-\]</span> The arc-length starting from <span class="math inline">\(t_0\)</span> is <span class="math display">\[\begin{align}
+\]</span> The arc-length starting from <span class="math inline">\(t_0\)</span> is <span class="math display">\[\begin{align*}
 s(t) &amp; = \int_{t_0}^t \left\| \dot{{\pmb{\gamma}}}(\tau) \right\| \, d \tau \\
      &amp; = \sqrt{k^2 + 1} \int_{t_0}^t e^{k \tau} \, d \tau  \\
      &amp; = \frac{\sqrt{k^2 + 1}}{k} ( e^{kt} - e^{k t_0} ) \,.
-\end{align}\]</span><p></p>
+\end{align*}\]</span><p></p>
 </div></details>
 </div>
 <div class="cell" data-execution_count="4">
@@ -797,12 +797,12 @@ u \cdot v = u_1v_2 + u_2 v_2 \,.
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Note that <span class="math display">\[
 e_1 \cdot e_1 = 1 \,, \quad e_2 \cdot e_2 = 1 \,, \quad
 e_1 \cdot e_2 = e_2 \cdot e_1 = 0 \,.
-\]</span> Using the bilinearity of scalar product we have <span class="math display">\[\begin{align}
+\]</span> Using the bilinearity of scalar product we have <span class="math display">\[\begin{align*}
 u \cdot v &amp; = (u_1 e_1 + u_2 e_2) \cdot (v_1 e_1 + v_2 e_2) \\
           &amp; = u_1 v_1 e_1 \cdot e_1 +  u_1 v_2 e_1 \cdot e_2 +
               u_2 v_1 e_2 \cdot e_1 + u_2 v_2  e_2 \cdot e_2 \\
           &amp; = u_1 v_1  + u_2 v_2 \,.
-\end{align}\]</span><p></p>
+\end{align*}\]</span><p></p>
 </div></details>
 </div>
 <p>The above proposition provides a way to generalize of the scalar product to <span class="math inline">\(\mathbb{R}^n\)</span>..</p>
@@ -850,12 +850,12 @@ u \cdot v = 0 \,.
 \]</span> the coordinates of <span class="math inline">\({\pmb{\gamma}}\)</span> and <span class="math inline">\({\pmb{\eta}}\)</span>. Clearly the map <span class="math display">\[
 t \mapsto {\pmb{\gamma}}\cdot {\pmb{\eta}}= \sum_{i=1}^n {\pmb{\gamma}}_i \eta_i
 \]</span> is smooth, being sum and product of smooth functions.<br>
-Concerning the formula, by definition of scalar product and linearity of the derivative we have <span class="math display">\[\begin{align}
+Concerning the formula, by definition of scalar product and linearity of the derivative we have <span class="math display">\[\begin{align*}
 \frac{d}{dt} ({\pmb{\gamma}}\cdot {\pmb{\eta}}) &amp; = \frac{d}{dt} \left( \sum_{i=1}^n {\pmb{\gamma}}_i \eta_i \right) \\
 &amp; = \sum_{i=1}^n \frac{d}{dt} ( {\pmb{\gamma}}_i \eta_i ) \\
 &amp; = \sum_{i=1}^n  {\dot\gamma}_i \eta_i + \dot{\gamma}_i {\dot \eta}_i \\
 &amp; = \dot{{\pmb{\gamma}}}\cdot {\pmb{\eta}}+ {\pmb{\gamma}}\cdot \dot{{\pmb{\eta}}} \,,
-\end{align}\]</span> where in the second to last equality we used the product rule of differentiation.<p></p>
+\end{align*}\]</span> where in the second to last equality we used the product rule of differentiation.<p></p>
 </div></details>
 </div>
 </section>
@@ -960,11 +960,11 @@ s(t) := \int_{t_0}^t \left\|   \dot{{\pmb{\gamma}}}(\tau)  \right\| \, d\tau  \,
 {\pmb{\gamma}}(t) := (\cos (t), \sin(t)) \,.
 \]</span> To reverse the orientation we can reparametrize <span class="math inline">\({\pmb{\gamma}}\)</span> by using the diffeomorphism <span class="math display">\[
 \phi(t):= - t \,.
-\]</span> This way we obtain <span class="math inline">\(\tilde{{\pmb{\gamma}}}:= {\pmb{\gamma}}\circ \phi\ \colon [0,2\pi] \to [0, 2\pi]\)</span>, <span class="math display">\[\begin{align}
+\]</span> This way we obtain <span class="math inline">\(\tilde{{\pmb{\gamma}}}:= {\pmb{\gamma}}\circ \phi\ \colon [0,2\pi] \to [0, 2\pi]\)</span>, <span class="math display">\[\begin{align*}
 \tilde{{\pmb{\gamma}}}(t) &amp; = {\pmb{\gamma}}(\phi(t)) \\
               &amp; = (\cos(-t),\sin(-t)) \\
               &amp; = (\cos(t),-\sin(t)) \,,
-\end{align}\]</span> where in the last identity we used the properties of <span class="math inline">\(\cos\)</span> and <span class="math inline">\(\sin\)</span>. Notice that in this way, for example, <span class="math display">\[
+\end{align*}\]</span> where in the last identity we used the properties of <span class="math inline">\(\cos\)</span> and <span class="math inline">\(\sin\)</span>. Notice that in this way, for example, <span class="math display">\[
 {\pmb{\gamma}}(\pi/2) = (0,1) \,, \quad {\pmb{\gamma}}(\pi/2) = (0,-1) \,.
 \]</span><p></p>
 </div></details>
@@ -1219,11 +1219,11 @@ First note that a unit speed reparametrization <span class="math inline">\(\wide
 {\pmb{\gamma}}(t) = \widetilde{{\pmb{\gamma}}}( \phi(t) )  , \quad \forall \, t \in (a,b)\,,
 \]</span> we obtain <span class="math display">\[
 \dot{{\pmb{\gamma}}}(t) = \frac{d}{dt} \widetilde{{\pmb{\gamma}}}( \phi(t) ) = \dot{\widetilde{{\pmb{\gamma}}}}(\phi(t)) \, \dot\phi(t)  \,.
-\]</span> Taking the norms we then have <span class="math display">\[\begin{align}
+\]</span> Taking the norms we then have <span class="math display">\[\begin{align*}
 \left\|  \dot{{\pmb{\gamma}}}(t)  \right\| &amp; = \left\|  \dot{\widetilde{{\pmb{\gamma}}}}(\phi(t)) \, \dot\phi(t)  \right\| \\
                     &amp; = \left\|  \dot{\widetilde{{\pmb{\gamma}}}}(\phi(t))  \right\| \, | \dot\phi(t) | \\
                     &amp; = | \dot\phi(t) | \,,
-\end{align}\]</span> where in the last equality we used that <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is unit speed, and so <span class="math display">\[
+\end{align*}\]</span> where in the last equality we used that <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is unit speed, and so <span class="math display">\[
 \left\| \dot{\widetilde{{\pmb{\gamma}}}} \right\| \equiv 1 \,.
 \]</span> To summarize, so far we have proven that <span class="math display">\[
 \left\|  \dot{{\pmb{\gamma}}}(t)  \right\|  = | \dot\phi(t) | \,, \quad \forall \, t \in (a,b) \,.
@@ -1378,11 +1378,11 @@ k := \biggl\lfloor \frac{t-a}{b-a}  \biggr\rfloor \,,
 By point 4 we can assume WLOG that <span class="math inline">\(k \geq 0\)</span>. We proceed by induction:
 <ul>
 <li>The statement is true for <span class="math inline">\(k=1\)</span>, since <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math inline">\(T\)</span>-periodic.</li>
-<li>Assume now that <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math inline">\(kT\)</span>-periodic. Then <span class="math display">\[\begin{align}
+<li>Assume now that <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math inline">\(kT\)</span>-periodic. Then <span class="math display">\[\begin{align*}
 {\pmb{\gamma}}(t + (k+1) T) &amp; = {\pmb{\gamma}}( (t+T)  + kT ) &amp; \\
 &amp; = {\pmb{\gamma}}(t + T)   &amp;  \mbox{(by $kT$-periodicity)} \\  
 &amp; = {\pmb{\gamma}}(t)   &amp;  \mbox{(by $T$-periodicity)}
-\end{align}\]</span> showing that <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math inline">\((k+1)T\)</span>-periodic.</li>
+\end{align*}\]</span> showing that <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math inline">\((k+1)T\)</span>-periodic.</li>
 </ul>
 </blockquote>
 <blockquote class="blockquote">
@@ -1390,11 +1390,11 @@ By point 4 we can assume WLOG that <span class="math inline">\(k \geq 0\)</span>
 </blockquote></li>
 <li><p>If <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math inline">\(T_1\)</span>-periodic and <span class="math inline">\(T_2\)</span>-periodic then <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math inline">\((k_1T_1 + k_2 T_2)\)</span>-periodic, for all <span class="math inline">\(k_1, k_2 \in \mathbb{Z}\)</span>.</p>
 <blockquote class="blockquote">
-<p>By Point 6 we know that <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math inline">\(k_1T_1\)</span>-periodic and <span class="math inline">\(k_2T_2\)</span>-periodic. Set <span class="math inline">\(T:=k_1T_1 + k_2T_2\)</span>. We have <span class="math display">\[\begin{align}
+<p>By Point 6 we know that <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math inline">\(k_1T_1\)</span>-periodic and <span class="math inline">\(k_2T_2\)</span>-periodic. Set <span class="math inline">\(T:=k_1T_1 + k_2T_2\)</span>. We have <span class="math display">\[\begin{align*}
 {\pmb{\gamma}}(t + T) &amp; = {\pmb{\gamma}}( (t+ k_1T_1)  + k_2T_2 ) &amp; \\
 &amp; = {\pmb{\gamma}}(t + k_1T_1)  &amp;  \mbox{(by $k_2T_2$-periodicity)} \\  
 &amp; = {\pmb{\gamma}}(t)  &amp;  \mbox{(by $k_1T_1$-periodicity)}
-\end{align}\]</span> showing that <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math inline">\((k_1T_1 + k_2 T_2)\)</span>-periodic.</p>
+\end{align*}\]</span> showing that <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math inline">\((k_1T_1 + k_2 T_2)\)</span>-periodic.</p>
 </blockquote></li>
 </ol>
 </div></details>
@@ -1460,10 +1460,10 @@ t_n \in [0,T_n] \,, \quad k_n \in \mathbb{Z}\,,
 t = t_n + k_n T_n \,,
 \]</span> as shown in the figure below. Indeed, it is sufficient to define <span class="math display">\[
 k_n := \biggl\lfloor \frac{t}{T_n}  \biggr\rfloor \in \mathbb{Z}\,, \quad t_n := t - k_n T_n \,.
-\]</span> Since <span class="math inline">\(T_n \in S\)</span>, we know that <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math inline">\(T_n\)</span>-periodic. Remark <a href="chap_2.html#remark-closed">54</a> Point 6 implies that <span class="math inline">\({\pmb{\gamma}}\)</span> is also <span class="math inline">\(k_nT_n\)</span>-periodic, since <span class="math inline">\(k_n \in \mathbb{Z}\)</span>. Thus <span class="math display">\[\begin{align}
+\]</span> Since <span class="math inline">\(T_n \in S\)</span>, we know that <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math inline">\(T_n\)</span>-periodic. Remark <a href="chap_2.html#remark-closed">54</a> Point 6 implies that <span class="math inline">\({\pmb{\gamma}}\)</span> is also <span class="math inline">\(k_nT_n\)</span>-periodic, since <span class="math inline">\(k_n \in \mathbb{Z}\)</span>. Thus <span class="math display">\[\begin{align*}
 {\pmb{\gamma}}(t) &amp; = {\pmb{\gamma}}( t_n + k_nT_n )   &amp;   \mbox{(definition of $t_n$)} \\
        &amp; = {\pmb{\gamma}}(t_n)             &amp; \mbox{(by $k_nT_n$-periodicity)} \,.
-\end{align}\]</span> Therefore <span id="eq-period-exists-1"><span class="math display">\[
+\end{align*}\]</span> Therefore <span id="eq-period-exists-1"><span class="math display">\[
 {\pmb{\gamma}}(t) = {\pmb{\gamma}}(t_n) \,, \quad \forall \, n \in \mathbb{N}\,.
 \tag{2.23}\]</span></span> Also notice that <span class="math display">\[
 0 \leq t_n \leq T_n \,, \quad \forall \, n \in \mathbb{N}\,.
