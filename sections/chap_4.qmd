@@ -147,7 +147,7 @@ $$
 $${#eq-open-set-Rn}
 where $B_r(x)$ is the ball of radius $r>0$ centered at $x$
 $$
-B_r(x) := \{ y \in \R^n \divider \norm{ y - x } = R  \} \,, 
+B_r(x) := \{ y \in \R^n \divider \norm{ y - x } \leq R  \} \,, 
 $$
 and the **Euclidean norm** of $x \in \R^n$ is defined by 
 $$
@@ -196,6 +196,47 @@ $$
 
 
 
+Let us make a basic bus useful observation: balls in $\R^n$ are open for the Euclidean topology.
+
+
+::: {.Proposition   #proposition-balls-open}
+
+Let $\R^n$ be equipped with $\TT$ the Euclidean topology. Let $r>0$ and $x \in \R^n$. Then
+$$
+B_r(x) \in \TT \,.
+$$
+
+:::
+
+
+::: Proof
+
+We need to shown that $B_r(x)$ satisfies @eq-open-set-Rn. Therefore, let $y \in B_r(x)$. In particular
+$$
+\norm{x - y}<r \,.
+$${#eq-balls-open}
+Define 
+$$
+\e := r - \norm{x - y} \,.
+$$
+Note that $\e>0$ by (@eq-balls-open). We claim that 
+$$
+B_{\e} (y) \subset B_r (x) \,,
+$$
+see @fig-balls-open. Indeed, let $z \in B_{\e}(y)$. By triangle inequality we have
+$$
+\| z - x \| \leq \norm{ x - y } + \norm{ y - z } <  \norm{ x - y } + \e = r \,, 
+$$
+where we used that $\norm{y - z} < \e$ and the definition of $\e$.
+
+
+:::
+
+
+![The ball $B_{\e}(y)$ is contained in $B_r(x)$ if $\e := r - \norm{x-y}$.](/images/balls_open.png){#fig-balls-open width=70%}
+
+
+
 ## Convergence
 
 We have generalized the notion of open set to arbitrary sets. Next we generalize
@@ -204,9 +245,125 @@ the notion of convergence of sequences.
 ::: Definition
 ### Convergent sequence
 
-Let $(X,\TT)$ be a topological space.
-asc
+Let $(X,\TT)$ be a topological. Consider a sequence $\{x_n\}_{n \in \N} \subset X$ and a point
+$x \in X$. We say that $x_n$ converges to $x_0$ if the following property holds:
+$$
+\forall \, U \in \TT  \st x_0 \in U\,, \,\, \exists \, N = N(U) \in \N \st  x_n \in U \,, \, \forall \, n \geq N \,.
+$$ {#eq-convergence}
+
 :::
+
+
+::: Notation
+
+The convergence of $x_n$ to $x_0$ is denoted by 
+$$
+x_n \to x_0 \quad \mbox{ or } \quad  \lim_{n \to \infty} x_n = x_0 \,.
+$$
+
+:::
+
+
+Let us analyze the definition of convergence in the topologies we have encountered so far. We will have that:
+
+- **Trivial topology**: Every sequence converges to every point.
+- **Discrete topology**: A sequence converges if and only if it is eventually constant.
+- **Euclidean topology**: Topological convergence coincides with classical notion of convergence.
+
+We now precisely state and prove the above claims.
+
+::: Proposition
+### Convergence for trivial topology
+
+Let $(X,\TT)$ be topological space, with $\TT$ the trivial topology, that is,
+$$
+\TT = \{ \emptyset, X \} \,.
+$$
+Let $\{x_n\} \subset X$ be a sequence and $x_0 \in X$ a point. Then 
+$$
+x_n \to x_0 \,.
+$$
+
+:::
+
+
+
+::: Proof
+
+To show that $x_n \to x_0$ we need to check that (@eq-convergence) holds. Therefore, let 
+$U \in \TT$ with $x_0 \in U$. We have two cases:
+
+- $U = \emptyset$:  This case is not possible, since $x_0$ cannot be in $U$. 
+
+- $U = X$: Take $N=1$. Since $U$ is the whole space, then $x_n \in U$ for all $n \geq 1$.  
+
+As these are all the open sets, we conclude that $x_n \to x_0$.
+:::
+
+
+
+::: Proposition
+### Convergence for discrete topology
+
+Let $(X,\TT)$ be topological space, with $\TT$ the discrete topology, that is,
+$$
+\TT = \{ A  \divider A \subset X \} \,.
+$$
+Let $\{x_n\} \subset X$ be a sequence and $x_0 \in X$ a point. They are equivalent:
+
+1. $x_n \to x_0$.
+2. $\{x_n\}$ is eventually constant, that is, there exists $N \in \N$ such that 
+$$
+x_n = x_0 \,, \quad \forall \, n \geq N \,.
+$$
+:::
+
+
+
+::: Proof
+
+*Part 1. Assume that $x_n \to x_0$.*
+
+We have to prove that $\{x_n\}$ is eventually constant. To this end, let 
+$$
+U = \{x_0\} \,.
+$$
+Then $U \in \TT$. Since $x_n \to x_0$, by (@eq-convergence) there exists $N \in \N$ such that
+$$
+x_n \in U  \,, \quad \forall \, n \geq N \,.
+$$
+As $U = \{x_0\}$, the above is saying that $x_n = x_0$ for all $n \geq N$. Hence $x_n$ is eventually constant. 
+
+
+*Part 2. Assume that $x_n$ is eventually equal to $x_0$.*
+
+By assumption there exists $N \in \N$ such that 
+$$
+x_n = x_0 \,, \quad \forall \, n \geq N \,.
+$${#eq-convergence-discrete}
+Let $U \in \TT$ be an open set such that $x_0 \in U$. By (@eq-convergence-discrete) we have
+that 
+$$
+x_n \in U \,, \quad \forall \, n \geq N \,.
+$$
+Since $U$ was arbitrary, we conclude that $x_n \to x_0$.
+:::
+
+
+::: Proposition
+### Convergence for Euclidean topology
+
+Let $\R^n$ be equipped with $\TT$ the Euclidean topology.
+Let $\{x_n\} \subset \R^n$ be a sequence and $x_0 \in \R^n$ a point. They are equivalent:
+
+1. $x_n \to x_0$ with respect to $\TT$.
+2. $x_n \to x_0$ in $\R^n$, that is,
+$$
+\lim_{n \to \infty} \norm{x_n - x_0}  = 0 \,. 
+$$
+:::
+
+
 
 
 

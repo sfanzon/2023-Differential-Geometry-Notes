@@ -317,13 +317,29 @@
 
  [**Definition 4.6**](#euclidean-topology-of-mathbbrn): Euclidean topology of $\mathbb{R}^n$\Pageref{euclidean-topology-of-mathbbrn}
 
- [**Definition 4.7**](#convergent-sequence): Convergent sequence\Pageref{convergent-sequence}
+ [**Proposition 4.7**](#proposition-balls-open)\Pageref{proposition-balls-open}
 
- [**Definition 4.8**](#metric-space): Metric space\Pageref{metric-space}
+ [**Proof**](#Proof*-4.2)\Pageref{Proof*-4.2}
 
- [**Definition 4.9**](#topology-induced-by-the-metric): Topology induced by the metric\Pageref{topology-induced-by-the-metric}
+ [**Definition 4.8**](#convergent-sequence): Convergent sequence\Pageref{convergent-sequence}
 
- [**Definition 4.10**](#Definition-4.10)\Pageref{Definition-4.10}
+ [**Notation**](#Notation*-4.3)\Pageref{Notation*-4.3}
+
+ [**Proposition 4.9**](#convergence-for-trivial-topology): Convergence for trivial topology\Pageref{convergence-for-trivial-topology}
+
+ [**Proof**](#Proof*-4.4)\Pageref{Proof*-4.4}
+
+ [**Proposition 4.10**](#convergence-for-discrete-topology): Convergence for discrete topology\Pageref{convergence-for-discrete-topology}
+
+ [**Proof**](#Proof*-4.5)\Pageref{Proof*-4.5}
+
+ [**Proposition 4.11**](#convergence-for-euclidean-topology): Convergence for Euclidean topology\Pageref{convergence-for-euclidean-topology}
+
+ [**Definition 4.12**](#metric-space): Metric space\Pageref{metric-space}
+
+ [**Definition 4.13**](#topology-induced-by-the-metric): Topology induced by the metric\Pageref{topology-induced-by-the-metric}
+
+ [**Definition 4.14**](#Definition-4.14)\Pageref{Definition-4.14}
 
  [**Definition 5.1**](#Definition-5.1)\Pageref{Definition-5.1}
 

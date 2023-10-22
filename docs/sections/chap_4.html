@@ -66,43 +66,11 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
 }
 .Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Warning {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -110,7 +78,39 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
 .Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -122,19 +122,19 @@ ul.task-list li input[type="checkbox"] {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
 .Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
-.Important {
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -363,7 +363,7 @@ A \cap B \in \mathcal{T}\,,
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 5: </strong>Open set of <span class="math inline">\(\mathbb{R}^n\)</span></summary><div>Let <span class="math inline">\(A \subset \mathbb{R}^n\)</span>. We say that the set <span class="math inline">\(A\)</span> is <strong>open</strong> if it holds: <span id="eq-open-set-Rn"><span class="math display">\[
 \forall \, x \in A \,, \,\, \exists \, r &gt; 0 \, \text{ s.t. } \, B_r(x) \subset A \,,
 \tag{4.1}\]</span></span> where <span class="math inline">\(B_r(x)\)</span> is the ball of radius <span class="math inline">\(r&gt;0\)</span> centered at <span class="math inline">\(x\)</span> <span class="math display">\[
-B_r(x) := \{ y \in \mathbb{R}^n \, \colon \,\left\|  y - x  \right\| = R  \} \,,
+B_r(x) := \{ y \in \mathbb{R}^n \, \colon \,\left\|  y - x  \right\| \leq R  \} \,,
 \]</span> and the <strong>Euclidean norm</strong> of <span class="math inline">\(x \in \mathbb{R}^n\)</span> is defined by <span class="math display">\[
 \left\| x \right\| := \sqrt{ \sum_{i=1}^n  x_i^2 } \,.
 \]</span><p></p>
@@ -397,18 +397,114 @@ B_r(x) \subset B_{r_2}(x) \subset B  \,,
 </blockquote>
 </div></details>
 </div>
+<p>Let us make a basic bus useful observation: balls in <span class="math inline">\(\mathbb{R}^n\)</span> are open for the Euclidean topology.</p>
+<div id="proposition-balls-open" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 7</strong></summary><div>Let <span class="math inline">\(\mathbb{R}^n\)</span> be equipped with <span class="math inline">\(\mathcal{T}\)</span> the Euclidean topology. Let <span class="math inline">\(r&gt;0\)</span> and <span class="math inline">\(x \in \mathbb{R}^n\)</span>. Then <span class="math display">\[
+B_r(x) \in \mathcal{T}\,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="Proof*-2" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>We need to shown that <span class="math inline">\(B_r(x)\)</span> satisfies <a href="#eq-open-set-Rn"><span>4.1</span></a>. Therefore, let <span class="math inline">\(y \in B_r(x)\)</span>. In particular <span id="eq-balls-open"><span class="math display">\[
+\left\| x - y \right\|&lt;r \,.
+\tag{4.2}\]</span></span> Define <span class="math display">\[
+\varepsilon:= r - \left\| x - y \right\| \,.
+\]</span> Note that <span class="math inline">\(\varepsilon&gt;0\)</span> by (<a href="#eq-balls-open"><span>4.2</span></a>). We claim that <span class="math display">\[
+B_{\varepsilon} (y) \subset B_r (x) \,,
+\]</span> see <a href="#fig-balls-open">Figure&nbsp;<span>4.2</span></a>. Indeed, let <span class="math inline">\(z \in B_{\varepsilon}(y)\)</span>. By triangle inequality we have <span class="math display">\[
+\| z - x \| \leq \left\|  x - y  \right\| + \left\|  y - z  \right\| &lt;  \left\|  x - y  \right\| + \varepsilon= r \,,
+\]</span> where we used that <span class="math inline">\(\left\| y - z \right\| &lt; \varepsilon\)</span> and the definition of <span class="math inline">\(\varepsilon\)</span>.<p></p>
+</div></details>
+</div>
+<div id="fig-balls-open" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../images/balls_open.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.2: The ball <span class="math inline">\(B_{\varepsilon}(y)\)</span> is contained in <span class="math inline">\(B_r(x)\)</span> if <span class="math inline">\(\varepsilon:= r - \left\| x-y \right\|\)</span>.</figcaption>
+</figure>
+</div>
 <section id="convergence" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="convergence"><span class="header-section-number">4.1</span> Convergence</h2>
 <p>We have generalized the notion of open set to arbitrary sets. Next we generalize the notion of convergence of sequences.</p>
 <div id="convergent-sequence" class="Definition" title="Convergent sequence">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 7: </strong>Convergent sequence</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space. asc<p></p>
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 8: </strong>Convergent sequence</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological. Consider a sequence <span class="math inline">\(\{x_n\}_{n \in \mathbb{N}} \subset X\)</span> and a point <span class="math inline">\(x \in X\)</span>. We say that <span class="math inline">\(x_n\)</span> converges to <span class="math inline">\(x_0\)</span> if the following property holds: <span id="eq-convergence"><span class="math display">\[
+\forall \, U \in \mathcal{T}\, \text{ s.t. } \, x_0 \in U\,, \,\, \exists \, N = N(U) \in \mathbb{N}\, \text{ s.t. } \, x_n \in U \,, \, \forall \, n \geq N \,.
+\tag{4.3}\]</span></span><p></p>
+</div></details>
+</div>
+<div id="Notation*-3" class="Notation">
+<p></p><details class="Notation fbx-simplebox fbx-default" open=""><summary><strong>Notation</strong></summary><div>The convergence of <span class="math inline">\(x_n\)</span> to <span class="math inline">\(x_0\)</span> is denoted by <span class="math display">\[
+x_n \to x_0 \quad \mbox{ or } \quad  \lim_{n \to \infty} x_n = x_0 \,.
+\]</span><p></p>
+</div></details>
+</div>
+<p>Let us analyze the definition of convergence in the topologies we have encountered so far. We will have that:</p>
+<ul>
+<li><strong>Trivial topology</strong>: Every sequence converges to every point.</li>
+<li><strong>Discrete topology</strong>: A sequence converges if and only if it is eventually constant.</li>
+<li><strong>Euclidean topology</strong>: Topological convergence coincides with classical notion of convergence.</li>
+</ul>
+<p>We now precisely state and prove the above claims.</p>
+<div id="convergence-for-trivial-topology" class="Proposition" title="Convergence for trivial topology">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 9: </strong>Convergence for trivial topology</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be topological space, with <span class="math inline">\(\mathcal{T}\)</span> the trivial topology, that is, <span class="math display">\[
+\mathcal{T}= \{ \emptyset, X \} \,.
+\]</span> Let <span class="math inline">\(\{x_n\} \subset X\)</span> be a sequence and <span class="math inline">\(x_0 \in X\)</span> a point. Then <span class="math display">\[
+x_n \to x_0 \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="Proof*-4" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>To show that <span class="math inline">\(x_n \to x_0\)</span> we need to check that (<a href="#eq-convergence"><span>4.3</span></a>) holds. Therefore, let <span class="math inline">\(U \in \mathcal{T}\)</span> with <span class="math inline">\(x_0 \in U\)</span>. We have two cases:<p></p>
+<ul>
+<li><p><span class="math inline">\(U = \emptyset\)</span>: This case is not possible, since <span class="math inline">\(x_0\)</span> cannot be in <span class="math inline">\(U\)</span>.</p></li>
+<li><p><span class="math inline">\(U = X\)</span>: Take <span class="math inline">\(N=1\)</span>. Since <span class="math inline">\(U\)</span> is the whole space, then <span class="math inline">\(x_n \in U\)</span> for all <span class="math inline">\(n \geq 1\)</span>.</p></li>
+</ul>
+<p>As these are all the open sets, we conclude that <span class="math inline">\(x_n \to x_0\)</span>.</p>
+</div></details>
+</div>
+<div id="convergence-for-discrete-topology" class="Proposition" title="Convergence for discrete topology">
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 10: </strong>Convergence for discrete topology</summary><div>
+<p>Let <span class="math inline">\((X,\mathcal{T})\)</span> be topological space, with <span class="math inline">\(\mathcal{T}\)</span> the discrete topology, that is, <span class="math display">\[
+\mathcal{T}= \{ A  \, \colon \,A \subset X \} \,.
+\]</span> Let <span class="math inline">\(\{x_n\} \subset X\)</span> be a sequence and <span class="math inline">\(x_0 \in X\)</span> a point. They are equivalent:</p>
+<ol type="1">
+<li><span class="math inline">\(x_n \to x_0\)</span>.</li>
+<li><span class="math inline">\(\{x_n\}\)</span> is eventually constant, that is, there exists <span class="math inline">\(N \in \mathbb{N}\)</span> such that <span class="math display">\[
+x_n = x_0 \,, \quad \forall \, n \geq N \,.
+\]</span></li>
+</ol>
+</div></details>
+</div>
+<div id="Proof*-5" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Part 1. Assume that <span class="math inline">\(x_n \to x_0\)</span>.</em><p></p>
+<p>We have to prove that <span class="math inline">\(\{x_n\}\)</span> is eventually constant. To this end, let <span class="math display">\[
+U = \{x_0\} \,.
+\]</span> Then <span class="math inline">\(U \in \mathcal{T}\)</span>. Since <span class="math inline">\(x_n \to x_0\)</span>, by (<a href="#eq-convergence"><span>4.3</span></a>) there exists <span class="math inline">\(N \in \mathbb{N}\)</span> such that <span class="math display">\[
+x_n \in U  \,, \quad \forall \, n \geq N \,.
+\]</span> As <span class="math inline">\(U = \{x_0\}\)</span>, the above is saying that <span class="math inline">\(x_n = x_0\)</span> for all <span class="math inline">\(n \geq N\)</span>. Hence <span class="math inline">\(x_n\)</span> is eventually constant.</p>
+<p><em>Part 2. Assume that <span class="math inline">\(x_n\)</span> is eventually equal to <span class="math inline">\(x_0\)</span>.</em></p>
+<p>By assumption there exists <span class="math inline">\(N \in \mathbb{N}\)</span> such that <span id="eq-convergence-discrete"><span class="math display">\[
+x_n = x_0 \,, \quad \forall \, n \geq N \,.
+\tag{4.4}\]</span></span> Let <span class="math inline">\(U \in \mathcal{T}\)</span> be an open set such that <span class="math inline">\(x_0 \in U\)</span>. By (<a href="#eq-convergence-discrete"><span>4.4</span></a>) we have that <span class="math display">\[
+x_n \in U \,, \quad \forall \, n \geq N \,.
+\]</span> Since <span class="math inline">\(U\)</span> was arbitrary, we conclude that <span class="math inline">\(x_n \to x_0\)</span>.</p>
+</div></details>
+</div>
+<div id="convergence-for-euclidean-topology" class="Proposition" title="Convergence for Euclidean topology">
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 11: </strong>Convergence for Euclidean topology</summary><div>
+<p>Let <span class="math inline">\(\mathbb{R}^n\)</span> be equipped with <span class="math inline">\(\mathcal{T}\)</span> the Euclidean topology. Let <span class="math inline">\(\{x_n\} \subset \mathbb{R}^n\)</span> be a sequence and <span class="math inline">\(x_0 \in \mathbb{R}^n\)</span> a point. They are equivalent:</p>
+<ol type="1">
+<li><span class="math inline">\(x_n \to x_0\)</span> with respect to <span class="math inline">\(\mathcal{T}\)</span>.</li>
+<li><span class="math inline">\(x_n \to x_0\)</span> in <span class="math inline">\(\mathbb{R}^n\)</span>, that is, <span class="math display">\[
+\lim_{n \to \infty} \left\| x_n - x_0 \right\|  = 0 \,.
+\]</span></li>
+</ol>
 </div></details>
 </div>
 </section>
 <section id="metric-spaces" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="metric-spaces"><span class="header-section-number">4.2</span> Metric spaces</h2>
 <div id="metric-space" class="Definition" title="Metric space">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 8: </strong>Metric space</summary><div>Let <span class="math inline">\(X\)</span> be a set. A <strong>distance</strong> on <span class="math inline">\(X\)</span> is a function <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 12: </strong>Metric space</summary><div>Let <span class="math inline">\(X\)</span> be a set. A <strong>distance</strong> on <span class="math inline">\(X\)</span> is a function <span class="math display">\[
 d \colon X \times X \to \mathbb{R}
 \]</span> such that, for all <span class="math inline">\(x,y,z \in X\)</span> they hold:<p></p>
 <ol type="1">
@@ -426,7 +522,7 @@ d(x,z) \leq d(x,y) + d(y,z) \,.
 </div></details>
 </div>
 <div id="topology-induced-by-the-metric" class="Definition" title="Topology induced by the metric">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 9: </strong>Topology induced by the metric</summary><div>Let <span class="math inline">\((X,d)\)</span> be a metric space. We define the topology <span class="math inline">\(\mathcal{T}\)</span> <strong>induced by the metric</strong> as the collection of sets <span class="math inline">\(U \subset X\)</span> that satisfy the following property: <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 13: </strong>Topology induced by the metric</summary><div>Let <span class="math inline">\((X,d)\)</span> be a metric space. We define the topology <span class="math inline">\(\mathcal{T}\)</span> <strong>induced by the metric</strong> as the collection of sets <span class="math inline">\(U \subset X\)</span> that satisfy the following property: <span class="math display">\[
 \forall \, x \in U \,, \, \exists \, r \in \mathbb{R}, \, r &gt; 0 \, \, \text{ s.t. } \, \, B_r(x) \subset U \,,
 \]</span> where <span class="math inline">\(B_r(x)\)</span> is the ball centered at <span class="math inline">\(x\)</span> of radius <span class="math inline">\(r\)</span>. This is defined by <span class="math display">\[
 B_r(x) := \{ y \in X  \, \colon \,  d(x,y)&lt;r  \} \,.
@@ -436,8 +532,8 @@ B_r(x) := \{ y \in X  \, \colon \,  d(x,y)&lt;r  \} \,.
 </section>
 <section id="connected-topological-spaces" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="connected-topological-spaces"><span class="header-section-number">4.3</span> Connected topological spaces</h2>
-<div id="Definition-10" class="Definition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 10</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space. We say that <span class="math inline">\(X\)</span> is <strong>connected</strong> if the only subsets of <span class="math inline">\(X\)</span> which are both open and closed are just <span class="math inline">\(\emptyset\)</span> and <span class="math inline">\(X\)</span>.<p></p>
+<div id="Definition-14" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 14</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space. We say that <span class="math inline">\(X\)</span> is <strong>connected</strong> if the only subsets of <span class="math inline">\(X\)</span> which are both open and closed are just <span class="math inline">\(\emptyset\)</span> and <span class="math inline">\(X\)</span>.<p></p>
 </div></details>
 </div>
 
