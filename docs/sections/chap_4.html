@@ -66,7 +66,19 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Lemma {
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Question {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -74,53 +86,17 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Corollary {
+.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Warning {
+.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
 .Proof {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
-}
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
 }
 .Example {
   --color1: #bce5de;
@@ -130,13 +106,37 @@ ul.task-list li input[type="checkbox"] {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Goal {
+.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
 }
 </style>
 
@@ -246,7 +246,8 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#convergence" id="toc-convergence" class="nav-link active" data-scroll-target="#convergence"><span class="header-section-number">4.1</span> Convergence</a></li>
   <li><a href="#metric-spaces" id="toc-metric-spaces" class="nav-link" data-scroll-target="#metric-spaces"><span class="header-section-number">4.2</span> Metric spaces</a></li>
-  <li><a href="#connected-topological-spaces" id="toc-connected-topological-spaces" class="nav-link" data-scroll-target="#connected-topological-spaces"><span class="header-section-number">4.3</span> Connected topological spaces</a></li>
+  <li><a href="#hausdorff-spaces" id="toc-hausdorff-spaces" class="nav-link" data-scroll-target="#hausdorff-spaces"><span class="header-section-number">4.3</span> Hausdorff spaces</a></li>
+  <li><a href="#connected-topological-spaces" id="toc-connected-topological-spaces" class="nav-link" data-scroll-target="#connected-topological-spaces"><span class="header-section-number">4.4</span> Connected topological spaces</a></li>
   </ul>
 </nav>
     </div>
@@ -423,16 +424,34 @@ B_{\varepsilon} (\mathbf{y}) \subset B_r (\mathbf{x}) \,,
 <figcaption class="figure-caption">Figure&nbsp;4.2: The ball <span class="math inline">\(B_{\varepsilon}(\mathbf{y})\)</span> is contained in <span class="math inline">\(B_r(\mathbf{x})\)</span> if <span class="math inline">\(\varepsilon:= r - \left\| \mathbf{x}-\mathbf{y} \right\|\)</span>.</figcaption>
 </figure>
 </div>
+<p>We conclude the section with the definition of equivalent topologies.</p>
+<div id="equivalent-topologies" class="Definition" title="Equivalent topologies">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 8: </strong>Equivalent topologies</summary><div>
+<p>Let X be a set and suppose that <span class="math inline">\(\mathcal{T}_1\)</span>, <span class="math inline">\(\mathcal{T}_2\)</span> are topologies on <span class="math inline">\(X\)</span>. We say that <span class="math inline">\(\mathcal{T}_1\)</span> and <span class="math inline">\(\mathcal{T}_2\)</span> are <strong>equivalent</strong> if they hold:</p>
+<ul>
+<li><p>For any <span class="math inline">\(U \in \mathcal{T}_1\)</span> there exists <span class="math inline">\(V \in \mathcal{T}_2\)</span> such that <span class="math display">\[
+V \subset U \,.
+\]</span></p></li>
+<li><p>For any <span class="math inline">\(U \in \mathcal{T}_2\)</span> there exists <span class="math inline">\(V \in \mathcal{T}_1\)</span> such that <span class="math display">\[
+V \subset U \,.
+\]</span></p></li>
+</ul>
+</div></details>
+</div>
+<div id="Warning*-4" class="Warning">
+<p></p><details class="Warning fbx-simplebox fbx-default" open=""><summary><strong>Warning</strong></summary><div>If two topologies are equivalent, that does not mean they have the same open sets.<p></p>
+</div></details>
+</div>
 <section id="convergence" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="convergence"><span class="header-section-number">4.1</span> Convergence</h2>
 <p>We have generalized the notion of open set to arbitrary sets. Next we generalize the notion of convergence of sequences.</p>
 <div id="convergent-sequence" class="Definition" title="Convergent sequence">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 8: </strong>Convergent sequence</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological. Consider a sequence <span class="math inline">\(\{x_n\}_{n \in \mathbb{N}} \subset X\)</span> and a point <span class="math inline">\(x \in X\)</span>. We say that <span class="math inline">\(x_n\)</span> converges to <span class="math inline">\(x_0\)</span> if the following property holds: <span id="eq-convergence"><span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 9: </strong>Convergent sequence</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological. Consider a sequence <span class="math inline">\(\{x_n\}_{n \in \mathbb{N}} \subset X\)</span> and a point <span class="math inline">\(x \in X\)</span>. We say that <span class="math inline">\(x_n\)</span> converges to <span class="math inline">\(x_0\)</span> if the following property holds: <span id="eq-convergence"><span class="math display">\[
 \forall \, U \in \mathcal{T}\, \text{ s.t. } \, x_0 \in U\,, \,\, \exists \, N = N(U) \in \mathbb{N}\, \text{ s.t. } \, x_n \in U \,, \, \forall \, n \geq N \,.
 \tag{4.4}\]</span></span><p></p>
 </div></details>
 </div>
-<div id="Notation*-4" class="Notation">
+<div id="Notation*-5" class="Notation">
 <p></p><details class="Notation fbx-simplebox fbx-default" open=""><summary><strong>Notation</strong></summary><div>The convergence of <span class="math inline">\(x_n\)</span> to <span class="math inline">\(x_0\)</span> is denoted by <span class="math display">\[
 x_n \to x_0 \quad \mbox{ or } \quad  \lim_{n \to \infty} x_n = x_0 \,.
 \]</span><p></p>
@@ -446,14 +465,14 @@ x_n \to x_0 \quad \mbox{ or } \quad  \lim_{n \to \infty} x_n = x_0 \,.
 </ul>
 <p>We now precisely state and prove the above claims.</p>
 <div id="convergence-for-trivial-topology" class="Proposition" title="Convergence for trivial topology">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 9: </strong>Convergence for trivial topology</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be topological space, with <span class="math inline">\(\mathcal{T}\)</span> the trivial topology, that is, <span class="math display">\[
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 10: </strong>Convergence for trivial topology</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be topological space, with <span class="math inline">\(\mathcal{T}\)</span> the trivial topology, that is, <span class="math display">\[
 \mathcal{T}= \{ \emptyset, X \} \,.
 \]</span> Let <span class="math inline">\(\{x_n\} \subset X\)</span> be a sequence and <span class="math inline">\(x_0 \in X\)</span> a point. Then <span class="math display">\[
 x_n \to x_0 \,.
 \]</span><p></p>
 </div></details>
 </div>
-<div id="Proof*-5" class="Proof">
+<div id="Proof*-6" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>To show that <span class="math inline">\(x_n \to x_0\)</span> we need to check that (<a href="#eq-convergence"><span>4.4</span></a>) holds. Therefore, let <span class="math inline">\(U \in \mathcal{T}\)</span> with <span class="math inline">\(x_0 \in U\)</span>. We have two cases:<p></p>
 <ul>
 <li><p><span class="math inline">\(U = \emptyset\)</span>: This case is not possible, since <span class="math inline">\(x_0\)</span> cannot be in <span class="math inline">\(U\)</span>.</p></li>
@@ -463,7 +482,7 @@ x_n \to x_0 \,.
 </div></details>
 </div>
 <div id="convergence-for-discrete-topology" class="Proposition" title="Convergence for discrete topology">
-<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 10: </strong>Convergence for discrete topology</summary><div>
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 11: </strong>Convergence for discrete topology</summary><div>
 <p>Let <span class="math inline">\((X,\mathcal{T})\)</span> be topological space, with <span class="math inline">\(\mathcal{T}\)</span> the discrete topology, that is, <span class="math display">\[
 \mathcal{T}= \{ A  \, \colon \,A \subset X \} \,.
 \]</span> Let <span class="math inline">\(\{x_n\} \subset X\)</span> be a sequence and <span class="math inline">\(x_0 \in X\)</span> a point. They are equivalent:</p>
@@ -475,7 +494,7 @@ x_n = x_0 \,, \quad \forall \, n \geq N \,.
 </ol>
 </div></details>
 </div>
-<div id="Proof*-6" class="Proof">
+<div id="Proof*-7" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Part 1. Assume that <span class="math inline">\(x_n \to x_0\)</span>.</em><p></p>
 <p>We have to prove that <span class="math inline">\(\{x_n\}\)</span> is eventually constant. To this end, let <span class="math display">\[
 U = \{x_0\} \,.
@@ -492,7 +511,7 @@ x_n \in U \,, \quad \forall \, n \geq N \,.
 </div>
 <p>Before proceeding to examining convergence in the Euclidean topology, let us recall the classical definition of convergence in <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
 <div id="classical-convergence-in-mathbbrn" class="Definition" title="Classical convergence in \mathbb{R}^n">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 11: </strong>Classical convergence in <span class="math inline">\(\mathbb{R}^n\)</span></summary><div>Let <span class="math inline">\(\{\mathbf{x}_n\} \subset \mathbb{R}^n\)</span> and <span class="math inline">\(\mathbf{x}_0 \in \mathbb{R}^n\)</span>. We say that <span class="math inline">\(\mathbf{x}_n\)</span> converges <span class="math inline">\(\mathbf{x}_0\)</span> in the classical sense if <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 12: </strong>Classical convergence in <span class="math inline">\(\mathbb{R}^n\)</span></summary><div>Let <span class="math inline">\(\{\mathbf{x}_n\} \subset \mathbb{R}^n\)</span> and <span class="math inline">\(\mathbf{x}_0 \in \mathbb{R}^n\)</span>. We say that <span class="math inline">\(\mathbf{x}_n\)</span> converges <span class="math inline">\(\mathbf{x}_0\)</span> in the classical sense if <span class="math display">\[
 \lim_{n \to \infty} \left\| \mathbf{x}_n - \mathbf{x}_0 \right\|  = 0 \,.
 \]</span> The above is equivalent to: For all <span class="math inline">\(\varepsilon&gt;0\)</span> there exists <span class="math inline">\(N \in \mathbb{N}\)</span> such that <span class="math display">\[
 \left\| \mathbf{x}_n - \mathbf{x}_0 \right\| &lt; \varepsilon\,, \quad \forall \, n \geq N \,.
@@ -500,7 +519,7 @@ x_n \in U \,, \quad \forall \, n \geq N \,.
 </div></details>
 </div>
 <div id="convergence-for-euclidean-topology" class="Proposition" title="Convergence for Euclidean topology">
-<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 12: </strong>Convergence for Euclidean topology</summary><div>
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 13: </strong>Convergence for Euclidean topology</summary><div>
 <p>Let <span class="math inline">\(\mathbb{R}^n\)</span> be equipped with <span class="math inline">\(\mathcal{T}\)</span> the Euclidean topology. Let <span class="math inline">\(\{\mathbf{x}_n\} \subset \mathbb{R}^n\)</span> be a sequence and <span class="math inline">\(\mathbf{x}_0 \in \mathbb{R}^n\)</span> a point. They are equivalent:</p>
 <ol type="1">
 <li><span class="math inline">\(\mathbf{x}_n \to \mathbf{x}_0\)</span> with respect to <span class="math inline">\(\mathcal{T}\)</span>.</li>
@@ -508,7 +527,7 @@ x_n \in U \,, \quad \forall \, n \geq N \,.
 </ol>
 </div></details>
 </div>
-<div id="Proof*-7" class="Proof">
+<div id="Proof*-8" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Part 1. Assume <span class="math inline">\(\mathbf{x}_n \to \mathbf{x}_0\)</span> with respect to <span class="math inline">\(\mathcal{T}\)</span>.</em><p></p>
 <p>Fix <span class="math inline">\(\varepsilon&gt;0\)</span> and consider the set <span class="math display">\[
 U := B_{\varepsilon}(\mathbf{x}_0) \,.
@@ -529,7 +548,7 @@ B_r(\mathbf{x}_0) \subset U \,.
 \]</span> Since <span class="math inline">\(U\)</span> is arbitrary, we conclude that <span class="math inline">\(\mathbf{x}_n \to \mathbf{x}_0\)</span> with respect to <span class="math inline">\(\mathcal{T}\)</span>.</p>
 </div></details>
 </div>
-<div id="Notation*-8" class="Notation">
+<div id="Notation*-9" class="Notation">
 <p></p><details class="Notation fbx-simplebox fbx-default" open=""><summary><strong>Notation</strong></summary><div>Since classical convergence in <span class="math inline">\(\mathbb{R}^n\)</span> agrees with topological convergence with respect to <span class="math inline">\(\mathcal{T}\)</span>, we will just say that <span class="math inline">\(\mathbf{x}_n \to \mathbf{x}_0\)</span> in <span class="math inline">\(\mathbb{R}^n\)</span> without ambiguity.<p></p>
 </div></details>
 </div>
@@ -538,7 +557,7 @@ B_r(\mathbf{x}_0) \subset U \,.
 <h2 data-number="4.2" class="anchored" data-anchor-id="metric-spaces"><span class="header-section-number">4.2</span> Metric spaces</h2>
 <p>We will now define a class of topological spaces known as metric spaces.</p>
 <div id="distance" class="Definition" title="Distance">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 13: </strong>Distance</summary><div>
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 14: </strong>Distance</summary><div>
 <p>Let <span class="math inline">\(X\)</span> be a set. A <strong>distance</strong> on <span class="math inline">\(X\)</span> is a function <span class="math display">\[
 d \colon X \times X \to \mathbb{R}
 \]</span> such that, for all <span class="math inline">\(x,y,z \in X\)</span> they hold:</p>
@@ -558,11 +577,11 @@ d(x,z) \leq d(x,y) + d(y,z) \,.
 </div></details>
 </div>
 <div id="metric-space" class="Definition" title="Metric space">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 14: </strong>Metric space</summary><div>Let <span class="math inline">\(X\)</span> be a set and <span class="math inline">\(d \colon X \times X \to \mathbb{R}\)</span> be a distance on <span class="math inline">\(X\)</span>. We say that the pair <span class="math inline">\((X,d)\)</span> is a <strong>metric space</strong>.<p></p>
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 15: </strong>Metric space</summary><div>Let <span class="math inline">\(X\)</span> be a set and <span class="math inline">\(d \colon X \times X \to \mathbb{R}\)</span> be a distance on <span class="math inline">\(X\)</span>. We say that the pair <span class="math inline">\((X,d)\)</span> is a <strong>metric space</strong>.<p></p>
 </div></details>
 </div>
 <div id="mathbbrn-as-metric-space" class="Example" title="\mathbb{R}^n as metric space">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 15: </strong><span class="math inline">\(\mathbb{R}^n\)</span> as metric space</summary><div>
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 16: </strong><span class="math inline">\(\mathbb{R}^n\)</span> as metric space</summary><div>
 <p>The Euclidean norm naturally induces a distance over <span class="math inline">\(\mathbb{R}^n\)</span> by setting <span class="math display">\[
 d(\mathbf{x},\mathbf{y}) := \left\|  \mathbf{x}- \mathbf{y} \right\| \,.
 \]</span> Then <span class="math inline">\((\mathbb{R}^n,d)\)</span> is a metric space.</p>
@@ -579,7 +598,7 @@ d(\mathbf{x},\mathbf{y}) &amp; = \| \mathbf{x}- \mathbf{y}\| \\
 </div></details>
 </div>
 <div id="p-distance-on-mathbbrn" class="Example" title="p-distance on \mathbb{R}^n">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 16: </strong><span class="math inline">\(p\)</span>-distance on <span class="math inline">\(\mathbb{R}^n\)</span></summary><div>
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 17: </strong><span class="math inline">\(p\)</span>-distance on <span class="math inline">\(\mathbb{R}^n\)</span></summary><div>
 <p>For <span class="math inline">\(\mathbf{x},\mathbf{y}\in \mathbb{R}^n\)</span> and <span class="math inline">\(p \in [1,\infty)\)</span> define <span class="math display">\[
 d_p ( \mathbf{x}, \mathbf{y}) := \left(  \sum_{i=1}^n |x_i - y_i|^p   \right)^{\frac1p} \,.
 \]</span> Note that <span class="math inline">\(d_2\)</span> coincides with the Euclidean distance. For <span class="math inline">\(p = \infty\)</span> we set <span class="math display">\[
@@ -601,28 +620,14 @@ d_p(\mathbf{x},\mathbf{y}) &amp; = \| \mathbf{x}- \mathbf{y}\|_p  \\
 </div>
 <p>A metric <span class="math inline">\(d\)</span> on a set <span class="math inline">\(X\)</span> naturally induces a topology which is <strong>compatible</strong> with the metric.</p>
 <div id="definition-metric-topology" class="Definition" title="Topology induced by the metric">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 17: </strong>Topology induced by the metric</summary><div>Let <span class="math inline">\((X,d)\)</span> be a metric space. We define the topology <span class="math inline">\(\mathcal{T}_d\)</span> <strong>induced by the metric</strong> <span class="math inline">\(d\)</span> as the collection of sets <span class="math inline">\(U \subset X\)</span> that satisfy the following property: <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 18: </strong>Topology induced by the metric</summary><div>Let <span class="math inline">\((X,d)\)</span> be a metric space. We define the topology <span class="math inline">\(\mathcal{T}_d\)</span> <strong>induced by the metric</strong> <span class="math inline">\(d\)</span> as the collection of sets <span class="math inline">\(U \subset X\)</span> that satisfy the following property: <span class="math display">\[
 \forall \, x \in U \,, \, \exists \, r \in \mathbb{R}, \, r &gt; 0 \, \, \text{ s.t. } \, \, B_r(x) \subset U \,,
 \]</span> where <span class="math inline">\(B_r(x)\)</span> is the ball centered at <span class="math inline">\(x\)</span> of radius <span class="math inline">\(r\)</span>. This is defined by <span class="math display">\[
 B_r(x) := \{ y \in X  \, \colon \,  d(x,y)&lt;r  \} \,.
 \]</span><p></p>
 </div></details>
 </div>
-<p>We need to check that the above definition is well-posed, that is, we need to show that <span class="math inline">\(\mathcal{T}_d\)</span> is actually a topology on <span class="math inline">\(X\)</span>. The proof follows, line by line, the proof that the Euclidean topology is well-posed, see Definition <a href="chap_4.html#definition-euclidean-topology">6</a>. This is left as an exercise.</p>
-<p>Before proceeding with examples, we need the definition of equivalent topologies.</p>
-<div id="equivalent-topologies" class="Definition" title="Equivalent topologies">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 18: </strong>Equivalent topologies</summary><div>
-<p>Let X be a set and suppose that <span class="math inline">\(\mathcal{T}_1\)</span>, <span class="math inline">\(\mathcal{T}_2\)</span> are topologies on <span class="math inline">\(X\)</span>. We say that <span class="math inline">\(\mathcal{T}_1\)</span> and <span class="math inline">\(\mathcal{T}_2\)</span> are <strong>equivalent</strong> if they hold:</p>
-<ul>
-<li><p>For any <span class="math inline">\(U \in \mathcal{T}_1\)</span> there exists <span class="math inline">\(V \in \mathcal{T}_2\)</span> such that <span class="math display">\[
-V \subset U \,.
-\]</span></p></li>
-<li><p>For any <span class="math inline">\(U \in \mathcal{T}_2\)</span> there exists <span class="math inline">\(V \in \mathcal{T}_1\)</span> such that <span class="math display">\[
-V \subset U \,.
-\]</span></p></li>
-</ul>
-</div></details>
-</div>
+<p>We need to check that the above definition is well-posed, that is, we need to show that <span class="math inline">\(\mathcal{T}_d\)</span> is actually a topology on <span class="math inline">\(X\)</span>. The proof follows, line by line, the proof that the Euclidean topology is indeed a topology, see proof immediately below Definition <a href="chap_4.html#definition-euclidean-topology">6</a>. This is left as an exercise.</p>
 <div id="topology-induced-by-euclidean-distance" class="Example" title="Topology induced by Euclidean distance">
 <details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 19: </strong>Topology induced by Euclidean distance</summary><div>
 <p>Consider the metric space <span class="math inline">\((\mathbb{R}^n,d)\)</span> with <span class="math inline">\(d\)</span> the Euclidean distance. Then <span class="math inline">\(\mathcal{T}_d\)</span> is equivalent to the Euclidean topology on <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
@@ -645,7 +650,7 @@ d(x,y) :=
 </blockquote>
 </div></details>
 </div>
-<p>We conclude our discussion on metric spaces with a useful proposition.</p>
+<p>The following proposition is very useful to proving that certain sets are open in <span class="math inline">\(\mathcal{T}_d\)</span>. The proof is left as an exercise.</p>
 <div id="Proposition-21" class="Proposition">
 <details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 21</strong></summary><div>
 <p>Let <span class="math inline">\((X,d)\)</span> be a metric space and <span class="math inline">\(\mathcal{T}_d\)</span> the topology induced by <span class="math inline">\(d\)</span>. Then:</p>
@@ -657,12 +662,60 @@ U = \bigcup_{ i \in I } B_{r_i}(x_i) \,,
 </ul>
 </div></details>
 </div>
-<p>The proof is left as an exercise.</p>
+<p>Similarly to the definition of equivalent topologies, we can define equivalent metrics.</p>
+<div id="equivalent-metrics" class="Definition" title="Equivalent metrics">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 22: </strong>Equivalent metrics</summary><div>Let <span class="math inline">\(X\)</span> be a set and <span class="math inline">\(d_1,d_2\)</span> be metrics on <span class="math inline">\(X\)</span>. We say that <span class="math inline">\(d_1\)</span> and <span class="math inline">\(d_2\)</span> are equivalent if <span class="math display">\[
+\mathcal{T}_{d_1} = \mathcal{T}_{d_2} \,.
+\]</span><p></p>
+</div></details>
+</div>
+<p>The following proposition gives a practical way to check if two metrics are equivalent.</p>
+<div id="proposition-equivalent-metrics" class="Proposition">
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 23</strong></summary><div>
+<p>Let <span class="math inline">\(X\)</span> be a set and <span class="math inline">\(d_1,d_2\)</span> be metrics on <span class="math inline">\(X\)</span>. They are equivalent:</p>
+<ol type="1">
+<li><span class="math inline">\(d_1\)</span> and <span class="math inline">\(d_2\)</span> are equivalent metrics.</li>
+<li>There exists a constant <span class="math inline">\(\alpha &gt; 0\)</span> such that <span class="math display">\[
+\frac{1}{\alpha} \, d_2 (x,y) \leq d_1 (x,y) \leq \alpha \, d_2(x,y) \,, \quad \forall \, x,y \in X \,.
+\]</span></li>
+</ol>
+</div></details>
+</div>
+<p>The proof of Proposition <a href="chap_4.html#proposition-equivalent-metrics">23</a> is trivial, and is left as an exercise.</p>
+<div id="Example-24" class="Example">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 24</strong></summary><div>
+<p>Let <span class="math inline">\(p &gt; 1\)</span>. The metrics <span class="math inline">\(d_p\)</span> and <span class="math inline">\(d_{\infty}\)</span> on <span class="math inline">\(\mathbb{R}^n\)</span> are equivalent.</p>
+<blockquote class="blockquote">
+<p>This follows from Proposition <a href="chap_4.html#proposition-equivalent-metrics">23</a> and the estimate <span class="math display">\[
+d_{\infty} (\mathbf{x},\mathbf{y}) \leq d_p (\mathbf{x},\mathbf{y}) \leq n \, d_{\infty} (\mathbf{x},\mathbf{y}) \,, \quad \forall \mathbf{x}\,, \, \mathbf{y}\in \mathbb{R}^n \,.
+\]</span></p>
+</blockquote>
+</div></details>
+</div>
+<div id="Warning*-10" class="Warning">
+<p></p><details class="Warning fbx-simplebox fbx-default" open=""><summary><strong>Warning</strong></summary><div>If two metrics are equivalent, that does not mean they have the same balls. For example the balls of the metrics <span class="math inline">\(d_1\)</span>, <span class="math inline">\(d_2\)</span> and <span class="math inline">\(d_{\infty}\)</span> on <span class="math inline">\(\mathbb{R}^n\)</span> look very different, see <a href="#fig-balls-R2">Figure&nbsp;<span>4.3</span></a>.<p></p>
+</div></details>
+</div>
+<div id="fig-balls-R2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../images/balls_R2.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.3: Balls <span class="math inline">\(B_r(0)\)</span> for the metrics <span class="math inline">\(d_2, d_\infty, d_1\)</span> in <span class="math inline">\(\mathbb{R}^2\)</span>.</figcaption>
+</figure>
+</div>
 </section>
-<section id="connected-topological-spaces" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="connected-topological-spaces"><span class="header-section-number">4.3</span> Connected topological spaces</h2>
-<div id="Definition-22" class="Definition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 22</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space. We say that <span class="math inline">\(X\)</span> is <strong>connected</strong> if the only subsets of <span class="math inline">\(X\)</span> which are both open and closed are just <span class="math inline">\(\emptyset\)</span> and <span class="math inline">\(X\)</span>.<p></p>
+<section id="hausdorff-spaces" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="hausdorff-spaces"><span class="header-section-number">4.3</span> Hausdorff spaces</h2>
+<div id="metrizable-space" class="Definition" title="Metrizable space">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 25: </strong>Metrizable space</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space. We say that the topology <span class="math inline">\(\mathcal{T}\)</span> is metrizable if there exists a metric <span class="math inline">\(d\)</span> on <span class="math inline">\(X\)</span> such that <span class="math display">\[
+\mathcal{T}= \mathcal{T}_d \,,
+\]</span> with <span class="math inline">\(\mathcal{T}_d\)</span> the topology induced by <span class="math inline">\(d\)</span>.<p></p>
+</div></details>
+</div>
+</section>
+<section id="connected-topological-spaces" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="connected-topological-spaces"><span class="header-section-number">4.4</span> Connected topological spaces</h2>
+<div id="Definition-26" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 26</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space. We say that <span class="math inline">\(X\)</span> is <strong>connected</strong> if the only subsets of <span class="math inline">\(X\)</span> which are both open and closed are just <span class="math inline">\(\emptyset\)</span> and <span class="math inline">\(X\)</span>.<p></p>
 </div></details>
 </div>
 

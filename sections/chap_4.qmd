@@ -249,6 +249,36 @@ open.
 
 
 
+We conclude the section with the definition of equivalent topologies.
+
+
+::: Definition
+### Equivalent topologies
+
+Let X be a set and suppose that $\TT_1$, $\TT_2$ are topologies on $X$. We say that 
+$\TT_1$ and $\TT_2$ are **equivalent** if they hold:
+
+- For any $U \in \TT_1$ there exists $V \in \TT_2$ such that 
+$$
+V \subset U \,.
+$$
+
+- For any $U \in \TT_2$ there exists $V \in \TT_1$ such that 
+$$
+V \subset U \,.
+$$
+:::
+
+
+
+::: Warning
+
+If two topologies are equivalent, that does not mean they have the same open sets. 
+
+:::
+
+
+
 
 ## Convergence
 
@@ -447,6 +477,12 @@ Since classical convergence in $\R^n$ agrees with topological convergence with r
 
 
 
+
+
+
+
+
+
 ## Metric spaces
 
 
@@ -584,30 +620,10 @@ $$
 
 
 We need to check that the above definition is well-posed, that is, we need to show 
-that $\TT_d$ is actually a topology on $X$. The proof follows, line by line, the proof that the Euclidean topology is well-posed, see Definition \ref{definition-euclidean-topology}. This is left
+that $\TT_d$ is actually a topology on $X$. The proof follows, line by line, the proof that the Euclidean topology is indeed a topology, see proof immediately below Definition \ref{definition-euclidean-topology}. This is left
 as an exercise.
 
 
-
-Before proceeding with examples, we need the definition of equivalent topologies.
-
-
-::: Definition
-### Equivalent topologies
-
-Let X be a set and suppose that $\TT_1$, $\TT_2$ are topologies on $X$. We say that 
-$\TT_1$ and $\TT_2$ are **equivalent** if they hold:
-
-- For any $U \in \TT_1$ there exists $V \in \TT_2$ such that 
-$$
-V \subset U \,.
-$$
-
-- For any $U \in \TT_2$ there exists $V \in \TT_1$ such that 
-$$
-V \subset U \,.
-$$
-:::
 
 
 
@@ -643,7 +659,8 @@ is equivalent to the **discrete topology** on $X$.
 
 
 
-We conclude our discussion on metric spaces with a useful proposition.
+The following proposition is very useful to proving that certain sets are
+open in $\TT_d$. The proof is left as an exercise.
 
 
 ::: Proposition
@@ -659,10 +676,93 @@ with $I$ family of indices and $x_i \in X$, $r_i > 0$.
 
 :::
 
-The proof is left as an exercise.
+
+
+Similarly to the definition of equivalent topologies, we can define
+equivalent metrics.
+
+
+::: Definition
+### Equivalent metrics
+
+Let $X$ be a set and $d_1,d_2$ be metrics on $X$. We say that $d_1$ and $d_2$ are
+equivalent if
+$$
+\TT_{d_1} = \TT_{d_2} \,.
+$$
+
+:::
+
+
+The following proposition gives a practical way to check if two metrics are equivalent.
+
+
+::: {.Proposition  #proposition-equivalent-metrics}
+
+
+Let $X$ be a set and $d_1,d_2$ be metrics on $X$. They are equivalent:
+
+1. $d_1$ and $d_2$ are equivalent metrics.
+2. There exists a constant $\alpha > 0$ such that
+$$
+\frac{1}{\alpha} \, d_2 (x,y) \leq d_1 (x,y) \leq \alpha \, d_2(x,y) \,, \quad \forall \, x,y \in X \,.
+$$
+
+
+:::
+
+
+The proof of Proposition \ref{proposition-equivalent-metrics} is trivial, and is left as an exercise.
 
 
 
+
+::: Example
+
+Let $p > 1$. The metrics $d_p$ and $d_{\infty}$ on $\R^n$ are equivalent.
+
+> This follows from Proposition \ref{proposition-equivalent-metrics} and the estimate
+$$
+d_{\infty} (\xx,\yy) \leq d_p (\xx,\yy) \leq n \, d_{\infty} (\xx,\yy) \,, \quad \forall \xx \,, \, \yy \in \R^n \,.
+$$
+:::
+
+
+
+
+::: Warning
+
+If two metrics are equivalent, that does not mean they have the same balls. For example the balls of the metrics $d_1$, $d_2$ and $d_{\infty}$ on $\R^n$ look very different, see @fig-balls-R2.
+
+:::
+
+
+![Balls $B_r(0)$ for the metrics $d_2, d_\infty, d_1$ in $\R^2$.](/images/balls_R2.png){#fig-balls-R2 width=80%}
+
+
+
+
+
+
+
+
+## Hausdorff spaces
+
+
+
+
+
+::: Definition
+### Metrizable space
+
+Let $(X,\TT)$ be a topological space. We say that the topology $\TT$ is metrizable if there
+exists a metric $d$ on $X$ such that
+$$
+\TT = \TT_d \,,
+$$
+with $\TT_d$ the topology induced by $d$.
+
+:::
 
 
 
