@@ -8,36 +8,216 @@ $$
 # Topology
 
 
+So far we have worked in $\R^n$, where for example we have the notions of open set, continuous function and compact set. Topology is what allows us to extend these notions to arbitrary sets.
+
+
+
 ::: Definition
+### Topological space   {#definition-topology}
 
-Let $X$ be a set and $\TT$ a collection of subsets of $X$. We say that $\TT$ is a **topology** on $X$ if they hold:
+Let $X$ be a set and $\TT$ a collection of subsets of $X$. We say that $\TT$ is a **topology** on $X$ if the following 3 properties hold:
 
-- The empty set $\emptyset$ and $X$ belong to $\TT$,
+- (A1) We have $\emptyset, X \in \TT$,
 
-- Let $\{A_i\}_{i \in I}$ be an arbitrary family of elements of $\TT$. Then
+- (A2) If $\{A_i\}_{i \in I}$ is an arbitrary family of elements of $\TT$, then
 $$
 \bigcup_{i \in I} A_i  \in \TT \,.
 $$
 
-- If $A,B \in \TT$ then
+- (A3) If $A,B \in \TT$ then
 $$
 A \cap B \in \TT \,.
 $$
 
+Further, we say:
+
+- The pair $(X,\TT)$ is a **topological space**.
+- The elements of $X$ are called **points**.
+- The sets in the topology $\TT$ are called **open sets**.
 :::
+
+
+
+
+::: {.Remark  #remark-intersection}
+
+The intersection property of $\TT$, Property (A3) in Definition \ref{definition-topology}, is 
+equivalent to the following:
+
+- (A3') If $A_1, \ldots, A_M \in \TT$ for some $M \in \N$, then
+$$
+\bigcap_{n=1}^M A_n  \in \TT \,.
+$$
+
+> The equivalence between (A3) and (A3') can be immediately obtained by induction.
+
+:::
+
+
+
+
+
+::: Warning
+
+Notice:
+
+- The union property (A2) of $\TT$ holds for an **arbitrary** number of sets, even uncountable!
+- The intersection property (A3') of $\TT$ holds only for a **finite** number of sets. 
+
+:::
+
+
+
+There are two main examples of topologies that one should always keep in mind. 
+These are:
+
+- **Trivial topology**: The topology with the smallest possible number of sets.
+- **Discrete topology**: The topology with the highest possible number of sets.
+
 
 
 ::: Definition
+### Trivial topology
 
-Let $(X,\TT)$ be a topological space. We say that $X$ is **connected** if the only subsets of $X$ which are both open and closed are just $\emptyset$ and $X$.
+Let $X$ be a set. The trivial topology on $X$ is the topology $\TT$ defined by
+$$
+\TT := \{  \emptyset , X \} \,.
+$$
 
+> Let us check that $\TT$ is indeed a topology. We need to verify the 3 properties of a topology:
+>
+>  - (A1) We clearly have $\emptyset , X \in \TT$.
+>  - (A2) The only non-trivial union to check is the one between $\emptyset$ and $X$. We have
+>  $$
+    \emptyset \cup X = X \in \TT \,. 
+>  $$ 
+>  - (A3) The only non-trivial intersection to check is the one between $\emptyset$ and $X$. We have
+>  $$
+    \emptyset \cap X = \emptyset \in \TT \,. 
+>  $$ 
+>
+> Therefore $\TT$ is a topology on $X$.
 :::
 
 
+
+
+::: Definition
+### Discrete topology
+
+Let $X$ be a set. The discrete topology on $X$ is the topology $\TT$ defined by
+$$
+\TT := \{ A \divider A \subset X \} \,,
+$$
+that is, every subset of $X$ is open.
+
+> Let us check that $\TT$ is a topology: 
+>
+>  - (A1) We have $\emptyset , X \in \TT$, since $\emptyset$ and $X$ are subsets of $X$.
+>  - (A2) The arbitrary union of subsets of $X$ is still a subset of $X$. Therefore
+>  $$
+>  \bigcup_{i \in I} A_i \in \TT \,, 
+>  $$
+>  whenever $A_i \in \TT$ for all $i \in I$.
+>
+>  - (A3) The intersection of two subsets of $X$ is still a subset of $X$. Therefore
+>  $$
+>  A \cap B \in \TT \,, 
+>  $$
+>  whenever $A, B  \in \TT$.
+>
+> Therefore $\TT$ is a topology on $X$.
+:::
+
+
+
+
+We anticipated that topology is the extension of familiar concepts of open set, continuity, etc.
+that we have in $\R^n$. Let us see how the usual definition of open set of $\R^n$ can fit
+in our new abstract framework of topology. 
+
+
+
+::: Definition
+### Open set of $\R^n$
+
+Let $A \subset \R^n$. We say that the set $A$ is **open** if it holds:
+$$
+\forall \, x \in A \,, \,\, \exists \, r > 0 \st B_r(x) \subset A \,,
+$${#eq-open-set-Rn}
+where $B_r(x)$ is the ball of radius $r>0$ centered at $x$
+$$
+B_r(x) := \{ y \in \R^n \divider \norm{ y - x } = R  \} \,, 
+$$
+and the **Euclidean norm** of $x \in \R^n$ is defined by 
+$$
+\norm{x} := \sqrt{ \sum_{i=1}^n  x_i^2 } \,.
+$$
+
+See @fig-open-set-Rn for a schematic picture of an open set.
+:::
+
+
+
+![The set $A \subset \R^n$ is open if for every $x \in A$ there exists $r>0$ such that $B_r(x) \subset A$.](/images/open_set_R.png){#fig-open-set-Rn width=70%}
+
+
+
+::: Definition
+### Euclidean topology of $\R^n$
+
+The Euclidean topology on $\R^n$ is the topology $\TT$ defined by
+$$
+\TT := \{ A \divider A \subset \R^n \,, \,\, A \, \mbox{ is open}  \} \,.
+$$
+
+> Let us check that $\TT$ is a topology on $\R^n$: 
+>
+>  - (A1) We have $\emptyset , \R^n \in \TT$: Indeed $\emptyset$ is open because there is no point $x$ for which (@eq-open-set-Rn) needs to be checked. Moreover $\R^n$ is open because (@eq-open-set-Rn) holds with any radius $r>0$. 
+>  - (A2) Let $A_i \in \TT$ for all $i \in I$ and define the union set
+>  $$
+>  A:=\bigcup_{i \in I} A_i \,.
+>  $$
+>  We need to check that $A$ is open. Let $x \in A$. By definition of union, there exists an index $i_0 \in I$ such that
+>  $x \in A_{i_0}$. Since $A_{i_0}$ is open, by (@eq-open-set-Rn) there exists $r>0$ such that 
+>  $B_r(x) \subset A_{i_0}$. As $A_{i_0} \subset A$, we conclude that $B_r(x) \subset A$. Thus $A$ is open and $A \in \TT$.
+>
+> - (A3) Let $A, B \in \TT$. 
+>  We need to check that $A \cap B$ is open. Let $x \in A \cap B$. Therefore $x \in A$ and $x \in B$. Since $A$ and $B$ are open, by (@eq-open-set-Rn) there exist $r_1,r_2>0$ such that 
+>  $B_{r_1}(x) \subset A$ and $B_{r_2}(x) \subset B$. Set $r := \min\{ r_1,r_2\}$. Then 
+>  $$
+>  B_r(x) \subset B_{r_1}(x) \subset A  \,, \quad 
+>  B_r(x) \subset B_{r_2}(x) \subset B  \,, 
+>  $$
+>  Hence $B_r(x) \subset A \cap B$, showing that $A \cap B$ open, so that $A \cap B \in \TT$.
+>
+> This proves that $\TT$ is a topology on $\R^n$.
+:::
+
+
+
+## Convergence
+
+We have generalized the notion of open set to arbitrary sets. Next we generalize
+the notion of convergence of sequences.
+
+::: Definition
+### Convergent sequence
+
+Let $(X,\TT)$ be a topological space.
+asc
+:::
+
+
+
+
+
+## Metric spaces
 
 
 
 ::: Definition 
+### Metric space
 
 Let $X$ be a set. A **distance** on $X$ is a function 
 $$
@@ -84,5 +264,28 @@ $$
 B_r(x) := \{ y \in X  \, \colon \,  d(x,y)<r  \} \,.
 $$
 
+
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Connected topological spaces
+
+
+
+::: Definition
+
+Let $(X,\TT)$ be a topological space. We say that $X$ is **connected** if the only subsets of $X$ which are both open and closed are just $\emptyset$ and $X$.
 
 :::

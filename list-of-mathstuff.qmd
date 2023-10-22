@@ -303,13 +303,27 @@
 
  [**Proof**](#Proof*-3.13)\Pageref{Proof*-3.13}
 
- [**Definition 4.1**](#Definition-4.1)\Pageref{Definition-4.1}
+ [**Definition 4.1**](#definition-topology): Topological space\Pageref{definition-topology}
 
- [**Definition 4.2**](#Definition-4.2)\Pageref{Definition-4.2}
+ [**Remark 4.2**](#remark-intersection)\Pageref{remark-intersection}
 
- [**Definition 4.3**](#Definition-4.3)\Pageref{Definition-4.3}
+ [**Warning**](#Warning*-4.1)\Pageref{Warning*-4.1}
 
- [**Definition 4.4**](#topology-induced-by-the-metric): Topology induced by the metric\Pageref{topology-induced-by-the-metric}
+ [**Definition 4.3**](#trivial-topology): Trivial topology\Pageref{trivial-topology}
+
+ [**Definition 4.4**](#discrete-topology): Discrete topology\Pageref{discrete-topology}
+
+ [**Definition 4.5**](#open-set-of-mathbbrn): Open set of $\mathbb{R}^n$\Pageref{open-set-of-mathbbrn}
+
+ [**Definition 4.6**](#euclidean-topology-of-mathbbrn): Euclidean topology of $\mathbb{R}^n$\Pageref{euclidean-topology-of-mathbbrn}
+
+ [**Definition 4.7**](#convergent-sequence): Convergent sequence\Pageref{convergent-sequence}
+
+ [**Definition 4.8**](#metric-space): Metric space\Pageref{metric-space}
+
+ [**Definition 4.9**](#topology-induced-by-the-metric): Topology induced by the metric\Pageref{topology-induced-by-the-metric}
+
+ [**Definition 4.10**](#Definition-4.10)\Pageref{Definition-4.10}
 
  [**Definition 5.1**](#Definition-5.1)\Pageref{Definition-5.1}
 
