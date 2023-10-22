@@ -315,33 +315,53 @@
 
  [**Definition 4.5**](#open-set-of-mathbbrn): Open set of $\mathbb{R}^n$\Pageref{open-set-of-mathbbrn}
 
- [**Definition 4.6**](#euclidean-topology-of-mathbbrn): Euclidean topology of $\mathbb{R}^n$\Pageref{euclidean-topology-of-mathbbrn}
+ [**Definition 4.6**](#definition-euclidean-topology): Euclidean topology of $\mathbb{R}^n$\Pageref{definition-euclidean-topology}
+
+ [**Proof**](#well-posedness-of-definition): Well-posedness of Definition 4.6\Pageref{well-posedness-of-definition}
 
  [**Proposition 4.7**](#proposition-balls-open)\Pageref{proposition-balls-open}
 
- [**Proof**](#Proof*-4.2)\Pageref{Proof*-4.2}
+ [**Proof**](#Proof*-4.3)\Pageref{Proof*-4.3}
 
- [**Theorem 4.8**](#Theorem-4.8)\Pageref{Theorem-4.8}
+ [**Definition 4.8**](#convergent-sequence): Convergent sequence\Pageref{convergent-sequence}
 
- [**Definition 4.9**](#convergent-sequence): Convergent sequence\Pageref{convergent-sequence}
+ [**Notation**](#Notation*-4.4)\Pageref{Notation*-4.4}
 
- [**Notation**](#Notation*-4.3)\Pageref{Notation*-4.3}
-
- [**Proposition 4.10**](#convergence-for-trivial-topology): Convergence for trivial topology\Pageref{convergence-for-trivial-topology}
-
- [**Proof**](#Proof*-4.4)\Pageref{Proof*-4.4}
-
- [**Proposition 4.11**](#convergence-for-discrete-topology): Convergence for discrete topology\Pageref{convergence-for-discrete-topology}
+ [**Proposition 4.9**](#convergence-for-trivial-topology): Convergence for trivial topology\Pageref{convergence-for-trivial-topology}
 
  [**Proof**](#Proof*-4.5)\Pageref{Proof*-4.5}
 
+ [**Proposition 4.10**](#convergence-for-discrete-topology): Convergence for discrete topology\Pageref{convergence-for-discrete-topology}
+
+ [**Proof**](#Proof*-4.6)\Pageref{Proof*-4.6}
+
+ [**Definition 4.11**](#classical-convergence-in-mathbbrn): Classical convergence in $\mathbb{R}^n$\Pageref{classical-convergence-in-mathbbrn}
+
  [**Proposition 4.12**](#convergence-for-euclidean-topology): Convergence for Euclidean topology\Pageref{convergence-for-euclidean-topology}
 
- [**Definition 4.13**](#metric-space): Metric space\Pageref{metric-space}
+ [**Proof**](#Proof*-4.7)\Pageref{Proof*-4.7}
 
- [**Definition 4.14**](#topology-induced-by-the-metric): Topology induced by the metric\Pageref{topology-induced-by-the-metric}
+ [**Notation**](#Notation*-4.8)\Pageref{Notation*-4.8}
 
- [**Definition 4.15**](#Definition-4.15)\Pageref{Definition-4.15}
+ [**Definition 4.13**](#distance): Distance\Pageref{distance}
+
+ [**Definition 4.14**](#metric-space): Metric space\Pageref{metric-space}
+
+ [**Example 4.15**](#mathbbrn-as-metric-space): $\mathbb{R}^n$ as metric space\Pageref{mathbbrn-as-metric-space}
+
+ [**Example 4.16**](#p-distance-on-mathbbrn): $p$-distance on $\mathbb{R}^n$\Pageref{p-distance-on-mathbbrn}
+
+ [**Definition 4.17**](#definition-metric-topology): Topology induced by the metric\Pageref{definition-metric-topology}
+
+ [**Definition 4.18**](#equivalent-topologies): Equivalent topologies\Pageref{equivalent-topologies}
+
+ [**Example 4.19**](#topology-induced-by-euclidean-distance): Topology induced by Euclidean distance\Pageref{topology-induced-by-euclidean-distance}
+
+ [**Example 4.20**](#discrete-distance): Discrete distance\Pageref{discrete-distance}
+
+ [**Proposition 4.21**](#Proposition-4.21)\Pageref{Proposition-4.21}
+
+ [**Definition 4.22**](#Definition-4.22)\Pageref{Definition-4.22}
 
  [**Definition 5.1**](#Definition-5.1)\Pageref{Definition-5.1}
 

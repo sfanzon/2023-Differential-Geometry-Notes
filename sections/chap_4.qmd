@@ -143,15 +143,15 @@ in our new abstract framework of topology.
 
 Let $A \subset \R^n$. We say that the set $A$ is **open** if it holds:
 $$
-\forall \, x \in A \,, \,\, \exists \, r > 0 \st B_r(x) \subset A \,,
+\forall \, \xx \in A \,, \,\, \exists \, r > 0 \st B_r(\xx) \subset A \,,
 $${#eq-open-set-Rn}
-where $B_r(x)$ is the ball of radius $r>0$ centered at $x$
+where $B_r(\xx)$ is the ball of radius $r>0$ centered at $\xx$
 $$
-B_r(x) := \{ y \in \R^n \divider \norm{ y - x } \leq R  \} \,, 
+B_r(\xx) := \{ \yy \in \R^n \divider \norm{ \yy - \xx } < r  \} \,, 
 $$
-and the **Euclidean norm** of $x \in \R^n$ is defined by 
+and the **Euclidean norm** of $\xx \in \R^n$ is defined by 
 $$
-\norm{x} := \sqrt{ \sum_{i=1}^n  x_i^2 } \,.
+\| \xx \| := \sqrt{ \sum_{i=1}^n  x_i^2 } \,.
 $$
 
 See @fig-open-set-Rn for a schematic picture of an open set.
@@ -159,39 +159,49 @@ See @fig-open-set-Rn for a schematic picture of an open set.
 
 
 
-![The set $A \subset \R^n$ is open if for every $x \in A$ there exists $r>0$ such that $B_r(x) \subset A$.](/images/open_set_R.png){#fig-open-set-Rn width=70%}
+![The set $A \subset \R^n$ is open if for every $\xx \in A$ there exists $r>0$ such that $B_r(\xx) \subset A$.](/images/open_set_R.png){#fig-open-set-Rn width=70%}
 
 
 
 ::: Definition
-### Euclidean topology of $\R^n$
+### Euclidean topology of $\R^n$  {#definition-euclidean-topology}
 
 The Euclidean topology on $\R^n$ is the topology $\TT$ defined by
 $$
 \TT := \{ A \divider A \subset \R^n \,, \,\, A \, \mbox{ is open}  \} \,.
 $$
 
-> Let us check that $\TT$ is a topology on $\R^n$: 
->
->  - (A1) We have $\emptyset , \R^n \in \TT$: Indeed $\emptyset$ is open because there is no point $x$ for which (@eq-open-set-Rn) needs to be checked. Moreover $\R^n$ is open because (@eq-open-set-Rn) holds with any radius $r>0$. 
->  - (A2) Let $A_i \in \TT$ for all $i \in I$ and define the union set
->  $$
->  A:=\bigcup_{i \in I} A_i \,.
->  $$
->  We need to check that $A$ is open. Let $x \in A$. By definition of union, there exists an index $i_0 \in I$ such that
->  $x \in A_{i_0}$. Since $A_{i_0}$ is open, by (@eq-open-set-Rn) there exists $r>0$ such that 
->  $B_r(x) \subset A_{i_0}$. As $A_{i_0} \subset A$, we conclude that $B_r(x) \subset A$. Thus $A$ is open and $A \in \TT$.
->
-> - (A3) Let $A, B \in \TT$. 
->  We need to check that $A \cap B$ is open. Let $x \in A \cap B$. Therefore $x \in A$ and $x \in B$. Since $A$ and $B$ are open, by (@eq-open-set-Rn) there exist $r_1,r_2>0$ such that 
->  $B_{r_1}(x) \subset A$ and $B_{r_2}(x) \subset B$. Set $r := \min\{ r_1,r_2\}$. Then 
->  $$
->  B_r(x) \subset B_{r_1}(x) \subset A  \,, \quad 
->  B_r(x) \subset B_{r_2}(x) \subset B  \,, 
->  $$
->  Hence $B_r(x) \subset A \cap B$, showing that $A \cap B$ open, so that $A \cap B \in \TT$.
->
-> This proves that $\TT$ is a topology on $\R^n$.
+:::
+
+
+We need to check that the above definition is well-posed, in the sense that we have to
+prove that $\TT$ is a topology on $\R^n$.
+
+
+::: Proof
+### Well-posedness of Definition \ref{definition-euclidean-topology}
+
+Let us check that $\TT$ is a topology on $\R^n$: 
+
+  - (A1) We have $\emptyset , \R^n \in \TT$: Indeed $\emptyset$ is open because there is no point $\xx$ for which (@eq-open-set-Rn) needs to be checked. Moreover $\R^n$ is open because (@eq-open-set-Rn) holds with any radius $r>0$. 
+  - (A2) Let $A_i \in \TT$ for all $i \in I$ and define the union set
+  $$
+  A:=\bigcup_{i \in I} A_i \,.
+  $$
+  We need to check that $A$ is open. Let $\xx \in A$. By definition of union, there exists an index $i_0 \in I$ such that
+  $\xx \in A_{i_0}$. Since $A_{i_0}$ is open, by (@eq-open-set-Rn) there exists $r>0$ such that 
+  $B_r(\xx) \subset A_{i_0}$. As $A_{i_0} \subset A$, we conclude that $B_r(\xx) \subset A$. Thus $A$ is open and $A \in \TT$.
+
+ - (A3) Let $A, B \in \TT$. 
+  We need to check that $A \cap B$ is open. Let $\xx \in A \cap B$. Therefore $\xx \in A$ and $\xx \in B$. Since $A$ and $B$ are open, by (@eq-open-set-Rn) there exist $r_1,r_2>0$ such that 
+  $B_{r_1}(\xx) \subset A$ and $B_{r_2}(\xx) \subset B$. Set $r := \min\{ r_1,r_2\}$. Then 
+  $$
+  B_r(\xx) \subset B_{r_1}(\xx) \subset A  \,, \quad 
+  B_r(\xx) \subset B_{r_2}(\xx) \subset B  \,, 
+  $$
+  Hence $B_r(\xx) \subset A \cap B$, showing that $A \cap B$ open, so that $A \cap B \in \TT$.
+
+ This proves that $\TT$ is a topology on $\R^n$.
 :::
 
 
@@ -201,9 +211,9 @@ Let us make a basic bus useful observation: balls in $\R^n$ are open for the Euc
 
 ::: {.Proposition   #proposition-balls-open}
 
-Let $\R^n$ be equipped with $\TT$ the Euclidean topology. Let $r>0$ and $x \in \R^n$. Then
+Let $\R^n$ be equipped with $\TT$ the Euclidean topology. Let $r>0$ and $\xx \in \R^n$. Then
 $$
-B_r(x) \in \TT \,.
+B_r(\xx) \in \TT \,.
 $$
 
 :::
@@ -211,35 +221,34 @@ $$
 
 ::: Proof
 
-We need to shown that $B_r(x)$ satisfies @eq-open-set-Rn. Therefore, let $y \in B_r(x)$. In particular
+We need to shown that $B_r(\xx)$ satisfies (@eq-open-set-Rn). Therefore, let $\yy \in B_r(\xx)$. In particular
 $$
-\norm{x - y}<r \,.
+\norm{\xx - \yy}<r \,.
 $${#eq-balls-open}
 Define 
 $$
-\e := r - \norm{x - y} \,.
+\e := r - \norm{\xx - \yy} \,.
 $$
 Note that $\e>0$ by (@eq-balls-open). We claim that 
 $$
-B_{\e} (y) \subset B_r (x) \,,
+B_{\e} (\yy) \subset B_r (\xx) \,,
+$${#eq-proof-ball-open}
+see @fig-balls-open. Indeed, let $\zz \in B_{\e}(\yy)$. By triangle inequality we have
 $$
-see @fig-balls-open. Indeed, let $z \in B_{\e}(y)$. By triangle inequality we have
+\| \zz - \xx \| \leq \norm{ \xx - \yy } + \norm{ \yy - \zz } <  \norm{ \xx - \yy } + \e = r \,, 
 $$
-\| z - x \| \leq \norm{ x - y } + \norm{ y - z } <  \norm{ x - y } + \e = r \,, 
-$$
-where we used that $\norm{y - z} < \e$ and the definition of $\e$.
+where we used that $\norm{\yy - \zz} < \e$ and the definition of $\e$. Hence $\zz \in B_r(\xx)$, proving 
+(@eq-proof-ball-open). This proves that $B_r(\xx)$ satisfies (@eq-open-set-Rn), and is therefore
+open.
 
 
 :::
 
 
-![The ball $B_{\e}(y)$ is contained in $B_r(x)$ if $\e := r - \norm{x-y}$.](/images/balls_open.png){#fig-balls-open width=70%}
+![The ball $B_{\e}(\yy)$ is contained in $B_r(\xx)$ if $\e := r - \norm{\xx-\yy}$.](/images/balls_open.png){#fig-balls-open width=70%}
 
-::: Theorem
 
-oigoig
 
-:::
 
 ## Convergence
 
@@ -354,21 +363,86 @@ Since $U$ was arbitrary, we conclude that $x_n \to x_0$.
 :::
 
 
+Before proceeding to examining convergence in the Euclidean topology, let us recall the 
+classical definition of convergence in $\R^n$.
+
+::: Definition
+### Classical convergence in $\R^n$
+
+Let $\{\xx_n\} \subset \R^n$ and $\xx_0 \in \R^n$. We say that $\xx_n$ converges $\xx_0$ in the 
+classical sense if 
+$$
+\lim_{n \to \infty} \norm{\xx_n - \xx_0}  = 0 \,. 
+$$
+The above is equivalent to: For all $\e>0$ there exists $N \in \N$ such that
+$$
+\norm{\xx_n - \xx_0} < \e  \,, \quad \forall \, n \geq N \,.
+$$
+
+
+:::
+
+
 ::: Proposition
 ### Convergence for Euclidean topology
 
 Let $\R^n$ be equipped with $\TT$ the Euclidean topology.
-Let $\{x_n\} \subset \R^n$ be a sequence and $x_0 \in \R^n$ a point. They are equivalent:
+Let $\{\xx_n\} \subset \R^n$ be a sequence and $\xx_0 \in \R^n$ a point. They are equivalent:
 
-1. $x_n \to x_0$ with respect to $\TT$.
-2. $x_n \to x_0$ in $\R^n$, that is,
-$$
-\lim_{n \to \infty} \norm{x_n - x_0}  = 0 \,. 
-$$
+1. $\xx_n \to \xx_0$ with respect to $\TT$.
+2. $\xx_n \to \xx_0$ in the classical sense.
 :::
 
 
+::: Proof
 
+*Part 1. Assume $\xx_n \to \xx_0$ with respect to $\TT$.*
+
+Fix $\e>0$ and consider the set
+$$
+U := B_{\e}(\xx_0) \,.
+$$
+By Proposition \ref{proposition-balls-open} we know that $U \in \TT$. Moreover $\xx_0 \in U$.
+By the convergence $\xx_n \to \xx_0$ with respect to $\TT$, there exists $N \in \N$ such that 
+$$
+\xx_n \in U \,, \quad \forall \, n \geq N \,.
+$$
+As $U = B_{\e}(\xx_0)$, the above reads
+$$
+\norm{\xx_n - \xx_0} < \e \,, \quad \forall \, n \geq N \,,
+$$
+showing that $\xx_n \to \xx_0$ in the classical sense.
+
+
+*Part 2. Assume $\xx_n \to \xx_0$ in the classical sense.*
+
+
+Let $U \in \TT$ be such that $\xx_0 \in U$. By definition of Euclidean topology, this means that 
+there exists $r>0$ such that 
+$$
+B_r(\xx_0) \subset U \,.
+$$
+As $\xx_n \to \xx_0$ in the classical sense, there exists $N \in \N$ such that 
+$$
+\norm{\xx_n - \xx_0} < r \,, \quad \forall \, n \geq N \,.
+$$
+The above is equivalent to 
+$$
+\xx_n \in B_{r}(\xx_0) \,, \quad \forall \, n \geq N \,.
+$$
+Since $B_r(\xx_0) \subset U$, we have proven that
+$$
+\xx_n \in U \,, \quad \forall \, n \geq N \,.
+$$
+Since $U$ is arbitrary, we conclude that $\xx_n \to \xx_0$ with respect to $\TT$.
+:::
+
+
+::: Notation
+
+Since classical convergence in $\R^n$ agrees with topological convergence with respect to $\TT$, we will just say that $\xx_n \to \xx_0$ in $\R^n$ without ambiguity.
+
+:::
 
 
 
@@ -376,9 +450,13 @@ $$
 ## Metric spaces
 
 
+We will now define a class of topological spaces known as metric spaces.
+
+
+
 
 ::: Definition 
-### Metric space
+### Distance
 
 Let $X$ be a set. A **distance** on $X$ is a function 
 $$
@@ -386,36 +464,112 @@ d \colon X \times X \to \R
 $$
 such that, for all $x,y,z \in X$ they hold:
 
-1. The distance is non-negative
+- (M1) Positivity: The distance is non-negative
 $$
 d(x,y) \geq 0 \,.
 $$ 
-Moreover $d(x,y) = 0$ if and only if $x=y$.
+Moreover 
+$$
+d(x,y) = 0 \quad \iff x=y \,.
+$$
 
-2. The distance is symmetric:
+- (M2) Symmetry: The distance is symmetric
 $$
 d(x,y) = d(y,x) \,.
 $$
 
-3. The triangle inequality holds:
+- (M3) Triangle Inequality: It holds
 $$
 d(x,z) \leq d(x,y) + d(y,z) \,.
 $$
+:::
 
 
+
+
+::: Definition
+### Metric space
+
+Let $X$ be a set and $d \colon X \times X \to \R$ be a distance on $X$. 
 We say that the pair $(X,d)$ is a **metric space**.
 :::
 
 
 
 
+::: Example
+### $\R^n$ as metric space
+
+The Euclidean norm naturally induces a distance over $\R^n$ by setting
+$$
+d(\xx,\yy) := \norm{ \xx - \yy } \,.
+$$
+Then $(\R^n,d)$ is a metric space.
+
+> It is trivial to check that the Euclidean distance satisfies (M1) and (M2). 
+> To show (M3), recalling the triangle inequality in $\R^n$:
+$$
+\| \xx + \yy \| \leq \| \xx \|   + \| \yy \| \,,
+$$
+for all $\xx , \yy \in \R^n$. Using the above we obtain
+\begin{align*}
+d(\xx,\yy) & = \| \xx - \yy \| \\
+             & = \| (\xx - \zz) + (\zz - \yy) \| \\
+             & \leq  \| \xx - \zz \| + \| \zz - \yy \|  \\
+             & = d (\xx,\zz) + d (\zz,\yy) \,,
+\end{align*}
+proving that $d$ satisfies (M3). This prove that $(\R^n,d)$ is a metric space.
+
+:::
+
+
+
+::: Example
+### $p$-distance on $\R^n$
+
+
+For $\xx,\yy \in \R^n$ and $p \in [1,\infty)$ define 
+$$
+d_p ( \xx, \yy ) := \left(  \sum_{i=1}^n |x_i - y_i|^p   \right)^{\frac1p} \,.
+$$
+Note that $d_2$ coincides with the Euclidean distance.
+For $p = \infty$ we set
+$$
+d_{\infty} ( \xx, \yy ) := \max_{i = 1 \ldots, n} |x_i - y_i|  \,.
+$$
+We have that $(\R^n,d_p)$ is a metric space. 
+
+> Indeed properties (M1)-(M2) hold trivially. The triangle inequality is also 
+> trivially satisfied by $d_{\infty}$. We are left with checking the triangle inequality
+> for $d_p$ with $p \geq 1$. To this end, define
+$$
+\| \xx \|_p :=  \left(  \sum_{i=1}^n |x_i|^p  \right)^{\frac1p} \,.
+$$
+Minkowski's inequality, see [Wikipedia page](https://en.wikipedia.org/wiki/Minkowski_inequality), states that 
+$$
+\| \xx + \yy \|_p \leq   \| \xx  \|_p  +  \|  \yy \|_p \,,
+$$
+for all $\xx ,\yy \in \R^n$. Therefore
+\begin{align*}
+d_p(\xx,\yy) & = \| \xx - \yy \|_p  \\
+             & = \| (\xx - \zz) + (\zz - \yy) \|_p \\
+             & \leq  \| \xx - \zz \|_p + \| \zz - \yy \|_p  \\
+             & = d_p (\xx,\zz) + d_p (\zz,\yy) \,,
+\end{align*}
+proving that $d_p$ satisfies (M3). Hence $(\R^n,d_p)$ is a metric space.
+:::
+
+
+
+
+A metric $d$ on a set $X$ naturally induces a topology which is **compatible** with the metric.
 
 
 
 ::: Definition
-### Topology induced by the metric
+### Topology induced by the metric  {#definition-metric-topology}
 
-Let $(X,d)$ be a metric space. We define the topology $\TT$ **induced by the metric** as the
+Let $(X,d)$ be a metric space. We define the topology $\TT_d$ **induced by the metric** $d$ as the
 collection of sets $U \subset X$ that satisfy the following property:
 $$
 \forall \, x \in U \,, \, \exists \, r \in \R, \, r > 0 \, \st \, B_r(x) \subset U \,,
@@ -429,9 +583,83 @@ $$
 :::
 
 
+We need to check that the above definition is well-posed, that is, we need to show 
+that $\TT_d$ is actually a topology on $X$. The proof follows, line by line, the proof that the Euclidean topology is well-posed, see Definition \ref{definition-euclidean-topology}. This is left
+as an exercise.
 
 
 
+Before proceeding with examples, we need the definition of equivalent topologies.
+
+
+::: Definition
+### Equivalent topologies
+
+Let X be a set and suppose that $\TT_1$, $\TT_2$ are topologies on $X$. We say that 
+$\TT_1$ and $\TT_2$ are **equivalent** if they hold:
+
+- For any $U \in \TT_1$ there exists $V \in \TT_2$ such that 
+$$
+V \subset U \,.
+$$
+
+- For any $U \in \TT_2$ there exists $V \in \TT_1$ such that 
+$$
+V \subset U \,.
+$$
+:::
+
+
+
+::: Example
+### Topology induced by Euclidean distance
+
+Consider the metric space $(\R^n,d)$ with $d$ the Euclidean distance. Then $\TT_d$ is equivalent to the Euclidean topology on $\R^n$. 
+
+> The claim follows immediately by definition.
+:::
+
+
+
+::: Example
+### Discrete distance
+
+Let $X$ be a set. Define the function $d \colon X \times X \to \R$ by
+$$
+d(x,y) := 
+\begin{cases}
+	0 & \mbox{ if } \, x = y \\
+	1 & \mbox{ if } \, x \neq y 
+\end{cases}
+$$
+Then $(X,d)$ is a metric space, and $d$ is called the **discrete distance**. Moreover $\TT_d$
+is equivalent to the **discrete topology** on $X$.
+
+
+> Exercise: Prove that $(X,d)$ is a metric space and that $\TT_d$ is equivalent to the discrete topology.
+
+:::
+
+
+
+
+We conclude our discussion on metric spaces with a useful proposition.
+
+
+::: Proposition
+
+Let $(X,d)$ be a metric space and $\TT_d$ the topology induced by $d$. Then:
+
+- For all $x \in X$, $r>0$ we have $B_r(x) \subset \TT_d$.
+- $U \in \TT_d$ if and only if
+$$
+U = \bigcup_{ i \in I } B_{r_i}(x_i) \,,
+$$
+with $I$ family of indices and $x_i \in X$, $r_i > 0$.
+
+:::
+
+The proof is left as an exercise.
 
 
 

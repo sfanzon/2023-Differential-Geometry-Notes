@@ -66,15 +66,19 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Theorem {
+.Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Assumption {
+.Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -86,43 +90,11 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Warning {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Example {
+.Remark {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Goal {
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -130,13 +102,41 @@ ul.task-list li input[type="checkbox"] {
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
-.Conjecture {
+.Important {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Remark {
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Example {
   --color1: #bce5de;
   --color2: #21aa93;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 </style>
 
@@ -361,11 +361,11 @@ A \cap B \in \mathcal{T}\,,
 <p>We anticipated that topology is the extension of familiar concepts of open set, continuity, etc. that we have in <span class="math inline">\(\mathbb{R}^n\)</span>. Let us see how the usual definition of open set of <span class="math inline">\(\mathbb{R}^n\)</span> can fit in our new abstract framework of topology.</p>
 <div id="open-set-of-mathbbrn" class="Definition" title="Open set of \mathbb{R}^n">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 5: </strong>Open set of <span class="math inline">\(\mathbb{R}^n\)</span></summary><div>Let <span class="math inline">\(A \subset \mathbb{R}^n\)</span>. We say that the set <span class="math inline">\(A\)</span> is <strong>open</strong> if it holds: <span id="eq-open-set-Rn"><span class="math display">\[
-\forall \, x \in A \,, \,\, \exists \, r &gt; 0 \, \text{ s.t. } \, B_r(x) \subset A \,,
-\tag{4.1}\]</span></span> where <span class="math inline">\(B_r(x)\)</span> is the ball of radius <span class="math inline">\(r&gt;0\)</span> centered at <span class="math inline">\(x\)</span> <span class="math display">\[
-B_r(x) := \{ y \in \mathbb{R}^n \, \colon \,\left\|  y - x  \right\| \leq R  \} \,,
-\]</span> and the <strong>Euclidean norm</strong> of <span class="math inline">\(x \in \mathbb{R}^n\)</span> is defined by <span class="math display">\[
-\left\| x \right\| := \sqrt{ \sum_{i=1}^n  x_i^2 } \,.
+\forall \, \mathbf{x}\in A \,, \,\, \exists \, r &gt; 0 \, \text{ s.t. } \, B_r(\mathbf{x}) \subset A \,,
+\tag{4.1}\]</span></span> where <span class="math inline">\(B_r(\mathbf{x})\)</span> is the ball of radius <span class="math inline">\(r&gt;0\)</span> centered at <span class="math inline">\(\mathbf{x}\)</span> <span class="math display">\[
+B_r(\mathbf{x}) := \{ \mathbf{y}\in \mathbb{R}^n \, \colon \,\left\|  \mathbf{y}- \mathbf{x} \right\| &lt; r  \} \,,
+\]</span> and the <strong>Euclidean norm</strong> of <span class="math inline">\(\mathbf{x}\in \mathbb{R}^n\)</span> is defined by <span class="math display">\[
+\| \mathbf{x}\| := \sqrt{ \sum_{i=1}^n  x_i^2 } \,.
 \]</span><p></p>
 <p>See <a href="#fig-open-set-Rn">Figure&nbsp;<span>4.1</span></a> for a schematic picture of an open set.</p>
 </div></details>
@@ -373,69 +373,66 @@ B_r(x) := \{ y \in \mathbb{R}^n \, \colon \,\left\|  y - x  \right\| \leq R  \} 
 <div id="fig-open-set-Rn" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../images/open_set_R.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;4.1: The set <span class="math inline">\(A \subset \mathbb{R}^n\)</span> is open if for every <span class="math inline">\(x \in A\)</span> there exists <span class="math inline">\(r&gt;0\)</span> such that <span class="math inline">\(B_r(x) \subset A\)</span>.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;4.1: The set <span class="math inline">\(A \subset \mathbb{R}^n\)</span> is open if for every <span class="math inline">\(\mathbf{x}\in A\)</span> there exists <span class="math inline">\(r&gt;0\)</span> such that <span class="math inline">\(B_r(\mathbf{x}) \subset A\)</span>.</figcaption>
 </figure>
 </div>
-<div id="euclidean-topology-of-mathbbrn" class="Definition" title="Euclidean topology of \mathbb{R}^n">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 6: </strong>Euclidean topology of <span class="math inline">\(\mathbb{R}^n\)</span></summary><div>
-<p>The Euclidean topology on <span class="math inline">\(\mathbb{R}^n\)</span> is the topology <span class="math inline">\(\mathcal{T}\)</span> defined by <span class="math display">\[
+<div id="definition-euclidean-topology" class="Definition" title="Euclidean topology of \mathbb{R}^n">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 6: </strong>Euclidean topology of <span class="math inline">\(\mathbb{R}^n\)</span></summary><div>The Euclidean topology on <span class="math inline">\(\mathbb{R}^n\)</span> is the topology <span class="math inline">\(\mathcal{T}\)</span> defined by <span class="math display">\[
 \mathcal{T}:= \{ A \, \colon \,A \subset \mathbb{R}^n \,, \,\, A \, \mbox{ is open}  \} \,.
-\]</span></p>
-<blockquote class="blockquote">
-<p>Let us check that <span class="math inline">\(\mathcal{T}\)</span> is a topology on <span class="math inline">\(\mathbb{R}^n\)</span>:</p>
+\]</span><p></p>
+</div></details>
+</div>
+<p>We need to check that the above definition is well-posed, in the sense that we have to prove that <span class="math inline">\(\mathcal{T}\)</span> is a topology on <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
+<div id="well-posedness-of-definition" class="Proof" title="Well-posedness of Definition 6">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof: </strong>Well-posedness of Definition 6</summary><div>Let us check that <span class="math inline">\(\mathcal{T}\)</span> is a topology on <span class="math inline">\(\mathbb{R}^n\)</span>:<p></p>
 <ul>
-<li><p>(A1) We have <span class="math inline">\(\emptyset , \mathbb{R}^n \in \mathcal{T}\)</span>: Indeed <span class="math inline">\(\emptyset\)</span> is open because there is no point <span class="math inline">\(x\)</span> for which (<a href="#eq-open-set-Rn"><span>4.1</span></a>) needs to be checked. Moreover <span class="math inline">\(\mathbb{R}^n\)</span> is open because (<a href="#eq-open-set-Rn"><span>4.1</span></a>) holds with any radius <span class="math inline">\(r&gt;0\)</span>.</p></li>
+<li><p>(A1) We have <span class="math inline">\(\emptyset , \mathbb{R}^n \in \mathcal{T}\)</span>: Indeed <span class="math inline">\(\emptyset\)</span> is open because there is no point <span class="math inline">\(\mathbf{x}\)</span> for which (<a href="#eq-open-set-Rn"><span>4.1</span></a>) needs to be checked. Moreover <span class="math inline">\(\mathbb{R}^n\)</span> is open because (<a href="#eq-open-set-Rn"><span>4.1</span></a>) holds with any radius <span class="math inline">\(r&gt;0\)</span>.</p></li>
 <li><p>(A2) Let <span class="math inline">\(A_i \in \mathcal{T}\)</span> for all <span class="math inline">\(i \in I\)</span> and define the union set <span class="math display">\[
-A:=\bigcup_{i \in I} A_i \,.
-\]</span> We need to check that <span class="math inline">\(A\)</span> is open. Let <span class="math inline">\(x \in A\)</span>. By definition of union, there exists an index <span class="math inline">\(i_0 \in I\)</span> such that <span class="math inline">\(x \in A_{i_0}\)</span>. Since <span class="math inline">\(A_{i_0}\)</span> is open, by (<a href="#eq-open-set-Rn"><span>4.1</span></a>) there exists <span class="math inline">\(r&gt;0\)</span> such that <span class="math inline">\(B_r(x) \subset A_{i_0}\)</span>. As <span class="math inline">\(A_{i_0} \subset A\)</span>, we conclude that <span class="math inline">\(B_r(x) \subset A\)</span>. Thus <span class="math inline">\(A\)</span> is open and <span class="math inline">\(A \in \mathcal{T}\)</span>.</p></li>
-<li><p>(A3) Let <span class="math inline">\(A, B \in \mathcal{T}\)</span>. We need to check that <span class="math inline">\(A \cap B\)</span> is open. Let <span class="math inline">\(x \in A \cap B\)</span>. Therefore <span class="math inline">\(x \in A\)</span> and <span class="math inline">\(x \in B\)</span>. Since <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are open, by (<a href="#eq-open-set-Rn"><span>4.1</span></a>) there exist <span class="math inline">\(r_1,r_2&gt;0\)</span> such that <span class="math inline">\(B_{r_1}(x) \subset A\)</span> and <span class="math inline">\(B_{r_2}(x) \subset B\)</span>. Set <span class="math inline">\(r := \min\{ r_1,r_2\}\)</span>. Then <span class="math display">\[
-B_r(x) \subset B_{r_1}(x) \subset A  \,, \quad
-B_r(x) \subset B_{r_2}(x) \subset B  \,,
-\]</span> Hence <span class="math inline">\(B_r(x) \subset A \cap B\)</span>, showing that <span class="math inline">\(A \cap B\)</span> open, so that <span class="math inline">\(A \cap B \in \mathcal{T}\)</span>.</p></li>
+  A:=\bigcup_{i \in I} A_i \,.
+  \]</span> We need to check that <span class="math inline">\(A\)</span> is open. Let <span class="math inline">\(\mathbf{x}\in A\)</span>. By definition of union, there exists an index <span class="math inline">\(i_0 \in I\)</span> such that <span class="math inline">\(\mathbf{x}\in A_{i_0}\)</span>. Since <span class="math inline">\(A_{i_0}\)</span> is open, by (<a href="#eq-open-set-Rn"><span>4.1</span></a>) there exists <span class="math inline">\(r&gt;0\)</span> such that <span class="math inline">\(B_r(\mathbf{x}) \subset A_{i_0}\)</span>. As <span class="math inline">\(A_{i_0} \subset A\)</span>, we conclude that <span class="math inline">\(B_r(\mathbf{x}) \subset A\)</span>. Thus <span class="math inline">\(A\)</span> is open and <span class="math inline">\(A \in \mathcal{T}\)</span>.</p></li>
+<li><p>(A3) Let <span class="math inline">\(A, B \in \mathcal{T}\)</span>. We need to check that <span class="math inline">\(A \cap B\)</span> is open. Let <span class="math inline">\(\mathbf{x}\in A \cap B\)</span>. Therefore <span class="math inline">\(\mathbf{x}\in A\)</span> and <span class="math inline">\(\mathbf{x}\in B\)</span>. Since <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are open, by (<a href="#eq-open-set-Rn"><span>4.1</span></a>) there exist <span class="math inline">\(r_1,r_2&gt;0\)</span> such that <span class="math inline">\(B_{r_1}(\mathbf{x}) \subset A\)</span> and <span class="math inline">\(B_{r_2}(\mathbf{x}) \subset B\)</span>. Set <span class="math inline">\(r := \min\{ r_1,r_2\}\)</span>. Then <span class="math display">\[
+  B_r(\mathbf{x}) \subset B_{r_1}(\mathbf{x}) \subset A  \,, \quad
+  B_r(\mathbf{x}) \subset B_{r_2}(\mathbf{x}) \subset B  \,,
+  \]</span> Hence <span class="math inline">\(B_r(\mathbf{x}) \subset A \cap B\)</span>, showing that <span class="math inline">\(A \cap B\)</span> open, so that <span class="math inline">\(A \cap B \in \mathcal{T}\)</span>.</p></li>
 </ul>
 <p>This proves that <span class="math inline">\(\mathcal{T}\)</span> is a topology on <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
-</blockquote>
 </div></details>
 </div>
 <p>Let us make a basic bus useful observation: balls in <span class="math inline">\(\mathbb{R}^n\)</span> are open for the Euclidean topology.</p>
 <div id="proposition-balls-open" class="Proposition">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 7</strong></summary><div>Let <span class="math inline">\(\mathbb{R}^n\)</span> be equipped with <span class="math inline">\(\mathcal{T}\)</span> the Euclidean topology. Let <span class="math inline">\(r&gt;0\)</span> and <span class="math inline">\(x \in \mathbb{R}^n\)</span>. Then <span class="math display">\[
-B_r(x) \in \mathcal{T}\,.
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 7</strong></summary><div>Let <span class="math inline">\(\mathbb{R}^n\)</span> be equipped with <span class="math inline">\(\mathcal{T}\)</span> the Euclidean topology. Let <span class="math inline">\(r&gt;0\)</span> and <span class="math inline">\(\mathbf{x}\in \mathbb{R}^n\)</span>. Then <span class="math display">\[
+B_r(\mathbf{x}) \in \mathcal{T}\,.
 \]</span><p></p>
 </div></details>
 </div>
-<div id="Proof*-2" class="Proof">
-<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>We need to shown that <span class="math inline">\(B_r(x)\)</span> satisfies <a href="#eq-open-set-Rn"><span>4.1</span></a>. Therefore, let <span class="math inline">\(y \in B_r(x)\)</span>. In particular <span id="eq-balls-open"><span class="math display">\[
-\left\| x - y \right\|&lt;r \,.
+<div id="Proof*-3" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>We need to shown that <span class="math inline">\(B_r(\mathbf{x})\)</span> satisfies (<a href="#eq-open-set-Rn"><span>4.1</span></a>). Therefore, let <span class="math inline">\(\mathbf{y}\in B_r(\mathbf{x})\)</span>. In particular <span id="eq-balls-open"><span class="math display">\[
+\left\| \mathbf{x}- \mathbf{y} \right\|&lt;r \,.
 \tag{4.2}\]</span></span> Define <span class="math display">\[
-\varepsilon:= r - \left\| x - y \right\| \,.
-\]</span> Note that <span class="math inline">\(\varepsilon&gt;0\)</span> by (<a href="#eq-balls-open"><span>4.2</span></a>). We claim that <span class="math display">\[
-B_{\varepsilon} (y) \subset B_r (x) \,,
-\]</span> see <a href="#fig-balls-open">Figure&nbsp;<span>4.2</span></a>. Indeed, let <span class="math inline">\(z \in B_{\varepsilon}(y)\)</span>. By triangle inequality we have <span class="math display">\[
-\| z - x \| \leq \left\|  x - y  \right\| + \left\|  y - z  \right\| &lt;  \left\|  x - y  \right\| + \varepsilon= r \,,
-\]</span> where we used that <span class="math inline">\(\left\| y - z \right\| &lt; \varepsilon\)</span> and the definition of <span class="math inline">\(\varepsilon\)</span>.<p></p>
+\varepsilon:= r - \left\| \mathbf{x}- \mathbf{y} \right\| \,.
+\]</span> Note that <span class="math inline">\(\varepsilon&gt;0\)</span> by (<a href="#eq-balls-open"><span>4.2</span></a>). We claim that <span id="eq-proof-ball-open"><span class="math display">\[
+B_{\varepsilon} (\mathbf{y}) \subset B_r (\mathbf{x}) \,,
+\tag{4.3}\]</span></span> see <a href="#fig-balls-open">Figure&nbsp;<span>4.2</span></a>. Indeed, let <span class="math inline">\(\mathbf{z}\in B_{\varepsilon}(\mathbf{y})\)</span>. By triangle inequality we have <span class="math display">\[
+\| \mathbf{z}- \mathbf{x}\| \leq \left\|  \mathbf{x}- \mathbf{y} \right\| + \left\|  \mathbf{y}- \mathbf{z} \right\| &lt;  \left\|  \mathbf{x}- \mathbf{y} \right\| + \varepsilon= r \,,
+\]</span> where we used that <span class="math inline">\(\left\| \mathbf{y}- \mathbf{z} \right\| &lt; \varepsilon\)</span> and the definition of <span class="math inline">\(\varepsilon\)</span>. Hence <span class="math inline">\(\mathbf{z}\in B_r(\mathbf{x})\)</span>, proving (<a href="#eq-proof-ball-open"><span>4.3</span></a>). This proves that <span class="math inline">\(B_r(\mathbf{x})\)</span> satisfies (<a href="#eq-open-set-Rn"><span>4.1</span></a>), and is therefore open.<p></p>
 </div></details>
 </div>
 <div id="fig-balls-open" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../images/balls_open.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;4.2: The ball <span class="math inline">\(B_{\varepsilon}(y)\)</span> is contained in <span class="math inline">\(B_r(x)\)</span> if <span class="math inline">\(\varepsilon:= r - \left\| x-y \right\|\)</span>.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;4.2: The ball <span class="math inline">\(B_{\varepsilon}(\mathbf{y})\)</span> is contained in <span class="math inline">\(B_r(\mathbf{x})\)</span> if <span class="math inline">\(\varepsilon:= r - \left\| \mathbf{x}-\mathbf{y} \right\|\)</span>.</figcaption>
 </figure>
-</div>
-<div id="Theorem-8" class="Theorem">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 8</strong></summary><div>oigoig<p></p>
-</div></details>
 </div>
 <section id="convergence" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="convergence"><span class="header-section-number">4.1</span> Convergence</h2>
 <p>We have generalized the notion of open set to arbitrary sets. Next we generalize the notion of convergence of sequences.</p>
 <div id="convergent-sequence" class="Definition" title="Convergent sequence">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 9: </strong>Convergent sequence</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological. Consider a sequence <span class="math inline">\(\{x_n\}_{n \in \mathbb{N}} \subset X\)</span> and a point <span class="math inline">\(x \in X\)</span>. We say that <span class="math inline">\(x_n\)</span> converges to <span class="math inline">\(x_0\)</span> if the following property holds: <span id="eq-convergence"><span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 8: </strong>Convergent sequence</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological. Consider a sequence <span class="math inline">\(\{x_n\}_{n \in \mathbb{N}} \subset X\)</span> and a point <span class="math inline">\(x \in X\)</span>. We say that <span class="math inline">\(x_n\)</span> converges to <span class="math inline">\(x_0\)</span> if the following property holds: <span id="eq-convergence"><span class="math display">\[
 \forall \, U \in \mathcal{T}\, \text{ s.t. } \, x_0 \in U\,, \,\, \exists \, N = N(U) \in \mathbb{N}\, \text{ s.t. } \, x_n \in U \,, \, \forall \, n \geq N \,.
-\tag{4.3}\]</span></span><p></p>
+\tag{4.4}\]</span></span><p></p>
 </div></details>
 </div>
-<div id="Notation*-3" class="Notation">
+<div id="Notation*-4" class="Notation">
 <p></p><details class="Notation fbx-simplebox fbx-default" open=""><summary><strong>Notation</strong></summary><div>The convergence of <span class="math inline">\(x_n\)</span> to <span class="math inline">\(x_0\)</span> is denoted by <span class="math display">\[
 x_n \to x_0 \quad \mbox{ or } \quad  \lim_{n \to \infty} x_n = x_0 \,.
 \]</span><p></p>
@@ -449,15 +446,15 @@ x_n \to x_0 \quad \mbox{ or } \quad  \lim_{n \to \infty} x_n = x_0 \,.
 </ul>
 <p>We now precisely state and prove the above claims.</p>
 <div id="convergence-for-trivial-topology" class="Proposition" title="Convergence for trivial topology">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 10: </strong>Convergence for trivial topology</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be topological space, with <span class="math inline">\(\mathcal{T}\)</span> the trivial topology, that is, <span class="math display">\[
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 9: </strong>Convergence for trivial topology</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be topological space, with <span class="math inline">\(\mathcal{T}\)</span> the trivial topology, that is, <span class="math display">\[
 \mathcal{T}= \{ \emptyset, X \} \,.
 \]</span> Let <span class="math inline">\(\{x_n\} \subset X\)</span> be a sequence and <span class="math inline">\(x_0 \in X\)</span> a point. Then <span class="math display">\[
 x_n \to x_0 \,.
 \]</span><p></p>
 </div></details>
 </div>
-<div id="Proof*-4" class="Proof">
-<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>To show that <span class="math inline">\(x_n \to x_0\)</span> we need to check that (<a href="#eq-convergence"><span>4.3</span></a>) holds. Therefore, let <span class="math inline">\(U \in \mathcal{T}\)</span> with <span class="math inline">\(x_0 \in U\)</span>. We have two cases:<p></p>
+<div id="Proof*-5" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>To show that <span class="math inline">\(x_n \to x_0\)</span> we need to check that (<a href="#eq-convergence"><span>4.4</span></a>) holds. Therefore, let <span class="math inline">\(U \in \mathcal{T}\)</span> with <span class="math inline">\(x_0 \in U\)</span>. We have two cases:<p></p>
 <ul>
 <li><p><span class="math inline">\(U = \emptyset\)</span>: This case is not possible, since <span class="math inline">\(x_0\)</span> cannot be in <span class="math inline">\(U\)</span>.</p></li>
 <li><p><span class="math inline">\(U = X\)</span>: Take <span class="math inline">\(N=1\)</span>. Since <span class="math inline">\(U\)</span> is the whole space, then <span class="math inline">\(x_n \in U\)</span> for all <span class="math inline">\(n \geq 1\)</span>.</p></li>
@@ -466,7 +463,7 @@ x_n \to x_0 \,.
 </div></details>
 </div>
 <div id="convergence-for-discrete-topology" class="Proposition" title="Convergence for discrete topology">
-<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 11: </strong>Convergence for discrete topology</summary><div>
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 10: </strong>Convergence for discrete topology</summary><div>
 <p>Let <span class="math inline">\((X,\mathcal{T})\)</span> be topological space, with <span class="math inline">\(\mathcal{T}\)</span> the discrete topology, that is, <span class="math display">\[
 \mathcal{T}= \{ A  \, \colon \,A \subset X \} \,.
 \]</span> Let <span class="math inline">\(\{x_n\} \subset X\)</span> be a sequence and <span class="math inline">\(x_0 \in X\)</span> a point. They are equivalent:</p>
@@ -478,66 +475,194 @@ x_n = x_0 \,, \quad \forall \, n \geq N \,.
 </ol>
 </div></details>
 </div>
-<div id="Proof*-5" class="Proof">
+<div id="Proof*-6" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Part 1. Assume that <span class="math inline">\(x_n \to x_0\)</span>.</em><p></p>
 <p>We have to prove that <span class="math inline">\(\{x_n\}\)</span> is eventually constant. To this end, let <span class="math display">\[
 U = \{x_0\} \,.
-\]</span> Then <span class="math inline">\(U \in \mathcal{T}\)</span>. Since <span class="math inline">\(x_n \to x_0\)</span>, by (<a href="#eq-convergence"><span>4.3</span></a>) there exists <span class="math inline">\(N \in \mathbb{N}\)</span> such that <span class="math display">\[
+\]</span> Then <span class="math inline">\(U \in \mathcal{T}\)</span>. Since <span class="math inline">\(x_n \to x_0\)</span>, by (<a href="#eq-convergence"><span>4.4</span></a>) there exists <span class="math inline">\(N \in \mathbb{N}\)</span> such that <span class="math display">\[
 x_n \in U  \,, \quad \forall \, n \geq N \,.
 \]</span> As <span class="math inline">\(U = \{x_0\}\)</span>, the above is saying that <span class="math inline">\(x_n = x_0\)</span> for all <span class="math inline">\(n \geq N\)</span>. Hence <span class="math inline">\(x_n\)</span> is eventually constant.</p>
 <p><em>Part 2. Assume that <span class="math inline">\(x_n\)</span> is eventually equal to <span class="math inline">\(x_0\)</span>.</em></p>
 <p>By assumption there exists <span class="math inline">\(N \in \mathbb{N}\)</span> such that <span id="eq-convergence-discrete"><span class="math display">\[
 x_n = x_0 \,, \quad \forall \, n \geq N \,.
-\tag{4.4}\]</span></span> Let <span class="math inline">\(U \in \mathcal{T}\)</span> be an open set such that <span class="math inline">\(x_0 \in U\)</span>. By (<a href="#eq-convergence-discrete"><span>4.4</span></a>) we have that <span class="math display">\[
+\tag{4.5}\]</span></span> Let <span class="math inline">\(U \in \mathcal{T}\)</span> be an open set such that <span class="math inline">\(x_0 \in U\)</span>. By (<a href="#eq-convergence-discrete"><span>4.5</span></a>) we have that <span class="math display">\[
 x_n \in U \,, \quad \forall \, n \geq N \,.
 \]</span> Since <span class="math inline">\(U\)</span> was arbitrary, we conclude that <span class="math inline">\(x_n \to x_0\)</span>.</p>
 </div></details>
 </div>
+<p>Before proceeding to examining convergence in the Euclidean topology, let us recall the classical definition of convergence in <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
+<div id="classical-convergence-in-mathbbrn" class="Definition" title="Classical convergence in \mathbb{R}^n">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 11: </strong>Classical convergence in <span class="math inline">\(\mathbb{R}^n\)</span></summary><div>Let <span class="math inline">\(\{\mathbf{x}_n\} \subset \mathbb{R}^n\)</span> and <span class="math inline">\(\mathbf{x}_0 \in \mathbb{R}^n\)</span>. We say that <span class="math inline">\(\mathbf{x}_n\)</span> converges <span class="math inline">\(\mathbf{x}_0\)</span> in the classical sense if <span class="math display">\[
+\lim_{n \to \infty} \left\| \mathbf{x}_n - \mathbf{x}_0 \right\|  = 0 \,.
+\]</span> The above is equivalent to: For all <span class="math inline">\(\varepsilon&gt;0\)</span> there exists <span class="math inline">\(N \in \mathbb{N}\)</span> such that <span class="math display">\[
+\left\| \mathbf{x}_n - \mathbf{x}_0 \right\| &lt; \varepsilon\,, \quad \forall \, n \geq N \,.
+\]</span><p></p>
+</div></details>
+</div>
 <div id="convergence-for-euclidean-topology" class="Proposition" title="Convergence for Euclidean topology">
 <details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 12: </strong>Convergence for Euclidean topology</summary><div>
-<p>Let <span class="math inline">\(\mathbb{R}^n\)</span> be equipped with <span class="math inline">\(\mathcal{T}\)</span> the Euclidean topology. Let <span class="math inline">\(\{x_n\} \subset \mathbb{R}^n\)</span> be a sequence and <span class="math inline">\(x_0 \in \mathbb{R}^n\)</span> a point. They are equivalent:</p>
+<p>Let <span class="math inline">\(\mathbb{R}^n\)</span> be equipped with <span class="math inline">\(\mathcal{T}\)</span> the Euclidean topology. Let <span class="math inline">\(\{\mathbf{x}_n\} \subset \mathbb{R}^n\)</span> be a sequence and <span class="math inline">\(\mathbf{x}_0 \in \mathbb{R}^n\)</span> a point. They are equivalent:</p>
 <ol type="1">
-<li><span class="math inline">\(x_n \to x_0\)</span> with respect to <span class="math inline">\(\mathcal{T}\)</span>.</li>
-<li><span class="math inline">\(x_n \to x_0\)</span> in <span class="math inline">\(\mathbb{R}^n\)</span>, that is, <span class="math display">\[
-\lim_{n \to \infty} \left\| x_n - x_0 \right\|  = 0 \,.
-\]</span></li>
+<li><span class="math inline">\(\mathbf{x}_n \to \mathbf{x}_0\)</span> with respect to <span class="math inline">\(\mathcal{T}\)</span>.</li>
+<li><span class="math inline">\(\mathbf{x}_n \to \mathbf{x}_0\)</span> in the classical sense.</li>
 </ol>
+</div></details>
+</div>
+<div id="Proof*-7" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Part 1. Assume <span class="math inline">\(\mathbf{x}_n \to \mathbf{x}_0\)</span> with respect to <span class="math inline">\(\mathcal{T}\)</span>.</em><p></p>
+<p>Fix <span class="math inline">\(\varepsilon&gt;0\)</span> and consider the set <span class="math display">\[
+U := B_{\varepsilon}(\mathbf{x}_0) \,.
+\]</span> By Proposition <a href="chap_4.html#proposition-balls-open">7</a> we know that <span class="math inline">\(U \in \mathcal{T}\)</span>. Moreover <span class="math inline">\(\mathbf{x}_0 \in U\)</span>. By the convergence <span class="math inline">\(\mathbf{x}_n \to \mathbf{x}_0\)</span> with respect to <span class="math inline">\(\mathcal{T}\)</span>, there exists <span class="math inline">\(N \in \mathbb{N}\)</span> such that <span class="math display">\[
+\mathbf{x}_n \in U \,, \quad \forall \, n \geq N \,.
+\]</span> As <span class="math inline">\(U = B_{\varepsilon}(\mathbf{x}_0)\)</span>, the above reads <span class="math display">\[
+\left\| \mathbf{x}_n - \mathbf{x}_0 \right\| &lt; \varepsilon\,, \quad \forall \, n \geq N \,,
+\]</span> showing that <span class="math inline">\(\mathbf{x}_n \to \mathbf{x}_0\)</span> in the classical sense.</p>
+<p><em>Part 2. Assume <span class="math inline">\(\mathbf{x}_n \to \mathbf{x}_0\)</span> in the classical sense.</em></p>
+<p>Let <span class="math inline">\(U \in \mathcal{T}\)</span> be such that <span class="math inline">\(\mathbf{x}_0 \in U\)</span>. By definition of Euclidean topology, this means that there exists <span class="math inline">\(r&gt;0\)</span> such that <span class="math display">\[
+B_r(\mathbf{x}_0) \subset U \,.
+\]</span> As <span class="math inline">\(\mathbf{x}_n \to \mathbf{x}_0\)</span> in the classical sense, there exists <span class="math inline">\(N \in \mathbb{N}\)</span> such that <span class="math display">\[
+\left\| \mathbf{x}_n - \mathbf{x}_0 \right\| &lt; r \,, \quad \forall \, n \geq N \,.
+\]</span> The above is equivalent to <span class="math display">\[
+\mathbf{x}_n \in B_{r}(\mathbf{x}_0) \,, \quad \forall \, n \geq N \,.
+\]</span> Since <span class="math inline">\(B_r(\mathbf{x}_0) \subset U\)</span>, we have proven that <span class="math display">\[
+\mathbf{x}_n \in U \,, \quad \forall \, n \geq N \,.
+\]</span> Since <span class="math inline">\(U\)</span> is arbitrary, we conclude that <span class="math inline">\(\mathbf{x}_n \to \mathbf{x}_0\)</span> with respect to <span class="math inline">\(\mathcal{T}\)</span>.</p>
+</div></details>
+</div>
+<div id="Notation*-8" class="Notation">
+<p></p><details class="Notation fbx-simplebox fbx-default" open=""><summary><strong>Notation</strong></summary><div>Since classical convergence in <span class="math inline">\(\mathbb{R}^n\)</span> agrees with topological convergence with respect to <span class="math inline">\(\mathcal{T}\)</span>, we will just say that <span class="math inline">\(\mathbf{x}_n \to \mathbf{x}_0\)</span> in <span class="math inline">\(\mathbb{R}^n\)</span> without ambiguity.<p></p>
 </div></details>
 </div>
 </section>
 <section id="metric-spaces" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="metric-spaces"><span class="header-section-number">4.2</span> Metric spaces</h2>
-<div id="metric-space" class="Definition" title="Metric space">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 13: </strong>Metric space</summary><div>Let <span class="math inline">\(X\)</span> be a set. A <strong>distance</strong> on <span class="math inline">\(X\)</span> is a function <span class="math display">\[
+<p>We will now define a class of topological spaces known as metric spaces.</p>
+<div id="distance" class="Definition" title="Distance">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 13: </strong>Distance</summary><div>
+<p>Let <span class="math inline">\(X\)</span> be a set. A <strong>distance</strong> on <span class="math inline">\(X\)</span> is a function <span class="math display">\[
 d \colon X \times X \to \mathbb{R}
-\]</span> such that, for all <span class="math inline">\(x,y,z \in X\)</span> they hold:<p></p>
-<ol type="1">
-<li><p>The distance is non-negative <span class="math display">\[
+\]</span> such that, for all <span class="math inline">\(x,y,z \in X\)</span> they hold:</p>
+<ul>
+<li><p>(M1) Positivity: The distance is non-negative <span class="math display">\[
 d(x,y) \geq 0 \,.
-\]</span> Moreover <span class="math inline">\(d(x,y) = 0\)</span> if and only if <span class="math inline">\(x=y\)</span>.</p></li>
-<li><p>The distance is symmetric: <span class="math display">\[
+\]</span> Moreover <span class="math display">\[
+d(x,y) = 0 \quad \iff x=y \,.
+\]</span></p></li>
+<li><p>(M2) Symmetry: The distance is symmetric <span class="math display">\[
 d(x,y) = d(y,x) \,.
 \]</span></p></li>
-<li><p>The triangle inequality holds: <span class="math display">\[
+<li><p>(M3) Triangle Inequality: It holds <span class="math display">\[
 d(x,z) \leq d(x,y) + d(y,z) \,.
 \]</span></p></li>
-</ol>
-<p>We say that the pair <span class="math inline">\((X,d)\)</span> is a <strong>metric space</strong>.</p>
+</ul>
 </div></details>
 </div>
-<div id="topology-induced-by-the-metric" class="Definition" title="Topology induced by the metric">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 14: </strong>Topology induced by the metric</summary><div>Let <span class="math inline">\((X,d)\)</span> be a metric space. We define the topology <span class="math inline">\(\mathcal{T}\)</span> <strong>induced by the metric</strong> as the collection of sets <span class="math inline">\(U \subset X\)</span> that satisfy the following property: <span class="math display">\[
+<div id="metric-space" class="Definition" title="Metric space">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 14: </strong>Metric space</summary><div>Let <span class="math inline">\(X\)</span> be a set and <span class="math inline">\(d \colon X \times X \to \mathbb{R}\)</span> be a distance on <span class="math inline">\(X\)</span>. We say that the pair <span class="math inline">\((X,d)\)</span> is a <strong>metric space</strong>.<p></p>
+</div></details>
+</div>
+<div id="mathbbrn-as-metric-space" class="Example" title="\mathbb{R}^n as metric space">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 15: </strong><span class="math inline">\(\mathbb{R}^n\)</span> as metric space</summary><div>
+<p>The Euclidean norm naturally induces a distance over <span class="math inline">\(\mathbb{R}^n\)</span> by setting <span class="math display">\[
+d(\mathbf{x},\mathbf{y}) := \left\|  \mathbf{x}- \mathbf{y} \right\| \,.
+\]</span> Then <span class="math inline">\((\mathbb{R}^n,d)\)</span> is a metric space.</p>
+<blockquote class="blockquote">
+<p>It is trivial to check that the Euclidean distance satisfies (M1) and (M2). To show (M3), recalling the triangle inequality in <span class="math inline">\(\mathbb{R}^n\)</span>: <span class="math display">\[
+\| \mathbf{x}+ \mathbf{y}\| \leq \| \mathbf{x}\|   + \| \mathbf{y}\| \,,
+\]</span> for all <span class="math inline">\(\mathbf{x}, \mathbf{y}\in \mathbb{R}^n\)</span>. Using the above we obtain <span class="math display">\[\begin{align*}
+d(\mathbf{x},\mathbf{y}) &amp; = \| \mathbf{x}- \mathbf{y}\| \\
+&amp; = \| (\mathbf{x}- \mathbf{z}) + (\mathbf{z}- \mathbf{y}) \| \\
+&amp; \leq  \| \mathbf{x}- \mathbf{z}\| + \| \mathbf{z}- \mathbf{y}\|  \\
+&amp; = d (\mathbf{x},\mathbf{z}) + d (\mathbf{z},\mathbf{y}) \,,
+\end{align*}\]</span> proving that <span class="math inline">\(d\)</span> satisfies (M3). This prove that <span class="math inline">\((\mathbb{R}^n,d)\)</span> is a metric space.</p>
+</blockquote>
+</div></details>
+</div>
+<div id="p-distance-on-mathbbrn" class="Example" title="p-distance on \mathbb{R}^n">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 16: </strong><span class="math inline">\(p\)</span>-distance on <span class="math inline">\(\mathbb{R}^n\)</span></summary><div>
+<p>For <span class="math inline">\(\mathbf{x},\mathbf{y}\in \mathbb{R}^n\)</span> and <span class="math inline">\(p \in [1,\infty)\)</span> define <span class="math display">\[
+d_p ( \mathbf{x}, \mathbf{y}) := \left(  \sum_{i=1}^n |x_i - y_i|^p   \right)^{\frac1p} \,.
+\]</span> Note that <span class="math inline">\(d_2\)</span> coincides with the Euclidean distance. For <span class="math inline">\(p = \infty\)</span> we set <span class="math display">\[
+d_{\infty} ( \mathbf{x}, \mathbf{y}) := \max_{i = 1 \ldots, n} |x_i - y_i|  \,.
+\]</span> We have that <span class="math inline">\((\mathbb{R}^n,d_p)\)</span> is a metric space.</p>
+<blockquote class="blockquote">
+<p>Indeed properties (M1)-(M2) hold trivially. The triangle inequality is also trivially satisfied by <span class="math inline">\(d_{\infty}\)</span>. We are left with checking the triangle inequality for <span class="math inline">\(d_p\)</span> with <span class="math inline">\(p \geq 1\)</span>. To this end, define <span class="math display">\[
+\| \mathbf{x}\|_p :=  \left(  \sum_{i=1}^n |x_i|^p  \right)^{\frac1p} \,.
+\]</span> Minkowski’s inequality, see <a href="https://en.wikipedia.org/wiki/Minkowski_inequality">Wikipedia page</a>, states that <span class="math display">\[
+\| \mathbf{x}+ \mathbf{y}\|_p \leq   \| \mathbf{x}\|_p  +  \|  \mathbf{y}\|_p \,,
+\]</span> for all <span class="math inline">\(\mathbf{x},\mathbf{y}\in \mathbb{R}^n\)</span>. Therefore <span class="math display">\[\begin{align*}
+d_p(\mathbf{x},\mathbf{y}) &amp; = \| \mathbf{x}- \mathbf{y}\|_p  \\
+&amp; = \| (\mathbf{x}- \mathbf{z}) + (\mathbf{z}- \mathbf{y}) \|_p \\
+&amp; \leq  \| \mathbf{x}- \mathbf{z}\|_p + \| \mathbf{z}- \mathbf{y}\|_p  \\
+&amp; = d_p (\mathbf{x},\mathbf{z}) + d_p (\mathbf{z},\mathbf{y}) \,,
+\end{align*}\]</span> proving that <span class="math inline">\(d_p\)</span> satisfies (M3). Hence <span class="math inline">\((\mathbb{R}^n,d_p)\)</span> is a metric space.</p>
+</blockquote>
+</div></details>
+</div>
+<p>A metric <span class="math inline">\(d\)</span> on a set <span class="math inline">\(X\)</span> naturally induces a topology which is <strong>compatible</strong> with the metric.</p>
+<div id="definition-metric-topology" class="Definition" title="Topology induced by the metric">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 17: </strong>Topology induced by the metric</summary><div>Let <span class="math inline">\((X,d)\)</span> be a metric space. We define the topology <span class="math inline">\(\mathcal{T}_d\)</span> <strong>induced by the metric</strong> <span class="math inline">\(d\)</span> as the collection of sets <span class="math inline">\(U \subset X\)</span> that satisfy the following property: <span class="math display">\[
 \forall \, x \in U \,, \, \exists \, r \in \mathbb{R}, \, r &gt; 0 \, \, \text{ s.t. } \, \, B_r(x) \subset U \,,
 \]</span> where <span class="math inline">\(B_r(x)\)</span> is the ball centered at <span class="math inline">\(x\)</span> of radius <span class="math inline">\(r\)</span>. This is defined by <span class="math display">\[
 B_r(x) := \{ y \in X  \, \colon \,  d(x,y)&lt;r  \} \,.
 \]</span><p></p>
 </div></details>
 </div>
+<p>We need to check that the above definition is well-posed, that is, we need to show that <span class="math inline">\(\mathcal{T}_d\)</span> is actually a topology on <span class="math inline">\(X\)</span>. The proof follows, line by line, the proof that the Euclidean topology is well-posed, see Definition <a href="chap_4.html#definition-euclidean-topology">6</a>. This is left as an exercise.</p>
+<p>Before proceeding with examples, we need the definition of equivalent topologies.</p>
+<div id="equivalent-topologies" class="Definition" title="Equivalent topologies">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 18: </strong>Equivalent topologies</summary><div>
+<p>Let X be a set and suppose that <span class="math inline">\(\mathcal{T}_1\)</span>, <span class="math inline">\(\mathcal{T}_2\)</span> are topologies on <span class="math inline">\(X\)</span>. We say that <span class="math inline">\(\mathcal{T}_1\)</span> and <span class="math inline">\(\mathcal{T}_2\)</span> are <strong>equivalent</strong> if they hold:</p>
+<ul>
+<li><p>For any <span class="math inline">\(U \in \mathcal{T}_1\)</span> there exists <span class="math inline">\(V \in \mathcal{T}_2\)</span> such that <span class="math display">\[
+V \subset U \,.
+\]</span></p></li>
+<li><p>For any <span class="math inline">\(U \in \mathcal{T}_2\)</span> there exists <span class="math inline">\(V \in \mathcal{T}_1\)</span> such that <span class="math display">\[
+V \subset U \,.
+\]</span></p></li>
+</ul>
+</div></details>
+</div>
+<div id="topology-induced-by-euclidean-distance" class="Example" title="Topology induced by Euclidean distance">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 19: </strong>Topology induced by Euclidean distance</summary><div>
+<p>Consider the metric space <span class="math inline">\((\mathbb{R}^n,d)\)</span> with <span class="math inline">\(d\)</span> the Euclidean distance. Then <span class="math inline">\(\mathcal{T}_d\)</span> is equivalent to the Euclidean topology on <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
+<blockquote class="blockquote">
+<p>The claim follows immediately by definition.</p>
+</blockquote>
+</div></details>
+</div>
+<div id="discrete-distance" class="Example" title="Discrete distance">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 20: </strong>Discrete distance</summary><div>
+<p>Let <span class="math inline">\(X\)</span> be a set. Define the function <span class="math inline">\(d \colon X \times X \to \mathbb{R}\)</span> by <span class="math display">\[
+d(x,y) :=
+\begin{cases}
+    0 &amp; \mbox{ if } \, x = y \\
+    1 &amp; \mbox{ if } \, x \neq y
+\end{cases}
+\]</span> Then <span class="math inline">\((X,d)\)</span> is a metric space, and <span class="math inline">\(d\)</span> is called the <strong>discrete distance</strong>. Moreover <span class="math inline">\(\mathcal{T}_d\)</span> is equivalent to the <strong>discrete topology</strong> on <span class="math inline">\(X\)</span>.</p>
+<blockquote class="blockquote">
+<p>Exercise: Prove that <span class="math inline">\((X,d)\)</span> is a metric space and that <span class="math inline">\(\mathcal{T}_d\)</span> is equivalent to the discrete topology.</p>
+</blockquote>
+</div></details>
+</div>
+<p>We conclude our discussion on metric spaces with a useful proposition.</p>
+<div id="Proposition-21" class="Proposition">
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 21</strong></summary><div>
+<p>Let <span class="math inline">\((X,d)\)</span> be a metric space and <span class="math inline">\(\mathcal{T}_d\)</span> the topology induced by <span class="math inline">\(d\)</span>. Then:</p>
+<ul>
+<li>For all <span class="math inline">\(x \in X\)</span>, <span class="math inline">\(r&gt;0\)</span> we have <span class="math inline">\(B_r(x) \subset \mathcal{T}_d\)</span>.</li>
+<li><span class="math inline">\(U \in \mathcal{T}_d\)</span> if and only if <span class="math display">\[
+U = \bigcup_{ i \in I } B_{r_i}(x_i) \,,
+\]</span> with <span class="math inline">\(I\)</span> family of indices and <span class="math inline">\(x_i \in X\)</span>, <span class="math inline">\(r_i &gt; 0\)</span>.</li>
+</ul>
+</div></details>
+</div>
+<p>The proof is left as an exercise.</p>
 </section>
 <section id="connected-topological-spaces" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="connected-topological-spaces"><span class="header-section-number">4.3</span> Connected topological spaces</h2>
-<div id="Definition-15" class="Definition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 15</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space. We say that <span class="math inline">\(X\)</span> is <strong>connected</strong> if the only subsets of <span class="math inline">\(X\)</span> which are both open and closed are just <span class="math inline">\(\emptyset\)</span> and <span class="math inline">\(X\)</span>.<p></p>
+<div id="Definition-22" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 22</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space. We say that <span class="math inline">\(X\)</span> is <strong>connected</strong> if the only subsets of <span class="math inline">\(X\)</span> which are both open and closed are just <span class="math inline">\(\emptyset\)</span> and <span class="math inline">\(X\)</span>.<p></p>
 </div></details>
 </div>
 
