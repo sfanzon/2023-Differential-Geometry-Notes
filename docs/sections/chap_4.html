@@ -66,63 +66,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Warning {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Lemma {
+.Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -130,13 +74,69 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .DONE {
   --color1: #cce7b1;
   --color2: #86b754;
 }
-.Proposition {
+.Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
 </style>
 
@@ -422,11 +422,15 @@ B_{\varepsilon} (y) \subset B_r (x) \,,
 <figcaption class="figure-caption">Figure&nbsp;4.2: The ball <span class="math inline">\(B_{\varepsilon}(y)\)</span> is contained in <span class="math inline">\(B_r(x)\)</span> if <span class="math inline">\(\varepsilon:= r - \left\| x-y \right\|\)</span>.</figcaption>
 </figure>
 </div>
+<div id="Theorem-8" class="Theorem">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 8</strong></summary><div>oigoig<p></p>
+</div></details>
+</div>
 <section id="convergence" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="convergence"><span class="header-section-number">4.1</span> Convergence</h2>
 <p>We have generalized the notion of open set to arbitrary sets. Next we generalize the notion of convergence of sequences.</p>
 <div id="convergent-sequence" class="Definition" title="Convergent sequence">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 8: </strong>Convergent sequence</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological. Consider a sequence <span class="math inline">\(\{x_n\}_{n \in \mathbb{N}} \subset X\)</span> and a point <span class="math inline">\(x \in X\)</span>. We say that <span class="math inline">\(x_n\)</span> converges to <span class="math inline">\(x_0\)</span> if the following property holds: <span id="eq-convergence"><span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 9: </strong>Convergent sequence</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological. Consider a sequence <span class="math inline">\(\{x_n\}_{n \in \mathbb{N}} \subset X\)</span> and a point <span class="math inline">\(x \in X\)</span>. We say that <span class="math inline">\(x_n\)</span> converges to <span class="math inline">\(x_0\)</span> if the following property holds: <span id="eq-convergence"><span class="math display">\[
 \forall \, U \in \mathcal{T}\, \text{ s.t. } \, x_0 \in U\,, \,\, \exists \, N = N(U) \in \mathbb{N}\, \text{ s.t. } \, x_n \in U \,, \, \forall \, n \geq N \,.
 \tag{4.3}\]</span></span><p></p>
 </div></details>
@@ -445,7 +449,7 @@ x_n \to x_0 \quad \mbox{ or } \quad  \lim_{n \to \infty} x_n = x_0 \,.
 </ul>
 <p>We now precisely state and prove the above claims.</p>
 <div id="convergence-for-trivial-topology" class="Proposition" title="Convergence for trivial topology">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 9: </strong>Convergence for trivial topology</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be topological space, with <span class="math inline">\(\mathcal{T}\)</span> the trivial topology, that is, <span class="math display">\[
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 10: </strong>Convergence for trivial topology</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be topological space, with <span class="math inline">\(\mathcal{T}\)</span> the trivial topology, that is, <span class="math display">\[
 \mathcal{T}= \{ \emptyset, X \} \,.
 \]</span> Let <span class="math inline">\(\{x_n\} \subset X\)</span> be a sequence and <span class="math inline">\(x_0 \in X\)</span> a point. Then <span class="math display">\[
 x_n \to x_0 \,.
@@ -462,7 +466,7 @@ x_n \to x_0 \,.
 </div></details>
 </div>
 <div id="convergence-for-discrete-topology" class="Proposition" title="Convergence for discrete topology">
-<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 10: </strong>Convergence for discrete topology</summary><div>
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 11: </strong>Convergence for discrete topology</summary><div>
 <p>Let <span class="math inline">\((X,\mathcal{T})\)</span> be topological space, with <span class="math inline">\(\mathcal{T}\)</span> the discrete topology, that is, <span class="math display">\[
 \mathcal{T}= \{ A  \, \colon \,A \subset X \} \,.
 \]</span> Let <span class="math inline">\(\{x_n\} \subset X\)</span> be a sequence and <span class="math inline">\(x_0 \in X\)</span> a point. They are equivalent:</p>
@@ -490,7 +494,7 @@ x_n \in U \,, \quad \forall \, n \geq N \,.
 </div></details>
 </div>
 <div id="convergence-for-euclidean-topology" class="Proposition" title="Convergence for Euclidean topology">
-<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 11: </strong>Convergence for Euclidean topology</summary><div>
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 12: </strong>Convergence for Euclidean topology</summary><div>
 <p>Let <span class="math inline">\(\mathbb{R}^n\)</span> be equipped with <span class="math inline">\(\mathcal{T}\)</span> the Euclidean topology. Let <span class="math inline">\(\{x_n\} \subset \mathbb{R}^n\)</span> be a sequence and <span class="math inline">\(x_0 \in \mathbb{R}^n\)</span> a point. They are equivalent:</p>
 <ol type="1">
 <li><span class="math inline">\(x_n \to x_0\)</span> with respect to <span class="math inline">\(\mathcal{T}\)</span>.</li>
@@ -504,7 +508,7 @@ x_n \in U \,, \quad \forall \, n \geq N \,.
 <section id="metric-spaces" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="metric-spaces"><span class="header-section-number">4.2</span> Metric spaces</h2>
 <div id="metric-space" class="Definition" title="Metric space">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 12: </strong>Metric space</summary><div>Let <span class="math inline">\(X\)</span> be a set. A <strong>distance</strong> on <span class="math inline">\(X\)</span> is a function <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 13: </strong>Metric space</summary><div>Let <span class="math inline">\(X\)</span> be a set. A <strong>distance</strong> on <span class="math inline">\(X\)</span> is a function <span class="math display">\[
 d \colon X \times X \to \mathbb{R}
 \]</span> such that, for all <span class="math inline">\(x,y,z \in X\)</span> they hold:<p></p>
 <ol type="1">
@@ -522,7 +526,7 @@ d(x,z) \leq d(x,y) + d(y,z) \,.
 </div></details>
 </div>
 <div id="topology-induced-by-the-metric" class="Definition" title="Topology induced by the metric">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 13: </strong>Topology induced by the metric</summary><div>Let <span class="math inline">\((X,d)\)</span> be a metric space. We define the topology <span class="math inline">\(\mathcal{T}\)</span> <strong>induced by the metric</strong> as the collection of sets <span class="math inline">\(U \subset X\)</span> that satisfy the following property: <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 14: </strong>Topology induced by the metric</summary><div>Let <span class="math inline">\((X,d)\)</span> be a metric space. We define the topology <span class="math inline">\(\mathcal{T}\)</span> <strong>induced by the metric</strong> as the collection of sets <span class="math inline">\(U \subset X\)</span> that satisfy the following property: <span class="math display">\[
 \forall \, x \in U \,, \, \exists \, r \in \mathbb{R}, \, r &gt; 0 \, \, \text{ s.t. } \, \, B_r(x) \subset U \,,
 \]</span> where <span class="math inline">\(B_r(x)\)</span> is the ball centered at <span class="math inline">\(x\)</span> of radius <span class="math inline">\(r\)</span>. This is defined by <span class="math display">\[
 B_r(x) := \{ y \in X  \, \colon \,  d(x,y)&lt;r  \} \,.
@@ -532,8 +536,8 @@ B_r(x) := \{ y \in X  \, \colon \,  d(x,y)&lt;r  \} \,.
 </section>
 <section id="connected-topological-spaces" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="connected-topological-spaces"><span class="header-section-number">4.3</span> Connected topological spaces</h2>
-<div id="Definition-14" class="Definition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 14</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space. We say that <span class="math inline">\(X\)</span> is <strong>connected</strong> if the only subsets of <span class="math inline">\(X\)</span> which are both open and closed are just <span class="math inline">\(\emptyset\)</span> and <span class="math inline">\(X\)</span>.<p></p>
+<div id="Definition-15" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 15</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space. We say that <span class="math inline">\(X\)</span> is <strong>connected</strong> if the only subsets of <span class="math inline">\(X\)</span> which are both open and closed are just <span class="math inline">\(\emptyset\)</span> and <span class="math inline">\(X\)</span>.<p></p>
 </div></details>
 </div>
 

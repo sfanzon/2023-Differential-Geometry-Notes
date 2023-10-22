@@ -235,7 +235,11 @@ where we used that $\norm{y - z} < \e$ and the definition of $\e$.
 
 ![The ball $B_{\e}(y)$ is contained in $B_r(x)$ if $\e := r - \norm{x-y}$.](/images/balls_open.png){#fig-balls-open width=70%}
 
+::: Theorem
 
+oigoig
+
+:::
 
 ## Convergence
 
