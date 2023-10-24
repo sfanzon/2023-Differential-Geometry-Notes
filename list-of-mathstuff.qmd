@@ -427,79 +427,81 @@
 
  [**Example 4.44**](#Example-4.44)\Pageref{Example-4.44}
 
- [**Definition 4.45**](#Definition-4.45)\Pageref{Definition-4.45}
+ [**Example 4.45**](#Example-4.45)\Pageref{Example-4.45}
 
- [**Proposition 4.46**](#proposition-hausdorff-1)\Pageref{proposition-hausdorff-1}
+ [**Definition 4.46**](#Definition-4.46)\Pageref{Definition-4.46}
+
+ [**Proposition 4.47**](#proposition-hausdorff-1)\Pageref{proposition-hausdorff-1}
 
  [**Proof**](#Proof*-4.19)\Pageref{Proof*-4.19}
 
- [**Definition 4.47**](#metrizable-space): Metrizable space\Pageref{metrizable-space}
+ [**Definition 4.48**](#metrizable-space): Metrizable space\Pageref{metrizable-space}
 
- [**Corollary 4.48**](#corollary-hausdorff)\Pageref{corollary-hausdorff}
+ [**Corollary 4.49**](#corollary-hausdorff)\Pageref{corollary-hausdorff}
 
  [**Proof**](#Proof*-4.20)\Pageref{Proof*-4.20}
 
- [**Example 4.49**](#trivial-topology-is-not-hausdorff): Trivial topology is not Hausdorff\Pageref{trivial-topology-is-not-hausdorff}
+ [**Example 4.50**](#trivial-topology-is-not-hausdorff): Trivial topology is not Hausdorff\Pageref{trivial-topology-is-not-hausdorff}
 
- [**Example 4.50**](#cofinite-topology-on-mathbbr-1): Cofinite topology on $\mathbb{R}$\Pageref{cofinite-topology-on-mathbbr-1}
+ [**Example 4.51**](#cofinite-topology-on-mathbbr-1): Cofinite topology on $\mathbb{R}$\Pageref{cofinite-topology-on-mathbbr-1}
 
- [**Example 4.51**](#Example-4.51)\Pageref{Example-4.51}
+ [**Example 4.52**](#Example-4.52)\Pageref{Example-4.52}
 
- [**Proposition 4.52**](#uniqueness-of-limit-in-hausdorff-spaces): Uniqueness of limit in Hausdorff spaces\Pageref{uniqueness-of-limit-in-hausdorff-spaces}
+ [**Proposition 4.53**](#uniqueness-of-limit-in-hausdorff-spaces): Uniqueness of limit in Hausdorff spaces\Pageref{uniqueness-of-limit-in-hausdorff-spaces}
 
  [**Proof**](#Proof*-4.21)\Pageref{Proof*-4.21}
 
- [**Definition 4.53**](#images-and-pre-images): Images and Pre-images\Pageref{images-and-pre-images}
+ [**Definition 4.54**](#images-and-pre-images): Images and Pre-images\Pageref{images-and-pre-images}
 
  [**Warning**](#Warning*-4.22)\Pageref{Warning*-4.22}
 
- [**Proposition 4.54**](#Proposition-4.54)\Pageref{Proposition-4.54}
+ [**Proposition 4.55**](#Proposition-4.55)\Pageref{Proposition-4.55}
 
- [**Definition 4.55**](#continuous-function): Continuous function\Pageref{continuous-function}
+ [**Definition 4.56**](#continuous-function): Continuous function\Pageref{continuous-function}
 
- [**Proposition 4.56**](#proposition-continuity-characterization)\Pageref{proposition-continuity-characterization}
+ [**Proposition 4.57**](#proposition-continuity-characterization)\Pageref{proposition-continuity-characterization}
 
  [**Important**](#Important*-4.23)\Pageref{Important*-4.23}
 
- [**Example 4.57**](#Example-4.57)\Pageref{Example-4.57}
+ [**Example 4.58**](#Example-4.58)\Pageref{Example-4.58}
 
- [**Definition 4.58**](#continuity-in-the-classical-sense): Continuity in the classical sense\Pageref{continuity-in-the-classical-sense}
-
- [**Proposition 4.59**](#Proposition-4.59)\Pageref{Proposition-4.59}
-
- [**Proof**](#Proof*-4.24)\Pageref{Proof*-4.24}
+ [**Definition 4.59**](#continuity-in-the-classical-sense): Continuity in the classical sense\Pageref{continuity-in-the-classical-sense}
 
  [**Proposition 4.60**](#Proposition-4.60)\Pageref{Proposition-4.60}
 
- [**Example 4.61**](#Example-4.61)\Pageref{Example-4.61}
+ [**Proof**](#Proof*-4.24)\Pageref{Proof*-4.24}
+
+ [**Proposition 4.61**](#Proposition-4.61)\Pageref{Proposition-4.61}
 
  [**Example 4.62**](#Example-4.62)\Pageref{Example-4.62}
 
- [**Proposition 4.63**](#proposition-continuity-sequential)\Pageref{proposition-continuity-sequential}
+ [**Example 4.63**](#Example-4.63)\Pageref{Example-4.63}
+
+ [**Proposition 4.64**](#proposition-continuity-sequential)\Pageref{proposition-continuity-sequential}
 
  [**Proof**](#Proof*-4.25)\Pageref{Proof*-4.25}
 
  [**Warning**](#Warning*-4.26)\Pageref{Warning*-4.26}
 
- [**Proposition 4.64**](#Proposition-4.64)\Pageref{Proposition-4.64}
+ [**Proposition 4.65**](#Proposition-4.65)\Pageref{Proposition-4.65}
 
  [**Proof**](#Proof*-4.27)\Pageref{Proof*-4.27}
 
- [**Definition 4.65**](#homeomoprhim): Homeomoprhim\Pageref{homeomoprhim}
+ [**Definition 4.66**](#homeomoprhim): Homeomoprhim\Pageref{homeomoprhim}
 
- [**Definition 4.66**](#definition-subspace-topology): Subspace topology\Pageref{definition-subspace-topology}
+ [**Definition 4.67**](#definition-subspace-topology): Subspace topology\Pageref{definition-subspace-topology}
 
- [**Proof**](#well-posedness-of-definition-1): Well-posedness of Definition 4.66\Pageref{well-posedness-of-definition-1}
+ [**Proof**](#well-posedness-of-definition-1): Well-posedness of Definition 4.67\Pageref{well-posedness-of-definition-1}
 
- [**Proposition 4.67**](#Proposition-4.67)\Pageref{Proposition-4.67}
+ [**Proposition 4.68**](#Proposition-4.68)\Pageref{Proposition-4.68}
 
  [**Proof**](#Proof*-4.29)\Pageref{Proof*-4.29}
 
  [**Warning**](#Warning*-4.30)\Pageref{Warning*-4.30}
 
- [**Example 4.68**](#Example-4.68)\Pageref{Example-4.68}
+ [**Example 4.69**](#Example-4.69)\Pageref{Example-4.69}
 
- [**Definition 4.69**](#Definition-4.69)\Pageref{Definition-4.69}
+ [**Definition 4.70**](#Definition-4.70)\Pageref{Definition-4.70}
 
  [**Definition 5.1**](#Definition-5.1)\Pageref{Definition-5.1}
 

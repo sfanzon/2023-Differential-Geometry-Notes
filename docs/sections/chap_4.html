@@ -66,47 +66,11 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Question {
+.Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -114,15 +78,39 @@ ul.task-list li input[type="checkbox"] {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.Proposition {
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
-.Warning {
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -130,11 +118,23 @@ ul.task-list li input[type="checkbox"] {
   --color1: #cce7b1;
   --color2: #86b754;
 }
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .TODO {
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
-.Lemma {
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -1035,19 +1035,31 @@ A \cap U = \emptyset \,.
 </ol>
 </div></details>
 </div>
+<div id="Example-45" class="Example">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 45</strong></summary><div>
+<p>Consider <span class="math inline">\(\mathbb{R}\)</span> with the cofinite topology <span class="math display">\[
+\mathcal{T}_{\textrm{cofinite}} := \{ U \subset \mathbb{R}\, \colon \,U^c \, \mbox{ is finite, }  \mbox{ or } U^c = \mathbb{R}\}\,.
+\]</span> We have that <span class="math display">\[
+{}\mkern 2mu \overline{\mkern-2mu \mathbb{Z} \mkern-2mu}\mkern 2mu {} = \mathbb{R}\,,
+\]</span> showing that <span class="math inline">\(\mathbb{Z}\)</span> is dense in <span class="math inline">\(\mathbb{R}\)</span>.</p>
+<blockquote class="blockquote">
+<p>Exercise: Show that <span class="math inline">\({}\mkern 2mu \overline{\mkern-2mu \mathbb{Z} \mkern-2mu}\mkern 2mu {} = \mathbb{R}\)</span> when <span class="math inline">\(\mathbb{R}\)</span> is equipped with <span class="math inline">\(\mathcal{T}_{\textrm{cofinite}}\)</span>.</p>
+</blockquote>
+</div></details>
+</div>
 </section>
 <section id="hausdorff-spaces" class="level2" data-number="4.7">
 <h2 data-number="4.7" class="anchored" data-anchor-id="hausdorff-spaces"><span class="header-section-number">4.7</span> Hausdorff spaces</h2>
 <p>Hausdorff space are topological spaces in which points can be separated by means of disjoint open sets.</p>
-<div id="Definition-45" class="Definition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 45</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space. We say that <span class="math inline">\(X\)</span> is a Hausdorff space if for every two points <span class="math inline">\(x,y \in X\)</span> with <span class="math inline">\(x \neq y\)</span> there exist <span class="math inline">\(U,V \in \mathcal{T}\)</span> such that <span class="math display">\[
+<div id="Definition-46" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 46</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space. We say that <span class="math inline">\(X\)</span> is a Hausdorff space if for every two points <span class="math inline">\(x,y \in X\)</span> with <span class="math inline">\(x \neq y\)</span> there exist <span class="math inline">\(U,V \in \mathcal{T}\)</span> such that <span class="math display">\[
 x \in U \,, \quad y \in V \,, \quad U \cap V = \emptyset \,.
 \]</span><p></p>
 </div></details>
 </div>
 <p>The main example of Hausdorff spaces are metrizable spaces.</p>
 <div id="proposition-hausdorff-1" class="Proposition">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 46</strong></summary><div>Let <span class="math inline">\((X,d)\)</span> be a metric space with <span class="math inline">\(\mathcal{T}_d\)</span> the topology induced by <span class="math inline">\(d\)</span>. Then <span class="math inline">\((X, \mathcal{T}_d)\)</span> is a Hausdorff space.<p></p>
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 47</strong></summary><div>Let <span class="math inline">\((X,d)\)</span> be a metric space with <span class="math inline">\(\mathcal{T}_d\)</span> the topology induced by <span class="math inline">\(d\)</span>. Then <span class="math inline">\((X, \mathcal{T}_d)\)</span> is a Hausdorff space.<p></p>
 </div></details>
 </div>
 <div id="Proof*-19" class="Proof">
@@ -1067,24 +1079,24 @@ d(x,y) \leq d(x,z) +  d(y,z) &lt; \varepsilon+ \varepsilon= d(x,y) \,,
 </div>
 <p>In general, every metrizable space is Hausdorff.</p>
 <div id="metrizable-space" class="Definition" title="Metrizable space">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 47: </strong>Metrizable space</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space. We say that the topology <span class="math inline">\(\mathcal{T}\)</span> is metrizable if there exists a metric <span class="math inline">\(d\)</span> on <span class="math inline">\(X\)</span> such that <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 48: </strong>Metrizable space</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space. We say that the topology <span class="math inline">\(\mathcal{T}\)</span> is metrizable if there exists a metric <span class="math inline">\(d\)</span> on <span class="math inline">\(X\)</span> such that <span class="math display">\[
 \mathcal{T}= \mathcal{T}_d \,,
 \]</span> with <span class="math inline">\(\mathcal{T}_d\)</span> the topology induced by <span class="math inline">\(d\)</span>.<p></p>
 </div></details>
 </div>
 <div id="corollary-hausdorff" class="Corollary">
-<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 48</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a metrizable space. Then <span class="math inline">\(X\)</span> is Hausforff.<p></p>
+<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 49</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a metrizable space. Then <span class="math inline">\(X\)</span> is Hausforff.<p></p>
 </div></details>
 </div>
 <div id="Proof*-20" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Since <span class="math inline">\((X,\mathcal{T})\)</span> is metrizable, there exists a metric <span class="math inline">\(d\)</span> on <span class="math inline">\(X\)</span> such that <span class="math display">\[
 \mathcal{T}= \mathcal{T}_d \,.
-\]</span> By Proposition <a href="chap_4.html#proposition-hausdorff-1">46</a> we know that <span class="math inline">\((X,\mathcal{T}_d)\)</span> is Hausdorff. Hence <span class="math inline">\((X,\mathcal{T})\)</span> is Hausdorff.<p></p>
+\]</span> By Proposition <a href="chap_4.html#proposition-hausdorff-1">47</a> we know that <span class="math inline">\((X,\mathcal{T}_d)\)</span> is Hausdorff. Hence <span class="math inline">\((X,\mathcal{T})\)</span> is Hausdorff.<p></p>
 </div></details>
 </div>
-<p>As a conseuqence of Corollary <a href="chap_4.html#corollary-hausdorff">48</a> we have that spaces which are not metrizable are not Hausdorff. Let us make a few examples.</p>
+<p>As a conseuqence of Corollary <a href="chap_4.html#corollary-hausdorff">49</a> we have that spaces which are not metrizable are not Hausdorff. Let us make a few examples.</p>
 <div id="trivial-topology-is-not-hausdorff" class="Example" title="Trivial topology is not Hausdorff">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 49: </strong>Trivial topology is not Hausdorff</summary><div>
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 50: </strong>Trivial topology is not Hausdorff</summary><div>
 <p>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space with <span class="math inline">\(\mathcal{T}\)</span> trivial topology. Assume that <span class="math inline">\(X\)</span> has more than one element. Then <span class="math inline">\(X\)</span> is not Hausdorff.</p>
 <blockquote class="blockquote">
 <p>Indeed, let <span class="math inline">\(x,y \in X\)</span> with <span class="math inline">\(x \neq y\)</span>. Suppose by contradiction that <span class="math inline">\(X\)</span> is Hausdorff. Then there exist <span class="math inline">\(U,V \in \mathcal{T}\)</span> such that <span class="math display">\[
@@ -1100,7 +1112,7 @@ U \cap V = X \cap X = X \neq \emptyset \,,
 </div></details>
 </div>
 <div id="cofinite-topology-on-mathbbr-1" class="Example" title="Cofinite topology on \mathbb{R}">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 50: </strong>Cofinite topology on <span class="math inline">\(\mathbb{R}\)</span></summary><div>
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 51: </strong>Cofinite topology on <span class="math inline">\(\mathbb{R}\)</span></summary><div>
 <p>Consider the following family <span class="math inline">\(\mathcal{T}\)</span> of subsets of <span class="math inline">\(\mathbb{R}\)</span> <span class="math display">\[
 \mathcal{T}:= \{ U \subseteq \mathbb{R}\, \colon \,U^c \, \mbox{ is finite, }  \mbox{or } U^c = \mathbb{R}\}\,.
 \]</span> Then <span class="math inline">\((\mathbb{R},\mathcal{T})\)</span> is a topological space which is not Hausdorff. The topology <span class="math inline">\(\mathcal{T}\)</span> is called the <strong>cofinite topology</strong>.</p>
@@ -1109,8 +1121,8 @@ U \cap V = X \cap X = X \neq \emptyset \,,
 </blockquote>
 </div></details>
 </div>
-<div id="Example-51" class="Example">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 51</strong></summary><div>
+<div id="Example-52" class="Example">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 52</strong></summary><div>
 <p>Consider the following family <span class="math inline">\(\mathcal{T}\)</span> of subsets of <span class="math inline">\(\mathbb{R}\)</span> <span class="math display">\[
 \mathcal{T}:= \{ U = (-\infty,a)  \, \colon \,- \infty \leq a \leq \infty  \}\,.
 \]</span> Then <span class="math inline">\((\mathbb{R},\mathcal{T})\)</span> is a topological space which is not Hausdorff.</p>
@@ -1157,7 +1169,7 @@ z := \min\{a , b \}\,, \quad Z:= U \cap V = (-\infty,z) \,.
 </div>
 <p>In Hausdorff spaces the limit of a sequence is unique.</p>
 <div id="uniqueness-of-limit-in-hausdorff-spaces" class="Proposition" title="Uniqueness of limit in Hausdorff spaces">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 52: </strong>Uniqueness of limit in Hausdorff spaces</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a Hausdorff space. If a sequence <span class="math inline">\(\{x_n\} \subseteq X\)</span> converges, then the limit is unique.<p></p>
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 53: </strong>Uniqueness of limit in Hausdorff spaces</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a Hausdorff space. If a sequence <span class="math inline">\(\{x_n\} \subseteq X\)</span> converges, then the limit is unique.<p></p>
 </div></details>
 </div>
 <div id="Proof*-21" class="Proof">
@@ -1179,7 +1191,7 @@ x_n \in U \cap V \,, \quad \forall \, n \geq N  \,.
 <h2 data-number="4.8" class="anchored" data-anchor-id="continuity"><span class="header-section-number">4.8</span> Continuity</h2>
 <p>We extend the notion of continuity to topological spaces. To this end, we need the concept of pre-image of a set under a function.</p>
 <div id="images-and-pre-images" class="Definition" title="Images and Pre-images">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 53: </strong>Images and Pre-images</summary><div>
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 54: </strong>Images and Pre-images</summary><div>
 <p>Let <span class="math inline">\(X, Y\)</span> be sets and <span class="math inline">\(f \colon X \to Y\)</span> be a function.</p>
 <ul>
 <li><p>Let <span class="math inline">\(U \subseteq X\)</span>. The image of <span class="math inline">\(U\)</span> under <span class="math inline">\(f\)</span> is the subset of <span class="math inline">\(Y\)</span> defined by <span class="math display">\[
@@ -1196,8 +1208,8 @@ f^{-1} (V) := \{ x \in X \, \colon \,f(x) \in V \} \,.
 </div></details>
 </div>
 <p>Let us gather useful properties of images and pre-images.</p>
-<div id="Proposition-54" class="Proposition">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 54</strong></summary><div>Let <span class="math inline">\(X,Y\)</span> be sets and <span class="math inline">\(f \colon X \to Y\)</span>. We denote with the letter <span class="math inline">\(A\)</span> sets in <span class="math inline">\(X\)</span> and with the letter <span class="math inline">\(B\)</span> sets in <span class="math inline">\(Y\)</span>. We have<p></p>
+<div id="Proposition-55" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 55</strong></summary><div>Let <span class="math inline">\(X,Y\)</span> be sets and <span class="math inline">\(f \colon X \to Y\)</span>. We denote with the letter <span class="math inline">\(A\)</span> sets in <span class="math inline">\(X\)</span> and with the letter <span class="math inline">\(B\)</span> sets in <span class="math inline">\(Y\)</span>. We have<p></p>
 <ul>
 <li><span class="math inline">\(A \subseteq f^{-1}(f(A))\)</span></li>
 <li><span class="math inline">\(A = f^{-1}(f(A))\)</span> if <span class="math inline">\(f\)</span> is injective</li>
@@ -1222,7 +1234,7 @@ f^{-1} \left(  \bigcap_{i \in I} B_i \right)  = \bigcap_{i \in I} f^{-1}(B_i)
 </div>
 <p>It is a good exercise to try and prove a few of the above properties. We omit the proof. We can now define continuous functions between topological spaces.</p>
 <div id="continuous-function" class="Definition" title="Continuous function">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 55: </strong>Continuous function</summary><div>
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 56: </strong>Continuous function</summary><div>
 <p>Let <span class="math inline">\((X,\mathcal{T}_X)\)</span> and <span class="math inline">\((Y,\mathcal{T}_Y)\)</span> be topological spaces. Let <span class="math inline">\(f \colon X \to Y\)</span> be a function.</p>
 <ul>
 <li><p>Let <span class="math inline">\(x_0 \in X\)</span>. We say that <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(x_0\)</span> if it holds: <span class="math display">\[
@@ -1234,7 +1246,7 @@ f^{-1} \left(  \bigcap_{i \in I} B_i \right)  = \bigcap_{i \in I} f^{-1}(B_i)
 </div>
 <p>The following proposition presents a useful characterization of continuous functions in terms of pre-images.</p>
 <div id="proposition-continuity-characterization" class="Proposition">
-<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 56</strong></summary><div>
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 57</strong></summary><div>
 <p>Let <span class="math inline">\((X,\mathcal{T}_X)\)</span> and <span class="math inline">\((Y,\mathcal{T}_Y)\)</span> be topological spaces. Let <span class="math inline">\(f \colon X \to Y\)</span> be a function. They are equivalent:</p>
 <ol type="1">
 <li><span class="math inline">\(f\)</span> is continuous from <span class="math inline">\((X,\mathcal{T}_X)\)</span> to <span class="math inline">\((Y,\mathcal{T}_Y)\)</span>.</li>
@@ -1248,9 +1260,9 @@ f^{-1}(V) \in \mathcal{T}_X  \,, \quad \forall \, V \in \mathcal{T}_Y \,.
 <p></p><details class="Important fbx-simplebox fbx-default" open=""><summary><strong>Important</strong></summary><div>In other words, a function <span class="math inline">\(f \colon X \to Y\)</span> is continuous if and only if the pre-image of open sets in <span class="math inline">\(Y\)</span> are open sets in <span class="math inline">\(X\)</span>.<p></p>
 </div></details>
 </div>
-<p>The proof of Proposition <a href="chap_4.html#proposition-continuity-characterization">56</a> is simple, but very tedious. We choose to skip it.</p>
-<div id="Example-57" class="Example">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 57</strong></summary><div>
+<p>The proof of Proposition <a href="chap_4.html#proposition-continuity-characterization">57</a> is simple, but very tedious. We choose to skip it.</p>
+<div id="Example-58" class="Example">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 58</strong></summary><div>
 <p>Let <span class="math inline">\(X\)</span> be a set and <span class="math inline">\(\mathcal{T}_1\)</span>, <span class="math inline">\(\mathcal{T}_2\)</span> be topologies on <span class="math inline">\(X\)</span>. Define the identity map <span class="math display">\[
 {\mathop{\mathrm{Id}}}_{X} \colon (X,\mathcal{T}_1) \to (X,\mathcal{T}_2)  \,, \quad {\mathop{\mathrm{Id}}}_{X} (x):= x \,.
 \]</span> They are equivalent:</p>
@@ -1271,13 +1283,13 @@ V \in \mathcal{T}_1  \,, \quad \forall \, V \in \mathcal{T}_2 \,,
 </div>
 <p>Let us compare our new definition of contiuity with the classical notion of continuity in <span class="math inline">\(\mathbb{R}^n\)</span>. Let us recall the definition of continuous function in <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
 <div id="continuity-in-the-classical-sense" class="Definition" title="Continuity in the classical sense">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 58: </strong>Continuity in the classical sense</summary><div>Let <span class="math inline">\(f \colon \subseteq \mathbb{R}^n \to \mathbb{R}^m\)</span>. We say that <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(\mathbf{x}_0\)</span> if it holds: <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 59: </strong>Continuity in the classical sense</summary><div>Let <span class="math inline">\(f \colon \subseteq \mathbb{R}^n \to \mathbb{R}^m\)</span>. We say that <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(\mathbf{x}_0\)</span> if it holds: <span class="math display">\[
 \forall \, \varepsilon&gt; 0 \,, \, \exists \, \delta &gt;0 \, \text{ s.t. } \, \|f(\mathbf{x}) - f(\mathbf{x}_0)\|&lt; \varepsilon\,\, \mbox{ if } \,\, \| \mathbf{x}- \mathbf{x}_0 \| &lt; \delta \,.   
 \]</span><p></p>
 </div></details>
 </div>
-<div id="Proposition-59" class="Proposition">
-<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 59</strong></summary><div>
+<div id="Proposition-60" class="Proposition">
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 60</strong></summary><div>
 <p>Let <span class="math inline">\(f \colon \mathbb{R}^n \to \mathbb{R}^m\)</span> and suppose <span class="math inline">\(\mathbb{R}^n,\mathbb{R}^m\)</span> are equipped with the Euclidean topology. Let <span class="math inline">\(\mathbf{x}_0 \in \mathbb{R}^n\)</span>. They are equivalent:</p>
 <ol type="1">
 <li><span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(\mathbf{x}_0\)</span> in the topological sense.</li>
@@ -1316,8 +1328,8 @@ f(U) \subset V \,.
 </div></details>
 </div>
 <p>A similar proof yields the characterization of continuity in metric spaces. The proof is left as an exercise.</p>
-<div id="Proposition-60" class="Proposition">
-<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 60</strong></summary><div>
+<div id="Proposition-61" class="Proposition">
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 61</strong></summary><div>
 <p>Let <span class="math inline">\((X,d_X)\)</span> and <span class="math inline">\((Y,d_Y)\)</span> be metric spaces. Denote by <span class="math inline">\(\mathcal{T}_X\)</span> and <span class="math inline">\(\mathcal{T}_Y\)</span> the topologies induced by the metrics. Let <span class="math inline">\(f \colon X \to Y\)</span> and <span class="math inline">\(x_0 \in X\)</span>. They are equivalent:</p>
 <ol type="1">
 <li><span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(x_0\)</span> in the topological sense.</li>
@@ -1329,8 +1341,8 @@ f(U) \subset V \,.
 </div></details>
 </div>
 <p>Let us examine continuity in the cases of the trivial and discrete topologies.</p>
-<div id="Example-61" class="Example">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 61</strong></summary><div>
+<div id="Example-62" class="Example">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 62</strong></summary><div>
 <p>Let <span class="math inline">\((X,\mathcal{T}_X)\)</span> and <span class="math inline">\((Y,\mathcal{T}_Y)\)</span> be a topological space. Suppose that <span class="math inline">\(\mathcal{T}_Y\)</span> is the trivial topology, that is, <span class="math display">\[
 \mathcal{T}_Y = \{ \emptyset, Y \} \,.
 \]</span> Then every function <span class="math inline">\(f \colon X \to Y\)</span> is continuous.</p>
@@ -1350,8 +1362,8 @@ f^{-1}(V) = f^{-1}(Y) = X \in \mathcal{T}_X \,.
 </blockquote>
 </div></details>
 </div>
-<div id="Example-62" class="Example">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 62</strong></summary><div>
+<div id="Example-63" class="Example">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 63</strong></summary><div>
 <p>Let <span class="math inline">\((X,\mathcal{T}_X)\)</span> and <span class="math inline">\((Y,\mathcal{T}_Y)\)</span> be topological spaces. Suppose that <span class="math inline">\(\mathcal{T}_Y\)</span> is the discrete topology, that is, <span class="math display">\[
 \mathcal{T}_Y = \{ V \, \text{ s.t. } \, V \subseteq Y \} \,.
 \]</span> Let <span class="math inline">\(f \colon X \to Y\)</span>. They are equivalent:</p>
@@ -1373,7 +1385,7 @@ f^{-1}(V) = f^{-1}\left( \bigcup_{y \in V}\, \{ y \} \right) = \bigcup_{y \in V}
 </div>
 <p>In a topological space, continuity preserves limits of sequences.</p>
 <div id="proposition-continuity-sequential" class="Proposition">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 63</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T}_X)\)</span> and <span class="math inline">\((Y,\mathcal{T}_Y)\)</span> be topological spaces. Let <span class="math inline">\(f \colon X \to Y\)</span> be continuous. Let <span class="math inline">\(\{x_n\} \subset X\)</span> and <span class="math inline">\(x_0 \in X\)</span>. We have <span class="math display">\[
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 64</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T}_X)\)</span> and <span class="math inline">\((Y,\mathcal{T}_Y)\)</span> be topological spaces. Let <span class="math inline">\(f \colon X \to Y\)</span> be continuous. Let <span class="math inline">\(\{x_n\} \subset X\)</span> and <span class="math inline">\(x_0 \in X\)</span>. We have <span class="math display">\[
 x_n \to x_0 \,\, \mbox{ in }\, X \quad \implies \quad
 f(x_n) \to f(x_0) \,\, \mbox{ in }\, Y\,.
 \]</span><p></p>
@@ -1392,15 +1404,15 @@ f(x_n) \in V \,, \quad \forall \, n \geq N \,,
 </div></details>
 </div>
 <div id="Warning*-26" class="Warning">
-<p></p><details class="Warning fbx-simplebox fbx-default" open=""><summary><strong>Warning</strong></summary><div>The converse implication of Proposition <a href="chap_4.html#proposition-continuity-sequential">63</a> is false. That is, even if it holds <span class="math display">\[
+<p></p><details class="Warning fbx-simplebox fbx-default" open=""><summary><strong>Warning</strong></summary><div>The converse implication of Proposition <a href="chap_4.html#proposition-continuity-sequential">64</a> is false. That is, even if it holds <span class="math display">\[
 x_n \to x_0 \,\, \mbox{ in }\, X \quad \implies \quad
 f(x_n) \to f(x_0) \,\, \mbox{ in }\, Y\,.
 \]</span> for all sequences <span class="math inline">\(\{x_n\} \subset X\)</span>, the function <span class="math inline">\(f\)</span> might <strong>not</strong> be continuous. For this to hold, it is necessary for the topologies on <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> to be metrizable.<p></p>
 </div></details>
 </div>
 <p>Let us make an observation on continuity of compositions.</p>
-<div id="Proposition-64" class="Proposition">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 64</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T}_X), (Y,\mathcal{T}_Y), (Z,\mathcal{T}_Z)\)</span> be topological spaces. Let <span class="math display">\[
+<div id="Proposition-65" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 65</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T}_X), (Y,\mathcal{T}_Y), (Z,\mathcal{T}_Z)\)</span> be topological spaces. Let <span class="math display">\[
 f \colon X \to Y \,, \quad g \colon Y \to Z \,,
 \]</span> be given functions. If <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are continuous, then <span class="math display">\[
 (g \circ f) \colon X \to Z
@@ -1419,7 +1431,7 @@ f^{-1} ( g^{-1}(C) ) \in \mathcal{T}_X \,.
 </div>
 <p>We conclude the section by introducing homeomorphisms.</p>
 <div id="homeomoprhim" class="Definition" title="Homeomoprhim">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 65: </strong>Homeomoprhim</summary><div>
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 66: </strong>Homeomoprhim</summary><div>
 <p>Let <span class="math inline">\((X,\mathcal{T}_X)\)</span>, <span class="math inline">\((Y,\mathcal{T}_Y)\)</span> be topological space. A function <span class="math inline">\(f \colon X \to Y\)</span> is called an <strong>homeomorphism</strong> if they hold:</p>
 <ol type="1">
 <li><span class="math inline">\(f\)</span> is continuous.</li>
@@ -1435,13 +1447,13 @@ g \circ f = {\mathop{\mathrm{Id}}}_{X} \,, \quad f \circ g = {\mathop{\mathrm{Id
 <h2 data-number="4.9" class="anchored" data-anchor-id="subspace-topology"><span class="header-section-number">4.9</span> Subspace topology</h2>
 <p>Any subset <span class="math inline">\(Y\)</span> in a topological space <span class="math inline">\(X\)</span> inherits naturally a topological structure. Such structure is called <strong>subspace topology</strong>.</p>
 <div id="definition-subspace-topology" class="Definition" title="Subspace topology">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 66: </strong>Subspace topology</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space and <span class="math inline">\(Y \subseteq X\)</span> a subset. Define the family of sets <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 67: </strong>Subspace topology</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space and <span class="math inline">\(Y \subseteq X\)</span> a subset. Define the family of sets <span class="math display">\[
 \mathcal{S}:= \{ A \subset Y \, \colon \,\exists \,\, U \in \mathcal{T}\, \text{ s.t. } \, A = U \cap Y   \} \,.
 \]</span> The family <span class="math inline">\(\mathcal{S}\)</span> is called subspace topology on <span class="math inline">\(Y\)</span> induced by the inclusion <span class="math inline">\(Y \subset X\)</span>.<p></p>
 </div></details>
 </div>
-<div id="well-posedness-of-definition-1" class="Proof" title="Well-posedness of Definition 66">
-<details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof: </strong>Well-posedness of Definition 66</summary><div>
+<div id="well-posedness-of-definition-1" class="Proof" title="Well-posedness of Definition 67">
+<details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof: </strong>Well-posedness of Definition 67</summary><div>
 <p>We have to show that <span class="math inline">\((Y,\mathcal{S})\)</span> is a topological space:</p>
 <ul>
 <li><p>(A1) <span class="math inline">\(\emptyset \in \mathcal{S}\)</span> since <span class="math display">\[
@@ -1466,8 +1478,8 @@ A_1 \cap A_2  = (  U_1 \cap Y ) \cap (U_2 \cap Y) = (U_1 \cap U_2) \cap Y
 </div></details>
 </div>
 <p>If the set <span class="math inline">\(Y\)</span> is open, then sets are open in the subspace topology if and only if they are open in <span class="math inline">\(X\)</span>.</p>
-<div id="Proposition-67" class="Proposition">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 67</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space and <span class="math inline">\(Y \in \mathcal{T}\)</span> a subset. Let <span class="math inline">\(A \subset Y\)</span>. Then <span class="math display">\[
+<div id="Proposition-68" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 68</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space and <span class="math inline">\(Y \in \mathcal{T}\)</span> a subset. Let <span class="math inline">\(A \subset Y\)</span>. Then <span class="math display">\[
 A \in \mathcal{S}\quad \iff \quad A \in \mathcal{T}\,.
 \]</span><p></p>
 </div></details>
@@ -1495,8 +1507,8 @@ A =  (-1,1)  \cap Y
 </blockquote>
 </div></details>
 </div>
-<div id="Example-68" class="Example">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 68</strong></summary><div>
+<div id="Example-69" class="Example">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 69</strong></summary><div>
 <p>Let <span class="math inline">\(X=\mathbb{R}\)</span> be equipped with <span class="math inline">\(\mathcal{T}\)</span> the euclidean topology. Let <span class="math inline">\(\mathcal{S}\)</span> be the subspace topology on <span class="math inline">\(\mathbb{Z}\)</span>. Then <span class="math inline">\(\mathcal{S}\)</span> coincides with the discrete topology.</p>
 <blockquote class="blockquote">
 <p><em>Proof.</em> The set <span class="math inline">\(\{z\}\)</span> is open in <span class="math inline">\(\mathcal{S}\)</span> for all <span class="math inline">\(z \in \mathbb{Z}\)</span>. Indeed, <span class="math display">\[
@@ -1512,8 +1524,8 @@ A = \bigcup_{z \in A} \, \{ z \} \,,
 </section>
 <section id="connectedness" class="level2" data-number="4.10">
 <h2 data-number="4.10" class="anchored" data-anchor-id="connectedness"><span class="header-section-number">4.10</span> Connectedness</h2>
-<div id="Definition-69" class="Definition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 69</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space. We say that <span class="math inline">\(X\)</span> is <strong>connected</strong> if the only subsets of <span class="math inline">\(X\)</span> which are both open and closed are just <span class="math inline">\(\emptyset\)</span> and <span class="math inline">\(X\)</span>.<p></p>
+<div id="Definition-70" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 70</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space. We say that <span class="math inline">\(X\)</span> is <strong>connected</strong> if the only subsets of <span class="math inline">\(X\)</span> which are both open and closed are just <span class="math inline">\(\emptyset\)</span> and <span class="math inline">\(X\)</span>.<p></p>
 </div></details>
 </div>
 </section>

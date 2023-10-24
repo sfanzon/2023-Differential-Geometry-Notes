@@ -1335,10 +1335,26 @@ $$
 $$
 showing that $\Q$ is neither open, nor closed. 
 
-
-
 :::
 
+
+
+::: Example
+
+
+Consider $\R$ with the cofinite topology
+$$
+\TT_{\textrm{cofinite}} := \{ U \subset \R \divider U^c \, \mbox{ is finite, }  \mbox{ or } U^c = \R \}\,. 
+$$
+We have that 
+$$
+\closure{\Z } = \R \,,
+$$
+showing that $\Z$ is dense in $\R$.
+
+> Exercise: Show that $\closure{\Z } = \R$ when $\R$ is equipped with $\TT_{\textrm{cofinite}}$.
+
+:::
 
 
 
