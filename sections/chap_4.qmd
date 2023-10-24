@@ -76,6 +76,7 @@ These are:
 
 
 
+
 ::: Definition
 ### Trivial topology
 
@@ -102,12 +103,13 @@ $$
 
 
 
+
 ::: Definition
 ### Discrete topology
 
 Let $X$ be a set. The discrete topology on $X$ is the topology $\TT$ defined by
 $$
-\TT := \{ A \divider A \subset X \} \,,
+\TT := \{ A \divider A \subseteq X \} \,,
 $$
 that is, every subset of $X$ is open.
 
@@ -141,9 +143,9 @@ in our new abstract framework of topology.
 ::: Definition
 ### Open set of $\R^n$
 
-Let $A \subset \R^n$. We say that the set $A$ is **open** if it holds:
+Let $A \subseteq \R^n$. We say that the set $A$ is **open** if it holds:
 $$
-\forall \, \xx \in A \,, \,\, \exists \, r > 0 \st B_r(\xx) \subset A \,,
+\forall \, \xx \in A \,, \,\, \exists \, r > 0 \st B_r(\xx) \subseteq A \,,
 $${#eq-open-set-Rn}
 where $B_r(\xx)$ is the ball of radius $r>0$ centered at $\xx$
 $$
@@ -159,7 +161,7 @@ See @fig-open-set-Rn for a schematic picture of an open set.
 
 
 
-![The set $A \subset \R^n$ is open if for every $\xx \in A$ there exists $r>0$ such that $B_r(\xx) \subset A$.](/images/open_set_R.png){#fig-open-set-Rn width=70%}
+![The set $A \subseteq \R^n$ is open if for every $\xx \in A$ there exists $r>0$ such that $B_r(\xx) \subseteq A$.](/images/open_set_R.png){#fig-open-set-Rn width=70%}
 
 
 
@@ -168,7 +170,7 @@ See @fig-open-set-Rn for a schematic picture of an open set.
 
 The Euclidean topology on $\R^n$ is the topology $\TT$ defined by
 $$
-\TT := \{ A \divider A \subset \R^n \,, \,\, A \, \mbox{ is open}  \} \,.
+\TT := \{ A \divider A \subseteq \R^n \,, \,\, A \, \mbox{ is open}  \} \,.
 $$
 
 :::
@@ -190,16 +192,16 @@ Let us check that $\TT$ is a topology on $\R^n$:
   $$
   We need to check that $A$ is open. Let $\xx \in A$. By definition of union, there exists an index $i_0 \in I$ such that
   $\xx \in A_{i_0}$. Since $A_{i_0}$ is open, by (@eq-open-set-Rn) there exists $r>0$ such that 
-  $B_r(\xx) \subset A_{i_0}$. As $A_{i_0} \subset A$, we conclude that $B_r(\xx) \subset A$. Thus $A$ is open and $A \in \TT$.
+  $B_r(\xx) \subseteq A_{i_0}$. As $A_{i_0} \subseteq A$, we conclude that $B_r(\xx) \subseteq A$. Thus $A$ is open and $A \in \TT$.
 
  - (A3) Let $A, B \in \TT$. 
   We need to check that $A \cap B$ is open. Let $\xx \in A \cap B$. Therefore $\xx \in A$ and $\xx \in B$. Since $A$ and $B$ are open, by (@eq-open-set-Rn) there exist $r_1,r_2>0$ such that 
-  $B_{r_1}(\xx) \subset A$ and $B_{r_2}(\xx) \subset B$. Set $r := \min\{ r_1,r_2\}$. Then 
+  $B_{r_1}(\xx) \subseteq A$ and $B_{r_2}(\xx) \subseteq B$. Set $r := \min\{ r_1,r_2\}$. Then 
   $$
-  B_r(\xx) \subset B_{r_1}(\xx) \subset A  \,, \quad 
-  B_r(\xx) \subset B_{r_2}(\xx) \subset B  \,, 
+  B_r(\xx) \subseteq B_{r_1}(\xx) \subseteq A  \,, \quad 
+  B_r(\xx) \subseteq B_{r_2}(\xx) \subseteq B  \,, 
   $$
-  Hence $B_r(\xx) \subset A \cap B$, showing that $A \cap B$ open, so that $A \cap B \in \TT$.
+  Hence $B_r(\xx) \subseteq A \cap B$, showing that $A \cap B$ open, so that $A \cap B \in \TT$.
 
  This proves that $\TT$ is a topology on $\R^n$.
 :::
@@ -231,7 +233,7 @@ $$
 $$
 Note that $\e>0$ by (@eq-balls-open). We claim that 
 $$
-B_{\e} (\yy) \subset B_r (\xx) \,,
+B_{\e} (\yy) \subseteq B_r (\xx) \,,
 $${#eq-proof-ball-open}
 see @fig-balls-open. Indeed, let $\zz \in B_{\e}(\yy)$. By triangle inequality we have
 $$
@@ -249,33 +251,187 @@ open.
 
 
 
-We conclude the section with the definition of equivalent topologies.
 
 
-::: Definition
-### Equivalent topologies
 
-Let X be a set and suppose that $\TT_1$, $\TT_2$ are topologies on $X$. We say that 
-$\TT_1$ and $\TT_2$ are **equivalent** if they hold:
 
-- For any $U \in \TT_1$ there exists $V \in \TT_2$ such that 
+
+
+## Closed sets
+
+
+
+The opposite of open sets are closed sets.
+
+
+::: Definition 
+### Closed set
+
+Let $(X,\TT)$ be a topological space. A set $C \subseteq X$ is **closed**
+if 
 $$
-V \subset U \,.
+C^c   \in \TT \,, 
 $$
-
-- For any $U \in \TT_2$ there exists $V \in \TT_1$ such that 
-$$
-V \subset U \,.
-$$
+where $C^c:= X \smallsetminus C$ is the complement of $C$ in $X$.
 :::
 
+
+In words, a set is closed if its complement is open. 
 
 
 ::: Warning
 
-If two topologies are equivalent, that does not mean they have the same open sets. 
+There are sets which are neither open nor closed. For example consider $\R$ equipped with Euclidean topology. Then the interval
+$$
+A:=[0,1) 
+$$
+is neither open nor closed.
+
+> For the moment we do not have the tools to prove this. We will have them shortly. 
 
 :::
+
+
+We could have defined a topology starting from closed sets. We would
+have had to replace the properties (A1)-(A2)-(A3) with suitable properties for closed sets. This is detailed in the following proposition.
+
+
+::: Proposition
+
+Let $(X,\TT)$ be a topological space. Properties (A1)-(A2)-(A3) of $\TT$ are equivalent to (C1)-(C2)-(C3), where
+
+- (C1) $\emptyset, X$ are closed.
+- (C2) If $C_i$ is closed for all $i \in I$, then
+$$
+\bigcap_{i \in I} \, C_i
+$$
+is closed.
+- (C3) If $C_1,C_2$ are closed then
+$$
+C_1 \cup C_2
+$$
+is closed.
+
+:::
+
+
+::: Proof
+
+We have 3 points to check:
+
+- The equivalence between (A1) and (C1) is clear, since
+$$
+\emptyset^c = X \,, \quad X^c = \emptyset \,.
+$$
+
+- Suppose $C_i$ are closed for all $i \in I$. Therefore $C_i^c$ are open for all $i \in I$. By De Morgan's laws we have that
+$$
+\left(  \bigcap_{i \in I} \, C_i \right)^c =  \bigcup_{i \in I} \, C_i^c 
+$$
+showing that
+$$
+\bigcap_{i \in I} \, C_i  \, \mbox{ is closed} \quad 
+\iff \quad 
+\bigcup_{i \in I} \, C_i^c  \, \mbox{ is open} \,.
+$$
+Therefore (A2) and (C2) are equivalent.
+
+- Suppose $C_1,C_2$ are closed. Therefore $C_1^c, C_2^c$ are open. By De Morgan's laws we have that
+$$
+\left(  C_1 \cup  C_2 \right)^c =  C_1^c \cap C_2^c 
+$$
+showing that
+$$
+C_1 \cup  C_2 \, \mbox{ is closed} \quad 
+\iff \quad 
+ C_1^c \cap C_2^c  \, \mbox{ is open} \,.
+$$
+Therefore (A3) and (C3) are equivalent.
+:::
+
+
+
+
+
+## Comparing topologies
+
+
+
+
+Consider the situation where you have two topologies $\TT_1$ and $\TT_2$ on the same 
+set $X$. We would like to have some notions of comparison between $\TT_1$ and $\TT_2$.
+
+
+::: Definition
+### Finer and coarser topology
+
+Let $X$ be a set and let $\TT_1$, $\TT_2$ be topologies on $X$. Suppose that
+$$
+\TT_2 \subseteq \TT_1 \,.
+$$
+We say that:
+
+- $\TT_1$ is **finer** than $\TT_2$.
+- $\TT_2$ is **coarser** than $\TT_1$.
+
+If it holds 
+$$
+\TT_2 \subsetneq \TT_1 \,,
+$$
+we say that:
+
+- $\TT_1$ is **strictly finer** than $\TT_2$.
+- $\TT_2$ is **strictly coarser** than $\TT_1$.
+
+We say that $\TT_1$ and $\TT_2$ are the **same** topology if
+$$
+\TT_1 = \TT_2 \,.
+$$
+:::
+
+
+
+
+::: Example
+
+Let $X$ be a set and consider the trivial and discrete topologies
+$$
+\TT_{\textrm{trivial}} = \{ \emptyset, X\} \,, \quad \TT_{\textrm{discrete}} = \{ A \divider A \subseteq X \} \,.
+$$
+Then 
+$$
+\TT_{\textrm{trivial}} \subsetneq \TT_{\textrm{discrete}} \,,
+$$
+so that $\TT_{\textrm{discrete}}$ is strictly finer than $\TT_{\textrm{trivial}}$.
+
+
+:::
+
+
+Another interesting example is given by the **cofinite topology** on 
+$\R$. The sets in this topology are open if they are either empty, or coincide with $\R$ with a finite number of points removed.
+
+
+::: Example
+### Cofinite topology on $\R$
+
+
+
+Consider the following family $\TT_{\textrm{cofinite}}$ of subsets of $\R$
+$$
+\TT_{\textrm{cofinite}} := \{ U \subseteq \R \divider U^c \, \mbox{ is finite, }  \mbox{or } U^c = \R \}\,. 
+$$
+Then $(\R,\TT_{\textrm{cofinite}})$ is a topological space, and $\TT_{\textrm{cofinite}}$ is called the **cofinite topology**. We have that
+$$
+\TT_{\textrm{cofinite}} \subsetneq \TT_{\textrm{euclidean}} \,.
+$$
+
+
+
+> Exercise: Show that $\TT_{\textrm{cofinite}}$ is a topology on $\R$ and that $\TT_{\textrm{cofinite}} \subsetneq \TT_{\textrm{euclidean}}$.
+
+:::
+
 
 
 
@@ -288,7 +444,7 @@ the notion of convergence of sequences.
 ::: Definition
 ### Convergent sequence
 
-Let $(X,\TT)$ be a topological. Consider a sequence $\{x_n\}_{n \in \N} \subset X$ and a point
+Let $(X,\TT)$ be a topological. Consider a sequence $\{x_n\}_{n \in \N} \subseteq X$ and a point
 $x \in X$. We say that $x_n$ converges to $x_0$ if the following property holds:
 $$
 \forall \, U \in \TT  \st x_0 \in U\,, \,\, \exists \, N = N(U) \in \N \st  x_n \in U \,, \, \forall \, n \geq N \,.
@@ -313,6 +469,8 @@ Let us analyze the definition of convergence in the topologies we have encounter
 - **Discrete topology**: A sequence converges if and only if it is eventually constant.
 - **Euclidean topology**: Topological convergence coincides with classical notion of convergence.
 
+
+
 We now precisely state and prove the above claims.
 
 ::: Proposition
@@ -322,7 +480,7 @@ Let $(X,\TT)$ be topological space, with $\TT$ the trivial topology, that is,
 $$
 \TT = \{ \emptyset, X \} \,.
 $$
-Let $\{x_n\} \subset X$ be a sequence and $x_0 \in X$ a point. Then 
+Let $\{x_n\} \subseteq X$ be a sequence and $x_0 \in X$ a point. Then 
 $$
 x_n \to x_0 \,.
 $$
@@ -345,14 +503,22 @@ As these are all the open sets, we conclude that $x_n \to x_0$.
 
 
 
+::: Warning
+
+This example is saying that in general the topological limit of a sequence is **not unique**!
+
+:::
+
+
+
 ::: Proposition
 ### Convergence for discrete topology
 
 Let $(X,\TT)$ be topological space, with $\TT$ the discrete topology, that is,
 $$
-\TT = \{ A  \divider A \subset X \} \,.
+\TT = \{ A  \divider A \subseteq X \} \,.
 $$
-Let $\{x_n\} \subset X$ be a sequence and $x_0 \in X$ a point. They are equivalent:
+Let $\{x_n\} \subseteq X$ be a sequence and $x_0 \in X$ a point. They are equivalent:
 
 1. $x_n \to x_0$.
 2. $\{x_n\}$ is eventually constant, that is, there exists $N \in \N$ such that 
@@ -399,7 +565,7 @@ classical definition of convergence in $\R^n$.
 ::: Definition
 ### Classical convergence in $\R^n$
 
-Let $\{\xx_n\} \subset \R^n$ and $\xx_0 \in \R^n$. We say that $\xx_n$ converges $\xx_0$ in the 
+Let $\{\xx_n\} \subseteq \R^n$ and $\xx_0 \in \R^n$. We say that $\xx_n$ converges $\xx_0$ in the 
 classical sense if 
 $$
 \lim_{n \to \infty} \norm{\xx_n - \xx_0}  = 0 \,. 
@@ -414,10 +580,10 @@ $$
 
 
 ::: Proposition
-### Convergence for Euclidean topology
+### Convergence for Euclidean topology  {#proposition-convergence-Rn}
 
 Let $\R^n$ be equipped with $\TT$ the Euclidean topology.
-Let $\{\xx_n\} \subset \R^n$ be a sequence and $\xx_0 \in \R^n$ a point. They are equivalent:
+Let $\{\xx_n\} \subseteq \R^n$ be a sequence and $\xx_0 \in \R^n$ a point. They are equivalent:
 
 1. $\xx_n \to \xx_0$ with respect to $\TT$.
 2. $\xx_n \to \xx_0$ in the classical sense.
@@ -450,7 +616,7 @@ showing that $\xx_n \to \xx_0$ in the classical sense.
 Let $U \in \TT$ be such that $\xx_0 \in U$. By definition of Euclidean topology, this means that 
 there exists $r>0$ such that 
 $$
-B_r(\xx_0) \subset U \,.
+B_r(\xx_0) \subseteq U \,.
 $$
 As $\xx_n \to \xx_0$ in the classical sense, there exists $N \in \N$ such that 
 $$
@@ -460,7 +626,7 @@ The above is equivalent to
 $$
 \xx_n \in B_{r}(\xx_0) \,, \quad \forall \, n \geq N \,.
 $$
-Since $B_r(\xx_0) \subset U$, we have proven that
+Since $B_r(\xx_0) \subseteq U$, we have proven that
 $$
 \xx_n \in U \,, \quad \forall \, n \geq N \,.
 $$
@@ -477,6 +643,35 @@ Since classical convergence in $\R^n$ agrees with topological convergence with r
 
 
 
+We conclude with a useful proposition which relates convergences 
+when multiple topologies are present.
+
+
+::: Proposition
+
+Let $X$ be a set and $\TT_1,\TT_2$ be topologies on $X$. Suppose that
+$$
+\TT_2 \subseteq \TT_1 \,.
+$$
+Let $\{x_n\} \subset X$ and $x_0 \in X$. We have
+$$
+x_n \to x_0 \,\, \mbox{ in } \,\, \TT_1  \quad \implies
+\quad 
+x_n \to x_0 \,\, \mbox{ in } \,\, \TT_2 \,.
+$$
+
+:::
+
+
+::: Proof
+Assume $x_n \to x_0$ in $\TT_1$. We need to prove that $x_n \to x_0$ in $\TT_2$. Therefore, let $U \in \TT_2$ be such that $x_0 \in U$. Since $\TT_2 \subseteq \TT_1$, we have that $U \in \TT_1$. As  $x_n \to x_0$ in $\TT_1$, there exists $N \in \N$ such that 
+$$
+x_n \in U \,, \quad \forall \, n \geq N \,.
+$$
+Since $U \in \TT_2$, the above proves $x_n \to x_0$ in $\TT_2$.
+
+
+:::
 
 
 
@@ -606,9 +801,9 @@ A metric $d$ on a set $X$ naturally induces a topology which is **compatible** w
 ### Topology induced by the metric  {#definition-metric-topology}
 
 Let $(X,d)$ be a metric space. We define the topology $\TT_d$ **induced by the metric** $d$ as the
-collection of sets $U \subset X$ that satisfy the following property:
+collection of sets $U \subseteq X$ that satisfy the following property:
 $$
-\forall \, x \in U \,, \, \exists \, r \in \R, \, r > 0 \, \st \, B_r(x) \subset U \,,
+\forall \, x \in U \,, \, \exists \, r \in \R, \, r > 0 \, \st \, B_r(x) \subseteq U \,,
 $$
 where $B_r(x)$ is the ball centered at $x$ of radius $r$. This is defined by 
 $$
@@ -627,12 +822,22 @@ as an exercise.
 
 
 
+
+
+
+
+
+
 ::: Example
 ### Topology induced by Euclidean distance
 
-Consider the metric space $(\R^n,d)$ with $d$ the Euclidean distance. Then $\TT_d$ is equivalent to the Euclidean topology on $\R^n$. 
+Consider the metric space $(\R^n,d)$ with $d$ the Euclidean distance. Then 
+$$
+\TT_d = \TT_{\textrm{euclidean}} \,,
+$$
+where $\TT_{\textrm{euclidean}}$ is the Euclidean topology on $\R^n$. 
 
-> The claim follows immediately by definition.
+> Exercise: Prove the above statement. It is an immediate consequence of definitions.
 :::
 
 
@@ -648,26 +853,31 @@ d(x,y) :=
 	1 & \mbox{ if } \, x \neq y 
 \end{cases}
 $$
-Then $(X,d)$ is a metric space, and $d$ is called the **discrete distance**. Moreover $\TT_d$
-is equivalent to the **discrete topology** on $X$.
+Then $(X,d)$ is a metric space, and $d$ is called the **discrete distance**. Moreover 
+$$
+\TT_d = \TT_{\textrm{discrete}}
+$$
+where $\TT_{\textrm{discrete}}$ is the **discrete topology** on $X$.
 
 
-> Exercise: Prove that $(X,d)$ is a metric space and that $\TT_d$ is equivalent to the discrete topology.
+> Exercise: Prove that $(X,d)$ is a metric space and $\TT_d = \TT_{\textrm{discrete}}$.
 
 :::
 
 
 
 
-The following proposition is very useful to proving that certain sets are
-open in $\TT_d$. The proof is left as an exercise.
+The following proposition tells us that balls in a metric space $X$
+are open sets. Moreover balls are the building blocks of all 
+open sets in $X$. The proof is left as an exercise.
 
 
-::: Proposition
+::: {.Proposition #proposition-metric-ball}
+
 
 Let $(X,d)$ be a metric space and $\TT_d$ the topology induced by $d$. Then:
 
-- For all $x \in X$, $r>0$ we have $B_r(x) \subset \TT_d$.
+- For all $x \in X$, $r>0$ we have $B_r(x) \subseteq \TT_d$.
 - $U \in \TT_d$ if and only if
 $$
 U = \bigcup_{ i \in I } B_{r_i}(x_i) \,,
@@ -678,8 +888,7 @@ with $I$ family of indices and $x_i \in X$, $r_i > 0$.
 
 
 
-Similarly to the definition of equivalent topologies, we can define
-equivalent metrics.
+We now define the concept of equivalent metrics.
 
 
 ::: Definition
@@ -742,6 +951,26 @@ If two metrics are equivalent, that does not mean they have the same balls. For 
 
 
 
+We can characterize the convergence of sequences in metric spaces.
+
+
+::: Proposition
+### Convergence in metric space
+
+Suppose $(X,d)$ is a metric space and denote by $\TT_d$ the topology induce by $d$. Let $\{x_n\} \subseteq X$ and $x_0 \in X$. They are equivalent:
+
+1. $x_n \to x_0$ with respect to the topology $\TT_d$.
+2. $d(x_n,x_0) \to 0$ in $\R$.
+3. For all $\e>0$ there exists $N \in \N$ such that 
+$$
+x_n \in B_r(x_0) \, , \,\, \forall \, n \geq \N \,.
+$$
+
+:::
+
+The proof is similar to the one of Proposition \ref{proposition-convergence-Rn}, and it is left as an exercise.
+
+
 
 
 
@@ -750,6 +979,62 @@ If two metrics are equivalent, that does not mean they have the same balls. For 
 
 
 
+Hausdorff space are topological spaces in which points can be separated by
+means of disjoint open sets.
+
+
+::: Definition
+
+Let $(X,\TT)$ be a topological space. We say that $X$ is a Hausdorff space if for every two points $x,y \in X$ with $x \neq y$ there exist $U,V \in \TT$ such that
+$$
+x \in U \,, \quad y \in V \,, \quad U \cap V = \emptyset \,.
+$$
+
+:::
+
+
+
+The main example of Hausdorff spaces are metrizable spaces.
+
+
+::: {.Proposition  #proposition-hausdorff-1}
+
+Let $(X,d)$ be a metric space with $\TT_d$ the topology induced by $d$. Then $(X, \TT_d)$ is a Hausdorff space.
+
+:::
+
+
+::: Proof
+
+Let $x,y \in X$ with $x \neq y$. Set 
+$$
+\e := \frac12 \, d(x,y) \,, 
+$$
+and define 
+$$
+U := B_{\e}(x)\,, \quad 
+V := B_{\e}(y) \,.
+$$
+By Proposition \ref{proposition-metric-ball} we know that $U, V \in \TT_d$. Moreover $x \in U$, $y \in V$. We are left to show that 
+$$
+U \cap V = \emptyset \,.
+$$
+Suppose by contradiction that $U \cap V = \emptyset$ and let $z \in U \cap V$. Therefore 
+$$
+d(x,z) < \e \,,  \quad d(y,z) < \e \,.
+$$
+By triangle inequality we have
+$$
+d(x,y) \leq d(x,z) +  d(y,z) < \e + \e = d(x,y) \,,
+$$
+where in the last inequality we used the definition of $\e$. This is 
+a contradiction. Therefore $U \cap V = \emptyset$ and $(X,\TT_d)$ is Hausdorff.
+
+
+:::
+
+
+In general, every metrizable space is Hausdorff.
 
 
 ::: Definition
@@ -765,11 +1050,903 @@ with $\TT_d$ the topology induced by $d$.
 :::
 
 
+::: {.Corollary #corollary-hausdorff}
+
+Let $(X,\TT)$ be a metrizable space. Then $X$ is Hausforff.
+
+:::
+
+
+::: Proof
+
+Since $(X,\TT)$ is metrizable, there exists a metric $d$ on $X$ such that 
+$$
+\TT  = \TT_d \,.
+$$
+By Proposition \ref{proposition-hausdorff-1} we know that $(X,\TT_d)$ is Hausdorff. Hence $(X,\TT)$ is Hausdorff.
+
+:::
+
+
+
+As a conseuqence of Corollary \ref{corollary-hausdorff} we have that
+spaces which are not metrizable are not Hausdorff. Let us make 
+a few examples.
+
+
+::: Example
+### Trivial topology is not Hausdorff
+
+Let $(X,\TT)$ be a topological space with $\TT$ trivial topology. Assume that $X$ has more than one element. Then $X$ is not Hausdorff.
+
+> Indeed, let $x,y \in X$ with $x \neq y$. Suppose by contradiction that $X$ is Hausdorff. Then there exist $U,V \in \TT$ such that 
+$$
+x \in U \,, \quad y \in V \,, \quad U \cap V = \emptyset \,.
+$$
+Recall that
+$$
+\TT = \{  \emptyset, X \} \,.
+$$
+Since $x \in U$ and $y \in V$, we deduce that $U$ and $V$ are non-empty. 
+Since $U$ and $V$ are open, the only possibility is that 
+$$
+U = V = X \,.
+$$
+In this case we have
+$$
+U \cap V = X \cap X = X \neq \emptyset \,,
+$$
+leading to a contradiciton. Hence $X$ is not Hausdorff.
+
+
+:::
 
 
 
 
-## Connected topological spaces
+::: Example
+### Cofinite topology on $\R$
+
+Consider the following family $\TT$ of subsets of $\R$
+$$
+\TT := \{ U \subseteq \R \divider U^c \, \mbox{ is finite, }  \mbox{or } U^c = \R \}\,. 
+$$
+Then $(\R,\TT)$ is a topological space which is not Hausdorff. The topology $\TT$ is called the **cofinite topology**.
+
+> Exercise: Show that $(\R,\TT)$ is not Hausdorff.
+
+:::
+
+
+
+
+::: Example
+
+
+Consider the following family $\TT$ of subsets of $\R$
+$$
+\TT := \{ U = (-\infty,a)  \divider - \infty \leq a \leq \infty  \}\,. 
+$$
+Then $(\R,\TT)$ is a topological space which is not Hausdorff.
+
+> We start by showing that $(\R,\TT)$ is a topological space. We need to check the properties of topologies:
+>
+>  - (A1) We have that 
+>  $$
+>  (\infty,\infty) = \emptyset \in \TT \,, \quad (-\infty,\infty) = \R \in \TT \,.
+>  $$
+>
+>  - (A2) Suppose that $A_i \in \TT$ for all $i \in I$. By definition
+>  $$
+>  A_i = (-\infty, a_i) \,, \quad - \infty \leq a_i \leq \infty \,.
+>  $$
+>  Set 
+>  $$
+>  a := \sup_{i \in I} \ a_i \,, \quad A := (-\infty, a) \,. 
+>  $$
+>  Note that $a$ always exists, and possibly $a=\infty$. Moreover 
+>  $A \in \TT$. We claim
+>  $$
+>  A = \bigcup_{i \in I} \, A_i \,.
+>  $${#eq-sorgenfrey-1}
+>  To prove (@eq-sorgenfrey-1) first suppose that $x \in A$. Then $x < a$. 
+>  Set $\e := a - x$, so that $\e>0$. By definition of supremum there
+>  exists $i_{0} \in I$ such that 
+>  $$
+>  a - \e < a_{i_0} \,.
+>  $$
+>  From the above, and from the definition of $\e$, we deduce
+>  $$
+>  a_{i_0} > a - \e = a - a + x = x \,,
+>  $$ 
+>  showing that $x \in (-\infty, a_{i_0}) = A_{i_0}$. Therefore
+>  $$
+>  A \subseteq \bigcup_{i \in I} \, A_i \,.
+>  $$
+>  Conversely, assume that $x \in \cup_{i \in I} \, A_i$. Therefore there
+>  exists $i_0 \in I$ such that $x \in A_{i_0} = (-\infty, a_{i_0})$. In 
+>  particular 
+>  $$
+>  x < a_{i_0} \leq \sup_{i \in I} a_i = a \,,
+>  $$
+>  showing that $x \in (-\infty,a) = A$. Therefore 
+>  $$
+>  \bigcup_{i \in I} \, A_i \subseteq A\,,
+>  $$
+>  and (@eq-sorgenfrey-1) is proven.
+>
+>  - (A3) Let $A, B \in \TT$. Therefore 
+>  $$
+>  A = (-\infty, a)\,, \quad B = (-\infty, b)\,,
+>  $$
+>  for some $a,b \in [-\infty, \infty]$. Set
+>  $$
+>  U := A \cap B \,, \quad z:= \min \{a,b\} \,.
+>  $$
+>  It is immediate to check that 
+>  $$
+>  U = (-\infty, z) \,,
+>  $$
+>  showing that $U \in \TT$.
+>
+> Therefore $(\R,\TT)$ is a topological space. We now show that $(\R,\TT)$ is not Hausdorff. Suppose by contradiction that $(\R,\TT)$ is Hausdorff. Let $x,y \in \R$  with $x \neq y$. By assumption there exist $U,V \in \TT$ such that 
+>  $$
+>  x \in U \,, \quad y \in V \,, \quad U \cap V = \emptyset \,.
+>  $$ 
+>  By definition of $\TT$ there exist $a,b \in [-\infty,\infty]$ such that
+>  $$
+>  U = (-\infty,a) \,, \quad V = (- \infty, b) \,.
+>  $$
+>  Since $x \in U$ and $y \in V$, in particular $U$ and $V$ are non-empty. Therefore $a,b>-\infty$. Set 
+>  $$
+>  z := \min\{a , b \}\,, \quad Z:= U \cap V = (-\infty,z) \,.
+>  $$ 
+>  As $a,b>-\infty$, we have $z > - \infty$. Therefore $Z \neq \emptyset$. This is a contradiction, since $U \cap V = \emptyset$. Therefore $(\R,\TT)$ is not Hausdorff.
+
+:::
+
+
+
+
+
+
+
+
+
+In Hausdorff spaces the limit of a sequence is unique.
+
+
+::: Proposition
+### Uniqueness of limit in Hausdorff spaces
+
+Let $(X,\TT)$ be a Hausdorff space. If a sequence $\{x_n\} \subseteq X$ converges, then the limit is unique.
+
+:::
+
+
+::: Proof
+
+Let $\{x_n\} \subseteq X$ be a convergent sequence. Suppose by contradiction that 
+$$
+x_n \to x_0 \,, \quad x_n \to y_0
+$$
+in $X$, for some $x_0,y_0 \in X$ with $x_0 \neq y_0$. Since $X$ is Hausdorff, there exist $U,V \in \TT$ such that 
+$$
+x_0 \in U \,, \quad y_0 \in V \,, \quad U \cap V = \emptyset \,.
+$$
+As $x_n \to x_0$ and $U \in \TT$ with $x_0 \in U$, there exists
+$N_1 \in \N$ such that
+$$
+x_n \in U \,, \quad \forall \, n \geq N_1  \,.
+$$
+Similarly, since $x_n \to y_0$ and $V \in \TT$ with $y_0 \in U$, there exists
+$N_2 \in \N$ such that
+$$
+x_n \in V \,, \quad \forall \, n \geq N_2  \,.
+$$
+Take $N:=\max\{N_1,N_2\}$. Then 
+$$
+x_n \in U \cap V \,, \quad \forall \, n \geq N  \,.
+$$
+Since $U \cap V = \emptyset$, the above is a contradiction. Therefore the limit of $x_n$ is unique. 
+
+:::
+
+
+
+
+
+
+
+## Continuity
+
+We extend the notion of continuity to topological spaces. To this end, 
+we need the concept of pre-image of a set under a function.
+
+::: Definition
+### Images and Pre-images
+
+Let $X, Y$ be sets and $f \colon X \to Y$ be a function. 
+
+- Let $U \subseteq X$. The image of $U$ under $f$ is the subset of $Y$ defined by
+$$
+f (U) := \{ y \in Y \divider \exists \, x \in X \st y = f(x) \} = \{ f(x) \divider x \in X \} \,.
+$$
+
+- Let $V \subseteq Y$. The pre-image of $V$ under $f$ is the subset of $X$ defined by
+$$
+f^{-1} (V) := \{ x \in X \divider f(x) \in V \} \,.
+$$
+
+:::
+
+
+::: Warning
+
+The notation $f^{-1}(V)$ does not mean that we are inverting $f$. In fact, the pre-image is defined for all functions.
+
+:::
+
+
+Let us gather useful properties of images and pre-images.
+
+
+::: Proposition
+
+Let $X,Y$ be sets and $f \colon X \to Y$. We denote with the letter $A$ sets in $X$ and with the letter $B$ sets in $Y$. We have
+
+- $A \subseteq f^{-1}(f(A))$
+- $A = f^{-1}(f(A))$ if $f$ is injective
+- $f(f^{-1}(B)) \subseteq B$
+- $f(f^{-1}(B)) = B$ if $f$ is surjective
+- If $A_1 \subseteq A_2$ then $f(A_1) \subseteq f(A_2)$
+- If $B_1 \subseteq B_2$ then $f^{-1}(B_1) \subseteq f^{-1}(B_2)$
+- If $A_i \subseteq X$ for $i \in I$ we have
+\begin{gather*}
+f \left(  \bigcup_{i \in I} A_i \right)  = \bigcup_{i \in I} f(A_i) \\
+f \left(  \bigcap_{i \in I} A_i \right)  \subseteq \bigcap_{i \in I} f(A_i) 
+\end{gather*}
+- If $B_i \subseteq Y$ for $i \in I$ we have
+\begin{gather*}
+f^{-1} \left(  \bigcup_{i \in I} B_i \right)  = \bigcup_{i \in I} f^{-1}(B_i) \\
+f^{-1} \left(  \bigcap_{i \in I} B_i \right)  = \bigcap_{i \in I} f^{-1}(B_i) 
+\end{gather*}
+
+Suppose $Z$ is another set and $g \colon Y \to Z$. Let $C \subseteq Z$. Then
+\begin{align*}
+& (g \circ f)(A)  = g(f(A)) \\
+& (g \circ f)^{-1}(C)  = f^{-1}(g^{-1}(C)) 
+\end{align*}
+
+:::
+
+It is a good exercise to try and prove a few of the above properties.
+We omit the proof. We can now define continuous functions between topological spaces.
+
+::: Definition
+### Continuous function
+
+Let $(X,\TT_X)$ and $(Y,\TT_Y)$ be topological spaces. Let $f \colon X \to Y$ be a function. 
+
+- Let $x_0 \in X$. We say that $f$ is continuous at $x_0$ if it holds:
+$$
+\forall \, V \in \TT_Y \st f(x_0) \in V \,, \,\, \exists \, U \in \TT_X \st x_0 \in U \,, \,\, f(U) \subseteq V \,.
+$$
+
+- We say that $f$ is continuous from $(X,\TT_X)$ to $(Y,\TT_Y)$ if $f$ is continuous at each point $x_0 \in X$.
+
+:::
+
+
+
+The following proposition presents a useful characterization of continuous functions in terms of pre-images. 
+
+
+::: {.Proposition  #proposition-continuity-characterization}
+
+Let $(X,\TT_X)$ and $(Y,\TT_Y)$ be topological spaces. Let $f \colon X \to Y$ be a function. They are equivalent:
+
+1. $f$ is continuous from $(X,\TT_X)$ to $(Y,\TT_Y)$.
+2. It holds:
+$$
+f^{-1}(V) \in \TT_X  \,, \quad \forall \, V \in \TT_Y \,. 
+$$
+
+:::
+
+::: Important
+
+In other words, a function $f \colon X \to Y$ is continuous if and only if the pre-image of open sets in $Y$ are open sets in $X$. 
+
+:::
+
+The proof of Proposition \ref{proposition-continuity-characterization} is simple, but very tedious. We choose to skip it.
+
+
+
+::: Example
+
+Let $X$ be a set and $\TT_1$, $\TT_2$ be topologies on $X$. Define the identity map
+$$
+{\id}_{X} \colon (X,\TT_1) \to (X,\TT_2)  \,, \quad {\id}_{X} (x):= x \,.
+$$
+They are equivalent:
+
+1. ${\id}_{X}$ is continuous from $(X,\TT_1)$ to $(X,\TT_2)$.
+2. $\TT_1$ is finer than $\TT_2$
+$$
+\TT_2 \subseteq \TT_1 \,.
+$$
+
+
+>  Indeed, ${\id}_{X}$ is continuous if and only if
+>  $$
+>  {\id}_{X}^{-1} (V) \in \TT_1  \,, \quad \forall \, V \in \TT_2 \,.
+>  $$
+>  But ${\id}_{X}^{-1} (V) = V$, so that the above reads
+>  $$
+>  V \in \TT_1  \,, \quad \forall \, V \in \TT_2 \,,
+>  $$
+>  which is equivalent to $\TT_2 \subseteq \TT_1$.
+
+:::
+
+
+
+Let us compare our new definition of contiuity with the classical notion of continuity in $\R^n$. Let us recall the definition of continuous function in $\R^n$.
+
+::: Definition
+### Continuity in the classical sense
+
+Let $f \colon \subseteq \R^n \to \R^m$. We say that $f$ is continuous at $\xx_0$ if it holds:
+$$
+\forall \, \e > 0 \,, \, \exists \, \delta >0 \st \|f(\xx) - f(\xx_0)\|< \e \,\, \mbox{ if } \,\, \| \xx - \xx_0 \| < \delta \,.   
+$$
+
+:::
+
+
+::: Proposition
+
+Let $f \colon  \R^n \to \R^m$ and suppose $\R^n,\R^m$ are 
+equipped with the Euclidean topology. Let $\xx_0 \in \R^n$. They are equivalent:
+
+1. $f$ is continuous at $\xx_0$ in the topological sense.
+2. $f$ is continuous at $\xx_0$ in the classical sense.
+
+:::
+
+
+::: Proof
+
+*Part 1.* Suppose that $f$ is continuous at $\xx_0$ in the topological sense. Let $\e>0$ and consider the set 
+$$
+V := B_{\e}(f(\xx_0))\,.
+$$
+We have that $V \subset \R^m$ is open and $f(\xx_0) \in V$. As $f$ is 
+continuous in the topological sense, there exists $U \subset \R^n$ open with $\xx_0 \in U$ and such that 
+$$
+f(U) \subset V = B_{\e}(f(\xx_0)) \,.
+$${#eq-proof-continuity-3}
+Since $U$ is open and $\xx_0 \in U$, there exists $\delta>0$ such that
+$$
+B_{\delta}(\xx_0) \subset U \,.
+$$
+By the above inclusion and (@eq-proof-continuity-3) we conclude that
+$$
+f(B_{\delta}(\xx_0)) \subset f(U) \subset V = B_{\e}(f(\xx_0)) \,.
+$$
+This is equivalent to 
+$$
+\xx \in B_{\delta}(\xx_0) \quad \implies  \quad f(\xx) \in B_{\e}(f(\xx_0))\,,
+$$
+which reads
+$$
+\| \xx - \xx_0 \| < \delta \quad \implies \quad
+\| f(\xx) - f(\xx_0) \| < \e \,.
+$$
+Therefore $f$ is continuous at $\xx_0$ in the classical sense.
+
+
+
+
+*Part 2.* Suppose $f$ is continuous at $x_0$ in the classical sense. 
+Let $V \subset \R^m$ be open and such that $f(\xx_0) \in V$. Since $V$
+is open, there exists $\e>0$ such that 
+$$
+B_{\e} (f(\xx_0)) \subset V \,.
+$${#eq-proof-continuity-2}
+Since $f$ is continous in the classical sense, there exists $\delta>0$ such that 
+$$
+  \| \xx - \xx_0 \| < \delta \quad \implies \|f(\xx) - f(\xx_0)\|< \e  \,.
+$$
+The above is equivalent to
+$$
+\xx \in B_{\delta}(\xx_0)  \quad \implies \quad f(\xx) \in B_{\e} (f (\xx_0))  \,.
+$${#eq-proof-continuity-1}
+Set 
+$$
+U:= B_{\delta}(\xx_0)
+$$
+and note that $U$ is open in $\R^n$ and $\xx_0 \in U$. By definition 
+of image of a set, (@eq-proof-continuity-1) reads
+$$
+f(U) = f( B_{\delta}(\xx_0))   \subseteq  B_{\e} (f(\xx_0)) \,.
+$$
+Recalling (@eq-proof-continuity-2) we conclude that 
+$$
+f(U) \subset V \,.
+$$
+In summary, we have shown that given $V \subset \R^m$ open and such that $f(\xx_0) \in V$, there exists $U$ open in $\R^n$ such that $\xx_0 \in U$ and $f(U) \subset V$. Therefore $f$ is continuous at $\xx_0$ in the 
+topological sense.
+:::
+
+
+
+A similar proof yields the characterization of continuity in metric
+spaces. The proof is left as an exercise. 
+
+
+::: Proposition
+
+Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces. Denote by $\TT_X$ and $\TT_Y$ the topologies induced by the metrics. Let $f \colon X \to Y$ and $x_0 \in X$. They are equivalent:
+
+1. $f$ is continuous at $x_0$ in the topological sense.
+2. It holds:
+$$
+\forall \, \e > 0 \,, \, \exists \, \delta >0 \st \, d_Y(f(x),f(x_0))<\e \,\, 
+\mbox{ if } \,\, d_X(x , x_0) < \delta \,.
+$$
+
+:::
+
+
+
+Let us examine continuity in the cases of the trivial and discrete topologies.
+
+
+::: Example
+Let $(X,\TT_X)$ and $(Y,\TT_Y)$ be a topological space. Suppose that 
+$\TT_Y$ is the trivial topology, that is,
+$$
+\TT_Y = \{ \emptyset, Y \} \,.
+$$
+Then every function $f \colon X \to Y$ is continuous. 
+
+
+> Indeed, we know that $f$ is continuous if and only if it holds:
+> $$
+> f^{-1}(V) \in \TT_X \,, \quad \forall \,\, V \in \TT_Y \,.
+> $$
+> We have two cases:
+>
+>  - $V=\emptyset$: Then 
+>  $$
+>  f^{-1}(V) = f^{-1}(\emptyset) = \emptyset \in \TT_X \,.
+>  $$
+>  - $V=Y$: Then 
+>  $$
+>  f^{-1}(V) = f^{-1}(Y) = X \in \TT_X \,.
+>  $$
+>
+> Therefore $f$ is continuous.
+
+:::
+
+
+
+::: Example
+Let $(X,\TT_X)$ and $(Y,\TT_Y)$ be topological spaces. Suppose that 
+$\TT_Y$ is the discrete topology, that is,
+$$
+\TT_Y = \{ V \st V \subseteq Y \} \,.
+$$
+Let $f \colon X \to Y$. They are equivalent:
+
+1. $f$ is continuous from $X$ to $Y$.
+2. $f^{-1}(\{y\}) \in \TT_X$ for all $y \in Y$.  
+
+
+> Indeed, suppose that $f$ is continuous. Then
+> $$
+> f^{-1}(V) \in \TT_X \,, \quad \forall \,\, V \in \TT_Y \,.
+> $$
+> As $V=\{y\} \in \TT_Y$, we conclude that $f^{-1}(\{y\}) \in \TT_X$.
+>
+> Conversely, assume that $f^{-1}(\{y\}) \in \TT_X$ for all $y \in Y$.  Let $V \in \TT_Y$. Trivially, we have
+> $$
+> V = \bigcup_{y \in V} \, \{ y \} \,.
+> $$
+> Therefore 
+> $$
+> f^{-1}(V) = f^{-1}\left( \bigcup_{y \in V}\, \{ y \} \right) = \bigcup_{y \in V} \, f^{-1}( \{y \} ) \,.
+> $$
+> As $f^{-1}( \{y \}) \in \TT_X$ for all $y \in Y$, by property (A2) we conclude that $f^{-1}(V) \in \TT_X$. Therefore $f$ is continuous.
+>
+:::
+
+
+
+In a topological space, continuity preserves limits
+of sequences. 
+
+
+
+::: {.Proposition #proposition-continuity-sequential}
+
+Let $(X,\TT_X)$ and $(Y,\TT_Y)$ be topological spaces. Let 
+$f \colon X \to Y$ be continuous. Let $\{x_n\} \subset X$
+and $x_0 \in X$. We have
+$$
+x_n \to x_0 \,\, \mbox{ in }\, X \quad \implies \quad 
+f(x_n) \to f(x_0) \,\, \mbox{ in }\, Y\,.
+$$
+
+
+:::
+
+
+
+::: Proof
+
+Let $V \in \TT_Y$ be such that $f(x_0) \in V$. Since $f$ is continuous there exists $U \in \TT_X$ with $x_0 \in U$ such that 
+$$
+f(U) \subset V \,.
+$$
+Since $U \in \TT_X$ and $x_n \to x_0$ in $X$, there exists $N \in \N$ such that
+$$
+x_n \in U \,, \quad \forall \, n \geq N \,.
+$$
+Therefore
+$$
+f(x_n) \in f(U) \,, \quad \forall \, n \geq N \,.
+$$
+Seeing that $f(U) \subset V$, we conclude 
+$$
+f(x_n) \in V \,, \quad \forall \, n \geq N \,,
+$$
+showing that $f(x_n) \to f(x_0)$ in $Y$.
+
+:::
+
+
+::: Warning
+
+The converse implication of Proposition \ref{proposition-continuity-sequential} is false. That is, even if it holds
+$$
+x_n \to x_0 \,\, \mbox{ in }\, X \quad \implies \quad 
+f(x_n) \to f(x_0) \,\, \mbox{ in }\, Y\,.
+$$
+for all sequences $\{x_n\} \subset X$, the function $f$ might **not** be continuous. For this to hold, it is necessary for the topologies on
+$X$ and $Y$ to be metrizable.  
+
+:::
+
+
+
+Let us make an observation on continuity of compositions.
+
+
+:::  Proposition
+
+Let $(X,\TT_X), (Y,\TT_Y), (Z,\TT_Z)$ be topological spaces. Let 
+$$
+f \colon X \to Y \,, \quad g \colon Y \to Z \,,
+$$
+be given functions. If $f$ and $g$ are continuous, then 
+$$
+(g \circ f) \colon X \to Z 
+$$
+is continuous.
+:::
+
+::: Proof
+
+Let $C \in \TT_Z$. As $g$ is continuous, we have that 
+$$
+g^{-1}(C) \in \TT_Y \,.
+$$ 
+Since $f$ is continuous, we also have
+$$
+f^{-1} ( g^{-1}(C) ) \in \TT_X \,.
+$$
+Therefore
+$$
+(g \circ f)^{-1} ( C ) = f^{-1} ( g^{-1}(C) ) \in \TT_X \,,
+$$
+so that $g \circ f$ is continuous.
+:::
+
+
+We conclude the section by introducing homeomorphisms.
+
+::: Definition
+### Homeomoprhim
+
+Let $(X,\TT_X)$, $(Y,\TT_Y)$ be topological space. A function $f \colon X \to Y$ is called an **homeomorphism** if they hold:
+
+1. $f$ is continuous.
+2. There exists $g \colon Y \to X$ continuous such that 
+$$
+g \circ f = {\id}_{X} \,, \quad f \circ g = {\id}_{Y}  \,.
+$$
+
+:::
+
+
+The above is saying that $f$ is a homeomorphism if it is continuous and has continuous inverse. Homeomorphisms are the way we say that two topological spaces look the same.
+
+
+
+
+## Subspace topology
+
+
+Any subset $Y$ in a topological space $X$ inherits naturally a topological structure. Such structure is called **subspace topology**.
+
+
+::: Definition
+### Subspace topology   {#definition-subspace-topology}
+
+Let $(X,\TT)$ be a topological space and $Y \subseteq X$ a subset. Define the family of sets
+$$
+\SSS := \{ A \subset Y \divider \exists \,\, U \in \TT \st A = U \cap Y   \} \,.
+$$
+The family $\SSS$ is called subspace topology on $Y$ induced by the inclusion $Y \subset X$.
+
+:::
+
+
+::: Proof
+### Well-posedness of Definition \ref{definition-subspace-topology}
+
+We have to show that $(Y,\SSS)$ is a topological space:
+
+- (A1) $\emptyset \in \SSS$ since
+$$
+\emptyset = \emptyset \cap Y
+$$
+and $\emptyset \in \TT$. Similarly we have $Y \in \SSS$, since
+$$
+Y = X \cap Y \,,
+$$
+and $X \in \TT$.
+
+- (A2) Let $A_i \in \SSS$ for $i \in I$. By definition there exist $U_i \in \TT$ such that 
+$$
+A_i =  U_i \cap Y \,, \quad \forall \, i \in I \,.
+$$
+Therefore 
+$$
+\bigcup_{i \in I} \, A_i = 
+\bigcup_{i \in I} (U_i \cap Y ) =
+\left(\bigcup_{i \in I} U_i \right) \cap Y  \,.
+$$
+The above proves that $\cup_{i \in I} \, A_i \in \SSS$, since 
+$\cup_{i \in I} \, U_i \in \TT$.
+
+- (A3) Let $A_1, A_2 \in \SSS$. By definition there exist $U_1,U_2 \in \TT$ such that 
+$$
+A_1 =  U_1 \cap Y \,, \quad
+A_2 =  U_2 \cap Y
+$$
+Therefore 
+$$
+A_1 \cap A_2  = (  U_1 \cap Y ) \cap (U_2 \cap Y) = (U_1 \cap U_2) \cap Y
+$$
+The above proves that $A_1 \cap A_2  \in \SSS$, since 
+$U_1 \cap U_2 \in \TT$.
+:::
+
+
+
+If the set $Y$ is open, then sets are open in the subspace topology if
+and only if they are open in $X$.
+
+
+::: Proposition
+
+Let $(X,\TT)$ be a topological space and $Y \in \TT$ a subset. Let
+$A \subset Y$. Then
+$$
+A \in \SSS \quad \iff \quad A \in \TT \,.
+$$
+
+:::
+
+
+::: Proof
+Suppose $A \in \SSS$. Then there exists $U \in \TT$ such that
+$$
+A = U \cap Y \,. 
+$$
+Since $U, Y \in \TT$, by property (A3) of topologies it follows 
+that 
+$$
+A = U \cap Y  \in \TT \,. 
+$$
+
+Conversely, assume that $A \in \TT$. Then
+$$
+A = A \cap Y \,,
+$$
+showing that $A \in \SSS$.
+:::
+
+
+
+
+::: Warning
+
+Let $(X,\TT)$ be a topological space, $A \subset Y \subset X$. In general we could have
+$$
+A \in \SSS \quad \mbox{and} \quad A \notin \TT
+$$
+
+> For example consider $X=\R$ with $\TT$ the euclidean topology. Consider the subset $Y = [0,2)$ and equip $Y$ with the subspace topology $\SSS$. Let $A = [0,1)$. Then $A \notin \TT$ but $A \in \SSS$, since 
+$$
+A =  (-1,1)  \cap Y
+$$
+and $(-1,1) \in \TT$.
+
+:::
+
+
+
+
+::: Example
+
+Let $X=\R$ be equipped with $\TT$ the euclidean topology. Let 
+$\SSS$ be the subspace topology on $\Z$. Then $\SSS$ coincides with
+the discrete topology.
+
+> *Proof.* The set $\{z\}$ is open in $\SSS$ for all $z \in \Z$. Indeed, 
+$$
+\{z\} = \left(  z-1 , z + 1   \right)   \cap \Z \,
+$$
+and $(z - 1, z + 1) \in \TT$. Thus $\{z\} \in \SSS$. Let now $A \subseteq \Z$. Then
+$$
+A = \bigcup_{z \in A} \, \{ z \} \,,
+$$
+and therefore $A \in \SSS$ by (A2). This proves that
+$$
+\SSS = \{ A \st A \subseteq \Z \} \,,
+$$
+that is, $\SSS$ is the discrete topology on $\Z$.
+
+
+:::
+
+
+
+## Interior and closure
+
+
+We now define interior, closure and boundary of a set $A$ contained 
+in a topological space.
+
+::: Definition
+### Interior of a set
+
+Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set.
+The **interior** of $A$ is the set
+$$
+\interior{A} :=  \bigcup_{ \substack{U \subseteq A \\ U \in \TT} } \, U \,.
+$$
+
+:::
+
+
+::: Remark
+
+The definition of $\interior{A}$ is well-posed, since $\emptyset \subseteq A$ and $\emptyset \in \TT$. Therefore the union is taken over a non-empty family.
+
+:::
+
+
+
+::: Proposition
+
+Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set. Then
+$\interior{A}$ is the largest open set contained in $A$, that is:
+
+1. $\interior{A}$ is open.
+2. $\interior{A} \subseteq A$.
+3. If $V \in \TT$ and $V \subseteq A$, then $V \subseteq \interior{A}$.
+
+:::
+
+
+
+::: Proof
+
+We have:
+
+1. $\interior{A}$ is open, since it is union of open sets, see property (A2).
+2. $\interior{A} \subseteq A$, since $\interior{A}$ is union of sets contained in $A$.
+
+3. Suppose $V \in \TT$ and $V \subseteq A$. Therefore 
+$$
+V \subseteq   \bigcup_{ \substack{U \subseteq A \\ U \in \TT} } \, U = \interior{A} \,.
+$$
+
+
+:::
+
+
+
+
+::: Definition
+### Closure of a set
+
+Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set.
+The **closure** of $A$ is the set
+$$
+\closure{A} :=  \bigcap_{ \substack{A \subseteq C \\ C^c \in \TT } } \, C \,,
+$$
+that is, $\closure{A}$ is the intersection of all closed sets containing 
+$A$.
+
+:::
+
+
+
+::: Remark
+
+The definition of $\overline{A}$ is well-posed, since $A \subseteq X$, and $X$ is closed. Therefore the intersection is taken over a non-empty family.
+
+:::
+
+
+
+::: Proposition
+
+Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set. Then
+$\overline{A}$ is the smallest closed set containing $A$, that is:
+
+1. $\overline{A}$ is closed.
+2. $A \subseteq \overline{A}$.
+3. If $V$ is closed $A \subseteq V$, then $\overline{A} \subseteq V$.
+
+:::
+
+
+::: Proof
+
+We have:
+
+1. $\overline{A}$ is closed, since it is intersection of closed sets, see property (C2).
+
+2. $A \subseteq \overline{A}$, since $\overline{A}$ is intersection of sets which contain $A$.
+
+3. Suppose $V$ is closed and $A \subseteq V$. Therefore 
+$$
+\overline{A} =  \bigcap_{ \substack{A \subseteq C \\ C^c \in \TT} } \, C  \subset V \,.
+$$
+
+
+:::
+
+
+
+
+
+::: Definition
+### Boundary of a set
+
+Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set. 
+The **boundary** of $A$ is the set
+$$
+\partial A := \overline{A} \smallsetminus \interior{A} \,.
+$$
+
+:::
+
+
+
+
+
+## Connectedness 
 
 
 
@@ -778,3 +1955,9 @@ with $\TT_d$ the topology induced by $d$.
 Let $(X,\TT)$ be a topological space. We say that $X$ is **connected** if the only subsets of $X$ which are both open and closed are just $\emptyset$ and $X$.
 
 :::
+
+
+
+
+
+## Compactness
