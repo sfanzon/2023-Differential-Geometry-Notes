@@ -66,6 +66,22 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
 .Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
@@ -74,39 +90,7 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Question {
+.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -114,29 +98,45 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Warning {
+.Question {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .Proof {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
 }
-.Goal {
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
 </style>
 
@@ -253,8 +253,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#hausdorff-spaces" id="toc-hausdorff-spaces" class="nav-link" data-scroll-target="#hausdorff-spaces"><span class="header-section-number">4.7</span> Hausdorff spaces</a></li>
   <li><a href="#continuity" id="toc-continuity" class="nav-link" data-scroll-target="#continuity"><span class="header-section-number">4.8</span> Continuity</a></li>
   <li><a href="#subspace-topology" id="toc-subspace-topology" class="nav-link" data-scroll-target="#subspace-topology"><span class="header-section-number">4.9</span> Subspace topology</a></li>
-  <li><a href="#connectedness" id="toc-connectedness" class="nav-link" data-scroll-target="#connectedness"><span class="header-section-number">4.10</span> Connectedness</a></li>
-  <li><a href="#compactness" id="toc-compactness" class="nav-link" data-scroll-target="#compactness"><span class="header-section-number">4.11</span> Compactness</a></li>
+  <li><a href="#topological-basis" id="toc-topological-basis" class="nav-link" data-scroll-target="#topological-basis"><span class="header-section-number">4.10</span> Topological basis</a></li>
+  <li><a href="#product-topology" id="toc-product-topology" class="nav-link" data-scroll-target="#product-topology"><span class="header-section-number">4.11</span> Product topology</a></li>
+  <li><a href="#connectedness" id="toc-connectedness" class="nav-link" data-scroll-target="#connectedness"><span class="header-section-number">4.12</span> Connectedness</a></li>
+  <li><a href="#compactness" id="toc-compactness" class="nav-link" data-scroll-target="#compactness"><span class="header-section-number">4.13</span> Compactness</a></li>
   </ul>
 </nav>
     </div>
@@ -1522,15 +1524,125 @@ A = \bigcup_{z \in A} \, \{ z \} \,,
 </div></details>
 </div>
 </section>
-<section id="connectedness" class="level2" data-number="4.10">
-<h2 data-number="4.10" class="anchored" data-anchor-id="connectedness"><span class="header-section-number">4.10</span> Connectedness</h2>
-<div id="Definition-70" class="Definition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 70</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space. We say that <span class="math inline">\(X\)</span> is <strong>connected</strong> if the only subsets of <span class="math inline">\(X\)</span> which are both open and closed are just <span class="math inline">\(\emptyset\)</span> and <span class="math inline">\(X\)</span>.<p></p>
+<section id="topological-basis" class="level2" data-number="4.10">
+<h2 data-number="4.10" class="anchored" data-anchor-id="topological-basis"><span class="header-section-number">4.10</span> Topological basis</h2>
+<p>We have seen that in metric spaces every open set is union of open balls, see Propostion <a href="chap_4.html#proposition-metric-ball">26</a>. We can then regard the open balls as building blocks for the whole topology. In this context, we call the open balls a basis for the topology.</p>
+<p>We can generalize the concept of basis to arbitrary topological spaces.</p>
+<div id="topological-basis-1" class="Definition" title="Topological basis">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 70: </strong>Topological basis</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space and let <span class="math inline">\(\mathcal{B} \subseteq \mathcal{T}\)</span>. We say that <span class="math inline">\(\mathcal{B}\)</span> is a <strong>topological basis</strong> for the topology <span class="math inline">\(\mathcal{T}\)</span> if for all <span class="math inline">\(U \in \mathcal{T}\)</span> there exist open sets <span class="math inline">\(\{B_i\} \subseteq \mathcal{B}\)</span>, with <span class="math inline">\(I\)</span> family of indices, such that <span id="eq-topo-basis"><span class="math display">\[
+U = \bigcup_{i \in I} \, B_i \,.
+\tag{4.11}\]</span></span><p></p>
+</div></details>
+</div>
+<div id="Example-71" class="Example">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 71</strong></summary><div>
+<ol type="1">
+<li>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space. Then <span class="math inline">\(\mathcal{B}:=\mathcal{T}\)</span> is a basis for <span class="math inline">\(\mathcal{T}\)</span>.</li>
+</ol>
+<blockquote class="blockquote">
+<p>This is true because one can just take <span class="math inline">\(B=U\)</span> in (<a href="#eq-topo-basis"><span>4.11</span></a>).</p>
+</blockquote>
+<ol start="2" type="1">
+<li><span class="math inline">\((X,d)\)</span> metric space with topology <span class="math inline">\(\mathcal{T}_d\)</span> induced by the metric. Then <span class="math display">\[
+\mathcal{B} :=\{ B_r(x) \, \colon \,x \in X \,, \,\, r&gt;0  \}
+\]</span> is a basis for <span class="math inline">\(\mathcal{T}_d\)</span>.</li>
+</ol>
+<blockquote class="blockquote">
+<p>This is true by Propostion <a href="chap_4.html#proposition-metric-ball">26</a>.</p>
+</blockquote>
+<ol start="3" type="1">
+<li>Let <span class="math inline">\((X,\mathcal{T})\)</span> with <span class="math inline">\(X\)</span> the discrete topology. Then <span class="math display">\[
+\mathcal{B}:=\{   \{x\}  \, \colon \,x \in X \}
+\]</span> is a basis for <span class="math inline">\(\mathcal{T}\)</span>.</li>
+</ol>
+<blockquote class="blockquote">
+<p>This is true because for any <span class="math inline">\(U \in \mathcal{T}\)</span> we have <span class="math display">\[
+U = \bigcup_{ x \in U }  \, \{x\} \,.
+\]</span></p>
+</blockquote>
+</div></details>
+</div>
+<div id="proposition-basis" class="Proposition">
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 72</strong></summary><div>
+<p>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space and <span class="math inline">\(\mathcal{B}\)</span> a basis for <span class="math inline">\(\mathcal{T}\)</span>. They hold:</p>
+<ul>
+<li><p>(B1) We have <span class="math display">\[
+\bigcup_{B \in \mathcal{B}} \, B = X \,.
+\]</span></p></li>
+<li><p>(B2) If <span class="math inline">\(U_1,U_2 \in \mathcal{B}\)</span> then there exist <span class="math inline">\(\{B_i \} \subseteq \mathcal{B}\)</span> such that <span class="math display">\[
+U_1 \cap U_2 = \bigcup_{i \in I} \, B_i \,.
+\]</span></p></li>
+</ul>
+</div></details>
+</div>
+<div id="Proof*-31" class="Proof">
+<details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>
+<ul>
+<li><p>(B1) This holds because <span class="math inline">\(X \in \mathcal{T}\)</span>. Therefore by definition of basis there exist <span class="math inline">\(B_i \in \mathcal{B}\)</span> such that <span class="math display">\[
+X = \bigcup_{i \in I} \, B_i  \,.
+\]</span> Therefore taking the union over all <span class="math inline">\(B \in \mathcal{B}\)</span> yields <span class="math inline">\(X\)</span>, and (B1) follows.</p></li>
+<li><p>(B2) Let <span class="math inline">\(U_1 , U_2 \in \mathcal{B}\)</span>. Then <span class="math inline">\(U_1 , U_2 \in \mathcal{T}\)</span>, since <span class="math inline">\(\mathcal{B} \subseteq \mathcal{T}\)</span>. By property (A3) we get that <span class="math inline">\(U_1 \cap U_2 \in \mathcal{T}\)</span>. Since <span class="math inline">\(\mathcal{B}\)</span> is a basis we conclude (B2).</p></li>
+</ul>
+</div></details>
+</div>
+<p>Properties (B1) and (B2) from Proposition <a href="chap_4.html#proposition-basis">72</a> are sufficient for generating a topology.</p>
+<div id="proposition-topology-basis" class="Proposition">
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 73</strong></summary><div>
+<p>Let <span class="math inline">\(X\)</span> be a set and <span class="math inline">\(\mathcal{B}\)</span> a collection of subsets of <span class="math inline">\(X\)</span> such that (B1)-(B2) hold. Define <span class="math display">\[
+\mathcal{T}:= \left\{  U \subseteq X \, \colon \,U = \bigcup_{i \in I} B_i \,, \,\, B_i \in \mathcal{B}     \right\} \,.
+\]</span> Then:</p>
+<ol type="1">
+<li><p><span class="math inline">\(\mathcal{T}\)</span> is a topology on <span class="math inline">\(X\)</span>.</p></li>
+<li><p><span class="math inline">\(\mathcal{B}\)</span> is a basis for <span class="math inline">\(\mathcal{T}\)</span>.</p></li>
+</ol>
+</div></details>
+</div>
+<div id="Proof*-32" class="Proof">
+<details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>
+<ol type="1">
+<li>We need to verify that <span class="math inline">\(\mathcal{T}\)</span> is a topology:</li>
+</ol>
+<ul>
+<li><p>(A1) We have that <span class="math inline">\(X \in \mathcal{T}\)</span> by (B1). Moreover <span class="math inline">\(\emptyset \in \mathcal{T}\)</span>, since <span class="math inline">\(\emptyset\)</span> can be obtained as empty union. Therefore (A1) holds.</p></li>
+<li><p>(A2) Let <span class="math inline">\(U_i \in \mathcal{T}\)</span> for all <span class="math inline">\(i \in I\)</span>. By definition of <span class="math inline">\(\mathcal{T}\)</span> we have <span class="math display">\[
+U_i = \bigcup_{k \in K_i} \, B_k^i  
+\]</span> for some family of indices <span class="math inline">\(K_i\)</span> and <span class="math inline">\(B_k^i \in \mathcal{B}\)</span>. Therefore <span class="math display">\[
+U := \bigcup_{i \in I} \, U_i  = \bigcup_{i \in I, \, k \in K_i} \,  B_k^i \,,
+\]</span> showing that <span class="math inline">\(U \in \mathcal{T}\)</span>.</p></li>
+<li><p>(A3) Suppose that <span class="math inline">\(U_1, U_2 \in \mathcal{T}\)</span>. Then <span class="math display">\[
+U_1 = \bigcup_{i \in I_1} \, B_i^1 \,, \quad
+U_2 = \bigcup_{i \in I_2} \, B_i^2
+\]</span> for <span class="math inline">\(B_i^1,B_i^2 \in \mathcal{B}\)</span>. From the above we have <span class="math display">\[
+U_1 \cap U_2 = \bigcup_{ i \in I_1 ,\, k \in I_2 } \, B_i^1 \cap B_k^2 \,.
+\]</span> From property (B2) we have that for each pair of indices <span class="math inline">\((i,k)\)</span> the set <span class="math inline">\(B_i^1 \cap B_k^2\)</span> is the union of sets in <span class="math inline">\(\mathcal{B}\)</span>. Therefore <span class="math inline">\(U_1 \cap U_2\)</span> is union of sets in <span class="math inline">\(\mathcal{B}\)</span>, showing that <span class="math inline">\(U_1 \cap U_2 \in \mathcal{T}\)</span>.</p></li>
+</ul>
+<ol start="2" type="1">
+<li>This trivially follows from defintion of <span class="math inline">\(\mathcal{T}\)</span> and definition of basis.</li>
+</ol>
 </div></details>
 </div>
 </section>
-<section id="compactness" class="level2" data-number="4.11">
-<h2 data-number="4.11" class="anchored" data-anchor-id="compactness"><span class="header-section-number">4.11</span> Compactness</h2>
+<section id="product-topology" class="level2" data-number="4.11">
+<h2 data-number="4.11" class="anchored" data-anchor-id="product-topology"><span class="header-section-number">4.11</span> Product topology</h2>
+<p>Given two topological spaces <span class="math inline">\((X,\mathcal{T}_X)\)</span> and <span class="math inline">\((Y,\mathcal{T}_Y)\)</span> we would like to equip the cartesian product <span class="math display">\[
+X \times Y  = \{  (x,y) \, \colon \,x \in X \,, \,\, y \in Y \}
+\]</span> with a topology. We proceed as follows.</p>
+<div id="Proposition-74" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 74</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T}_X)\)</span> and <span class="math inline">\((Y,\mathcal{T}_Y)\)</span> be topological spaces. Define the family <span class="math inline">\(\mathcal{B}\)</span> of subsets of <span class="math inline">\(X \times Y\)</span> as <span class="math display">\[
+\mathcal{B} := \{   U \times V \, \colon \,U \in \mathcal{T}_X \,, \,\, V \in \mathcal{T}_Y  \} \subset X \times Y \,.
+\]</span> Then <span class="math inline">\(\mathcal{B}\)</span> satisfies properties (B1) and (B2) from Proposition <a href="chap_4.html#proposition-basis">72</a>.<p></p>
+</div></details>
+</div>
+</section>
+<section id="connectedness" class="level2" data-number="4.12">
+<h2 data-number="4.12" class="anchored" data-anchor-id="connectedness"><span class="header-section-number">4.12</span> Connectedness</h2>
+<div id="Definition-75" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 75</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space. We say that <span class="math inline">\(X\)</span> is <strong>connected</strong> if the only subsets of <span class="math inline">\(X\)</span> which are both open and closed are just <span class="math inline">\(\emptyset\)</span> and <span class="math inline">\(X\)</span>.<p></p>
+</div></details>
+</div>
+</section>
+<section id="compactness" class="level2" data-number="4.13">
+<h2 data-number="4.13" class="anchored" data-anchor-id="compactness"><span class="header-section-number">4.13</span> Compactness</h2>
 
 
 </section>

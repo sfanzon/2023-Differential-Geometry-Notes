@@ -2208,6 +2208,181 @@ that is, $\SSS$ is the discrete topology on $\Z$.
 
 
 
+## Topological basis
+
+
+We have seen that in metric spaces every open set is union of 
+open balls, see Propostion \ref{proposition-metric-ball}. We can then 
+regard the open balls as building blocks for the whole topology.
+In this context, we call the open balls a basis for the topology. 
+
+We can generalize the concept of basis to arbitrary topological spaces.
+
+
+::: Definition
+### Topological basis
+
+Let $(X,\TT)$ be a topological space and let $\mathcal{B} \subseteq \TT$.  We say that 
+$\mathcal{B}$ is a **topological basis** for the topology $\TT$ if for all $U \in \TT$ 
+there exist open sets $\{B_i\} \subseteq \mathcal{B}$, with $I$ family of indices, such that 
+$$
+U = \bigcup_{i \in I} \, B_i \,.
+$${#eq-topo-basis}
+
+
+:::
+
+
+
+::: Example
+
+1. Let $(X,\TT)$ be a topological space. Then $\mathcal{B}:=\TT$ is a basis for $\TT$.
+
+> This is true because one can just take $B=U$ in (@eq-topo-basis).
+
+2. $(X,d)$ metric space with topology $\TT_d$ induced by the metric. Then
+$$
+\mathcal{B} :=\{ B_r(x) \divider x \in X \,, \,\, r>0  \}
+$$
+is a basis for $\TT_d$.
+
+> This is true by Propostion \ref{proposition-metric-ball}.
+
+3. Let $(X,\TT)$ with $X$ the discrete topology. Then
+$$
+\mathcal{B}:=\{   \{x\}  \divider x \in X \}
+$$
+is a basis for $\TT$.
+
+> This is true because for any $U \in \TT$ we have
+$$
+U = \bigcup_{ x \in U }  \, \{x\} \,.
+$$
+
+:::
+
+
+
+
+::: {.Proposition  #proposition-basis}
+
+
+Let $(X,\TT)$ be a topological space and $\mathcal{B}$ a basis for $\TT$. They hold:
+
+- (B1) We have
+$$
+\bigcup_{B \in \mathcal{B}} \, B = X \,.
+$$
+
+- (B2) If $U_1,U_2 \in \mathcal{B}$ then there exist $\{B_i \} \subseteq \mathcal{B}$ such that
+$$
+U_1 \cap U_2 = \bigcup_{i \in I} \, B_i \,.
+$$
+
+:::
+
+
+
+::: Proof
+
+- (B1) This holds because $X \in \TT$. Therefore by definition of basis there exist $B_i \in \mathcal{B}$ such that
+$$
+X = \bigcup_{i \in I} \, B_i  \,.
+$$
+Therefore taking the union over all $B \in \mathcal{B}$ yields $X$, and (B1) follows.
+
+- (B2) Let $U_1 , U_2 \in \mathcal{B}$. Then $U_1 , U_2 \in \TT$, since  $\mathcal{B} \subseteq \TT$. By property 
+(A3) we get that $U_1 \cap U_2 \in \TT$. Since $\mathcal{B}$ is a basis we conclude (B2).
+
+:::
+
+
+
+
+Properties (B1) and (B2) from Proposition \ref{proposition-basis} are sufficient
+for generating a topology.
+
+
+::: {.Proposition  #proposition-topology-basis}
+
+
+Let $X$ be a set and $\mathcal{B}$ a collection of subsets of $X$ such that (B1)-(B2) hold.
+Define
+$$
+\TT := \left\{  U \subseteq X \divider U = \bigcup_{i \in I} B_i \,, \,\, B_i \in \mathcal{B}     \right\} \,.
+$$
+Then:
+
+1. $\TT$ is a topology on $X$.
+
+2. $\mathcal{B}$ is a basis for $\TT$.
+
+
+:::
+
+
+
+::: Proof
+
+1. We need to verify that $\TT$ is a topology:
+
+- (A1) We have that $X \in \TT$ by (B1). Moreover $\emptyset \in \TT$, since $\emptyset$ can be obtained as empty union. Therefore (A1) holds.
+
+- (A2) Let $U_i \in \TT$ for all $i \in I$. By definition of $\TT$ we have
+$$
+U_i = \bigcup_{k \in K_i} \, B_k^i  
+$$
+for some family of indices $K_i$ and $B_k^i \in \mathcal{B}$. Therefore 
+$$
+U := \bigcup_{i \in I} \, U_i  = \bigcup_{i \in I, \, k \in K_i} \,  B_k^i \,,
+$$
+showing that $U \in \TT$.
+
+- (A3) Suppose that $U_1, U_2 \in \TT$. Then 
+$$
+U_1 = \bigcup_{i \in I_1} \, B_i^1 \,, \quad 
+U_2 = \bigcup_{i \in I_2} \, B_i^2
+$$
+for $B_i^1,B_i^2 \in \mathcal{B}$. From the above we have
+$$
+U_1 \cap U_2 = \bigcup_{ i \in I_1 ,\, k \in I_2 } \, B_i^1 \cap B_k^2 \,.
+$$
+From property (B2) we have that for each pair of indices $(i,k)$ the set
+$B_i^1 \cap B_k^2$ is the union of sets in $\mathcal{B}$. Therefore 
+$U_1 \cap U_2$ is union of sets in $\mathcal{B}$, showing that $U_1 \cap U_2 \in \TT$.
+
+
+2. This trivially follows from defintion of $\TT$ and definition of basis.
+
+
+:::
+
+
+
+
+## Product topology
+
+
+Given two topological spaces $(X,\TT_X)$ and $(Y,\TT_Y)$ we would like to 
+equip the cartesian product
+$$
+X \times Y  = \{  (x,y) \divider x \in X \,, \,\, y \in Y \} 
+$$
+with a topology. We proceed as follows.
+
+
+::: Proposition
+ 
+Let $(X,\TT_X)$ and $(Y,\TT_Y)$ be topological spaces. Define the family $\mathcal{B}$ of subsets
+of $X \times Y$ as
+$$
+\mathcal{B} := \{   U \times V \divider U \in \TT_X \,, \,\, V \in \TT_Y  \} \subset X \times Y \,.
+$$
+Then $\mathcal{B}$ satisfies properties (B1) and (B2) from Proposition \ref{proposition-basis}.
+
+:::
+
+
 
 
 ## Connectedness 
