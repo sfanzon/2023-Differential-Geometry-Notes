@@ -975,6 +975,377 @@ The proof is similar to the one of Proposition \ref{proposition-convergence-Rn},
 
 
 
+## Interior, closure and boundary
+
+
+We now define interior, closure and boundary of a set $A$ contained 
+in a topological space.
+
+
+::: Definition
+### Interior of a set
+
+Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set.
+The **interior** of $A$ is the set
+$$
+\interior{A} :=  \bigcup_{ \substack{U \subseteq A \\ U \in \TT} } \, U \,.
+$$
+
+:::
+
+
+::: Remark
+
+The definition of $\interior{A}$ is well-posed, since $\emptyset \subseteq A$ and $\emptyset \in \TT$. Therefore the union is taken over a non-empty family.
+
+:::
+
+
+
+::: Proposition
+
+Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set. Then
+$\interior{A}$ is the largest open set contained in $A$, that is:
+
+1. $\interior{A}$ is open.
+2. $\interior{A} \subseteq A$.
+3. If $V \in \TT$ and $V \subseteq A$, then $V \subseteq \interior{A}$.
+4. $A$ is open if and only if 
+$$
+A = \interior{A} \,.
+$$
+
+:::
+
+
+
+::: Proof
+
+We have:
+
+1. $\interior{A}$ is open, since it is union of open sets, see property (A2).
+2. $\interior{A} \subseteq A$, since $\interior{A}$ is union of sets contained in $A$.
+
+3. Suppose $V \in \TT$ and $V \subseteq A$. Therefore 
+$$
+V \subseteq   \bigcup_{ \substack{U \subseteq A \\ U \in \TT} } \, U = \interior{A} \,.
+$$
+
+4. Suppose that $A$ is open. Then
+$$
+A \subseteq \bigcup_{ \substack{U \subseteq A \\ U \in \TT}  } \, U  = \interior{A}  \,.
+$$
+As we already know that $\interior{A} \subseteq A$, we conclude that $A = \interior{A}$.  
+    Conversely, suppose that $A = \interior{A}$. Since $\interior{A}$ is open, then also $A$ is open.
+:::
+
+
+
+
+::: Definition
+### Closure of a set
+
+Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set.
+The **closure** of $A$ is the set
+$$
+\closure{A} :=  \bigcap_{ \substack{A \subseteq C \\ C^c \in \TT } } \, C \,,
+$$
+that is, $\closure{A}$ is the intersection of all closed sets containing 
+$A$.
+
+:::
+
+
+
+::: Remark
+
+The definition of $\closure{A}$ is well-posed, since $A \subseteq X$, and $X$ is closed. Therefore the intersection is taken over a non-empty family.
+
+:::
+
+
+
+::: Proposition
+
+Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set. Then
+$\closure{A}$ is the smallest closed set containing $A$, that is:
+
+1. $\closure{A}$ is closed.
+2. $A \subseteq \closure{A}$.
+3. If $V$ is closed $A \subseteq V$, then $\closure{A} \subseteq V$.
+4. $A$ is closed if and only if 
+$$
+A = \closure{A} \,.
+$$
+
+:::
+
+
+::: Proof
+
+We have:
+
+1. $\closure{A}$ is closed, since it is intersection of closed sets, see property (C2).
+
+2. $A \subseteq \closure{A}$, since $\closure{A}$ is intersection of sets which contain $A$.
+
+3. Suppose $V$ is closed and $A \subseteq V$. Therefore 
+$$
+\closure{A} =  \bigcap_{ \substack{A \subseteq C \\ C^c \in \TT} } \, C  \subseteq V \,.
+$$
+
+4. Suppose that $A$ is closed. Then
+$$
+\closure{A} =  \bigcap_{ \substack{A \subseteq C \\ C^c \in \TT} } \, C  \subseteq A \,,
+$$
+showing that $\closure{A} \subseteq A$. As we already know that $A \subseteq \closure{A}$, we conclude that $A = \closure{A}$.   
+  Conversely, suppose that $A = \closure{A}$. Since $\closure{A}$ is closed, then also $A$ is closed.
+:::
+
+
+
+
+
+::: Definition
+### Boundary of a set
+
+Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set. 
+The **boundary** of $A$ is the set
+$$
+\partial A := \closure{A} \smallsetminus \interior{A} \,.
+$$
+
+:::
+
+
+::: Proposition
+
+Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set. Then
+$\partial A$ is closed.
+
+:::
+
+
+::: Proof 
+
+We can write
+$$
+\partial A =  \closure{A} \smallsetminus \interior{A} = \closure{A} \cap (\interior{A})^c \,.
+$$
+Note that $\closure{A}$ is closed and $(\interior{A})^c$ is closed, 
+since $\interior{A}$ is open. Then $\partial A$ is intersection
+of two closed sets, and in hence closed by (C2).
+
+:::
+
+
+
+
+We can characterize $\closure{A}$ as the set of limit points of sequences in $A$.
+
+
+::: Proposition
+
+Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set. 
+Let $\{x_n\} \subseteq A$ and $x_0 \in X$ be such that $x_n \to x_0$. Then
+$$
+x_0 \in \closure{A} \,.
+$$
+In particular we have
+$$
+\closure{A} = \{  x \in X \st \exists \,\, \{ x_n \} \subseteq A \st x_n \to x   \} \,.
+$${#eq-formula-closure}
+
+:::
+
+
+::: Proof
+
+
+*Part 1.*
+Suppose by contradiction $x_0 \notin \closure{A}$, so that
+$$
+x_0 \in (\closure{A})^c \,.
+$$
+Since $(\closure{A})^c$ is open and $x_n \to x_0$, there exists $N \in \N$
+such that 
+$$
+x_n \in (\closure{A})^c \,, \quad \forall \, n \geq N \,.
+$$
+This is a contradiction, since we were assuming that $\{x_n\} \subseteq A$.
+
+*Part 2.* We now show (@eq-formula-closure). Call $L$ the set of limit points
+$$
+L := \{  x \in X \st \exists \,\, \{ x_n \} \subseteq A \st x_n \to x   \} \,.
+$$
+We have to prove 2 inclusions:
+
+- $L \subseteq \closure{A}$: This was already shown in Part 1.
+- $\closure{A} \subseteq L$: Suppose by contradiction that $\closure{A} \not\subseteq L$. There exists a point $x_0 \in X$ such that
+$$
+x_0 \in L \,, \quad x_0 \notin \closure{A} \,.
+$$
+As $x_0$ in $L$, by definition there exists a sequence $\{x_n \} \subseteq A$ such that 
+$x_n \to x_0$. Since $x_0 \notin \closure{A}$, then $x_0 \in (\closure{A})^c$. Recalling
+that $(\closure{A})^c$ is open, by the convergence $x_n \to x_0$ there exists $N \in \N$ such that
+$$
+x_n \in (\closure{A})^c \,, \quad \forall \, n \geq N \,.
+$$
+The above yields a contradiction, since $\{x_n\} \subseteq A$ and $A \cap (\closure{A})^c = \emptyset$.
+Therefore $\closure{A} \subseteq L$, concluding the proof.
+:::
+
+
+
+
+In metric spaces we can characterize the interior of a set in the following way.
+
+::: Proposition
+
+
+Let $(X,d)$ be a metric space. Denote by $\TT_d$ the topology induced by $d$.
+For $A \subseteq X$ we have
+$$
+\interior{A} = \{ x \in A \divider \exists \,\, r>0  \st B_r(x) \subseteq A   \} \,.
+$$
+
+
+:::
+
+
+The proof is left as an exercise. 
+
+
+::: Example
+
+Consider $\R$ with the Euclidean topology and $A :=[0,1)$. We have that 
+$$
+\interior{A} = (0,1) \,, \quad \closure{A} = [0,1] \,, \quad \partial A = \{0,1\} \,.
+$$
+In particular 
+$$
+\interior{A}  \neq A \,, \quad \closure{A} \neq A \,,
+$$
+showing that $A$ is neither open, nor closed. 
+
+> The proof of the above statements is left as an exercise.
+:::
+
+
+
+
+
+
+
+
+## Density
+
+
+
+::: Definition
+### Density
+
+Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set. We say that $A$ is **dense** in $X$ if 
+$$
+A \cap U \neq \emptyset \,, \quad \, \forall \,\, U \in \TT\,, \,\, U \neq \emptyset \,.
+$$
+
+:::
+
+
+
+Density can be characterized in terms of closure.
+
+
+
+::: Proposition
+
+Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set. They are equivalent:
+
+1. $A$ is **dense** in $X$.
+2. It holds
+$$
+\closure{A} = X \,.
+$$
+
+:::
+
+
+
+::: Proof
+
+*Part 1.* Let $A$ be dense in $X$. Suppose by contradiction that
+$$
+\closure{A} \neq X \,.
+$$
+This means $(\closure{A})^c \neq \emptyset$.
+Note that $(\closure{A})^c$ is open, being $\closure{A}$ closed.
+By density of $A$ in $X$ we have
+$$
+A \cap (\closure{A})^c \neq \emptyset \,.
+$$
+Since $A \subseteq \closure{A}$, the above is a contradiction.
+
+
+*Part 2.* Suppose that $\closure{A} = X$. Let $U \in \TT$ with $U \neq \emptyset$. By contradiction, assume that
+$$
+A \cap U = \emptyset \,.
+$$
+Therefore $A \subseteq U^c$. As $U^c$ is closed, we have
+$$
+\closure{A} \subseteq U^c\,, 
+$$
+because $\closure{A}$ is the smallest closed set containing $A$. 
+Recalling that $\closure{A} = X$, we conclude that $U^c = X$. 
+Therefore $U = \emptyset$, which is a contradiction.
+
+:::
+
+
+
+
+::: Example
+
+Consider $\R$ with the Euclidean topology.
+
+1. We have that the set of integers $\Z$ is closed in $\R$. Indeed,
+$$
+\Z^c = \bigcup_{ z \in \Z}  \, (z , z + 1 ) \,. 
+$$
+Since $(z,z+1)$ is open in $\R$, by (A2) we conclude that 
+$\Z^c$ is open, so that $\Z$ is closed. Therefore 
+$$
+\closure{\Z} = \Z \,,
+$$
+showing that $\Z$ is not dense in $\R$.
+
+
+2. The rational numbers $\Q$ are instead dense in $\R$, as proven in the
+Analysis module. Therefore 
+$$
+\closure{\Q} = \R \,.
+$$
+The above implies that
+$$
+\interior{\Q} = \emptyset \,.
+$$
+Therefore 
+$$
+\interior{\Q} \neq \Q \,, \quad \closure{\Q} \neq \Q \,,
+$$
+showing that $\Q$ is neither open, nor closed. 
+
+
+
+:::
+
+
+
+
+
+
+
+
 ## Hausdorff spaces
 
 
@@ -1818,129 +2189,6 @@ that is, $\SSS$ is the discrete topology on $\Z$.
 :::
 
 
-
-## Interior and closure
-
-
-We now define interior, closure and boundary of a set $A$ contained 
-in a topological space.
-
-::: Definition
-### Interior of a set
-
-Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set.
-The **interior** of $A$ is the set
-$$
-\interior{A} :=  \bigcup_{ \substack{U \subseteq A \\ U \in \TT} } \, U \,.
-$$
-
-:::
-
-
-::: Remark
-
-The definition of $\interior{A}$ is well-posed, since $\emptyset \subseteq A$ and $\emptyset \in \TT$. Therefore the union is taken over a non-empty family.
-
-:::
-
-
-
-::: Proposition
-
-Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set. Then
-$\interior{A}$ is the largest open set contained in $A$, that is:
-
-1. $\interior{A}$ is open.
-2. $\interior{A} \subseteq A$.
-3. If $V \in \TT$ and $V \subseteq A$, then $V \subseteq \interior{A}$.
-
-:::
-
-
-
-::: Proof
-
-We have:
-
-1. $\interior{A}$ is open, since it is union of open sets, see property (A2).
-2. $\interior{A} \subseteq A$, since $\interior{A}$ is union of sets contained in $A$.
-
-3. Suppose $V \in \TT$ and $V \subseteq A$. Therefore 
-$$
-V \subseteq   \bigcup_{ \substack{U \subseteq A \\ U \in \TT} } \, U = \interior{A} \,.
-$$
-
-
-:::
-
-
-
-
-::: Definition
-### Closure of a set
-
-Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set.
-The **closure** of $A$ is the set
-$$
-\closure{A} :=  \bigcap_{ \substack{A \subseteq C \\ C^c \in \TT } } \, C \,,
-$$
-that is, $\closure{A}$ is the intersection of all closed sets containing 
-$A$.
-
-:::
-
-
-
-::: Remark
-
-The definition of $\overline{A}$ is well-posed, since $A \subseteq X$, and $X$ is closed. Therefore the intersection is taken over a non-empty family.
-
-:::
-
-
-
-::: Proposition
-
-Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set. Then
-$\overline{A}$ is the smallest closed set containing $A$, that is:
-
-1. $\overline{A}$ is closed.
-2. $A \subseteq \overline{A}$.
-3. If $V$ is closed $A \subseteq V$, then $\overline{A} \subseteq V$.
-
-:::
-
-
-::: Proof
-
-We have:
-
-1. $\overline{A}$ is closed, since it is intersection of closed sets, see property (C2).
-
-2. $A \subseteq \overline{A}$, since $\overline{A}$ is intersection of sets which contain $A$.
-
-3. Suppose $V$ is closed and $A \subseteq V$. Therefore 
-$$
-\overline{A} =  \bigcap_{ \substack{A \subseteq C \\ C^c \in \TT} } \, C  \subset V \,.
-$$
-
-
-:::
-
-
-
-
-
-::: Definition
-### Boundary of a set
-
-Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set. 
-The **boundary** of $A$ is the set
-$$
-\partial A := \overline{A} \smallsetminus \interior{A} \,.
-$$
-
-:::
 
 
 
