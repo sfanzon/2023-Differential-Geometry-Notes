@@ -21,508 +21,508 @@
 
  [**Example 1.7**](#parametrizing-the-helix): Parametrizing the helix\Pageref{parametrizing-the-helix}
 
- [**Definition 2.1**](#parametrized-curve-1): Parametrized curve\Pageref{parametrized-curve-1}
+ [**Definition 1.8**](#parametrized-curve-1): Parametrized curve\Pageref{parametrized-curve-1}
 
- [**Definition 2.2**](#smooth-functions): Smooth functions\Pageref{smooth-functions}
+ [**Definition 1.9**](#smooth-functions): Smooth functions\Pageref{smooth-functions}
 
- [**Example 2.3**](#Example-2.3)\Pageref{Example-2.3}
+ [**Example 1.10**](#Example-1.10)\Pageref{Example-1.10}
 
- [**Definition 2.4**](#Definition-2.4)\Pageref{Definition-2.4}
+ [**Definition 1.11**](#Definition-1.11)\Pageref{Definition-1.11}
 
- [**Assumption**](#Assumption*-2.1)\Pageref{Assumption*-2.1}
+ [**Assumption**](#Assumption*-1.5)\Pageref{Assumption*-1.5}
+
+ [**Example 1.12**](#Example-1.12)\Pageref{Example-1.12}
+
+ [**Definition 1.13**](#definition-tangent): Tangent vector\Pageref{definition-tangent}
+
+ [**Example 1.14**](#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+
+ [**Remark 1.15**](#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+
+ [**Example 1.16**](#the-lemniscate-a-self-intersecting-curve): The Lemniscate, a self intersecting curve\Pageref{the-lemniscate-a-self-intersecting-curve}
+
+ [**Definition 1.17**](#partition): Partition\Pageref{partition}
+
+ [**Definition 1.18**](#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+
+ [**Definition 1.19**](#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+
+ [**Question 1.20**](#Question-1.20)\Pageref{Question-1.20}
+
+ [**Theorem 1.21**](#theorem-length): Characterizing the length of ${\pmb{\gamma}}$\Pageref{theorem-length}
+
+ [**Proof**](#Proof*-1.6)\Pageref{Proof*-1.6}
+
+ [**Example 1.22**](#length-of-circle): Length of Circle\Pageref{length-of-circle}
+
+ [**Example 1.23**](#length-of-helix): Length of helix\Pageref{length-of-helix}
+
+ [**Definition 1.24**](#arc-length-1): Arc-length\Pageref{arc-length-1}
+
+ [**Remark 1.25**](#Remark-1.25)\Pageref{Remark-1.25}
+
+ [**Example 1.26**](#circle): Circle\Pageref{circle}
+
+ [**Example 1.27**](#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+
+ [**Definition 1.28**](#scalar-product-in-mathbbr2): Scalar product in $\mathbb{R}^2$\Pageref{scalar-product-in-mathbbr2}
+
+ [**Remark 1.29**](#Remark-1.29)\Pageref{Remark-1.29}
+
+ [**Definition 1.30**](#orthogonal-vectors): Orthogonal vectors\Pageref{orthogonal-vectors}
+
+ [**Proposition 1.31**](#bilinearity-and-symmetry-of-scalar-product): Bilinearity and symmetry of scalar product\Pageref{bilinearity-and-symmetry-of-scalar-product}
+
+ [**Proposition 1.32**](#scalar-products-written-wrt-euclidean-coordinates): Scalar products written wrt euclidean coordinates\Pageref{scalar-products-written-wrt-euclidean-coordinates}
+
+ [**Proof**](#Proof*-1.7)\Pageref{Proof*-1.7}
+
+ [**Definition 1.33**](#scalar-product-in-mathbbrn-1): Scalar product in $\mathbb{R}^n$\Pageref{scalar-product-in-mathbbrn-1}
+
+ [**Proposition 1.34**](#bilinearity-and-symmetry-of-scalar-product-in-mathbbrn): Bilinearity and symmetry of scalar product in $\mathbb{R}^n$\Pageref{bilinearity-and-symmetry-of-scalar-product-in-mathbbrn}
+
+ [**Definition 1.35**](#Definition-1.35)\Pageref{Definition-1.35}
+
+ [**Proposition 1.36**](#proposition-diff-scalar): Differentiating scalar product\Pageref{proposition-diff-scalar}
+
+ [**Proof**](#Proof*-1.8)\Pageref{Proof*-1.8}
+
+ [**Definition 1.37**](#Definition-1.37)\Pageref{Definition-1.37}
+
+ [**Remark 1.38**](#Remark-1.38)\Pageref{Remark-1.38}
+
+ [**Proposition 1.39**](#proposition-speed-identity)\Pageref{proposition-speed-identity}
+
+ [**Proof**](#Proof*-1.9)\Pageref{Proof*-1.9}
+
+ [**Remark 1.40**](#Remark-1.40)\Pageref{Remark-1.40}
+
+ [**Definition 1.41**](#diffeomorphism): Diffeomorphism\Pageref{diffeomorphism}
+
+ [**Definition 1.42**](#reparametrization-1): Reparametrization\Pageref{reparametrization-1}
+
+ [**Remark 1.43**](#Remark-1.43)\Pageref{Remark-1.43}
+
+ [**Example 1.44**](#change-of-orientation): Change of orientation\Pageref{change-of-orientation}
+
+ [**Example 1.45**](#reversing-orientation-of-circle): Reversing orientation of circle\Pageref{reversing-orientation-of-circle}
+
+ [**Example 1.46**](#change-of-speed): Change of speed\Pageref{change-of-speed}
+
+ [**Example 1.47**](#doubling-the-speed-of-lemniscate): Doubling the speed of Lemniscate\Pageref{doubling-the-speed-of-lemniscate}
+
+ [**Important**](#Important*-1.10)\Pageref{Important*-1.10}
+
+ [**Definition 1.48**](#regular-points): Regular points\Pageref{regular-points}
+
+ [**Lemma 1.49**](#lemma-diffeomorphism)\Pageref{lemma-diffeomorphism}
+
+ [**Proof**](#Proof*-1.11)\Pageref{Proof*-1.11}
+
+ [**Example 1.50**](#example-stopping-curve): A curve with one singular point\Pageref{example-stopping-curve}
+
+ [**Proposition 1.51**](#proposition-regularity-invariant): Regularity is invariant for reparametrization\Pageref{proposition-regularity-invariant}
+
+ [**Proof**](#Proof*-1.12)\Pageref{Proof*-1.12}
+
+ [**Example 1.52**](#Example-1.52)\Pageref{Example-1.52}
+
+ [**Definition 1.53**](#unit-speed-reparametrization): Unit speed reparametrization\Pageref{unit-speed-reparametrization}
+
+ [**Theorem 1.54**](#theorem-regular-unit-speed): Existence of unit speed reparametrization\Pageref{theorem-regular-unit-speed}
+
+ [**Proof**](#Proof*-1.13)\Pageref{Proof*-1.13}
+
+ [**Proposition 1.55**](#proposition-arc-length-unit): Arc-length and unit speed reparametrization\Pageref{proposition-arc-length-unit}
+
+ [**Proof**](#Proof*-1.14)\Pageref{Proof*-1.14}
+
+ [**Remark 1.56**](#Remark-1.56)\Pageref{Remark-1.56}
+
+ [**Example 1.57**](#twisted-cubic): Twisted cubic\Pageref{twisted-cubic}
+
+ [**Example 1.58**](#example-curve-loop)\Pageref{example-curve-loop}
+
+ [**Definition 1.59**](#periodic-curve): Periodic curve\Pageref{periodic-curve}
+
+ [**Definition 1.60**](#closed-curve): Closed curve\Pageref{closed-curve}
+
+ [**Remark 1.61**](#remark-closed)\Pageref{remark-closed}
+
+ [**Definition 1.62**](#Definition-1.62)\Pageref{Definition-1.62}
+
+ [**Proposition 1.63**](#Proposition-1.63)\Pageref{Proposition-1.63}
+
+ [**Proof**](#Proof*-1.15)\Pageref{Proof*-1.15}
+
+ [**Example 1.64**](#Example-1.64)\Pageref{Example-1.64}
+
+ [**Definition 1.65**](#self-intersecting-curve): Self-intersecting curve\Pageref{self-intersecting-curve}
+
+ [**Remark 1.66**](#Remark-1.66)\Pageref{Remark-1.66}
+
+ [**Example 1.67**](#Example-1.67)\Pageref{Example-1.67}
+
+ [**Example 1.68**](#the-limaçon): The Limaçon\Pageref{the-limaçon}
+
+ [**Important**](#Important*-2.1)\Pageref{Important*-2.1}
+
+ [**Definition 2.1**](#Definition-2.1)\Pageref{Definition-2.1}
+
+ [**Definition 2.2**](#Definition-2.2)\Pageref{Definition-2.2}
+
+ [**Remark 2.3**](#Remark-2.3)\Pageref{Remark-2.3}
+
+ [**Remark 2.4**](#methods-for-computing-curvature): Methods for computing curvature\Pageref{methods-for-computing-curvature}
 
  [**Example 2.5**](#Example-2.5)\Pageref{Example-2.5}
 
- [**Definition 2.6**](#definition-tangent): Tangent vector\Pageref{definition-tangent}
+ [**Remark 2.6**](#remark-hyperbolic-functions): Hyperbolic functions\Pageref{remark-hyperbolic-functions}
 
- [**Example 2.7**](#tangent-vector-to-helix): Tangent vector to helix\Pageref{tangent-vector-to-helix}
+ [**Example 2.7**](#the-catenary): The Catenary\Pageref{the-catenary}
 
- [**Remark 2.8**](#avoiding-potential-ambiguities): Avoiding potential ambiguities\Pageref{avoiding-potential-ambiguities}
+ [**Definition 2.8**](#same-orientation): Same orientation\Pageref{same-orientation}
 
- [**Example 2.9**](#the-lemniscate-a-self-intersecting-curve): The Lemniscate, a self intersecting curve\Pageref{the-lemniscate-a-self-intersecting-curve}
+ [**Definition 2.9**](#orientation): Orientation\Pageref{orientation}
 
- [**Definition 2.10**](#partition): Partition\Pageref{partition}
+ [**Definition 2.10**](#positive-orientation): Positive orientation\Pageref{positive-orientation}
 
- [**Definition 2.11**](#length-of-approximating-polygonal-curve): Length of approximating polygonal curve\Pageref{length-of-approximating-polygonal-curve}
+ [**Example 2.11**](#Example-2.11)\Pageref{Example-2.11}
 
- [**Definition 2.12**](#rectifiable-curve-and-length): Rectifiable curve and length\Pageref{rectifiable-curve-and-length}
+ [**Definition 2.12**](#vector-product-in-mathbbr3-1): Vector product in $\mathbb{R}^3$\Pageref{vector-product-in-mathbbr3-1}
 
- [**Question 2.13**](#Question-2.13)\Pageref{Question-2.13}
-
- [**Theorem 2.14**](#theorem-length): Characterizing the length of ${\pmb{\gamma}}$\Pageref{theorem-length}
+ [**Proposition 2.13**](#Proposition-2.13)\Pageref{Proposition-2.13}
 
  [**Proof**](#Proof*-2.2)\Pageref{Proof*-2.2}
 
- [**Example 2.15**](#length-of-circle): Length of Circle\Pageref{length-of-circle}
+ [**Proposition 2.14**](#proposition-vector-product)\Pageref{proposition-vector-product}
 
- [**Example 2.16**](#length-of-helix): Length of helix\Pageref{length-of-helix}
+ [**Remark 2.15**](#remark-vector-product): Geometric interpretation of vector product\Pageref{remark-vector-product}
 
- [**Definition 2.17**](#arc-length-1): Arc-length\Pageref{arc-length-1}
+ [**Remark 2.16**](#summary-properties-of-mathbfutimes-mathbfv): Summary: Properties of $\mathbf{u}\times \mathbf{v}$\Pageref{summary-properties-of-mathbfutimes-mathbfv}
 
- [**Remark 2.18**](#Remark-2.18)\Pageref{Remark-2.18}
+ [**Proposition 2.17**](#Proposition-2.17)\Pageref{Proposition-2.17}
 
- [**Example 2.19**](#circle): Circle\Pageref{circle}
+ [**Proposition 2.18**](#Proposition-2.18)\Pageref{Proposition-2.18}
 
- [**Example 2.20**](#logarithmic-spiral): Logarithmic spiral\Pageref{logarithmic-spiral}
+ [**Proposition 2.19**](#proposition-curvature-formula): Curvature formula\Pageref{proposition-curvature-formula}
 
- [**Definition 2.21**](#scalar-product-in-mathbbr2): Scalar product in $\mathbb{R}^2$\Pageref{scalar-product-in-mathbbr2}
+ [**Example 2.20**](#Example-2.20)\Pageref{Example-2.20}
 
- [**Remark 2.22**](#Remark-2.22)\Pageref{Remark-2.22}
+ [**Example 2.21**](#Example-2.21)\Pageref{Example-2.21}
 
- [**Definition 2.23**](#orthogonal-vectors): Orthogonal vectors\Pageref{orthogonal-vectors}
+ [**Definition 2.22**](#Definition-2.22)\Pageref{Definition-2.22}
 
- [**Proposition 2.24**](#bilinearity-and-symmetry-of-scalar-product): Bilinearity and symmetry of scalar product\Pageref{bilinearity-and-symmetry-of-scalar-product}
+ [**Definition 2.23**](#Definition-2.23)\Pageref{Definition-2.23}
 
- [**Proposition 2.25**](#scalar-products-written-wrt-euclidean-coordinates): Scalar products written wrt euclidean coordinates\Pageref{scalar-products-written-wrt-euclidean-coordinates}
+ [**Remark 2.24**](#Remark-2.24)\Pageref{Remark-2.24}
+
+ [**Remark 2.25**](#Remark-2.25)\Pageref{Remark-2.25}
+
+ [**Definition 2.26**](#Definition-2.26)\Pageref{Definition-2.26}
+
+ [**Theorem 2.27**](#theorem-characterization-plane): Characterization of plane curves\Pageref{theorem-characterization-plane}
+
+ [**Example 2.28**](#Example-2.28)\Pageref{Example-2.28}
+
+ [**Definition 2.29**](#principal-normal-vector): Principal normal vector\Pageref{principal-normal-vector}
+
+ [**Remark 2.30**](#Remark-2.30)\Pageref{Remark-2.30}
+
+ [**Question 2.31**](#Question-2.31)\Pageref{Question-2.31}
+
+ [**Definition 2.32**](#binormal-vector): Binormal vector\Pageref{binormal-vector}
+
+ [**Definition 2.33**](#orthonormal-basis): Orthonormal basis\Pageref{orthonormal-basis}
+
+ [**Proposition 2.34**](#Proposition-2.34)\Pageref{Proposition-2.34}
 
  [**Proof**](#Proof*-2.3)\Pageref{Proof*-2.3}
 
- [**Definition 2.26**](#scalar-product-in-mathbbrn-1): Scalar product in $\mathbb{R}^n$\Pageref{scalar-product-in-mathbbrn-1}
-
- [**Proposition 2.27**](#bilinearity-and-symmetry-of-scalar-product-in-mathbbrn): Bilinearity and symmetry of scalar product in $\mathbb{R}^n$\Pageref{bilinearity-and-symmetry-of-scalar-product-in-mathbbrn}
-
- [**Definition 2.28**](#Definition-2.28)\Pageref{Definition-2.28}
-
- [**Proposition 2.29**](#proposition-diff-scalar): Differentiating scalar product\Pageref{proposition-diff-scalar}
+ [**Proposition 2.35**](#proposition-positive-basis)\Pageref{proposition-positive-basis}
 
  [**Proof**](#Proof*-2.4)\Pageref{Proof*-2.4}
 
- [**Definition 2.30**](#Definition-2.30)\Pageref{Definition-2.30}
-
- [**Remark 2.31**](#Remark-2.31)\Pageref{Remark-2.31}
-
- [**Proposition 2.32**](#proposition-speed-identity)\Pageref{proposition-speed-identity}
+ [**Proposition 2.36**](#proposition-binormal)\Pageref{proposition-binormal}
 
  [**Proof**](#Proof*-2.5)\Pageref{Proof*-2.5}
 
- [**Remark 2.33**](#Remark-2.33)\Pageref{Remark-2.33}
+ [**Definition 2.37**](#torsion-of-unit-speed-curve): Torsion of unit speed curve\Pageref{torsion-of-unit-speed-curve}
 
- [**Definition 2.34**](#diffeomorphism): Diffeomorphism\Pageref{diffeomorphism}
+ [**Remark 2.38**](#Remark-2.38)\Pageref{Remark-2.38}
 
- [**Definition 2.35**](#reparametrization-1): Reparametrization\Pageref{reparametrization-1}
+ [**Warning**](#Warning*-2.6)\Pageref{Warning*-2.6}
 
- [**Remark 2.36**](#Remark-2.36)\Pageref{Remark-2.36}
+ [**Definition 2.39**](#Definition-2.39)\Pageref{Definition-2.39}
 
- [**Example 2.37**](#change-of-orientation): Change of orientation\Pageref{change-of-orientation}
+ [**Proposition 2.40**](#proposition-torsion-formula): Torsion formula\Pageref{proposition-torsion-formula}
 
- [**Example 2.38**](#reversing-orientation-of-circle): Reversing orientation of circle\Pageref{reversing-orientation-of-circle}
+ [**Example 2.41**](#torsion-helix): Torsion Helix\Pageref{torsion-helix}
 
- [**Example 2.39**](#change-of-speed): Change of speed\Pageref{change-of-speed}
+ [**Example 2.42**](#example-circle-curvature-torsion): Curvature and Torsion of Circle\Pageref{example-circle-curvature-torsion}
 
- [**Example 2.40**](#doubling-the-speed-of-lemniscate): Doubling the speed of Lemniscate\Pageref{doubling-the-speed-of-lemniscate}
+ [**Example 2.43**](#example-circle-rotated)\Pageref{example-circle-rotated}
 
- [**Important**](#Important*-2.6)\Pageref{Important*-2.6}
+ [**Definition 2.44**](#frenet-frame-1): Frenet frame\Pageref{frenet-frame-1}
 
- [**Definition 2.41**](#regular-points): Regular points\Pageref{regular-points}
+ [**Definition 2.45**](#Definition-2.45)\Pageref{Definition-2.45}
 
- [**Lemma 2.42**](#lemma-diffeomorphism)\Pageref{lemma-diffeomorphism}
+ [**Remark 2.46**](#Remark-2.46)\Pageref{Remark-2.46}
+
+ [**Theorem 2.47**](#frenet-serret-equations): Frenet-Serret equations\Pageref{frenet-serret-equations}
 
  [**Proof**](#Proof*-2.7)\Pageref{Proof*-2.7}
 
- [**Example 2.43**](#example-stopping-curve): A curve with one singular point\Pageref{example-stopping-curve}
-
- [**Proposition 2.44**](#proposition-regularity-invariant): Regularity is invariant for reparametrization\Pageref{proposition-regularity-invariant}
-
- [**Proof**](#Proof*-2.8)\Pageref{Proof*-2.8}
-
- [**Example 2.45**](#Example-2.45)\Pageref{Example-2.45}
-
- [**Definition 2.46**](#unit-speed-reparametrization): Unit speed reparametrization\Pageref{unit-speed-reparametrization}
-
- [**Theorem 2.47**](#theorem-regular-unit-speed): Existence of unit speed reparametrization\Pageref{theorem-regular-unit-speed}
-
- [**Proof**](#Proof*-2.9)\Pageref{Proof*-2.9}
-
- [**Proposition 2.48**](#proposition-arc-length-unit): Arc-length and unit speed reparametrization\Pageref{proposition-arc-length-unit}
-
- [**Proof**](#Proof*-2.10)\Pageref{Proof*-2.10}
-
- [**Remark 2.49**](#Remark-2.49)\Pageref{Remark-2.49}
-
- [**Example 2.50**](#twisted-cubic): Twisted cubic\Pageref{twisted-cubic}
-
- [**Example 2.51**](#example-curve-loop)\Pageref{example-curve-loop}
-
- [**Definition 2.52**](#periodic-curve): Periodic curve\Pageref{periodic-curve}
-
- [**Definition 2.53**](#closed-curve): Closed curve\Pageref{closed-curve}
-
- [**Remark 2.54**](#remark-closed)\Pageref{remark-closed}
-
- [**Definition 2.55**](#Definition-2.55)\Pageref{Definition-2.55}
-
- [**Proposition 2.56**](#Proposition-2.56)\Pageref{Proposition-2.56}
-
- [**Proof**](#Proof*-2.11)\Pageref{Proof*-2.11}
-
- [**Example 2.57**](#Example-2.57)\Pageref{Example-2.57}
-
- [**Definition 2.58**](#self-intersecting-curve): Self-intersecting curve\Pageref{self-intersecting-curve}
-
- [**Remark 2.59**](#Remark-2.59)\Pageref{Remark-2.59}
-
- [**Example 2.60**](#Example-2.60)\Pageref{Example-2.60}
-
- [**Example 2.61**](#the-limaçon): The Limaçon\Pageref{the-limaçon}
-
- [**Important**](#Important*-3.1)\Pageref{Important*-3.1}
-
- [**Definition 3.1**](#Definition-3.1)\Pageref{Definition-3.1}
-
- [**Definition 3.2**](#Definition-3.2)\Pageref{Definition-3.2}
-
- [**Remark 3.3**](#Remark-3.3)\Pageref{Remark-3.3}
-
- [**Remark 3.4**](#methods-for-computing-curvature): Methods for computing curvature\Pageref{methods-for-computing-curvature}
-
- [**Example 3.5**](#Example-3.5)\Pageref{Example-3.5}
-
- [**Remark 3.6**](#remark-hyperbolic-functions): Hyperbolic functions\Pageref{remark-hyperbolic-functions}
-
- [**Example 3.7**](#the-catenary): The Catenary\Pageref{the-catenary}
-
- [**Definition 3.8**](#same-orientation): Same orientation\Pageref{same-orientation}
-
- [**Definition 3.9**](#orientation): Orientation\Pageref{orientation}
-
- [**Definition 3.10**](#positive-orientation): Positive orientation\Pageref{positive-orientation}
-
- [**Example 3.11**](#Example-3.11)\Pageref{Example-3.11}
-
- [**Definition 3.12**](#vector-product-in-mathbbr3-1): Vector product in $\mathbb{R}^3$\Pageref{vector-product-in-mathbbr3-1}
-
- [**Proposition 3.13**](#Proposition-3.13)\Pageref{Proposition-3.13}
-
- [**Proof**](#Proof*-3.2)\Pageref{Proof*-3.2}
-
- [**Proposition 3.14**](#proposition-vector-product)\Pageref{proposition-vector-product}
-
- [**Remark 3.15**](#remark-vector-product): Geometric interpretation of vector product\Pageref{remark-vector-product}
-
- [**Remark 3.16**](#summary-properties-of-mathbfutimes-mathbfv): Summary: Properties of $\mathbf{u}\times \mathbf{v}$\Pageref{summary-properties-of-mathbfutimes-mathbfv}
-
- [**Proposition 3.17**](#Proposition-3.17)\Pageref{Proposition-3.17}
-
- [**Proposition 3.18**](#Proposition-3.18)\Pageref{Proposition-3.18}
-
- [**Proposition 3.19**](#proposition-curvature-formula): Curvature formula\Pageref{proposition-curvature-formula}
-
- [**Example 3.20**](#Example-3.20)\Pageref{Example-3.20}
-
- [**Example 3.21**](#Example-3.21)\Pageref{Example-3.21}
-
- [**Definition 3.22**](#Definition-3.22)\Pageref{Definition-3.22}
-
- [**Definition 3.23**](#Definition-3.23)\Pageref{Definition-3.23}
-
- [**Remark 3.24**](#Remark-3.24)\Pageref{Remark-3.24}
-
- [**Remark 3.25**](#Remark-3.25)\Pageref{Remark-3.25}
-
- [**Definition 3.26**](#Definition-3.26)\Pageref{Definition-3.26}
-
- [**Theorem 3.27**](#theorem-characterization-plane): Characterization of plane curves\Pageref{theorem-characterization-plane}
-
- [**Example 3.28**](#Example-3.28)\Pageref{Example-3.28}
-
- [**Definition 3.29**](#principal-normal-vector): Principal normal vector\Pageref{principal-normal-vector}
-
- [**Remark 3.30**](#Remark-3.30)\Pageref{Remark-3.30}
-
- [**Question 3.31**](#Question-3.31)\Pageref{Question-3.31}
-
- [**Definition 3.32**](#binormal-vector): Binormal vector\Pageref{binormal-vector}
-
- [**Definition 3.33**](#orthonormal-basis): Orthonormal basis\Pageref{orthonormal-basis}
-
- [**Proposition 3.34**](#Proposition-3.34)\Pageref{Proposition-3.34}
-
- [**Proof**](#Proof*-3.3)\Pageref{Proof*-3.3}
-
- [**Proposition 3.35**](#proposition-positive-basis)\Pageref{proposition-positive-basis}
-
- [**Proof**](#Proof*-3.4)\Pageref{Proof*-3.4}
-
- [**Proposition 3.36**](#proposition-binormal)\Pageref{proposition-binormal}
-
- [**Proof**](#Proof*-3.5)\Pageref{Proof*-3.5}
-
- [**Definition 3.37**](#torsion-of-unit-speed-curve): Torsion of unit speed curve\Pageref{torsion-of-unit-speed-curve}
-
- [**Remark 3.38**](#Remark-3.38)\Pageref{Remark-3.38}
-
- [**Warning**](#Warning*-3.6)\Pageref{Warning*-3.6}
-
- [**Definition 3.39**](#Definition-3.39)\Pageref{Definition-3.39}
-
- [**Proposition 3.40**](#proposition-torsion-formula): Torsion formula\Pageref{proposition-torsion-formula}
-
- [**Example 3.41**](#torsion-helix): Torsion Helix\Pageref{torsion-helix}
-
- [**Example 3.42**](#example-circle-curvature-torsion): Curvature and Torsion of Circle\Pageref{example-circle-curvature-torsion}
-
- [**Example 3.43**](#example-circle-rotated)\Pageref{example-circle-rotated}
-
- [**Definition 3.44**](#frenet-frame-1): Frenet frame\Pageref{frenet-frame-1}
-
- [**Definition 3.45**](#Definition-3.45)\Pageref{Definition-3.45}
-
- [**Remark 3.46**](#Remark-3.46)\Pageref{Remark-3.46}
-
- [**Theorem 3.47**](#frenet-serret-equations): Frenet-Serret equations\Pageref{frenet-serret-equations}
-
- [**Proof**](#Proof*-3.7)\Pageref{Proof*-3.7}
-
- [**Remark 3.48**](#Remark-3.48)\Pageref{Remark-3.48}
+ [**Remark 2.48**](#Remark-2.48)\Pageref{Remark-2.48}
 
  [**Important**](#summary): Summary\Pageref{summary}
 
- [**Example 3.49**](#frenet-frame-of-helix): Frenet frame of helix\Pageref{frenet-frame-of-helix}
+ [**Example 2.49**](#frenet-frame-of-helix): Frenet frame of helix\Pageref{frenet-frame-of-helix}
 
- [**Theorem 3.50**](#theorem-characterization-space): Characterization of space curves\Pageref{theorem-characterization-space}
+ [**Theorem 2.50**](#theorem-characterization-space): Characterization of space curves\Pageref{theorem-characterization-space}
 
- [**Example 3.51**](#Example-3.51)\Pageref{Example-3.51}
+ [**Example 2.51**](#Example-2.51)\Pageref{Example-2.51}
 
- [**Proposition 3.52**](#proposition-curvature-torsion-formulas): Curvature and torsion formulas\Pageref{proposition-curvature-torsion-formulas}
+ [**Proposition 2.52**](#proposition-curvature-torsion-formulas): Curvature and torsion formulas\Pageref{proposition-curvature-torsion-formulas}
 
  [**Notation**](#compact-notation-for-arc-length-reparametrization): Compact notation for arc length reparametrization\Pageref{compact-notation-for-arc-length-reparametrization}
 
- [**Example 3.53**](#how-to-use-the-new-notations): How to use the new notations\Pageref{how-to-use-the-new-notations}
+ [**Example 2.53**](#how-to-use-the-new-notations): How to use the new notations\Pageref{how-to-use-the-new-notations}
 
  [**Important**](#new-notation): New Notation!\Pageref{new-notation}
 
- [**Proof**](#proof-of-proposition): Proof of Proposition 3.52\Pageref{proof-of-proposition}
+ [**Proof**](#proof-of-proposition): Proof of Proposition 2.52\Pageref{proof-of-proposition}
 
- [**Remark 3.54**](#equation-of-a-plane): Equation of a plane\Pageref{equation-of-a-plane}
+ [**Remark 2.54**](#equation-of-a-plane): Equation of a plane\Pageref{equation-of-a-plane}
 
- [**Proposition 3.55**](#proposition-zero-torsion)\Pageref{proposition-zero-torsion}
+ [**Proposition 2.55**](#proposition-zero-torsion)\Pageref{proposition-zero-torsion}
 
- [**Proof**](#Proof*-3.12)\Pageref{Proof*-3.12}
+ [**Proof**](#Proof*-2.12)\Pageref{Proof*-2.12}
 
- [**Proposition 3.56**](#proposition-constant-k-zero-t)\Pageref{proposition-constant-k-zero-t}
+ [**Proposition 2.56**](#proposition-constant-k-zero-t)\Pageref{proposition-constant-k-zero-t}
 
- [**Proof**](#Proof*-3.13)\Pageref{Proof*-3.13}
+ [**Proof**](#Proof*-2.13)\Pageref{Proof*-2.13}
 
- [**Definition 4.1**](#definition-topology): Topological space\Pageref{definition-topology}
+ [**Definition 3.1**](#definition-topology): Topological space\Pageref{definition-topology}
 
- [**Remark 4.2**](#remark-intersection)\Pageref{remark-intersection}
+ [**Remark 3.2**](#remark-intersection)\Pageref{remark-intersection}
 
- [**Warning**](#Warning*-4.1)\Pageref{Warning*-4.1}
+ [**Warning**](#Warning*-3.1)\Pageref{Warning*-3.1}
 
- [**Definition 4.3**](#trivial-topology): Trivial topology\Pageref{trivial-topology}
+ [**Definition 3.3**](#trivial-topology): Trivial topology\Pageref{trivial-topology}
 
- [**Definition 4.4**](#discrete-topology): Discrete topology\Pageref{discrete-topology}
+ [**Definition 3.4**](#discrete-topology): Discrete topology\Pageref{discrete-topology}
 
- [**Definition 4.5**](#open-set-of-mathbbrn): Open set of $\mathbb{R}^n$\Pageref{open-set-of-mathbbrn}
+ [**Definition 3.5**](#open-set-of-mathbbrn): Open set of $\mathbb{R}^n$\Pageref{open-set-of-mathbbrn}
 
- [**Definition 4.6**](#definition-euclidean-topology): Euclidean topology of $\mathbb{R}^n$\Pageref{definition-euclidean-topology}
+ [**Definition 3.6**](#definition-euclidean-topology): Euclidean topology of $\mathbb{R}^n$\Pageref{definition-euclidean-topology}
 
  [**Proof**](#well-posedness-of-definition): Well-posedness of Definition 4.6\Pageref{well-posedness-of-definition}
 
- [**Proposition 4.7**](#proposition-balls-open)\Pageref{proposition-balls-open}
+ [**Proposition 3.7**](#proposition-balls-open)\Pageref{proposition-balls-open}
 
- [**Proof**](#Proof*-4.3)\Pageref{Proof*-4.3}
+ [**Proof**](#Proof*-3.3)\Pageref{Proof*-3.3}
 
- [**Definition 4.8**](#closed-set): Closed set\Pageref{closed-set}
+ [**Definition 3.8**](#closed-set): Closed set\Pageref{closed-set}
 
- [**Warning**](#Warning*-4.4)\Pageref{Warning*-4.4}
+ [**Warning**](#Warning*-3.4)\Pageref{Warning*-3.4}
 
- [**Proposition 4.9**](#Proposition-4.9)\Pageref{Proposition-4.9}
+ [**Proposition 3.9**](#Proposition-3.9)\Pageref{Proposition-3.9}
 
- [**Proof**](#Proof*-4.5)\Pageref{Proof*-4.5}
+ [**Proof**](#Proof*-3.5)\Pageref{Proof*-3.5}
 
- [**Definition 4.10**](#finer-and-coarser-topology): Finer and coarser topology\Pageref{finer-and-coarser-topology}
+ [**Definition 3.10**](#finer-and-coarser-topology): Finer and coarser topology\Pageref{finer-and-coarser-topology}
 
- [**Example 4.11**](#Example-4.11)\Pageref{Example-4.11}
+ [**Example 3.11**](#Example-3.11)\Pageref{Example-3.11}
 
- [**Example 4.12**](#cofinite-topology-on-mathbbr): Cofinite topology on $\mathbb{R}$\Pageref{cofinite-topology-on-mathbbr}
+ [**Example 3.12**](#cofinite-topology-on-mathbbr): Cofinite topology on $\mathbb{R}$\Pageref{cofinite-topology-on-mathbbr}
 
- [**Definition 4.13**](#convergent-sequence): Convergent sequence\Pageref{convergent-sequence}
+ [**Definition 3.13**](#convergent-sequence): Convergent sequence\Pageref{convergent-sequence}
 
- [**Notation**](#Notation*-4.6)\Pageref{Notation*-4.6}
+ [**Notation**](#Notation*-3.6)\Pageref{Notation*-3.6}
 
- [**Proposition 4.14**](#convergence-for-trivial-topology): Convergence for trivial topology\Pageref{convergence-for-trivial-topology}
+ [**Proposition 3.14**](#convergence-for-trivial-topology): Convergence for trivial topology\Pageref{convergence-for-trivial-topology}
 
- [**Proof**](#Proof*-4.7)\Pageref{Proof*-4.7}
+ [**Proof**](#Proof*-3.7)\Pageref{Proof*-3.7}
 
- [**Warning**](#Warning*-4.8)\Pageref{Warning*-4.8}
+ [**Warning**](#Warning*-3.8)\Pageref{Warning*-3.8}
 
- [**Proposition 4.15**](#convergence-for-discrete-topology): Convergence for discrete topology\Pageref{convergence-for-discrete-topology}
+ [**Proposition 3.15**](#convergence-for-discrete-topology): Convergence for discrete topology\Pageref{convergence-for-discrete-topology}
 
- [**Proof**](#Proof*-4.9)\Pageref{Proof*-4.9}
+ [**Proof**](#Proof*-3.9)\Pageref{Proof*-3.9}
 
- [**Definition 4.16**](#classical-convergence-in-mathbbrn): Classical convergence in $\mathbb{R}^n$\Pageref{classical-convergence-in-mathbbrn}
+ [**Definition 3.16**](#classical-convergence-in-mathbbrn): Classical convergence in $\mathbb{R}^n$\Pageref{classical-convergence-in-mathbbrn}
 
- [**Proposition 4.17**](#proposition-convergence-Rn): Convergence for Euclidean topology\Pageref{proposition-convergence-Rn}
+ [**Proposition 3.17**](#proposition-convergence-Rn): Convergence for Euclidean topology\Pageref{proposition-convergence-Rn}
 
- [**Proof**](#Proof*-4.10)\Pageref{Proof*-4.10}
+ [**Proof**](#Proof*-3.10)\Pageref{Proof*-3.10}
 
- [**Notation**](#Notation*-4.11)\Pageref{Notation*-4.11}
+ [**Notation**](#Notation*-3.11)\Pageref{Notation*-3.11}
 
- [**Proposition 4.18**](#Proposition-4.18)\Pageref{Proposition-4.18}
+ [**Proposition 3.18**](#Proposition-3.18)\Pageref{Proposition-3.18}
 
- [**Proof**](#Proof*-4.12)\Pageref{Proof*-4.12}
+ [**Proof**](#Proof*-3.12)\Pageref{Proof*-3.12}
 
- [**Definition 4.19**](#distance): Distance\Pageref{distance}
+ [**Definition 3.19**](#distance): Distance\Pageref{distance}
 
- [**Definition 4.20**](#metric-space): Metric space\Pageref{metric-space}
+ [**Definition 3.20**](#metric-space): Metric space\Pageref{metric-space}
 
- [**Example 4.21**](#mathbbrn-as-metric-space): $\mathbb{R}^n$ as metric space\Pageref{mathbbrn-as-metric-space}
+ [**Example 3.21**](#mathbbrn-as-metric-space): $\mathbb{R}^n$ as metric space\Pageref{mathbbrn-as-metric-space}
 
- [**Example 4.22**](#p-distance-on-mathbbrn): $p$-distance on $\mathbb{R}^n$\Pageref{p-distance-on-mathbbrn}
+ [**Example 3.22**](#p-distance-on-mathbbrn): $p$-distance on $\mathbb{R}^n$\Pageref{p-distance-on-mathbbrn}
 
- [**Definition 4.23**](#definition-metric-topology): Topology induced by the metric\Pageref{definition-metric-topology}
+ [**Definition 3.23**](#definition-metric-topology): Topology induced by the metric\Pageref{definition-metric-topology}
 
- [**Example 4.24**](#topology-induced-by-euclidean-distance): Topology induced by Euclidean distance\Pageref{topology-induced-by-euclidean-distance}
+ [**Example 3.24**](#topology-induced-by-euclidean-distance): Topology induced by Euclidean distance\Pageref{topology-induced-by-euclidean-distance}
 
- [**Example 4.25**](#discrete-distance): Discrete distance\Pageref{discrete-distance}
+ [**Example 3.25**](#discrete-distance): Discrete distance\Pageref{discrete-distance}
 
- [**Proposition 4.26**](#proposition-metric-ball)\Pageref{proposition-metric-ball}
+ [**Proposition 3.26**](#proposition-metric-ball)\Pageref{proposition-metric-ball}
 
- [**Definition 4.27**](#equivalent-metrics): Equivalent metrics\Pageref{equivalent-metrics}
+ [**Definition 3.27**](#equivalent-metrics): Equivalent metrics\Pageref{equivalent-metrics}
 
- [**Proposition 4.28**](#proposition-equivalent-metrics)\Pageref{proposition-equivalent-metrics}
+ [**Proposition 3.28**](#proposition-equivalent-metrics)\Pageref{proposition-equivalent-metrics}
 
- [**Example 4.29**](#Example-4.29)\Pageref{Example-4.29}
+ [**Example 3.29**](#Example-3.29)\Pageref{Example-3.29}
 
- [**Warning**](#Warning*-4.13)\Pageref{Warning*-4.13}
+ [**Warning**](#Warning*-3.13)\Pageref{Warning*-3.13}
 
- [**Proposition 4.30**](#convergence-in-metric-space): Convergence in metric space\Pageref{convergence-in-metric-space}
+ [**Proposition 3.30**](#convergence-in-metric-space): Convergence in metric space\Pageref{convergence-in-metric-space}
 
- [**Definition 4.31**](#interior-of-a-set): Interior of a set\Pageref{interior-of-a-set}
+ [**Definition 3.31**](#interior-of-a-set): Interior of a set\Pageref{interior-of-a-set}
 
- [**Remark 4.32**](#Remark-4.32)\Pageref{Remark-4.32}
+ [**Remark 3.32**](#Remark-3.32)\Pageref{Remark-3.32}
 
- [**Proposition 4.33**](#Proposition-4.33)\Pageref{Proposition-4.33}
+ [**Proposition 3.33**](#Proposition-3.33)\Pageref{Proposition-3.33}
 
- [**Proof**](#Proof*-4.14)\Pageref{Proof*-4.14}
+ [**Proof**](#Proof*-3.14)\Pageref{Proof*-3.14}
 
- [**Definition 4.34**](#closure-of-a-set): Closure of a set\Pageref{closure-of-a-set}
+ [**Definition 3.34**](#closure-of-a-set): Closure of a set\Pageref{closure-of-a-set}
 
- [**Remark 4.35**](#Remark-4.35)\Pageref{Remark-4.35}
+ [**Remark 3.35**](#Remark-3.35)\Pageref{Remark-3.35}
 
- [**Proposition 4.36**](#Proposition-4.36)\Pageref{Proposition-4.36}
+ [**Proposition 3.36**](#Proposition-3.36)\Pageref{Proposition-3.36}
 
- [**Proof**](#Proof*-4.15)\Pageref{Proof*-4.15}
+ [**Proof**](#Proof*-3.15)\Pageref{Proof*-3.15}
 
- [**Definition 4.37**](#boundary-of-a-set): Boundary of a set\Pageref{boundary-of-a-set}
+ [**Definition 3.37**](#boundary-of-a-set): Boundary of a set\Pageref{boundary-of-a-set}
 
- [**Proposition 4.38**](#Proposition-4.38)\Pageref{Proposition-4.38}
+ [**Proposition 3.38**](#Proposition-3.38)\Pageref{Proposition-3.38}
 
- [**Proof**](#Proof*-4.16)\Pageref{Proof*-4.16}
+ [**Proof**](#Proof*-3.16)\Pageref{Proof*-3.16}
 
- [**Proposition 4.39**](#Proposition-4.39)\Pageref{Proposition-4.39}
+ [**Proposition 3.39**](#Proposition-3.39)\Pageref{Proposition-3.39}
 
- [**Proof**](#Proof*-4.17)\Pageref{Proof*-4.17}
+ [**Proof**](#Proof*-3.17)\Pageref{Proof*-3.17}
 
- [**Proposition 4.40**](#Proposition-4.40)\Pageref{Proposition-4.40}
+ [**Proposition 3.40**](#Proposition-3.40)\Pageref{Proposition-3.40}
 
- [**Example 4.41**](#Example-4.41)\Pageref{Example-4.41}
+ [**Example 3.41**](#Example-3.41)\Pageref{Example-3.41}
 
- [**Definition 4.42**](#density-1): Density\Pageref{density-1}
+ [**Definition 3.42**](#density-1): Density\Pageref{density-1}
 
- [**Proposition 4.43**](#Proposition-4.43)\Pageref{Proposition-4.43}
+ [**Proposition 3.43**](#Proposition-3.43)\Pageref{Proposition-3.43}
 
- [**Proof**](#Proof*-4.18)\Pageref{Proof*-4.18}
+ [**Proof**](#Proof*-3.18)\Pageref{Proof*-3.18}
 
- [**Example 4.44**](#Example-4.44)\Pageref{Example-4.44}
+ [**Example 3.44**](#Example-3.44)\Pageref{Example-3.44}
 
- [**Example 4.45**](#Example-4.45)\Pageref{Example-4.45}
+ [**Example 3.45**](#Example-3.45)\Pageref{Example-3.45}
 
- [**Definition 4.46**](#Definition-4.46)\Pageref{Definition-4.46}
+ [**Definition 3.46**](#Definition-3.46)\Pageref{Definition-3.46}
 
- [**Proposition 4.47**](#proposition-hausdorff-1)\Pageref{proposition-hausdorff-1}
+ [**Proposition 3.47**](#proposition-hausdorff-1)\Pageref{proposition-hausdorff-1}
 
- [**Proof**](#Proof*-4.19)\Pageref{Proof*-4.19}
+ [**Proof**](#Proof*-3.19)\Pageref{Proof*-3.19}
 
- [**Definition 4.48**](#metrizable-space): Metrizable space\Pageref{metrizable-space}
+ [**Definition 3.48**](#metrizable-space): Metrizable space\Pageref{metrizable-space}
 
- [**Corollary 4.49**](#corollary-hausdorff)\Pageref{corollary-hausdorff}
+ [**Corollary 3.49**](#corollary-hausdorff)\Pageref{corollary-hausdorff}
 
- [**Proof**](#Proof*-4.20)\Pageref{Proof*-4.20}
+ [**Proof**](#Proof*-3.20)\Pageref{Proof*-3.20}
 
- [**Example 4.50**](#trivial-topology-is-not-hausdorff): Trivial topology is not Hausdorff\Pageref{trivial-topology-is-not-hausdorff}
+ [**Example 3.50**](#trivial-topology-is-not-hausdorff): Trivial topology is not Hausdorff\Pageref{trivial-topology-is-not-hausdorff}
 
- [**Example 4.51**](#cofinite-topology-on-mathbbr-1): Cofinite topology on $\mathbb{R}$\Pageref{cofinite-topology-on-mathbbr-1}
+ [**Example 3.51**](#cofinite-topology-on-mathbbr-1): Cofinite topology on $\mathbb{R}$\Pageref{cofinite-topology-on-mathbbr-1}
 
- [**Example 4.52**](#Example-4.52)\Pageref{Example-4.52}
+ [**Example 3.52**](#Example-3.52)\Pageref{Example-3.52}
 
- [**Proposition 4.53**](#uniqueness-of-limit-in-hausdorff-spaces): Uniqueness of limit in Hausdorff spaces\Pageref{uniqueness-of-limit-in-hausdorff-spaces}
+ [**Proposition 3.53**](#uniqueness-of-limit-in-hausdorff-spaces): Uniqueness of limit in Hausdorff spaces\Pageref{uniqueness-of-limit-in-hausdorff-spaces}
 
- [**Proof**](#Proof*-4.21)\Pageref{Proof*-4.21}
+ [**Proof**](#Proof*-3.21)\Pageref{Proof*-3.21}
 
- [**Definition 4.54**](#images-and-pre-images): Images and Pre-images\Pageref{images-and-pre-images}
+ [**Definition 3.54**](#images-and-pre-images): Images and Pre-images\Pageref{images-and-pre-images}
 
- [**Warning**](#Warning*-4.22)\Pageref{Warning*-4.22}
+ [**Warning**](#Warning*-3.22)\Pageref{Warning*-3.22}
 
- [**Proposition 4.55**](#Proposition-4.55)\Pageref{Proposition-4.55}
+ [**Proposition 3.55**](#Proposition-3.55)\Pageref{Proposition-3.55}
 
- [**Definition 4.56**](#continuous-function): Continuous function\Pageref{continuous-function}
+ [**Definition 3.56**](#continuous-function): Continuous function\Pageref{continuous-function}
 
- [**Proposition 4.57**](#proposition-continuity-characterization)\Pageref{proposition-continuity-characterization}
+ [**Proposition 3.57**](#proposition-continuity-characterization)\Pageref{proposition-continuity-characterization}
 
- [**Important**](#Important*-4.23)\Pageref{Important*-4.23}
+ [**Important**](#Important*-3.23)\Pageref{Important*-3.23}
 
- [**Example 4.58**](#Example-4.58)\Pageref{Example-4.58}
+ [**Example 3.58**](#Example-3.58)\Pageref{Example-3.58}
 
- [**Definition 4.59**](#continuity-in-the-classical-sense): Continuity in the classical sense\Pageref{continuity-in-the-classical-sense}
+ [**Definition 3.59**](#continuity-in-the-classical-sense): Continuity in the classical sense\Pageref{continuity-in-the-classical-sense}
 
- [**Proposition 4.60**](#Proposition-4.60)\Pageref{Proposition-4.60}
+ [**Proposition 3.60**](#Proposition-3.60)\Pageref{Proposition-3.60}
 
- [**Proof**](#Proof*-4.24)\Pageref{Proof*-4.24}
+ [**Proof**](#Proof*-3.24)\Pageref{Proof*-3.24}
 
- [**Proposition 4.61**](#Proposition-4.61)\Pageref{Proposition-4.61}
+ [**Proposition 3.61**](#Proposition-3.61)\Pageref{Proposition-3.61}
 
- [**Example 4.62**](#Example-4.62)\Pageref{Example-4.62}
+ [**Example 3.62**](#Example-3.62)\Pageref{Example-3.62}
 
- [**Example 4.63**](#Example-4.63)\Pageref{Example-4.63}
+ [**Example 3.63**](#Example-3.63)\Pageref{Example-3.63}
 
- [**Proposition 4.64**](#proposition-continuity-sequential)\Pageref{proposition-continuity-sequential}
+ [**Proposition 3.64**](#proposition-continuity-sequential)\Pageref{proposition-continuity-sequential}
 
- [**Proof**](#Proof*-4.25)\Pageref{Proof*-4.25}
+ [**Proof**](#Proof*-3.25)\Pageref{Proof*-3.25}
 
- [**Warning**](#Warning*-4.26)\Pageref{Warning*-4.26}
+ [**Warning**](#Warning*-3.26)\Pageref{Warning*-3.26}
 
- [**Proposition 4.65**](#Proposition-4.65)\Pageref{Proposition-4.65}
+ [**Proposition 3.65**](#Proposition-3.65)\Pageref{Proposition-3.65}
 
- [**Proof**](#Proof*-4.27)\Pageref{Proof*-4.27}
+ [**Proof**](#Proof*-3.27)\Pageref{Proof*-3.27}
 
- [**Definition 4.66**](#homeomoprhim): Homeomoprhim\Pageref{homeomoprhim}
+ [**Definition 3.66**](#homeomoprhim): Homeomoprhim\Pageref{homeomoprhim}
 
- [**Definition 4.67**](#definition-subspace-topology): Subspace topology\Pageref{definition-subspace-topology}
+ [**Definition 3.67**](#definition-subspace-topology): Subspace topology\Pageref{definition-subspace-topology}
 
- [**Proof**](#well-posedness-of-definition-1): Well-posedness of Definition 4.67\Pageref{well-posedness-of-definition-1}
+ [**Proof**](#well-posedness-of-definition-1): Well-posedness of Definition 3.67\Pageref{well-posedness-of-definition-1}
 
- [**Proposition 4.68**](#Proposition-4.68)\Pageref{Proposition-4.68}
+ [**Proposition 3.68**](#Proposition-3.68)\Pageref{Proposition-3.68}
 
- [**Proof**](#Proof*-4.29)\Pageref{Proof*-4.29}
+ [**Proof**](#Proof*-3.29)\Pageref{Proof*-3.29}
 
- [**Warning**](#Warning*-4.30)\Pageref{Warning*-4.30}
+ [**Warning**](#Warning*-3.30)\Pageref{Warning*-3.30}
 
- [**Example 4.69**](#Example-4.69)\Pageref{Example-4.69}
+ [**Example 3.69**](#Example-3.69)\Pageref{Example-3.69}
 
- [**Definition 4.70**](#topological-basis-1): Topological basis\Pageref{topological-basis-1}
+ [**Definition 3.70**](#topological-basis-1): Topological basis\Pageref{topological-basis-1}
 
- [**Example 4.71**](#Example-4.71)\Pageref{Example-4.71}
+ [**Example 3.71**](#Example-3.71)\Pageref{Example-3.71}
 
- [**Proposition 4.72**](#proposition-basis)\Pageref{proposition-basis}
+ [**Proposition 3.72**](#proposition-basis)\Pageref{proposition-basis}
 
- [**Proof**](#Proof*-4.31)\Pageref{Proof*-4.31}
+ [**Proof**](#Proof*-3.31)\Pageref{Proof*-3.31}
 
- [**Proposition 4.73**](#proposition-topology-basis)\Pageref{proposition-topology-basis}
+ [**Proposition 3.73**](#proposition-topology-basis)\Pageref{proposition-topology-basis}
 
- [**Proof**](#Proof*-4.32)\Pageref{Proof*-4.32}
+ [**Proof**](#Proof*-3.32)\Pageref{Proof*-3.32}
 
- [**Proposition 4.74**](#Proposition-4.74)\Pageref{Proposition-4.74}
+ [**Proposition 3.74**](#Proposition-3.74)\Pageref{Proposition-3.74}
 
- [**Definition 4.75**](#Definition-4.75)\Pageref{Definition-4.75}
+ [**Definition 3.75**](#Definition-3.75)\Pageref{Definition-3.75}
 
- [**Definition 5.1**](#Definition-5.1)\Pageref{Definition-5.1}
+ [**Definition 4.1**](#Definition-4.1)\Pageref{Definition-4.1}
 
- [**Definition 5.2**](#Definition-5.2)\Pageref{Definition-5.2}
+ [**Definition 4.2**](#Definition-4.2)\Pageref{Definition-4.2}
 
- [**Definition 5.3**](#Definition-5.3)\Pageref{Definition-5.3}
+ [**Definition 4.3**](#Definition-4.3)\Pageref{Definition-4.3}
 
- [**Definition 5.4**](#Definition-5.4)\Pageref{Definition-5.4}
+ [**Definition 4.4**](#Definition-4.4)\Pageref{Definition-4.4}
 
- [**Definition 5.5**](#Definition-5.5)\Pageref{Definition-5.5}
+ [**Definition 4.5**](#Definition-4.5)\Pageref{Definition-4.5}
