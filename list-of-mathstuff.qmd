@@ -331,191 +331,193 @@
 
  [**Proof**](#Proof*-3.5)\Pageref{Proof*-3.5}
 
- [**Definition 3.10**](#finer-and-coarser-topology): Finer and coarser topology\Pageref{finer-and-coarser-topology}
+ [**Example 3.10**](#the-zariski-topology): The Zariski topology\Pageref{the-zariski-topology}
 
- [**Example 3.11**](#Example-3.11)\Pageref{Example-3.11}
+ [**Definition 3.11**](#finer-and-coarser-topology): Finer and coarser topology\Pageref{finer-and-coarser-topology}
 
- [**Example 3.12**](#cofinite-topology-on-mathbbr): Cofinite topology on $\mathbb{R}$\Pageref{cofinite-topology-on-mathbbr}
+ [**Example 3.12**](#Example-3.12)\Pageref{Example-3.12}
 
- [**Definition 3.13**](#convergent-sequence): Convergent sequence\Pageref{convergent-sequence}
+ [**Example 3.13**](#cofinite-topology-on-mathbbr): Cofinite topology on $\mathbb{R}$\Pageref{cofinite-topology-on-mathbbr}
+
+ [**Definition 3.14**](#convergent-sequence): Convergent sequence\Pageref{convergent-sequence}
 
  [**Notation**](#Notation*-3.6)\Pageref{Notation*-3.6}
 
- [**Proposition 3.14**](#convergence-for-trivial-topology): Convergence for trivial topology\Pageref{convergence-for-trivial-topology}
+ [**Proposition 3.15**](#convergence-for-trivial-topology): Convergence for trivial topology\Pageref{convergence-for-trivial-topology}
 
  [**Proof**](#Proof*-3.7)\Pageref{Proof*-3.7}
 
  [**Warning**](#Warning*-3.8)\Pageref{Warning*-3.8}
 
- [**Proposition 3.15**](#convergence-for-discrete-topology): Convergence for discrete topology\Pageref{convergence-for-discrete-topology}
+ [**Proposition 3.16**](#convergence-for-discrete-topology): Convergence for discrete topology\Pageref{convergence-for-discrete-topology}
 
  [**Proof**](#Proof*-3.9)\Pageref{Proof*-3.9}
 
- [**Definition 3.16**](#classical-convergence-in-mathbbrn): Classical convergence in $\mathbb{R}^n$\Pageref{classical-convergence-in-mathbbrn}
+ [**Definition 3.17**](#classical-convergence-in-mathbbrn): Classical convergence in $\mathbb{R}^n$\Pageref{classical-convergence-in-mathbbrn}
 
- [**Proposition 3.17**](#proposition-convergence-Rn): Convergence for Euclidean topology\Pageref{proposition-convergence-Rn}
+ [**Proposition 3.18**](#proposition-convergence-Rn): Convergence for Euclidean topology\Pageref{proposition-convergence-Rn}
 
  [**Proof**](#Proof*-3.10)\Pageref{Proof*-3.10}
 
  [**Notation**](#Notation*-3.11)\Pageref{Notation*-3.11}
 
- [**Proposition 3.18**](#Proposition-3.18)\Pageref{Proposition-3.18}
+ [**Proposition 3.19**](#Proposition-3.19)\Pageref{Proposition-3.19}
 
  [**Proof**](#Proof*-3.12)\Pageref{Proof*-3.12}
 
- [**Definition 3.19**](#distance): Distance\Pageref{distance}
+ [**Definition 3.20**](#distance): Distance\Pageref{distance}
 
- [**Definition 3.20**](#metric-space): Metric space\Pageref{metric-space}
+ [**Definition 3.21**](#metric-space): Metric space\Pageref{metric-space}
 
- [**Example 3.21**](#mathbbrn-as-metric-space): $\mathbb{R}^n$ as metric space\Pageref{mathbbrn-as-metric-space}
+ [**Example 3.22**](#mathbbrn-as-metric-space): $\mathbb{R}^n$ as metric space\Pageref{mathbbrn-as-metric-space}
 
- [**Example 3.22**](#p-distance-on-mathbbrn): $p$-distance on $\mathbb{R}^n$\Pageref{p-distance-on-mathbbrn}
+ [**Example 3.23**](#p-distance-on-mathbbrn): $p$-distance on $\mathbb{R}^n$\Pageref{p-distance-on-mathbbrn}
 
- [**Definition 3.23**](#definition-metric-topology): Topology induced by the metric\Pageref{definition-metric-topology}
+ [**Definition 3.24**](#definition-metric-topology): Topology induced by the metric\Pageref{definition-metric-topology}
 
- [**Example 3.24**](#topology-induced-by-euclidean-distance): Topology induced by Euclidean distance\Pageref{topology-induced-by-euclidean-distance}
+ [**Example 3.25**](#topology-induced-by-euclidean-distance): Topology induced by Euclidean distance\Pageref{topology-induced-by-euclidean-distance}
 
- [**Example 3.25**](#discrete-distance): Discrete distance\Pageref{discrete-distance}
+ [**Example 3.26**](#discrete-distance): Discrete distance\Pageref{discrete-distance}
 
- [**Proposition 3.26**](#proposition-metric-ball)\Pageref{proposition-metric-ball}
+ [**Proposition 3.27**](#proposition-metric-ball)\Pageref{proposition-metric-ball}
 
- [**Definition 3.27**](#equivalent-metrics): Equivalent metrics\Pageref{equivalent-metrics}
+ [**Definition 3.28**](#equivalent-metrics): Equivalent metrics\Pageref{equivalent-metrics}
 
- [**Proposition 3.28**](#proposition-equivalent-metrics)\Pageref{proposition-equivalent-metrics}
+ [**Proposition 3.29**](#proposition-equivalent-metrics)\Pageref{proposition-equivalent-metrics}
 
- [**Example 3.29**](#Example-3.29)\Pageref{Example-3.29}
+ [**Example 3.30**](#Example-3.30)\Pageref{Example-3.30}
 
  [**Warning**](#Warning*-3.13)\Pageref{Warning*-3.13}
 
- [**Proposition 3.30**](#convergence-in-metric-space): Convergence in metric space\Pageref{convergence-in-metric-space}
+ [**Proposition 3.31**](#convergence-in-metric-space): Convergence in metric space\Pageref{convergence-in-metric-space}
 
- [**Definition 3.31**](#interior-of-a-set): Interior of a set\Pageref{interior-of-a-set}
+ [**Definition 3.32**](#interior-of-a-set): Interior of a set\Pageref{interior-of-a-set}
 
- [**Remark 3.32**](#Remark-3.32)\Pageref{Remark-3.32}
+ [**Remark 3.33**](#Remark-3.33)\Pageref{Remark-3.33}
 
- [**Proposition 3.33**](#Proposition-3.33)\Pageref{Proposition-3.33}
+ [**Proposition 3.34**](#Proposition-3.34)\Pageref{Proposition-3.34}
 
  [**Proof**](#Proof*-3.14)\Pageref{Proof*-3.14}
 
- [**Definition 3.34**](#closure-of-a-set): Closure of a set\Pageref{closure-of-a-set}
+ [**Definition 3.35**](#closure-of-a-set): Closure of a set\Pageref{closure-of-a-set}
 
- [**Remark 3.35**](#Remark-3.35)\Pageref{Remark-3.35}
+ [**Remark 3.36**](#Remark-3.36)\Pageref{Remark-3.36}
 
- [**Proposition 3.36**](#Proposition-3.36)\Pageref{Proposition-3.36}
+ [**Proposition 3.37**](#Proposition-3.37)\Pageref{Proposition-3.37}
 
  [**Proof**](#Proof*-3.15)\Pageref{Proof*-3.15}
 
- [**Definition 3.37**](#boundary-of-a-set): Boundary of a set\Pageref{boundary-of-a-set}
-
- [**Proposition 3.38**](#Proposition-3.38)\Pageref{Proposition-3.38}
-
- [**Proof**](#Proof*-3.16)\Pageref{Proof*-3.16}
+ [**Definition 3.38**](#boundary-of-a-set): Boundary of a set\Pageref{boundary-of-a-set}
 
  [**Proposition 3.39**](#Proposition-3.39)\Pageref{Proposition-3.39}
 
- [**Proof**](#Proof*-3.17)\Pageref{Proof*-3.17}
+ [**Proof**](#Proof*-3.16)\Pageref{Proof*-3.16}
 
  [**Proposition 3.40**](#Proposition-3.40)\Pageref{Proposition-3.40}
 
- [**Example 3.41**](#Example-3.41)\Pageref{Example-3.41}
+ [**Proof**](#Proof*-3.17)\Pageref{Proof*-3.17}
 
- [**Definition 3.42**](#density-1): Density\Pageref{density-1}
+ [**Proposition 3.41**](#Proposition-3.41)\Pageref{Proposition-3.41}
 
- [**Proposition 3.43**](#Proposition-3.43)\Pageref{Proposition-3.43}
+ [**Example 3.42**](#Example-3.42)\Pageref{Example-3.42}
+
+ [**Definition 3.43**](#density-1): Density\Pageref{density-1}
+
+ [**Proposition 3.44**](#Proposition-3.44)\Pageref{Proposition-3.44}
 
  [**Proof**](#Proof*-3.18)\Pageref{Proof*-3.18}
 
- [**Example 3.44**](#Example-3.44)\Pageref{Example-3.44}
-
  [**Example 3.45**](#Example-3.45)\Pageref{Example-3.45}
 
- [**Definition 3.46**](#Definition-3.46)\Pageref{Definition-3.46}
+ [**Example 3.46**](#Example-3.46)\Pageref{Example-3.46}
 
- [**Proposition 3.47**](#proposition-hausdorff-1)\Pageref{proposition-hausdorff-1}
+ [**Definition 3.47**](#Definition-3.47)\Pageref{Definition-3.47}
+
+ [**Proposition 3.48**](#proposition-hausdorff-1)\Pageref{proposition-hausdorff-1}
 
  [**Proof**](#Proof*-3.19)\Pageref{Proof*-3.19}
 
- [**Definition 3.48**](#metrizable-space): Metrizable space\Pageref{metrizable-space}
+ [**Definition 3.49**](#metrizable-space): Metrizable space\Pageref{metrizable-space}
 
- [**Corollary 3.49**](#corollary-hausdorff)\Pageref{corollary-hausdorff}
+ [**Corollary 3.50**](#corollary-hausdorff)\Pageref{corollary-hausdorff}
 
  [**Proof**](#Proof*-3.20)\Pageref{Proof*-3.20}
 
- [**Example 3.50**](#trivial-topology-is-not-hausdorff): Trivial topology is not Hausdorff\Pageref{trivial-topology-is-not-hausdorff}
+ [**Example 3.51**](#trivial-topology-is-not-hausdorff): Trivial topology is not Hausdorff\Pageref{trivial-topology-is-not-hausdorff}
 
- [**Example 3.51**](#cofinite-topology-on-mathbbr-1): Cofinite topology on $\mathbb{R}$\Pageref{cofinite-topology-on-mathbbr-1}
+ [**Example 3.52**](#cofinite-topology-on-mathbbr-1): Cofinite topology on $\mathbb{R}$\Pageref{cofinite-topology-on-mathbbr-1}
 
- [**Example 3.52**](#Example-3.52)\Pageref{Example-3.52}
+ [**Example 3.53**](#Example-3.53)\Pageref{Example-3.53}
 
- [**Proposition 3.53**](#uniqueness-of-limit-in-hausdorff-spaces): Uniqueness of limit in Hausdorff spaces\Pageref{uniqueness-of-limit-in-hausdorff-spaces}
+ [**Proposition 3.54**](#uniqueness-of-limit-in-hausdorff-spaces): Uniqueness of limit in Hausdorff spaces\Pageref{uniqueness-of-limit-in-hausdorff-spaces}
 
  [**Proof**](#Proof*-3.21)\Pageref{Proof*-3.21}
 
- [**Definition 3.54**](#images-and-pre-images): Images and Pre-images\Pageref{images-and-pre-images}
+ [**Definition 3.55**](#images-and-pre-images): Images and Pre-images\Pageref{images-and-pre-images}
 
  [**Warning**](#Warning*-3.22)\Pageref{Warning*-3.22}
 
- [**Proposition 3.55**](#Proposition-3.55)\Pageref{Proposition-3.55}
+ [**Proposition 3.56**](#Proposition-3.56)\Pageref{Proposition-3.56}
 
- [**Definition 3.56**](#continuous-function): Continuous function\Pageref{continuous-function}
+ [**Definition 3.57**](#continuous-function): Continuous function\Pageref{continuous-function}
 
- [**Proposition 3.57**](#proposition-continuity-characterization)\Pageref{proposition-continuity-characterization}
+ [**Proposition 3.58**](#proposition-continuity-characterization)\Pageref{proposition-continuity-characterization}
 
  [**Important**](#Important*-3.23)\Pageref{Important*-3.23}
 
- [**Example 3.58**](#Example-3.58)\Pageref{Example-3.58}
+ [**Example 3.59**](#Example-3.59)\Pageref{Example-3.59}
 
- [**Definition 3.59**](#continuity-in-the-classical-sense): Continuity in the classical sense\Pageref{continuity-in-the-classical-sense}
-
- [**Proposition 3.60**](#Proposition-3.60)\Pageref{Proposition-3.60}
-
- [**Proof**](#Proof*-3.24)\Pageref{Proof*-3.24}
+ [**Definition 3.60**](#continuity-in-the-classical-sense): Continuity in the classical sense\Pageref{continuity-in-the-classical-sense}
 
  [**Proposition 3.61**](#Proposition-3.61)\Pageref{Proposition-3.61}
 
- [**Example 3.62**](#Example-3.62)\Pageref{Example-3.62}
+ [**Proof**](#Proof*-3.24)\Pageref{Proof*-3.24}
+
+ [**Proposition 3.62**](#Proposition-3.62)\Pageref{Proposition-3.62}
 
  [**Example 3.63**](#Example-3.63)\Pageref{Example-3.63}
 
- [**Proposition 3.64**](#proposition-continuity-sequential)\Pageref{proposition-continuity-sequential}
+ [**Example 3.64**](#Example-3.64)\Pageref{Example-3.64}
+
+ [**Proposition 3.65**](#proposition-continuity-sequential)\Pageref{proposition-continuity-sequential}
 
  [**Proof**](#Proof*-3.25)\Pageref{Proof*-3.25}
 
  [**Warning**](#Warning*-3.26)\Pageref{Warning*-3.26}
 
- [**Proposition 3.65**](#Proposition-3.65)\Pageref{Proposition-3.65}
+ [**Proposition 3.66**](#Proposition-3.66)\Pageref{Proposition-3.66}
 
  [**Proof**](#Proof*-3.27)\Pageref{Proof*-3.27}
 
- [**Definition 3.66**](#homeomoprhim): Homeomoprhim\Pageref{homeomoprhim}
+ [**Definition 3.67**](#homeomoprhim): Homeomoprhim\Pageref{homeomoprhim}
 
- [**Definition 3.67**](#definition-subspace-topology): Subspace topology\Pageref{definition-subspace-topology}
+ [**Definition 3.68**](#definition-subspace-topology): Subspace topology\Pageref{definition-subspace-topology}
 
- [**Proof**](#well-posedness-of-definition-1): Well-posedness of Definition 3.67\Pageref{well-posedness-of-definition-1}
+ [**Proof**](#well-posedness-of-definition-1): Well-posedness of Definition 3.68\Pageref{well-posedness-of-definition-1}
 
- [**Proposition 3.68**](#Proposition-3.68)\Pageref{Proposition-3.68}
+ [**Proposition 3.69**](#Proposition-3.69)\Pageref{Proposition-3.69}
 
  [**Proof**](#Proof*-3.29)\Pageref{Proof*-3.29}
 
  [**Warning**](#Warning*-3.30)\Pageref{Warning*-3.30}
 
- [**Example 3.69**](#Example-3.69)\Pageref{Example-3.69}
+ [**Example 3.70**](#Example-3.70)\Pageref{Example-3.70}
 
- [**Definition 3.70**](#topological-basis-1): Topological basis\Pageref{topological-basis-1}
+ [**Definition 3.71**](#topological-basis-1): Topological basis\Pageref{topological-basis-1}
 
- [**Example 3.71**](#Example-3.71)\Pageref{Example-3.71}
+ [**Example 3.72**](#Example-3.72)\Pageref{Example-3.72}
 
- [**Proposition 3.72**](#proposition-basis)\Pageref{proposition-basis}
+ [**Proposition 3.73**](#proposition-basis)\Pageref{proposition-basis}
 
  [**Proof**](#Proof*-3.31)\Pageref{Proof*-3.31}
 
- [**Proposition 3.73**](#proposition-topology-basis)\Pageref{proposition-topology-basis}
+ [**Proposition 3.74**](#proposition-topology-basis)\Pageref{proposition-topology-basis}
 
  [**Proof**](#Proof*-3.32)\Pageref{Proof*-3.32}
 
- [**Proposition 3.74**](#Proposition-3.74)\Pageref{Proposition-3.74}
+ [**Proposition 3.75**](#Proposition-3.75)\Pageref{Proposition-3.75}
 
- [**Definition 3.75**](#Definition-3.75)\Pageref{Definition-3.75}
+ [**Definition 3.76**](#Definition-3.76)\Pageref{Definition-3.76}
 
  [**Definition 4.1**](#Definition-4.1)\Pageref{Definition-4.1}
 

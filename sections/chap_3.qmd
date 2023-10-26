@@ -351,6 +351,39 @@ Therefore (A3) and (C3) are equivalent.
 
 
 
+::: Example
+### The Zariski topology
+
+Let $(\mathbb{K}, + , \cdot)$ be a field. Define
+$$
+X:=\mathbb{K}^n := \{  (a_1, \ldots, a_n) \divider a_i \in \mathbb{K}  \} \,.
+$$
+Consider the set of polynomials with coefficients in the field 
+$$
+\mathbb{K}[x_1,\ldots,x_n] \,.
+$$
+Therefore $f \in \mathbb{K}[x_1,\ldots,x_n]$ has the form 
+$$
+f(x_1,\ldots,x_n) = \lambda_1 x_1 + \ldots + \lambda_n x_n \,,
+$$
+where $\lambda_1, \ldots, \lambda_n$ are given elements of $\mathbb{K}$.
+For $I \subset \mathbb{K}[x_1,\ldots,x_n]$ define
+$$
+V(I):= \{  (a_1,\ldots,a_n) \in \mathbb{K}^n \divider 
+f(a_1,\ldots,a_n) = 0 \,, \,\, \forall \, f \in I    \} \,.
+$$
+Define
+$$
+\mathcal{C} := \{ V(I) \divider I \subset \mathbb{K}[x_1,\ldots,x_n] \} \,.
+$$
+Then $\mathcal{C}$ satisfies (C1), (C2) and (C3). This is an easy check,
+and is left as exercise. $\mathcal{C}$ is called the **Zariski Topology**
+on the field $\mathbb{K}^n$. This is used in algebraic geometry to 
+study Affine Varieties, an algebraic version of surfaces, see [Wikipedia page](https://en.wikipedia.org/wiki/Zariski_topology).
+
+:::
+
+
 
 
 ## Comparing topologies
