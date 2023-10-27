@@ -293,7 +293,7 @@ is neither open nor closed.
 
 
 We could have defined a topology starting from closed sets. We would
-have had to replace the properties (A1)-(A2)-(A3) with suitable properties for closed sets. This is detailed in the following proposition.
+have had to replace the properties (A1)-(A2)-(A3) with suitable properties for closed sets. Such properties are detailed in the following proposition.
 
 
 ::: Proposition
@@ -349,7 +349,9 @@ $$
 Therefore (A3) and (C3) are equivalent.
 :::
 
-
+As a consequence of the above proposition, we can define a topology by declaring
+what the closed sets are. We then need to verify that (C1)-(C2)-(C3) are 
+satisfied by such topology. Let us make an example.
 
 ::: Example
 ### The Zariski topology
@@ -1177,25 +1179,20 @@ of two closed sets, and in hence closed by (C2).
 We can characterize $\closure{A}$ as the set of limit points of sequences in $A$.
 
 
-::: Proposition
+::: {.Proposition #proposition-closure-sequence}
+
 
 Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set. 
 Let $\{x_n\} \subseteq A$ and $x_0 \in X$ be such that $x_n \to x_0$. Then
 $$
 x_0 \in \closure{A} \,.
 $$
-In particular we have
-$$
-\closure{A} = \{  x \in X \st \exists \,\, \{ x_n \} \subseteq A \st x_n \to x   \} \,.
-$${#eq-formula-closure}
 
 :::
 
 
 ::: Proof
 
-
-*Part 1.*
 Suppose by contradiction $x_0 \notin \closure{A}$, so that
 $$
 x_0 \in (\closure{A})^c \,.
@@ -1207,14 +1204,107 @@ x_n \in (\closure{A})^c \,, \quad \forall \, n \geq N \,.
 $$
 This is a contradiction, since we were assuming that $\{x_n\} \subseteq A$.
 
-*Part 2.* We now show (@eq-formula-closure). Call $L$ the set of limit points
+:::
+
+
+
+::: Warning
+
+The converse of Proposition \ref{proposition-closure-sequence} is false
+in general, that is, 
+$$
+\closure{A} \neq \{  x \in X \st \exists \,\, \{ x_n \} \subseteq A \st x_n \to x   \} \,.
+$$
+We show a counterexample in Example \ref{example-closure-counter}
+The above relation holds in the so-called first countable topological spaces,
+such as metric spaces, see Proposition \ref{proposition-closure-metric}
+.
+:::
+
+
+::: {.Example #example-closure-counter}
+### Co-countable topology
+
+Let $X=\R$ with the co-countable topology 
+$$
+\TT := \{ A \subseteq \R \divider A^c = \R \,\, \mbox{ or } \,\, A^c \,
+\mbox{ countable }\} \,.
+$$
+The set 
+$$
+A = (-\infty,0]
+$$
+is not closed and $\closure{A} = \R$. Moreover, convergent sequences in $(X,\TT)$ are eventually constant. Therefore 
+$$
+L:=\{  x \in X \st \exists \,\, \{ x_n \} \subseteq A \st x_n \to x   \} = A \,,
+$$
+showing that $L \neq \closure{A}$.
+
+> Exercise: Prove all the above statements.
+:::
+
+
+
+
+In metric spaces we can characterize the interior of a set in the following way.
+
+
+::: Proposition
+
+
+Let $(X,d)$ be a metric space. Denote by $\TT_d$ the topology induced by $d$.
+For $A \subseteq X$ we have
+$$
+\interior{A} = \{ x \in A \divider \exists \,\, r>0  \st B_r(x) \subseteq A   \} \,.
+$$
+
+
+:::
+
+
+The proof is left as an exercise. In metric spaces, we also have that the
+closure of a set can be characterized in terms of sequences.
+
+
+::: {.Proposition #proposition-closure-metric}
+
+Let $(X,d)$ be a metric space and $\TT_d$ the topology induced by 
+the metric. Let $A \subseteq X$. Then
+$$
+\closure{A} = \{  x \in X \st \exists \,\, \{ x_n \} \subseteq A \st x_n \to x   \} \,.
+$${#eq-formula-closure}
+
+
+:::
+ 
+
+::: Proof
+Call $L$ the set of limit points
 $$
 L := \{  x \in X \st \exists \,\, \{ x_n \} \subseteq A \st x_n \to x   \} \,.
 $$
 We have to prove 2 inclusions:
 
-- $L \subseteq \closure{A}$: This was already shown in Part 1.
-- $\closure{A} \subseteq L$: Suppose by contradiction that $\closure{A} \not\subseteq L$. There exists a point $x_0 \in X$ such that
+- $L \subseteq \closure{A}$: This was already shown in Proposition \ref{proposition-closure-sequence}.
+
+- $\closure{A} \subseteq L$: Let $x_0 \in \closure{A}$. We have two cases:
+
+  - $x_0 \in A$: Take $x_n \equiv x_0$. Then $\{x_n \} \subseteq A$ and 
+  $x_n \to x_0$. Thus $x_0 \in L$. 
+
+  - $x_0 \notin A$: Let $r>0$. Then
+  $$
+  B_r(x_0) \cap A \neq \emptyset \,.
+  $$
+  Indeed, if we had $B_r(x_0) \cap A = \emptyset$, then it would mean
+  $$
+  B_r(x_0) \subseteq A^c
+  $$
+
+
+
+
+Suppose by contradiction that $\closure{A} \not\subseteq L$. There exists a point $x_0 \in X$ such that
 $$
 x_0 \in L \,, \quad x_0 \notin \closure{A} \,.
 $$
@@ -1231,22 +1321,12 @@ Therefore $\closure{A} \subseteq L$, concluding the proof.
 
 
 
-In metric spaces we can characterize the interior of a set in the following way.
-
-::: Proposition
 
 
-Let $(X,d)$ be a metric space. Denote by $\TT_d$ the topology induced by $d$.
-For $A \subseteq X$ we have
-$$
-\interior{A} = \{ x \in A \divider \exists \,\, r>0  \st B_r(x) \subseteq A   \} \,.
-$$
 
 
-:::
 
 
-The proof is left as an exercise. 
 
 
 ::: Example
