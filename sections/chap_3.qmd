@@ -1083,7 +1083,7 @@ As we already know that $\interior{A} \subseteq A$, we conclude that $A = \inter
 Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set.
 The **closure** of $A$ is the set
 $$
-\closure{A} :=  \bigcap_{ \substack{A \subseteq C \\ C^c \in \TT } } \, C \,,
+\closure{A} :=  \bigcap_{ \substack{A \subseteq C \\ C \, \text{closed} } } \, C \,,
 $$
 that is, $\closure{A}$ is the intersection of all closed sets containing 
 $A$.
@@ -1126,17 +1126,57 @@ We have:
 
 3. Suppose $V$ is closed and $A \subseteq V$. Therefore 
 $$
-\closure{A} =  \bigcap_{ \substack{A \subseteq C \\ C^c \in \TT} } \, C  \subseteq V \,.
+\closure{A} =  \bigcap_{ \substack{A \subseteq C \\ C \, \text{closed}  } } \, C  \subseteq V \,.
 $$
 
 4. Suppose that $A$ is closed. Then
 $$
-\closure{A} =  \bigcap_{ \substack{A \subseteq C \\ C^c \in \TT} } \, C  \subseteq A \,,
+\closure{A} =  \bigcap_{ \substack{A \subseteq C \\ C \, \text{closed}} } \, C  \subseteq A \,,
 $$
 showing that $\closure{A} \subseteq A$. As we already know that $A \subseteq \closure{A}$, we conclude that $A = \closure{A}$.   
   Conversely, suppose that $A = \closure{A}$. Since $\closure{A}$ is closed, then also $A$ is closed.
 :::
 
+
+::: {.Lemma #lemma-closure-intersection}
+
+Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set. They are equivalent:
+
+1. $x_0 \in \closure{A}$.
+2. For every $U \in \TT$ such that $x_0 \in U$, it holds
+$$
+U \cap A \neq \emptyset  \,.
+$$
+
+:::
+
+
+
+::: Proof
+
+We prove the contronominal statement:
+$$
+x_0 \notin \closure{A} \quad \iff \quad 
+\exists \,\, U \in \TT \st x_0 \in U \,, \,\, \, U \cap A = \emptyset \,.
+$$
+
+Let us check the two implications hold:
+
+- Suppose $x_0 \notin \closure{A}$. Then $x_0 \in U := (\closure{A})^c$. Note that $U$ is open,
+since $U^c = \closure{A}$ is closed. We have
+$$
+A \cap U = A \cap (\overline{A})^c = \emptyset \,,
+$$
+since $A \subseteq \closure{A}$.
+
+- Assume there exists $U \in \TT$ such that $x_0 \in U$ and $U \cap A = \emptyset$. Therefore
+$A \subseteq U^c$. Since $U$ is open, $U^c$ is closed. Then
+$$
+\closure{A} = \bigcap_{ \substack{  A \subseteq C    \\ C \, \text{closed}  }   } \, C \subseteq U^c \,. 
+$$
+Since $x_0 \notin U^c$, we conclude that $x_0 \notin \closure{A}$.
+
+:::
 
 
 
@@ -1179,13 +1219,25 @@ of two closed sets, and in hence closed by (C2).
 We can characterize $\closure{A}$ as the set of limit points of sequences in $A$.
 
 
+::: Definition
+
+Let $(X,\TT)$ be a topological space and $A \subseteq X$. The set of
+limit points of $A$ is defined as
+$$
+L(A):=\{  x \in X \divider \exists \, \{x_n \} \subseteq A \st x_n \to x    \} \,.
+$$
+
+:::
+
+
 ::: {.Proposition #proposition-closure-sequence}
 
 
 Let $(X,\TT)$ be a topological space and $A \subseteq X$ a set. 
 Let $\{x_n\} \subseteq A$ and $x_0 \in X$ be such that $x_n \to x_0$. Then
+$x_0 \in \closure{A}$. Therefore 
 $$
-x_0 \in \closure{A} \,.
+L(A) \subseteq \closure{A} \,.
 $$
 
 :::
@@ -1202,7 +1254,9 @@ such that
 $$
 x_n \in (\closure{A})^c \,, \quad \forall \, n \geq N \,.
 $$
-This is a contradiction, since we were assuming that $\{x_n\} \subseteq A$.
+This is a contradiction, since we were assuming that $\{x_n\} \subseteq A$. This shows $x_0 \in \closure{A}$ and therefore
+$L(A) \subseteq \closure{A}$.
+
 
 :::
 
@@ -1213,12 +1267,11 @@ This is a contradiction, since we were assuming that $\{x_n\} \subseteq A$.
 The converse of Proposition \ref{proposition-closure-sequence} is false
 in general, that is, 
 $$
-\closure{A} \neq \{  x \in X \st \exists \,\, \{ x_n \} \subseteq A \st x_n \to x   \} \,.
+\closure{A} \not\subset L(A) \,.
 $$
-We show a counterexample in Example \ref{example-closure-counter}
+We show a counterexample of the above in Example \ref{example-closure-counter}.
 The above relation holds in the so-called first countable topological spaces,
-such as metric spaces, see Proposition \ref{proposition-closure-metric}
-.
+such as metric spaces, see Proposition \ref{proposition-closure-metric} below.
 :::
 
 
@@ -1234,11 +1287,8 @@ The set
 $$
 A = (-\infty,0]
 $$
-is not closed and $\closure{A} = \R$. Moreover, convergent sequences in $(X,\TT)$ are eventually constant. Therefore 
-$$
-L:=\{  x \in X \st \exists \,\, \{ x_n \} \subseteq A \st x_n \to x   \} = A \,,
-$$
-showing that $L \neq \closure{A}$.
+is not closed and $\closure{A} = \R$. Moreover, convergent sequences in $(X,\TT)$ are eventually constant. Therefore $L(A) = A$,
+showing that $\closure{A} \not\subset L(A)$.
 
 > Exercise: Prove all the above statements.
 :::
@@ -1246,84 +1296,50 @@ showing that $L \neq \closure{A}$.
 
 
 
-In metric spaces we can characterize the interior of a set in the following way.
-
-
-::: Proposition
-
-
-Let $(X,d)$ be a metric space. Denote by $\TT_d$ the topology induced by $d$.
-For $A \subseteq X$ we have
-$$
-\interior{A} = \{ x \in A \divider \exists \,\, r>0  \st B_r(x) \subseteq A   \} \,.
-$$
-
-
-:::
-
-
-The proof is left as an exercise. In metric spaces, we also have that the
-closure of a set can be characterized in terms of sequences.
+In metric spaces we can characterize the interior of a set and the closure in the following way.
 
 
 ::: {.Proposition #proposition-closure-metric}
 
-Let $(X,d)$ be a metric space and $\TT_d$ the topology induced by 
-the metric. Let $A \subseteq X$. Then
+
+Let $(X,d)$ be a metric space. Denote by $\TT_d$ the topology induced by $d$.
+Let $A \subseteq X$. We have
 $$
-\closure{A} = \{  x \in X \st \exists \,\, \{ x_n \} \subseteq A \st x_n \to x   \} \,.
+\interior{A} = \{ x \in A \divider \exists \,\, r>0  \st B_r(x) \subseteq A   \} \,.
+$${#eq-formula-interior}
+and 
+$$
+\closure{A} = L(A):= \{  x \in X \st \exists \,\, \{ x_n \} \subseteq A \st x_n \to x   \} \,.
 $${#eq-formula-closure}
 
 
 :::
+
+
  
 
 ::: Proof
-Call $L$ the set of limit points
+The proof of (@eq-formula-interior) is left as an exercise. Let us prove 
+(@eq-formula-closure). The inclusion $L(A) \subseteq \closure{A}$ holds by Proposition \ref{proposition-closure-sequence}. We are left to show that
 $$
-L := \{  x \in X \st \exists \,\, \{ x_n \} \subseteq A \st x_n \to x   \} \,.
+\closure{A} \subseteq L(A) \,.
 $$
-We have to prove 2 inclusions:
-
-- $L \subseteq \closure{A}$: This was already shown in Proposition \ref{proposition-closure-sequence}.
-
-- $\closure{A} \subseteq L$: Let $x_0 \in \closure{A}$. We have two cases:
-
-  - $x_0 \in A$: Take $x_n \equiv x_0$. Then $\{x_n \} \subseteq A$ and 
-  $x_n \to x_0$. Thus $x_0 \in L$. 
-
-  - $x_0 \notin A$: Let $r>0$. Then
-  $$
-  B_r(x_0) \cap A \neq \emptyset \,.
-  $$
-  Indeed, if we had $B_r(x_0) \cap A = \emptyset$, then it would mean
-  $$
-  B_r(x_0) \subseteq A^c
-  $$
-
-
-
-
-Suppose by contradiction that $\closure{A} \not\subseteq L$. There exists a point $x_0 \in X$ such that
+To this end, let $x_0 \in \closure{A}$. For $n \in \N$, consider the ball $B_{1/n}(x_0)$. Since
+$B_{1/n}(x_0) \in \TT_d$ and $x_0 \in B_{\e}(x_0)$, we can apply Lemma \ref{lemma-closure-intersection} and deduce that
 $$
-x_0 \in L \,, \quad x_0 \notin \closure{A} \,.
+B_{1/n}(x_0) \cap A \neq \emptyset \,.
 $$
-As $x_0$ in $L$, by definition there exists a sequence $\{x_n \} \subseteq A$ such that 
-$x_n \to x_0$. Since $x_0 \notin \closure{A}$, then $x_0 \in (\closure{A})^c$. Recalling
-that $(\closure{A})^c$ is open, by the convergence $x_n \to x_0$ there exists $N \in \N$ such that
+Let $x_n \in B_{1/n}(x_0) \cap A$. Since $n$ was arbitrary, we have constructed a sequence
+$\{x_n\} \subseteq A$ such that 
 $$
-x_n \in (\closure{A})^c \,, \quad \forall \, n \geq N \,.
+x_n \in B_{1/n}(x_0) \,, \quad \forall \, n \in \N \,.
 $$
-The above yields a contradiction, since $\{x_n\} \subseteq A$ and $A \cap (\closure{A})^c = \emptyset$.
-Therefore $\closure{A} \subseteq L$, concluding the proof.
+In particular, we have that 
+$$
+d(x_n,x_0) < \frac{1}{n} \to 0
+$$
+as $n \to \infty$. Thus $x_n \to x_0$, showning that $x_0 \in L(A)$.
 :::
-
-
-
-
-
-
-
 
 
 
@@ -1438,7 +1454,7 @@ Analysis module. Therefore
 $$
 \closure{\Q} = \R \,.
 $$
-The above implies that
+It is also easy to check that
 $$
 \interior{\Q} = \emptyset \,.
 $$
@@ -1465,7 +1481,9 @@ $$
 $$
 showing that $\Z$ is dense in $\R$.
 
-> Exercise: Show that $\closure{\Z } = \R$ when $\R$ is equipped with $\TT_{\textrm{cofinite}}$.
+> Proof. Suppose $C$ is a closed set such that $\Z \subseteq C$. By definition of $\TT_{\textrm{cofinite}}$ we have $C = \R$ or $C$ finite.
+Since $\Z \subseteq C$ and $\Z$ is not finite, we conclude $C = \R$. This
+proves that $\R$ is the only closed set containing $\Z$, and so $\closure{\Z} = \R$.
 
 :::
 
