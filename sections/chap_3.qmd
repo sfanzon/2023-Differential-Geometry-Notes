@@ -2509,22 +2509,593 @@ of $X \times Y$ as
 $$
 \mathcal{B} := \{   U \times V \divider U \in \TT_X \,, \,\, V \in \TT_Y  \} \subset X \times Y \,.
 $$
-Then $\mathcal{B}$ satisfies properties (B1) and (B2) from Proposition \ref{proposition-basis}.
+Then $\mathcal{B}$ satisfies properties (B1) and (B2) from Proposition \ref{proposition-basis}. 
+
 
 :::
 
+
+The proof is an easy check, and is left as an exercise. As $\mathcal{B}$ 
+satisfies (B1)-(B2), by Proposition \ref{proposition-topology-basis} we
+know that 
+$$
+\TT_{X \times Y} := \left\{  U \times V  \divider U \times V = \bigcup_{i \in I} B_i \,, ,\,\, B_i \in \mathcal{B}     \right\} 
+$${#eq-product-topology}
+is a topology on $X \times Y$. 
+
+
+::: Definition
+### Product topology
+
+Let $(X,\TT_X)$ and $(Y,\TT_Y)$ be topological spaces. We call 
+$\TT_{X \times Y}$ at (@eq-product-topology) the **product topology** on $X \times Y$.
+
+:::
+
+
+::: Example 
+
+Let $\R$ be equipped with the Euclidean topology. The product topology on $\R \times \R$ coincides with the topology 
+on $\R^2$ equipped with the Euclidean topology. 
+
+:::
+
+
+Consider the projection maps
+$$
+\pi_X \colon X \times Y \to X   \,, \quad \pi_X (x,y):=x 
+$$
+and 
+$$
+\pi_Y \colon X \times Y \to Y   \,, \quad \pi_Y (x,y):=y 
+$$
+
+
+::: Proposition 
+
+Let $(X,\TT_X)$ and $(Y,\TT_Y)$ be topological spaces and equip $X \times Y$ with the product topology $\TT_{X \times Y}$. Then $\pi_X$ and $\pi_Y$
+are continuous.
+
+:::
+
+::: Proof
+
+Let $U \in \TT_X$. Then
+$$
+{\pi}_{X}^{-1} (U) = U \times Y \,.
+$$
+We have that $U \times Y \in \TT_{X \times Y}$ since $U \in \TT_X$ and 
+$Y \in \TT_Y$. Therefore $\pi_X$ is continuous. The proof that $\pi_Y$ is 
+continuous is similar, and is left as an exercise.
+
+:::
+
+
+
+The following proposition gives a useful criterion to check
+whether a map into $X \times Y$ is continuous.
+
+::: Proposition
+
+Let $(X,\TT_X)$ and $(Y,\TT_Y)$ be topological spaces and equip $X \times Y$ with the product topology $\TT_{X \times Y}$. Let $(Z,\TT_Z)$ be a topological space and 
+$$
+f \colon Z \to X \times Y
+$$
+a function. They are equivalent:
+
+1. $f$ is continuous.
+2. The compositions
+$$
+\pi_X \circ f \colon Z \to X  \,, \quad  
+\pi_Y \circ f \colon Z \to Y
+$$
+are continuous.
+
+:::
+
+
+The proof is left as an exercise. 
 
 
 
 ## Connectedness 
 
 
+Suppose that $(X,\TT)$ is a topological space. By property (A1) we have
+that 
+$$
+\emptyset \,, \,\, X \in \TT 
+$$
+Therefore 
+$$
+\emptyset^c = X \,, \quad X^c = \emptyset 
+$$
+are closed. It follows that $\emptyset$ and $X$ are both open and closed.
+
 
 ::: Definition
+### Connected space
 
-Let $(X,\TT)$ be a topological space. We say that $X$ is **connected** if the only subsets of $X$ which are both open and closed are just $\emptyset$ and $X$.
+Let $(X,\TT)$ be a topological space. We say that:
+
+- $X$ is **connected** if the only subsets of $X$ which are both open and closed are $\emptyset$ and $X$. 
+- $X$ is **disconnected** if it is not connected.
 
 :::
+
+
+The following proposition gives two extremely useful equivalent 
+definitions of connectedness. Before stating it, we define the concept of proper set.
+
+
+::: Definition
+### Proper subset
+
+Let $X$ be a set. A subset $A \subseteq X$ is **proper** if 
+$$
+A \neq \emptyset \,, \quad A \neq X \,.
+$$
+
+:::
+
+
+::: Proposition
+### Equivalent definition for connectedness {#proposition-connected-equivalent}
+
+Let $(X,\TT)$ be a topological space. They are equivalent:
+
+1. $X$ is disconnected.
+2. $X$ is the disjoint union of two proper open subsets.
+3. $X$ is the disjoint union of two proper closed subsets. 
+
+:::
+
+
+::: Proof
+
+*Part 1. Point 1 implies Points 2 and 3.* 
+
+Suppose $X$ is disconnected. Then there exists $U \subseteq X$ which is open, closed, and such that 
+$$
+U \neq \emptyset \,, \quad U \neq X \,.
+$${#eq-proof-connected-1}
+Define 
+$$
+A:= U \,, \quad B:= U^c \,.
+$$
+By definition of complement we have
+$$
+X = A \cup B  \,, \quad A \cap B = \emptyset \,.
+$$
+Moreover:
+
+- $A$ and $B$ are both open and closed, since $U$ is both
+open and closed. 
+
+- $A$ and $B$ are proper, since (@eq-proof-connected-1) holds.
+
+Therefore we conclude Points 2, 3. 
+
+
+*Part 2. Point 2 implies Point 1.* Suppose $A,B$ are open, proper, and such that
+$$
+X = A \cup B \,, \quad  A \cap B = \emptyset \,.
+$$
+This implies 
+$$
+A^c = X \smallsetminus A = B \,, 
+$$
+showing that $A^c$ is open, and hence $A$ is closed. Therefore
+$A$ is proper, open and closed, showing that $X$ is disconnected.
+
+
+
+*Part 3. Point 3 implies Point 1.* Suppose $A,B$ are closed, proper, and such that
+$$
+X = A \cup B \,, \quad  A \cap B = \emptyset \,.
+$$
+This implies 
+$$
+A^c = X \smallsetminus A = B \,, 
+$$
+showing that $A^c$ is closed, and hence $A$ is open. Therefore
+$A$ is proper, open and closed, showing that $X$ is disconnected.
+
+
+:::
+
+
+In the following we will use Point 2 and Point 3 in Proposition \ref{proposition-connected-equivalent} as equivalent 
+definitions of disconnected topological space.
+
+
+::: Example
+
+Consider the set $X = \{0,1\}$ with the subspace topology induced by the inclusion $X \subset \R$, where $\R$ is equipped with the
+Euclidean topology $\TT_{\textrm{euclidean}}$. Then $X$ is disconnected.
+
+> *Proof.* Note that 
+$$
+X = \{ 0 \} \cup \{ 1 \} \,, \quad \{ 0 \} \cap \{ 1 \} = \emptyset \,.
+$$
+The set $\{ 0 \}$ is open for the subspace topology, since
+$$
+\{ 0 \} = X \cap (-1,1) \,, \quad 
+(-1,1) \in \TT_{\textrm{euclidean}} \,.
+$$
+Similarly, also $\{ 1 \}$ is open for the subspace topology, since
+$$
+\{ 1 \} = X \cap (0,2) \,, \quad 
+(0,2) \in \TT_{\textrm{euclidean}} \,.
+$$
+Clearly 
+$$
+\{ 0 \} \neq \emptyset \,, \quad \{ 1 \} \neq \emptyset \,,
+$$
+showing that $X$ is disconnected.
+
+:::
+
+
+::: {.Example  #example-R-minus-p}
+
+Let $p \in \R$. The set $X = \R \smallsetminus \{p\}$ is disconnected. 
+
+> *Proof.* Define the sets 
+$$ 
+A = (-\infty,p) \,, \quad B = (p , \infty) \,.
+$$
+Then $A,B$ are proper subsets of $X$, since $p \notin X$. Moreover 
+$$
+X = A \cup B \,,  \quad A \cap B = \emptyset \,.
+$$
+Finally we have that $A,B$ are open for the subspace topology, since
+they are open in $\R$. Therefore $X$ is disconnected.
+
+:::
+
+
+::: {.Example   #example-Rn-minus-p}
+
+Let $n \geq 2$ and $A \subseteq \R^n$ be open and connected. Let $p \in A$. Then $X = A \smallsetminus \{p\}$ is connected. 
+
+> Exercise: Prove that $X$ is connected.
+
+:::
+
+
+
+The next theorem shows that connectedness is preserved by continuous maps.
+
+
+::: {.Theorem #theorem-connected}
+
+Let $(X,\TT_X)$, $(Y,\TT_Y)$ be topological spaces. Suppose that
+$f \colon X \to Y$ is continuous and let $f(X) \subseteq Y$ be 
+equipped with the subspace topology. If $X$ is connected, then $f(X)$ is connected. 
+
+:::
+
+
+::: Proof
+
+Suppose that $A,B$ are open in $f(X)$ and such that
+$$
+f(X) = A \cup B \,, \quad A \cap B = \emptyset \,.
+$$
+if we show that
+$$
+A = \emptyset \,\, \mbox{ or } \,\, B = \emptyset 
+$${#eq-proof-connected-3}
+the proof is concluded. Since $A,B$ are open for the subspace topology, there exist $\widetilde{A}, \widetilde{B} \in \TT_Y$ such that
+$$
+A = \widetilde{A} \cap f(X) \,, \quad
+B = \widetilde{B} \cap f(X) \,.
+$${#eq-proof-connected-4}
+Since $f(X) = A \cup B$ we have
+\begin{align*}
+X & = {f}^{-1} (A \cup B) \\
+  & = {f}^{-1} (A ) \cup {f}^{-1} (B) \\
+  & =  {f}^{-1} (\widetilde{A} ) \cup {f}^{-1} (\widetilde{B})
+\end{align*}
+where in the last equality we used (@eq-proof-connected-4). Since 
+$A \cap B = \emptyset$, we also have that
+\begin{align*}
+{f}^{-1} (\widetilde{A} ) \cap {f}^{-1} (\widetilde{B}) 
+  & = {f}^{-1} (A ) \cap {f}^{-1} (B) \\
+  & =  {f}^{-1} (A \cap B) \\
+  & =  {f}^{-1} (\emptyset) \\
+  & = \emptyset 
+\end{align*}
+where in the first equality we used (@eq-proof-connected-4).
+By continuity of $f$ we have that 
+$$
+f^{-1}(\widetilde{A}) \,, \,\, 
+f^{-1}(\widetilde{B}) \in \TT_X \,.
+$$
+Therefore, using that $X$ is connected, we deduce that
+$$
+f^{-1}(\widetilde{A}) = \emptyset \,\, \mbox{ or } \,\, 
+f^{-1}(\widetilde{B}) = \emptyset \,.
+$$
+The above implies
+$$
+\widetilde{A} \cap f(X) = \emptyset \,\, \mbox{ or } \,\, 
+\widetilde{B} \cap f(X) = \emptyset \,.
+$$
+Recalling (@eq-proof-connected-4), we obtain (@eq-proof-connected-3), ending the proof.
+:::
+
+An immediate corollary of Theorem \ref{theorem-connected} is that
+connectedness is a topological invariant, e.g., connectedness is
+preserved by homeomorphisms.  
+
+
+::: {.Corollary  #corollary-invariant-connected}
+
+Let $(X,\TT_X)$, $(Y,\TT_Y)$ be homeomorhic topological spaces. 
+Then
+$$
+X \, \mbox{ is connected } \,\, \iff \,\,
+Y \, \mbox{ is connected } 
+$$
+
+:::
+
+The proof follows immediately by Theorem \ref{theorem-connected}, and is left to the reader as an exercise.
+
+
+
+::: Example
+
+Let $n \geq 2$. $\R^n$ not homeomorphic to $\R$.
+
+> *Proof.*  Suppose by contradiction that there exists an omeomorphism 
+$$
+f \colon \R^n \to \R \,.
+$$
+Define $p = f(0)$ and the restriction
+$$
+g \colon \R^n \smallsetminus \{0\} \to \R \smallsetminus \{p\} \,, \quad g(x) = f(x) \,.
+$$
+Since $g$ is a restriction of an omeomorphism, then $g$ is an omeomorphism. 
+We have that $\R^n \smallsetminus \{0\}$ is connected, as a consequence of  
+Example \ref{example-Rn-minus-p}. Hence, by Corollary \ref{corollary-invariant-connected}, we infer that $\R \smallsetminus \{p\}$ is connected. This is a contradiction, since $\R \smallsetminus \{p\}$ is
+disconnected, as shown in Example \ref{example-R-minus-p}.
+
+:::
+
+
+
+::: Example
+
+Define the 1D unit circle
+$$
+\sphere^1 := \{(x,y) \in \mathbb{R}^2 \, \colon \, x^2 + y^2 = 1 \} \,.
+$$
+Then $\sphere^1$ and $[0,1]$ are not homeomorphic. 
+
+
+> *Proof.* Suppose by contradiction that there exists and omeomorphism
+	$$
+	f  \colon [0,1] \to \mathbb{S}^1 \,.
+	$$
+	The restriction of $f$ to $[0,1] \smallsetminus \{\frac12\}$ defines an omeomorphism 
+	$$
+	g \ \colon \left( [0,1] \smallsetminus \left\{\frac12\right\} \right) \to \left( \sphere^1 \smallsetminus \{\mathbf{p}\} \right) \,, \quad \mathbf{p} := f\left(\frac12 \right) \,.
+	$$
+	The set $[0,1] \smallsetminus \left\{ \frac12 \right\}$ is disconnected, 
+	since 
+	$$
+	[0,1] \smallsetminus \{1/2\} = [0,1/2) \, \cup \, (1/2,1] 
+	$$
+	with $[0,1/2)$ and $(1/2,1]$ open for the subset topology, non-empty and disjoint. Therefore, using that $g$ is an omeomorphism, we conclude that also $\sphere^1 \smallsetminus \{\mathbf{p}\}$ is disconnected. Let $\theta_0 \in [0,2\pi)$ be the unique angle such that 
+	$$
+	\mathbf{p} = (\cos (\theta_0),\sin(\theta_0)) \,.
+	$$
+	Thus $\sphere^1 \smallsetminus \{\mathbf{p}\}$ is parametrized by
+	$$
+	\g(t):=(\cos(t),\sin(t)) \,, \quad t \in (\theta_0,\theta_0 + 2\pi) \,.
+	$$ 
+	Since $\g$ is continuous and $(\theta_0,\theta_0 + 2\pi)$ is connected, by Theorem \ref{theorem-connected}, we conclude that $\sphere^1 \smallsetminus \{\mathbf{p}\}$ is connected. Contradiction.
+:::
+
+
+
+
+
+
+
+## Path connectedness
+
+
+
+::: Definition
+### Path connectedness
+
+Let $(X,\TT)$ be a topological space. We say that $X$ is **path connected** if for every $x,y \in X$ there exist $a,b \in \R$ with $a<b$, and a
+continuous function 
+$$
+\alpha \colon [a,b] \to X 
+$$
+such that 
+$$
+\alpha (a) = x \,, \quad \alpha(b) = y \,.
+$$
+
+:::
+
+
+
+
+::: Example
+
+Let $A \subset \R^n$ be convex. Then $A$ is path connected.
+
+
+> A is convex if for all $x,y \in A$ the segment connecting $x$ to $y$ is contained in $A$, namely,
+$$
+[x,y] := \{ (1-t)x + t y \divider t \in [0,1] \} \subseteq A \,.
+$$
+Therefore we can define
+$$
+\alpha \colon [0,1] \to A \,, \quad \alpha(t):=(1-t)x + t y \,.
+$$
+Clearly $\alpha$ is continuous, and $\alpha(0)=x, \alpha(1)=y$.
+:::
+
+
+
+
+
+It turns out that path-connectedness implies connectedness.
+
+
+
+::: {.Theorem  #theorem-path-connected}
+
+Let $(X,\TT)$ be a path connected topological space. Then $X$ is connected.
+
+:::
+
+
+The proof of the above theorem is quite simple. However, due to time constraints, we decided to omit it.
+
+
+
+
+
+
+
+
+## Intermediate Value Theorem
+
+
+Another consequence of Theorem \ref{theorem-connected} is a generalization of the Intermediate Value 
+Theorem to arbitrary topological spaces. Before providing 
+statement and proof of such Theorem, we need to characterize the connected subsets of $\R$. 
+
+
+::: Definition
+### Interval
+
+A subset $I \subset \R$ is an interval if it holds:
+$$
+\forall \, a,b \in I \,, \, x \in \R  \, \st a<x<b \quad 
+\implies \quad x \in I \,.
+$$
+
+:::
+
+::: {.Theorem  #theorem-interval-connected}
+
+Let $\R$ be equipped with the Euclidean topology and let $I \subseteq \R$. They are equivalent:
+
+1. $I$ is connected.
+2. $I$ is an interval.
+
+:::
+
+
+::: Proof
+
+*Part 1.* Suppose $I$ is connected. If $I=\{p\}$ for some $p \in \R$ then $I$ is an interval and the thesis is achieved. Otherwise there exist $a,b \in I$ with $a<b$. Assume that $x \in \R$ is such that 
+$$
+a < x < b \,.
+$$
+We need to show that $x \in I$. Suppose by contradiction that
+$x \notin I$ and define the open sets
+$$
+A = (-\infty,x) \,, \quad B = (x,\infty) \,.
+$$
+Then
+$$
+\widetilde{A} = (-\infty,x) \cap I \,, \quad \widetilde{B} = (x,\infty) \cap I
+$$ 
+are open in $I$ for the subspace topology. Clearly
+$$
+\widetilde{A}  \cap \widetilde{B} = \emptyset  \,.
+$$
+Moreover
+$$
+I = \widetilde{A} \cup \widetilde{B}
+$$
+since $x \notin I$. We have:
+
+- Since $a<x$ and $a \in I$, we have that $a \in \widetilde{A}$. Therefore $\widetilde{A} \neq \emptyset$.
+- Similarly, $b>x$ and $b \in I$, therefore $b \in \widetilde{B}$. Hence $\widetilde{B} \neq \emptyset$. 
+
+Therefore $I$ is disconnected, which is a contradiction.
+
+*Part 2.* Suppose $I$ is an interval. Suppose by contradiction that $I$ is 
+disconnected. Then there exist $A,B$ proper and closed, such that 
+$$
+I = A \cup B \,, \quad A \cap B = \emptyset \,.
+$$
+Since $A$ and
+$B$ are proper, there exist points $a \in A$, $b \in B$. WLOG we
+can assume $a<b$. Define 
+$$
+\alpha = \sup \ S \,, \quad S:= \{ x \in \R  \colon [a,x) \cap I \subseteq A \} \,.
+$$
+
+Note that $\alpha$ exists finite since $b$ is an upper bound for the set $S$.
+
+> Suppose by contradiction $b$ is not an upper bound for $S$. Hence there exists $x \in \R$ such that $[a,x) \cap I \subseteq A$ and that $x>b$. As $b>a$, we conclude that $b \in [a,x) \cap I \subseteq A$. Thus $b \in A$, which
+is a contradiction, since $b \in B$ and $A \cap B = \emptyset$.
+
+Moreover we have that $\alpha \in A$.
+
+> This is because the supremum $\alpha$ is the limit of a sequence in $S$, and hence of a sequence in $A$. Therefore $\alpha$ belongs to $\overline{A}$. Since 
+$A$ is closed, we infer $\alpha \in A$.
+
+Note that $A^c = B$, which is closed. Therefore $A^c$ is closed, showing 
+that $A$ is open. As $\alpha \in A$ and $A$ is open in $I$, there exists $\e>0$ such that
+$$
+(\alpha - \e , \alpha + \e) \cap I \subseteq A \,.
+$$
+In particular 
+$$
+[a , \alpha + \e) \cap I \subseteq A \,,
+$$
+showing that $\alpha + \e \in S$. This is a contradiction, since $\alpha$ is the supremum of $S$.
+
+:::
+
+
+
+
+We are finally ready to prove the Intermediate Value Theorem.
+
+
+
+::: Theorem
+### Intermediate Value Theorem
+
+Let $(X,\TT)$ be a connected topological space. Suppose that 
+$f \colon X \to \R$ is continuous. Suppose that $a,b \in X$ are such that $f(a)<f(b)$. It holds:
+$$
+\forall \, c \in \R \st f(a)< c < f(b) \,, \,\, \exists \, \xi \in X \st f(\xi) = c \,.
+$$
+
+:::
+
+
+::: Proof
+
+As $f$ is continuous and $X$ is connected, by Theorem \ref{theorem-connected} we know that $f(X)$ is connected in $\R$. By Theorem \ref{theorem-interval-connected} we have that $f(X)$ is an interval. Since $a,b \in X$ it follows
+$f(a), f(b) \in f(X)$. Therefore, if $c \in \R$ is such that
+$$
+f(a) < c < f(b)
+$$
+we conclude that $c \in f(X)$, since $f(X)$ is an interval. 
+Hence there exists $\xi \in X$ such that $f(\xi) = c$.
+
+:::
+
+
+
+
 
 
 

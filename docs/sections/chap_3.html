@@ -66,31 +66,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Important {
+.Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -98,15 +74,35 @@ ul.task-list li input[type="checkbox"] {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.Theorem {
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
 }
 .Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Important {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -114,11 +110,15 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Corollary {
+.Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Assumption {
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -126,17 +126,17 @@ ul.task-list li input[type="checkbox"] {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .DONE {
   --color1: #cce7b1;
   --color2: #86b754;
 }
-.Warning {
-  --color1: #f4cce0;
-  --color2: #db4d92;
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
 </style>
 
@@ -250,7 +250,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#topological-basis" id="toc-topological-basis" class="nav-link" data-scroll-target="#topological-basis"><span class="header-section-number">3.10</span> Topological basis</a></li>
   <li><a href="#product-topology" id="toc-product-topology" class="nav-link" data-scroll-target="#product-topology"><span class="header-section-number">3.11</span> Product topology</a></li>
   <li><a href="#connectedness" id="toc-connectedness" class="nav-link" data-scroll-target="#connectedness"><span class="header-section-number">3.12</span> Connectedness</a></li>
-  <li><a href="#compactness" id="toc-compactness" class="nav-link" data-scroll-target="#compactness"><span class="header-section-number">3.13</span> Compactness</a></li>
+  <li><a href="#path-connectedness" id="toc-path-connectedness" class="nav-link" data-scroll-target="#path-connectedness"><span class="header-section-number">3.13</span> Path connectedness</a></li>
+  <li><a href="#intermediate-value-theorem" id="toc-intermediate-value-theorem" class="nav-link" data-scroll-target="#intermediate-value-theorem"><span class="header-section-number">3.14</span> Intermediate Value Theorem</a></li>
+  <li><a href="#compactness" id="toc-compactness" class="nav-link" data-scroll-target="#compactness"><span class="header-section-number">3.15</span> Compactness</a></li>
   </ul>
 </nav>
     </div>
@@ -1696,16 +1698,326 @@ X \times Y  = \{  (x,y) \, \colon \,x \in X \,, \,\, y \in Y \}
 \]</span> Then <span class="math inline">\(\mathcal{B}\)</span> satisfies properties (B1) and (B2) from Proposition <a href="chap_3.html#proposition-basis">76</a>.<p></p>
 </div></details>
 </div>
+<p>The proof is an easy check, and is left as an exercise. As <span class="math inline">\(\mathcal{B}\)</span> satisfies (B1)-(B2), by Proposition <a href="chap_3.html#proposition-topology-basis">77</a> we know that <span id="eq-product-topology"><span class="math display">\[
+\mathcal{T}_{X \times Y} := \left\{  U \times V  \, \colon \,U \times V = \bigcup_{i \in I} B_i \,, ,\,\, B_i \in \mathcal{B}     \right\}
+\tag{3.13}\]</span></span> is a topology on <span class="math inline">\(X \times Y\)</span>.</p>
+<div id="product-topology-1" class="Definition" title="Product topology">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 79: </strong>Product topology</summary><div>Let <span class="math inline">\((X,\mathcal{T}_X)\)</span> and <span class="math inline">\((Y,\mathcal{T}_Y)\)</span> be topological spaces. We call <span class="math inline">\(\mathcal{T}_{X \times Y}\)</span> at (<a href="#eq-product-topology"><span>3.13</span></a>) the <strong>product topology</strong> on <span class="math inline">\(X \times Y\)</span>.<p></p>
+</div></details>
+</div>
+<div id="Example-80" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 80</strong></summary><div>Let <span class="math inline">\(\mathbb{R}\)</span> be equipped with the Euclidean topology. The product topology on <span class="math inline">\(\mathbb{R}\times \mathbb{R}\)</span> coincides with the topology on <span class="math inline">\(\mathbb{R}^2\)</span> equipped with the Euclidean topology.<p></p>
+</div></details>
+</div>
+<p>Consider the projection maps <span class="math display">\[
+\pi_X \colon X \times Y \to X   \,, \quad \pi_X (x,y):=x
+\]</span> and <span class="math display">\[
+\pi_Y \colon X \times Y \to Y   \,, \quad \pi_Y (x,y):=y
+\]</span></p>
+<div id="Proposition-81" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 81</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T}_X)\)</span> and <span class="math inline">\((Y,\mathcal{T}_Y)\)</span> be topological spaces and equip <span class="math inline">\(X \times Y\)</span> with the product topology <span class="math inline">\(\mathcal{T}_{X \times Y}\)</span>. Then <span class="math inline">\(\pi_X\)</span> and <span class="math inline">\(\pi_Y\)</span> are continuous.<p></p>
+</div></details>
+</div>
+<div id="Proof*-36" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Let <span class="math inline">\(U \in \mathcal{T}_X\)</span>. Then <span class="math display">\[
+{\pi}_{X}^{-1} (U) = U \times Y \,.
+\]</span> We have that <span class="math inline">\(U \times Y \in \mathcal{T}_{X \times Y}\)</span> since <span class="math inline">\(U \in \mathcal{T}_X\)</span> and <span class="math inline">\(Y \in \mathcal{T}_Y\)</span>. Therefore <span class="math inline">\(\pi_X\)</span> is continuous. The proof that <span class="math inline">\(\pi_Y\)</span> is continuous is similar, and is left as an exercise.<p></p>
+</div></details>
+</div>
+<p>The following proposition gives a useful criterion to check whether a map into <span class="math inline">\(X \times Y\)</span> is continuous.</p>
+<div id="Proposition-82" class="Proposition">
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 82</strong></summary><div>
+<p>Let <span class="math inline">\((X,\mathcal{T}_X)\)</span> and <span class="math inline">\((Y,\mathcal{T}_Y)\)</span> be topological spaces and equip <span class="math inline">\(X \times Y\)</span> with the product topology <span class="math inline">\(\mathcal{T}_{X \times Y}\)</span>. Let <span class="math inline">\((Z,\mathcal{T}_Z)\)</span> be a topological space and <span class="math display">\[
+f \colon Z \to X \times Y
+\]</span> a function. They are equivalent:</p>
+<ol type="1">
+<li><span class="math inline">\(f\)</span> is continuous.</li>
+<li>The compositions <span class="math display">\[
+\pi_X \circ f \colon Z \to X  \,, \quad  
+\pi_Y \circ f \colon Z \to Y
+\]</span> are continuous.</li>
+</ol>
+</div></details>
+</div>
+<p>The proof is left as an exercise.</p>
 </section>
 <section id="connectedness" class="level2" data-number="3.12">
 <h2 data-number="3.12" class="anchored" data-anchor-id="connectedness"><span class="header-section-number">3.12</span> Connectedness</h2>
-<div id="Definition-79" class="Definition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 79</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space. We say that <span class="math inline">\(X\)</span> is <strong>connected</strong> if the only subsets of <span class="math inline">\(X\)</span> which are both open and closed are just <span class="math inline">\(\emptyset\)</span> and <span class="math inline">\(X\)</span>.<p></p>
+<p>Suppose that <span class="math inline">\((X,\mathcal{T})\)</span> is a topological space. By property (A1) we have that <span class="math display">\[
+\emptyset \,, \,\, X \in \mathcal{T}
+\]</span> Therefore <span class="math display">\[
+\emptyset^c = X \,, \quad X^c = \emptyset
+\]</span> are closed. It follows that <span class="math inline">\(\emptyset\)</span> and <span class="math inline">\(X\)</span> are both open and closed.</p>
+<div id="connected-space" class="Definition" title="Connected space">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 83: </strong>Connected space</summary><div>
+<p>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space. We say that:</p>
+<ul>
+<li><span class="math inline">\(X\)</span> is <strong>connected</strong> if the only subsets of <span class="math inline">\(X\)</span> which are both open and closed are <span class="math inline">\(\emptyset\)</span> and <span class="math inline">\(X\)</span>.</li>
+<li><span class="math inline">\(X\)</span> is <strong>disconnected</strong> if it is not connected.</li>
+</ul>
+</div></details>
+</div>
+<p>The following proposition gives two extremely useful equivalent definitions of connectedness. Before stating it, we define the concept of proper set.</p>
+<div id="proper-subset" class="Definition" title="Proper subset">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 84: </strong>Proper subset</summary><div>Let <span class="math inline">\(X\)</span> be a set. A subset <span class="math inline">\(A \subseteq X\)</span> is <strong>proper</strong> if <span class="math display">\[
+A \neq \emptyset \,, \quad A \neq X \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="proposition-connected-equivalent" class="Proposition" title="Equivalent definition for connectedness">
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 85: </strong>Equivalent definition for connectedness</summary><div>
+<p>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space. They are equivalent:</p>
+<ol type="1">
+<li><span class="math inline">\(X\)</span> is disconnected.</li>
+<li><span class="math inline">\(X\)</span> is the disjoint union of two proper open subsets.</li>
+<li><span class="math inline">\(X\)</span> is the disjoint union of two proper closed subsets.</li>
+</ol>
+</div></details>
+</div>
+<div id="Proof*-37" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Part 1. Point 1 implies Points 2 and 3.</em><p></p>
+<p>Suppose <span class="math inline">\(X\)</span> is disconnected. Then there exists <span class="math inline">\(U \subseteq X\)</span> which is open, closed, and such that <span id="eq-proof-connected-1"><span class="math display">\[
+U \neq \emptyset \,, \quad U \neq X \,.
+\tag{3.14}\]</span></span> Define <span class="math display">\[
+A:= U \,, \quad B:= U^c \,.
+\]</span> By definition of complement we have <span class="math display">\[
+X = A \cup B  \,, \quad A \cap B = \emptyset \,.
+\]</span> Moreover:</p>
+<ul>
+<li><p><span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are both open and closed, since <span class="math inline">\(U\)</span> is both open and closed.</p></li>
+<li><p><span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are proper, since (<a href="#eq-proof-connected-1"><span>3.14</span></a>) holds.</p></li>
+</ul>
+<p>Therefore we conclude Points 2, 3.</p>
+<p><em>Part 2. Point 2 implies Point 1.</em> Suppose <span class="math inline">\(A,B\)</span> are open, proper, and such that <span class="math display">\[
+X = A \cup B \,, \quad  A \cap B = \emptyset \,.
+\]</span> This implies <span class="math display">\[
+A^c = X \smallsetminus A = B \,,
+\]</span> showing that <span class="math inline">\(A^c\)</span> is open, and hence <span class="math inline">\(A\)</span> is closed. Therefore <span class="math inline">\(A\)</span> is proper, open and closed, showing that <span class="math inline">\(X\)</span> is disconnected.</p>
+<p><em>Part 3. Point 3 implies Point 1.</em> Suppose <span class="math inline">\(A,B\)</span> are closed, proper, and such that <span class="math display">\[
+X = A \cup B \,, \quad  A \cap B = \emptyset \,.
+\]</span> This implies <span class="math display">\[
+A^c = X \smallsetminus A = B \,,
+\]</span> showing that <span class="math inline">\(A^c\)</span> is closed, and hence <span class="math inline">\(A\)</span> is open. Therefore <span class="math inline">\(A\)</span> is proper, open and closed, showing that <span class="math inline">\(X\)</span> is disconnected.</p>
+</div></details>
+</div>
+<p>In the following we will use Point 2 and Point 3 in Proposition <a href="chap_3.html#proposition-connected-equivalent">85</a> as equivalent definitions of disconnected topological space.</p>
+<div id="Example-86" class="Example">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 86</strong></summary><div>
+<p>Consider the set <span class="math inline">\(X = \{0,1\}\)</span> with the subspace topology induced by the inclusion <span class="math inline">\(X \subset \mathbb{R}\)</span>, where <span class="math inline">\(\mathbb{R}\)</span> is equipped with the Euclidean topology <span class="math inline">\(\mathcal{T}_{\textrm{euclidean}}\)</span>. Then <span class="math inline">\(X\)</span> is disconnected.</p>
+<blockquote class="blockquote">
+<p><em>Proof.</em> Note that <span class="math display">\[
+X = \{ 0 \} \cup \{ 1 \} \,, \quad \{ 0 \} \cap \{ 1 \} = \emptyset \,.
+\]</span> The set <span class="math inline">\(\{ 0 \}\)</span> is open for the subspace topology, since <span class="math display">\[
+\{ 0 \} = X \cap (-1,1) \,, \quad
+(-1,1) \in \mathcal{T}_{\textrm{euclidean}} \,.
+\]</span> Similarly, also <span class="math inline">\(\{ 1 \}\)</span> is open for the subspace topology, since <span class="math display">\[
+\{ 1 \} = X \cap (0,2) \,, \quad
+(0,2) \in \mathcal{T}_{\textrm{euclidean}} \,.
+\]</span> Clearly <span class="math display">\[
+\{ 0 \} \neq \emptyset \,, \quad \{ 1 \} \neq \emptyset \,,
+\]</span> showing that <span class="math inline">\(X\)</span> is disconnected.</p>
+</blockquote>
+</div></details>
+</div>
+<div id="example-R-minus-p" class="Example">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 87</strong></summary><div>
+<p>Let <span class="math inline">\(p \in \mathbb{R}\)</span>. The set <span class="math inline">\(X = \mathbb{R}\smallsetminus \{p\}\)</span> is disconnected.</p>
+<blockquote class="blockquote">
+<p><em>Proof.</em> Define the sets <span class="math display">\[
+A = (-\infty,p) \,, \quad B = (p , \infty) \,.
+\]</span> Then <span class="math inline">\(A,B\)</span> are proper subsets of <span class="math inline">\(X\)</span>, since <span class="math inline">\(p \notin X\)</span>. Moreover <span class="math display">\[
+X = A \cup B \,,  \quad A \cap B = \emptyset \,.
+\]</span> Finally we have that <span class="math inline">\(A,B\)</span> are open for the subspace topology, since they are open in <span class="math inline">\(\mathbb{R}\)</span>. Therefore <span class="math inline">\(X\)</span> is disconnected.</p>
+</blockquote>
+</div></details>
+</div>
+<div id="example-Rn-minus-p" class="Example">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 88</strong></summary><div>
+<p>Let <span class="math inline">\(n \geq 2\)</span> and <span class="math inline">\(A \subseteq \mathbb{R}^n\)</span> be open and connected. Let <span class="math inline">\(p \in A\)</span>. Then <span class="math inline">\(X = A \smallsetminus \{p\}\)</span> is connected.</p>
+<blockquote class="blockquote">
+<p>Exercise: Prove that <span class="math inline">\(X\)</span> is connected.</p>
+</blockquote>
+</div></details>
+</div>
+<p>The next theorem shows that connectedness is preserved by continuous maps.</p>
+<div id="theorem-connected" class="Theorem">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 89</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T}_X)\)</span>, <span class="math inline">\((Y,\mathcal{T}_Y)\)</span> be topological spaces. Suppose that <span class="math inline">\(f \colon X \to Y\)</span> is continuous and let <span class="math inline">\(f(X) \subseteq Y\)</span> be equipped with the subspace topology. If <span class="math inline">\(X\)</span> is connected, then <span class="math inline">\(f(X)\)</span> is connected.<p></p>
+</div></details>
+</div>
+<div id="Proof*-38" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Suppose that <span class="math inline">\(A,B\)</span> are open in <span class="math inline">\(f(X)\)</span> and such that <span class="math display">\[
+f(X) = A \cup B \,, \quad A \cap B = \emptyset \,.
+\]</span> if we show that <span id="eq-proof-connected-3"><span class="math display">\[
+A = \emptyset \,\, \mbox{ or } \,\, B = \emptyset
+\tag{3.15}\]</span></span> the proof is concluded. Since <span class="math inline">\(A,B\)</span> are open for the subspace topology, there exist <span class="math inline">\(\widetilde{A}, \widetilde{B} \in \mathcal{T}_Y\)</span> such that <span id="eq-proof-connected-4"><span class="math display">\[
+A = \widetilde{A} \cap f(X) \,, \quad
+B = \widetilde{B} \cap f(X) \,.
+\tag{3.16}\]</span></span> Since <span class="math inline">\(f(X) = A \cup B\)</span> we have <span class="math display">\[\begin{align*}
+X &amp; = {f}^{-1} (A \cup B) \\
+  &amp; = {f}^{-1} (A ) \cup {f}^{-1} (B) \\
+  &amp; =  {f}^{-1} (\widetilde{A} ) \cup {f}^{-1} (\widetilde{B})
+\end{align*}\]</span> where in the last equality we used (<a href="#eq-proof-connected-4"><span>3.16</span></a>). Since <span class="math inline">\(A \cap B = \emptyset\)</span>, we also have that <span class="math display">\[\begin{align*}
+{f}^{-1} (\widetilde{A} ) \cap {f}^{-1} (\widetilde{B})
+  &amp; = {f}^{-1} (A ) \cap {f}^{-1} (B) \\
+  &amp; =  {f}^{-1} (A \cap B) \\
+  &amp; =  {f}^{-1} (\emptyset) \\
+  &amp; = \emptyset
+\end{align*}\]</span> where in the first equality we used (<a href="#eq-proof-connected-4"><span>3.16</span></a>). By continuity of <span class="math inline">\(f\)</span> we have that <span class="math display">\[
+f^{-1}(\widetilde{A}) \,, \,\,
+f^{-1}(\widetilde{B}) \in \mathcal{T}_X \,.
+\]</span> Therefore, using that <span class="math inline">\(X\)</span> is connected, we deduce that <span class="math display">\[
+f^{-1}(\widetilde{A}) = \emptyset \,\, \mbox{ or } \,\,
+f^{-1}(\widetilde{B}) = \emptyset \,.
+\]</span> The above implies <span class="math display">\[
+\widetilde{A} \cap f(X) = \emptyset \,\, \mbox{ or } \,\,
+\widetilde{B} \cap f(X) = \emptyset \,.
+\]</span> Recalling (<a href="#eq-proof-connected-4"><span>3.16</span></a>), we obtain (<a href="#eq-proof-connected-3"><span>3.15</span></a>), ending the proof.<p></p>
+</div></details>
+</div>
+<p>An immediate corollary of Theorem <a href="chap_3.html#theorem-connected">89</a> is that connectedness is a topological invariant, e.g., connectedness is preserved by homeomorphisms.</p>
+<div id="corollary-invariant-connected" class="Corollary">
+<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 90</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T}_X)\)</span>, <span class="math inline">\((Y,\mathcal{T}_Y)\)</span> be homeomorhic topological spaces. Then <span class="math display">\[
+X \, \mbox{ is connected } \,\, \iff \,\,
+Y \, \mbox{ is connected }
+\]</span><p></p>
+</div></details>
+</div>
+<p>The proof follows immediately by Theorem <a href="chap_3.html#theorem-connected">89</a>, and is left to the reader as an exercise.</p>
+<div id="Example-91" class="Example">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 91</strong></summary><div>
+<p>Let <span class="math inline">\(n \geq 2\)</span>. <span class="math inline">\(\mathbb{R}^n\)</span> not homeomorphic to <span class="math inline">\(\mathbb{R}\)</span>.</p>
+<blockquote class="blockquote">
+<p><em>Proof.</em> Suppose by contradiction that there exists an omeomorphism <span class="math display">\[
+f \colon \mathbb{R}^n \to \mathbb{R}\,.
+\]</span> Define <span class="math inline">\(p = f(0)\)</span> and the restriction <span class="math display">\[
+g \colon \mathbb{R}^n \smallsetminus \{0\} \to \mathbb{R}\smallsetminus \{p\} \,, \quad g(x) = f(x) \,.
+\]</span> Since <span class="math inline">\(g\)</span> is a restriction of an omeomorphism, then <span class="math inline">\(g\)</span> is an omeomorphism. We have that <span class="math inline">\(\mathbb{R}^n \smallsetminus \{0\}\)</span> is connected, as a consequence of<br>
+Example <a href="chap_3.html#example-Rn-minus-p">88</a>. Hence, by Corollary <a href="chap_3.html#corollary-invariant-connected">90</a>, we infer that <span class="math inline">\(\mathbb{R}\smallsetminus \{p\}\)</span> is connected. This is a contradiction, since <span class="math inline">\(\mathbb{R}\smallsetminus \{p\}\)</span> is disconnected, as shown in Example <a href="chap_3.html#example-R-minus-p">87</a>.</p>
+</blockquote>
+</div></details>
+</div>
+<div id="Example-92" class="Example">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 92</strong></summary><div>
+<p>Define the 1D unit circle <span class="math display">\[
+\mathbb{S}^1 := \{(x,y) \in \mathbb{R}^2 \, \colon \, x^2 + y^2 = 1 \} \,.
+\]</span> Then <span class="math inline">\(\mathbb{S}^1\)</span> and <span class="math inline">\([0,1]\)</span> are not homeomorphic.</p>
+<blockquote class="blockquote">
+<p><em>Proof.</em> Suppose by contradiction that there exists and omeomorphism <span class="math display">\[
+f  \colon [0,1] \to \mathbb{S}^1 \,.
+\]</span> The restriction of <span class="math inline">\(f\)</span> to <span class="math inline">\([0,1] \smallsetminus \{\frac12\}\)</span> defines an omeomorphism <span class="math display">\[
+g \ \colon \left( [0,1] \smallsetminus \left\{\frac12\right\} \right) \to \left( \mathbb{S}^1 \smallsetminus \{\mathbf{p}\} \right) \,, \quad \mathbf{p} := f\left(\frac12 \right) \,.
+\]</span> The set <span class="math inline">\([0,1] \smallsetminus \left\{ \frac12 \right\}\)</span> is disconnected, since <span class="math display">\[
+[0,1] \smallsetminus \{1/2\} = [0,1/2) \, \cup \, (1/2,1]
+\]</span> with <span class="math inline">\([0,1/2)\)</span> and <span class="math inline">\((1/2,1]\)</span> open for the subset topology, non-empty and disjoint. Therefore, using that <span class="math inline">\(g\)</span> is an omeomorphism, we conclude that also <span class="math inline">\(\mathbb{S}^1 \smallsetminus \{\mathbf{p}\}\)</span> is disconnected. Let <span class="math inline">\(\theta_0 \in [0,2\pi)\)</span> be the unique angle such that <span class="math display">\[
+\mathbf{p} = (\cos (\theta_0),\sin(\theta_0)) \,.
+\]</span> Thus <span class="math inline">\(\mathbb{S}^1 \smallsetminus \{\mathbf{p}\}\)</span> is parametrized by <span class="math display">\[
+{\pmb{\gamma}}(t):=(\cos(t),\sin(t)) \,, \quad t \in (\theta_0,\theta_0 + 2\pi) \,.
+\]</span> Since <span class="math inline">\({\pmb{\gamma}}\)</span> is continuous and <span class="math inline">\((\theta_0,\theta_0 + 2\pi)\)</span> is connected, by Theorem <a href="chap_3.html#theorem-connected">89</a>, we conclude that <span class="math inline">\(\mathbb{S}^1 \smallsetminus \{\mathbf{p}\}\)</span> is connected. Contradiction.</p>
+</blockquote>
 </div></details>
 </div>
 </section>
-<section id="compactness" class="level2" data-number="3.13">
-<h2 data-number="3.13" class="anchored" data-anchor-id="compactness"><span class="header-section-number">3.13</span> Compactness</h2>
+<section id="path-connectedness" class="level2" data-number="3.13">
+<h2 data-number="3.13" class="anchored" data-anchor-id="path-connectedness"><span class="header-section-number">3.13</span> Path connectedness</h2>
+<div id="path-connectedness-1" class="Definition" title="Path connectedness">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 93: </strong>Path connectedness</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space. We say that <span class="math inline">\(X\)</span> is <strong>path connected</strong> if for every <span class="math inline">\(x,y \in X\)</span> there exist <span class="math inline">\(a,b \in \mathbb{R}\)</span> with <span class="math inline">\(a&lt;b\)</span>, and a continuous function <span class="math display">\[
+\alpha \colon [a,b] \to X
+\]</span> such that <span class="math display">\[
+\alpha (a) = x \,, \quad \alpha(b) = y \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="Example-94" class="Example">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 94</strong></summary><div>
+<p>Let <span class="math inline">\(A \subset \mathbb{R}^n\)</span> be convex. Then <span class="math inline">\(A\)</span> is path connected.</p>
+<blockquote class="blockquote">
+<p>A is convex if for all <span class="math inline">\(x,y \in A\)</span> the segment connecting <span class="math inline">\(x\)</span> to <span class="math inline">\(y\)</span> is contained in <span class="math inline">\(A\)</span>, namely, <span class="math display">\[
+[x,y] := \{ (1-t)x + t y \, \colon \,t \in [0,1] \} \subseteq A \,.
+\]</span> Therefore we can define <span class="math display">\[
+\alpha \colon [0,1] \to A \,, \quad \alpha(t):=(1-t)x + t y \,.
+\]</span> Clearly <span class="math inline">\(\alpha\)</span> is continuous, and <span class="math inline">\(\alpha(0)=x, \alpha(1)=y\)</span>.</p>
+</blockquote>
+</div></details>
+</div>
+<p>It turns out that path-connectedness implies connectedness.</p>
+<div id="theorem-path-connected" class="Theorem">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 95</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a path connected topological space. Then <span class="math inline">\(X\)</span> is connected.<p></p>
+</div></details>
+</div>
+<p>The proof of the above theorem is quite simple. However, due to time constraints, we decided to omit it.</p>
+</section>
+<section id="intermediate-value-theorem" class="level2" data-number="3.14">
+<h2 data-number="3.14" class="anchored" data-anchor-id="intermediate-value-theorem"><span class="header-section-number">3.14</span> Intermediate Value Theorem</h2>
+<p>Another consequence of Theorem <a href="chap_3.html#theorem-connected">89</a> is a generalization of the Intermediate Value Theorem to arbitrary topological spaces. Before providing statement and proof of such Theorem, we need to characterize the connected subsets of <span class="math inline">\(\mathbb{R}\)</span>.</p>
+<div id="interval" class="Definition" title="Interval">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 96: </strong>Interval</summary><div>A subset <span class="math inline">\(I \subset \mathbb{R}\)</span> is an interval if it holds: <span class="math display">\[
+\forall \, a,b \in I \,, \, x \in \mathbb{R}\, \, \text{ s.t. } \, a&lt;x&lt;b \quad
+\implies \quad x \in I \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="theorem-interval-connected" class="Theorem">
+<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 97</strong></summary><div>
+<p>Let <span class="math inline">\(\mathbb{R}\)</span> be equipped with the Euclidean topology and let <span class="math inline">\(I \subseteq \mathbb{R}\)</span>. They are equivalent:</p>
+<ol type="1">
+<li><span class="math inline">\(I\)</span> is connected.</li>
+<li><span class="math inline">\(I\)</span> is an interval.</li>
+</ol>
+</div></details>
+</div>
+<div id="Proof*-39" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Part 1.</em> Suppose <span class="math inline">\(I\)</span> is connected. If <span class="math inline">\(I=\{p\}\)</span> for some <span class="math inline">\(p \in \mathbb{R}\)</span> then <span class="math inline">\(I\)</span> is an interval and the thesis is achieved. Otherwise there exist <span class="math inline">\(a,b \in I\)</span> with <span class="math inline">\(a&lt;b\)</span>. Assume that <span class="math inline">\(x \in \mathbb{R}\)</span> is such that <span class="math display">\[
+a &lt; x &lt; b \,.
+\]</span> We need to show that <span class="math inline">\(x \in I\)</span>. Suppose by contradiction that <span class="math inline">\(x \notin I\)</span> and define the open sets <span class="math display">\[
+A = (-\infty,x) \,, \quad B = (x,\infty) \,.
+\]</span> Then <span class="math display">\[
+\widetilde{A} = (-\infty,x) \cap I \,, \quad \widetilde{B} = (x,\infty) \cap I
+\]</span> are open in <span class="math inline">\(I\)</span> for the subspace topology. Clearly <span class="math display">\[
+\widetilde{A}  \cap \widetilde{B} = \emptyset  \,.
+\]</span> Moreover <span class="math display">\[
+I = \widetilde{A} \cup \widetilde{B}
+\]</span> since <span class="math inline">\(x \notin I\)</span>. We have:<p></p>
+<ul>
+<li>Since <span class="math inline">\(a&lt;x\)</span> and <span class="math inline">\(a \in I\)</span>, we have that <span class="math inline">\(a \in \widetilde{A}\)</span>. Therefore <span class="math inline">\(\widetilde{A} \neq \emptyset\)</span>.</li>
+<li>Similarly, <span class="math inline">\(b&gt;x\)</span> and <span class="math inline">\(b \in I\)</span>, therefore <span class="math inline">\(b \in \widetilde{B}\)</span>. Hence <span class="math inline">\(\widetilde{B} \neq \emptyset\)</span>.</li>
+</ul>
+<p>Therefore <span class="math inline">\(I\)</span> is disconnected, which is a contradiction.</p>
+<p><em>Part 2.</em> Suppose <span class="math inline">\(I\)</span> is an interval. Suppose by contradiction that <span class="math inline">\(I\)</span> is disconnected. Then there exist <span class="math inline">\(A,B\)</span> proper and closed, such that <span class="math display">\[
+I = A \cup B \,, \quad A \cap B = \emptyset \,.
+\]</span> Since <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are proper, there exist points <span class="math inline">\(a \in A\)</span>, <span class="math inline">\(b \in B\)</span>. WLOG we can assume <span class="math inline">\(a&lt;b\)</span>. Define <span class="math display">\[
+\alpha = \sup \ S \,, \quad S:= \{ x \in \mathbb{R}\colon [a,x) \cap I \subseteq A \} \,.
+\]</span></p>
+<p>Note that <span class="math inline">\(\alpha\)</span> exists finite since <span class="math inline">\(b\)</span> is an upper bound for the set <span class="math inline">\(S\)</span>.</p>
+<blockquote class="blockquote">
+<p>Suppose by contradiction <span class="math inline">\(b\)</span> is not an upper bound for <span class="math inline">\(S\)</span>. Hence there exists <span class="math inline">\(x \in \mathbb{R}\)</span> such that <span class="math inline">\([a,x) \cap I \subseteq A\)</span> and that <span class="math inline">\(x&gt;b\)</span>. As <span class="math inline">\(b&gt;a\)</span>, we conclude that <span class="math inline">\(b \in [a,x) \cap I \subseteq A\)</span>. Thus <span class="math inline">\(b \in A\)</span>, which is a contradiction, since <span class="math inline">\(b \in B\)</span> and <span class="math inline">\(A \cap B = \emptyset\)</span>.</p>
+</blockquote>
+<p>Moreover we have that <span class="math inline">\(\alpha \in A\)</span>.</p>
+<blockquote class="blockquote">
+<p>This is because the supremum <span class="math inline">\(\alpha\)</span> is the limit of a sequence in <span class="math inline">\(S\)</span>, and hence of a sequence in <span class="math inline">\(A\)</span>. Therefore <span class="math inline">\(\alpha\)</span> belongs to <span class="math inline">\(\overline{A}\)</span>. Since <span class="math inline">\(A\)</span> is closed, we infer <span class="math inline">\(\alpha \in A\)</span>.</p>
+</blockquote>
+<p>Note that <span class="math inline">\(A^c = B\)</span>, which is closed. Therefore <span class="math inline">\(A^c\)</span> is closed, showing that <span class="math inline">\(A\)</span> is open. As <span class="math inline">\(\alpha \in A\)</span> and <span class="math inline">\(A\)</span> is open in <span class="math inline">\(I\)</span>, there exists <span class="math inline">\(\varepsilon&gt;0\)</span> such that <span class="math display">\[
+(\alpha - \varepsilon, \alpha + \varepsilon) \cap I \subseteq A \,.
+\]</span> In particular <span class="math display">\[
+[a , \alpha + \varepsilon) \cap I \subseteq A \,,
+\]</span> showing that <span class="math inline">\(\alpha + \varepsilon\in S\)</span>. This is a contradiction, since <span class="math inline">\(\alpha\)</span> is the supremum of <span class="math inline">\(S\)</span>.</p>
+</div></details>
+</div>
+<p>We are finally ready to prove the Intermediate Value Theorem.</p>
+<div id="intermediate-value-theorem-1" class="Theorem" title="Intermediate Value Theorem">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 98: </strong>Intermediate Value Theorem</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a connected topological space. Suppose that <span class="math inline">\(f \colon X \to \mathbb{R}\)</span> is continuous. Suppose that <span class="math inline">\(a,b \in X\)</span> are such that <span class="math inline">\(f(a)&lt;f(b)\)</span>. It holds: <span class="math display">\[
+\forall \, c \in \mathbb{R}\, \text{ s.t. } \, f(a)&lt; c &lt; f(b) \,, \,\, \exists \, \xi \in X \, \text{ s.t. } \, f(\xi) = c \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="Proof*-40" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>As <span class="math inline">\(f\)</span> is continuous and <span class="math inline">\(X\)</span> is connected, by Theorem <a href="chap_3.html#theorem-connected">89</a> we know that <span class="math inline">\(f(X)\)</span> is connected in <span class="math inline">\(\mathbb{R}\)</span>. By Theorem <a href="chap_3.html#theorem-interval-connected">97</a> we have that <span class="math inline">\(f(X)\)</span> is an interval. Since <span class="math inline">\(a,b \in X\)</span> it follows <span class="math inline">\(f(a), f(b) \in f(X)\)</span>. Therefore, if <span class="math inline">\(c \in \mathbb{R}\)</span> is such that <span class="math display">\[
+f(a) &lt; c &lt; f(b)
+\]</span> we conclude that <span class="math inline">\(c \in f(X)\)</span>, since <span class="math inline">\(f(X)\)</span> is an interval. Hence there exists <span class="math inline">\(\xi \in X\)</span> such that <span class="math inline">\(f(\xi) = c\)</span>.<p></p>
+</div></details>
+</div>
+</section>
+<section id="compactness" class="level2" data-number="3.15">
+<h2 data-number="3.15" class="anchored" data-anchor-id="compactness"><span class="header-section-number">3.15</span> Compactness</h2>
 
 
 </section>
