@@ -563,21 +563,23 @@
 
  [**Example 3.92**](#Example-3.92)\Pageref{Example-3.92}
 
- [**Definition 3.93**](#path-connectedness-1): Path connectedness\Pageref{path-connectedness-1}
+ [**Definition 3.93**](#interval): Interval\Pageref{interval}
 
- [**Example 3.94**](#Example-3.94)\Pageref{Example-3.94}
-
- [**Theorem 3.95**](#theorem-path-connected)\Pageref{theorem-path-connected}
-
- [**Definition 3.96**](#interval): Interval\Pageref{interval}
-
- [**Theorem 3.97**](#theorem-interval-connected)\Pageref{theorem-interval-connected}
+ [**Theorem 3.94**](#theorem-interval-connected)\Pageref{theorem-interval-connected}
 
  [**Proof**](#Proof*-3.39)\Pageref{Proof*-3.39}
 
- [**Theorem 3.98**](#intermediate-value-theorem-1): Intermediate Value Theorem\Pageref{intermediate-value-theorem-1}
+ [**Theorem 3.95**](#intermediate-value-theorem-1): Intermediate Value Theorem\Pageref{intermediate-value-theorem-1}
 
  [**Proof**](#Proof*-3.40)\Pageref{Proof*-3.40}
+
+ [**Definition 3.96**](#path-connectedness-1): Path connectedness\Pageref{path-connectedness-1}
+
+ [**Example 3.97**](#Example-3.97)\Pageref{Example-3.97}
+
+ [**Theorem 3.98**](#theorem-path-connected)\Pageref{theorem-path-connected}
+
+ [**Proof**](#Proof*-3.41)\Pageref{Proof*-3.41}
 
  [**Definition 4.1**](#Definition-4.1)\Pageref{Definition-4.1}
 

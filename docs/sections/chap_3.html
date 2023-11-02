@@ -70,23 +70,35 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Notation {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Warning {
+.Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -98,27 +110,11 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Important {
+.Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Theorem {
+.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -126,17 +122,21 @@ ul.task-list li input[type="checkbox"] {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Assumption {
+.Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 </style>
 
@@ -250,8 +250,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#topological-basis" id="toc-topological-basis" class="nav-link" data-scroll-target="#topological-basis"><span class="header-section-number">3.10</span> Topological basis</a></li>
   <li><a href="#product-topology" id="toc-product-topology" class="nav-link" data-scroll-target="#product-topology"><span class="header-section-number">3.11</span> Product topology</a></li>
   <li><a href="#connectedness" id="toc-connectedness" class="nav-link" data-scroll-target="#connectedness"><span class="header-section-number">3.12</span> Connectedness</a></li>
-  <li><a href="#path-connectedness" id="toc-path-connectedness" class="nav-link" data-scroll-target="#path-connectedness"><span class="header-section-number">3.13</span> Path connectedness</a></li>
-  <li><a href="#intermediate-value-theorem" id="toc-intermediate-value-theorem" class="nav-link" data-scroll-target="#intermediate-value-theorem"><span class="header-section-number">3.14</span> Intermediate Value Theorem</a></li>
+  <li><a href="#intermediate-value-theorem" id="toc-intermediate-value-theorem" class="nav-link" data-scroll-target="#intermediate-value-theorem"><span class="header-section-number">3.13</span> Intermediate Value Theorem</a></li>
+  <li><a href="#path-connectedness" id="toc-path-connectedness" class="nav-link" data-scroll-target="#path-connectedness"><span class="header-section-number">3.14</span> Path connectedness</a></li>
   <li><a href="#compactness" id="toc-compactness" class="nav-link" data-scroll-target="#compactness"><span class="header-section-number">3.15</span> Compactness</a></li>
   </ul>
 </nav>
@@ -1137,7 +1137,7 @@ U := B_{\varepsilon}(x)\,, \quad
 V := B_{\varepsilon}(y) \,.
 \]</span> By Proposition <a href="chap_3.html#proposition-metric-ball">27</a> we know that <span class="math inline">\(U, V \in \mathcal{T}_d\)</span>. Moreover <span class="math inline">\(x \in U\)</span>, <span class="math inline">\(y \in V\)</span>. We are left to show that <span class="math display">\[
 U \cap V = \emptyset \,.
-\]</span> Suppose by contradiction that <span class="math inline">\(U \cap V = \emptyset\)</span> and let <span class="math inline">\(z \in U \cap V\)</span>. Therefore <span class="math display">\[
+\]</span> Suppose by contradiction that <span class="math inline">\(U \cap V \neq \emptyset\)</span> and let <span class="math inline">\(z \in U \cap V\)</span>. Therefore <span class="math display">\[
 d(x,z) &lt; \varepsilon\,,  \quad d(y,z) &lt; \varepsilon\,.
 \]</span> By triangle inequality we have <span class="math display">\[
 d(x,y) \leq d(x,z) +  d(y,z) &lt; \varepsilon+ \varepsilon= d(x,y) \,,
@@ -1917,47 +1917,18 @@ g \ \colon \left( [0,1] \smallsetminus \left\{\frac12\right\} \right) \to \left(
 </div></details>
 </div>
 </section>
-<section id="path-connectedness" class="level2" data-number="3.13">
-<h2 data-number="3.13" class="anchored" data-anchor-id="path-connectedness"><span class="header-section-number">3.13</span> Path connectedness</h2>
-<div id="path-connectedness-1" class="Definition" title="Path connectedness">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 93: </strong>Path connectedness</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space. We say that <span class="math inline">\(X\)</span> is <strong>path connected</strong> if for every <span class="math inline">\(x,y \in X\)</span> there exist <span class="math inline">\(a,b \in \mathbb{R}\)</span> with <span class="math inline">\(a&lt;b\)</span>, and a continuous function <span class="math display">\[
-\alpha \colon [a,b] \to X
-\]</span> such that <span class="math display">\[
-\alpha (a) = x \,, \quad \alpha(b) = y \,.
-\]</span><p></p>
-</div></details>
-</div>
-<div id="Example-94" class="Example">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 94</strong></summary><div>
-<p>Let <span class="math inline">\(A \subset \mathbb{R}^n\)</span> be convex. Then <span class="math inline">\(A\)</span> is path connected.</p>
-<blockquote class="blockquote">
-<p>A is convex if for all <span class="math inline">\(x,y \in A\)</span> the segment connecting <span class="math inline">\(x\)</span> to <span class="math inline">\(y\)</span> is contained in <span class="math inline">\(A\)</span>, namely, <span class="math display">\[
-[x,y] := \{ (1-t)x + t y \, \colon \,t \in [0,1] \} \subseteq A \,.
-\]</span> Therefore we can define <span class="math display">\[
-\alpha \colon [0,1] \to A \,, \quad \alpha(t):=(1-t)x + t y \,.
-\]</span> Clearly <span class="math inline">\(\alpha\)</span> is continuous, and <span class="math inline">\(\alpha(0)=x, \alpha(1)=y\)</span>.</p>
-</blockquote>
-</div></details>
-</div>
-<p>It turns out that path-connectedness implies connectedness.</p>
-<div id="theorem-path-connected" class="Theorem">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 95</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a path connected topological space. Then <span class="math inline">\(X\)</span> is connected.<p></p>
-</div></details>
-</div>
-<p>The proof of the above theorem is quite simple. However, due to time constraints, we decided to omit it.</p>
-</section>
-<section id="intermediate-value-theorem" class="level2" data-number="3.14">
-<h2 data-number="3.14" class="anchored" data-anchor-id="intermediate-value-theorem"><span class="header-section-number">3.14</span> Intermediate Value Theorem</h2>
+<section id="intermediate-value-theorem" class="level2" data-number="3.13">
+<h2 data-number="3.13" class="anchored" data-anchor-id="intermediate-value-theorem"><span class="header-section-number">3.13</span> Intermediate Value Theorem</h2>
 <p>Another consequence of Theorem <a href="chap_3.html#theorem-connected">89</a> is a generalization of the Intermediate Value Theorem to arbitrary topological spaces. Before providing statement and proof of such Theorem, we need to characterize the connected subsets of <span class="math inline">\(\mathbb{R}\)</span>.</p>
 <div id="interval" class="Definition" title="Interval">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 96: </strong>Interval</summary><div>A subset <span class="math inline">\(I \subset \mathbb{R}\)</span> is an interval if it holds: <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 93: </strong>Interval</summary><div>A subset <span class="math inline">\(I \subset \mathbb{R}\)</span> is an interval if it holds: <span class="math display">\[
 \forall \, a,b \in I \,, \, x \in \mathbb{R}\, \, \text{ s.t. } \, a&lt;x&lt;b \quad
 \implies \quad x \in I \,.
 \]</span><p></p>
 </div></details>
 </div>
 <div id="theorem-interval-connected" class="Theorem">
-<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 97</strong></summary><div>
+<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 94</strong></summary><div>
 <p>Let <span class="math inline">\(\mathbb{R}\)</span> be equipped with the Euclidean topology and let <span class="math inline">\(I \subseteq \mathbb{R}\)</span>. They are equivalent:</p>
 <ol type="1">
 <li><span class="math inline">\(I\)</span> is connected.</li>
@@ -2004,15 +1975,62 @@ I = A \cup B \,, \quad A \cap B = \emptyset \,.
 </div>
 <p>We are finally ready to prove the Intermediate Value Theorem.</p>
 <div id="intermediate-value-theorem-1" class="Theorem" title="Intermediate Value Theorem">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 98: </strong>Intermediate Value Theorem</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a connected topological space. Suppose that <span class="math inline">\(f \colon X \to \mathbb{R}\)</span> is continuous. Suppose that <span class="math inline">\(a,b \in X\)</span> are such that <span class="math inline">\(f(a)&lt;f(b)\)</span>. It holds: <span class="math display">\[
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 95: </strong>Intermediate Value Theorem</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a connected topological space. Suppose that <span class="math inline">\(f \colon X \to \mathbb{R}\)</span> is continuous. Suppose that <span class="math inline">\(a,b \in X\)</span> are such that <span class="math inline">\(f(a)&lt;f(b)\)</span>. It holds: <span class="math display">\[
 \forall \, c \in \mathbb{R}\, \text{ s.t. } \, f(a)&lt; c &lt; f(b) \,, \,\, \exists \, \xi \in X \, \text{ s.t. } \, f(\xi) = c \,.
 \]</span><p></p>
 </div></details>
 </div>
 <div id="Proof*-40" class="Proof">
-<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>As <span class="math inline">\(f\)</span> is continuous and <span class="math inline">\(X\)</span> is connected, by Theorem <a href="chap_3.html#theorem-connected">89</a> we know that <span class="math inline">\(f(X)\)</span> is connected in <span class="math inline">\(\mathbb{R}\)</span>. By Theorem <a href="chap_3.html#theorem-interval-connected">97</a> we have that <span class="math inline">\(f(X)\)</span> is an interval. Since <span class="math inline">\(a,b \in X\)</span> it follows <span class="math inline">\(f(a), f(b) \in f(X)\)</span>. Therefore, if <span class="math inline">\(c \in \mathbb{R}\)</span> is such that <span class="math display">\[
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>As <span class="math inline">\(f\)</span> is continuous and <span class="math inline">\(X\)</span> is connected, by Theorem <a href="chap_3.html#theorem-connected">89</a> we know that <span class="math inline">\(f(X)\)</span> is connected in <span class="math inline">\(\mathbb{R}\)</span>. By Theorem <a href="chap_3.html#theorem-interval-connected">94</a> we have that <span class="math inline">\(f(X)\)</span> is an interval. Since <span class="math inline">\(a,b \in X\)</span> it follows <span class="math inline">\(f(a), f(b) \in f(X)\)</span>. Therefore, if <span class="math inline">\(c \in \mathbb{R}\)</span> is such that <span class="math display">\[
 f(a) &lt; c &lt; f(b)
 \]</span> we conclude that <span class="math inline">\(c \in f(X)\)</span>, since <span class="math inline">\(f(X)\)</span> is an interval. Hence there exists <span class="math inline">\(\xi \in X\)</span> such that <span class="math inline">\(f(\xi) = c\)</span>.<p></p>
+</div></details>
+</div>
+</section>
+<section id="path-connectedness" class="level2" data-number="3.14">
+<h2 data-number="3.14" class="anchored" data-anchor-id="path-connectedness"><span class="header-section-number">3.14</span> Path connectedness</h2>
+<div id="path-connectedness-1" class="Definition" title="Path connectedness">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 96: </strong>Path connectedness</summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a topological space. We say that <span class="math inline">\(X\)</span> is <strong>path connected</strong> if for every <span class="math inline">\(x,y \in X\)</span> there exist <span class="math inline">\(a,b \in \mathbb{R}\)</span> with <span class="math inline">\(a&lt;b\)</span>, and a continuous function <span class="math display">\[
+\alpha \colon [a,b] \to X
+\]</span> such that <span class="math display">\[
+\alpha (a) = x \,, \quad \alpha(b) = y \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="Example-97" class="Example">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 97</strong></summary><div>
+<p>Let <span class="math inline">\(A \subset \mathbb{R}^n\)</span> be convex. Then <span class="math inline">\(A\)</span> is path connected.</p>
+<blockquote class="blockquote">
+<p>A is convex if for all <span class="math inline">\(x,y \in A\)</span> the segment connecting <span class="math inline">\(x\)</span> to <span class="math inline">\(y\)</span> is contained in <span class="math inline">\(A\)</span>, namely, <span class="math display">\[
+[x,y] := \{ (1-t)x + t y \, \colon \,t \in [0,1] \} \subseteq A \,.
+\]</span> Therefore we can define <span class="math display">\[
+\alpha \colon [0,1] \to A \,, \quad \alpha(t):=(1-t)x + t y \,.
+\]</span> Clearly <span class="math inline">\(\alpha\)</span> is continuous, and <span class="math inline">\(\alpha(0)=x, \alpha(1)=y\)</span>.</p>
+</blockquote>
+</div></details>
+</div>
+<p>It turns out that path-connectedness implies connectedness.</p>
+<div id="theorem-path-connected" class="Theorem">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 98</strong></summary><div>Let <span class="math inline">\((X,\mathcal{T})\)</span> be a path connected topological space. Then <span class="math inline">\(X\)</span> is connected.<p></p>
+</div></details>
+</div>
+<div id="Proof*-41" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Suppose that <span class="math inline">\(X = A \cup B\)</span> with <span class="math inline">\(A, B \in \mathcal{T}\)</span> and non-empty. In order to conclude that <span class="math inline">\(X\)</span> is connected, we need to show that <span class="math display">\[
+A \cap B \neq \emptyset \,.
+\]</span> Since <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are non-empty, we can find two points <span class="math inline">\(x \in A\)</span> and <span class="math inline">\(b \in B\)</span>. As <span class="math inline">\(X\)</span> is path connected, there exists <span class="math inline">\(\alpha \colon [0,1] \to X\)</span> continuous such that <span class="math display">\[
+\alpha(0) = x \,,  
+\quad
+\alpha(1) = y \,.
+\]</span> In particular <span class="math display">\[
+\alpha^{-1} (A) \neq \emptyset \, , \quad
+\alpha^{-1} (B) \neq \emptyset \,.
+\]</span> Moreover <span class="math display">\[\begin{align*}
+[0,1] &amp; = \alpha^{-1}(X) \\
+      &amp; = \alpha^{-1}(A \cup B) \\
+      &amp; = \alpha^{-1}(A) \cup \alpha^{-1}(B) \,.
+\end{align*}\]</span> As <span class="math inline">\(\alpha\)</span> is continuous, <span class="math inline">\(\alpha^{-1}(A)\)</span> and <span class="math inline">\(\alpha^{-1}(B)\)</span> are open in <span class="math inline">\([0,1]\)</span>. Suppose by contradiction that <span class="math inline">\(A \cap B = \emptyset\)</span>. Then <span class="math display">\[
+\alpha^{-1}(A) \cap \alpha^{-1}(B) = \alpha^{-1}(A \cap B)  = \alpha^{-1}(\emptyset) = \emptyset \,.
+\]</span> Hence <span class="math inline">\([0,1]\)</span> is disconnected, which is a contradiction. Therefore <span class="math inline">\(A \cap B \neq \emptyset\)</span> and <span class="math inline">\(X\)</span> is connected.<p></p>
 </div></details>
 </div>
 </section>

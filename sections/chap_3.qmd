@@ -1537,7 +1537,7 @@ By Proposition \ref{proposition-metric-ball} we know that $U, V \in \TT_d$. More
 $$
 U \cap V = \emptyset \,.
 $$
-Suppose by contradiction that $U \cap V = \emptyset$ and let $z \in U \cap V$. Therefore 
+Suppose by contradiction that $U \cap V \neq \emptyset$ and let $z \in U \cap V$. Therefore 
 $$
 d(x,z) < \e \,,  \quad d(y,z) < \e \,.
 $$
@@ -2906,68 +2906,6 @@ Then $\sphere^1$ and $[0,1]$ are not homeomorphic.
 
 
 
-## Path connectedness
-
-
-
-::: Definition
-### Path connectedness
-
-Let $(X,\TT)$ be a topological space. We say that $X$ is **path connected** if for every $x,y \in X$ there exist $a,b \in \R$ with $a<b$, and a
-continuous function 
-$$
-\alpha \colon [a,b] \to X 
-$$
-such that 
-$$
-\alpha (a) = x \,, \quad \alpha(b) = y \,.
-$$
-
-:::
-
-
-
-
-::: Example
-
-Let $A \subset \R^n$ be convex. Then $A$ is path connected.
-
-
-> A is convex if for all $x,y \in A$ the segment connecting $x$ to $y$ is contained in $A$, namely,
-$$
-[x,y] := \{ (1-t)x + t y \divider t \in [0,1] \} \subseteq A \,.
-$$
-Therefore we can define
-$$
-\alpha \colon [0,1] \to A \,, \quad \alpha(t):=(1-t)x + t y \,.
-$$
-Clearly $\alpha$ is continuous, and $\alpha(0)=x, \alpha(1)=y$.
-:::
-
-
-
-
-
-It turns out that path-connectedness implies connectedness.
-
-
-
-::: {.Theorem  #theorem-path-connected}
-
-Let $(X,\TT)$ be a path connected topological space. Then $X$ is connected.
-
-:::
-
-
-The proof of the above theorem is quite simple. However, due to time constraints, we decided to omit it.
-
-
-
-
-
-
-
-
 ## Intermediate Value Theorem
 
 
@@ -3101,4 +3039,99 @@ Hence there exists $\xi \in X$ such that $f(\xi) = c$.
 
 
 
+## Path connectedness
+
+
+
+::: Definition
+### Path connectedness
+
+Let $(X,\TT)$ be a topological space. We say that $X$ is **path connected** if for every $x,y \in X$ there exist $a,b \in \R$ with $a<b$, and a
+continuous function 
+$$
+\alpha \colon [a,b] \to X 
+$$
+such that 
+$$
+\alpha (a) = x \,, \quad \alpha(b) = y \,.
+$$
+
+:::
+
+
+
+
+::: Example
+
+Let $A \subset \R^n$ be convex. Then $A$ is path connected.
+
+
+> A is convex if for all $x,y \in A$ the segment connecting $x$ to $y$ is contained in $A$, namely,
+$$
+[x,y] := \{ (1-t)x + t y \divider t \in [0,1] \} \subseteq A \,.
+$$
+Therefore we can define
+$$
+\alpha \colon [0,1] \to A \,, \quad \alpha(t):=(1-t)x + t y \,.
+$$
+Clearly $\alpha$ is continuous, and $\alpha(0)=x, \alpha(1)=y$.
+:::
+
+
+
+
+
+It turns out that path-connectedness implies connectedness.
+
+
+
+::: {.Theorem  #theorem-path-connected}
+
+Let $(X,\TT)$ be a path connected topological space. Then $X$ is connected.
+
+:::
+
+
+::: Proof 
+
+Suppose that $X = A \cup B$ with $A, B \in \TT$ and non-empty. In order to conclude that
+$X$ is connected, we need to show that
+$$
+A \cap B \neq \emptyset \,.
+$$
+Since $A$ and $B$ are non-empty, we can find two points $x \in A$ and $b \in B$. As $X$ is path connected, there exists $\alpha \colon [0,1] \to X$ continuous such that 
+$$
+\alpha(0) = x \,,  
+\quad 
+\alpha(1) = y \,.
+$$
+In particular 
+$$
+\alpha^{-1} (A) \neq \emptyset \, , \quad
+\alpha^{-1} (B) \neq \emptyset \,.
+$$
+Moreover
+\begin{align*}
+[0,1] & = \alpha^{-1}(X) \\
+      & = \alpha^{-1}(A \cup B) \\
+      & = \alpha^{-1}(A) \cup \alpha^{-1}(B) \,.
+\end{align*}
+As $\alpha$ is continuous, $\alpha^{-1}(A)$ and $\alpha^{-1}(B)$ are open in $[0,1]$. 
+Suppose by contradiction that $A \cap B = \emptyset$. Then
+$$
+\alpha^{-1}(A) \cap \alpha^{-1}(B) = \alpha^{-1}(A \cap B)  = \alpha^{-1}(\emptyset) = \emptyset \,.
+$$
+Hence $[0,1]$ is disconnected, which is a contradiction. Therefore $A \cap B \neq \emptyset$ and 
+$X$ is connected.
+
+:::
+
+
+
+
+
+
+
 ## Compactness
+
+
