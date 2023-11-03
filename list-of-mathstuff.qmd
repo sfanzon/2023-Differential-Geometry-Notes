@@ -497,89 +497,107 @@
 
  [**Warning**](#Warning*-3.29)\Pageref{Warning*-3.29}
 
- [**Proposition 3.69**](#Proposition-3.69)\Pageref{Proposition-3.69}
+ [**Proposition 3.69**](#proposition-sequential-continuity)\Pageref{proposition-sequential-continuity}
 
  [**Proof**](#Proof*-3.30)\Pageref{Proof*-3.30}
 
- [**Definition 3.70**](#homeomoprhim): Homeomoprhim\Pageref{homeomoprhim}
+ [**Example 3.70**](#example-sequential-continuity)\Pageref{example-sequential-continuity}
 
- [**Definition 3.71**](#definition-subspace-topology): Subspace topology\Pageref{definition-subspace-topology}
+ [**Proposition 3.71**](#Proposition-3.71)\Pageref{Proposition-3.71}
 
- [**Proof**](#well-posedness-of-definition-1): Well-posedness of Definition 3.71\Pageref{well-posedness-of-definition-1}
+ [**Proof**](#Proof*-3.31)\Pageref{Proof*-3.31}
 
- [**Proposition 3.72**](#Proposition-3.72)\Pageref{Proposition-3.72}
+ [**Definition 3.72**](#homeomoprhim): Homeomoprhim\Pageref{homeomoprhim}
 
- [**Proof**](#Proof*-3.32)\Pageref{Proof*-3.32}
+ [**Definition 3.73**](#definition-subspace-topology): Subspace topology\Pageref{definition-subspace-topology}
 
- [**Warning**](#Warning*-3.33)\Pageref{Warning*-3.33}
+ [**Proof**](#well-posedness-of-definition-1): Well-posedness of Definition 3.73\Pageref{well-posedness-of-definition-1}
 
- [**Example 3.73**](#Example-3.73)\Pageref{Example-3.73}
+ [**Proposition 3.74**](#Proposition-3.74)\Pageref{Proposition-3.74}
 
- [**Definition 3.74**](#topological-basis-1): Topological basis\Pageref{topological-basis-1}
+ [**Proof**](#Proof*-3.33)\Pageref{Proof*-3.33}
+
+ [**Warning**](#Warning*-3.34)\Pageref{Warning*-3.34}
 
  [**Example 3.75**](#Example-3.75)\Pageref{Example-3.75}
 
- [**Proposition 3.76**](#proposition-basis)\Pageref{proposition-basis}
+ [**Definition 3.76**](#topological-basis-1): Topological basis\Pageref{topological-basis-1}
 
- [**Proof**](#Proof*-3.34)\Pageref{Proof*-3.34}
+ [**Example 3.77**](#Example-3.77)\Pageref{Example-3.77}
 
- [**Proposition 3.77**](#proposition-topology-basis)\Pageref{proposition-topology-basis}
+ [**Proposition 3.78**](#proposition-basis)\Pageref{proposition-basis}
 
  [**Proof**](#Proof*-3.35)\Pageref{Proof*-3.35}
 
- [**Proposition 3.78**](#Proposition-3.78)\Pageref{Proposition-3.78}
-
- [**Definition 3.79**](#product-topology-1): Product topology\Pageref{product-topology-1}
-
- [**Example 3.80**](#Example-3.80)\Pageref{Example-3.80}
-
- [**Proposition 3.81**](#Proposition-3.81)\Pageref{Proposition-3.81}
+ [**Proposition 3.79**](#proposition-topology-basis)\Pageref{proposition-topology-basis}
 
  [**Proof**](#Proof*-3.36)\Pageref{Proof*-3.36}
 
- [**Proposition 3.82**](#Proposition-3.82)\Pageref{Proposition-3.82}
+ [**Proposition 3.80**](#Proposition-3.80)\Pageref{Proposition-3.80}
 
- [**Definition 3.83**](#connected-space): Connected space\Pageref{connected-space}
+ [**Definition 3.81**](#product-topology-1): Product topology\Pageref{product-topology-1}
 
- [**Definition 3.84**](#proper-subset): Proper subset\Pageref{proper-subset}
+ [**Example 3.82**](#Example-3.82)\Pageref{Example-3.82}
 
- [**Proposition 3.85**](#proposition-connected-equivalent): Equivalent definition for connectedness\Pageref{proposition-connected-equivalent}
+ [**Proposition 3.83**](#Proposition-3.83)\Pageref{Proposition-3.83}
 
  [**Proof**](#Proof*-3.37)\Pageref{Proof*-3.37}
 
- [**Example 3.86**](#Example-3.86)\Pageref{Example-3.86}
+ [**Proposition 3.84**](#Proposition-3.84)\Pageref{Proposition-3.84}
 
- [**Example 3.87**](#example-R-minus-p)\Pageref{example-R-minus-p}
+ [**Definition 3.85**](#connected-space): Connected space\Pageref{connected-space}
 
- [**Example 3.88**](#example-Rn-minus-p)\Pageref{example-Rn-minus-p}
+ [**Definition 3.86**](#proper-subset): Proper subset\Pageref{proper-subset}
 
- [**Theorem 3.89**](#theorem-connected)\Pageref{theorem-connected}
+ [**Proposition 3.87**](#proposition-connected-equivalent): Equivalent definition for connectedness\Pageref{proposition-connected-equivalent}
 
  [**Proof**](#Proof*-3.38)\Pageref{Proof*-3.38}
 
- [**Corollary 3.90**](#corollary-invariant-connected)\Pageref{corollary-invariant-connected}
+ [**Example 3.88**](#Example-3.88)\Pageref{Example-3.88}
 
- [**Example 3.91**](#Example-3.91)\Pageref{Example-3.91}
+ [**Example 3.89**](#example-R-minus-p)\Pageref{example-R-minus-p}
 
- [**Example 3.92**](#Example-3.92)\Pageref{Example-3.92}
+ [**Example 3.90**](#example-Rn-minus-p)\Pageref{example-Rn-minus-p}
 
- [**Definition 3.93**](#interval): Interval\Pageref{interval}
-
- [**Theorem 3.94**](#theorem-interval-connected)\Pageref{theorem-interval-connected}
+ [**Theorem 3.91**](#theorem-connected)\Pageref{theorem-connected}
 
  [**Proof**](#Proof*-3.39)\Pageref{Proof*-3.39}
 
- [**Theorem 3.95**](#intermediate-value-theorem-1): Intermediate Value Theorem\Pageref{intermediate-value-theorem-1}
+ [**Corollary 3.92**](#corollary-invariant-connected)\Pageref{corollary-invariant-connected}
+
+ [**Example 3.93**](#Example-3.93)\Pageref{Example-3.93}
+
+ [**Example 3.94**](#Example-3.94)\Pageref{Example-3.94}
+
+ [**Definition 3.95**](#interval): Interval\Pageref{interval}
+
+ [**Theorem 3.96**](#theorem-interval-connected)\Pageref{theorem-interval-connected}
 
  [**Proof**](#Proof*-3.40)\Pageref{Proof*-3.40}
 
- [**Definition 3.96**](#path-connectedness-1): Path connectedness\Pageref{path-connectedness-1}
-
- [**Example 3.97**](#Example-3.97)\Pageref{Example-3.97}
-
- [**Theorem 3.98**](#theorem-path-connected)\Pageref{theorem-path-connected}
+ [**Theorem 3.97**](#intermediate-value-theorem-1): Intermediate Value Theorem\Pageref{intermediate-value-theorem-1}
 
  [**Proof**](#Proof*-3.41)\Pageref{Proof*-3.41}
+
+ [**Definition 3.98**](#path-connectedness-1): Path connectedness\Pageref{path-connectedness-1}
+
+ [**Example 3.99**](#Example-3.99)\Pageref{Example-3.99}
+
+ [**Theorem 3.100**](#theorem-path-connected)\Pageref{theorem-path-connected}
+
+ [**Proof**](#Proof*-3.42)\Pageref{Proof*-3.42}
+
+ [**Lemma 3.101**](#lemma-connected-open-closed)\Pageref{lemma-connected-open-closed}
+
+ [**Proof**](#Proof*-3.43)\Pageref{Proof*-3.43}
+
+ [**Proposition 3.102**](#proposition-topologist-curve): Topologist curve\Pageref{proposition-topologist-curve}
+
+ [**Proof**](#Proof*-3.44)\Pageref{Proof*-3.44}
+
+ [**Theorem 3.103**](#heine-borel): Heine-Borel\Pageref{heine-borel}
+
+ [**Definition 3.104**](#open-cover): Open cover\Pageref{open-cover}
 
  [**Definition 4.1**](#Definition-4.1)\Pageref{Definition-4.1}
 

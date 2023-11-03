@@ -2135,10 +2135,89 @@ $$
 x_n \to x_0 \,\, \mbox{ in }\, X \quad \implies \quad 
 f(x_n) \to f(x_0) \,\, \mbox{ in }\, Y\,.
 $$
-for all sequences $\{x_n\} \subset X$, the function $f$ might **not** be continuous. For this to hold, it is necessary for the topologies on
-$X$ and $Y$ to be metrizable.  
+for all sequences $\{x_n\} \subset X$, the function $f$ might **not** be continuous. 
+A counterexample is given in Example \ref{example-sequential-continuity} below.
+
+For the above to hold, it is necessary for the topologies on
+$X$ and $Y$ to be first countable, as for example is the case for metrizable topologies, see
+Proposition \ref{proposition-sequential-continuity} below.
 
 :::
+
+
+
+::: {.Proposition  #proposition-sequential-continuity}
+
+Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces. Let $f \colon X \to Y$ and suppose that 
+for all convergent sequences $\{x_n\} \subseteq X$, the sequence $\{f(x_n)\}$ is convergent in $Y$.
+Then $f$ is continuous.
+
+:::
+
+
+::: Proof
+
+Suppose by contradiction $f$ is not continuous at some point $x_0 \in X$. Then there exists
+${\e}_0 >0$ such that, for all $\delta>0$ it holds
+$$
+d_Y(f(x),f(x_0)) > \e_0 \,, \quad d_X(x,x_0)<\delta \,. 
+$$
+We can therefore choose $\delta = 1/n$ and construct a sequence $\{x_n\} \subseteq X$ such that
+$$
+d_Y(f(x_n),f(x_0)) > \e_0 \,, \quad d_X(x_n,x_0)< \frac{1}{n} \,, \quad \forall \, n \in \N \,. 
+$$
+Therefore $x_n \to x_0$ in $X$. Define the sequence
+$$
+y_n := 
+\begin{cases}
+x_n  & \,\, \mbox{ if } \, n \, \mbox{ even} \\
+x_0  & \,\, \mbox{ if } \, n \, \mbox{ odd} 
+\end{cases}
+$$
+As $x_n \to x_0$, we have $y_n \to x_0$. However $\{f(y_n)\}$ does not converge to any point in $Y$: Indeed $\{f(y_n)\}$ cannot converge to 
+$f(x_0)$, since for $n$ even we have
+$$
+d_Y(f(y_n),f(x_0)) = d_Y(f(x_n),f(x_0)) > \e_0 \,. 
+$$
+Also $\{f(y_n)\}$ cannot converge to a point $y \neq f(x_0)$, since 
+for $n$ odd
+$$
+d_Y (f(y_n), y) = d_Y (f(x_0), y) > 0 \,.
+$$
+Hence, we have produced a sequence $\{y_n\}$ which is convergent,
+but such that $\{f(y_n)\}$ does not converge. This contradicts our assumption. Hence $f$ must be continuous. 
+
+
+:::
+
+
+
+::: {.Example  #example-sequential-continuity}
+
+Consider $\R$ with the co-countable topology:
+$$
+{\TT}_{\textrm{cc}} := \{ A \subseteq \R \divider A^c = \R  \, \mbox{ or } \, A^c \, \mbox{ countable} \} \,.
+$$
+Sequences in $(\R,{\TT}_{\textrm{cc}})$ converge if and only if they are eventually constant. 
+Also consider the discrete topology on $\R$, denoted by ${\TT}_{\textrm{discrete}}$. 
+We have seen that sequences in $(\R,{\TT}_{\textrm{discrete}})$ converge if and only if they are
+eventually constant. Consider the identity function
+$$
+f \colon (\R,{\TT}_{\textrm{cc}}) \to (\R,{\TT}_{\textrm{discrete}}) \,, \quad f(x):=x \,.
+$$
+We have that:
+
+- $f$ is not continuous: Indeed $\{x\} \in {\TT}_{\textrm{discrete}}$ but 
+$$
+f^{-1}(\{ x\}) = \{x\} \notin {\TT}_{\textrm{cc}} \,,
+$$
+since $\{x\}^c$ is neither $\R$, nor countable.
+
+- If $\{x_n\}$ is convergent in ${\TT}_{\textrm{cc}}$, then it is eventually constant. Therefore 
+$\{f(x_n)\}$ is eventually constant, and so it is convergent in ${\TT}_{\textrm{discrete}}$.
+
+:::
+
 
 
 
@@ -3128,10 +3207,175 @@ $X$ is connected.
 
 
 
+The converse of the above theorem does not hold. A counterexample
+is given by the so-called **topologist curve**, which will be examined in
+Proposition \ref{proposition-topologist-curve}. Prior to this, we need a basic Lemma.
+
+
+::: {.Lemma #lemma-connected-open-closed}
+
+Let $(X,\TT)$ be a topological space. Let $A,  U \subseteq X$ with $A$ connected and $U$ open and closed. Suppose that $A \cap U \neq \emptyset$,  then $A \subseteq U$.
+ 
+:::
+
+
+::: Proof
+
+The following set identities hold for any pair of sets $U$ and $A$:
+\begin{align*}
+A & = ( A \cap U ) \cup (A \cap U^c)  \\
+\emptyset & = ( A \cap U ) \cap (A \cap U^c) 
+\end{align*}
+Now, suppose by contradiction $A \not\subseteq U$. This means $A \cap U^c \neq \emptyset$. By assumption we also have $A \cap U \neq \emptyset$. Moreover the sets $A \cap U$ and $A \cap U^c$ are open for the subspace topology on $A$, since $U$ and $U^c$ are open in $X$. Hence $A$ is the disjoint union of non-empty open sets, showing that $A$ is disconnected. Contradiction. We conclude that $A \subseteq U$.
+
+:::
+
+
+::: Proposition 
+### Topologist curve  {#proposition-topologist-curve}
+
+Consider $\R^2$ with the Euclidean topology and define the sets
+$$
+X := A \cup B 
+$$
+where 
+\begin{align*}
+A & := \left\{   \left(  t, \sin \left( \frac{1}{t} \right)  \right) \divider t>0   \right\} \\
+B & := \{(0,t) \divider t \in [-1,1] \} 
+\end{align*}
+Then $X$ is connected, but not path connected.
+
+
+:::
+
+
+::: Proof
+
+*Step 1. $X$ is not path connected.* 
+
+Let $x \in A$ and $y \in B$. There is no continuous function $\alpha \colon [0,1] \to X$ such that $\alpha(0)=x$ and $\alpha(1)=y$. If such $\alpha$ existed, then we would obtain a continuous extension for $t=0$ of the
+function 
+$$
+f(t) = \sin \left( \frac{1}{t} \right)  \,, \quad x>0
+$$
+which is not possible. Hence $X$ is not path connected.
+
+
+*Step 2. Preliminary facts.* 
+
+
+- $A$ is connected: Define the curve $\g \colon (0,\infty) \to \R^2$ by
+$$
+\g (t):=   \left(  t, \sin \left( \frac{1}{t} \right)  \right) \,.
+$$
+Clearly $\g$ is continuous. Since $(0,\infty)$ is 
+connected, by Theorem \ref{theorem-connected} we have that 
+$\g((0,\infty)) = A$ is connected.
+
+- $B$ is connected: Indeed $B$ is homeomorphic to the interval $[-1,1]$. Since $[-1,1]$ is connected, by
+Corollary \ref{corollary-invariant-connected} we conclude that $B$ is connected.
+
+- $\closure{A} = X$: 
+  This is because each point $y \in B$ is of the form $y = (0,t_0)$ for some $t_0 \in [-1,1]$. By continuity of $\sin$ and the Intermediate Value Theorem there exists some $z>0$ such that
+  $$
+  \sin(z) = t_0 \,.
+  $$
+  Therefore $z_n := z + 2n\pi$ satisfies
+  $$
+  z_n \to \infty \,, \quad \sin(z_n) = t_0 \,, \quad \forall \, n \in \N \,.
+  $$
+  Define $s_n:=1/z_n$. Trivially
+  $$
+  s_n \to 0 \,, \quad  \sin \left(  \frac{1}{s_n}  \right) = t_0 \,, \quad \forall \, n \in \N \,.
+  $$
+  Therefore we obtain
+  $$
+  \left(  s_n , \sin \left(  \frac{1}{s_n}  \right)    \right) \to  (0,t_0) \,.
+  $$
+  Hence the set $B$ is contained in the set $L(A)$ of limit points of $A$.
+  Since we are in $\R^2$, we have that $L(A)=\closure{A}$, proving that $B \subseteq \closure{A}$. Thus $\closure{A}= A \cup B = X$. 
+  
+
+
+
+*Step 3. $X$ is connected.*  
+
+Let $U \subseteq X$ be non-empty, open and closed. If we prove that
+$U = X$, we conclude that $X$ is connected. Let us proceed.  
+Since $U$ is non-empty, we can fix a point $x \in U$. We have two
+possibilities:
+
+- $x \in A$: In this case $A \cap U \neq \emptyset$. Since $A$ is connected and $U$ is open and closed, by Lemma \ref{lemma-connected-open-closed} we conclude $A \subseteq U$. As $U$ is closed and contains $A$, then $\closure{A} \subseteq U$. But we have shown that  
+  $$
+  \closure{A} = X \,,
+  $$
+  and therefore $U = X$. 
+
+- $x \in B$: Then $U \cap B \neq \emptyset$. Since $B$ is connected and $U$ is open and closed, we can invoke Lemma \ref{lemma-connected-open-closed} and conclude that $B \subseteq U$. Since $(0,0) \in B$, it follows that
+$$
+(0,0) \in U \,.
+$$
+As $U$ is open in $X$, and $X$ has the subspace topology induced by the inclusion $X \subseteq \R^2$, there exists an open set $W$ of $\R^2$ such that
+$$
+U = X \cap W \,.
+$$
+Therefore $(0,0) \in W$. As $W$ is open in $\R^2$, there exists a radius $\e>0$ such that 
+$$
+B_{\e} (0,0) \subseteq W \,.
+$$
+Hence 
+$$
+X \cap B_{\e} (0,0)  \subseteq X \cap W = U \,.
+$$
+The ball $B_{\e} (0,0)$ contains points of $A$, and therefore 
+$$
+A \cap U \neq \emptyset \,.
+$$
+Since $A$ is connected and $U$ is open and closed, we can again use 
+Lemma \ref{lemma-connected-open-closed} and obtain that 
+$A \subseteq U$. Since we already had $B \subseteq U$, and since 
+$U \subseteq X = A \cup B$, we conclude hence $U = X$.
+
+
+Therefore $U = X$ in all possible cases, showing that $X$ is connected.
+
+:::
+
 
 
 
 
 ## Compactness
+
+
+The first compactness result that one encounters in Analysis is the Heine-Borel Theorem.
+
+
+::: Theorem
+### Heine-Borel
+
+Let $I \subseteq \R$. They are equivalent:
+
+1. $I$ is compact.
+2. $I$ is closed and bounded.
+
+:::
+
+What does is mean for $I$ to be compact? In the Analysis course it means that every sequence
+$\{x_n\} \subseteq I$ has a convergent subsequence. 
+When trying to generalize compactness to general topological spaces there will be two issues:
+
+1. The definition of compactness we just gave is too weak.
+2. The Heine-Borel Theorem does not hold in general topological space.
+
+The topological definition of compactenss is given through open covers.
+
+::: Definition
+### Open cover
+
+
+
+:::
+
 
 
