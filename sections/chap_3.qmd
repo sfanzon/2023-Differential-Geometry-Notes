@@ -3345,6 +3345,9 @@ Therefore $U = X$ in all possible cases, showing that $X$ is connected.
 
 
 
+::: {.content-hidden}
+
+
 ## Compactness
 
 
@@ -3373,6 +3376,9 @@ The topological definition of compactenss is given through open covers.
 ::: Definition
 ### Open cover
 
+To do
+
+:::
 
 
 :::

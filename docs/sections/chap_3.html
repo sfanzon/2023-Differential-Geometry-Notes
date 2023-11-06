@@ -66,27 +66,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Goal {
+.Question {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -94,21 +74,13 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
 }
-.Proposition {
+.Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Question {
+.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
 }
 .Conjecture {
   --color1: #f4cce0;
@@ -118,25 +90,53 @@ ul.task-list li input[type="checkbox"] {
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
 .Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
 .Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
 </style>
 
@@ -252,7 +252,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#connectedness" id="toc-connectedness" class="nav-link" data-scroll-target="#connectedness"><span class="header-section-number">3.12</span> Connectedness</a></li>
   <li><a href="#intermediate-value-theorem" id="toc-intermediate-value-theorem" class="nav-link" data-scroll-target="#intermediate-value-theorem"><span class="header-section-number">3.13</span> Intermediate Value Theorem</a></li>
   <li><a href="#path-connectedness" id="toc-path-connectedness" class="nav-link" data-scroll-target="#path-connectedness"><span class="header-section-number">3.14</span> Path connectedness</a></li>
-  <li><a href="#compactness" id="toc-compactness" class="nav-link" data-scroll-target="#compactness"><span class="header-section-number">3.15</span> Compactness</a></li>
   </ul>
 </nav>
     </div>
@@ -2134,29 +2133,6 @@ A \cap U \neq \emptyset \,.
 \]</span> Since <span class="math inline">\(A\)</span> is connected and <span class="math inline">\(U\)</span> is open and closed, we can again use Lemma <a href="chap_3.html#lemma-connected-open-closed">101</a> and obtain that <span class="math inline">\(A \subseteq U\)</span>. Since we already had <span class="math inline">\(B \subseteq U\)</span>, and since <span class="math inline">\(U \subseteq X = A \cup B\)</span>, we conclude hence <span class="math inline">\(U = X\)</span>.</p></li>
 </ul>
 <p>Therefore <span class="math inline">\(U = X\)</span> in all possible cases, showing that <span class="math inline">\(X\)</span> is connected.</p>
-</div></details>
-</div>
-</section>
-<section id="compactness" class="level2" data-number="3.15">
-<h2 data-number="3.15" class="anchored" data-anchor-id="compactness"><span class="header-section-number">3.15</span> Compactness</h2>
-<p>The first compactness result that one encounters in Analysis is the Heine-Borel Theorem.</p>
-<div id="heine-borel" class="Theorem" title="Heine-Borel">
-<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 103: </strong>Heine-Borel</summary><div>
-<p>Let <span class="math inline">\(I \subseteq \mathbb{R}\)</span>. They are equivalent:</p>
-<ol type="1">
-<li><span class="math inline">\(I\)</span> is compact.</li>
-<li><span class="math inline">\(I\)</span> is closed and bounded.</li>
-</ol>
-</div></details>
-</div>
-<p>What does is mean for <span class="math inline">\(I\)</span> to be compact? In the Analysis course it means that every sequence <span class="math inline">\(\{x_n\} \subseteq I\)</span> has a convergent subsequence. When trying to generalize compactness to general topological spaces there will be two issues:</p>
-<ol type="1">
-<li>The definition of compactness we just gave is too weak.</li>
-<li>The Heine-Borel Theorem does not hold in general topological space.</li>
-</ol>
-<p>The topological definition of compactenss is given through open covers.</p>
-<div id="open-cover" class="Definition" title="Open cover">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 104: </strong>Open cover</summary><div>
 </div></details>
 </div>
 

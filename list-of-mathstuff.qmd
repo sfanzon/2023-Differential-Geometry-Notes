@@ -595,10 +595,6 @@
 
  [**Proof**](#Proof*-3.44)\Pageref{Proof*-3.44}
 
- [**Theorem 3.103**](#heine-borel): Heine-Borel\Pageref{heine-borel}
-
- [**Definition 3.104**](#open-cover): Open cover\Pageref{open-cover}
-
  [**Definition 4.1**](#Definition-4.1)\Pageref{Definition-4.1}
 
  [**Definition 4.2**](#Definition-4.2)\Pageref{Definition-4.2}
