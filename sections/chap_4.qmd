@@ -8,8 +8,214 @@ $$
 
 
 
+
 # Surfaces
 
+
+Curves are 1D objects in $\R^3$, parametrized via functions $\g \colon (a,b) \to \R^3$. 
+There is only one available direction in which to move on a curve:
+
+- $t \mapsto \g(t)$ moves forward on the curve 
+- $t \mapsto \g(-t)$ moves backward on the curve
+
+
+![Sketch of a curve $\g$.](/images/curves_example.png){width=60%}
+
+
+Surfaces are 2D objects in $\R^3$. There are two directions in which one can move on a surface. 
+
+
+![Sketch of a surfaces: Sphere, Torus, Möbius Strip.](/images/surfaces_example.png){width=70%}
+
+
+
+::: Question
+
+How to dercribe a surface mathematically?
+
+:::
+
+
+A curve $\Gamma \subseteq \R^3$ can be described with one function $\g \colon (a,b) \to \Gamma$. The idea is that $\Gamma$ looks locally like $\R$.
+
+
+![A curve $\Gamma$ can be described by a function $\g \colon (a,b) \to \Gamma$.](/images/curves_example_2.png){width=60%}
+
+
+A surface $\SSS$ cannot be described, in general, with just one function $\sss \colon U \to \SSS$, with $U \subseteq \R^2$ open set. The idea is that, to describe $\SSS$, one needs to piece together many local **charts** $\sss_i \colon U_i \to \SSS$ with $U_i \subseteq \R^2$ open. Such charts have to cover the whole surface $\SSS$, e.g.
+$$
+\SSS = \bigcup_{i} \sss_i (U_i) \,.
+$$
+
+
+![A surface $\SSS$ can be described by a family of charts $\sss_i \colon U_i \to \SSS$ with $U_i \subseteq \R^2$ open set.](/images/surfaces_example_2.png){width=60%}
+
+
+
+
+## Preliminaries
+
+
+Before proceeding with the formal definition of surface, we need to establish
+some basic notation and terminology regarding the topology of $\R^n$ and smooth maps from $\R^n$ into $\R^m$.
+
+
+
+### Topology of $\R^n$
+
+The Euclidean norm on $\R^n$ is denoted by 
+$$
+\| \xx \| := \sqrt{ \sum_{i=1}^n x_i^2 }\,, \quad \xx = (x_1 , \ldots, x_n) \in \R^n \,.
+$$
+The Euclidean norm induces the distance
+$$
+d(\xx,\yy) := \| \xx - \yy \| =   \sqrt{ \sum_{i=1}^n (x_i - y_i)^2 } \,.
+$$
+
+::: Definition
+### Euclidean Topology 
+
+The pair $(\R^n,d)$ is a metric space. The topology induced by the metric $d$ is called the Euclidean topology, denoted by $\TT$. In this chapter we will always assume that $\R^n$ is equipped with the Euclidean topology $\TT$.
+
+:::
+
+
+::: Definition 
+### Open Sets
+
+A set $U \subseteq \R^n$ is open if for all $\xx \in U$ there exists $\e>0$ such that $B_{\e}(\xx) \subseteq U$, where
+$$
+B_{\e}(\xx) := \{  \yy \in \R^n \divider \| \xx - \yy  \| < \e   \}
+$$
+is the open ball of radius $\e>0$ and centered at $\xx$. In this case we denote $U \in \TT$, with $\TT$ the Euclidean topology in $\R^n$.
+
+:::
+
+
+
+::: Definition 
+### Closed Sets 
+
+A set $V \subseteq \R^n$ is closed if $V^c := \R^n \smallsetminus U$ is open. 
+
+:::
+
+
+
+
+::: Example
+
+- The $n$-dimensional unit sphere
+$$
+\sphere^n = \{ \xx \in \R^{n+1} \divider \| x \| = 1 \}
+$$
+is not open in $\R^{n+1}$, since for any $\xx \in \sphere^n$ we have
+$$
+B_{\e} (\xx) \not\subseteq \sphere^{n} \,. 
+$$
+
+- The $n$-dimensional unit cube 
+$$
+C := \{ \xx \in \R^n \divider |x_1| + \ldots + |x_n| <1  \}
+$$
+is open in $\R^n$, since one can always find $\e>0$ small enough so that
+$$
+B_{\e} (\xx) \not\subseteq C \,. 
+$$
+
+- The set 
+$$
+V := \{ \xx \in \R^n \divider |x_1| + \ldots + |x_n| \geq 1  \}
+$$
+is closed, since $V^c = C$ is the unit cube, which is open.
+
+:::
+
+
+
+::: Definition 
+### Subspace Topology
+
+Given a subset $A \subseteq \R^n$ the subspace topology on $A$ is the family of sets
+$$
+\TT_A := \{  U \subseteq A \divider \exists \,\, W \in \TT \st U = A \cap W  \} \,.
+$$
+If $U \in \TT_A$ we say that $U$ is open in $A$.
+
+:::
+
+
+
+
+
+### Smooth functions
+
+
+We recall some basic facts about smooth functions from $\R^n$ into $\R^m$.
+
+::: Definition
+### Continuous Function
+
+Let $f \colon U \subseteq \R^n \to \R^m$ with $U$ open. We say that $f$ is continuous at $\xx \in U$ if $\forall \, \e>0$, \, $\exists \, \delta > 0$ such that 
+$$
+\|  \xx - \yy  \| < \delta \quad \implies \quad 
+\| f(\xx) - f (\yy) \| < \e \,.
+$$
+We say that $f$ is continuous in $U$ if it is continuous for all $\xx \in U$.
+:::
+
+
+**Remark**: Let $f \colon U \subseteq \R^n \to V \subseteq \R^m$, with $U,V$ open. We have that $f$ is continuous if and only if $f^{-1}(A)$ is open in $U$, for all $A$ open in $V$.
+
+
+**Homeomorphism**: Let $f \colon U \subseteq \R^n \to V \subseteq \R^m$ with $U,V$ open. We say that $f$ is a homeomorphism if $f$ is continuous and there exists inverse $f^{-1} \colon V \to U$ continuous.
+
+
+**Differentiable Function**: Let $f \colon U \subseteq \R^n \to \R^m$ with $U$ open. We say that $f$ is differentiable at $\xx \in U$ if there exists a linear map $df_{\xx} \colon \R^n \to \R^m$ such that
+$$
+\lim_{\e \to 0} \   \frac{ f(\xx + \e \pmb{h} )  - f(\xx) - \e \, df_{\xx}(\pmb{h}) }{ \e } = 0 \,,
+$$
+for all $\pmb{h} \in \R^n$. The map $df_{\xx}$ is called the **differential** of $f$ at $\xx$. 
+
+
+We denote by $\{\ee_i\}$ the standard basis of $\R^n$. 
+
+**Partial Derivative**: Let $f \colon U \subseteq \R^n \to \R^m$ with $U$ open be differentiable. The partial derivative of $f$ at $\xx \in U$ in direction $\ee_i$ is given by
+$$
+\frac{\partial f}{\partial x_i} := \lim_{\e \to 0}  \frac{ f( \xx + \e \ee_i ) - f(\xx) }{ \e } \,.
+$$
+
+
+**Jacobian Matrix**: The linear map $df_{\xx} \colon \R^n \to \R^m$ can be represented in matrix form by  
+
+
+**Multi-index Notation**: For a multi-index
+$$
+\alpha := (\alpha_1, \ldots , \alpha_n) \in \N^n
+$$
+we denote by 
+$$
+|\alpha|:= \sum_{i=1}^n   |\alpha_i|
+$$
+the length of the multi-index. 
+
+
+
+**Smooth Function**: Let $f \colon U \subseteq \R^n \to \R^m$ with $U$ open. We say that $f$ is smooth if the derivatives 
+$$
+\frac{\partial^\alpha f}{d\xx^\alpha} :=  \frac{\partial^{\alpha_1}}{ \partial x_1^{\alpha_1}} \cdots \frac{\partial^{\alpha_n}}{ \partial x_n^{\alpha_n}} \, f
+$$
+exist for each multi-index $\alpha \in \N^n$. Note that in this case all the derivatives of $f$ are automatically continuous.
+
+
+**Example**
+
+
+
+
+
+
+## Smooth surfaces
 
 ::: Definition
 

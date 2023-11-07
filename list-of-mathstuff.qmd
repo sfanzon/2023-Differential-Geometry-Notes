@@ -317,7 +317,7 @@
 
  [**Definition 3.6**](#definition-euclidean-topology): Euclidean topology of $\mathbb{R}^n$\Pageref{definition-euclidean-topology}
 
- [**Proof**](#well-posedness-of-definition): Well-posedness of Definition 4.6\Pageref{well-posedness-of-definition}
+ [**Proof**](#well-posedness-of-definition): Well-posedness of Definition 3.6\Pageref{well-posedness-of-definition}
 
  [**Proposition 3.7**](#proposition-balls-open)\Pageref{proposition-balls-open}
 
@@ -595,12 +595,26 @@
 
  [**Proof**](#Proof*-3.44)\Pageref{Proof*-3.44}
 
- [**Definition 4.1**](#Definition-4.1)\Pageref{Definition-4.1}
+ [**Question 4.1**](#Question-4.1)\Pageref{Question-4.1}
 
- [**Definition 4.2**](#Definition-4.2)\Pageref{Definition-4.2}
+ [**Definition 4.2**](#euclidean-topology): Euclidean Topology\Pageref{euclidean-topology}
 
- [**Definition 4.3**](#Definition-4.3)\Pageref{Definition-4.3}
+ [**Definition 4.3**](#open-sets): Open Sets\Pageref{open-sets}
 
- [**Definition 4.4**](#Definition-4.4)\Pageref{Definition-4.4}
+ [**Definition 4.4**](#closed-sets-1): Closed Sets\Pageref{closed-sets-1}
 
- [**Definition 4.5**](#Definition-4.5)\Pageref{Definition-4.5}
+ [**Example 4.5**](#Example-4.5)\Pageref{Example-4.5}
+
+ [**Definition 4.6**](#subspace-topology-1): Subspace Topology\Pageref{subspace-topology-1}
+
+ [**Definition 4.7**](#continuous-function-1): Continuous Function\Pageref{continuous-function-1}
+
+ [**Definition 4.8**](#Definition-4.8)\Pageref{Definition-4.8}
+
+ [**Definition 4.9**](#Definition-4.9)\Pageref{Definition-4.9}
+
+ [**Definition 4.10**](#Definition-4.10)\Pageref{Definition-4.10}
+
+ [**Definition 4.11**](#Definition-4.11)\Pageref{Definition-4.11}
+
+ [**Definition 4.12**](#Definition-4.12)\Pageref{Definition-4.12}

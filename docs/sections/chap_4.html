@@ -66,15 +66,11 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Conjecture {
+.Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Question {
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -82,47 +78,7 @@ ul.task-list li input[type="checkbox"] {
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Warning {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -130,11 +86,55 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
 }
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
 .DONE {
   --color1: #cce7b1;
   --color2: #86b754;
 }
-.Theorem {
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -234,7 +234,18 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#preliminaries" id="toc-preliminaries" class="nav-link active" data-scroll-target="#preliminaries"><span class="header-section-number">4.1</span> Preliminaries</a>
+  <ul class="collapse">
+  <li><a href="#topology-of-mathbbrn" id="toc-topology-of-mathbbrn" class="nav-link" data-scroll-target="#topology-of-mathbbrn"><span class="header-section-number">4.1.1</span> Topology of <span class="math inline">\(\mathbb{R}^n\)</span></a></li>
+  <li><a href="#smooth-functions" id="toc-smooth-functions" class="nav-link" data-scroll-target="#smooth-functions"><span class="header-section-number">4.1.2</span> Smooth functions</a></li>
+  </ul></li>
+  <li><a href="#smooth-surfaces" id="toc-smooth-surfaces" class="nav-link" data-scroll-target="#smooth-surfaces"><span class="header-section-number">4.2</span> Smooth surfaces</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -256,8 +267,129 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div id="Definition-1" class="Definition">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 1</strong></summary><div>
+<p>Curves are 1D objects in <span class="math inline">\(\mathbb{R}^3\)</span>, parametrized via functions <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathbb{R}^3\)</span>. There is only one available direction in which to move on a curve:</p>
+<ul>
+<li><span class="math inline">\(t \mapsto {\pmb{\gamma}}(t)\)</span> moves forward on the curve</li>
+<li><span class="math inline">\(t \mapsto {\pmb{\gamma}}(-t)\)</span> moves backward on the curve</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/curves_example.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption class="figure-caption">Sketch of a curve <span class="math inline">\({\pmb{\gamma}}\)</span>.</figcaption>
+</figure>
+</div>
+<p>Surfaces are 2D objects in <span class="math inline">\(\mathbb{R}^3\)</span>. There are two directions in which one can move on a surface.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/surfaces_example.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Sketch of a surfaces: Sphere, Torus, Möbius Strip.</figcaption>
+</figure>
+</div>
+<div id="Question-1" class="Question">
+<p></p><details class="Question fbx-simplebox fbx-default" open=""><summary><strong>Question 1</strong></summary><div>How to dercribe a surface mathematically?<p></p>
+</div></details>
+</div>
+<p>A curve <span class="math inline">\(\Gamma \subseteq \mathbb{R}^3\)</span> can be described with one function <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \Gamma\)</span>. The idea is that <span class="math inline">\(\Gamma\)</span> looks locally like <span class="math inline">\(\mathbb{R}\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/curves_example_2.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption class="figure-caption">A curve <span class="math inline">\(\Gamma\)</span> can be described by a function <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \Gamma\)</span>.</figcaption>
+</figure>
+</div>
+<p>A surface <span class="math inline">\(\mathcal{S}\)</span> cannot be described, in general, with just one function <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathcal{S}\)</span>, with <span class="math inline">\(U \subseteq \mathbb{R}^2\)</span> open set. The idea is that, to describe <span class="math inline">\(\mathcal{S}\)</span>, one needs to piece together many local <strong>charts</strong> <span class="math inline">\({\pmb{\sigma}}_i \colon U_i \to \mathcal{S}\)</span> with <span class="math inline">\(U_i \subseteq \mathbb{R}^2\)</span> open. Such charts have to cover the whole surface <span class="math inline">\(\mathcal{S}\)</span>, e.g. <span class="math display">\[
+\mathcal{S}= \bigcup_{i} {\pmb{\sigma}}_i (U_i) \,.
+\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/surfaces_example_2.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption class="figure-caption">A surface <span class="math inline">\(\mathcal{S}\)</span> can be described by a family of charts <span class="math inline">\({\pmb{\sigma}}_i \colon U_i \to \mathcal{S}\)</span> with <span class="math inline">\(U_i \subseteq \mathbb{R}^2\)</span> open set.</figcaption>
+</figure>
+</div>
+<section id="preliminaries" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="preliminaries"><span class="header-section-number">4.1</span> Preliminaries</h2>
+<p>Before proceeding with the formal definition of surface, we need to establish some basic notation and terminology regarding the topology of <span class="math inline">\(\mathbb{R}^n\)</span> and smooth maps from <span class="math inline">\(\mathbb{R}^n\)</span> into <span class="math inline">\(\mathbb{R}^m\)</span>.</p>
+<section id="topology-of-mathbbrn" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="topology-of-mathbbrn"><span class="header-section-number">4.1.1</span> Topology of <span class="math inline">\(\mathbb{R}^n\)</span></h3>
+<p>The Euclidean norm on <span class="math inline">\(\mathbb{R}^n\)</span> is denoted by <span class="math display">\[
+\| \mathbf{x}\| := \sqrt{ \sum_{i=1}^n x_i^2 }\,, \quad \mathbf{x}= (x_1 , \ldots, x_n) \in \mathbb{R}^n \,.
+\]</span> The Euclidean norm induces the distance <span class="math display">\[
+d(\mathbf{x},\mathbf{y}) := \| \mathbf{x}- \mathbf{y}\| =   \sqrt{ \sum_{i=1}^n (x_i - y_i)^2 } \,.
+\]</span></p>
+<div id="euclidean-topology" class="Definition" title="Euclidean Topology">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 2: </strong>Euclidean Topology</summary><div>The pair <span class="math inline">\((\mathbb{R}^n,d)\)</span> is a metric space. The topology induced by the metric <span class="math inline">\(d\)</span> is called the Euclidean topology, denoted by <span class="math inline">\(\mathcal{T}\)</span>. In this chapter we will always assume that <span class="math inline">\(\mathbb{R}^n\)</span> is equipped with the Euclidean topology <span class="math inline">\(\mathcal{T}\)</span>.<p></p>
+</div></details>
+</div>
+<div id="open-sets" class="Definition" title="Open Sets">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 3: </strong>Open Sets</summary><div>A set <span class="math inline">\(U \subseteq \mathbb{R}^n\)</span> is open if for all <span class="math inline">\(\mathbf{x}\in U\)</span> there exists <span class="math inline">\(\varepsilon&gt;0\)</span> such that <span class="math inline">\(B_{\varepsilon}(\mathbf{x}) \subseteq U\)</span>, where <span class="math display">\[
+B_{\varepsilon}(\mathbf{x}) := \{  \mathbf{y}\in \mathbb{R}^n \, \colon \,\| \mathbf{x}- \mathbf{y}\| &lt; \varepsilon\}
+\]</span> is the open ball of radius <span class="math inline">\(\varepsilon&gt;0\)</span> and centered at <span class="math inline">\(\mathbf{x}\)</span>. In this case we denote <span class="math inline">\(U \in \mathcal{T}\)</span>, with <span class="math inline">\(\mathcal{T}\)</span> the Euclidean topology in <span class="math inline">\(\mathbb{R}^n\)</span>.<p></p>
+</div></details>
+</div>
+<div id="closed-sets" class="Definition" title="Closed Sets">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 4: </strong>Closed Sets</summary><div>A set <span class="math inline">\(V \subseteq \mathbb{R}^n\)</span> is closed if <span class="math inline">\(V^c := \mathbb{R}^n \smallsetminus U\)</span> is open.<p></p>
+</div></details>
+</div>
+<div id="Example-5" class="Example">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 5</strong></summary><div>
+<ul>
+<li><p>The <span class="math inline">\(n\)</span>-dimensional unit sphere <span class="math display">\[
+\mathbb{S}^n = \{ \mathbf{x}\in \mathbb{R}^{n+1} \, \colon \,\| x \| = 1 \}
+\]</span> is not open in <span class="math inline">\(\mathbb{R}^{n+1}\)</span>, since for any <span class="math inline">\(\mathbf{x}\in \mathbb{S}^n\)</span> we have <span class="math display">\[
+B_{\varepsilon} (\mathbf{x}) \not\subseteq \mathbb{S}^{n} \,.
+\]</span></p></li>
+<li><p>The <span class="math inline">\(n\)</span>-dimensional unit cube <span class="math display">\[
+C := \{ \mathbf{x}\in \mathbb{R}^n \, \colon \,|x_1| + \ldots + |x_n| &lt;1  \}
+\]</span> is open in <span class="math inline">\(\mathbb{R}^n\)</span>, since one can always find <span class="math inline">\(\varepsilon&gt;0\)</span> small enough so that <span class="math display">\[
+B_{\varepsilon} (\mathbf{x}) \not\subseteq C \,.
+\]</span></p></li>
+<li><p>The set <span class="math display">\[
+V := \{ \mathbf{x}\in \mathbb{R}^n \, \colon \,|x_1| + \ldots + |x_n| \geq 1  \}
+\]</span> is closed, since <span class="math inline">\(V^c = C\)</span> is the unit cube, which is open.</p></li>
+</ul>
+</div></details>
+</div>
+<div id="subspace-topology" class="Definition" title="Subspace Topology">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 6: </strong>Subspace Topology</summary><div>Given a subset <span class="math inline">\(A \subseteq \mathbb{R}^n\)</span> the subspace topology on <span class="math inline">\(A\)</span> is the family of sets <span class="math display">\[
+\mathcal{T}_A := \{  U \subseteq A \, \colon \,\exists \,\, W \in \mathcal{T}\, \text{ s.t. } \, U = A \cap W  \} \,.
+\]</span> If <span class="math inline">\(U \in \mathcal{T}_A\)</span> we say that <span class="math inline">\(U\)</span> is open in <span class="math inline">\(A\)</span>.<p></p>
+</div></details>
+</div>
+</section>
+<section id="smooth-functions" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="smooth-functions"><span class="header-section-number">4.1.2</span> Smooth functions</h3>
+<p>We recall some basic facts about smooth functions from <span class="math inline">\(\mathbb{R}^n\)</span> into <span class="math inline">\(\mathbb{R}^m\)</span>.</p>
+<div id="continuous-function" class="Definition" title="Continuous Function">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 7: </strong>Continuous Function</summary><div>Let <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to \mathbb{R}^m\)</span> with <span class="math inline">\(U\)</span> open. We say that <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(\mathbf{x}\in U\)</span> if <span class="math inline">\(\forall \, \varepsilon&gt;0\)</span>, , <span class="math inline">\(\exists \, \delta &gt; 0\)</span> such that <span class="math display">\[
+\|  \mathbf{x}- \mathbf{y}\| &lt; \delta \quad \implies \quad
+\| f(\mathbf{x}) - f (\mathbf{y}) \| &lt; \varepsilon\,.
+\]</span> We say that <span class="math inline">\(f\)</span> is continuous in <span class="math inline">\(U\)</span> if it is continuous for all <span class="math inline">\(\mathbf{x}\in U\)</span>.<p></p>
+</div></details>
+</div>
+<p><strong>Remark</strong>: Let <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to V \subseteq \mathbb{R}^m\)</span>, with <span class="math inline">\(U,V\)</span> open. We have that <span class="math inline">\(f\)</span> is continuous if and only if <span class="math inline">\(f^{-1}(A)\)</span> is open in <span class="math inline">\(U\)</span>, for all <span class="math inline">\(A\)</span> open in <span class="math inline">\(V\)</span>.</p>
+<p><strong>Homeomorphism</strong>: Let <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to V \subseteq \mathbb{R}^m\)</span> with <span class="math inline">\(U,V\)</span> open. We say that <span class="math inline">\(f\)</span> is a homeomorphism if <span class="math inline">\(f\)</span> is continuous and there exists inverse <span class="math inline">\(f^{-1} \colon V \to U\)</span> continuous.</p>
+<p><strong>Differentiable Function</strong>: Let <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to \mathbb{R}^m\)</span> with <span class="math inline">\(U\)</span> open. We say that <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\(\mathbf{x}\in U\)</span> if there exists a linear map <span class="math inline">\(df_{\mathbf{x}} \colon \mathbb{R}^n \to \mathbb{R}^m\)</span> such that <span class="math display">\[
+\lim_{\varepsilon\to 0} \   \frac{ f(\mathbf{x}+ \varepsilon\pmb{h} )  - f(\mathbf{x}) - \varepsilon\, df_{\mathbf{x}}(\pmb{h}) }{ \varepsilon} = 0 \,,
+\]</span> for all <span class="math inline">\(\pmb{h} \in \mathbb{R}^n\)</span>. The map <span class="math inline">\(df_{\mathbf{x}}\)</span> is called the <strong>differential</strong> of <span class="math inline">\(f\)</span> at <span class="math inline">\(\mathbf{x}\)</span>.</p>
+<p>We denote by <span class="math inline">\(\{\mathbf{e}_i\}\)</span> the standard basis of <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
+<p><strong>Partial Derivative</strong>: Let <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to \mathbb{R}^m\)</span> with <span class="math inline">\(U\)</span> open be differentiable. The partial derivative of <span class="math inline">\(f\)</span> at <span class="math inline">\(\mathbf{x}\in U\)</span> in direction <span class="math inline">\(\mathbf{e}_i\)</span> is given by <span class="math display">\[
+\frac{\partial f}{\partial x_i} := \lim_{\varepsilon\to 0}  \frac{ f( \mathbf{x}+ \varepsilon\mathbf{e}_i ) - f(\mathbf{x}) }{ \varepsilon} \,.
+\]</span></p>
+<p><strong>Jacobian Matrix</strong>: The linear map <span class="math inline">\(df_{\mathbf{x}} \colon \mathbb{R}^n \to \mathbb{R}^m\)</span> can be represented in matrix form by</p>
+<p><strong>Multi-index Notation</strong>: For a multi-index <span class="math display">\[
+\alpha := (\alpha_1, \ldots , \alpha_n) \in \mathbb{N}^n
+\]</span> we denote by <span class="math display">\[
+|\alpha|:= \sum_{i=1}^n   |\alpha_i|
+\]</span> the length of the multi-index.</p>
+<p><strong>Smooth Function</strong>: Let <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to \mathbb{R}^m\)</span> with <span class="math inline">\(U\)</span> open. We say that <span class="math inline">\(f\)</span> is smooth if the derivatives <span class="math display">\[
+\frac{\partial^\alpha f}{d\mathbf{x}^\alpha} :=  \frac{\partial^{\alpha_1}}{ \partial x_1^{\alpha_1}} \cdots \frac{\partial^{\alpha_n}}{ \partial x_n^{\alpha_n}} \, f
+\]</span> exist for each multi-index <span class="math inline">\(\alpha \in \mathbb{N}^n\)</span>. Note that in this case all the derivatives of <span class="math inline">\(f\)</span> are automatically continuous.</p>
+<p><strong>Example</strong></p>
+</section>
+</section>
+<section id="smooth-surfaces" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="smooth-surfaces"><span class="header-section-number">4.2</span> Smooth surfaces</h2>
+<div id="Definition-8" class="Definition">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 8</strong></summary><div>
 <p>A set <span class="math inline">\(\mathcal{S}\subset \mathbb{R}^3\)</span> is a <strong>surface</strong> if for every point <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span> there exist open sets <span class="math inline">\(U \subset \mathbb{R}^2\)</span>, <span class="math inline">\(V \subset \mathbb{R}^3\)</span> such that</p>
 <ul>
 <li><span class="math inline">\(\mathbf{p}\in V\)</span>,</li>
@@ -277,8 +409,8 @@ ul.task-list li input[type="checkbox"] {
 </div></details>
 </div>
 <p>Note that a surface chart <span class="math inline">\({\pmb{\sigma}}\)</span> is a map from <span class="math inline">\(\mathbb{R}^2\)</span> into <span class="math inline">\(\mathbb{R}^3\)</span>. Points in <span class="math inline">\(U\)</span> will be denoted by the pair <span class="math inline">\((u,v)\)</span>, while points on <span class="math inline">\(\mathcal{S}\)</span> by <span class="math inline">\(\mathbf{p}\)</span> and points in <span class="math inline">\(\mathbb{R}^3\)</span> by <span class="math inline">\(\mathbf{x}\)</span>.</p>
-<div id="Definition-2" class="Definition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 2</strong></summary><div>Let <span class="math inline">\(U \subset \mathbb{R}^2\)</span> be open A surface chart <span class="math display">\[
+<div id="Definition-9" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 9</strong></summary><div>Let <span class="math inline">\(U \subset \mathbb{R}^2\)</span> be open A surface chart <span class="math display">\[
 {\pmb{\sigma}}= {\pmb{\sigma}}(u,v)  \colon U \to \mathbb{R}^3
 \]</span> is called <strong>regular</strong> if the partial derivatives <span class="math display">\[
 {\pmb{\sigma}}_u(u,v) = \frac{d{\pmb{\sigma}}}{du}(u,v) \,, \quad
@@ -286,16 +418,16 @@ ul.task-list li input[type="checkbox"] {
 \]</span> are linearly independent vectors of <span class="math inline">\(\mathbb{R}^3\)</span> for all <span class="math inline">\((u,v) \in U\)</span>.<p></p>
 </div></details>
 </div>
-<div id="Definition-3" class="Definition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 3</strong></summary><div>Let <span class="math inline">\(U \subset \mathbb{R}^2\)</span> be open. A surface chart <span class="math display">\[
+<div id="Definition-10" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 10</strong></summary><div>Let <span class="math inline">\(U \subset \mathbb{R}^2\)</span> be open. A surface chart <span class="math display">\[
 {\pmb{\sigma}}\colon U \to \mathbb{R}^3
 \]</span> is called a <strong>conformal parametrization</strong> if the first fundamental form satisfies <span class="math display">\[
 E \, du^2 + F \, du \ dv + G \, dv^2 = \lambda(u,v)  ( du^2 +  dv^2)
 \]</span> for some smooth function <span class="math inline">\(\lambda \colon U \to \mathbb{R}\)</span>.<p></p>
 </div></details>
 </div>
-<div id="Definition-4" class="Definition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 4</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a surface and <span class="math inline">\({\pmb{\sigma}}\colon U \to V \cap \mathcal{S}\)</span> a surface chart. The principal unit normal to <span class="math inline">\(\mathcal{S}\)</span> is <span class="math display">\[
+<div id="Definition-11" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 11</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a surface and <span class="math inline">\({\pmb{\sigma}}\colon U \to V \cap \mathcal{S}\)</span> a surface chart. The principal unit normal to <span class="math inline">\(\mathcal{S}\)</span> is <span class="math display">\[
 \mathbf{N} = \frac{ {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v }{ \left\| {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v \right\| } \,.
 \]</span><p></p>
 </div></details>
@@ -303,14 +435,15 @@ E \, du^2 + F \, du \ dv + G \, dv^2 = \lambda(u,v)  ( du^2 +  dv^2)
 <p>Denote by <span class="math display">\[
 \mathbb{S}^2 = \{ \mathbf{x}\in \mathbb{R}^3 \, \colon \, \left\| \mathbf{x} \right\| = 1 \}
 \]</span> the unit sphere in <span class="math inline">\(\mathbb{R}^3\)</span>.</p>
-<div id="Definition-5" class="Definition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 5</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a surface and denote by <span class="math inline">\(\mathbf{N}\)</span> the principal unit normal. The <strong>Gauss map</strong> of <span class="math inline">\(\mathcal{S}\)</span> is the map <span class="math inline">\(G \colon \mathcal{S}\to \mathbb{S}^2\)</span> defined by <span class="math display">\[
+<div id="Definition-12" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 12</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a surface and denote by <span class="math inline">\(\mathbf{N}\)</span> the principal unit normal. The <strong>Gauss map</strong> of <span class="math inline">\(\mathcal{S}\)</span> is the map <span class="math inline">\(G \colon \mathcal{S}\to \mathbb{S}^2\)</span> defined by <span class="math display">\[
 G(\mathbf{p}):= \mathbf{N}(\mathbf{p}) \,.
 \]</span> The <strong>Weingarten map</strong> is the derivative of the Gauss map, denoted by <span class="math inline">\(\mathcal{W}\colon T_{\mathbf{p}}\mathcal{S}\to T_{G(\mathbf{p})} \mathbb{S}^2\)</span>.<p></p>
 </div></details>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
