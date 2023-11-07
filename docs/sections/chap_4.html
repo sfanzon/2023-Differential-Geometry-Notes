@@ -66,21 +66,29 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Proposition {
+.Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Conjecture {
+.Question {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Corollary {
+.Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
 .Proof {
   --color1: #f1f1f2;
@@ -90,23 +98,27 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
 .Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
 }
 .Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Question {
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -114,15 +126,7 @@ ul.task-list li input[type="checkbox"] {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Assumption {
+.Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -130,13 +134,9 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Warning {
-  --color1: #f4cce0;
-  --color2: #db4d92;
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
 </style>
 
@@ -244,6 +244,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#smooth-functions" id="toc-smooth-functions" class="nav-link" data-scroll-target="#smooth-functions"><span class="header-section-number">4.1.2</span> Smooth functions</a></li>
   </ul></li>
   <li><a href="#smooth-surfaces" id="toc-smooth-surfaces" class="nav-link" data-scroll-target="#smooth-surfaces"><span class="header-section-number">4.2</span> Smooth surfaces</a></li>
+  <li><a href="#regular-surfaces" id="toc-regular-surfaces" class="nav-link" data-scroll-target="#regular-surfaces"><span class="header-section-number">4.3</span> Regular Surfaces</a></li>
   </ul>
 </nav>
     </div>
@@ -357,7 +358,9 @@ V := \{ \mathbf{x}\in \mathbb{R}^n \, \colon \,|x_1| + \ldots + |x_n| \geq 1  \}
 </section>
 <section id="smooth-functions" class="level3" data-number="4.1.2">
 <h3 data-number="4.1.2" class="anchored" data-anchor-id="smooth-functions"><span class="header-section-number">4.1.2</span> Smooth functions</h3>
-<p>We recall some basic facts about smooth functions from <span class="math inline">\(\mathbb{R}^n\)</span> into <span class="math inline">\(\mathbb{R}^m\)</span>.</p>
+<p>We recall some basic facts about smooth functions from <span class="math inline">\(\mathbb{R}^n\)</span> into <span class="math inline">\(\mathbb{R}^m\)</span>. For a vector valued function <span class="math inline">\(f \colon \mathbb{R}^n \to \mathbb{R}^m\)</span> we denote its components by <span class="math display">\[
+f = (f_1,\ldots,f_m) \,.
+\]</span></p>
 <div id="continuous-function" class="Definition" title="Continuous Function">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 7: </strong>Continuous Function</summary><div>Let <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to \mathbb{R}^m\)</span> with <span class="math inline">\(U\)</span> open. We say that <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(\mathbf{x}\in U\)</span> if <span class="math inline">\(\forall \, \varepsilon&gt;0\)</span>, , <span class="math inline">\(\exists \, \delta &gt; 0\)</span> such that <span class="math display">\[
 \|  \mathbf{x}- \mathbf{y}\| &lt; \delta \quad \implies \quad
@@ -365,80 +368,312 @@ V := \{ \mathbf{x}\in \mathbb{R}^n \, \colon \,|x_1| + \ldots + |x_n| \geq 1  \}
 \]</span> We say that <span class="math inline">\(f\)</span> is continuous in <span class="math inline">\(U\)</span> if it is continuous for all <span class="math inline">\(\mathbf{x}\in U\)</span>.<p></p>
 </div></details>
 </div>
-<p><strong>Remark</strong>: Let <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to V \subseteq \mathbb{R}^m\)</span>, with <span class="math inline">\(U,V\)</span> open. We have that <span class="math inline">\(f\)</span> is continuous if and only if <span class="math inline">\(f^{-1}(A)\)</span> is open in <span class="math inline">\(U\)</span>, for all <span class="math inline">\(A\)</span> open in <span class="math inline">\(V\)</span>.</p>
-<p><strong>Homeomorphism</strong>: Let <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to V \subseteq \mathbb{R}^m\)</span> with <span class="math inline">\(U,V\)</span> open. We say that <span class="math inline">\(f\)</span> is a homeomorphism if <span class="math inline">\(f\)</span> is continuous and there exists inverse <span class="math inline">\(f^{-1} \colon V \to U\)</span> continuous.</p>
-<p><strong>Differentiable Function</strong>: Let <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to \mathbb{R}^m\)</span> with <span class="math inline">\(U\)</span> open. We say that <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\(\mathbf{x}\in U\)</span> if there exists a linear map <span class="math inline">\(df_{\mathbf{x}} \colon \mathbb{R}^n \to \mathbb{R}^m\)</span> such that <span class="math display">\[
+<div id="Remark-8" class="Remark">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 8</strong></summary><div>Let <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to V \subseteq \mathbb{R}^m\)</span>, with <span class="math inline">\(U,V\)</span> open. We have that <span class="math inline">\(f\)</span> is continuous if and only if <span class="math inline">\(f^{-1}(A)\)</span> is open in <span class="math inline">\(U\)</span>, for all <span class="math inline">\(A\)</span> open in <span class="math inline">\(V\)</span>.<p></p>
+</div></details>
+</div>
+<div id="homeomorphism" class="Definition" title="Homeomorphism">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 9: </strong>Homeomorphism</summary><div>Let <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to V \subseteq \mathbb{R}^m\)</span> with <span class="math inline">\(U,V\)</span> open. We say that <span class="math inline">\(f\)</span> is a homeomorphism if <span class="math inline">\(f\)</span> is continuous and there exists inverse <span class="math inline">\(f^{-1} \colon V \to U\)</span> continuous.<p></p>
+</div></details>
+</div>
+<div id="differentiable-function" class="Definition" title="Differentiable Function">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 10: </strong>Differentiable Function</summary><div>Let <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to \mathbb{R}^m\)</span> with <span class="math inline">\(U\)</span> open. We say that <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\(\mathbf{x}\in U\)</span> if there exists a linear map <span class="math inline">\(df_{\mathbf{x}} \colon \mathbb{R}^n \to \mathbb{R}^m\)</span> such that <span class="math display">\[
 \lim_{\varepsilon\to 0} \   \frac{ f(\mathbf{x}+ \varepsilon\pmb{h} )  - f(\mathbf{x}) - \varepsilon\, df_{\mathbf{x}}(\pmb{h}) }{ \varepsilon} = 0 \,,
-\]</span> for all <span class="math inline">\(\pmb{h} \in \mathbb{R}^n\)</span>. The map <span class="math inline">\(df_{\mathbf{x}}\)</span> is called the <strong>differential</strong> of <span class="math inline">\(f\)</span> at <span class="math inline">\(\mathbf{x}\)</span>.</p>
-<p>We denote by <span class="math inline">\(\{\mathbf{e}_i\}\)</span> the standard basis of <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
-<p><strong>Partial Derivative</strong>: Let <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to \mathbb{R}^m\)</span> with <span class="math inline">\(U\)</span> open be differentiable. The partial derivative of <span class="math inline">\(f\)</span> at <span class="math inline">\(\mathbf{x}\in U\)</span> in direction <span class="math inline">\(\mathbf{e}_i\)</span> is given by <span class="math display">\[
+\]</span> for all <span class="math inline">\(\pmb{h} \in \mathbb{R}^n\)</span>, where the limit is taken in <span class="math inline">\(\mathbb{R}^m\)</span>. The map <span class="math inline">\(df_{\mathbf{x}}\)</span> is called the <strong>differential</strong> of <span class="math inline">\(f\)</span> at <span class="math inline">\(\mathbf{x}\)</span>.<p></p>
+</div></details>
+</div>
+<p>We denote by <span class="math inline">\(\{\mathbf{e}_i\}_{i=1}^n\)</span> the standard basis of <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
+<div id="partial-derivative" class="Definition" title="Partial Derivative">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 11: </strong>Partial Derivative</summary><div>Let <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to \mathbb{R}^m\)</span> with <span class="math inline">\(U\)</span> open be differentiable. The partial derivative of <span class="math inline">\(f\)</span> at <span class="math inline">\(\mathbf{x}\in U\)</span> in direction <span class="math inline">\(\mathbf{e}_i\)</span> is given by <span class="math display">\[
 \frac{\partial f}{\partial x_i} := \lim_{\varepsilon\to 0}  \frac{ f( \mathbf{x}+ \varepsilon\mathbf{e}_i ) - f(\mathbf{x}) }{ \varepsilon} \,.
-\]</span></p>
-<p><strong>Jacobian Matrix</strong>: The linear map <span class="math inline">\(df_{\mathbf{x}} \colon \mathbb{R}^n \to \mathbb{R}^m\)</span> can be represented in matrix form by</p>
-<p><strong>Multi-index Notation</strong>: For a multi-index <span class="math display">\[
+\]</span><p></p>
+</div></details>
+</div>
+<div id="jacobian-matrix" class="Definition" title="Jacobian Matrix">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 12: </strong>Jacobian Matrix</summary><div>The linear map <span class="math inline">\(df_{\mathbf{x}} \colon \mathbb{R}^n \to \mathbb{R}^m\)</span> can be represented in matrix form, with respect to the Euclidean basis, by the Jacobian matrix <span class="math display">\[
+Jf(x):= \left( \frac{\partial f_i}{\partial x_j} \right)_{i,j}  \in \mathbb{R}^{m \times n} \,.
+\]</span> If <span class="math inline">\(m=n\)</span> then <span class="math inline">\(Jf \in \mathbb{R}^{n \times n}\)</span> is a square matrix and we can compute its determinant, denoted by <span class="math display">\[
+\det Jf \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="multi-index-notation" class="Definition" title="Multi-index notation">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 13: </strong>Multi-index notation</summary><div>For a multi-index <span class="math display">\[
 \alpha := (\alpha_1, \ldots , \alpha_n) \in \mathbb{N}^n
 \]</span> we denote by <span class="math display">\[
 |\alpha|:= \sum_{i=1}^n   |\alpha_i|
-\]</span> the length of the multi-index.</p>
-<p><strong>Smooth Function</strong>: Let <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to \mathbb{R}^m\)</span> with <span class="math inline">\(U\)</span> open. We say that <span class="math inline">\(f\)</span> is smooth if the derivatives <span class="math display">\[
-\frac{\partial^\alpha f}{d\mathbf{x}^\alpha} :=  \frac{\partial^{\alpha_1}}{ \partial x_1^{\alpha_1}} \cdots \frac{\partial^{\alpha_n}}{ \partial x_n^{\alpha_n}} \, f
-\]</span> exist for each multi-index <span class="math inline">\(\alpha \in \mathbb{N}^n\)</span>. Note that in this case all the derivatives of <span class="math inline">\(f\)</span> are automatically continuous.</p>
-<p><strong>Example</strong></p>
+\]</span> the length of the multi-index.<p></p>
+</div></details>
+</div>
+<div id="smooth-function" class="Definition" title="Smooth Function">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 14: </strong>Smooth Function</summary><div>Let <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to \mathbb{R}^m\)</span> with <span class="math inline">\(U\)</span> open. We say that <span class="math inline">\(f\)</span> is smooth if the derivatives <span class="math display">\[
+\frac{\partial^{|\alpha|} f}{d\mathbf{x}^\alpha} :=  \frac{\partial^{\alpha_1}}{ \partial x_1^{\alpha_1}} \cdots \frac{\partial^{\alpha_n}}{ \partial x_n^{\alpha_n}} \, f
+\]</span> exist for each multi-index <span class="math inline">\(\alpha \in \mathbb{N}^n\)</span>. Note that in this case all the derivatives of <span class="math inline">\(f\)</span> are automatically continuous.<p></p>
+</div></details>
+</div>
+<div id="gradient-and-partial-derivatives" class="Notation" title="Gradient and partial derivatives">
+<p></p><details class="Notation fbx-simplebox fbx-default" open=""><summary><strong>Notation: </strong>Gradient and partial derivatives</summary><div>Let <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to \mathbb{R}\)</span> be smooth. We denote the partial derivatives by <span class="math display">\[
+\partial_{x_i} f := \frac{\partial f}{\partial x_i} \,, \quad
+\partial_{x_i x_j} f := \frac{\partial^2 f}{\partial x_i \partial x_j} \,,
+\quad
+\partial_{x_i x_j x_k} f := \frac{\partial^3 f}{\partial x_i \partial x_j \partial x_k} \,.
+\]</span><p></p>
+<p>For <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to \mathbb{R}\)</span> smooth we denote the <strong>gradient</strong> by <span class="math display">\[
+\nabla f (\mathbf{x}) = \left(  f_{x_1}(\mathbf{x}) , \ldots ,  f_{x_n}(\mathbf{x}) \right) \,.
+\]</span></p>
+</div></details>
+</div>
+<div id="Example-15" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 15</strong></summary><div>The functions <span class="math inline">\(f \colon \mathbb{R}^2 \to \mathbb{R}\)</span> and <span class="math inline">\(g \colon \mathbb{R}^2 \to \mathbb{R}^3\)</span> defined by <span class="math display">\[
+f(x,y) := \cos(x)y \,, \quad
+g(x,y) := (x^2,y^2,x-y)
+\]</span> are both smooth.<p></p>
+</div></details>
+</div>
+<div id="diffeomorphism" class="Definition" title="Diffeomorphism">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 16: </strong>Diffeomorphism</summary><div>Let <span class="math inline">\(f \colon U \to V\)</span> with <span class="math inline">\(U \subseteq \mathbb{R}^n\)</span> and <span class="math inline">\(V \subseteq \mathbb{R}^n\)</span> open. We say that <span class="math inline">\(f\)</span> is a <strong>diffeomorphism</strong> between <span class="math inline">\(U\)</span> and <span class="math inline">\(V\)</span> if <span class="math inline">\(f\)</span> is smooth and there exists smooth inverse <span class="math inline">\(f^{-1} \colon V \to U\)</span>.<p></p>
+</div></details>
+</div>
+<p>We recall, without proof, the Inverse Function Theorem. Please note that in the statement the function <span class="math inline">\(f\)</span> is defined from <span class="math inline">\(\mathbb{R}^n\)</span> into <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
+<div id="inverse-function-theorem" class="Theorem" title="Inverse Function Theorem">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 17: </strong>Inverse Function Theorem</summary><div>Let <span class="math inline">\(f \colon U \to \mathbb{R}^n\)</span> with <span class="math inline">\(U \subseteq \mathbb{R}^n\)</span> open. Suppose <span class="math inline">\(f\)</span> is a smooth function and <span class="math display">\[
+\det J f(\mathbf{x}_0) \neq 0 \,,
+\]</span> for some <span class="math inline">\(\mathbf{x}_0 \in U\)</span>. Then there exist open sets <span class="math inline">\(U_0 , V \subseteq \mathbb{R}^n\)</span> such that <span class="math inline">\(\mathbf{x}_0 \in U_0\)</span>, <span class="math inline">\(f(\mathbf{x}_0) \in V\)</span> and <span class="math inline">\(f \colon U_0 \to V\)</span> is a diffeomorphism.<p></p>
+</div></details>
+</div>
+<div id="Warning*-2" class="Warning">
+<p></p><details class="Warning fbx-simplebox fbx-default" open=""><summary><strong>Warning</strong></summary><div>Even if <span class="math display">\[
+\det J f(\mathbf{x}) \neq 0 \,,
+\]</span> for all <span class="math inline">\(\mathbf{x}\in U\)</span>, it is not guaranteed that <span class="math inline">\(f\)</span> is a diffeomorphism between <span class="math inline">\(U\)</span> and <span class="math inline">\(f(U)\)</span>.<p></p>
+</div></details>
+</div>
+<p>Non-vanishing Jacobian determinant is a necessary condition for being a diffeomorphism.</p>
+<div id="Proposition-18" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 18</strong></summary><div>Let <span class="math inline">\(f \colon U \to \mathbb{R}^n\)</span> with <span class="math inline">\(U \subseteq \mathbb{R}^n\)</span> open. Suppose <span class="math inline">\(f\)</span> is a diffeomorphism on <span class="math inline">\(U\)</span>. Then <span class="math display">\[
+\det Jf (\mathbf{x}) \neq 0 \,, \quad   \forall \, \mathbf{x}\in \mathbb{R}^n \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="Example-19" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 19</strong></summary><div>Define <span class="math inline">\(f \colon \mathbb{R}^2 \to \mathbb{R}^2\)</span> by <span class="math display">\[
+f(x,y) := (\cos(x) \sin(y), \sin(x) \sin(y)) \,.
+\]</span> Then <span class="math display">\[
+J f (x,y) =
+\left(
+\begin{array}{cc}
+- \sin(x) \sin(y)  &amp;   \cos(x) \cos(y) \\
+\cos(x) \sin(y)    &amp;   \sin(x) \cos(y)
+\end{array}
+\right) \,.
+\]</span> and <span class="math display">\[\begin{align*}
+\det Jf(x,y) &amp; = - \sin^2(x) \cos(y) \sin(y) - \cos^2(x) \cos(y) \sin(y) \\
+             &amp; = - \sin(y) \cos(y) \\
+             &amp; = - \frac{1}{2} \sin(2y) \,.
+\end{align*}\]</span> Therefore <span class="math display">\[
+\det Jf(x,y) \neq 0 \quad \iff \quad
+y \neq \frac{n \pi}{2} \,, \,\, n \in \mathbb{N}\,.
+\]</span> Hence <span class="math inline">\(f\)</span> is a diffeomorphism away from the lines <span class="math display">\[
+L_n := \left\{ \left(x, \frac{n \pi}{2} \right) \, \colon \,x \in \mathbb{R}\right\} \,.
+\]</span><p></p>
+</div></details>
+</div>
 </section>
 </section>
 <section id="smooth-surfaces" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="smooth-surfaces"><span class="header-section-number">4.2</span> Smooth surfaces</h2>
-<div id="Definition-8" class="Definition">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 8</strong></summary><div>
-<p>A set <span class="math inline">\(\mathcal{S}\subset \mathbb{R}^3\)</span> is a <strong>surface</strong> if for every point <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span> there exist open sets <span class="math inline">\(U \subset \mathbb{R}^2\)</span>, <span class="math inline">\(V \subset \mathbb{R}^3\)</span> such that</p>
+<p>We can finally give the definition of smooth surface in <span class="math inline">\(\mathbb{R}^3\)</span>.</p>
+<div id="smooth-surface" class="Definition" title="Smooth Surface">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 20: </strong>Smooth Surface</summary><div>
+<p>Let <span class="math inline">\(\mathcal{S}\subseteq \mathbb{R}^3\)</span> be a connected set. We say that <span class="math inline">\(\mathcal{S}\)</span> is a <strong>smooth surface</strong> if for every point <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span> there exist an open set <span class="math inline">\(U \subseteq \mathbb{R}^2\)</span> and a smooth map <span class="math display">\[
+{\pmb{\sigma}}\colon U \to  {\pmb{\sigma}}(U) \subseteq \mathcal{S}\,
+\]</span> such that</p>
 <ul>
-<li><span class="math inline">\(\mathbf{p}\in V\)</span>,</li>
-<li><span class="math inline">\(U\)</span> is diffeomorphic to <span class="math inline">\(V \cap \mathcal{S}\)</span>.</li>
+<li><span class="math inline">\(\mathbf{p}\in {\pmb{\sigma}}(U)\)</span></li>
+<li><span class="math inline">\({\pmb{\sigma}}(U)\)</span> is open in <span class="math inline">\(\mathcal{S}\)</span></li>
+<li><span class="math inline">\({\pmb{\sigma}}\)</span> is a homeomorphism between <span class="math inline">\(U\)</span> and <span class="math inline">\({\pmb{\sigma}}(U)\)</span></li>
 </ul>
 <p>Further:</p>
 <ul>
-<li>A diffeomorphism of <span class="math inline">\(U\)</span> into <span class="math inline">\(V \cap \mathcal{S}\)</span>, denoted by <span class="math display">\[
-{\pmb{\sigma}}\colon U \to  V \cap \mathcal{S}\,
-\]</span> is called a <strong>surface chart</strong>.</li>
+<li>The homeomorphism <span class="math inline">\({\pmb{\sigma}}\)</span> is called a <strong>surface chart</strong>.</li>
 <li>For each <span class="math inline">\(i \in I\)</span> suppose to have a surface chart <span class="math display">\[
-{\pmb{\sigma}}_i  \colon U_i \to V_i \cap \mathcal{S}\,.
+{\pmb{\sigma}}_i  \colon U_i \to {\pmb{\sigma}}(U_i) \subseteq \mathcal{S}\,.
 \]</span> We say that the family <span class="math inline">\(\{ {\pmb{\sigma}}_i\}_{i \in I}\)</span> is an <strong>atlas</strong> of <span class="math inline">\(\mathcal{S}\)</span> if <span class="math display">\[
-\bigcup_{i \in I} (V_i \cap \mathcal{S}) = \mathcal{S}\,.
+\mathcal{S}= \bigcup_{i \in I} {\pmb{\sigma}}_i(U_i)  \,.
 \]</span></li>
 </ul>
 </div></details>
 </div>
-<p>Note that a surface chart <span class="math inline">\({\pmb{\sigma}}\)</span> is a map from <span class="math inline">\(\mathbb{R}^2\)</span> into <span class="math inline">\(\mathbb{R}^3\)</span>. Points in <span class="math inline">\(U\)</span> will be denoted by the pair <span class="math inline">\((u,v)\)</span>, while points on <span class="math inline">\(\mathcal{S}\)</span> by <span class="math inline">\(\mathbf{p}\)</span> and points in <span class="math inline">\(\mathbb{R}^3\)</span> by <span class="math inline">\(\mathbf{x}\)</span>.</p>
-<div id="Definition-9" class="Definition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 9</strong></summary><div>Let <span class="math inline">\(U \subset \mathbb{R}^2\)</span> be open A surface chart <span class="math display">\[
+<div id="Remark-21" class="Remark">
+<details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 21</strong></summary><div>
+<ul>
+<li><p>A surface chart <span class="math inline">\({\pmb{\sigma}}\)</span> is a map from <span class="math inline">\(\mathbb{R}^2\)</span> into <span class="math inline">\(\mathbb{R}^3\)</span>.</p></li>
+<li><p>Given a chart <span class="math inline">\({\pmb{\sigma}}\colon U \to {\pmb{\sigma}}(U)\)</span>, the set <span class="math inline">\(U\)</span> is open in <span class="math inline">\(\mathbb{R}^2\)</span> while <span class="math inline">\({\pmb{\sigma}}(U)\)</span> is open in <span class="math inline">\(\mathcal{S}\)</span> with the subspace topology. This means that there exists <span class="math inline">\(W \subseteq \mathbb{R}^3\)</span> open such that <span class="math display">\[
+{\pmb{\sigma}}(U) = W \cap \mathcal{S}\,.
+\]</span></p></li>
+<li><p>The omeomorphism condition is saying that <span class="math inline">\({\pmb{\sigma}}(U) \subseteq \mathcal{S}\)</span> looks locally (around <span class="math inline">\(\mathbf{p}\)</span>) like an open set <span class="math inline">\(U \subseteq \mathbb{R}^2\)</span>.</p></li>
+</ul>
+</div></details>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/surfaces_example_3.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Sketch of the surface <span class="math inline">\(\mathcal{S}\)</span> and chart <span class="math inline">\({\pmb{\sigma}}\colon U \to {\pmb{\sigma}}(U) \subseteq \mathcal{S}\)</span>. The set <span class="math inline">\(U \subseteq \mathbb{R}^2\)</span> is open in <span class="math inline">\(\mathbb{R}^2\)</span> and <span class="math inline">\({\pmb{\sigma}}(U)\)</span> is open in <span class="math inline">\(\mathcal{S}\)</span>. This means there exists <span class="math inline">\(W\)</span> open in <span class="math inline">\(\mathbb{R}^3\)</span> such that <span class="math inline">\({\pmb{\sigma}}(U) = \mathcal{S}\cap W\)</span>.</figcaption>
+</figure>
+</div>
+<div id="Notation*-3" class="Notation">
+<details class="Notation fbx-simplebox fbx-default" open=""><summary><strong>Notation</strong></summary><div>
+<ul>
+<li><p>Points in <span class="math inline">\(U\)</span> will be denoted with the pair <span class="math inline">\((u,v)\)</span>.</p></li>
+<li><p>Partial derivatives of a chart <span class="math inline">\({\pmb{\sigma}}= {\pmb{\sigma}}(u,v)\)</span> will be denoted by <span class="math display">\[
+{\pmb{\sigma}}_u := \frac{\partial {\pmb{\sigma}}}{\partial u} \,, \quad
+{\pmb{\sigma}}_v := \frac{\partial {\pmb{\sigma}}}{\partial v} \,.
+\]</span> Similar notations are adopted for higher order derivatives.</p></li>
+<li><p>Components of <span class="math inline">\({\pmb{\sigma}}\)</span> will be denoted by <span class="math display">\[
+{\pmb{\sigma}}= (\sigma^1, \sigma^2, \sigma^3) \,.
+\]</span></p></li>
+</ul>
+</div></details>
+</div>
+<div id="d-plane-in-mathbbr3" class="Example" title="2D Plane in \mathbb{R}^3">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 22: </strong>2D Plane in <span class="math inline">\(\mathbb{R}^3\)</span></summary><div>Planes in <span class="math inline">\(\mathbb{R}^3\)</span> are surfaces with atlas containing one chart. Namely, a plane <span class="math inline">\(\pi \subseteq \mathbb{R}^3\)</span> is described by <span class="math display">\[
+\pi  = \{  \mathbf{x}\in \mathbb{R}^3 \, \colon \,\mathbf{x}\cdot \mathbf{w}= \lambda \} \,.
+\]</span> Let<p></p>
+<ul>
+<li><span class="math inline">\(\mathbf{p},\pmb{q} \in \mathbb{R}^3\)</span> be ortoghonal to each other and to <span class="math inline">\(\mathbf{w}\)</span>.</li>
+<li><span class="math inline">\(\pmb{a} \in \pi\)</span> be any point in the plane.</li>
+</ul>
+<p>If <span class="math inline">\(\mathbf{x}\in \pi\)</span> then <span class="math inline">\(\mathbf{x}-\pmb{a}\)</span> is parallel to the plane and <span class="math inline">\(\pi\)</span> can be equivalently represented as <span class="math display">\[
+\pi = \{ \pmb{a} + u \mathbf{p}+ v \pmb{q} \, \colon \,u,v \in \mathbb{R}\} \,.
+\]</span> Define the map <span class="math display">\[
+{\pmb{\sigma}}\colon \mathbb{R}^2 \to \pi \,, \quad {\pmb{\sigma}}(u,v):= \pmb{a} + u \mathbf{p}+ v \pmb{q} \,.
+\]</span> We have:</p>
+<ul>
+<li><span class="math inline">\({\pmb{\sigma}}\)</span> is smooth.</li>
+<li>For each <span class="math inline">\(\mathbf{x}\in \pi\)</span> we have <span class="math inline">\(\mathbf{x}\in {\pmb{\sigma}}(\mathbb{R}^2) = \pi\)</span>.</li>
+<li><span class="math inline">\({\pmb{\sigma}}(\mathbb{R}^2)\)</span> is open in <span class="math inline">\(\pi\)</span>, since <span class="math inline">\({\pmb{\sigma}}(\mathbb{R}^2) = \pi\)</span>.</li>
+<li>The inverse of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
+{\pmb{\sigma}}^{-1} \colon \pi \to \mathbb{R}^2 \,, \quad
+{\pmb{\sigma}}^{-1} (\mathbf{x}) = ( (\mathbf{x}- \pmb{a}) \cdot \mathbf{p}, (\mathbf{x}- \pmb{a}) \cdot \pmb{q}  ) \,.
+\]</span></li>
+<li>As <span class="math inline">\({\pmb{\sigma}}^{-1}\)</span> is continuous, then <span class="math inline">\({\pmb{\sigma}}\)</span> is a homeomorphism between <span class="math inline">\(\mathbb{R}^2\)</span> and <span class="math inline">\(\pi\)</span>.</li>
+</ul>
+<p>Therefore <span class="math inline">\({\pmb{\sigma}}\)</span> is a chart for <span class="math inline">\(\pi\)</span>. Since <span class="math display">\[
+{\pmb{\sigma}}(\mathbb{R}^2) = \pi \,,
+\]</span> we have that <span class="math inline">\(\{{\pmb{\sigma}}\}\)</span> is an atlas for <span class="math inline">\(\pi\)</span>, and hence <span class="math inline">\(\pi\)</span> is a smooth surface.</p>
+</div></details>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/surface_plane.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">A plane <span class="math inline">\(\pi\)</span> is a smooth surface with atlas containing a single chart <span class="math inline">\({\pmb{\sigma}}\colon \mathbb{R}^2 \to \pi\)</span>.</figcaption>
+</figure>
+</div>
+<div id="unit-cylinder" class="Example" title="Unit cylinder">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 23: </strong>Unit cylinder</summary><div>
+<p>Consider the infinite unit cylinder <span class="math display">\[
+\mathcal{S}= \{  (x,y,z) \in \mathbb{R}^3 \, \colon \,x^2 + y^2 = 1 \} \,.
+\]</span> <span class="math inline">\(\mathcal{S}\)</span> is a smooth surface with an atlas consisting of two charts: <span class="math display">\[
+{\pmb{\sigma}}_i \colon U_i \to \mathbb{R}^3   \,, \quad
+{\pmb{\sigma}}_i(u,v):= (\cos(u),\sin(u),v)
+\]</span> for <span class="math inline">\(i=1,2\)</span>, where <span class="math display">\[
+U_1 := \left( 0,\frac{ 3 \pi}{2} \right) \times \mathbb{R}\,, \quad
+U_2 := \left( \pi,\frac{ 5 \pi}{2} \right) \times \mathbb{R}\,.
+\]</span></p>
+<blockquote class="blockquote">
+<p>Indeed:</p>
+<ul>
+<li><span class="math inline">\({\pmb{\sigma}}_i\)</span> is smooth.</li>
+<li><span class="math inline">\(\{{\pmb{\sigma}}_1 , {\pmb{\sigma}}_2\}\)</span> is an atlas for <span class="math inline">\(\mathcal{S}\)</span>, since <span class="math display">\[
+\mathcal{S}= {\pmb{\sigma}}_1(U_1) \cup {\pmb{\sigma}}_2(U_2) \,.
+\]</span></li>
+<li>One can check that <span class="math inline">\({\pmb{\sigma}}_i(U_i)\)</span> is open in <span class="math inline">\(\mathcal{S}\)</span>.</li>
+<li><span class="math inline">\({\pmb{\sigma}}_i\)</span> is a homeomorphism of <span class="math inline">\(U_i\)</span> in <span class="math inline">\({\pmb{\sigma}}(U_i)\)</span>.</li>
+</ul>
+</blockquote>
+</div></details>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/surface_cylinder.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Unit cylinder <span class="math inline">\(\mathcal{S}\)</span> is a smooth surface with atlas given by <span class="math inline">\(\{{\pmb{\sigma}}_1,{\pmb{\sigma}}_2\}\)</span>. Depicted are the images <span class="math inline">\({\pmb{\sigma}}_1(U_1)\)</span> and <span class="math inline">\({\pmb{\sigma}}_2(U_2)\)</span>.</figcaption>
+</figure>
+</div>
+<div id="Important*-4" class="Important">
+<p></p><details class="Important fbx-simplebox fbx-default" open=""><summary><strong>Important</strong></summary><div>Consider again the unit cylinder <span class="math display">\[
+\mathcal{S}= \{  (x,y,z) \in \mathbb{R}^3 \, \colon \,x^2 + y^2 = 1 \} \,.
+\]</span> Define the map <span class="math display">\[
+{\pmb{\sigma}}\colon U \to \mathbb{R}^3   \,, \quad
+{\pmb{\sigma}}(u,v):= (\cos(u),\sin(u),v)
+\]</span> where <span class="math display">\[
+U:= [ 0, 2 \pi ] \times \mathbb{R}\,.
+\]</span> Clearly we have <span class="math display">\[
+{\pmb{\sigma}}(U) = \mathcal{S}\,.
+\]</span> However <span class="math inline">\(\{{\pmb{\sigma}}\}\)</span> is not an atlas for <span class="math inline">\(\mathcal{S}\)</span>, since <span class="math inline">\({\pmb{\sigma}}\)</span> is not a chart. This is because <span class="math inline">\({\pmb{\sigma}}\)</span> is not invertible, as for example <span class="math display">\[
+{\pmb{\sigma}}(0,0) = {\pmb{\sigma}}(2\pi,0) \,.
+\]</span> Therefore <span class="math inline">\({\pmb{\sigma}}\)</span> cannot be an omeomorphism between <span class="math inline">\(U\)</span> and <span class="math inline">\(\mathcal{S}\)</span>.<p></p>
+</div></details>
+</div>
+<div id="circular-cone" class="Example" title="Circular cone">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 24: </strong>Circular cone</summary><div>Consider the circular cone <span class="math display">\[
+\mathcal{S}:= \{ (x,y,z) \in \mathbb{R}^3 \, \colon \,x^2 + y^2 = z^2  \} \,.
+\]</span> Then <span class="math inline">\(\mathcal{S}\)</span> is not a smooth surface. This is essentially consequence of the fact that <span class="math display">\[
+\mathcal{S}\smallsetminus \{{\pmb{0}}\}
+\]</span> is a disconnected set.<p></p>
+<p>To see that <span class="math inline">\(\mathcal{S}\)</span> is not a smooth surface, suppose there exists an atlas <span class="math inline">\(\{{\pmb{\sigma}}_i\}\)</span> of <span class="math inline">\(\mathcal{S}\)</span> <span class="math display">\[
+{\pmb{\sigma}}_i \colon U_i \to {\pmb{\sigma}}_i(U_i) \subseteq \mathcal{S}\,.
+\]</span> In particular there exists a chart <span class="math inline">\({\pmb{\sigma}}_{i_0}\)</span> such that <span class="math display">\[
+{\pmb{0}}\in {\pmb{\sigma}}_{i_0}(U_{i_0}) \,.
+\]</span> Let <span class="math inline">\(\mathbf{x}_0 \in U_{i_0}\)</span> be the point such that <span class="math display">\[
+{\pmb{\sigma}}_{i_0}(\mathbf{x}_0) = {\pmb{0}}\,.
+\]</span> Consider the ball <span class="math inline">\(B_{\varepsilon}(\mathbf{x}_0)\)</span> for any <span class="math inline">\(\varepsilon&gt; 0\)</span>. Since <span class="math inline">\({\pmb{\sigma}}_{i_0}\)</span> is a homeomorphism, we deduce that <span class="math display">\[
+{\pmb{\sigma}}_{i_0}(B_{\varepsilon}(\mathbf{x}_0))
+\]</span> is open in <span class="math inline">\(\mathcal{S}\)</span>. Hence there exists an open set <span class="math inline">\(W\)</span> in <span class="math inline">\(\mathbb{R}^3\)</span> such that <span class="math display">\[
+{\pmb{\sigma}}_{i_0}(B_{\varepsilon}(\mathbf{x}_0)) = \mathcal{S}\cap W \,.
+\]</span> As <span class="math inline">\({\pmb{0}}\in {\pmb{\sigma}}_{i_0}(B_{\varepsilon}(\mathbf{x}_0))\)</span> and <span class="math inline">\(W\)</span> is open in <span class="math inline">\(\mathbb{R}^3\)</span>, it follows that <span class="math inline">\(W\)</span> contains points of both <span class="math inline">\(\mathcal{S}^-\)</span> and <span class="math inline">\(\mathcal{S}^+\)</span>, with <span class="math display">\[
+\mathcal{S}^- := \mathcal{S}\cap \{ z &lt; 0 \}   \,, \quad
+\mathcal{S}^+ := \mathcal{S}\cap \{ z &gt; 0 \}   \,.
+\]</span></p>
+<blockquote class="blockquote">
+<p>This is because <span class="math inline">\(W\)</span> contains a ball of suitable radius <span class="math inline">\(\delta&gt;0\)</span> and centered at <span class="math inline">\({\pmb{0}}\)</span>.</p>
+</blockquote>
+<p>Hence <span class="math inline">\({\pmb{\sigma}}_{i_0}(B_{\varepsilon}(\mathbf{x}_0))\)</span> contains points of <span class="math inline">\(\mathcal{S}^-\)</span> and <span class="math inline">\(\mathcal{S}^+\)</span>, implying that <span class="math display">\[
+V := {\pmb{\sigma}}_{i_0}(B_{\varepsilon}(\mathbf{x}_0)) \smallsetminus \{{\pmb{0}}\}
+\]</span> is disconnected, with disconnection given by <span class="math display">\[
+V = ( V \cap \mathcal{S}^- ) \cup (V \cap \mathcal{S}^+) \,.
+\]</span> However <span class="math inline">\(V\)</span> is homeomorphic to <span class="math display">\[
+B_{\varepsilon} (\mathbf{x}_0) \smallsetminus \{ \mathbf{x}_0 \} \,,
+\]</span> which is instead connected. Contradiction. Hence <span class="math inline">\(\mathcal{S}\)</span> is not a smooth surface.</p>
+</div></details>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/surface_cone.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">The circular cone is not a smooth surface. This is because <span class="math inline">\(\mathcal{S}\smallsetminus \{{\pmb{0}}\}\)</span> is disconnected.</figcaption>
+</figure>
+</div>
+</section>
+<section id="regular-surfaces" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="regular-surfaces"><span class="header-section-number">4.3</span> Regular Surfaces</h2>
+<p>Recall that we had defined a regular curve to be a map <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathbb{R}^n\)</span> such that <span class="math display">\[
+\left\| {\pmb{\gamma}}(t) \right\| \neq 0 \,, \quad \forall \, t \in (a,b) \,.
+\]</span> This allowed us to define tangent vectors and, eventually, Frenet frame. We want to do something similar for smooth surfaces.</p>
+<div id="regular-surfaces-1" class="Definition" title="Regular Surfaces">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 25: </strong>Regular Surfaces</summary><div>Regular if the differential <span class="math inline">\(d{\pmb{\sigma}}_{\mathbf{x}} \colon \mathbb{R}^2 \to \mathbb{R}^3\)</span> is injective for all <span class="math inline">\(\mathbf{x}\in \mathbb{R}^2\)</span>. If we represent the differential as a matrix, with respect to the standard basis, we get the Jacobian <span class="math display">\[
+J{\pmb{\sigma}}(u,v) =
+\left(
+\begin{array}{ccc}
+\sigma^1_{u}  &amp;  \sigma^1_{v} \\
+\sigma^2_{u}  &amp;  \sigma^2_{v} \\
+\sigma^3_{u}  &amp;  \sigma^3_{v} \\
+\end{array}
+\right)
+\]</span> Injectivity of <span class="math inline">\(d{\pmb{\sigma}}\)</span> corresponds to <span class="math inline">\(J{\pmb{\sigma}}\)</span> having rank-2. This means that the vectors <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly independent. In coordinates<p></p>
+<p>Let <span class="math inline">\(U \subset \mathbb{R}^2\)</span> be open A surface chart <span class="math display">\[
 {\pmb{\sigma}}= {\pmb{\sigma}}(u,v)  \colon U \to \mathbb{R}^3
 \]</span> is called <strong>regular</strong> if the partial derivatives <span class="math display">\[
 {\pmb{\sigma}}_u(u,v) = \frac{d{\pmb{\sigma}}}{du}(u,v) \,, \quad
 {\pmb{\sigma}}_v(u,v) = \frac{d{\pmb{\sigma}}}{dv}(u,v)
-\]</span> are linearly independent vectors of <span class="math inline">\(\mathbb{R}^3\)</span> for all <span class="math inline">\((u,v) \in U\)</span>.<p></p>
-</div></details>
-</div>
-<div id="Definition-10" class="Definition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 10</strong></summary><div>Let <span class="math inline">\(U \subset \mathbb{R}^2\)</span> be open. A surface chart <span class="math display">\[
-{\pmb{\sigma}}\colon U \to \mathbb{R}^3
-\]</span> is called a <strong>conformal parametrization</strong> if the first fundamental form satisfies <span class="math display">\[
-E \, du^2 + F \, du \ dv + G \, dv^2 = \lambda(u,v)  ( du^2 +  dv^2)
-\]</span> for some smooth function <span class="math inline">\(\lambda \colon U \to \mathbb{R}\)</span>.<p></p>
-</div></details>
-</div>
-<div id="Definition-11" class="Definition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 11</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a surface and <span class="math inline">\({\pmb{\sigma}}\colon U \to V \cap \mathcal{S}\)</span> a surface chart. The principal unit normal to <span class="math inline">\(\mathcal{S}\)</span> is <span class="math display">\[
-\mathbf{N} = \frac{ {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v }{ \left\| {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v \right\| } \,.
-\]</span><p></p>
-</div></details>
-</div>
-<p>Denote by <span class="math display">\[
-\mathbb{S}^2 = \{ \mathbf{x}\in \mathbb{R}^3 \, \colon \, \left\| \mathbf{x} \right\| = 1 \}
-\]</span> the unit sphere in <span class="math inline">\(\mathbb{R}^3\)</span>.</p>
-<div id="Definition-12" class="Definition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 12</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a surface and denote by <span class="math inline">\(\mathbf{N}\)</span> the principal unit normal. The <strong>Gauss map</strong> of <span class="math inline">\(\mathcal{S}\)</span> is the map <span class="math inline">\(G \colon \mathcal{S}\to \mathbb{S}^2\)</span> defined by <span class="math display">\[
-G(\mathbf{p}):= \mathbf{N}(\mathbf{p}) \,.
-\]</span> The <strong>Weingarten map</strong> is the derivative of the Gauss map, denoted by <span class="math inline">\(\mathcal{W}\colon T_{\mathbf{p}}\mathcal{S}\to T_{G(\mathbf{p})} \mathbb{S}^2\)</span>.<p></p>
+\]</span> are linearly independent vectors of <span class="math inline">\(\mathbb{R}^3\)</span> for all <span class="math inline">\((u,v) \in U\)</span>.</p>
 </div></details>
 </div>
 

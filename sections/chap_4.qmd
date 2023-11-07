@@ -63,6 +63,7 @@ some basic notation and terminology regarding the topology of $\R^n$ and smooth 
 
 ### Topology of $\R^n$
 
+
 The Euclidean norm on $\R^n$ is denoted by 
 $$
 \| \xx \| := \sqrt{ \sum_{i=1}^n x_i^2 }\,, \quad \xx = (x_1 , \ldots, x_n) \in \R^n \,.
@@ -71,6 +72,7 @@ The Euclidean norm induces the distance
 $$
 d(\xx,\yy) := \| \xx - \yy \| =   \sqrt{ \sum_{i=1}^n (x_i - y_i)^2 } \,.
 $$
+
 
 ::: Definition
 ### Euclidean Topology 
@@ -151,7 +153,11 @@ If $U \in \TT_A$ we say that $U$ is open in $A$.
 ### Smooth functions
 
 
-We recall some basic facts about smooth functions from $\R^n$ into $\R^m$.
+We recall some basic facts about smooth functions from $\R^n$ into $\R^m$. For a vector valued function $f \colon \R^n \to \R^m$ we denote its components by 
+$$
+f = (f_1,\ldots,f_m) \,.
+$$
+
 
 ::: Definition
 ### Continuous Function
@@ -165,31 +171,67 @@ We say that $f$ is continuous in $U$ if it is continuous for all $\xx \in U$.
 :::
 
 
-**Remark**: Let $f \colon U \subseteq \R^n \to V \subseteq \R^m$, with $U,V$ open. We have that $f$ is continuous if and only if $f^{-1}(A)$ is open in $U$, for all $A$ open in $V$.
+::: Remark
+
+Let $f \colon U \subseteq \R^n \to V \subseteq \R^m$, with $U,V$ open. We have that $f$ is continuous if and only if $f^{-1}(A)$ is open in $U$, for all $A$ open in $V$.
+
+:::
 
 
-**Homeomorphism**: Let $f \colon U \subseteq \R^n \to V \subseteq \R^m$ with $U,V$ open. We say that $f$ is a homeomorphism if $f$ is continuous and there exists inverse $f^{-1} \colon V \to U$ continuous.
+::: Definition
+### Homeomorphism
+
+Let $f \colon U \subseteq \R^n \to V \subseteq \R^m$ with $U,V$ open. We say that $f$ is a homeomorphism if $f$ is continuous and there exists inverse $f^{-1} \colon V \to U$ continuous.
+
+:::
 
 
-**Differentiable Function**: Let $f \colon U \subseteq \R^n \to \R^m$ with $U$ open. We say that $f$ is differentiable at $\xx \in U$ if there exists a linear map $df_{\xx} \colon \R^n \to \R^m$ such that
+
+::: Definition
+### Differentiable Function
+
+Let $f \colon U \subseteq \R^n \to \R^m$ with $U$ open. We say that $f$ is differentiable at $\xx \in U$ if there exists a linear map $df_{\xx} \colon \R^n \to \R^m$ such that
 $$
 \lim_{\e \to 0} \   \frac{ f(\xx + \e \pmb{h} )  - f(\xx) - \e \, df_{\xx}(\pmb{h}) }{ \e } = 0 \,,
 $$
-for all $\pmb{h} \in \R^n$. The map $df_{\xx}$ is called the **differential** of $f$ at $\xx$. 
+for all $\pmb{h} \in \R^n$, where the limit is taken in $\R^m$. The map $df_{\xx}$ is called the **differential** of $f$ at $\xx$. 
+
+:::
 
 
-We denote by $\{\ee_i\}$ the standard basis of $\R^n$. 
+We denote by $\{\ee_i\}_{i=1}^n$ the standard basis of $\R^n$.
 
-**Partial Derivative**: Let $f \colon U \subseteq \R^n \to \R^m$ with $U$ open be differentiable. The partial derivative of $f$ at $\xx \in U$ in direction $\ee_i$ is given by
+::: Definition
+### Partial Derivative
+
+Let $f \colon U \subseteq \R^n \to \R^m$ with $U$ open be differentiable. The partial derivative of $f$ at $\xx \in U$ in direction $\ee_i$ is given by
 $$
 \frac{\partial f}{\partial x_i} := \lim_{\e \to 0}  \frac{ f( \xx + \e \ee_i ) - f(\xx) }{ \e } \,.
 $$
 
+:::
 
-**Jacobian Matrix**: The linear map $df_{\xx} \colon \R^n \to \R^m$ can be represented in matrix form by  
 
 
-**Multi-index Notation**: For a multi-index
+::: Definition
+### Jacobian Matrix
+
+The linear map $df_{\xx} \colon \R^n \to \R^m$ can be represented in matrix form, with respect to the Euclidean basis, by the Jacobian matrix
+$$
+Jf(x):= \left( \frac{\partial f_i}{\partial x_j} \right)_{i,j}  \in \R^{m \times n} \,.
+$$
+If $m=n$ then $Jf \in \R^{n \times n}$ is a square matrix and we can compute its determinant, denoted by
+$$
+\det Jf \,.
+$$
+:::
+
+
+
+::: Definition
+### Multi-index notation
+
+For a multi-index
 $$
 \alpha := (\alpha_1, \ldots , \alpha_n) \in \N^n
 $$
@@ -199,16 +241,144 @@ $$
 $$
 the length of the multi-index. 
 
+:::
 
 
-**Smooth Function**: Let $f \colon U \subseteq \R^n \to \R^m$ with $U$ open. We say that $f$ is smooth if the derivatives 
+
+
+::: Definition
+### Smooth Function
+
+Let $f \colon U \subseteq \R^n \to \R^m$ with $U$ open. We say that $f$ is smooth if the derivatives 
 $$
-\frac{\partial^\alpha f}{d\xx^\alpha} :=  \frac{\partial^{\alpha_1}}{ \partial x_1^{\alpha_1}} \cdots \frac{\partial^{\alpha_n}}{ \partial x_n^{\alpha_n}} \, f
+\frac{\partial^{|\alpha|} f}{d\xx^\alpha} :=  \frac{\partial^{\alpha_1}}{ \partial x_1^{\alpha_1}} \cdots \frac{\partial^{\alpha_n}}{ \partial x_n^{\alpha_n}} \, f
 $$
 exist for each multi-index $\alpha \in \N^n$. Note that in this case all the derivatives of $f$ are automatically continuous.
 
+:::
 
-**Example**
+
+
+
+::: Notation
+### Gradient and partial derivatives
+
+Let $f \colon U \subseteq \R^n \to \R$ be smooth. We denote the partial derivatives by 
+$$
+\partial_{x_i} f := \frac{\partial f}{\partial x_i} \,, \quad 
+\partial_{x_i x_j} f := \frac{\partial^2 f}{\partial x_i \partial x_j} \,,
+\quad 
+\partial_{x_i x_j x_k} f := \frac{\partial^3 f}{\partial x_i \partial x_j \partial x_k} \,.
+$$
+
+For $f \colon U \subseteq \R^n \to \R$ smooth we denote the **gradient** by
+$$
+\nabla f (\xx) = \left(  f_{x_1}(\xx) , \ldots ,  f_{x_n}(\xx) \right) \,.
+$$
+
+:::
+
+
+
+::: Example
+
+The functions $f \colon \R^2 \to \R$ and $g \colon \R^2 \to \R^3$ defined by
+$$
+f(x,y) := \cos(x)y \,, \quad 
+g(x,y) := (x^2,y^2,x-y)
+$$
+are both smooth.
+
+:::
+
+
+
+::: Definition
+### Diffeomorphism
+
+Let $f \colon U \to V$ with $U \subseteq \R^n$ and $V \subseteq \R^n$ open. We say that $f$ is a **diffeomorphism** between $U$ and $V$ if $f$ is smooth and there exists 
+smooth inverse $f^{-1} \colon V \to U$.
+
+:::
+
+
+
+We recall, without proof, the Inverse Function Theorem. Please note that in the statement the function $f$ is defined from $\R^n$ into $\R^n$.
+
+
+
+::: Theorem
+### Inverse Function Theorem
+
+Let $f \colon U \to \R^n$ with $U \subseteq \R^n$ open. Suppose $f$ is a smooth function and
+$$
+\det J f(\xx_0) \neq 0 \,,
+$$
+for some $\xx_0 \in U$. Then there exist open sets $U_0 , V \subseteq \R^n$ such that $\xx_0 \in U_0$, $f(\xx_0) \in V$ and $f \colon U_0 \to V$ is a diffeomorphism.
+
+
+:::
+
+
+::: Warning 
+
+Even if 
+$$
+\det J f(\xx) \neq 0 \,,
+$$
+for all $\xx \in U$, it is not guaranteed that $f$ is a diffeomorphism between $U$ and $f(U)$.
+
+:::
+
+
+Non-vanishing Jacobian determinant is a necessary condition for being a diffeomorphism.
+
+
+
+::: Proposition
+
+Let $f \colon U \to \R^n$ with $U \subseteq \R^n$ open. Suppose $f$ is a diffeomorphism on $U$. Then 
+$$
+\det Jf (\xx) \neq 0 \,, \quad   \forall \, \xx \in \R^n \,.
+$$
+
+:::
+
+
+
+::: Example
+
+Define $f \colon \R^2 \to \R^2$ by
+$$
+f(x,y) := (\cos(x) \sin(y), \sin(x) \sin(y)) \,.
+$$
+Then 
+$$
+J f (x,y) = 
+\left(
+\begin{array}{cc}
+ - \sin(x) \sin(y)  &   \cos(x) \cos(y) \\
+ \cos(x) \sin(y)    &   \sin(x) \cos(y)
+\end{array}
+\right) \,.
+$$
+and 
+\begin{align*}
+\det Jf(x,y) & = - \sin^2(x) \cos(y) \sin(y) - \cos^2(x) \cos(y) \sin(y) \\
+             & = - \sin(y) \cos(y) \\
+             & = - \frac{1}{2} \sin(2y) \,.
+\end{align*}
+Therefore 
+$$
+\det Jf(x,y) \neq 0 \quad \iff \quad 
+y \neq \frac{n \pi}{2} \,, \,\, n \in \N \,.
+$$
+Hence $f$ is a diffeomorphism away from the lines
+$$
+L_n := \left\{ \left(x, \frac{n \pi}{2} \right) \divider x \in \R \right\} \,.
+$$
+
+:::
 
 
 
@@ -217,35 +387,298 @@ exist for each multi-index $\alpha \in \N^n$. Note that in this case all the der
 
 ## Smooth surfaces
 
+
+We can finally give the definition of smooth surface in $\R^3$.
+
+
 ::: Definition
+### Smooth Surface
 
-A set $\SSS \subset \R^3$ is a **surface** if for every point $\pp \in \SSS$ there exist open sets $U \subset \R^2$, $V \subset \R^3$ such that
+Let $\SSS \subseteq \R^3$ be a connected set. We say that $\SSS$ is a **smooth surface** if for every point $\pp \in \SSS$ there exist an open set  $U \subseteq \R^2$ and a smooth map
+$$
+\sss \colon U \to  \sss(U) \subseteq \SSS \,
+$$
+such that 
 
-- $\pp \in V$,
-- $U$ is diffeomorphic to $V \cap \SSS$.
+- $\pp \in \sss(U)$
+- $\sss(U)$ is open in $\SSS$
+- $\sss$ is a homeomorphism between $U$ and $\sss(U)$
+
 
 Further:
 
-- A diffeomorphism of $U$ into $V \cap \SSS$, denoted by
-$$
-\sss \colon U \to  V \cap \SSS \,
-$$
-is called a **surface chart**. 
+- The homeomorphism $\sss$ is called a **surface chart**. 
 - For each $i \in I$ suppose to have a surface chart
 $$
-\sss_i  \colon U_i \to V_i \cap \SSS \,.
+\sss_i  \colon U_i \to \sss(U_i) \subseteq \SSS \,.
 $$
 We say that the family $\{ \sss_i\}_{i \in I}$ is an **atlas** of $\SSS$ if 
 $$
-\bigcup_{i \in I} (V_i \cap \SSS ) = \SSS \,.
+\SSS = \bigcup_{i \in I} \sss_i(U_i)  \,.
 $$
+
+
 :::
- 
-Note that a surface chart $\sss$ is a map from $\R^2$ into $\R^3$.
-Points in $U$ will be denoted by the pair $(u,v)$, while points on $\SSS$ by $\pp$ and points in $\R^3$ by $\xx$.
+
+
+
+
+::: Remark
+
+- A surface chart $\sss$ is a map from $\R^2$ into $\R^3$.
+
+
+- Given a chart $\sss \colon U \to \sss(U)$, the set $U$ is open in $\R^2$ while $\sss(U)$ is open in $\SSS$ with the subspace topology. This means that there exists $W \subseteq \R^3$ open such that
+$$
+\sss(U) = W \cap \SSS \,.
+$$
+
+- The omeomorphism condition is saying that $\sss(U) \subseteq \SSS$ looks locally (around $\pp$) like an open set $U \subseteq \R^2$.
+
+:::
+
+
+
+![Sketch of the surface $\SSS$ and chart $\sss \colon U \to \sss(U) \subseteq \SSS$. The set $U \subseteq \R^2$ is open in $\R^2$ and $\sss(U)$ is open in $\SSS$. This means there exists $W$ open in $\R^3$ such that $\sss(U) = \SSS \cap W$.](/images/surfaces_example_3.png){width=70%}
+
+
+::: Notation
+
+- Points in $U$ will be denoted with the pair $(u,v)$.
+
+- Partial derivatives of a chart $\sss = \sss (u,v)$ will be denoted by
+$$
+\sss_u := \frac{\partial \sss }{\partial u} \,, \quad 
+\sss_v := \frac{\partial \sss }{\partial v} \,.
+$$
+Similar notations are adopted for higher order derivatives.
+
+- Components of $\sss$ will be denoted by
+$$
+\sss = (\sigma^1, \sigma^2, \sigma^3) \,.
+$$
+
+:::
+
+
+
+
+::: Example
+### 2D Plane in $\R^3$
+
+Planes in $\R^3$ are surfaces with atlas containing one chart. Namely, a plane
+$\pi \subseteq \R^3$ is described by
+$$
+\pi  = \{  \xx  \in \R^3 \divider \xx \cdot \ww = \lambda \} \,.
+$$
+Let
+
+- $\pp,\pmb{q} \in \R^3$ be ortoghonal to each other and to $\ww$.
+- $\pmb{a} \in \pi$ be any point in the plane.
+
+
+If $\xx \in \pi$ then $\xx-\pmb{a}$ is parallel to the plane and $\pi$ can be
+equivalently represented as
+$$
+\pi = \{ \pmb{a} + u \pp + v \pmb{q} \divider u,v \in \R \} \,.
+$$
+Define the map
+$$
+\sss \colon \R^2 \to \pi \,, \quad \sss(u,v):= \pmb{a} + u \pp + v \pmb{q} \,.
+$$
+We have:
+
+- $\sss$ is smooth.
+- For each $\xx \in \pi$ we have $\xx \in \sss(\R^2) = \pi$.
+- $\sss(\R^2)$ is open in $\pi$, since $\sss(\R^2) = \pi$.
+- The inverse of $\sss$ is 
+$$
+\sss^{-1} \colon \pi \to \R^2 \,, \quad 
+\sss^{-1} (\xx) = ( (\xx - \pmb{a}) \cdot \pp , (\xx - \pmb{a}) \cdot \pmb{q}  ) \,.
+$$
+- As $\sss^{-1}$ is continuous, then $\sss$ is a homeomorphism between $\R^2$ and $\pi$. 
+
+Therefore $\sss$ is a chart for $\pi$. Since
+$$
+\sss(\R^2) = \pi \,,
+$$
+we have that $\{\sss\}$ is an atlas for $\pi$, and hence $\pi$ is a smooth surface.
+
+:::
+
+
+
+![A plane $\pi$ is a smooth surface with atlas containing a single chart $\sss \colon \R^2 \to \pi$.](/images/surface_plane.png){width=70%}
+
+
+
+
+::: Example
+### Unit cylinder
+
+Consider the infinite unit cylinder
+$$
+\SSS  = \{  (x,y,z) \in \R^3 \divider x^2 + y^2 = 1 \} \,.
+$$
+$\SSS$ is a smooth surface with an atlas consisting of two charts:
+$$
+\sss_i \colon U_i \to \R^3   \,, \quad 
+\sss_i(u,v):= (\cos(u),\sin(u),v)
+$$
+for $i=1,2$, where
+$$
+U_1 := \left( 0,\frac{ 3 \pi}{2} \right) \times \R \,, \quad 
+U_2 := \left( \pi,\frac{ 5 \pi}{2} \right) \times \R \,.
+$$
+
+> Indeed:
+>
+> - $\sss_i$ is smooth.
+> - $\{\sss_1 , \sss_2\}$ is an atlas for $\SSS$, since 
+$$
+\SSS = \sss_1(U_1) \cup \sss_2(U_2) \,.
+$$
+> - One can check that $\sss_i(U_i)$ is open in $\SSS$.
+> - $\sss_i$ is a homeomorphism of $U_i$ in $\sss(U_i)$.
+
+:::
+
+
+![Unit cylinder $\SSS$ is a smooth surface with atlas given by $\{\sss_1,\sss_2\}$. Depicted are the images $\sss_1(U_1)$ and $\sss_2(U_2)$. ](/images/surface_cylinder.png){width=70%}
+
+
+
+::: Important
+
+
+Consider again the unit cylinder 
+$$
+\SSS  = \{  (x,y,z) \in \R^3 \divider x^2 + y^2 = 1 \} \,.
+$$
+Define the map 
+$$
+\sss \colon U \to \R^3   \,, \quad 
+\sss (u,v):= (\cos(u),\sin(u),v)
+$$
+where
+$$
+U:= [ 0, 2 \pi ] \times \R \,.
+$$
+Clearly we have 
+$$
+\sss(U) = \SSS \,.
+$$
+However $\{\sss\}$ is not an atlas for $\SSS$, since $\sss$ is not a chart. This is because $\sss$ is not invertible, as for example
+$$
+\sss(0,0) = \sss(2\pi,0) \,. 
+$$
+Therefore $\sss$ cannot be an omeomorphism between $U$ and $\SSS$.
+
+
+
+:::
+
+
+
+
+::: Example
+### Circular cone
+
+Consider the circular cone
+$$
+\SSS := \{ (x,y,z) \in \R^3 \divider x^2 + y^2 = z^2  \} \,.
+$$
+Then $\SSS$ is not a smooth surface. This is essentially consequence of
+the fact that
+$$
+\SSS \smallsetminus \{\zero\}
+$$
+is a disconnected set.
+
+
+To see that $\SSS$ is not a smooth surface, suppose there exists an 
+atlas $\{\sss_i\}$ of $\SSS$
+$$
+\sss_i \colon U_i \to \sss_i(U_i) \subseteq \SSS \,.
+$$
+In particular there exists a chart $\sss_{i_0}$ such that 
+$$
+\zero \in \sss_{i_0}(U_{i_0}) \,.
+$$
+Let $\xx_0 \in U_{i_0}$ be the point such that
+$$
+\sss_{i_0}(\xx_0) = \zero \,.
+$$
+Consider the ball $B_{\e}(\xx_0)$ for any $\e > 0$. Since $\sss_{i_0}$ is a homeomorphism, we deduce that
+$$
+\sss_{i_0}(B_{\e}(\xx_0))
+$$
+is open in $\SSS$. Hence there exists an open set $W$ in $\R^3$ such that
+$$
+\sss_{i_0}(B_{\e}(\xx_0)) = \SSS \cap W \,.
+$$
+As $\zero \in \sss_{i_0}(B_{\e}(\xx_0))$ and $W$ is open in $\R^3$, it follows that
+$W$ contains points of both $\SSS^-$ and $\SSS^+$, with
+$$
+\SSS^- := \SSS \cap \{ z < 0 \}   \,, \quad
+\SSS^+ := \SSS \cap \{ z > 0 \}   \,.
+$$
+
+>This is because $W$ contains a ball of suitable radius $\delta>0$ and centered at $\zero$.
+
+Hence $\sss_{i_0}(B_{\e}(\xx_0))$ contains points of $\SSS^-$ and $\SSS^+$, implying that 
+$$
+V := \sss_{i_0}(B_{\e}(\xx_0)) \smallsetminus \{\zero\}
+$$
+is disconnected, with disconnection given by
+$$
+V = ( V \cap \SSS^- ) \cup (V \cap \SSS^+) \,.
+$$
+However $V$ is homeomorphic to 
+$$
+B_{\e} (\xx_0) \smallsetminus \{ \xx_0 \} \,,
+$$
+which is instead connected. Contradiction. Hence $\SSS$ is not a smooth surface.
+
+:::
+
+
+
+
+![The circular cone is not a smooth surface. This is because $\SSS \smallsetminus \{\zero\}$ is disconnected.](/images/surface_cone.png){width=70%}
+
+
+
+
+## Regular Surfaces
+
+
+Recall that we had defined a regular curve to be a map $\g \colon (a,b) \to \R^n$ such that
+$$
+\norm{\g(t)} \neq 0 \,, \quad \forall \, t \in (a,b) \,.
+$$
+This allowed us to define tangent vectors and, eventually, Frenet frame.
+We want to do something similar for smooth surfaces.
+
 
 
 ::: Definition
+### Regular Surfaces
+
+Regular if the differential $d\sss_{\xx} \colon \R^2 \to \R^3$ is injective for all $\xx \in \R^2$. If we represent the differential as a matrix, with respect to the standard basis, we get the Jacobian
+$$
+J\sss (u,v) = 
+\left(
+\begin{array}{ccc}
+\sigma^1_{u}  &  \sigma^1_{v} \\
+\sigma^2_{u}  &  \sigma^2_{v} \\
+\sigma^3_{u}  &  \sigma^3_{v} \\
+\end{array} 
+\right)
+$$
+Injectivity of $d\sss$ corresponds to $J\sss$ having rank-2. This means that
+the vectors $\sss_u$ and $\sss_v$ are linearly independent. 
+In coordinates 
 
 Let $U \subset \R^2$ be open A surface chart 
 $$
@@ -262,7 +695,18 @@ are linearly independent vectors of $\R^3$ for all $(u,v) \in U$.
 
 
 
+
+
+
+
+
+
+::: {.content-hidden}
+
+
+
 ::: Definition
+
 
 Let $U \subset \R^2$ be open. A surface chart 
 $$
@@ -306,3 +750,5 @@ The **Weingarten map** is the derivative of the Gauss map, denoted by $\WW \colo
 :::
 
 
+
+:::

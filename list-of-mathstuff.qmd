@@ -609,12 +609,46 @@
 
  [**Definition 4.7**](#continuous-function-1): Continuous Function\Pageref{continuous-function-1}
 
- [**Definition 4.8**](#Definition-4.8)\Pageref{Definition-4.8}
+ [**Remark 4.8**](#Remark-4.8)\Pageref{Remark-4.8}
 
- [**Definition 4.9**](#Definition-4.9)\Pageref{Definition-4.9}
+ [**Definition 4.9**](#homeomorphism): Homeomorphism\Pageref{homeomorphism}
 
- [**Definition 4.10**](#Definition-4.10)\Pageref{Definition-4.10}
+ [**Definition 4.10**](#differentiable-function): Differentiable Function\Pageref{differentiable-function}
 
- [**Definition 4.11**](#Definition-4.11)\Pageref{Definition-4.11}
+ [**Definition 4.11**](#partial-derivative): Partial Derivative\Pageref{partial-derivative}
 
- [**Definition 4.12**](#Definition-4.12)\Pageref{Definition-4.12}
+ [**Definition 4.12**](#jacobian-matrix): Jacobian Matrix\Pageref{jacobian-matrix}
+
+ [**Definition 4.13**](#multi-index-notation): Multi-index notation\Pageref{multi-index-notation}
+
+ [**Definition 4.14**](#smooth-function): Smooth Function\Pageref{smooth-function}
+
+ [**Notation**](#gradient-and-partial-derivatives): Gradient and partial derivatives\Pageref{gradient-and-partial-derivatives}
+
+ [**Example 4.15**](#Example-4.15)\Pageref{Example-4.15}
+
+ [**Definition 4.16**](#diffeomorphism-1): Diffeomorphism\Pageref{diffeomorphism-1}
+
+ [**Theorem 4.17**](#inverse-function-theorem): Inverse Function Theorem\Pageref{inverse-function-theorem}
+
+ [**Warning**](#Warning*-4.2)\Pageref{Warning*-4.2}
+
+ [**Proposition 4.18**](#Proposition-4.18)\Pageref{Proposition-4.18}
+
+ [**Example 4.19**](#Example-4.19)\Pageref{Example-4.19}
+
+ [**Definition 4.20**](#smooth-surface): Smooth Surface\Pageref{smooth-surface}
+
+ [**Remark 4.21**](#Remark-4.21)\Pageref{Remark-4.21}
+
+ [**Notation**](#Notation*-4.3)\Pageref{Notation*-4.3}
+
+ [**Example 4.22**](#d-plane-in-mathbbr3): 2D Plane in $\mathbb{R}^3$\Pageref{d-plane-in-mathbbr3}
+
+ [**Example 4.23**](#unit-cylinder): Unit cylinder\Pageref{unit-cylinder}
+
+ [**Important**](#Important*-4.4)\Pageref{Important*-4.4}
+
+ [**Example 4.24**](#circular-cone): Circular cone\Pageref{circular-cone}
+
+ [**Definition 4.25**](#regular-surfaces-1): Regular Surfaces\Pageref{regular-surfaces-1}
