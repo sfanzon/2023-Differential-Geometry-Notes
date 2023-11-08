@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -66,13 +85,25 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Warning {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Question {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
 .Assumption {
   --color1: #f4cce0;
@@ -82,21 +113,25 @@ ul.task-list li input[type="checkbox"] {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.Important {
+.Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Remark {
+.Example {
   --color1: #bce5de;
   --color2: #21aa93;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .Proof {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
-}
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
 }
 .TODO {
   --color1: #e7b1b4;
@@ -106,37 +141,21 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
 .DONE {
   --color1: #cce7b1;
   --color2: #86b754;
 }
-.Goal {
+.Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
 }
 </style>
 
@@ -243,8 +262,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#topology-of-mathbbrn" id="toc-topology-of-mathbbrn" class="nav-link" data-scroll-target="#topology-of-mathbbrn"><span class="header-section-number">4.1.1</span> Topology of <span class="math inline">\(\mathbb{R}^n\)</span></a></li>
   <li><a href="#smooth-functions" id="toc-smooth-functions" class="nav-link" data-scroll-target="#smooth-functions"><span class="header-section-number">4.1.2</span> Smooth functions</a></li>
   </ul></li>
-  <li><a href="#smooth-surfaces" id="toc-smooth-surfaces" class="nav-link" data-scroll-target="#smooth-surfaces"><span class="header-section-number">4.2</span> Smooth surfaces</a></li>
-  <li><a href="#regular-surfaces" id="toc-regular-surfaces" class="nav-link" data-scroll-target="#regular-surfaces"><span class="header-section-number">4.3</span> Regular Surfaces</a></li>
+  <li><a href="#definition-of-surface" id="toc-definition-of-surface" class="nav-link" data-scroll-target="#definition-of-surface"><span class="header-section-number">4.2</span> Definition of Surface</a></li>
+  <li><a href="#regular-surfaces" id="toc-regular-surfaces" class="nav-link" data-scroll-target="#regular-surfaces"><span class="header-section-number">4.3</span> Regular Surfaces</a>
+  <ul class="collapse">
+  <li><a href="#level-set-surfaces" id="toc-level-set-surfaces" class="nav-link" data-scroll-target="#level-set-surfaces"><span class="header-section-number">4.3.1</span> Level set surfaces</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -479,12 +501,12 @@ L_n := \left\{ \left(x, \frac{n \pi}{2} \right) \, \colon \,x \in \mathbb{R}\rig
 </div>
 </section>
 </section>
-<section id="smooth-surfaces" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="smooth-surfaces"><span class="header-section-number">4.2</span> Smooth surfaces</h2>
-<p>We can finally give the definition of smooth surface in <span class="math inline">\(\mathbb{R}^3\)</span>.</p>
-<div id="smooth-surface" class="Definition" title="Smooth Surface">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 20: </strong>Smooth Surface</summary><div>
-<p>Let <span class="math inline">\(\mathcal{S}\subseteq \mathbb{R}^3\)</span> be a connected set. We say that <span class="math inline">\(\mathcal{S}\)</span> is a <strong>smooth surface</strong> if for every point <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span> there exist an open set <span class="math inline">\(U \subseteq \mathbb{R}^2\)</span> and a smooth map <span class="math display">\[
+<section id="definition-of-surface" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="definition-of-surface"><span class="header-section-number">4.2</span> Definition of Surface</h2>
+<p>We can finally give the definition of surface in <span class="math inline">\(\mathbb{R}^3\)</span>.</p>
+<div id="surface" class="Definition" title="Surface">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 20: </strong>Surface</summary><div>
+<p>Let <span class="math inline">\(\mathcal{S}\subseteq \mathbb{R}^3\)</span> be a connected set. We say that <span class="math inline">\(\mathcal{S}\)</span> is a <strong>surface</strong> if for every point <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span> there exist an open set <span class="math inline">\(U \subseteq \mathbb{R}^2\)</span> and a smooth map <span class="math display">\[
 {\pmb{\sigma}}\colon U \to  {\pmb{\sigma}}(U) \subseteq \mathcal{S}\,
 \]</span> such that</p>
 <ul>
@@ -497,7 +519,9 @@ L_n := \left\{ \left(x, \frac{n \pi}{2} \right) \, \colon \,x \in \mathbb{R}\rig
 <li>The homeomorphism <span class="math inline">\({\pmb{\sigma}}\)</span> is called a <strong>surface chart</strong>.</li>
 <li>For each <span class="math inline">\(i \in I\)</span> suppose to have a surface chart <span class="math display">\[
 {\pmb{\sigma}}_i  \colon U_i \to {\pmb{\sigma}}(U_i) \subseteq \mathcal{S}\,.
-\]</span> We say that the family <span class="math inline">\(\{ {\pmb{\sigma}}_i\}_{i \in I}\)</span> is an <strong>atlas</strong> of <span class="math inline">\(\mathcal{S}\)</span> if <span class="math display">\[
+\]</span> We say that the family <span class="math display">\[
+\mathcal{A} = \{ {\pmb{\sigma}}_i\}_{i \in I}
+\]</span> is an <strong>atlas</strong> of <span class="math inline">\(\mathcal{S}\)</span> if <span class="math display">\[
 \mathcal{S}= \bigcup_{i \in I} {\pmb{\sigma}}_i(U_i)  \,.
 \]</span></li>
 </ul>
@@ -527,7 +551,12 @@ L_n := \left\{ \left(x, \frac{n \pi}{2} \right) \, \colon \,x \in \mathbb{R}\rig
 <li><p>Partial derivatives of a chart <span class="math inline">\({\pmb{\sigma}}= {\pmb{\sigma}}(u,v)\)</span> will be denoted by <span class="math display">\[
 {\pmb{\sigma}}_u := \frac{\partial {\pmb{\sigma}}}{\partial u} \,, \quad
 {\pmb{\sigma}}_v := \frac{\partial {\pmb{\sigma}}}{\partial v} \,.
-\]</span> Similar notations are adopted for higher order derivatives.</p></li>
+\]</span> Similar notations are adopted for higher order derivatives, e.g., <span class="math display">\[\begin{align*}
+{\pmb{\sigma}}_{uu} &amp; := \frac{\partial^2 {\pmb{\sigma}}}{\partial u^2} \,,
+&amp; {\pmb{\sigma}}_{uv} &amp; :=  \frac{\partial^2 {\pmb{\sigma}}}{\partial u \partial v} \,, \\
+{\pmb{\sigma}}_{vu} &amp; := \frac{\partial^2 {\pmb{\sigma}}}{\partial v  \partial u  } \,,  
+&amp; {\pmb{\sigma}}_{vv} &amp; :=  \frac{\partial^2 {\pmb{\sigma}}}{\partial v^2 } \,, \\
+\end{align*}\]</span></p></li>
 <li><p>Components of <span class="math inline">\({\pmb{\sigma}}\)</span> will be denoted by <span class="math display">\[
 {\pmb{\sigma}}= (\sigma^1, \sigma^2, \sigma^3) \,.
 \]</span></p></li>
@@ -549,7 +578,7 @@ L_n := \left\{ \left(x, \frac{n \pi}{2} \right) \, \colon \,x \in \mathbb{R}\rig
 \]</span> We have:</p>
 <ul>
 <li><span class="math inline">\({\pmb{\sigma}}\)</span> is smooth.</li>
-<li>For each <span class="math inline">\(\mathbf{x}\in \pi\)</span> we have <span class="math inline">\(\mathbf{x}\in {\pmb{\sigma}}(\mathbb{R}^2) = \pi\)</span>.</li>
+<li><span class="math inline">\(\mathbb{R}^2\)</span> is obviously open.</li>
 <li><span class="math inline">\({\pmb{\sigma}}(\mathbb{R}^2)\)</span> is open in <span class="math inline">\(\pi\)</span>, since <span class="math inline">\({\pmb{\sigma}}(\mathbb{R}^2) = \pi\)</span>.</li>
 <li>The inverse of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
 {\pmb{\sigma}}^{-1} \colon \pi \to \mathbb{R}^2 \,, \quad
@@ -559,20 +588,20 @@ L_n := \left\{ \left(x, \frac{n \pi}{2} \right) \, \colon \,x \in \mathbb{R}\rig
 </ul>
 <p>Therefore <span class="math inline">\({\pmb{\sigma}}\)</span> is a chart for <span class="math inline">\(\pi\)</span>. Since <span class="math display">\[
 {\pmb{\sigma}}(\mathbb{R}^2) = \pi \,,
-\]</span> we have that <span class="math inline">\(\{{\pmb{\sigma}}\}\)</span> is an atlas for <span class="math inline">\(\pi\)</span>, and hence <span class="math inline">\(\pi\)</span> is a smooth surface.</p>
+\]</span> we have that <span class="math inline">\(\{{\pmb{\sigma}}\}\)</span> is an atlas for <span class="math inline">\(\pi\)</span>, and hence <span class="math inline">\(\pi\)</span> is a surface.</p>
 </div></details>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../images/surface_plane.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">A plane <span class="math inline">\(\pi\)</span> is a smooth surface with atlas containing a single chart <span class="math inline">\({\pmb{\sigma}}\colon \mathbb{R}^2 \to \pi\)</span>.</figcaption>
+<figcaption class="figure-caption">A plane <span class="math inline">\(\pi\)</span> is a surface with atlas containing a single chart <span class="math inline">\({\pmb{\sigma}}\colon \mathbb{R}^2 \to \pi\)</span>.</figcaption>
 </figure>
 </div>
 <div id="unit-cylinder" class="Example" title="Unit cylinder">
 <details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 23: </strong>Unit cylinder</summary><div>
 <p>Consider the infinite unit cylinder <span class="math display">\[
 \mathcal{S}= \{  (x,y,z) \in \mathbb{R}^3 \, \colon \,x^2 + y^2 = 1 \} \,.
-\]</span> <span class="math inline">\(\mathcal{S}\)</span> is a smooth surface with an atlas consisting of two charts: <span class="math display">\[
+\]</span> <span class="math inline">\(\mathcal{S}\)</span> is a surface with an atlas consisting of two charts: <span class="math display">\[
 {\pmb{\sigma}}_i \colon U_i \to \mathbb{R}^3   \,, \quad
 {\pmb{\sigma}}_i(u,v):= (\cos(u),\sin(u),v)
 \]</span> for <span class="math inline">\(i=1,2\)</span>, where <span class="math display">\[
@@ -583,11 +612,12 @@ U_2 := \left( \pi,\frac{ 5 \pi}{2} \right) \times \mathbb{R}\,.
 <p>Indeed:</p>
 <ul>
 <li><span class="math inline">\({\pmb{\sigma}}_i\)</span> is smooth.</li>
+<li><span class="math inline">\(U_i\)</span> is clearly open in <span class="math inline">\(\mathbb{R}^2\)</span>.</li>
+<li>One can check that <span class="math inline">\({\pmb{\sigma}}_i(U_i)\)</span> is open in <span class="math inline">\(\mathcal{S}\)</span>.</li>
+<li><span class="math inline">\({\pmb{\sigma}}_i\)</span> is a homeomorphism of <span class="math inline">\(U_i\)</span> in <span class="math inline">\({\pmb{\sigma}}(U_i)\)</span>.</li>
 <li><span class="math inline">\(\{{\pmb{\sigma}}_1 , {\pmb{\sigma}}_2\}\)</span> is an atlas for <span class="math inline">\(\mathcal{S}\)</span>, since <span class="math display">\[
 \mathcal{S}= {\pmb{\sigma}}_1(U_1) \cup {\pmb{\sigma}}_2(U_2) \,.
 \]</span></li>
-<li>One can check that <span class="math inline">\({\pmb{\sigma}}_i(U_i)\)</span> is open in <span class="math inline">\(\mathcal{S}\)</span>.</li>
-<li><span class="math inline">\({\pmb{\sigma}}_i\)</span> is a homeomorphism of <span class="math inline">\(U_i\)</span> in <span class="math inline">\({\pmb{\sigma}}(U_i)\)</span>.</li>
 </ul>
 </blockquote>
 </div></details>
@@ -595,7 +625,7 @@ U_2 := \left( \pi,\frac{ 5 \pi}{2} \right) \times \mathbb{R}\,.
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../images/surface_cylinder.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Unit cylinder <span class="math inline">\(\mathcal{S}\)</span> is a smooth surface with atlas given by <span class="math inline">\(\{{\pmb{\sigma}}_1,{\pmb{\sigma}}_2\}\)</span>. Depicted are the images <span class="math inline">\({\pmb{\sigma}}_1(U_1)\)</span> and <span class="math inline">\({\pmb{\sigma}}_2(U_2)\)</span>.</figcaption>
+<figcaption class="figure-caption">Unit cylinder <span class="math inline">\(\mathcal{S}\)</span> is a surface with atlas <span class="math inline">\(\mathcal{A} = \{{\pmb{\sigma}}_1,{\pmb{\sigma}}_2\}\)</span>. Depicted are the images <span class="math inline">\({\pmb{\sigma}}_1(U_1)\)</span> and <span class="math inline">\({\pmb{\sigma}}_2(U_2)\)</span>.</figcaption>
 </figure>
 </div>
 <div id="Important*-4" class="Important">
@@ -613,13 +643,40 @@ U:= [ 0, 2 \pi ] \times \mathbb{R}\,.
 \]</span> Therefore <span class="math inline">\({\pmb{\sigma}}\)</span> cannot be an omeomorphism between <span class="math inline">\(U\)</span> and <span class="math inline">\(\mathcal{S}\)</span>.<p></p>
 </div></details>
 </div>
+<div id="graph-of-a-function" class="Example" title="Graph of a function">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 24: </strong>Graph of a function</summary><div>
+<p>Let <span class="math inline">\(U \subseteq \mathbb{R}^2\)</span> be open and <span class="math inline">\(f \colon U \to \mathbb{R}\)</span> be smooth. The graph of <span class="math inline">\(f\)</span> is the set <span class="math display">\[
+\Gamma_f := \{ (u,v,f(u,v)) \, \colon \,(u,v) \in U  \}  \,.
+\]</span> We have that <span class="math inline">\(\Gamma_f\)</span> is a surface with atlas given by <span class="math display">\[
+\mathcal{A} = \{ {\pmb{\sigma}}\}
+\]</span> where <span class="math inline">\({\pmb{\sigma}}\colon U \to \Gamma_f\)</span> is <span class="math display">\[
+{\pmb{\sigma}}(u,v):=(u,v,f(u,v)) \,.
+\]</span></p>
+<blockquote class="blockquote">
+<p>Let us check that <span class="math inline">\(\Gamma_f\)</span> is a surface:</p>
+<ul>
+<li><span class="math inline">\({\pmb{\sigma}}\)</span> is smooth since <span class="math inline">\(f\)</span> is smooth.</li>
+<li><span class="math inline">\(U\)</span> is open in <span class="math inline">\(\mathbb{R}^2\)</span> by assumption.</li>
+<li><span class="math inline">\({\pmb{\sigma}}(U) = \Gamma_f\)</span>, and therefore <span class="math inline">\({\pmb{\sigma}}(U)\)</span> is open in <span class="math inline">\(\Gamma_f\)</span>.</li>
+<li>The inverse of <span class="math inline">\({\pmb{\sigma}}\)</span> is given by <span class="math inline">\(\widetilde{{\pmb{\sigma}}} \colon \Gamma_f \to U\)</span> defined as <span class="math display">\[
+\widetilde{{\pmb{\sigma}}}(u,v,f(u,v)) := (u,v) \,.
+\]</span> Clearly <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> is continuous.</li>
+<li>Therefore <span class="math inline">\({\pmb{\sigma}}\)</span> is a homeomorphism of <span class="math inline">\(U\)</span> into <span class="math inline">\(\Gamma_f\)</span>.</li>
+<li><span class="math inline">\(\mathcal{A}=\{{\pmb{\sigma}}\}\)</span> is an atlas for <span class="math inline">\(\Gamma_f\)</span>, since <span class="math display">\[
+\Gamma_f = {\pmb{\sigma}}(U) \,.
+\]</span></li>
+</ul>
+</blockquote>
+</div></details>
+</div>
+<p>Let us conclude the section with an example of a set which is not a surface.</p>
 <div id="circular-cone" class="Example" title="Circular cone">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 24: </strong>Circular cone</summary><div>Consider the circular cone <span class="math display">\[
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 25: </strong>Circular cone</summary><div>Consider the circular cone <span class="math display">\[
 \mathcal{S}:= \{ (x,y,z) \in \mathbb{R}^3 \, \colon \,x^2 + y^2 = z^2  \} \,.
-\]</span> Then <span class="math inline">\(\mathcal{S}\)</span> is not a smooth surface. This is essentially consequence of the fact that <span class="math display">\[
+\]</span> Then <span class="math inline">\(\mathcal{S}\)</span> is not a surface. This is essentially consequence of the fact that <span class="math display">\[
 \mathcal{S}\smallsetminus \{{\pmb{0}}\}
 \]</span> is a disconnected set.<p></p>
-<p>To see that <span class="math inline">\(\mathcal{S}\)</span> is not a smooth surface, suppose there exists an atlas <span class="math inline">\(\{{\pmb{\sigma}}_i\}\)</span> of <span class="math inline">\(\mathcal{S}\)</span> <span class="math display">\[
+<p>To see that <span class="math inline">\(\mathcal{S}\)</span> is not a surface, suppose there exists an atlas <span class="math inline">\(\{{\pmb{\sigma}}_i\}\)</span> of <span class="math inline">\(\mathcal{S}\)</span> <span class="math display">\[
 {\pmb{\sigma}}_i \colon U_i \to {\pmb{\sigma}}_i(U_i) \subseteq \mathcal{S}\,.
 \]</span> In particular there exists a chart <span class="math inline">\({\pmb{\sigma}}_{i_0}\)</span> such that <span class="math display">\[
 {\pmb{0}}\in {\pmb{\sigma}}_{i_0}(U_{i_0}) \,.
@@ -642,23 +699,41 @@ V := {\pmb{\sigma}}_{i_0}(B_{\varepsilon}(\mathbf{x}_0)) \smallsetminus \{{\pmb{
 V = ( V \cap \mathcal{S}^- ) \cup (V \cap \mathcal{S}^+) \,.
 \]</span> However <span class="math inline">\(V\)</span> is homeomorphic to <span class="math display">\[
 B_{\varepsilon} (\mathbf{x}_0) \smallsetminus \{ \mathbf{x}_0 \} \,,
-\]</span> which is instead connected. Contradiction. Hence <span class="math inline">\(\mathcal{S}\)</span> is not a smooth surface.</p>
+\]</span> which is instead connected. Contradiction. Hence <span class="math inline">\(\mathcal{S}\)</span> is not a surface.</p>
 </div></details>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../images/surface_cone.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">The circular cone is not a smooth surface. This is because <span class="math inline">\(\mathcal{S}\smallsetminus \{{\pmb{0}}\}\)</span> is disconnected.</figcaption>
+<figcaption class="figure-caption">The circular cone is not a surface. This is because <span class="math inline">\(\mathcal{S}\smallsetminus \{{\pmb{0}}\}\)</span> is disconnected.</figcaption>
 </figure>
 </div>
 </section>
 <section id="regular-surfaces" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="regular-surfaces"><span class="header-section-number">4.3</span> Regular Surfaces</h2>
-<p>Recall that we had defined a regular curve to be a map <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathbb{R}^n\)</span> such that <span class="math display">\[
+<p>We have defined a regular curve to be a map <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathbb{R}^n\)</span> such that <span class="math display">\[
 \left\| {\pmb{\gamma}}(t) \right\| \neq 0 \,, \quad \forall \, t \in (a,b) \,.
-\]</span> This allowed us to define tangent vectors and, eventually, Frenet frame. We want to do something similar for smooth surfaces.</p>
-<div id="regular-surfaces-1" class="Definition" title="Regular Surfaces">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 25: </strong>Regular Surfaces</summary><div>Regular if the differential <span class="math inline">\(d{\pmb{\sigma}}_{\mathbf{x}} \colon \mathbb{R}^2 \to \mathbb{R}^3\)</span> is injective for all <span class="math inline">\(\mathbf{x}\in \mathbb{R}^2\)</span>. If we represent the differential as a matrix, with respect to the standard basis, we get the Jacobian <span class="math display">\[
+\]</span> This allowed us to define tangent vectors and, eventually, Frenet frame.</p>
+<p>We want to do something similar for surfaces: We look for a condition that eventually will allow us to define tangent planes. This is why we introduce <strong>regular charts</strong> and <strong>regular surfaces</strong>.</p>
+<div id="regular-chart" class="Definition" title="Regular Chart">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 26: </strong>Regular Chart</summary><div>Let <span class="math inline">\(U \subseteq \mathbb{R}^2\)</span> be open. A map <span class="math display">\[
+{\pmb{\sigma}}= {\pmb{\sigma}}(u,v)  \colon U \to \mathbb{R}^3
+\]</span> is called a <strong>regular chart</strong> if the partial derivatives <span class="math display">\[
+{\pmb{\sigma}}_u(u,v) = \frac{d{\pmb{\sigma}}}{du}(u,v) \,, \quad
+{\pmb{\sigma}}_v(u,v) = \frac{d{\pmb{\sigma}}}{dv}(u,v)
+\]</span> are linearly independent vectors of <span class="math inline">\(\mathbb{R}^3\)</span> for all <span class="math inline">\((u,v) \in U\)</span>.<p></p>
+</div></details>
+</div>
+<p>The following gives more insight into the regularity condition.</p>
+<div id="Proposition-27" class="Proposition">
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 27</strong></summary><div>
+<p>Let <span class="math inline">\(U \subseteq \mathbb{R}^2\)</span> be open and consider a map <span class="math display">\[
+{\pmb{\sigma}}\colon U \to \mathbb{R}^3 \,.
+\]</span> They are equivalent:</p>
+<ol type="1">
+<li><span class="math inline">\({\pmb{\sigma}}\)</span> is a regular chart.</li>
+<li>The differential <span class="math inline">\(d{\pmb{\sigma}}_{\mathbf{x}} \colon \mathbb{R}^2 \to \mathbb{R}^3\)</span> is injective for all <span class="math inline">\(\mathbf{x}\in U\)</span>.</li>
+<li>The Jacobian matrix <span class="math display">\[
 J{\pmb{\sigma}}(u,v) =
 \left(
 \begin{array}{ccc}
@@ -667,17 +742,247 @@ J{\pmb{\sigma}}(u,v) =
 \sigma^3_{u}  &amp;  \sigma^3_{v} \\
 \end{array}
 \right)
-\]</span> Injectivity of <span class="math inline">\(d{\pmb{\sigma}}\)</span> corresponds to <span class="math inline">\(J{\pmb{\sigma}}\)</span> having rank-2. This means that the vectors <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly independent. In coordinates<p></p>
-<p>Let <span class="math inline">\(U \subset \mathbb{R}^2\)</span> be open A surface chart <span class="math display">\[
-{\pmb{\sigma}}= {\pmb{\sigma}}(u,v)  \colon U \to \mathbb{R}^3
-\]</span> is called <strong>regular</strong> if the partial derivatives <span class="math display">\[
-{\pmb{\sigma}}_u(u,v) = \frac{d{\pmb{\sigma}}}{du}(u,v) \,, \quad
-{\pmb{\sigma}}_v(u,v) = \frac{d{\pmb{\sigma}}}{dv}(u,v)
-\]</span> are linearly independent vectors of <span class="math inline">\(\mathbb{R}^3\)</span> for all <span class="math inline">\((u,v) \in U\)</span>.</p>
+\]</span> has rank <span class="math inline">\(2\)</span> for all <span class="math inline">\((u,v) \in U\)</span>.</li>
+<li>It holds <span class="math display">\[
+{\pmb{\sigma}}_u \times {\pmb{\sigma}}_v \neq 0 \, \quad  \forall \, (u,v) \in U \,.
+\]</span></li>
+</ol>
+</div></details>
+</div>
+<div id="Proof*-5" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Part 1. Equivalence of Point 1 and Point 4.</em><p></p>
+<p>By the properties of vector product, we have that <span class="math display">\[
+{\pmb{\sigma}}_u \times {\pmb{\sigma}}_v \neq 0 \, \quad \, \forall (u,v) \in U
+\]</span> if and only if <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly independent for all <span class="math inline">\((u,v) \in U\)</span>.</p>
+<p><em>Part 2. Equivalence of Point 2 and Point 3.</em></p>
+<p>The differential <span class="math inline">\(d{\pmb{\sigma}}_{\mathbf{x}} \colon \mathbb{R}^2 \to \mathbb{R}^3\)</span> is represented in matrix form by the Jacobian <span class="math display">\[
+J{\pmb{\sigma}}(u,v) =
+\left(
+\begin{array}{ccc}
+\sigma^1_{u}  &amp;  \sigma^1_{v} \\
+\sigma^2_{u}  &amp;  \sigma^2_{v} \\
+\sigma^3_{u}  &amp;  \sigma^3_{v} \\
+\end{array}
+\right)
+\]</span> By standard linear algebra results, <span class="math inline">\(J{\pmb{\sigma}}\)</span> has rank 2 if and only if <span class="math inline">\(d{\pmb{\sigma}}\)</span> is injective.</p>
+<p><em>Part 3. Equivalence of Point 1 and Point 3.</em></p>
+<p>A <span class="math inline">\(3 \times 2\)</span> matrix has rank 2 if and only if its columns are linearly independent. Since the columns of <span class="math inline">\(J{\pmb{\sigma}}\)</span> are <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span>, we conclude that <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly independent.</p>
+</div></details>
+</div>
+<p>We are now ready to define regular surfaces.</p>
+<div id="regular-surface" class="Definition" title="Regular surface">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 28: </strong>Regular surface</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a surface. Let <span class="math display">\[
+\mathcal{A} = \{ {\pmb{\sigma}}_i \}_{i \in I} \,,
+\]</span> be an atlas for <span class="math inline">\(\mathcal{S}\)</span>. We say that <span class="math inline">\(\mathcal{A}\)</span> is a <strong>regular atlas</strong> if the map <span class="math inline">\({\pmb{\sigma}}_i\)</span> is a regular chart for all <span class="math inline">\(i \in I\)</span>. We say that <span class="math inline">\(\mathcal{S}\)</span> is a <strong>regular surface</strong> if there exists a regular atlas for <span class="math inline">\(\mathcal{S}\)</span>.<p></p>
+</div></details>
+</div>
+<div id="d-plane-in-mathbbr3-1" class="Example" title="2D Plane in \mathbb{R}^3">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 29: </strong>2D Plane in <span class="math inline">\(\mathbb{R}^3\)</span></summary><div>Let <span class="math inline">\(\pmb{a}, \mathbf{p}, \pmb{q} \in \mathbb{R}^3\)</span>, with <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\pmb{q}\)</span> orthogonal. We have shown that the plane <span class="math display">\[
+\pi = \{ \pmb{a} + u \mathbf{p}+ v \pmb{q} \, \colon \,u,v \in \mathbb{R}\}
+\]</span> is a surface with atlas <span class="math inline">\(\mathcal{A} = \{{\pmb{\sigma}}\}\)</span>, where <span class="math display">\[
+{\pmb{\sigma}}\colon \mathbb{R}^2 \to \pi \,, \quad {\pmb{\sigma}}(u,v):= \pmb{a} + u \mathbf{p}+ v \pmb{q} \,.
+\]</span> Then <span class="math inline">\(\pi\)</span> is a regular surface, because <span class="math inline">\({\pmb{\sigma}}\)</span> is a regular chart. To see this, compute <span class="math display">\[
+{\pmb{\sigma}}_u = \mathbf{p}\,, \quad {\pmb{\sigma}}_v = \pmb{q} \,.
+\]</span> Since <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\pmb{q}\)</span> are orthogonal, then they are linearly independent. Thus <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly independent, and <span class="math inline">\({\pmb{\sigma}}\)</span> is a regular chart.<p></p>
+</div></details>
+</div>
+<div id="example-unit-cylinder" class="Example" title="Unit cylinder">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 30: </strong>Unit cylinder</summary><div>Consider the infinite unit cylinder <span class="math display">\[
+\mathcal{S}= \{  (x,y,z) \in \mathbb{R}^3 \, \colon \,x^2 + y^2 = 1 \} \,.
+\]</span> We have seen that <span class="math inline">\(\mathcal{S}\)</span> is a surface with atlas <span class="math inline">\(\mathcal{A} = \{ {\pmb{\sigma}}_1,{\pmb{\sigma}}_2\}\)</span> where we define <span class="math display">\[
+{\pmb{\sigma}}\colon \mathbb{R}^2 \to \mathbb{R}^3   \,, \quad
+{\pmb{\sigma}}(u,v):= (\cos(u),\sin(u),v)
+\]</span> and <span class="math display">\[\begin{align*}
+{\pmb{\sigma}}_1 &amp; := {\pmb{\sigma}}|_{U_1} \,,   &amp; {\pmb{\sigma}}_2 &amp; := {\pmb{\sigma}}|_{U_2} \,, \\
+U_1 &amp; := \left( 0,\frac{ 3 \pi}{2} \right) \times \mathbb{R}\,,
+&amp; U_2 &amp; := \left( \pi,\frac{ 5 \pi}{2} \right) \times \mathbb{R}\,.
+\end{align*}\]</span> We have that <span class="math inline">\(\mathcal{S}\)</span> is a regular surface, since the atlas <span class="math inline">\(\mathcal{A}\)</span> is regular. Indeed: <span class="math display">\[
+{\pmb{\sigma}}_u = (-\sin(u),\cos(u),0) \,, \quad
+{\pmb{\sigma}}_v = (0,0,1) \,,
+\]</span> and therefore <span class="math display">\[
+{\pmb{\sigma}}_u \times {\pmb{\sigma}}_v = (\cos (u), \sin(u), 0)  \,, \quad \left\| {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v \right\| = 1 \,.
+\]</span> This implies <span class="math display">\[
+{\pmb{\sigma}}_u \times {\pmb{\sigma}}_v \neq 0 \,, \quad \forall \, (u,v) \in \mathbb{R}^2 \,,
+\]</span> showing that <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly independent. Therefore <span class="math inline">\({\pmb{\sigma}}_1\)</span> and <span class="math inline">\({\pmb{\sigma}}_2\)</span> are regular charts, being restrictions of <span class="math inline">\({\pmb{\sigma}}\)</span>.<p></p>
+</div></details>
+</div>
+<div id="graph-of-a-function-1" class="Example" title="Graph of a function">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 31: </strong>Graph of a function</summary><div>Let <span class="math inline">\(U \subseteq \mathbb{R}^2\)</span> be open and <span class="math inline">\(f \colon U \to \mathbb{R}\)</span> be smooth. The graph of <span class="math inline">\(f\)</span> is the set <span class="math display">\[
+\Gamma_f := \{ (u,v,f(u,v)) \, \colon \,(u,v) \in U  \}  \,.
+\]</span> We have seen that <span class="math inline">\(\Gamma_f\)</span> is surface with atlas given by <span class="math inline">\(\mathcal{A} = \{ {\pmb{\sigma}}\}\)</span>, where <span class="math inline">\({\pmb{\sigma}}\colon U \to \Gamma_f\)</span> is <span class="math display">\[
+{\pmb{\sigma}}(u,v):=(u,v,f(u,v)) \,.
+\]</span> We have that <span class="math inline">\(\Gamma_f\)</span> is regular, since <span class="math inline">\(\mathcal{A}\)</span> is a regular atlas. Indeed, <span class="math display">\[
+{\pmb{\sigma}}_u = (1,0,f_u) \,, \quad
+{\pmb{\sigma}}_v = (0,1,f_v) \,,
+\]</span> and so <span class="math display">\[
+{\pmb{\sigma}}_u \times {\pmb{\sigma}}_v = (-f_u, - f_v, 1 ) \neq {\pmb{0}}\,,
+\]</span> since the last component never vanishes. Therefore <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly independent and <span class="math inline">\({\pmb{\sigma}}\)</span> is a regular chart.<p></p>
+</div></details>
+</div>
+<div id="unit-sphere" class="Example" title="Unit sphere">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 32: </strong>Unit sphere</summary><div>
+<p>Consider the unit sphere in <span class="math inline">\(\mathbb{R}^3\)</span> <span class="math display">\[
+\mathbb{S}^2 := \{  (x,y,z) \in \mathbb{R}^3 \, \colon \,x^2 + y^2 + z^2 = 1  \} \,.
+\]</span> We have that <span class="math inline">\(\mathbb{S}^2\)</span> is a regular surface, with regular atlas <span class="math display">\[
+\mathcal{A} = \{ {\pmb{\sigma}}_i \}_{i=1}^6 \,,
+\]</span> defined as follows: Let <span class="math display">\[
+U:= \{ (u,v) \in \mathbb{R}^2 \colon u^2 + v^2 &lt; 1  \}
+\]</span> be the unit open ball in <span class="math inline">\(\mathbb{R}^2\)</span> and define <span class="math inline">\({\pmb{\sigma}}_i \colon U \to \mathbb{R}^3\)</span> by <span class="math display">\[\begin{align*}
+{\pmb{\sigma}}_1 (u,v) &amp; = \left(u,v,\sqrt{1-u^2-v^2}  \right) \\
+{\pmb{\sigma}}_2 (u,v) &amp; = \left(u,v,-\sqrt{1-u^2-v^2}  \right) \\
+{\pmb{\sigma}}_3 (u,v) &amp; = \left(u,\sqrt{1-u^2-v^2},v  \right) \\
+{\pmb{\sigma}}_4 (u,v) &amp; = \left(u, -\sqrt{1-u^2-v^2}, v  \right) \\
+{\pmb{\sigma}}_5 (u,v) &amp; = \left(\sqrt{1-u^2-v^2} , u ,v \right) \\
+{\pmb{\sigma}}_6 (u,v) &amp; = \left(-\sqrt{1-u^2-v^2}, u,v,  \right) \\
+\end{align*}\]</span></p>
+<blockquote class="blockquote">
+<p>Exercise: Check that <span class="math inline">\(\mathbb{S}^2\)</span> is a regular surface.</p>
+</blockquote>
+</div></details>
+</div>
+<div id="spherical-coordinates" class="Remark" title="Spherical coordinates">
+<details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 33: </strong>Spherical coordinates</summary><div>
+<p>The equivalent of polar coordinates in dimension <span class="math inline">\(3\)</span> are spherical coordinates. A point <span class="math inline">\((x,y,z) \in \mathbb{R}^3 \smallsetminus \{{\pmb{0}}\}\)</span> can be represented in spherical coordinates by <span class="math display">\[\begin{align*}
+x &amp; = \rho \cos (\theta)  \cos(\phi)  \\
+y &amp; = \rho \cos (\theta)  \sin(\phi) \\
+z &amp; = \rho \sin (\theta)
+\end{align*}\]</span> where <span class="math display">\[
+\rho:=\sqrt{ x^2 + y^2 + z^2 } \,, \quad \phi\in [0,2\pi] \,, \quad \theta \in \left[ -\frac{\pi}{2}, \frac{\pi}{2} \right] \,,
+\]</span> with the angles <span class="math inline">\(\phi\)</span> and <span class="math inline">\(\theta\)</span> as in Figure <a href="#fig-spherical-coordinates">Figure&nbsp;<span>4.1</span></a>.</p>
+<blockquote class="blockquote">
+<p>It is clear that <span class="math inline">\(z = \rho \sin(\theta)\)</span>, by basic trigonometry. To compute <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, we note that the segment joining <span class="math inline">\({\pmb{0}}\)</span> to <span class="math inline">\(\mathbf{p}\)</span> has length <span class="math display">\[
+L = \rho \cos \theta \,.
+\]</span> Therefore we get <span class="math display">\[\begin{align*}
+x &amp; = L \cos (\phi) = \rho \cos (\theta)  \cos(\phi) \\
+y &amp; = L \sin (\phi) = \rho \cos (\theta)  \sin(\phi)
+\end{align*}\]</span> concluding.</p>
+</blockquote>
+</div></details>
+</div>
+<div id="fig-spherical-coordinates" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../images/spherical_coordinates.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.1: Spherical coordinates in <span class="math inline">\(\mathbb{R}^3\)</span>.</figcaption>
+</figure>
+</div>
+<div id="unit-sphere-in-spherical-coordinates" class="Example" title="Unit sphere in spherical coordinates">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 34: </strong>Unit sphere in spherical coordinates</summary><div>Consider again the unit sphere in <span class="math inline">\(\mathbb{R}^3\)</span> <span class="math display">\[
+\mathbb{S}^2 := \{  (x,y,z) \in \mathbb{R}^3 \, \colon \,x^2 + y^2 + z^2 = 1  \} \,.
+\]</span> We want to give an alternative atlas for <span class="math inline">\(\mathbb{S}^2\)</span> based on spherical coordinates. To this end, define <span class="math display">\[
+U := \left\{ (\theta,\phi)  \in \mathbb{R}^2 \, \colon \,-\frac{\pi}{2} &lt; \theta &lt; \frac{\pi}{2} \,, \,\,
+0&lt; \phi &lt; 2 \pi    \right\}
+\]</span> and <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span> by <span class="math display">\[
+{\pmb{\sigma}}( \theta , \phi ) :=  ( \cos(\theta) \cos(\phi), \cos(\theta) \sin(\phi), \sin (\theta)  ) \,.
+\]</span> We have:<p></p>
+<ul>
+<li><p><span class="math inline">\({\pmb{\sigma}}\)</span> is smooth.</p></li>
+<li><p><span class="math inline">\(U\)</span> is open in <span class="math inline">\(\mathbb{R}^2\)</span>.</p></li>
+<li><p>Moreover <span class="math display">\[
+{\pmb{\sigma}}(U) = \mathbb{S}^2 \smallsetminus \{ (x,0,z) \in \mathbb{R}^3 \, \colon \,x \geq 0  \} \,,
+\]</span> as seen also in the left picture in <a href="#fig-chart-sphere">Figure&nbsp;<span>4.2</span></a>.</p></li>
+<li><p>The set <span class="math inline">\({\pmb{\sigma}}(U)\)</span> is evidently open in <span class="math inline">\(\mathbb{S}^2\)</span>.</p></li>
+<li><p>It is easy to check that <span class="math inline">\({\pmb{\sigma}}\)</span> is invertible, with continuous inverse.</p></li>
+<li><p>Thus <span class="math inline">\({\pmb{\sigma}}\)</span> is a homeomorphism from <span class="math inline">\(U\)</span> into <span class="math inline">\({\pmb{\sigma}}(U)\)</span>.</p></li>
+</ul>
+<p>Let us check that <span class="math inline">\({\pmb{\sigma}}\)</span> is a regular chart: <span class="math display">\[\begin{align*}
+{\pmb{\sigma}}_{\theta} &amp; = (-\sin(\theta) \cos(\phi), -\sin(\theta) \sin(\phi), \cos(\theta) ) \\
+{\pmb{\sigma}}_{\phi} &amp; = ( - \cos(\theta) \sin(\phi), \cos(\theta) \cos(\phi), 0 )  \,.
+\end{align*}\]</span> Therefore <span class="math display">\[
+{\pmb{\sigma}}_{\theta} \times {\pmb{\sigma}}_{\phi} =
+( - \cos^2(\theta) \cos(\phi), - \cos^2(\theta) \sin(\phi), - \sin(\theta) \cos ( \theta ) ) \,,
+\]</span> from which <span class="math display">\[
+\left\|  {\pmb{\sigma}}_{\theta} \times {\pmb{\sigma}}_{\phi}  \right\| = |\cos (\theta)| \, .
+\]</span> Since <span class="math inline">\((\theta,\phi)\in U\)</span>, we have <span class="math inline">\(\theta \in ( -\pi/2, \pi/2 )\)</span>, and so <span class="math display">\[
+\left\|  {\pmb{\sigma}}_{\theta} \times {\pmb{\sigma}}_{\phi}  \right\| = |\cos (\theta)| \neq 0 \,,
+\]</span> showing that <span class="math inline">\({\pmb{\sigma}}_{\theta}\)</span> and <span class="math inline">\({\pmb{\sigma}}_{\phi}\)</span> are linearly independent, and <span class="math inline">\({\pmb{\sigma}}\)</span> is regular.</p>
+<p>Since <span class="math inline">\({\pmb{\sigma}}(U) \neq \mathbb{S}^2\)</span>, the chart <span class="math inline">\({\pmb{\sigma}}\)</span> does not form an atlas. We need a second chart. An option is to define <span class="math inline">\(\widetilde{{\pmb{\sigma}}} \colon U \to \mathbb{R}^3\)</span> by <span class="math display">\[
+\widetilde{{\pmb{\sigma}}} := ( - \cos(\theta) \cos (\phi), -\sin(\theta) , - \cos (\theta) \sin(\phi)) \,.
+\]</span> Notice that <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> is obtained by rotating <span class="math inline">\({\pmb{\sigma}}\)</span> by <span class="math inline">\(\pi\)</span> about the <span class="math inline">\(z\)</span>-axis and by <span class="math inline">\(\pi/2\)</span> about the <span class="math inline">\(y\)</span>-axis, as seen in the right picture in <a href="#fig-chart-sphere">Figure&nbsp;<span>4.2</span></a>. It is an exercise to check that <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> is a regular chart.</p>
+<p>Since we have <span class="math display">\[
+\widetilde{{\pmb{\sigma}}} (U) = \mathbb{S}^2 \smallsetminus \{ (x,y,0) \in \mathbb{R}^3 \, \colon \,x \leq 0  \} \,,
+\]</span> it is immediate to see that <span class="math display">\[
+\mathbb{S}^2 = {\pmb{\sigma}}(U) \cup \widetilde{{\pmb{\sigma}}}(U) \,.
+\]</span> Hence <span class="math display">\[
+\mathcal{A} := \{   {\pmb{\sigma}}, \widetilde{{\pmb{\sigma}}} \}
+\]</span> is a regular atlas for <span class="math inline">\(\mathbb{S}^2\)</span>.</p>
+</div></details>
+</div>
+<div class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div id="fig-chart-sphere" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="chap_4_files/figure-html/fig-chart-sphere-output-1.png" width="693" height="336" class="figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.2: Image of the charts of the sphere from the above example.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Let us make an example of a non-regular surface.</p>
+<div id="Example-35" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 35</strong></summary><div>The surface parametrized by <span class="math display">\[
+{\pmb{\sigma}}(u,v) = (u,v^2,v^3) \,, \quad \forall (u,v) \in \mathbb{R}^2
+\]</span> is not regular. This is because <span class="math display">\[
+{\pmb{\sigma}}_u = (1,0,0) \,, \quad
+{\pmb{\sigma}}_v = (0,2v,3v^2)
+\]</span> and therefore <span class="math display">\[
+{\pmb{\sigma}}_v(u,0) = (0,0,0) \,,
+\]</span> showing that <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly dependent along the line <span class="math display">\[
+L = \{ (u,0) \, \colon \,u \in \mathbb{R}\} \,.
+\]</span> Hence <span class="math inline">\({\pmb{\sigma}}\)</span> is not a regular chart.<p></p>
+<p>Looking at Figure <a href="#fig-plot-cusp">Figure&nbsp;<span>4.3</span></a>, it is clear that <span class="math inline">\(\mathcal{S}\)</span> is not regular, since <span class="math inline">\(\mathcal{S}\)</span> has a cusp along the line <span class="math inline">\(L\)</span>.</p>
+</div></details>
+</div>
+<div class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div id="fig-plot-cusp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="chap_4_files/figure-html/fig-plot-cusp-output-1.png" width="349" height="323" class="figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.3: Example of non-regular surface.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="level-set-surfaces" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="level-set-surfaces"><span class="header-section-number">4.3.1</span> Level set surfaces</h3>
+<div id="level-set-surface" class="Definition" title="Level set surface">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 36: </strong>Level set surface</summary><div>Let <span class="math inline">\(f \colon \mathbb{R}^3 \to \mathbb{R}\)</span> be smooth. The <strong>level set surface</strong> associated with <span class="math inline">\(f\)</span> is the set <span class="math display">\[
+\mathcal{S}_f := f^{-1}(0) = \{ (x,y,z) \in \mathbb{R}^3 \, \colon \,f(x,y,z) = 0  \} \,.
+\]</span><p></p>
+</div></details>
+</div>
+<p>We now give a result concerning regularity of level set surfaces. The proof, rather technical, is based on the Implicit Function Theorem and can be found in Proposition 3.1.25 of <span class="citation" data-cites="abate-tovena">(<a href="references.html#ref-abate-tovena" role="doc-biblioref">Abate, Marco and Tovena, Francesca 2011</a>)</span>. We decide to omit it.</p>
+<div id="theorem-level-surface" class="Theorem">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 37</strong></summary><div>Let <span class="math inline">\(V \subseteq \mathbb{R}^3\)</span> be an open set and <span class="math inline">\(f \colon V \to \mathbb{R}\)</span> be smooth. Consider the level set surface <span class="math display">\[
+\mathcal{S}_f = \{ (x,y,z) \in V \, \colon \,f(x,y,z) = 0  \} \,.
+\]</span> Suppose that <span class="math display">\[
+\nabla f (x,y,z) \neq 0 \,, \quad \forall \, (x,y,z) \in V \,.
+\]</span> Then <span class="math inline">\(\mathcal{S}_f\)</span> is a regular surface.<p></p>
+</div></details>
+</div>
+<div id="Example-38" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 38</strong></summary><div>We want to determine if the set defined by the equation <span class="math display">\[
+\mathcal{S}= \{ (x,y,z) \in \mathbb{R}^3 \, \colon \,x^2 + y^2 = 1 \}  
+\]</span> is a regular surface. Note that <span class="math inline">\(\mathcal{S}\)</span> is a unit cylinder: From Example <a href="chap_4.html#example-unit-cylinder">30</a> we already know that <span class="math inline">\(\mathcal{S}\)</span> is a regular surface.<p></p>
+<p>Let us prove that <span class="math inline">\(\mathcal{S}\)</span> is regular by using Theorem <a href="chap_4.html#theorem-level-surface">37</a>. To this end, define the open set <span class="math display">\[
+V := \mathbb{R}^3 \smallsetminus \{ (0,0,z) \, \colon \,z \in \mathbb{R}\} \,.
+\]</span> Note that <span class="math inline">\(V\)</span> is obtained by removing the <span class="math inline">\(z\)</span>-axis from <span class="math inline">\(\mathbb{R}^3\)</span>. Also define the function <span class="math inline">\(f \colon \mathbb{R}^3 \to \mathbb{R}\)</span> by <span class="math display">\[
+f(x,y,z) := x^2 + y^2 -1 \,.
+\]</span> We have <span class="math display">\[
+\nabla f (x,y,z) = ( 2x, 2y, 0 ) \neq 0  \,, \quad
+\forall \, (x,y,z) \in V \,.
+\]</span> Since <span class="math display">\[
+\mathcal{S}= \mathcal{S}_f \,,
+\]</span> by Theorem <a href="chap_4.html#theorem-level-surface">37</a> we conclude that <span class="math inline">\(\mathcal{S}\)</span> is a regular surface.</p>
 </div></details>
 </div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-abate-tovena" class="csl-entry" role="listitem">
+Abate, Marco, and Tovena, Francesca. 2011. <em>Curves and Surfaces</em>. Springer.
+</div>
+</div>
+</section>
 </section>
 
 </main> <!-- /main -->

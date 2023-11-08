@@ -637,7 +637,7 @@
 
  [**Example 4.19**](#Example-4.19)\Pageref{Example-4.19}
 
- [**Definition 4.20**](#smooth-surface): Smooth Surface\Pageref{smooth-surface}
+ [**Definition 4.20**](#surface): Surface\Pageref{surface}
 
  [**Remark 4.21**](#Remark-4.21)\Pageref{Remark-4.21}
 
@@ -649,6 +649,34 @@
 
  [**Important**](#Important*-4.4)\Pageref{Important*-4.4}
 
- [**Example 4.24**](#circular-cone): Circular cone\Pageref{circular-cone}
+ [**Example 4.24**](#graph-of-a-function): Graph of a function\Pageref{graph-of-a-function}
 
- [**Definition 4.25**](#regular-surfaces-1): Regular Surfaces\Pageref{regular-surfaces-1}
+ [**Example 4.25**](#circular-cone): Circular cone\Pageref{circular-cone}
+
+ [**Definition 4.26**](#regular-chart): Regular Chart\Pageref{regular-chart}
+
+ [**Proposition 4.27**](#Proposition-4.27)\Pageref{Proposition-4.27}
+
+ [**Proof**](#Proof*-4.5)\Pageref{Proof*-4.5}
+
+ [**Definition 4.28**](#regular-surface): Regular surface\Pageref{regular-surface}
+
+ [**Example 4.29**](#d-plane-in-mathbbr3-1): 2D Plane in $\mathbb{R}^3$\Pageref{d-plane-in-mathbbr3-1}
+
+ [**Example 4.30**](#example-unit-cylinder): Unit cylinder\Pageref{example-unit-cylinder}
+
+ [**Example 4.31**](#graph-of-a-function-1): Graph of a function\Pageref{graph-of-a-function-1}
+
+ [**Example 4.32**](#unit-sphere): Unit sphere\Pageref{unit-sphere}
+
+ [**Remark 4.33**](#spherical-coordinates): Spherical coordinates\Pageref{spherical-coordinates}
+
+ [**Example 4.34**](#unit-sphere-in-spherical-coordinates): Unit sphere in spherical coordinates\Pageref{unit-sphere-in-spherical-coordinates}
+
+ [**Example 4.35**](#Example-4.35)\Pageref{Example-4.35}
+
+ [**Definition 4.36**](#level-set-surface): Level set surface\Pageref{level-set-surface}
+
+ [**Theorem 4.37**](#theorem-level-surface)\Pageref{theorem-level-surface}
+
+ [**Example 4.38**](#Example-4.38)\Pageref{Example-4.38}

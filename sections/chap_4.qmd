@@ -385,16 +385,16 @@ $$
 
 
 
-## Smooth surfaces
+## Definition of Surface
 
 
-We can finally give the definition of smooth surface in $\R^3$.
+We can finally give the definition of surface in $\R^3$.
 
 
 ::: Definition
-### Smooth Surface
+### Surface
 
-Let $\SSS \subseteq \R^3$ be a connected set. We say that $\SSS$ is a **smooth surface** if for every point $\pp \in \SSS$ there exist an open set  $U \subseteq \R^2$ and a smooth map
+Let $\SSS \subseteq \R^3$ be a connected set. We say that $\SSS$ is a **surface** if for every point $\pp \in \SSS$ there exist an open set  $U \subseteq \R^2$ and a smooth map
 $$
 \sss \colon U \to  \sss(U) \subseteq \SSS \,
 $$
@@ -412,7 +412,11 @@ Further:
 $$
 \sss_i  \colon U_i \to \sss(U_i) \subseteq \SSS \,.
 $$
-We say that the family $\{ \sss_i\}_{i \in I}$ is an **atlas** of $\SSS$ if 
+We say that the family 
+$$
+\mathcal{A} = \{ \sss_i\}_{i \in I}
+$$ 
+is an **atlas** of $\SSS$ if 
 $$
 \SSS = \bigcup_{i \in I} \sss_i(U_i)  \,.
 $$
@@ -451,7 +455,13 @@ $$
 \sss_u := \frac{\partial \sss }{\partial u} \,, \quad 
 \sss_v := \frac{\partial \sss }{\partial v} \,.
 $$
-Similar notations are adopted for higher order derivatives.
+Similar notations are adopted for higher order derivatives, e.g.,
+\begin{align*}
+\sss_{uu} & := \frac{\partial^2 \sss }{\partial u^2} \,, 
+& \sss_{uv} & :=  \frac{\partial^2 \sss }{\partial u \partial v} \,, \\
+\sss_{vu} & := \frac{\partial^2 \sss }{\partial v  \partial u  } \,,  
+& \sss_{vv} & :=  \frac{\partial^2 \sss }{\partial v^2 } \,, \\
+\end{align*}
 
 - Components of $\sss$ will be denoted by
 $$
@@ -489,7 +499,7 @@ $$
 We have:
 
 - $\sss$ is smooth.
-- For each $\xx \in \pi$ we have $\xx \in \sss(\R^2) = \pi$.
+- $\R^2$ is obviously open.
 - $\sss(\R^2)$ is open in $\pi$, since $\sss(\R^2) = \pi$.
 - The inverse of $\sss$ is 
 $$
@@ -498,17 +508,18 @@ $$
 $$
 - As $\sss^{-1}$ is continuous, then $\sss$ is a homeomorphism between $\R^2$ and $\pi$. 
 
+
 Therefore $\sss$ is a chart for $\pi$. Since
 $$
 \sss(\R^2) = \pi \,,
 $$
-we have that $\{\sss\}$ is an atlas for $\pi$, and hence $\pi$ is a smooth surface.
+we have that $\{\sss\}$ is an atlas for $\pi$, and hence $\pi$ is a surface.
 
 :::
 
 
 
-![A plane $\pi$ is a smooth surface with atlas containing a single chart $\sss \colon \R^2 \to \pi$.](/images/surface_plane.png){width=70%}
+![A plane $\pi$ is a surface with atlas containing a single chart $\sss \colon \R^2 \to \pi$.](/images/surface_plane.png){width=70%}
 
 
 
@@ -520,7 +531,7 @@ Consider the infinite unit cylinder
 $$
 \SSS  = \{  (x,y,z) \in \R^3 \divider x^2 + y^2 = 1 \} \,.
 $$
-$\SSS$ is a smooth surface with an atlas consisting of two charts:
+$\SSS$ is a surface with an atlas consisting of two charts:
 $$
 \sss_i \colon U_i \to \R^3   \,, \quad 
 \sss_i(u,v):= (\cos(u),\sin(u),v)
@@ -534,17 +545,18 @@ $$
 > Indeed:
 >
 > - $\sss_i$ is smooth.
+> - $U_i$ is clearly open in $\R^2$.
+> - One can check that $\sss_i(U_i)$ is open in $\SSS$.
+> - $\sss_i$ is a homeomorphism of $U_i$ in $\sss(U_i)$.
 > - $\{\sss_1 , \sss_2\}$ is an atlas for $\SSS$, since 
 $$
 \SSS = \sss_1(U_1) \cup \sss_2(U_2) \,.
 $$
-> - One can check that $\sss_i(U_i)$ is open in $\SSS$.
-> - $\sss_i$ is a homeomorphism of $U_i$ in $\sss(U_i)$.
 
 :::
 
 
-![Unit cylinder $\SSS$ is a smooth surface with atlas given by $\{\sss_1,\sss_2\}$. Depicted are the images $\sss_1(U_1)$ and $\sss_2(U_2)$. ](/images/surface_cylinder.png){width=70%}
+![Unit cylinder $\SSS$ is a surface with atlas $\mathcal{A} = \{\sss_1,\sss_2\}$. Depicted are the images $\sss_1(U_1)$ and $\sss_2(U_2)$. ](/images/surface_cylinder.png){width=70%}
 
 
 
@@ -582,13 +594,54 @@ Therefore $\sss$ cannot be an omeomorphism between $U$ and $\SSS$.
 
 
 ::: Example
+### Graph of a function
+
+Let $U \subseteq \R^2$ be open and $f \colon U \to \R$ be smooth. The graph of $f$ is the set
+$$
+\Gamma_f := \{ (u,v,f(u,v)) \divider (u,v) \in U  \}  \,.
+$$
+We have that $\Gamma_f$ is a surface with atlas given by
+$$
+\mathcal{A} = \{ \sss \}
+$$
+where $\sss \colon U \to \Gamma_f$ is
+$$
+\sss(u,v):=(u,v,f(u,v)) \,.
+$$
+
+> Let us check that $\Gamma_f$ is a surface:
+>
+> - $\sss$ is smooth since $f$ is smooth.
+> - $U$ is open in $\R^2$ by assumption.
+> - $\sss(U) = \Gamma_f$, and therefore $\sss(U)$ is open in $\Gamma_f$.
+> - The inverse of $\sss$ is given by $\widetilde{\sss} \colon \Gamma_f \to U$ defined as
+> $$
+> \widetilde{\sss}(u,v,f(u,v)) := (u,v) \,.
+> $$
+> Clearly $\widetilde{\sss}$ is continuous.
+> - Therefore $\sss$ is a homeomorphism of $U$ into $\Gamma_f$.
+> - $\mathcal{A}=\{\sss\}$ is an atlas for $\Gamma_f$, since 
+> $$
+> \Gamma_f = \sss(U) \,.
+> $$
+
+:::
+
+
+
+Let us conclude the section with an example of a set which is not 
+a surface.
+
+
+
+::: Example
 ### Circular cone
 
 Consider the circular cone
 $$
 \SSS := \{ (x,y,z) \in \R^3 \divider x^2 + y^2 = z^2  \} \,.
 $$
-Then $\SSS$ is not a smooth surface. This is essentially consequence of
+Then $\SSS$ is not a surface. This is essentially consequence of
 the fact that
 $$
 \SSS \smallsetminus \{\zero\}
@@ -596,7 +649,7 @@ $$
 is a disconnected set.
 
 
-To see that $\SSS$ is not a smooth surface, suppose there exists an 
+To see that $\SSS$ is not a surface, suppose there exists an 
 atlas $\{\sss_i\}$ of $\SSS$
 $$
 \sss_i \colon U_i \to \sss_i(U_i) \subseteq \SSS \,.
@@ -638,14 +691,16 @@ However $V$ is homeomorphic to
 $$
 B_{\e} (\xx_0) \smallsetminus \{ \xx_0 \} \,,
 $$
-which is instead connected. Contradiction. Hence $\SSS$ is not a smooth surface.
+which is instead connected. Contradiction. Hence $\SSS$ is not a surface.
 
 :::
 
 
 
 
-![The circular cone is not a smooth surface. This is because $\SSS \smallsetminus \{\zero\}$ is disconnected.](/images/surface_cone.png){width=70%}
+![The circular cone is not a surface. This is because $\SSS \smallsetminus \{\zero\}$ is disconnected.](/images/surface_cone.png){width=70%}
+
+
 
 
 
@@ -653,19 +708,46 @@ which is instead connected. Contradiction. Hence $\SSS$ is not a smooth surface.
 ## Regular Surfaces
 
 
-Recall that we had defined a regular curve to be a map $\g \colon (a,b) \to \R^n$ such that
+We have defined a regular curve to be a map $\g \colon (a,b) \to \R^n$ such that
 $$
 \norm{\g(t)} \neq 0 \,, \quad \forall \, t \in (a,b) \,.
 $$
 This allowed us to define tangent vectors and, eventually, Frenet frame.
-We want to do something similar for smooth surfaces.
+
+We want to do something similar for surfaces: We look for a condition that eventually will allow us to define tangent planes. This is why we introduce **regular charts** and **regular surfaces**.
 
 
 
 ::: Definition
-### Regular Surfaces
+### Regular Chart
 
-Regular if the differential $d\sss_{\xx} \colon \R^2 \to \R^3$ is injective for all $\xx \in \R^2$. If we represent the differential as a matrix, with respect to the standard basis, we get the Jacobian
+Let $U \subseteq \R^2$ be open. A map
+$$
+\sss = \sss(u,v)  \colon U \to \R^3
+$$
+is called a **regular chart** if the partial derivatives
+$$
+\sss_u(u,v) = \frac{d\sss}{du}(u,v) \,, \quad
+\sss_v(u,v) = \frac{d\sss}{dv}(u,v) 
+$$
+are linearly independent vectors of $\R^3$ for all $(u,v) \in U$.
+:::
+
+
+The following gives more insight into the regularity condition.
+
+
+::: Proposition
+
+Let $U \subseteq \R^2$ be open and consider a map
+$$
+\sss  \colon U \to \R^3 \,.
+$$
+They are equivalent:
+
+1. $\sss$ is a regular chart.
+2. The differential $d\sss_{\xx} \colon \R^2 \to \R^3$ is injective for all $\xx \in U$.
+3. The Jacobian matrix
 $$
 J\sss (u,v) = 
 \left(
@@ -676,25 +758,530 @@ J\sss (u,v) =
 \end{array} 
 \right)
 $$
-Injectivity of $d\sss$ corresponds to $J\sss$ having rank-2. This means that
-the vectors $\sss_u$ and $\sss_v$ are linearly independent. 
-In coordinates 
+has rank $2$ for all $(u,v) \in U$.
+4. It holds
+$$
+\sss_u \times \sss_v \neq 0 \, \quad  \forall \, (u,v) \in U \,.
+$$
 
-Let $U \subset \R^2$ be open A surface chart 
+
+:::
+
+
+::: Proof
+
+*Part 1. Equivalence of Point 1 and Point 4.* 
+
+By the properties of vector product, we have that
 $$
-\sss = \sss(u,v)  \colon U \to \R^3
+\sss_u \times \sss_v \neq 0 \, \quad \, \forall (u,v) \in U 
 $$
-is called **regular** if the partial derivatives
+if and only if $\sss_u$ and $\sss_v$ are linearly independent for all $(u,v) \in U$.
+
+
+*Part 2. Equivalence of Point 2 and Point 3.* 
+
+The differential $d\sss_{\xx} \colon \R^2 \to \R^3$ is represented in matrix form by the Jacobian
 $$
-\sss_u(u,v) = \frac{d\sss}{du}(u,v) \,, \quad
-\sss_v(u,v) = \frac{d\sss}{dv}(u,v) 
+J\sss (u,v) = 
+\left(
+\begin{array}{ccc}
+\sigma^1_{u}  &  \sigma^1_{v} \\
+\sigma^2_{u}  &  \sigma^2_{v} \\
+\sigma^3_{u}  &  \sigma^3_{v} \\
+\end{array} 
+\right)
 $$
-are linearly independent vectors of $\R^3$ for all $(u,v) \in U$.
+By standard linear algebra results, $J\sss$ has rank 2 if and only if $d\sss$ is injective. 
+
+*Part 3. Equivalence of Point 1 and Point 3.*
+
+A $3 \times 2$ matrix has rank 2 if and only if its columns are linearly independent. Since the columns of $J\sss$ are $\sss_u$ and $\sss_v$, we 
+conclude that $\sss_u$ and $\sss_v$ are linearly independent.
+
+:::
+
+
+
+We are now ready to define regular surfaces.
+
+
+::: Definition
+### Regular surface
+
+Let $\SSS$ be a surface. Let 
+$$
+\mathcal{A} = \{ \sss_i \}_{i \in I} \,,
+$$
+be an atlas for $\SSS$. We say that $\mathcal{A}$ is a **regular atlas** if 
+the map $\sss_i$ is a regular chart for all $i \in I$. We say that $\SSS$ is a **regular surface** if there exists a regular atlas for $\SSS$.
 :::
 
 
 
 
+
+
+
+::: Example
+### 2D Plane in $\R^3$
+
+Let $\pmb{a}, \pp, \pmb{q} \in \R^3$, with $\pp$ and $\pmb{q}$ orthogonal. We have shown that the plane
+$$
+\pi = \{ \pmb{a} + u \pp + v \pmb{q} \divider u,v \in \R \} 
+$$
+is a surface with atlas $\mathcal{A} = \{\sss\}$, where
+$$
+\sss \colon \R^2 \to \pi \,, \quad \sss(u,v):= \pmb{a} + u \pp + v \pmb{q} \,.
+$$
+Then $\pi$ is a regular surface, because $\sss$ is a regular chart. To see this, compute
+$$
+\sss_u = \pp  \,, \quad \sss_v = \pmb{q} \,.
+$$
+Since $\pp$ and $\pmb{q}$ are orthogonal, then they are linearly independent. Thus $\sss_u$ and $\sss_v$ are linearly independent, and $\sss$ is a regular chart.
+
+:::
+
+
+
+
+::: Example
+### Unit cylinder {#example-unit-cylinder}
+
+Consider the infinite unit cylinder
+$$
+\SSS  = \{  (x,y,z) \in \R^3 \divider x^2 + y^2 = 1 \} \,.
+$$
+We have seen that $\SSS$ is a surface with atlas $\mathcal{A} = \{ \sss_1,\sss_2\}$ where we define
+$$
+\sss \colon \R^2 \to \R^3   \,, \quad 
+\sss(u,v):= (\cos(u),\sin(u),v)
+$$
+and 
+\begin{align*}
+\sss_1 & := \sss |_{U_1} \,,   & \sss_2 & := \sss |_{U_2} \,, \\
+U_1 & := \left( 0,\frac{ 3 \pi}{2} \right) \times \R \,, 
+& U_2 & := \left( \pi,\frac{ 5 \pi}{2} \right) \times \R \,.
+\end{align*}
+We have that $\SSS$ is a regular surface, since the atlas $\mathcal{A}$ is regular. Indeed:
+$$
+\sss_u = (-\sin(u),\cos(u),0) \,, \quad 
+\sss_v = (0,0,1) \,,
+$$
+and therefore
+$$
+\sss_u \times \sss_v = (\cos (u), \sin(u), 0)  \,, \quad \norm{\sss_u \times \sss_v} = 1 \,.
+$$
+This implies
+$$
+\sss_u \times \sss_v \neq 0 \,, \quad \forall \, (u,v) \in \R^2 \,,
+$$
+showing that $\sss_u$ and $\sss_v$ are linearly independent. Therefore
+$\sss_1$ and $\sss_2$ are regular charts, being restrictions of $\sss$.
+
+:::
+
+
+
+
+::: Example
+### Graph of a function
+
+Let $U \subseteq \R^2$ be open and $f \colon U \to \R$ be smooth. The graph of $f$ is the set
+$$
+\Gamma_f := \{ (u,v,f(u,v)) \divider (u,v) \in U  \}  \,.
+$$
+We have seen that $\Gamma_f$ is surface with atlas given by
+$\mathcal{A} = \{ \sss \}$, where $\sss \colon U \to \Gamma_f$ is
+$$
+\sss(u,v):=(u,v,f(u,v)) \,.
+$$
+We have that $\Gamma_f$ is regular, since $\mathcal{A}$ is a regular atlas.
+Indeed, 
+$$
+\sss_u = (1,0,f_u) \,, \quad 
+\sss_v = (0,1,f_v) \,,
+$$
+and so
+$$
+\sss_u \times \sss_v = (-f_u, - f_v, 1 ) \neq \zero \,,
+$$
+since the last component never vanishes. Therefore $\sss_u$ and $\sss_v$ are
+linearly independent and $\sss$ is a regular chart.
+
+:::
+
+
+
+
+::: Example
+### Unit sphere
+
+Consider the unit sphere in $\R^3$
+$$
+\sphere^2 := \{  (x,y,z) \in \R^3 \divider x^2 + y^2 + z^2 = 1  \} \,.
+$$
+We have that $\sphere^2$ is a regular surface, with regular atlas
+$$
+\mathcal{A} = \{ \sss_i \}_{i=1}^6 \,,
+$$
+defined as follows: Let 
+$$
+U:= \{ (u,v) \in \R^2 \colon u^2 + v^2 < 1  \}
+$$
+be the unit open ball in $\R^2$ and define $\sss_i \colon U \to \R^3$ by
+\begin{align*}
+\sss_1 (u,v) & = \left(u,v,\sqrt{1-u^2-v^2}  \right) \\
+\sss_2 (u,v) & = \left(u,v,-\sqrt{1-u^2-v^2}  \right) \\
+\sss_3 (u,v) & = \left(u,\sqrt{1-u^2-v^2},v  \right) \\
+\sss_4 (u,v) & = \left(u, -\sqrt{1-u^2-v^2}, v  \right) \\
+\sss_5 (u,v) & = \left(\sqrt{1-u^2-v^2} , u ,v \right) \\
+\sss_6 (u,v) & = \left(-\sqrt{1-u^2-v^2}, u,v,  \right) \\
+\end{align*}
+
+> Exercise: Check that $\sphere^2$ is a regular surface.
+
+:::
+
+
+
+::: Remark 
+### Spherical coordinates
+
+The equivalent of polar coordinates in dimension $3$ are spherical coordinates. A point $(x,y,z) \in \R^3 \smallsetminus \{\zero\}$ can
+be represented in spherical coordinates by
+\begin{align*}
+x & = \rho \cos (\theta)  \cos(\phi)  \\
+y & = \rho \cos (\theta)  \sin(\phi) \\
+z & = \rho \sin (\theta) 
+\end{align*}
+where 
+$$
+\rho:=\sqrt{ x^2 + y^2 + z^2 } \,, \quad \f \in [0,2\pi] \,, \quad \theta \in \left[ -\frac{\pi}{2}, \frac{\pi}{2} \right] \,,
+$$
+with the angles $\f$ and $\theta$ as in Figure @fig-spherical-coordinates.
+
+> It is clear that $z = \rho \sin(\theta)$, by basic trigonometry. To compute $x$ and $y$, we note
+that the segment joining $\zero$ to $\pp$ has length 
+$$
+L = \rho \cos \theta \,.
+$$
+Therefore we get
+\begin{align*}
+x & = L \cos (\phi) = \rho \cos (\theta)  \cos(\phi) \\
+y & = L \sin (\phi) = \rho \cos (\theta)  \sin(\phi) 
+\end{align*}
+concluding.
+
+:::
+
+
+![Spherical coordinates in $\R^3$.](/images/spherical_coordinates.png){#fig-spherical-coordinates width=80%}
+
+
+
+
+::: Example
+### Unit sphere in spherical coordinates
+
+Consider again the unit sphere in $\R^3$
+$$
+\sphere^2 := \{  (x,y,z) \in \R^3 \divider x^2 + y^2 + z^2 = 1  \} \,.
+$$
+We want to give an alternative atlas for $\sphere^2$ based on spherical coordinates. To this end, define
+$$
+U := \left\{ (\theta,\phi)  \in \R^2 \divider -\frac{\pi}{2} < \theta < \frac{\pi}{2} \,, \,\, 
+0< \phi < 2 \pi    \right\}
+$$
+and $\sss \colon U \to \R^3$ by
+$$
+\sss( \theta , \phi ) :=  ( \cos(\theta) \cos(\phi), \cos(\theta) \sin(\phi), \sin (\theta)  ) \,.
+$$
+We have:
+
+- $\sss$ is smooth.
+
+- $U$ is open in $\R^2$.
+
+- Moreover
+$$
+\sss (U) = \sphere^2 \smallsetminus \{ (x,0,z) \in \R^3 \divider x \geq 0  \} \,,
+$$
+as seen also in the left picture in @fig-chart-sphere. 
+
+- The set $\sss(U)$ is evidently open in $\sphere^2$. 
+
+- It is easy to check that $\sss$ is invertible, with continuous inverse. 
+
+- Thus $\sss$ is a homeomorphism from $U$ into $\sss(U)$.
+
+Let us check that $\sss$ is a regular chart:
+\begin{align*}
+\sss_{\theta} & = (-\sin(\theta) \cos(\phi), -\sin(\theta) \sin(\phi), \cos(\theta) ) \\
+ \sss_{\phi} & = ( - \cos(\theta) \sin(\phi), \cos(\theta) \cos(\phi), 0 )  \,.
+\end{align*} 
+Therefore 
+$$
+\sss_{\theta} \times \sss_{\phi} = 
+( - \cos^2(\theta) \cos(\phi), - \cos^2(\theta) \sin(\phi), - \sin(\theta) \cos ( \theta ) ) \,,
+$$
+from which
+$$
+\norm{ \sss_{\theta} \times \sss_{\phi} } = |\cos (\theta)| \, .
+$$
+Since $(\theta,\phi)\in U$, we have $\theta \in ( -\pi/2, \pi/2 )$, and so
+$$
+\norm{ \sss_{\theta} \times \sss_{\phi} } = |\cos (\theta)| \neq 0 \,,
+$$
+showing that $\sss_{\theta}$ and $\sss_{\phi}$ are linearly independent, and
+$\sss$ is regular.
+
+Since $\sss(U) \neq \sphere^2$, the chart $\sss$ does not form an atlas. We need a second chart. An option is to define $\widetilde{\sss} \colon U \to \R^3$ by
+$$
+\widetilde{\sss} := ( - \cos(\theta) \cos (\phi), -\sin(\theta) , - \cos (\theta) \sin(\phi)) \,.
+$$
+Notice that $\widetilde{\sss}$ is obtained by rotating $\sss$ by $\pi$ about the $z$-axis and by $\pi/2$ about the $y$-axis, as seen in the right picture in @fig-chart-sphere. It is an exercise to check that $\widetilde{\sss}$ is a regular chart. 
+
+Since we have
+$$
+\widetilde{\sss} (U) = \sphere^2 \smallsetminus \{ (x,y,0) \in \R^3 \divider x \leq 0  \} \,,
+$$
+it is immediate to see that
+$$
+\sphere^2 = \sss(U) \cup \widetilde{\sss}(U) \,.
+$$
+Hence
+$$
+\mathcal{A} := \{   \sss , \widetilde{\sss} \} 
+$$
+is a regular atlas for $\sphere^2$.
+
+
+:::
+
+
+
+
+```{python}
+#| echo: false
+#| fig-cap: "Image of the charts of the sphere from the above example."
+#| label: fig-chart-sphere
+
+# Importing numpy, matplotlib and mplot3d
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits import mplot3d
+
+
+fig = plt.figure(figsize = (9,5))
+
+# Generates 2 sets of 3D axes
+ax1 = fig.add_subplot(1, 2, 1, projection = '3d')
+ax2 = fig.add_subplot(1, 2, 2, projection = '3d')
+
+
+# Shows axes grid
+ax1.grid(True)
+ax2.grid(True)
+
+# Generates coordinates u and v by dividing
+# the intervals (0,1) and (0,2pi) in 100 parts
+u = np.linspace(- np.pi / 2, np.pi / 2, 100)
+v = np.linspace(0+0.1, 2*np.pi- 0.1, 100)
+
+# Generates grid [U,V] from the coordinates u, v
+U, V = np.meshgrid(u, v)
+
+# Computes the surface on grid [U,V]
+x = np.cos(U) * np.cos(V)
+y = np.cos(U) * np.sin(V)
+z = np.sin(U)
+
+
+X = - np.cos(U) * np.cos(V)
+Y = - np.sin(U)
+Z = - np.cos(U) * np.sin(V)
+
+# Plots the cone
+ax1.plot_surface(x, y, z, color = 'dimgray', edgecolors = 'snow')
+
+
+ax2.plot_surface(X, Y, Z, color = 'dimgray', edgecolors = 'snow')
+
+
+
+ax2.view_init(elev = 25, azim = -138)
+
+
+# Setting axes labels
+ax1.set_xlabel('x', labelpad=10)
+ax1.set_ylabel('y', labelpad=10)
+ax1.set_zlabel('z', labelpad=10)
+
+ax2.set_xlabel('x', labelpad=10)
+ax2.set_ylabel('y', labelpad=10)
+ax2.set_zlabel('z', labelpad=10)
+
+
+# Showing the plot
+plt.show()
+```
+
+
+
+
+Let us make an example of a non-regular surface.
+
+
+::: Example
+
+The surface parametrized by 
+$$
+\sss(u,v) = (u,v^2,v^3) \,, \quad \forall (u,v) \in \R^2
+$$
+is not regular. This is because
+$$
+\sss_u = (1,0,0) \,, \quad
+\sss_v = (0,2v,3v^2)
+$$
+and therefore 
+$$
+\sss_v(u,0) = (0,0,0) \,, 
+$$
+showing that $\sss_u$ and $\sss_v$ are linearly dependent along the line
+$$
+L = \{ (u,0) \divider u \in \R \} \,.
+$$
+Hence $\sss$ is not a regular chart.
+
+Looking at Figure @fig-plot-cusp, it is clear that $\SSS$ is not regular, since $\SSS$ has a cusp along the line $L$.
+
+:::
+
+
+
+
+
+
+
+```{python}
+#| echo: false
+#| fig-cap: "Example of non-regular surface."
+#| label: fig-plot-cusp
+
+# Importing numpy, matplotlib and mplot3d
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits import mplot3d
+
+# Generates figure object of size 4 x 4
+fig = plt.figure(figsize = (4,4))
+
+# Generates 3D axes
+ax = plt.axes(projection = '3d')
+
+# Shows axes grid
+ax.grid(True)
+
+# Generates coordinates u and v by dividing
+# the intervals (0,1) and (0,2pi) in 100 parts
+u = np.linspace(-1, 1, 100)
+v = np.linspace(-1, 1, 100)
+
+# Generates grid [U,V] from the coordinates u, v
+U, V = np.meshgrid(u, v)
+
+# Computes the surface on grid [U,V]
+x = U 
+y = V ** 2
+z = V ** 3
+
+# Plots the cone
+ax.plot_surface(x, y, z, rstride = 5, cstride = 5, color = 'dimgray', edgecolors = 'snow')
+
+
+
+
+# Setting axes labels
+ax.set_xlabel('x', labelpad=10)
+ax.set_ylabel('y', labelpad=10)
+ax.set_zlabel('z', labelpad=10)
+
+# Setting viewing angle
+ax.view_init(elev = 26, azim = 35)
+
+# Showing the plot
+plt.show()
+```
+
+
+
+
+
+### Level set surfaces
+
+
+
+::: Definition
+### Level set surface
+
+Let $f \colon \R^3 \to \R$ be smooth. The **level set surface** associated with $f$ is the set
+$$
+\SSS_f := f^{-1}(0) = \{ (x,y,z) \in \R^3 \divider f(x,y,z) = 0  \} \,.
+$$
+
+:::
+
+
+We now give a result concerning regularity of level set surfaces. The proof, rather technical, is based on the Implicit Function Theorem and can be
+found in Proposition 3.1.25 of [@abate-tovena]. We decide to omit it.
+
+
+::: {.Theorem #theorem-level-surface}
+
+Let $V \subseteq \R^3$ be an open set and $f \colon V \to \R$ be smooth. Consider the level set surface
+$$
+\SSS_f = \{ (x,y,z) \in V \divider f(x,y,z) = 0  \} \,.
+$$
+Suppose that 
+$$
+\nabla f (x,y,z) \neq 0 \,, \quad \forall \, (x,y,z) \in V \,.
+$$
+Then $\SSS_f$ is a regular surface.
+
+:::
+
+
+
+::: Example
+
+We want to determine if the set defined by the equation
+$$
+\SSS = \{ (x,y,z) \in \R^3 \divider x^2 + y^2 = 1 \}  
+$$
+is a regular surface. Note that $\SSS$ is a unit cylinder: From Example \ref{example-unit-cylinder} we already know that $\SSS$ is a regular surface.
+
+Let us prove that $\SSS$ is regular by using Theorem \ref{theorem-level-surface}. To this end, define the open set
+$$
+V := \R^3 \smallsetminus \{ (0,0,z) \divider z \in \R \} \,.
+$$
+Note that $V$ is obtained by removing the $z$-axis from $\R^3$. Also define  the function $f \colon \R^3 \to \R$ by
+$$
+f(x,y,z) := x^2 + y^2 -1 \,.
+$$
+We have
+$$
+\nabla f (x,y,z) = ( 2x, 2y, 0 ) \neq 0  \,, \quad 
+\forall \, (x,y,z) \in V \,.
+$$
+Since 
+$$
+\SSS = \SSS_f \,,
+$$
+by Theorem \ref{theorem-level-surface} we conclude that 
+$\SSS$ is a regular surface.
+
+:::
 
 
 
