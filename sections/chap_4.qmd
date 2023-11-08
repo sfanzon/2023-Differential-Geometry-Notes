@@ -1218,14 +1218,14 @@ plt.show()
 
 
 
-### Level set surfaces
+## Level surfaces
 
 
 
 ::: Definition
-### Level set surface
+### Level surface
 
-Let $f \colon \R^3 \to \R$ be smooth. The **level set surface** associated with $f$ is the set
+Let $f \colon \R^3 \to \R$ be smooth. The **level surface** associated with $f$ is the set
 $$
 \SSS_f := f^{-1}(0) = \{ (x,y,z) \in \R^3 \divider f(x,y,z) = 0  \} \,.
 $$
@@ -1233,13 +1233,13 @@ $$
 :::
 
 
-We now give a result concerning regularity of level set surfaces. The proof, rather technical, is based on the Implicit Function Theorem and can be
+We now give a result concerning regularity of level surfaces. The proof, rather technical, is based on the Implicit Function Theorem and can be
 found in Proposition 3.1.25 of [@abate-tovena]. We decide to omit it.
 
 
 ::: {.Theorem #theorem-level-surface}
 
-Let $V \subseteq \R^3$ be an open set and $f \colon V \to \R$ be smooth. Consider the level set surface
+Let $V \subseteq \R^3$ be an open set and $f \colon V \to \R$ be smooth. Consider the level surface
 $$
 \SSS_f = \{ (x,y,z) \in V \divider f(x,y,z) = 0  \} \,.
 $$
@@ -1282,6 +1282,500 @@ by Theorem \ref{theorem-level-surface} we conclude that
 $\SSS$ is a regular surface.
 
 :::
+
+
+
+
+::: Example
+### Circular cone
+
+We saw that the circular cone
+$$
+\SSS := \{ (x,y,z) \in \R^3 \divider x^2 + y^2 = z^2  \} \,.
+$$
+is not a surface. However the positive sheet 
+$$
+\SSS^+ := \{ (x,y,z) \in \R^3 \divider x^2 + y^2 = z^2 \,, \,  z>0  \} \,.
+$$
+is a regular surface, see @fig-positive-cone Indeed, define the open set 
+$$
+V := \{ (x,y,z) \in \R^3 \divider z > 0 \} 
+$$
+and  the function $f \colon V \to \R$ by
+$$
+f(x,y,z) := x^2 + y^2 - z^2 \,.
+$$
+We have
+$$
+\nabla f (x,y,z) = ( 2x, 2y, -2z ) \neq 0  \,, \quad 
+\forall \, (x,y,z) \in V \,.
+$$
+Since 
+$$
+\SSS^+ = \SSS_f \,,
+$$
+by Theorem \ref{theorem-level-surface} we conclude that 
+$\SSS$ is a regular surface. 
+
+As a side note, a regular atlas for $\SSS^+$ is given by $\mathcal{A} = \{\sss\}$ where $\sss \colon \R^2 \to \R^3$ is defined by
+$$
+\sss (u,v) := (u,v,\sqrt{u^2 + v^2}) \,.
+$$
+
+:::
+
+
+
+```{python}
+#| echo: false
+#| fig-cap: "Positive sheet of circular cone."
+#| label: fig-positive-cone
+
+# Importing numpy, matplotlib and mplot3d
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits import mplot3d
+
+# Generates figure object of size 4 x 4
+fig = plt.figure(figsize = (4,4))
+
+# Generates 3D axes
+ax = plt.axes(projection = '3d')
+
+# Shows axes grid
+ax.grid(True)
+
+# Generates coordinates u and v by dividing
+# the intervals (0,1) and (0,2pi) in 100 parts
+u = np.linspace(-1, 1, 100)
+v = np.linspace(-1, 1, 100)
+
+# Generates grid [U,V] from the coordinates u, v
+U, V = np.meshgrid(u, v)
+
+# Computes the surface on grid [U,V]
+x = U 
+y = V
+z = np.sqrt( U ** 2 + V ** 2)
+
+# Plots the cone
+ax.plot_surface(x, y, z, rstride = 5, cstride = 5, color = 'dimgray', edgecolors = 'snow')
+
+
+
+
+# Setting axes labels
+ax.set_xlabel('x', labelpad=10)
+ax.set_ylabel('y', labelpad=10)
+ax.set_zlabel('z', labelpad=10)
+
+# Setting viewing angle
+ax.view_init(elev = 26, azim = 35)
+
+# Showing the plot
+plt.show()
+```
+
+
+
+
+
+
+## Reparametrizations
+
+
+We have defined the reparametrization of curves. In a similar way, one can reparametrize surface charts.
+
+
+::: Definition
+
+Suppose that $U, \widetilde{U} \subseteq \R^2$ are open sets and 
+$$
+\sss \colon U \to \R^3 \,, \quad 
+\widetilde{\sss} \colon \widetilde{U} \to \R^3 \,,
+$$ 
+are surface charts. We say that $\widetilde{\sss}$ is a **reparametrization** of $\sss$ if there exists a diffeomorphism
+$$
+\Phi \colon \widetilde{U} \to U \,,
+$$
+such that 
+$$
+\widetilde{\sss} = \sss \circ \Phi \,,
+$$
+that is,
+$$
+\widetilde{\sss}( \tilde{u},\tilde{v} ) = \sss (  \Phi ( \tilde{u},\tilde{v}) ) \,, \quad \forall \,\, (\tilde{u},\tilde{v} ) \in 
+\widetilde{U} \,.
+$$
+We call $\Phi$ a **reparametrization map**.
+:::
+
+
+
+![Schematic illustration of surface chart $\sss$ and reparametrization $\widetilde{\sss}$.](/images/surface_reparametrization.png){width=80%}
+
+
+We will show that reparametrizations of regular charts are regular. To prove this, first we need to recall the chain rule for multivariable functions.
+
+::: Remark
+### Chain rule
+
+Suppose that $U, \widetilde{U} \subseteq \R^2$ are open sets, 
+$$
+f \colon U \to \R^3 
+$$
+is smooth, and 
+$$
+\Phi \colon \widetilde{U} \to U
+$$
+is a diffeomorphism. Define $\tilde{f} \colon \widetilde{U} \to \R^3$ by composition:
+$$
+\tilde{f} := f \circ \Phi \,.
+$$
+Explicitly, the above means
+$$
+\tilde{f}( \tilde{u},\tilde{v} ) = f (  \Phi ( \tilde{u},\tilde{v}) ) \,, \quad \forall \,\, (\tilde{u},\tilde{v} ) \in 
+\widetilde{U} \,.
+$$
+We denote the components of $f, \tilde{f}$ and $\Phi$ by
+$$
+\tilde{f} = (\tilde{f}^1, \tilde{f}^2, \tilde{f}^3) \,, \quad 
+f = (f^1,f^2,f^3) \,, \quad 
+\Phi = (\Phi^1, \Phi^2) \,. 
+$$
+The Jacobians are
+$$
+J \tilde{f} = \left(   
+\begin{array}{cc}
+ \tilde{f}^1_{\tilde u}  & \tilde{f}^1_{\tilde v}  \\
+ \tilde{f}^2_{\tilde u}  & \tilde{f}^2_{\tilde v}  \\
+ \tilde{f}^3_{\tilde u}  & \tilde{f}^3_{\tilde v}
+\end{array}
+\right) \,, \quad
+J f = \left(   
+\begin{array}{cc}
+ {f}^1_{u}  &  {f}^1_{v}  \\
+ {f}^2_{u}  &  {f}^2_{v}  \\
+ {f}^3_{u}  &  {f}^3_{v}
+\end{array}
+\right) \,, \quad 
+J \Phi = \left(   
+\begin{array}{cc}
+ {\Phi}^1_{\tilde u}  &  {\Phi}^1_{\tilde v}  \\
+ {\Phi}^2_{\tilde u}  &  {\Phi}^2_{\tilde v}  
+\end{array}
+\right) \,.
+$$
+
+The chain rule states that
+$$
+J \tilde{f} (\tilde u, \tilde v) = Jf ( \Phi (\tilde u, \tilde v) ) \,
+J\Phi (\tilde u, \tilde v) \,.
+$$
+By expanding the above identity we obtain the chain rule in vectorial form
+\begin{align*}
+\tilde{f}_{\tilde{u}} (\tilde{u}, \tilde{v}) & = 
+f_u ( \Phi(\tilde{u}, \tilde{v}) ) \Phi_{\tilde{u}}^1 (\tilde{u}, \tilde{v}) + f_v ( \Phi(\tilde{u}, \tilde{v}) ) \Phi_{\tilde{u}}^2 (\tilde{u}, \tilde{v}) \\ 
+\tilde{f}_{\tilde{v}} (\tilde{u}, \tilde{v}) & = 
+f_u ( \Phi(\tilde{u}, \tilde{v}) ) \Phi_{\tilde{v}}^1 (\tilde{u}, \tilde{v}) + f_v ( \Phi(\tilde{u}, \tilde{v}) ) \Phi_{\tilde{v}}^2 (\tilde{u}, \tilde{v}) 
+\end{align*}
+As done previously, we introduce compact notation for reparametrizations and chain rule. Specifically, we denote the components of the diffeomorphism $\Phi$ by
+\begin{align*}
+\Phi^1 \quad & \leadsto \quad (\tilde u, \tilde v) \mapsto u (\tilde u, \tilde v)  \\
+\Phi^2 \quad & \leadsto \quad (\tilde u, \tilde v) \mapsto v (\tilde u, \tilde v) 
+\end{align*}
+Accordingly, the Jacobian of $\Phi$ is denoted as:
+$$
+J \Phi = \left(   
+\begin{array}{cc}
+ {\Phi}^1_{\tilde u}  &  {\Phi}^1_{\tilde v}  \\
+ {\Phi}^2_{\tilde u}  &  {\Phi}^2_{\tilde v}  
+\end{array}
+\right)   \quad \leadsto \quad 
+\left(   
+\begin{array}{cc}
+ \dfrac{\partial u}{\partial \tilde u}  &  \dfrac{\partial u}{\partial \tilde v}  \\
+ \dfrac{\partial v}{\partial \tilde u}  &  \dfrac{\partial v}{\partial \tilde v}
+\end{array}
+\right)  \,.
+$$
+Hence, the chain rule in vectorial form reads
+\begin{align*}
+\tilde{f}_{\tilde{u}}  & = 
+f_u  \frac{\partial u}{\partial \tilde{u}} + f_v  \frac{\partial v}{\partial \tilde{u}} \\ 
+\tilde{f}_{\tilde{v}}  & = 
+f_u  \, \frac{\partial u}{\partial \tilde{v}}  + f_v  \frac{\partial v}{\partial \tilde{v}} 
+\end{align*}
+
+:::
+
+
+
+
+We will now prove that the reparametrization of a regular chart is regular.
+
+::: {.Proposition  #proposition-transition-maps}
+
+Suppose that $U, \widetilde{U} \subseteq \R^2$ are open sets and 
+$$
+\sss \colon U \to \R^3 
+$$ 
+is a regular chart. Assume given a diffeomorphism
+$$
+\Phi \colon \widetilde{U} \to U \,.
+$$
+The reparametrization $\widetilde{\sss} \colon \widetilde{U} \to \R^3$ defined by 
+$$
+\widetilde{\sss} = \sss \circ \Phi
+$$
+is a regular chart.
+
+:::
+
+
+::: Proof
+
+Since $\sss$ is a regular chart we have that $\sss_u$ and $\sss_v$ are linearly independent. Hence
+$$
+\sss_u \times \sss_v \neq 0 \,.
+$$
+To see that $\widetilde{\sss}$ is regular it is sufficient to prove that
+$$
+\widetilde{\sss}_{\tilde u} \times \widetilde{\sss}_{\tilde v} \neq 0 \,.
+$${#eq-change-chart-1}
+By chain rule we have
+\begin{align*}
+\widetilde{\sss}_{\tilde{u}}  & = 
+\sss_u  \frac{\partial u}{\partial \tilde{u}} + \sss_v  \frac{\partial v}{\partial \tilde{u}} \\ 
+\widetilde{\sss}_{\tilde{v}}  & = 
+\sss_u  \, \frac{\partial u}{\partial \tilde{v}}  + \sss_v  \frac{\partial v}{\partial \tilde{v}} 
+\end{align*}
+By the properties of vector product we get
+\begin{align*}
+\widetilde{\sss}_{\tilde u} \times \widetilde{\sss}_{\tilde v} & = 
+\left( \sss_u  \frac{\partial u}{\partial \tilde{u}} + \sss_v  \frac{\partial v}{\partial \tilde{u}}   \right) 
+\times 
+\left( \sss_u  \, \frac{\partial u}{\partial \tilde{v}}  + \sss_v  \frac{\partial v}{\partial \tilde{v}} 
+ \right)  \\ 
+ & =  \frac{\partial u}{\partial \tilde{u}} \, \frac{\partial u}{\partial \tilde{v}}  \, \left(  \sss_u \times \sss_u \right) +
+  \frac{\partial u}{\partial \tilde{u}} \, \frac{\partial v}{\partial \tilde{v}}  \, \left(  \sss_u \times \sss_v \right)  \\
+ & + \frac{\partial v}{\partial \tilde{u}} \, \frac{\partial u}{\partial \tilde{v}}  \, \left(  \sss_v \times \sss_u \right) +
+  \frac{\partial v}{\partial \tilde{u}} \, \frac{\partial v}{\partial \tilde{v}}  \, \left(  \sss_v \times \sss_v \right) \\
+  & = \left(   \frac{\partial u}{\partial \tilde{u}} \, \frac{\partial v}{\partial \tilde{v}} - \frac{\partial v}{\partial \tilde{u}} \, \frac{\partial u}{\partial \tilde{v}}         \right)   \, \left( \sssu \times \sssv  \right) \\
+  & = \det \left( 
+\begin{array}{cc}
+ \dfrac{\partial u}{\partial \tilde u}  &  \dfrac{\partial u}{\partial \tilde v}  \\
+ \dfrac{\partial v}{\partial \tilde u}  &  \dfrac{\partial v}{\partial \tilde v}
+\end{array}
+\right) \,  \left( \sssu \times \sssv  \right) \\
+& = \det  J \Phi \,  \left( \sssu \times \sssv  \right) \,.
+\end{align*}
+Since $\Phi$ is a diffeomorphism, we have that 
+$$
+\det J\Phi \neq 0 \,,
+$$
+from which we conclude (@eq-change-chart-1).
+
+:::
+
+
+
+
+
+## Transition maps
+
+
+
+Consider the situation in which two regular charts have overlapping image.  
+It is natural to ask wether these maps are reparametrizations of each
+other on the overlapping region, see @fig-transition-maps. If such reparametrization exists, it is called a transition map.
+
+
+
+![If the two regular charts $\sss$ and $\widetilde{\sss}$ have overlapping image, then they are reparametrization of each other, through a transition map $\Phi$.](/images/surfaces_transition_map.png){#fig-transition-maps width=80%}
+
+
+
+::: Definition
+### Transition map
+
+Let $\SSS$ be a regular surface and 
+$$
+\sss \colon U \to \sss(U) \subseteq \SSS \,, \quad
+\widetilde{\sss} \colon \widetilde{U} \to \widetilde{\sss} (\widetilde{U}) \subseteq \SSS
+$$
+be regular charts. Assume that the images of $\sss$ and $\widetilde{\sss}$ overlap, that is,
+$$
+I := \sss (U) \cap \widetilde{\sss} (\widetilde{U}) \neq \emptyset \,.
+$$
+The set $I$ is open in $\SSS$, since it is intersection of open sets. Define the sets
+$$
+V := \sss^{-1}(I) \subseteq U \,, \quad  \widetilde{V} := \widetilde{\sss}^{-1} (I) \subseteq \widetilde{U} \,,
+$$
+The sets $V$ and $\widetilde{V}$ are open and by construction
+$$
+\sss(V) = \widetilde{\sss} (\widetilde{V} ) = I \,.
+$$
+Therefore they are well defined the restrictions
+$$
+\sss |_{V} \colon V \to I \,, \quad 
+\widetilde{\sss} |_{\widetilde{V}} \colon \widetilde{V} \to I \,,
+$$
+which are homeomorphisms. The homeomorphism
+$$
+\Phi \colon \widetilde{V} \to V \,, \quad \Phi := \sss^{-1} \circ \widetilde{\sss}
+$$
+is called a **transition map** from $\sss$ to $\widetilde{\sss}$.
+
+:::
+
+
+
+
+The theorem below states that transition maps between regular charts are diffeomorphisms. The proof is slightly technical and is based on the Implicit Function Theorem. We decide to omit it. The interested reader can find a proof at Page 117 of [@pressley].
+
+
+::: {.Theorem #theorem-transition-map}
+
+Let $\SSS$ be a regular surface. The transition maps between regular charts are diffeomorphisms. 
+
+:::
+
+
+We can now use Theorem \ref{theorem-transition-map} to show that
+transition maps are reparametrizations.
+
+
+::: {.Proposition #proposition-transition-map}
+
+Let $\SSS$ be a regular surface and 
+$$
+\sss \colon U \to \sss(U) \subseteq \SSS \,, \quad
+\widetilde{\sss} \colon \widetilde{U} \to \widetilde{\sss} (\widetilde{U}) \subseteq \SSS
+$$
+be regular charts. Assume that the images of $\sss$ and $\widetilde{\sss}$ overlap, that is,
+$$
+\sss (U) \cap \widetilde{\sss} (\widetilde{U}) \neq \emptyset \,.
+$$
+Then there exist open sets 
+$$
+V \subseteq U \,, \quad  \widetilde{V} \subseteq \widetilde{U} \,,
+$$
+and a diffeomorphism 
+$$
+\Phi \colon \widetilde{V} \to V
+$$
+such that $\widetilde{\sss} |_{\widetilde{V}}$ is a reparametrization of $\sss |_{V}$, that is,
+$$
+\widetilde{\sss} |_{\widetilde{V}} = (\sss |_{V}) \circ \Phi \,.
+$$
+
+:::
+
+
+
+::: Proof
+
+Define
+$$
+I:=\sss (U) \cap \widetilde{\sss} (\widetilde{U}) \neq \emptyset \,.
+$$
+Note that this set is open in $\SSS$, being intersection of open sets.
+Set 
+$$
+V := \sss^{-1} (  I  ) \,, \quad 
+\widetilde{V} := \widetilde{\sss}^{-1} (   I   ) \,.
+$$
+The sets $V$ and $\widetilde{V}$ are open, since $\sss$ and $\widetilde{\sss}$ are homeomorphisms, and hence are continuous. By construction we have
+$$
+\sss(V) = \widetilde{\sss} (\widetilde{V}) = I \,.
+$$
+Therefore they are well defined the restrictions
+$$
+\sss |_{V} \colon V \to I \,, \quad 
+\widetilde{\sss} |_{\widetilde{V}} \colon \widetilde{V} \to I \,,
+$$
+which are homeomorphisms. Consider the transition map
+$$
+\Phi \colon \widetilde{V} \to V \,, \quad \Phi := \sss^{-1} \circ \widetilde{\sss} \,.
+$$
+By Theorem \ref{theorem-transition-map} we know that $\Phi$ is a diffeomorphism. Hence 
+$$
+\widetilde{\sss} |_{\widetilde{V}} = (\sss |_{V}) \circ \Phi \,,
+$$
+with $\Phi$ diffeomorphism, showing that $\widetilde{\sss} |_{\widetilde{V}}$ is a reparametrization of $\sss |_{V}$.
+
+:::
+
+
+
+
+::: Important
+
+Proposition \ref{proposition-transition-map} allows us to define properties of surfaces using charts, as long as we check that the property in question does not depend on reparametrization.
+
+:::
+
+
+
+
+
+## Functions between surfaces
+
+
+We would like to define a concept of smooth function 
+$$
+f \colon \SSS_1 \to \SSS_2 \,,
+$$
+where $\SSS_1$ and $\SSS_2$ are surfaces. So far we know what a smooth function from $\R^n$ into $\R^m$ is. The idea is to use surface charts to define such $f$.
+
+
+::: Definition
+
+Let $\SSS_1$ and $\SSS_2$ be surfaces and let 
+$$
+\sss_1 \colon U_1 \to \sss_1(U) \subseteq \SSS_1 \,, \quad 
+\sss_2 \colon U_2 \to \sss_2(U) \subseteq \SSS_2 \,, 
+$$
+be surface charts for $\SSS_1$ and $\SSS_2$, respectively. Consider a function
+$$
+f \colon \SSS_1 \to \SSS_2 \,.
+$$
+We say that:
+
+- $f$ is smooth if the map
+$$
+(\sss_2^{-1} \circ f \circ \sss_1 )  \colon U_1 \to U_2
+$$
+is smooth.
+
+- $f$ is a diffeomorphism if smooth if $\sss_2^{-1} \circ f \circ \sss_1$ is a diffeomorphims. 
+
+:::
+
+
+
+
+::: Remark
+
+- The function $\sss_2^{-1} \circ f \circ \sss_1$ maps from $\R^2$ into $\R^2$.
+
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

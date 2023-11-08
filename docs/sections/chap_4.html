@@ -85,63 +85,7 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
 .Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -149,13 +93,69 @@ div.csl-indent {
   --color1: #bce5de;
   --color2: #21aa93;
 }
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .DONE {
   --color1: #cce7b1;
   --color2: #86b754;
 }
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
 </style>
 
@@ -263,10 +263,11 @@ div.csl-indent {
   <li><a href="#smooth-functions" id="toc-smooth-functions" class="nav-link" data-scroll-target="#smooth-functions"><span class="header-section-number">4.1.2</span> Smooth functions</a></li>
   </ul></li>
   <li><a href="#definition-of-surface" id="toc-definition-of-surface" class="nav-link" data-scroll-target="#definition-of-surface"><span class="header-section-number">4.2</span> Definition of Surface</a></li>
-  <li><a href="#regular-surfaces" id="toc-regular-surfaces" class="nav-link" data-scroll-target="#regular-surfaces"><span class="header-section-number">4.3</span> Regular Surfaces</a>
-  <ul class="collapse">
-  <li><a href="#level-set-surfaces" id="toc-level-set-surfaces" class="nav-link" data-scroll-target="#level-set-surfaces"><span class="header-section-number">4.3.1</span> Level set surfaces</a></li>
-  </ul></li>
+  <li><a href="#regular-surfaces" id="toc-regular-surfaces" class="nav-link" data-scroll-target="#regular-surfaces"><span class="header-section-number">4.3</span> Regular Surfaces</a></li>
+  <li><a href="#level-surfaces" id="toc-level-surfaces" class="nav-link" data-scroll-target="#level-surfaces"><span class="header-section-number">4.4</span> Level surfaces</a></li>
+  <li><a href="#reparametrizations" id="toc-reparametrizations" class="nav-link" data-scroll-target="#reparametrizations"><span class="header-section-number">4.5</span> Reparametrizations</a></li>
+  <li><a href="#transition-maps" id="toc-transition-maps" class="nav-link" data-scroll-target="#transition-maps"><span class="header-section-number">4.6</span> Transition maps</a></li>
+  <li><a href="#functions-between-surfaces" id="toc-functions-between-surfaces" class="nav-link" data-scroll-target="#functions-between-surfaces"><span class="header-section-number">4.7</span> Functions between surfaces</a></li>
   </ul>
 </nav>
     </div>
@@ -942,17 +943,18 @@ L = \{ (u,0) \, \colon \,u \in \mathbb{R}\} \,.
 </div>
 </div>
 </div>
-<section id="level-set-surfaces" class="level3" data-number="4.3.1">
-<h3 data-number="4.3.1" class="anchored" data-anchor-id="level-set-surfaces"><span class="header-section-number">4.3.1</span> Level set surfaces</h3>
-<div id="level-set-surface" class="Definition" title="Level set surface">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 36: </strong>Level set surface</summary><div>Let <span class="math inline">\(f \colon \mathbb{R}^3 \to \mathbb{R}\)</span> be smooth. The <strong>level set surface</strong> associated with <span class="math inline">\(f\)</span> is the set <span class="math display">\[
+</section>
+<section id="level-surfaces" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="level-surfaces"><span class="header-section-number">4.4</span> Level surfaces</h2>
+<div id="level-surface" class="Definition" title="Level surface">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 36: </strong>Level surface</summary><div>Let <span class="math inline">\(f \colon \mathbb{R}^3 \to \mathbb{R}\)</span> be smooth. The <strong>level surface</strong> associated with <span class="math inline">\(f\)</span> is the set <span class="math display">\[
 \mathcal{S}_f := f^{-1}(0) = \{ (x,y,z) \in \mathbb{R}^3 \, \colon \,f(x,y,z) = 0  \} \,.
 \]</span><p></p>
 </div></details>
 </div>
-<p>We now give a result concerning regularity of level set surfaces. The proof, rather technical, is based on the Implicit Function Theorem and can be found in Proposition 3.1.25 of <span class="citation" data-cites="abate-tovena">(<a href="references.html#ref-abate-tovena" role="doc-biblioref">Abate, Marco and Tovena, Francesca 2011</a>)</span>. We decide to omit it.</p>
+<p>We now give a result concerning regularity of level surfaces. The proof, rather technical, is based on the Implicit Function Theorem and can be found in Proposition 3.1.25 of <span class="citation" data-cites="abate-tovena">(<a href="references.html#ref-abate-tovena" role="doc-biblioref">Abate, Marco and Tovena, Francesca 2011</a>)</span>. We decide to omit it.</p>
 <div id="theorem-level-surface" class="Theorem">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 37</strong></summary><div>Let <span class="math inline">\(V \subseteq \mathbb{R}^3\)</span> be an open set and <span class="math inline">\(f \colon V \to \mathbb{R}\)</span> be smooth. Consider the level set surface <span class="math display">\[
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 37</strong></summary><div>Let <span class="math inline">\(V \subseteq \mathbb{R}^3\)</span> be an open set and <span class="math inline">\(f \colon V \to \mathbb{R}\)</span> be smooth. Consider the level surface <span class="math display">\[
 \mathcal{S}_f = \{ (x,y,z) \in V \, \colon \,f(x,y,z) = 0  \} \,.
 \]</span> Suppose that <span class="math display">\[
 \nabla f (x,y,z) \neq 0 \,, \quad \forall \, (x,y,z) \in V \,.
@@ -975,14 +977,284 @@ f(x,y,z) := x^2 + y^2 -1 \,.
 \]</span> by Theorem <a href="chap_4.html#theorem-level-surface">37</a> we conclude that <span class="math inline">\(\mathcal{S}\)</span> is a regular surface.</p>
 </div></details>
 </div>
+<div id="circular-cone-1" class="Example" title="Circular cone">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 39: </strong>Circular cone</summary><div>We saw that the circular cone <span class="math display">\[
+\mathcal{S}:= \{ (x,y,z) \in \mathbb{R}^3 \, \colon \,x^2 + y^2 = z^2  \} \,.
+\]</span> is not a surface. However the positive sheet <span class="math display">\[
+\mathcal{S}^+ := \{ (x,y,z) \in \mathbb{R}^3 \, \colon \,x^2 + y^2 = z^2 \,, \,  z&gt;0  \} \,.
+\]</span> is a regular surface, see <a href="#fig-positive-cone">Figure&nbsp;<span>4.4</span></a> Indeed, define the open set <span class="math display">\[
+V := \{ (x,y,z) \in \mathbb{R}^3 \, \colon \,z &gt; 0 \}
+\]</span> and the function <span class="math inline">\(f \colon V \to \mathbb{R}\)</span> by <span class="math display">\[
+f(x,y,z) := x^2 + y^2 - z^2 \,.
+\]</span> We have <span class="math display">\[
+\nabla f (x,y,z) = ( 2x, 2y, -2z ) \neq 0  \,, \quad
+\forall \, (x,y,z) \in V \,.
+\]</span> Since <span class="math display">\[
+\mathcal{S}^+ = \mathcal{S}_f \,,
+\]</span> by Theorem <a href="chap_4.html#theorem-level-surface">37</a> we conclude that <span class="math inline">\(\mathcal{S}\)</span> is a regular surface.<p></p>
+<p>As a side note, a regular atlas for <span class="math inline">\(\mathcal{S}^+\)</span> is given by <span class="math inline">\(\mathcal{A} = \{{\pmb{\sigma}}\}\)</span> where <span class="math inline">\({\pmb{\sigma}}\colon \mathbb{R}^2 \to \mathbb{R}^3\)</span> is defined by <span class="math display">\[
+{\pmb{\sigma}}(u,v) := (u,v,\sqrt{u^2 + v^2}) \,.
+\]</span></p>
+</div></details>
+</div>
+<div class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div id="fig-positive-cone" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="chap_4_files/figure-html/fig-positive-cone-output-1.png" width="348" height="323" class="figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.4: Positive sheet of circular cone.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="reparametrizations" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="reparametrizations"><span class="header-section-number">4.5</span> Reparametrizations</h2>
+<p>We have defined the reparametrization of curves. In a similar way, one can reparametrize surface charts.</p>
+<div id="Definition-40" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 40</strong></summary><div>Suppose that <span class="math inline">\(U, \widetilde{U} \subseteq \mathbb{R}^2\)</span> are open sets and <span class="math display">\[
+{\pmb{\sigma}}\colon U \to \mathbb{R}^3 \,, \quad
+\widetilde{{\pmb{\sigma}}} \colon \widetilde{U} \to \mathbb{R}^3 \,,
+\]</span> are surface charts. We say that <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> is a <strong>reparametrization</strong> of <span class="math inline">\({\pmb{\sigma}}\)</span> if there exists a diffeomorphism <span class="math display">\[
+\Phi \colon \widetilde{U} \to U \,,
+\]</span> such that <span class="math display">\[
+\widetilde{{\pmb{\sigma}}} = {\pmb{\sigma}}\circ \Phi \,,
+\]</span> that is, <span class="math display">\[
+\widetilde{{\pmb{\sigma}}}( \tilde{u},\tilde{v} ) = {\pmb{\sigma}}(  \Phi ( \tilde{u},\tilde{v}) ) \,, \quad \forall \,\, (\tilde{u},\tilde{v} ) \in
+\widetilde{U} \,.
+\]</span> We call <span class="math inline">\(\Phi\)</span> a <strong>reparametrization map</strong>.<p></p>
+</div></details>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/surface_reparametrization.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption">Schematic illustration of surface chart <span class="math inline">\({\pmb{\sigma}}\)</span> and reparametrization <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span>.</figcaption>
+</figure>
+</div>
+<p>We will show that reparametrizations of regular charts are regular. To prove this, first we need to recall the chain rule for multivariable functions.</p>
+<div id="chain-rule" class="Remark" title="Chain rule">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 41: </strong>Chain rule</summary><div>Suppose that <span class="math inline">\(U, \widetilde{U} \subseteq \mathbb{R}^2\)</span> are open sets, <span class="math display">\[
+f \colon U \to \mathbb{R}^3
+\]</span> is smooth, and <span class="math display">\[
+\Phi \colon \widetilde{U} \to U
+\]</span> is a diffeomorphism. Define <span class="math inline">\(\tilde{f} \colon \widetilde{U} \to \mathbb{R}^3\)</span> by composition: <span class="math display">\[
+\tilde{f} := f \circ \Phi \,.
+\]</span> Explicitly, the above means <span class="math display">\[
+\tilde{f}( \tilde{u},\tilde{v} ) = f (  \Phi ( \tilde{u},\tilde{v}) ) \,, \quad \forall \,\, (\tilde{u},\tilde{v} ) \in
+\widetilde{U} \,.
+\]</span> We denote the components of <span class="math inline">\(f, \tilde{f}\)</span> and <span class="math inline">\(\Phi\)</span> by <span class="math display">\[
+\tilde{f} = (\tilde{f}^1, \tilde{f}^2, \tilde{f}^3) \,, \quad
+f = (f^1,f^2,f^3) \,, \quad
+\Phi = (\Phi^1, \Phi^2) \,.
+\]</span> The Jacobians are <span class="math display">\[
+J \tilde{f} = \left(   
+\begin{array}{cc}
+\tilde{f}^1_{\tilde u}  &amp; \tilde{f}^1_{\tilde v}  \\
+\tilde{f}^2_{\tilde u}  &amp; \tilde{f}^2_{\tilde v}  \\
+\tilde{f}^3_{\tilde u}  &amp; \tilde{f}^3_{\tilde v}
+\end{array}
+\right) \,, \quad
+J f = \left(   
+\begin{array}{cc}
+{f}^1_{u}  &amp;  {f}^1_{v}  \\
+{f}^2_{u}  &amp;  {f}^2_{v}  \\
+{f}^3_{u}  &amp;  {f}^3_{v}
+\end{array}
+\right) \,, \quad
+J \Phi = \left(   
+\begin{array}{cc}
+{\Phi}^1_{\tilde u}  &amp;  {\Phi}^1_{\tilde v}  \\
+{\Phi}^2_{\tilde u}  &amp;  {\Phi}^2_{\tilde v}  
+\end{array}
+\right) \,.
+\]</span><p></p>
+<p>The chain rule states that <span class="math display">\[
+J \tilde{f} (\tilde u, \tilde v) = Jf ( \Phi (\tilde u, \tilde v) ) \,
+J\Phi (\tilde u, \tilde v) \,.
+\]</span> By expanding the above identity we obtain the chain rule in vectorial form <span class="math display">\[\begin{align*}
+\tilde{f}_{\tilde{u}} (\tilde{u}, \tilde{v}) &amp; =
+f_u ( \Phi(\tilde{u}, \tilde{v}) ) \Phi_{\tilde{u}}^1 (\tilde{u}, \tilde{v}) + f_v ( \Phi(\tilde{u}, \tilde{v}) ) \Phi_{\tilde{u}}^2 (\tilde{u}, \tilde{v}) \\
+\tilde{f}_{\tilde{v}} (\tilde{u}, \tilde{v}) &amp; =
+f_u ( \Phi(\tilde{u}, \tilde{v}) ) \Phi_{\tilde{v}}^1 (\tilde{u}, \tilde{v}) + f_v ( \Phi(\tilde{u}, \tilde{v}) ) \Phi_{\tilde{v}}^2 (\tilde{u}, \tilde{v})
+\end{align*}\]</span> As done previously, we introduce compact notation for reparametrizations and chain rule. Specifically, we denote the components of the diffeomorphism <span class="math inline">\(\Phi\)</span> by <span class="math display">\[\begin{align*}
+\Phi^1 \quad &amp; \leadsto \quad (\tilde u, \tilde v) \mapsto u (\tilde u, \tilde v)  \\
+\Phi^2 \quad &amp; \leadsto \quad (\tilde u, \tilde v) \mapsto v (\tilde u, \tilde v)
+\end{align*}\]</span> Accordingly, the Jacobian of <span class="math inline">\(\Phi\)</span> is denoted as: <span class="math display">\[
+J \Phi = \left(   
+\begin{array}{cc}
+{\Phi}^1_{\tilde u}  &amp;  {\Phi}^1_{\tilde v}  \\
+{\Phi}^2_{\tilde u}  &amp;  {\Phi}^2_{\tilde v}  
+\end{array}
+\right)   \quad \leadsto \quad
+\left(   
+\begin{array}{cc}
+\dfrac{\partial u}{\partial \tilde u}  &amp;  \dfrac{\partial u}{\partial \tilde v}  \\
+\dfrac{\partial v}{\partial \tilde u}  &amp;  \dfrac{\partial v}{\partial \tilde v}
+\end{array}
+\right)  \,.
+\]</span> Hence, the chain rule in vectorial form reads <span class="math display">\[\begin{align*}
+\tilde{f}_{\tilde{u}}  &amp; =
+f_u  \frac{\partial u}{\partial \tilde{u}} + f_v  \frac{\partial v}{\partial \tilde{u}} \\
+\tilde{f}_{\tilde{v}}  &amp; =
+f_u  \, \frac{\partial u}{\partial \tilde{v}}  + f_v  \frac{\partial v}{\partial \tilde{v}}
+\end{align*}\]</span></p>
+</div></details>
+</div>
+<p>We will now prove that the reparametrization of a regular chart is regular.</p>
+<div id="proposition-transition-maps" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 42</strong></summary><div>Suppose that <span class="math inline">\(U, \widetilde{U} \subseteq \mathbb{R}^2\)</span> are open sets and <span class="math display">\[
+{\pmb{\sigma}}\colon U \to \mathbb{R}^3
+\]</span> is a regular chart. Assume given a diffeomorphism <span class="math display">\[
+\Phi \colon \widetilde{U} \to U \,.
+\]</span> The reparametrization <span class="math inline">\(\widetilde{{\pmb{\sigma}}} \colon \widetilde{U} \to \mathbb{R}^3\)</span> defined by <span class="math display">\[
+\widetilde{{\pmb{\sigma}}} = {\pmb{\sigma}}\circ \Phi
+\]</span> is a regular chart.<p></p>
+</div></details>
+</div>
+<div id="Proof*-6" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Since <span class="math inline">\({\pmb{\sigma}}\)</span> is a regular chart we have that <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly independent. Hence <span class="math display">\[
+{\pmb{\sigma}}_u \times {\pmb{\sigma}}_v \neq 0 \,.
+\]</span> To see that <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> is regular it is sufficient to prove that <span id="eq-change-chart-1"><span class="math display">\[
+\widetilde{{\pmb{\sigma}}}_{\tilde u} \times \widetilde{{\pmb{\sigma}}}_{\tilde v} \neq 0 \,.
+\tag{4.1}\]</span></span> By chain rule we have <span class="math display">\[\begin{align*}
+\widetilde{{\pmb{\sigma}}}_{\tilde{u}}  &amp; =
+{\pmb{\sigma}}_u  \frac{\partial u}{\partial \tilde{u}} + {\pmb{\sigma}}_v  \frac{\partial v}{\partial \tilde{u}} \\
+\widetilde{{\pmb{\sigma}}}_{\tilde{v}}  &amp; =
+{\pmb{\sigma}}_u  \, \frac{\partial u}{\partial \tilde{v}}  + {\pmb{\sigma}}_v  \frac{\partial v}{\partial \tilde{v}}
+\end{align*}\]</span> By the properties of vector product we get <span class="math display">\[\begin{align*}
+\widetilde{{\pmb{\sigma}}}_{\tilde u} \times \widetilde{{\pmb{\sigma}}}_{\tilde v} &amp; =
+\left( {\pmb{\sigma}}_u  \frac{\partial u}{\partial \tilde{u}} + {\pmb{\sigma}}_v  \frac{\partial v}{\partial \tilde{u}}   \right)
+\times
+\left( {\pmb{\sigma}}_u  \, \frac{\partial u}{\partial \tilde{v}}  + {\pmb{\sigma}}_v  \frac{\partial v}{\partial \tilde{v}}
+\right)  \\
+&amp; =  \frac{\partial u}{\partial \tilde{u}} \, \frac{\partial u}{\partial \tilde{v}}  \, \left(  {\pmb{\sigma}}_u \times {\pmb{\sigma}}_u \right) +
+  \frac{\partial u}{\partial \tilde{u}} \, \frac{\partial v}{\partial \tilde{v}}  \, \left(  {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v \right)  \\
+&amp; + \frac{\partial v}{\partial \tilde{u}} \, \frac{\partial u}{\partial \tilde{v}}  \, \left(  {\pmb{\sigma}}_v \times {\pmb{\sigma}}_u \right) +
+  \frac{\partial v}{\partial \tilde{u}} \, \frac{\partial v}{\partial \tilde{v}}  \, \left(  {\pmb{\sigma}}_v \times {\pmb{\sigma}}_v \right) \\
+  &amp; = \left(   \frac{\partial u}{\partial \tilde{u}} \, \frac{\partial v}{\partial \tilde{v}} - \frac{\partial v}{\partial \tilde{u}} \, \frac{\partial u}{\partial \tilde{v}}         \right)   \, \left( {{\pmb{\sigma}}}_{u}\times {{\pmb{\sigma}}}_{v}\right) \\
+  &amp; = \det \left(
+\begin{array}{cc}
+\dfrac{\partial u}{\partial \tilde u}  &amp;  \dfrac{\partial u}{\partial \tilde v}  \\
+\dfrac{\partial v}{\partial \tilde u}  &amp;  \dfrac{\partial v}{\partial \tilde v}
+\end{array}
+\right) \,  \left( {{\pmb{\sigma}}}_{u}\times {{\pmb{\sigma}}}_{v}\right) \\
+&amp; = \det  J \Phi \,  \left( {{\pmb{\sigma}}}_{u}\times {{\pmb{\sigma}}}_{v}\right) \,.
+\end{align*}\]</span> Since <span class="math inline">\(\Phi\)</span> is a diffeomorphism, we have that <span class="math display">\[
+\det J\Phi \neq 0 \,,
+\]</span> from which we conclude (<a href="#eq-change-chart-1"><span>4.1</span></a>).<p></p>
+</div></details>
+</div>
+</section>
+<section id="transition-maps" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="transition-maps"><span class="header-section-number">4.6</span> Transition maps</h2>
+<p>Consider the situation in which two regular charts have overlapping image.<br>
+It is natural to ask wether these maps are reparametrizations of each other on the overlapping region, see <a href="#fig-transition-maps">Figure&nbsp;<span>4.5</span></a>. If such reparametrization exists, it is called a transition map.</p>
+<div id="fig-transition-maps" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../images/surfaces_transition_map.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.5: If the two regular charts <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> have overlapping image, then they are reparametrization of each other, through a transition map <span class="math inline">\(\Phi\)</span>.</figcaption>
+</figure>
+</div>
+<div id="transition-map" class="Definition" title="Transition map">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 43: </strong>Transition map</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math display">\[
+{\pmb{\sigma}}\colon U \to {\pmb{\sigma}}(U) \subseteq \mathcal{S}\,, \quad
+\widetilde{{\pmb{\sigma}}} \colon \widetilde{U} \to \widetilde{{\pmb{\sigma}}} (\widetilde{U}) \subseteq \mathcal{S}
+\]</span> be regular charts. Assume that the images of <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> overlap, that is, <span class="math display">\[
+I := {\pmb{\sigma}}(U) \cap \widetilde{{\pmb{\sigma}}} (\widetilde{U}) \neq \emptyset \,.
+\]</span> The set <span class="math inline">\(I\)</span> is open in <span class="math inline">\(\mathcal{S}\)</span>, since it is intersection of open sets. Define the sets <span class="math display">\[
+V := {\pmb{\sigma}}^{-1}(I) \subseteq U \,, \quad  \widetilde{V} := \widetilde{{\pmb{\sigma}}}^{-1} (I) \subseteq \widetilde{U} \,,
+\]</span> The sets <span class="math inline">\(V\)</span> and <span class="math inline">\(\widetilde{V}\)</span> are open and by construction <span class="math display">\[
+{\pmb{\sigma}}(V) = \widetilde{{\pmb{\sigma}}} (\widetilde{V} ) = I \,.
+\]</span> Therefore they are well defined the restrictions <span class="math display">\[
+{\pmb{\sigma}}|_{V} \colon V \to I \,, \quad
+\widetilde{{\pmb{\sigma}}} |_{\widetilde{V}} \colon \widetilde{V} \to I \,,
+\]</span> which are homeomorphisms. The homeomorphism <span class="math display">\[
+\Phi \colon \widetilde{V} \to V \,, \quad \Phi := {\pmb{\sigma}}^{-1} \circ \widetilde{{\pmb{\sigma}}}
+\]</span> is called a <strong>transition map</strong> from <span class="math inline">\({\pmb{\sigma}}\)</span> to <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span>.<p></p>
+</div></details>
+</div>
+<p>The theorem below states that transition maps between regular charts are diffeomorphisms. The proof is slightly technical and is based on the Implicit Function Theorem. We decide to omit it. The interested reader can find a proof at Page 117 of <span class="citation" data-cites="pressley">(<a href="references.html#ref-pressley" role="doc-biblioref">Pressley 2010</a>)</span>.</p>
+<div id="theorem-transition-map" class="Theorem">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 44</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface. The transition maps between regular charts are diffeomorphisms.<p></p>
+</div></details>
+</div>
+<p>We can now use Theorem <a href="chap_4.html#theorem-transition-map">44</a> to show that transition maps are reparametrizations.</p>
+<div id="proposition-transition-map" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 45</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math display">\[
+{\pmb{\sigma}}\colon U \to {\pmb{\sigma}}(U) \subseteq \mathcal{S}\,, \quad
+\widetilde{{\pmb{\sigma}}} \colon \widetilde{U} \to \widetilde{{\pmb{\sigma}}} (\widetilde{U}) \subseteq \mathcal{S}
+\]</span> be regular charts. Assume that the images of <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> overlap, that is, <span class="math display">\[
+{\pmb{\sigma}}(U) \cap \widetilde{{\pmb{\sigma}}} (\widetilde{U}) \neq \emptyset \,.
+\]</span> Then there exist open sets <span class="math display">\[
+V \subseteq U \,, \quad  \widetilde{V} \subseteq \widetilde{U} \,,
+\]</span> and a diffeomorphism <span class="math display">\[
+\Phi \colon \widetilde{V} \to V
+\]</span> such that <span class="math inline">\(\widetilde{{\pmb{\sigma}}} |_{\widetilde{V}}\)</span> is a reparametrization of <span class="math inline">\({\pmb{\sigma}}|_{V}\)</span>, that is, <span class="math display">\[
+\widetilde{{\pmb{\sigma}}} |_{\widetilde{V}} = ({\pmb{\sigma}}|_{V}) \circ \Phi \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="Proof*-7" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Define <span class="math display">\[
+I:={\pmb{\sigma}}(U) \cap \widetilde{{\pmb{\sigma}}} (\widetilde{U}) \neq \emptyset \,.
+\]</span> Note that this set is open in <span class="math inline">\(\mathcal{S}\)</span>, being intersection of open sets. Set <span class="math display">\[
+V := {\pmb{\sigma}}^{-1} (  I  ) \,, \quad
+\widetilde{V} := \widetilde{{\pmb{\sigma}}}^{-1} (   I   ) \,.
+\]</span> The sets <span class="math inline">\(V\)</span> and <span class="math inline">\(\widetilde{V}\)</span> are open, since <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> are homeomorphisms, and hence are continuous. By construction we have <span class="math display">\[
+{\pmb{\sigma}}(V) = \widetilde{{\pmb{\sigma}}} (\widetilde{V}) = I \,.
+\]</span> Therefore they are well defined the restrictions <span class="math display">\[
+{\pmb{\sigma}}|_{V} \colon V \to I \,, \quad
+\widetilde{{\pmb{\sigma}}} |_{\widetilde{V}} \colon \widetilde{V} \to I \,,
+\]</span> which are homeomorphisms. Consider the transition map <span class="math display">\[
+\Phi \colon \widetilde{V} \to V \,, \quad \Phi := {\pmb{\sigma}}^{-1} \circ \widetilde{{\pmb{\sigma}}} \,.
+\]</span> By Theorem <a href="chap_4.html#theorem-transition-map">44</a> we know that <span class="math inline">\(\Phi\)</span> is a diffeomorphism. Hence <span class="math display">\[
+\widetilde{{\pmb{\sigma}}} |_{\widetilde{V}} = ({\pmb{\sigma}}|_{V}) \circ \Phi \,,
+\]</span> with <span class="math inline">\(\Phi\)</span> diffeomorphism, showing that <span class="math inline">\(\widetilde{{\pmb{\sigma}}} |_{\widetilde{V}}\)</span> is a reparametrization of <span class="math inline">\({\pmb{\sigma}}|_{V}\)</span>.<p></p>
+</div></details>
+</div>
+<div id="Important*-8" class="Important">
+<p></p><details class="Important fbx-simplebox fbx-default" open=""><summary><strong>Important</strong></summary><div>Proposition <a href="chap_4.html#proposition-transition-map">45</a> allows us to define properties of surfaces using charts, as long as we check that the property in question does not depend on reparametrization.<p></p>
+</div></details>
+</div>
+</section>
+<section id="functions-between-surfaces" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="functions-between-surfaces"><span class="header-section-number">4.7</span> Functions between surfaces</h2>
+<p>We would like to define a concept of smooth function <span class="math display">\[
+f \colon \mathcal{S}_1 \to \mathcal{S}_2 \,,
+\]</span> where <span class="math inline">\(\mathcal{S}_1\)</span> and <span class="math inline">\(\mathcal{S}_2\)</span> are surfaces. So far we know what a smooth function from <span class="math inline">\(\mathbb{R}^n\)</span> into <span class="math inline">\(\mathbb{R}^m\)</span> is. The idea is to use surface charts to define such <span class="math inline">\(f\)</span>.</p>
+<div id="Definition-46" class="Definition">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 46</strong></summary><div>
+<p>Let <span class="math inline">\(\mathcal{S}_1\)</span> and <span class="math inline">\(\mathcal{S}_2\)</span> be surfaces and let <span class="math display">\[
+{\pmb{\sigma}}_1 \colon U_1 \to {\pmb{\sigma}}_1(U) \subseteq \mathcal{S}_1 \,, \quad
+{\pmb{\sigma}}_2 \colon U_2 \to {\pmb{\sigma}}_2(U) \subseteq \mathcal{S}_2 \,,
+\]</span> be surface charts for <span class="math inline">\(\mathcal{S}_1\)</span> and <span class="math inline">\(\mathcal{S}_2\)</span>, respectively. Consider a function <span class="math display">\[
+f \colon \mathcal{S}_1 \to \mathcal{S}_2 \,.
+\]</span> We say that:</p>
+<ul>
+<li><p><span class="math inline">\(f\)</span> is smooth if the map <span class="math display">\[
+({\pmb{\sigma}}_2^{-1} \circ f \circ {\pmb{\sigma}}_1 )  \colon U_1 \to U_2
+\]</span> is smooth.</p></li>
+<li><p><span class="math inline">\(f\)</span> is a diffeomorphism if smooth if <span class="math inline">\({\pmb{\sigma}}_2^{-1} \circ f \circ {\pmb{\sigma}}_1\)</span> is a diffeomorphims.</p></li>
+</ul>
+</div></details>
+</div>
+<div id="Remark-47" class="Remark">
+<details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 47</strong></summary><div>
+<ul>
+<li>The function <span class="math inline">\({\pmb{\sigma}}_2^{-1} \circ f \circ {\pmb{\sigma}}_1\)</span> maps from <span class="math inline">\(\mathbb{R}^2\)</span> into <span class="math inline">\(\mathbb{R}^2\)</span>.</li>
+</ul>
+</div></details>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-abate-tovena" class="csl-entry" role="listitem">
 Abate, Marco, and Tovena, Francesca. 2011. <em>Curves and Surfaces</em>. Springer.
 </div>
+<div id="ref-pressley" class="csl-entry" role="listitem">
+Pressley, Andrew. 2010. <em>Elementary Differential Geometry</em>. Second Edition. Springer.
 </div>
-</section>
+</div>
 </section>
 
 </main> <!-- /main -->

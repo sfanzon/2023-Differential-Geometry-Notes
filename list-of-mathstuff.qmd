@@ -675,8 +675,32 @@
 
  [**Example 4.35**](#Example-4.35)\Pageref{Example-4.35}
 
- [**Definition 4.36**](#level-set-surface): Level set surface\Pageref{level-set-surface}
+ [**Definition 4.36**](#level-surface): Level surface\Pageref{level-surface}
 
  [**Theorem 4.37**](#theorem-level-surface)\Pageref{theorem-level-surface}
 
  [**Example 4.38**](#Example-4.38)\Pageref{Example-4.38}
+
+ [**Example 4.39**](#circular-cone-1): Circular cone\Pageref{circular-cone-1}
+
+ [**Definition 4.40**](#Definition-4.40)\Pageref{Definition-4.40}
+
+ [**Remark 4.41**](#chain-rule): Chain rule\Pageref{chain-rule}
+
+ [**Proposition 4.42**](#proposition-transition-maps)\Pageref{proposition-transition-maps}
+
+ [**Proof**](#Proof*-4.6)\Pageref{Proof*-4.6}
+
+ [**Definition 4.43**](#transition-map): Transition map\Pageref{transition-map}
+
+ [**Theorem 4.44**](#theorem-transition-map)\Pageref{theorem-transition-map}
+
+ [**Proposition 4.45**](#proposition-transition-map)\Pageref{proposition-transition-map}
+
+ [**Proof**](#Proof*-4.7)\Pageref{Proof*-4.7}
+
+ [**Important**](#Important*-4.8)\Pageref{Important*-4.8}
+
+ [**Definition 4.46**](#Definition-4.46)\Pageref{Definition-4.46}
+
+ [**Remark 4.47**](#Remark-4.47)\Pageref{Remark-4.47}
