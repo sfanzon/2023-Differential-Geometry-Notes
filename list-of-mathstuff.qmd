@@ -701,6 +701,22 @@
 
  [**Important**](#Important*-4.8)\Pageref{Important*-4.8}
 
- [**Definition 4.46**](#Definition-4.46)\Pageref{Definition-4.46}
+ [**Definition 4.46**](#definition-smooth-map-surface)\Pageref{definition-smooth-map-surface}
 
  [**Remark 4.47**](#Remark-4.47)\Pageref{Remark-4.47}
+
+ [**Proposition 4.48**](#Proposition-4.48)\Pageref{Proposition-4.48}
+
+ [**Proof**](#Proof*-4.9)\Pageref{Proof*-4.9}
+
+ [**Definition 4.49**](#Definition-4.49)\Pageref{Definition-4.49}
+
+ [**Assumption 4.50**](#Assumption-4.50)\Pageref{Assumption-4.50}
+
+ [**Definition 4.51**](#tangent-vector-and-space): Tangent vector and space\Pageref{tangent-vector-and-space}
+
+ [**Example 4.52**](#Example-4.52)\Pageref{Example-4.52}
+
+ [**Proposition 4.53**](#Proposition-4.53)\Pageref{Proposition-4.53}
+
+ [**Remark 4.54**](#tangent-space-and-derivations): Tangent space and derivations\Pageref{tangent-space-and-derivations}

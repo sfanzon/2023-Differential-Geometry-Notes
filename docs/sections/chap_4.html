@@ -85,29 +85,9 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Lemma {
+.Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
 }
 .Proof {
   --color1: #f1f1f2;
@@ -121,19 +101,7 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Corollary {
+.Important {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -145,17 +113,49 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Question {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
 .Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
 </style>
 
@@ -268,6 +268,7 @@ div.csl-indent {
   <li><a href="#reparametrizations" id="toc-reparametrizations" class="nav-link" data-scroll-target="#reparametrizations"><span class="header-section-number">4.5</span> Reparametrizations</a></li>
   <li><a href="#transition-maps" id="toc-transition-maps" class="nav-link" data-scroll-target="#transition-maps"><span class="header-section-number">4.6</span> Transition maps</a></li>
   <li><a href="#functions-between-surfaces" id="toc-functions-between-surfaces" class="nav-link" data-scroll-target="#functions-between-surfaces"><span class="header-section-number">4.7</span> Functions between surfaces</a></li>
+  <li><a href="#tangent-space" id="toc-tangent-space" class="nav-link" data-scroll-target="#tangent-space"><span class="header-section-number">4.8</span> Tangent space</a></li>
   </ul>
 </nav>
     </div>
@@ -517,7 +518,7 @@ L_n := \left\{ \left(x, \frac{n \pi}{2} \right) \, \colon \,x \in \mathbb{R}\rig
 </ul>
 <p>Further:</p>
 <ul>
-<li>The homeomorphism <span class="math inline">\({\pmb{\sigma}}\)</span> is called a <strong>surface chart</strong>.</li>
+<li>The homeomorphism <span class="math inline">\({\pmb{\sigma}}\)</span> is called a <strong>surface chart</strong> at <span class="math inline">\(\mathbf{p}\)</span>.</li>
 <li>For each <span class="math inline">\(i \in I\)</span> suppose to have a surface chart <span class="math display">\[
 {\pmb{\sigma}}_i  \colon U_i \to {\pmb{\sigma}}(U_i) \subseteq \mathcal{S}\,.
 \]</span> We say that the family <span class="math display">\[
@@ -772,9 +773,14 @@ J{\pmb{\sigma}}(u,v) =
 </div>
 <p>We are now ready to define regular surfaces.</p>
 <div id="regular-surface" class="Definition" title="Regular surface">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 28: </strong>Regular surface</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a surface. Let <span class="math display">\[
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 28: </strong>Regular surface</summary><div>
+<p>Let <span class="math inline">\(\mathcal{S}\)</span> be a surface. Let <span class="math display">\[
 \mathcal{A} = \{ {\pmb{\sigma}}_i \}_{i \in I} \,,
-\]</span> be an atlas for <span class="math inline">\(\mathcal{S}\)</span>. We say that <span class="math inline">\(\mathcal{A}\)</span> is a <strong>regular atlas</strong> if the map <span class="math inline">\({\pmb{\sigma}}_i\)</span> is a regular chart for all <span class="math inline">\(i \in I\)</span>. We say that <span class="math inline">\(\mathcal{S}\)</span> is a <strong>regular surface</strong> if there exists a regular atlas for <span class="math inline">\(\mathcal{S}\)</span>.<p></p>
+\]</span> be an atlas for <span class="math inline">\(\mathcal{S}\)</span>. We say that:</p>
+<ul>
+<li><span class="math inline">\(\mathcal{A}\)</span> is a <strong>regular atlas</strong> if the map <span class="math inline">\({\pmb{\sigma}}_i\)</span> is a regular chart for all <span class="math inline">\(i \in I\)</span>.</li>
+<li><span class="math inline">\(\mathcal{S}\)</span> is a <strong>regular surface</strong> if there exists a regular atlas for <span class="math inline">\(\mathcal{S}\)</span>.</li>
+</ul>
 </div></details>
 </div>
 <div id="d-plane-in-mathbbr3-1" class="Example" title="2D Plane in \mathbb{R}^3">
@@ -1221,28 +1227,145 @@ V := {\pmb{\sigma}}^{-1} (  I  ) \,, \quad
 <h2 data-number="4.7" class="anchored" data-anchor-id="functions-between-surfaces"><span class="header-section-number">4.7</span> Functions between surfaces</h2>
 <p>We would like to define a concept of smooth function <span class="math display">\[
 f \colon \mathcal{S}_1 \to \mathcal{S}_2 \,,
-\]</span> where <span class="math inline">\(\mathcal{S}_1\)</span> and <span class="math inline">\(\mathcal{S}_2\)</span> are surfaces. So far we know what a smooth function from <span class="math inline">\(\mathbb{R}^n\)</span> into <span class="math inline">\(\mathbb{R}^m\)</span> is. The idea is to use surface charts to define such <span class="math inline">\(f\)</span>.</p>
-<div id="Definition-46" class="Definition">
+\]</span> where <span class="math inline">\(\mathcal{S}_1\)</span> and <span class="math inline">\(\mathcal{S}_2\)</span> are regular surfaces. So far we know what a smooth function from <span class="math inline">\(\mathbb{R}^n\)</span> into <span class="math inline">\(\mathbb{R}^m\)</span> is. The idea is to use surface charts to define such <span class="math inline">\(f\)</span>.</p>
+<div id="definition-smooth-map-surface" class="Definition">
 <details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 46</strong></summary><div>
-<p>Let <span class="math inline">\(\mathcal{S}_1\)</span> and <span class="math inline">\(\mathcal{S}_2\)</span> be surfaces and let <span class="math display">\[
-{\pmb{\sigma}}_1 \colon U_1 \to {\pmb{\sigma}}_1(U) \subseteq \mathcal{S}_1 \,, \quad
-{\pmb{\sigma}}_2 \colon U_2 \to {\pmb{\sigma}}_2(U) \subseteq \mathcal{S}_2 \,,
-\]</span> be surface charts for <span class="math inline">\(\mathcal{S}_1\)</span> and <span class="math inline">\(\mathcal{S}_2\)</span>, respectively. Consider a function <span class="math display">\[
-f \colon \mathcal{S}_1 \to \mathcal{S}_2 \,.
-\]</span> We say that:</p>
+<p>Let <span class="math inline">\(\mathcal{S}_1\)</span> and <span class="math inline">\(\mathcal{S}_2\)</span> be regular surfaces and let <span class="math display">\[
+f \colon \mathcal{S}_1 \to \mathcal{S}_2
+\]</span> be a map. We say that:</p>
 <ul>
-<li><p><span class="math inline">\(f\)</span> is smooth if the map <span class="math display">\[
+<li><p><span class="math inline">\(f\)</span> is smooth at <span class="math inline">\(\mathbf{p}\in \mathcal{S}_1\)</span> if there exist charts <span class="math inline">\({\pmb{\sigma}}_i \colon U_i \to \mathcal{S}_i\)</span> for <span class="math inline">\(i=1,2\)</span> such that <span class="math display">\[
+\mathbf{p}\in {\pmb{\sigma}}_1(U_1)\,, \quad f(\mathbf{p}) \in {\pmb{\sigma}}_2(U_2)
+\]</span> and <span class="math display">\[
 ({\pmb{\sigma}}_2^{-1} \circ f \circ {\pmb{\sigma}}_1 )  \colon U_1 \to U_2
 \]</span> is smooth.</p></li>
-<li><p><span class="math inline">\(f\)</span> is a diffeomorphism if smooth if <span class="math inline">\({\pmb{\sigma}}_2^{-1} \circ f \circ {\pmb{\sigma}}_1\)</span> is a diffeomorphims.</p></li>
+<li><p><span class="math inline">\(f\)</span> is smooth if it is smooth for each <span class="math inline">\(\mathbf{p}\in \mathcal{S}_1\)</span>.</p></li>
+<li><p><span class="math inline">\(f\)</span> is a diffeomorphism if <span class="math inline">\(f\)</span> is smooth and invertible, with smooth inverse.</p></li>
 </ul>
 </div></details>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/surface_smooth_map.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Sketch function <span class="math inline">\(f\)</span> smooth at <span class="math inline">\(\mathbf{p}\)</span> between the surfaces <span class="math inline">\(\mathcal{S}_1\)</span> and <span class="math inline">\(\mathcal{S}_2\)</span>.</figcaption>
+</figure>
 </div>
 <div id="Remark-47" class="Remark">
 <details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 47</strong></summary><div>
 <ul>
-<li>The function <span class="math inline">\({\pmb{\sigma}}_2^{-1} \circ f \circ {\pmb{\sigma}}_1\)</span> maps from <span class="math inline">\(\mathbb{R}^2\)</span> into <span class="math inline">\(\mathbb{R}^2\)</span>.</li>
+<li><p>Definition <a href="chap_4.html#definition-smooth-map-surface">46</a> makes sense because <span class="math inline">\({\pmb{\sigma}}_2^{-1}\)</span> exists.</p></li>
+<li><p>The map <span class="math inline">\({\pmb{\sigma}}_2^{-1} \circ f \circ {\pmb{\sigma}}_1\)</span> is only defined for <span class="math inline">\(\mathbf{x}\in U_1\)</span> such that <span class="math display">\[
+f ( {\pmb{\sigma}}_1 (\mathbf{x}) ) \in {\pmb{\sigma}}_2 (U_2) \,.
+\]</span></p></li>
+<li><p>The function <span class="math inline">\({\pmb{\sigma}}_2^{-1} \circ f \circ {\pmb{\sigma}}_1\)</span> maps from <span class="math inline">\(\mathbb{R}^2\)</span> into <span class="math inline">\(\mathbb{R}^2\)</span>, therefore differentiability is intended in the classical sense.</p></li>
+<li><p>Definition <a href="chap_4.html#definition-smooth-map-surface">46</a> does not depend on the choice of charts <span class="math inline">\({\pmb{\sigma}}_1\)</span> and <span class="math inline">\({\pmb{\sigma}}_2\)</span></p></li>
 </ul>
+<blockquote class="blockquote">
+<p>Indeed, suppose that <span class="math inline">\(\widetilde{{\pmb{\sigma}}}_{i} \colon \widetilde{U}_i \to {\mathcal{S}}_i\)</span> are charts such that <span class="math display">\[
+\mathbf{p}\in \widetilde{{\pmb{\sigma}}}_1( \widetilde{U}_1) \,, \quad  f(\mathbf{p}) \in \widetilde{{\pmb{\sigma}}}_2(\widetilde{U}_2) \,.
+\]</span> In particular we have <span class="math display">\[
+{\pmb{\sigma}}_i(U_i) \cap \widetilde{{\pmb{\sigma}}}_i (\widetilde{U}_i) \neq \emptyset \,.
+\]</span> As <span class="math inline">\(\mathcal{S}_1\)</span> and <span class="math inline">\(\mathcal{S}_2\)</span> are regular surfaces, by Theorem <a href="chap_4.html#theorem-transition-map">44</a> there exist open sets <span class="math display">\[
+V_i \subseteq U_i \,, \quad \widetilde{V}_i \subseteq \widetilde{U}_i \,,
+\]</span> and transition maps <span class="math display">\[
+\Phi_i \colon \widetilde{V}_i \to V_i
+\]</span> which are diffeomorphisms and satisfy <span class="math display">\[
+\widetilde{{\pmb{\sigma}}}_i = {\pmb{\sigma}}_i \circ \Phi_i \,.
+\]</span> Hence <span class="math display">\[\begin{align*}
+\widetilde{{\pmb{\sigma}}}_2^{-1} \circ f \circ \widetilde{{\pmb{\sigma}}}_1 &amp; =
+\widetilde{{\pmb{\sigma}}}_2^{-1} \circ ( {\pmb{\sigma}}_2 \circ {\pmb{\sigma}}_2^{-1} ) \circ f \circ  ( {\pmb{\sigma}}_1 \circ {\pmb{\sigma}}_1^{-1} ) \circ \widetilde{{\pmb{\sigma}}}_1  \\
+&amp; = ( \widetilde{{\pmb{\sigma}}}_2^{-1} \circ  {\pmb{\sigma}}_2 ) \circ ( {\pmb{\sigma}}_2^{-1}  \circ f \circ   {\pmb{\sigma}}_1 ) \circ ({\pmb{\sigma}}_1^{-1}  \circ \widetilde{{\pmb{\sigma}}}_1 )  \\
+&amp; = \Phi_2^{-1} \circ ( {\pmb{\sigma}}_2^{-1}  \circ f \circ   {\pmb{\sigma}}_1 )  \circ \Phi_1^{-1} \,.
+\end{align*}\]</span> Since <span class="math inline">\(\Phi_i^{-1}\)</span> and <span class="math inline">\({\pmb{\sigma}}_2^{-1} \circ f \circ {\pmb{\sigma}}_1\)</span> are smooth, we conclude that <span class="math display">\[
+\widetilde{{\pmb{\sigma}}}_2^{-1} \circ f \circ \widetilde{{\pmb{\sigma}}}_1
+\]</span> is smooth. Hence Definition <a href="chap_4.html#definition-smooth-map-surface">46</a> does not depend on the choice of charts.</p>
+</blockquote>
+</div></details>
+</div>
+<div id="Proposition-48" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 48</strong></summary><div>If <span class="math inline">\(f \colon \mathcal{S}_1 \to \mathcal{S}_2\)</span> and <span class="math inline">\(g \colon \mathcal{S}_2 \to \mathcal{S}_3\)</span> are smooth maps (resp. diffeomorphisms) between surfaces, then the composition <span class="math display">\[
+(g \circ f) \colon \mathcal{S}_1 \to \mathcal{S}_3
+\]</span> is smooth (resp. a diffeomorphisms).<p></p>
+</div></details>
+</div>
+<div id="Proof*-9" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Fix <span class="math inline">\(\mathbf{p}\in \mathcal{S}_1\)</span> and choose charts <span class="math display">\[
+{\pmb{\sigma}}_i \colon U_i \to \mathcal{S}_i
+\]</span> such that <span class="math display">\[
+\mathbf{p}\in {\pmb{\sigma}}_1 (U_1) \,, \quad
+f(\mathbf{p}) \in {\pmb{\sigma}}_2 (U_2) \,, \quad
+g(f(\mathbf{p})) \in {\pmb{\sigma}}_3 (U_3) \,.
+\]</span> Since <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are smooth we have that the maps <span class="math display">\[
+{\pmb{\sigma}}_2^{-1} \circ f  \circ {\pmb{\sigma}}_1 \,, \quad {\pmb{\sigma}}_3^{-1} \circ  g \circ {\pmb{\sigma}}_2  \,,
+\]</span> are smooth. Hence <span class="math display">\[
+{\pmb{\sigma}}_3^{-1} \circ ( g \circ f ) \circ {\pmb{\sigma}}_1 = ( {\pmb{\sigma}}_3^{-1} \circ  g \circ {\pmb{\sigma}}_2 ) \circ ({\pmb{\sigma}}_2^{-1} \circ f  \circ {\pmb{\sigma}}_1)  
+\]</span> is smooth, ending the proof.<p></p>
+</div></details>
+</div>
+<div id="Definition-49" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 49</strong></summary><div>Let <span class="math inline">\(\mathcal{S}_1\)</span> and <span class="math inline">\(\mathcal{S}_2\)</span> be regular surfaces. We say that <span class="math inline">\(\mathcal{S}_1\)</span> and <span class="math inline">\(\mathcal{S}_2\)</span> are diffeomorphic if there exists <span class="math inline">\(f \colon \mathcal{S}_1 \to \mathcal{S}_2\)</span> diffeomorphism.<p></p>
+</div></details>
+</div>
+<p>The idea is that two diffeomorphic surfaces are essentially the same. Indeed, it is immediate to show that being diffeomorphic is an equivalence relation on the set of regular surfaces.</p>
+</section>
+<section id="tangent-space" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="tangent-space"><span class="header-section-number">4.8</span> Tangent space</h2>
+<p>We have seen that tangent vectors to regular curves allow to define the Frenet Frame, curvature and torsion. Eventually, these quantities are sufficient to characterize a curve. The anolgue concept of tangent vector for surfaces is called the tangent space. To avoid clumsy terminology, we make the following assumption.</p>
+<div id="Assumption-50" class="Assumption">
+<p></p><details class="Assumption fbx-simplebox fbx-default" open=""><summary><strong>Assumption 50</strong></summary><div>From now on, all the surfaces will be regular and all the charts will be regular.<p></p>
+</div></details>
+</div>
+<div id="tangent-vector-and-space" class="Definition" title="Tangent vector and space">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 51: </strong>Tangent vector and space</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a surface and <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. A <strong>tangent vector</strong> to <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> is any vector <span class="math inline">\(\mathbf{v}\in \mathbb{R}^3\)</span> such that <span class="math display">\[
+\mathbf{v}= \dot{{\pmb{\gamma}}}(0) \,,
+\]</span> where <span class="math inline">\({\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to \mathbb{R}^3\)</span> is a smooth curve such that <span class="math display">\[
+{\pmb{\gamma}}(-\varepsilon, \varepsilon) \subseteq \mathcal{S}\,, \quad {\pmb{\gamma}}(0) = \mathbf{p}\,,
+\]</span> where <span class="math inline">\(\varepsilon&gt;0\)</span>. The <strong>tangent space</strong> of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> is the set of all such vectors.<p></p>
+</div></details>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/tangent_space.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption">Tangent space <span class="math inline">\(T_p \mathcal{S}\)</span> of surface <span class="math inline">\(\mathcal{S}\)</span> at the point <span class="math inline">\(\mathbf{p}\)</span>. A tangent vector <span class="math inline">\(\mathbf{v}\)</span> coincides with <span class="math inline">\(\dot{{\pmb{\gamma}}}(0)\)</span> for some <span class="math inline">\({\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to \mathcal{S}\)</span> such that <span class="math inline">\({\pmb{\gamma}}(0)= \mathbf{p}\)</span>.</figcaption>
+</figure>
+</div>
+<p>Let us start with the most basic example. We want to compute the tangent space to an open set in <span class="math inline">\(\mathbb{R}^2\)</span>.</p>
+<div id="Example-52" class="Example">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 52</strong></summary><div>
+<p>Let <span class="math inline">\(U \subseteq \mathbb{R}^2\)</span> be open and <span class="math inline">\(\mathbf{p}\in U\)</span>. Then <span class="math display">\[
+T_p U = \mathbb{R}^2 \,.
+\]</span></p>
+<blockquote class="blockquote">
+<p>Proof. Let <span class="math inline">\(\mathbf{v}\in T_p U\)</span>. By definition there exists a smooth curve <span class="math display">\[
+\gamma \colon (-\varepsilon,\varepsilon) \to U
+\]</span> such that <span class="math inline">\({\pmb{\gamma}}(0) = \mathbf{p}\)</span> and <span class="math inline">\(\dot{{\pmb{\gamma}}}(0)=\mathbf{v}\)</span>. Since <span class="math inline">\(U \subseteq \mathbb{R}^2\)</span>, it follows that <span class="math inline">\({\pmb{\gamma}}\)</span> is a plane curve, so that <span class="math display">\[
+\mathbf{v}= \dot{{\pmb{\gamma}}}(0) \in \mathbb{R}^2 \,.
+\]</span> Conversely, let <span class="math inline">\(\mathbf{v}\in \mathbb{R}^2\)</span>. Since <span class="math inline">\(\mathbf{p}\in U\)</span> and <span class="math inline">\(U\)</span> is open, there exists <span class="math inline">\(\varepsilon&gt;0\)</span> such that <span class="math inline">\(B_{\varepsilon}(p) \subseteq U\)</span>. Define the curve <span class="math display">\[
+{\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to \mathbb{R}^3 \,, \quad {\pmb{\gamma}}(t):= \mathbf{p}+ t \mathbf{v}\,.  
+\]</span> By construction <span class="math display">\[
+{\pmb{\gamma}}(-\varepsilon,\varepsilon) \subseteq B_{\varepsilon} (\mathbf{p}) \subseteq U \,, \quad {\pmb{\gamma}}(0) = \mathbf{p}\,, \quad \dot{{\pmb{\gamma}}}(0)= \mathbf{v}\,,
+\]</span> showing that <span class="math inline">\(\mathbf{v}\in T_p U\)</span>.</p>
+</blockquote>
+</div></details>
+</div>
+<p>In the above we have seen that <span class="math inline">\(T_p U = \mathbb{R}^2\)</span> is a vector space. This property holds in general for <span class="math inline">\(T_p \mathcal{S}\)</span> with <span class="math inline">\(\mathcal{S}\)</span> regular surface.</p>
+<div id="Proposition-53" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 53</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a (regular) surface and <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. Let <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span> be a chart at <span class="math inline">\(\mathbf{p}\)</span>. such that <span class="math inline">\({\pmb{\sigma}}\)</span><p></p>
+</div></details>
+</div>
+<div id="tangent-space-and-derivations" class="Remark" title="Tangent space and derivations">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 54: </strong>Tangent space and derivations</summary><div>Definition of tangent plane depends on the fact that <span class="math inline">\(\mathcal{S}\)</span> is contained in <span class="math inline">\(\mathbb{R}^3\)</span>. This is a serious drawback in many applications, as the surface <span class="math inline">\(\mathcal{S}\)</span> does not necessarily need to be Euclidean. There is a way to get rid of such dependence, and give an <em>intrinsic</em> definition of tangent plane, depending only on the point <span class="math inline">\(\mathbf{p}\)</span> and the surface <span class="math inline">\(\mathcal{S}\)</span>.<p></p>
+<p>The basic idea is as follows: If <span class="math inline">\(U \subseteq \mathbb{R}^2\)</span> is open and <span class="math inline">\(\mathbf{p}\in U\)</span>, then <span class="math inline">\(T_p U = \mathbb{R}^2\)</span>. We can associate to any point <span class="math inline">\(\mathbf{v}\in T_p U\)</span> a directional derivative <span class="math display">\[
+\mathbf{v}= (v_1,v_2) \mapsto \left. \frac{\partial }{\partial v} \right|_p =
+v_1 \, \left. \frac{\partial }{\partial x_1} \right|_p +
+v_2 \, \left. \frac{\partial }{\partial x_2} \right|_p
+\]</span> acting on smooth functions <span class="math inline">\(f \colon U \to \mathbb{R}\)</span>. The above directional derivative is called a <strong>derivation</strong>.</p>
+<p>The point is that derivations do not need to be defined through vectors, but as linear operators <span class="math inline">\(D\)</span> acting on smooth functions <span class="math inline">\(f \colon U \to \mathbb{R}\)</span>, and such that the Leibnitz rule holds: <span class="math display">\[
+D(fg) = f(\mathbf{p}) D(g) + g(\mathbf{p}) D(f)
+\]</span> where <span class="math inline">\(f,g \colon U \to \mathbb{R}\)</span> are smooth. The tangent plane at p can then be defined as <span class="math display">\[
+T_p U = \{ D \, \mbox{ derivation at  } \mathbf{p}\} \,.
+\]</span> Therefore <span class="math inline">\(T_p U\)</span> is a subset of the dual space of smooth functions.</p>
+<p>It is possible to do such construction directly on <span class="math inline">\(\mathcal{S}\)</span>, by introducing the concepts of <strong>germ</strong> of a function and of <strong>algebra</strong> of derivations. An in depth discussion can be found in Chapter 3.4 of <span class="citation" data-cites="abate-tovena">(<a href="references.html#ref-abate-tovena" role="doc-biblioref">Abate, Marco and Tovena, Francesca 2011</a>)</span>.</p>
 </div></details>
 </div>
 

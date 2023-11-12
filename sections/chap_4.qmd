@@ -407,7 +407,7 @@ such that
 
 Further:
 
-- The homeomorphism $\sss$ is called a **surface chart**. 
+- The homeomorphism $\sss$ is called a **surface chart** at $\pp$. 
 - For each $i \in I$ suppose to have a surface chart
 $$
 \sss_i  \colon U_i \to \sss(U_i) \subseteq \SSS \,.
@@ -813,8 +813,12 @@ Let $\SSS$ be a surface. Let
 $$
 \mathcal{A} = \{ \sss_i \}_{i \in I} \,,
 $$
-be an atlas for $\SSS$. We say that $\mathcal{A}$ is a **regular atlas** if 
-the map $\sss_i$ is a regular chart for all $i \in I$. We say that $\SSS$ is a **regular surface** if there exists a regular atlas for $\SSS$.
+be an atlas for $\SSS$. We say that:
+
+- $\mathcal{A}$ is a **regular atlas** if 
+the map $\sss_i$ is a regular chart for all $i \in I$. 
+- $\SSS$ is a **regular surface** if there exists a regular atlas for $\SSS$.
+
 :::
 
 
@@ -1514,6 +1518,8 @@ f_u  \, \frac{\partial u}{\partial \tilde{v}}  + f_v  \frac{\partial v}{\partial
 
 We will now prove that the reparametrization of a regular chart is regular.
 
+
+
 ::: {.Proposition  #proposition-transition-maps}
 
 Suppose that $U, \widetilde{U} \subseteq \R^2$ are open sets and 
@@ -1727,38 +1733,220 @@ We would like to define a concept of smooth function
 $$
 f \colon \SSS_1 \to \SSS_2 \,,
 $$
-where $\SSS_1$ and $\SSS_2$ are surfaces. So far we know what a smooth function from $\R^n$ into $\R^m$ is. The idea is to use surface charts to define such $f$.
+where $\SSS_1$ and $\SSS_2$ are regular surfaces. So far we know what a smooth function from $\R^n$ into $\R^m$ is. The idea is to use surface charts to define such $f$.
 
 
-::: Definition
 
-Let $\SSS_1$ and $\SSS_2$ be surfaces and let 
-$$
-\sss_1 \colon U_1 \to \sss_1(U) \subseteq \SSS_1 \,, \quad 
-\sss_2 \colon U_2 \to \sss_2(U) \subseteq \SSS_2 \,, 
-$$
-be surface charts for $\SSS_1$ and $\SSS_2$, respectively. Consider a function
-$$
-f \colon \SSS_1 \to \SSS_2 \,.
-$$
-We say that:
+::: {.Definition  #definition-smooth-map-surface}
 
-- $f$ is smooth if the map
+Let $\SSS_1$ and $\SSS_2$ be regular surfaces and let 
+$$
+f \colon \SSS_1 \to \SSS_2 
+$$
+be a map. We say that:
+
+- $f$ is smooth at $\pp \in \SSS_1$ if there exist charts $\sss_i \colon U_i \to \SSS_i$ for $i=1,2$ such that
+$$
+\pp \in \sss_1(U_1)\,, \quad f(\pp) \in \sss_2(U_2) 
+$$
+and 
 $$
 (\sss_2^{-1} \circ f \circ \sss_1 )  \colon U_1 \to U_2
 $$
 is smooth.
 
-- $f$ is a diffeomorphism if smooth if $\sss_2^{-1} \circ f \circ \sss_1$ is a diffeomorphims. 
+- $f$ is smooth if it is smooth for each $\pp \in \SSS_1$.
+
+- $f$ is a diffeomorphism if $f$ is smooth and invertible, with smooth inverse.
 
 :::
+
+
+
+
+![Sketch function $f$ smooth at $\pp$ between the surfaces $\SSS_1$ and $\SSS_2$.](/images/surface_smooth_map.png){width=70%}
+
 
 
 
 
 ::: Remark
 
-- The function $\sss_2^{-1} \circ f \circ \sss_1$ maps from $\R^2$ into $\R^2$.
+- Definition \ref{definition-smooth-map-surface} makes sense because $\sss_2^{-1}$ exists.
+
+- The map $\sss_2^{-1} \circ f \circ \sss_1$ is only defined for $\xx \in U_1$ such that
+$$
+f ( \sss_1 (\xx) ) \in \sss_2 (U_2) \,.
+$$
+
+- The function $\sss_2^{-1} \circ f \circ \sss_1$ maps from $\R^2$ into $\R^2$, therefore differentiability is intended in the classical sense.
+
+- Definition \ref{definition-smooth-map-surface} does not depend on the choice of charts $\sss_1$ and $\sss_2$
+
+> Indeed, suppose that $\widetilde{\sss}_{i} \colon \widetilde{U}_i \to {\SSS}_i$ are charts such that 
+$$
+\pp \in \widetilde{\sss}_1( \widetilde{U}_1) \,, \quad  f(\pp) \in \widetilde{\sss}_2(\widetilde{U}_2) \,.
+$$
+In particular we have
+$$
+ \sss_i(U_i) \cap \widetilde{\sss}_i (\widetilde{U}_i) \neq \emptyset \,.
+$$
+As $\SSS_1$ and $\SSS_2$ are regular surfaces, by Theorem \ref{theorem-transition-map} there exist open sets
+$$
+V_i \subseteq U_i \,, \quad \widetilde{V}_i \subseteq \widetilde{U}_i \,,
+$$
+and transition maps 
+$$
+\Phi_i \colon \widetilde{V}_i \to V_i
+$$
+which are diffeomorphisms and satisfy
+$$
+\widetilde{\sss}_i = \sss_i \circ \Phi_i \,.
+$$
+Hence
+\begin{align*}
+\widetilde{\sss}_2^{-1} \circ f \circ \widetilde{\sss}_1 & =
+\widetilde{\sss}_2^{-1} \circ ( \sss_2 \circ \sss_2^{-1} ) \circ f \circ  ( \sss_1 \circ \sss_1^{-1} ) \circ \widetilde{\sss}_1  \\
+& = ( \widetilde{\sss}_2^{-1} \circ  \sss_2 ) \circ ( \sss_2^{-1}  \circ f \circ   \sss_1 ) \circ (\sss_1^{-1}  \circ \widetilde{\sss}_1 )  \\
+& = \Phi_2^{-1} \circ ( \sss_2^{-1}  \circ f \circ   \sss_1 )  \circ \Phi_1^{-1} \,.
+\end{align*}
+Since $\Phi_i^{-1}$ and $\sss_2^{-1}  \circ f \circ   \sss_1$ are smooth, we conclude that
+$$
+\widetilde{\sss}_2^{-1} \circ f \circ \widetilde{\sss}_1
+$$
+is smooth. Hence Definition \ref{definition-smooth-map-surface} does not depend on the choice of charts.
+:::
+
+
+
+
+::: Proposition
+
+If $f \colon \SSS_1 \to \SSS_2$ and $g \colon \SSS_2 \to \SSS_3$ are smooth maps (resp. diffeomorphisms) between surfaces, then the composition 
+$$
+(g \circ f) \colon \SSS_1 \to \SSS_3
+$$
+is smooth (resp. a diffeomorphisms).
+
+
+:::
+
+
+::: Proof
+
+Fix $\pp \in \SSS_1$ and choose charts
+$$
+\sss_i \colon U_i \to \SSS_i 
+$$
+such that 
+$$
+\pp \in \sss_1 (U_1) \,, \quad
+f(\pp) \in \sss_2 (U_2) \,, \quad
+g(f(\pp)) \in \sss_3 (U_3) \,.
+$$
+Since $f$ and $g$ are smooth we have that the maps
+$$
+\sss_2^{-1} \circ f  \circ \sss_1 \,, \quad \sss_3^{-1} \circ  g \circ \sss_2  \,,
+$$
+are smooth. Hence
+$$
+\sss_3^{-1} \circ ( g \circ f ) \circ \sss_1 = ( \sss_3^{-1} \circ  g \circ \sss_2 ) \circ (\sss_2^{-1} \circ f  \circ \sss_1)  
+$$
+is smooth, ending the proof.
+:::
+
+
+
+
+::: Definition
+
+Let $\SSS_1$ and $\SSS_2$ be regular surfaces. We say that $\SSS_1$ and $\SSS_2$ are diffeomorphic if there exists $f \colon \SSS_1 \to \SSS_2$ diffeomorphism.
+
+:::
+
+
+The idea is that two diffeomorphic surfaces are essentially the same. Indeed, it is immediate to show that being diffeomorphic is an equivalence relation on the set of regular surfaces.
+
+
+
+
+
+
+## Tangent space
+
+
+We have seen that tangent vectors to regular curves allow to define the Frenet Frame, curvature and torsion. Eventually, these quantities are sufficient to characterize a curve. The anolgue concept of tangent vector for surfaces is called the tangent space. To avoid clumsy terminology, we 
+make the following assumption.
+
+
+::: Assumption
+
+From now on, all the surfaces will be regular and all the charts will be regular.
+
+:::
+
+
+::: Definition
+### Tangent vector and space
+
+Let $\SSS$ be a surface and $\pp \in \SSS$. A **tangent vector** to $\SSS$ at 
+$\pp$ is any vector $\vv \in \R^3$ such that
+$$
+\vv = \dg(0) \,,
+$$
+where $\g \colon (-\e,\e) \to \R^3$ is a smooth curve such that
+$$
+\g (-\e , \e) \subseteq \SSS \,, \quad \g(0) = \pp \,,
+$$
+where $\e>0$. The **tangent space** of $\SSS$ at $\pp$ is the set of all such vectors. 
+
+:::
+
+
+
+![Tangent space $T_p \SSS$ of surface $\SSS$ at the point $\pp$. A tangent vector $\vv$ coincides with $\dg(0)$ for some $\g \colon (-\e,\e) \to \SSS$ such that $\g(0)= \pp$.](/images/tangent_space.png){width=80%}
+
+
+
+Let us start with the most basic example. We want to compute the tangent space to an open set in $\R^2$. 
+
+
+::: Example
+
+Let $U \subseteq \R^2$ be open and $\pp \in U$. Then 
+$$
+T_p U = \R^2 \,.
+$$
+
+> Proof. Let $\vv \in T_p U$. By definition there exists a smooth curve
+$$
+\gamma \colon (-\e,\e) \to U
+$$
+such that $\g(0) = \pp$ and $\dg(0)=\vv$. Since $U \subseteq \R^2$, it follows that $\g$ is a plane curve, so that 
+$$
+\vv = \dg (0) \in \R^2 \,.
+$$
+Conversely, let $\vv \in \R^2$. Since $\pp \in U$ and $U$ is open, there
+exists $\e>0$ such that $B_{\e}(p) \subseteq U$. Define the curve
+$$
+\g \colon (-\e,\e) \to \R^3 \,, \quad \g(t):= \pp + t \vv \,.  
+$$
+By construction
+$$
+\g(-\e,\e) \subseteq B_{\e} (\pp) \subseteq U \,, \quad \g(0) = \pp \,, \quad \dg(0)= \vv \,,
+$$
+showing that $\vv \in T_p U$.
+
+:::
+
+
+In the above we have seen that $T_p U = \R^2$ is a vector space. This property holds in general for $T_p \SSS$ with $\SSS$ regular surface.
+
+
+::: Proposition
+
+Let $\SSS$ be a (regular) surface and $\pp \in \SSS$. Let $\sss \colon U \to \R^3$ be a chart at $\pp$. such that $\sss$
+
 
 :::
 
@@ -1766,16 +1954,34 @@ is smooth.
 
 
 
+::: Remark
+### Tangent space and derivations
+
+Definition of tangent plane depends on the fact that $\SSS$ is contained in $\R^3$. This is a serious drawback in many applications, as the surface $\SSS$ does not necessarily need to be Euclidean. There is a way to get rid of such dependence, and give an *intrinsic* definition of tangent plane, depending only on the point $\pp$ and the surface $\SSS$. 
+
+The basic idea is as follows: If $U \subseteq \R^2$ is open and $\pp \in U$, then $T_p U = \R^2$. We can associate to any point $\vv \in T_p U$ a directional derivative
+$$
+\vv = (v_1,v_2) \mapsto \left. \frac{\partial }{\partial v} \right|_p =
+v_1 \, \left. \frac{\partial }{\partial x_1} \right|_p +
+v_2 \, \left. \frac{\partial }{\partial x_2} \right|_p 
+$$
+acting on smooth functions $f \colon U \to \R$. The above directional derivative is called a **derivation**.
+
+The point is that derivations do not need to be defined through vectors, but as linear operators $D$ acting on smooth functions $f \colon U \to \R$, and such that the Leibnitz rule holds:
+$$
+D(fg) = f(\pp) D(g) + g(\pp) D(f) 
+$$
+where $f,g \colon U \to \R$ are smooth. The tangent plane at p can then be defined as
+$$
+T_p U = \{ D \, \mbox{ derivation at  } \pp \} \,.
+$$
+Therefore $T_p U$ is a subset of the dual space of smooth functions. 
+
+It is possible to do such construction directly on $\SSS$, by introducing the concepts of **germ** of a function and of **algebra** of derivations.
+An in depth discussion can be found in Chapter 3.4 of [@abate-tovena].
 
 
-
-
-
-
-
-
-
-
+:::
 
 
 
