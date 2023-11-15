@@ -713,10 +713,22 @@
 
  [**Assumption 4.50**](#Assumption-4.50)\Pageref{Assumption-4.50}
 
- [**Definition 4.51**](#tangent-vector-and-space): Tangent vector and space\Pageref{tangent-vector-and-space}
+ [**Definition 4.51**](#tangent-vectors-and-tangent-space): Tangent vectors and tangent space\Pageref{tangent-vectors-and-tangent-space}
 
  [**Example 4.52**](#Example-4.52)\Pageref{Example-4.52}
 
- [**Proposition 4.53**](#Proposition-4.53)\Pageref{Proposition-4.53}
+ [**Lemma 4.53**](#lemma-curve-S)\Pageref{lemma-curve-S}
 
- [**Remark 4.54**](#tangent-space-and-derivations): Tangent space and derivations\Pageref{tangent-space-and-derivations}
+ [**Proof**](#Proof*-4.10)\Pageref{Proof*-4.10}
+
+ [**Theorem 4.54**](#theorem-tangent-plane)\Pageref{theorem-tangent-plane}
+
+ [**Proof**](#Proof*-4.11)\Pageref{Proof*-4.11}
+
+ [**Definition 4.55**](#tangent-plane): Tangent plane\Pageref{tangent-plane}
+
+ [**Remark 4.56**](#equation-of-tangent-plane): Equation of tangent plane\Pageref{equation-of-tangent-plane}
+
+ [**Example 4.57**](#Example-4.57)\Pageref{Example-4.57}
+
+ [**Remark 4.58**](#tangent-space-and-derivations): Tangent space and derivations\Pageref{tangent-space-and-derivations}

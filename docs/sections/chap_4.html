@@ -85,6 +85,34 @@ div.csl-indent {
   }
 }</script>
 <style>
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
@@ -93,57 +121,25 @@ div.csl-indent {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
 }
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Important {
   --color1: #f4cce0;
   --color2: #db4d92;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Warning {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
 }
 .TODO {
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
 .Notation {
   --color1: #c6e6ed;
   --color2: #1995ad;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .Theorem {
   --color1: #f4cce0;
@@ -153,7 +149,11 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Remark {
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Example {
   --color1: #bce5de;
   --color2: #21aa93;
 }
@@ -505,7 +505,7 @@ L_n := \left\{ \left(x, \frac{n \pi}{2} \right) \, \colon \,x \in \mathbb{R}\rig
 </section>
 <section id="definition-of-surface" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="definition-of-surface"><span class="header-section-number">4.2</span> Definition of Surface</h2>
-<p>We can finally give the definition of surface in <span class="math inline">\(\mathbb{R}^3\)</span>.</p>
+<p>We give our main definition of surface in <span class="math inline">\(\mathbb{R}^3\)</span>.</p>
 <div id="surface" class="Definition" title="Surface">
 <details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 20: </strong>Surface</summary><div>
 <p>Let <span class="math inline">\(\mathcal{S}\subseteq \mathbb{R}^3\)</span> be a connected set. We say that <span class="math inline">\(\mathcal{S}\)</span> is a <strong>surface</strong> if for every point <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span> there exist an open set <span class="math inline">\(U \subseteq \mathbb{R}^2\)</span> and a smooth map <span class="math display">\[
@@ -532,7 +532,9 @@ L_n := \left\{ \left(x, \frac{n \pi}{2} \right) \, \colon \,x \in \mathbb{R}\rig
 <div id="Remark-21" class="Remark">
 <details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 21</strong></summary><div>
 <ul>
-<li><p>A surface chart <span class="math inline">\({\pmb{\sigma}}\)</span> is a map from <span class="math inline">\(\mathbb{R}^2\)</span> into <span class="math inline">\(\mathbb{R}^3\)</span>.</p></li>
+<li><p>A surface chart <span class="math inline">\({\pmb{\sigma}}\)</span> is a map <span class="math display">\[
+{\pmb{\sigma}}\colon U  \to \mathbb{R}^3 \,,
+\]</span> with <span class="math inline">\(U \subseteq \mathbb{R}^2\)</span> open. Therefore smoothness of <span class="math inline">\({\pmb{\sigma}}\)</span> is intended in the classical sense.</p></li>
 <li><p>Given a chart <span class="math inline">\({\pmb{\sigma}}\colon U \to {\pmb{\sigma}}(U)\)</span>, the set <span class="math inline">\(U\)</span> is open in <span class="math inline">\(\mathbb{R}^2\)</span> while <span class="math inline">\({\pmb{\sigma}}(U)\)</span> is open in <span class="math inline">\(\mathcal{S}\)</span> with the subspace topology. This means that there exists <span class="math inline">\(W \subseteq \mathbb{R}^3\)</span> open such that <span class="math display">\[
 {\pmb{\sigma}}(U) = W \cap \mathcal{S}\,.
 \]</span></p></li>
@@ -1315,28 +1317,30 @@ g(f(\mathbf{p})) \in {\pmb{\sigma}}_3 (U_3) \,.
 <p></p><details class="Assumption fbx-simplebox fbx-default" open=""><summary><strong>Assumption 50</strong></summary><div>From now on, all the surfaces will be regular and all the charts will be regular.<p></p>
 </div></details>
 </div>
-<div id="tangent-vector-and-space" class="Definition" title="Tangent vector and space">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 51: </strong>Tangent vector and space</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a surface and <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. A <strong>tangent vector</strong> to <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> is any vector <span class="math inline">\(\mathbf{v}\in \mathbb{R}^3\)</span> such that <span class="math display">\[
+<div id="tangent-vectors-and-tangent-space" class="Definition" title="Tangent vectors and tangent space">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 51: </strong>Tangent vectors and tangent space</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a surface and <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. A <strong>tangent vector</strong> to <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> is any vector <span class="math inline">\(\mathbf{v}\in \mathbb{R}^3\)</span> such that <span class="math display">\[
 \mathbf{v}= \dot{{\pmb{\gamma}}}(0) \,,
 \]</span> where <span class="math inline">\({\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to \mathbb{R}^3\)</span> is a smooth curve such that <span class="math display">\[
 {\pmb{\gamma}}(-\varepsilon, \varepsilon) \subseteq \mathcal{S}\,, \quad {\pmb{\gamma}}(0) = \mathbf{p}\,,
-\]</span> where <span class="math inline">\(\varepsilon&gt;0\)</span>. The <strong>tangent space</strong> of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> is the set of all such vectors.<p></p>
+\]</span> where <span class="math inline">\(\varepsilon&gt;0\)</span>. The <strong>tangent space</strong> of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> is the set <span class="math display">\[
+T_{\mathbf{p}} \mathcal{S}:= \{ \mathbf{v}\in \mathbb{R}^3 \, \colon \,\mathbf{v}\, \mbox{ tangent vector of } \, \mathcal{S}\, \mbox{ at } \, \mathbf{p}\} \,.
+\]</span><p></p>
 </div></details>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../images/tangent_space.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption class="figure-caption">Tangent space <span class="math inline">\(T_p \mathcal{S}\)</span> of surface <span class="math inline">\(\mathcal{S}\)</span> at the point <span class="math inline">\(\mathbf{p}\)</span>. A tangent vector <span class="math inline">\(\mathbf{v}\)</span> coincides with <span class="math inline">\(\dot{{\pmb{\gamma}}}(0)\)</span> for some <span class="math inline">\({\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to \mathcal{S}\)</span> such that <span class="math inline">\({\pmb{\gamma}}(0)= \mathbf{p}\)</span>.</figcaption>
+<figcaption class="figure-caption">Tangent space <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> of surface <span class="math inline">\(\mathcal{S}\)</span> at the point <span class="math inline">\(\mathbf{p}\)</span>. A tangent vector <span class="math inline">\(\mathbf{v}\)</span> coincides with <span class="math inline">\(\dot{{\pmb{\gamma}}}(0)\)</span> for some <span class="math inline">\({\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to \mathcal{S}\)</span> such that <span class="math inline">\({\pmb{\gamma}}(0)= \mathbf{p}\)</span>.</figcaption>
 </figure>
 </div>
-<p>Let us start with the most basic example. We want to compute the tangent space to an open set in <span class="math inline">\(\mathbb{R}^2\)</span>.</p>
+<p>Let us start with the most basic example: We want to compute the tangent space to an open set in <span class="math inline">\(\mathbb{R}^2\)</span>.</p>
 <div id="Example-52" class="Example">
 <details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 52</strong></summary><div>
 <p>Let <span class="math inline">\(U \subseteq \mathbb{R}^2\)</span> be open and <span class="math inline">\(\mathbf{p}\in U\)</span>. Then <span class="math display">\[
-T_p U = \mathbb{R}^2 \,.
+T_{\mathbf{p}} U = \mathbb{R}^2 \,.
 \]</span></p>
 <blockquote class="blockquote">
-<p>Proof. Let <span class="math inline">\(\mathbf{v}\in T_p U\)</span>. By definition there exists a smooth curve <span class="math display">\[
+<p>Proof. Let <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} U\)</span>. By definition there exists a smooth curve <span class="math display">\[
 \gamma \colon (-\varepsilon,\varepsilon) \to U
 \]</span> such that <span class="math inline">\({\pmb{\gamma}}(0) = \mathbf{p}\)</span> and <span class="math inline">\(\dot{{\pmb{\gamma}}}(0)=\mathbf{v}\)</span>. Since <span class="math inline">\(U \subseteq \mathbb{R}^2\)</span>, it follows that <span class="math inline">\({\pmb{\gamma}}\)</span> is a plane curve, so that <span class="math display">\[
 \mathbf{v}= \dot{{\pmb{\gamma}}}(0) \in \mathbb{R}^2 \,.
@@ -1344,28 +1348,226 @@ T_p U = \mathbb{R}^2 \,.
 {\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to \mathbb{R}^3 \,, \quad {\pmb{\gamma}}(t):= \mathbf{p}+ t \mathbf{v}\,.  
 \]</span> By construction <span class="math display">\[
 {\pmb{\gamma}}(-\varepsilon,\varepsilon) \subseteq B_{\varepsilon} (\mathbf{p}) \subseteq U \,, \quad {\pmb{\gamma}}(0) = \mathbf{p}\,, \quad \dot{{\pmb{\gamma}}}(0)= \mathbf{v}\,,
-\]</span> showing that <span class="math inline">\(\mathbf{v}\in T_p U\)</span>.</p>
+\]</span> showing that <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} U\)</span>.</p>
 </blockquote>
 </div></details>
 </div>
-<p>In the above we have seen that <span class="math inline">\(T_p U = \mathbb{R}^2\)</span> is a vector space. This property holds in general for <span class="math inline">\(T_p \mathcal{S}\)</span> with <span class="math inline">\(\mathcal{S}\)</span> regular surface.</p>
-<div id="Proposition-53" class="Proposition">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 53</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a (regular) surface and <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. Let <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span> be a chart at <span class="math inline">\(\mathbf{p}\)</span>. such that <span class="math inline">\({\pmb{\sigma}}\)</span><p></p>
+<p>In the above example we have seen that <span class="math inline">\(T_{\mathbf{p}} U = \mathbb{R}^2\)</span>. This property holds in general for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> with <span class="math inline">\(\mathcal{S}\)</span> regular surface. Before proving this fact, we need a lemma.</p>
+<div id="lemma-curve-S" class="Lemma">
+<p></p><details class="Lemma fbx-simplebox fbx-default" open=""><summary><strong>Lemma 53</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be regular and <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. Let <span class="math inline">\({\pmb{\sigma}}\colon U \to {\pmb{\sigma}}(U) \subseteq \mathcal{S}\)</span> be a regular chart at <span class="math inline">\(\mathbf{p}\)</span>, with <span class="math display">\[
+{\pmb{\sigma}}(u_0,v_0) = \mathbf{p}\,.
+\]</span> Let <span class="math inline">\({\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to \mathbb{R}^3\)</span> be a smooth curve such that <span class="math display">\[
+{\pmb{\gamma}}(-\varepsilon,\varepsilon) \subseteq {\pmb{\sigma}}(U) \,, \quad {\pmb{\gamma}}(0) = \mathbf{p}\,.
+\]</span> Then there exist smooth functions <span class="math display">\[
+u , v \colon (-\varepsilon,\varepsilon) \to \mathbb{R}
+\]</span> such that <span class="math display">\[
+{\pmb{\gamma}}(t) = {\pmb{\sigma}}( u(t), v(t) ) \,, \quad \forall \, t \in (-\varepsilon,\varepsilon) \,,
+\]</span> and <span class="math display">\[
+u(0)=u_0 \,, \quad v(0) = v_0 \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="Proof*-10" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Denote the coordinates of <span class="math inline">\({\pmb{\sigma}}\)</span> by <span class="math display">\[
+{\pmb{\sigma}}(u,v) = (f(u,v), g(u,v), h(u, v)) \,.
+\]</span> The differential of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
+d{\pmb{\sigma}}=
+\left(   
+\begin{array}{cc}
+f_u &amp; f_v \\
+g_u &amp; g_v \\
+h_u &amp; h_v \\
+\end{array}
+\right) \,.
+\]</span> Since <span class="math inline">\({\pmb{\sigma}}\)</span> is regular, by definition <span class="math inline">\(d{\pmb{\sigma}}\)</span> has rank-2 at <span class="math inline">\((u_0,v_0)\)</span>. This means that at least one of the 3 minors <span class="math display">\[
+\left(   
+\begin{array}{cc}
+f_u &amp; f_v \\
+g_u &amp; g_v
+\end{array}
+\right) \,, \quad
+\left(   
+\begin{array}{cc}
+f_u &amp; f_v \\
+h_u &amp; h_v \\
+\end{array}
+\right) \,, \quad
+\left(   
+\begin{array}{cc}
+g_u &amp; g_v \\
+h_u &amp; h_v \\
+\end{array}
+\right) \,.
+\]</span> is invertible. WLOG assume the first is invertible (the proof in case the other two are invertible is similar.) Define the map <span class="math display">\[
+F \colon U \subseteq \mathbb{R}^2 \to \mathbb{R}^2 \,, \quad F(u,v) = ( f(u,v), g(u,v) ) \,.
+\]</span> We have <span class="math display">\[
+dF =
+\left(   
+\begin{array}{cc}
+f_u &amp; f_v \\
+g_u &amp; g_v
+\end{array}
+\right) \,,
+\]</span> which is invertible at <span class="math inline">\((u_0,v_0)\)</span> by assumption. Hence, by the Inverse Function Theorem, there exist<p></p>
+<ul>
+<li><span class="math inline">\(W \subseteq U \subseteq \mathbb{R}^2\)</span> open set with <span class="math inline">\((u_0,v_0) \in W\)</span>,</li>
+<li><span class="math inline">\(V \subseteq \mathbb{R}^2\)</span> open set with <span class="math inline">\(F(u_0,v_0) \in V\)</span>,</li>
+</ul>
+<p>such that <span class="math display">\[
+F \colon W \to V
+\]</span> is a diffeomorphism. Hence <span class="math display">\[
+F^{-1} \colon V \to W
+\]</span> is smooth. Since <span class="math inline">\({\pmb{\gamma}}(-\varepsilon,\varepsilon) \subseteq {\pmb{\sigma}}(U)\)</span>, it is well defined the composition <span class="math display">\[
+F^{-1} \circ {\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to W \subseteq U \,.
+\]</span> Moreover such composition is smooth, being <span class="math inline">\(F^{-1}\)</span> and <span class="math inline">\({\pmb{\gamma}}\)</span> smooth. Therefore <span id="eq-lemma-curve-S"><span class="math display">\[
+(F^{-1} \circ {\pmb{\gamma}}) (t) = (u(t),v(t))
+\tag{4.2}\]</span></span> with <span class="math inline">\(u,v\)</span> smooth. As <span class="math inline">\({\pmb{\gamma}}(0)=\mathbf{p}\)</span>, by definition of <span class="math inline">\(F\)</span> we have <span class="math display">\[
+(u(0),v(0)) = (F^{-1} \circ {\pmb{\gamma}}) (0) = F^{-1}(\mathbf{p}) =  (u_0,v_0) \,,
+\]</span> showing that <span class="math display">\[
+u(0) = u_0 \,, \quad
+v(0) = v_0 \,.
+\]</span> Moreover, applying <span class="math inline">\({\pmb{\sigma}}\)</span> to both sides of (<a href="#eq-lemma-curve-S"><span>4.2</span></a>) yields <span class="math display">\[
+{\pmb{\sigma}}(u(t),v(t)) = {\pmb{\sigma}}((F^{-1} \circ {\pmb{\gamma}})) (t) = {\pmb{\gamma}}(t) \,,
+\]</span> as we wanted to show.</p>
+</div></details>
+</div>
+<p>We are now ready to characterize <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> when <span class="math inline">\(\mathcal{S}\)</span> is a regular surface.</p>
+<div id="theorem-tangent-plane" class="Theorem">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 54</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a (regular) surface and <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. Let <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span> be a chart at <span class="math inline">\(\mathbf{p}\)</span>. Denote by <span class="math inline">\((u_0,v_0) \in U\)</span> a point such that <span class="math display">\[
+{\pmb{\sigma}}(u_0,v_0) = \mathbf{p}\,.
+\]</span> Then <span class="math display">\[
+T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sigma}}_v \} := \{  \lambda {\pmb{\sigma}}_u + \mu {\pmb{\sigma}}_v \, \colon \,\lambda,\mu \in \mathbb{R}\} \,,
+\]</span> where <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are evaluated at <span class="math inline">\((u_0,v_0)\)</span>. In particular <span class="math display">\[
+T_{\mathbf{p}} \mathcal{S}= \mathbb{R}^2 \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="Proof*-11" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Let <span class="math inline">\({\pmb{\sigma}}\colon U \to {\pmb{\sigma}}(U) \subseteq \mathcal{S}\)</span> be a chart at <span class="math inline">\(p\)</span>. If we show that <span class="math display">\[
+T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sigma}}_v \}
+\]</span> then we deduce <span class="math display">\[
+T_{\mathbf{p}} \mathcal{S}= \mathbb{R}^2 \,,
+\]</span> since <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly independent.<p></p>
+<p><em>Step 1.</em> Suppose <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span>. By definition there exists a smooth curve <span class="math inline">\({\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to \mathcal{S}\)</span> such that <span class="math display">\[
+{\pmb{\gamma}}(0) = \mathbf{p}\,, \quad \dot{{\pmb{\gamma}}}(0) = \mathbf{v}\,.
+\]</span> By continuity, we can take <span class="math inline">\(\varepsilon\)</span> small enough so that <span class="math display">\[
+{\pmb{\gamma}}(-\varepsilon,\varepsilon) \subseteq {\pmb{\sigma}}(U) \,.
+\]</span> By Lemma <a href="chap_4.html#lemma-curve-S">53</a> there exist smooth functions <span class="math inline">\(u , v \colon (-\varepsilon,\varepsilon) \to \mathbb{R}\)</span> such that <span class="math display">\[
+{\pmb{\gamma}}(t) = {\pmb{\sigma}}( u(t), v(t) ) \,, \quad \forall \, t \in (-\varepsilon,\varepsilon) \,,
+\]</span> and <span class="math display">\[
+u(0)=u_0 \,, \quad v(0) = v_0 \,.
+\]</span> Therefore, by chain rule, <span class="math display">\[
+\dot{{\pmb{\gamma}}}(t) = {\pmb{\sigma}}_u ( u(t),v(t) ) \, \dot{u}(t) +  
+{\pmb{\sigma}}_v ( u(t),v(t) ) \, \dot{v}(t) \,.
+\]</span> Evaluating the above at <span class="math inline">\(t=0\)</span> yields <span class="math display">\[\begin{align*}
+\mathbf{v}&amp; = \dot{{\pmb{\gamma}}}(0) \\
+    &amp; = {\pmb{\sigma}}_u ( u(0),v(0) ) \, \dot{u}(0) +  {\pmb{\sigma}}_v ( u(0),v(0) ) \, \dot{v}(0) \\
+    &amp; = {\pmb{\sigma}}_u ( u_0,v_0 ) \, \dot{u}(0) +  {\pmb{\sigma}}_v ( u_0,v_0 ) \, \dot{v}(0)  \,,
+\end{align*}\]</span> which shows <span class="math display">\[
+\mathbf{v}\in \operatorname{span} \{  {\pmb{\sigma}}_u (u_0,v_0), {\pmb{\sigma}}_v(u_0,v_0) \} \,.
+\]</span></p>
+<p><em>Step 2.</em> Suppose that <span class="math display">\[
+\mathbf{v}\in \operatorname{span} \{  {\pmb{\sigma}}_u (u_0,v_0), {\pmb{\sigma}}_v(u_0,v_0) \} \,.
+\]</span> Then there exist <span class="math inline">\(\lambda,\mu \in \mathbb{R}\)</span> such that <span class="math display">\[
+\mathbf{v}= \lambda {\pmb{\sigma}}_u (u_0,v_0) + \mu {\pmb{\sigma}}_v (u_0,v_0) \,.
+\]</span> Define the curve <span class="math display">\[
+{\pmb{\gamma}}(t) := {\pmb{\sigma}}(u_0 + \lambda t, v_0 + \mu t) \,, \quad t \in (-\varepsilon,\varepsilon) \,.
+\]</span> We have <span class="math display">\[
+{\pmb{\gamma}}(0) = {\pmb{\sigma}}(u_0,v_0) = \mathbf{p}\,.
+\]</span> Therefore, for <span class="math inline">\(\varepsilon\)</span> sufficiently small, we have <span class="math display">\[
+{\pmb{\gamma}}(-\varepsilon,\varepsilon) \subseteq {\pmb{\sigma}}(U) \,.
+\]</span> By chain rule <span class="math display">\[
+\dot{{\pmb{\gamma}}}(t) = {\pmb{\sigma}}_u (u_0+ \lambda t , v_0+ \mu t ) \lambda
++ {\pmb{\sigma}}_v (u_0+ \lambda t , v_0+ \mu t ) \mu \,,
+\]</span> and therefore <span class="math display">\[
+\dot{{\pmb{\gamma}}}(0) = {\pmb{\sigma}}_u (u_0 , v_0 ) \lambda
++ {\pmb{\sigma}}_v (u_0 ,v_0) \mu = \mathbf{v}\,.
+\]</span> This proves that <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span>, ending the proof.</p>
+</div></details>
+</div>
+<p>Therefore <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is always two-dimensional. This justifies the following definition.</p>
+<div id="tangent-plane" class="Definition" title="Tangent plane">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 55: </strong>Tangent plane</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. The set <span class="math display">\[
+T_{\mathbf{p}} \mathcal{S}
+\]</span> is called the <strong>tangent plane</strong> to <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>.<p></p>
+</div></details>
+</div>
+<div id="equation-of-tangent-plane" class="Remark" title="Equation of tangent plane">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 56: </strong>Equation of tangent plane</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be regular and <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. Given a chart <span class="math inline">\({\pmb{\sigma}}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>, we know that <span class="math display">\[
+T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{  {\pmb{\sigma}}_u, {\pmb{\sigma}}_v \} \,.
+\]</span> Notice that the vector <span class="math display">\[
+\mathbf{n}:= {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v
+\]</span> is orthogonal to both <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span>. Hence <span class="math inline">\(\mathbf{n}\)</span> is orthogonal to <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. The equation for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is then <span class="math display">\[
+(x,y,z) \cdot \mathbf{n}= k \,,
+\]</span> for some <span class="math inline">\(k \in \mathbb{R}\)</span>. To compute <span class="math inline">\(k\)</span>, it is sufficient to evaluate the above equation at <span class="math inline">\(\mathbf{p}\)</span>, since <span class="math inline">\(\mathbf{p}\)</span> belongs to <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. We obtain <span class="math display">\[
+k = \mathbf{p}\cdot \mathbf{n}\,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="Example-57" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 57</strong></summary><div>Consider the surface <span class="math inline">\(\mathcal{S}\)</span> defined by the chart <span class="math display">\[
+{\pmb{\sigma}}(u,v) := \left(   \sqrt{1-v} \cos(u) , \sqrt{1-v} \sin(u), v        \right) \,.
+\]</span> We want to compute the tangent plane <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>.<p></p>
+<p>First, we need to check that <span class="math inline">\({\pmb{\sigma}}\)</span> is regular. We have <span class="math display">\[\begin{align*}
+{\pmb{\sigma}}_u &amp; = \left(  - \sqrt{1-v} \sin(u) , \sqrt{1-v} \cos(u), 0        \right) \\
+{\pmb{\sigma}}_v &amp; = \left(   - \frac{1}{2} (1-v)^{-1/2}  \cos(u) , - \frac{1}{2} (1-v)^{-1/2}   \sin(u), 1        \right)
+\end{align*}\]</span> As the last component of <span class="math inline">\({\pmb{\sigma}}_u\)</span> is <span class="math inline">\(0\)</span> and the last component of <span class="math inline">\({\pmb{\sigma}}_v\)</span> is <span class="math inline">\(1\)</span>, we conclude that <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly independent. Thus <span class="math inline">\({\pmb{\sigma}}\)</span> is regular.</p>
+<p>Suppose <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span> is such that <span class="math display">\[
+{\pmb{\sigma}}(u_0,v_0) = \mathbf{p}
+\]</span> for some <span class="math inline">\((u_0,v_0) \in \mathbb{R}^2\)</span>. By Theorem <a href="chap_4.html#theorem-tangent-plane">54</a> we have <span class="math display">\[
+T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u (u_0,v_0) , {\pmb{\sigma}}_v (u_0,v_0)  \} \,.
+\]</span> To find the equation of <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> we compute: <span class="math display">\[\begin{align*}
+{\pmb{\sigma}}_u \times {\pmb{\sigma}}_v &amp; =
+\left|
+\begin{array}{ccc}
+\mathbf{i}&amp; \mathbf{j}&amp; \mathbf{k}\\
+- \sqrt{1-v} \sin(u) &amp; \sqrt{1-v} \cos(u) &amp; 0 \\
+- \frac{1}{2} (1-v)^{-1/2}  \cos(u) &amp; - \frac{1}{2} (1-v)^{-1/2}   \sin(u) &amp; 1
+\end{array}
+\right| \\
+&amp; = \left(  \sqrt{1-v} \cos(u) , \sqrt{1-v} \sin(u), \frac12        \right)
+\end{align*}\]</span> For <span class="math display">\[
+(u_0,v_0) = \left( \frac{\pi}{4}, 0 \right)
+\]</span> we have <span class="math display">\[
+\mathbf{p}= {\pmb{\sigma}}(u_0,v_0)  = \left( \frac{\sqrt 2}{2}, \frac{\sqrt 2}{2}, 0  \right) \,,
+\]</span> and therefore <span class="math display">\[
+\mathbf{n}= ({\pmb{\sigma}}_u \times {\pmb{\sigma}}_v)(u_0,v_0) =  \left(  \frac{\sqrt 2}{2}, \frac{\sqrt 2}{2} , \frac{1}{2}   \right) \,.
+\]</span> The equation for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is therefore <span class="math display">\[
+(x,y,z) \cdot \mathbf{n}= k \,,
+\]</span> for some <span class="math inline">\(k \in \mathbb{R}\)</span>. The above reads <span class="math display">\[
+\frac{\sqrt 2}{2} \, x + \frac{\sqrt 2}{2} \, y + \frac{1}{2} \, z = k \,.
+\]</span> We are left to compute <span class="math inline">\(k\)</span>. The point <span class="math inline">\(\mathbf{p}\)</span> belongs to <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>, and therefore <span class="math display">\[
+\frac{\sqrt 2}{2} \, \frac{\sqrt 2}{2} + \frac{\sqrt 2}{2} \, \frac{\sqrt 2}{2} = k \quad \implies \quad k = 1 \,.
+\]</span> The equation for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is then <span class="math display">\[
+\frac{\sqrt 2}{2} \, x + \frac{\sqrt 2}{2} \, y + \frac{1}{2} \, z = 1 \,.
+\]</span></p>
 </div></details>
 </div>
 <div id="tangent-space-and-derivations" class="Remark" title="Tangent space and derivations">
-<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 54: </strong>Tangent space and derivations</summary><div>Definition of tangent plane depends on the fact that <span class="math inline">\(\mathcal{S}\)</span> is contained in <span class="math inline">\(\mathbb{R}^3\)</span>. This is a serious drawback in many applications, as the surface <span class="math inline">\(\mathcal{S}\)</span> does not necessarily need to be Euclidean. There is a way to get rid of such dependence, and give an <em>intrinsic</em> definition of tangent plane, depending only on the point <span class="math inline">\(\mathbf{p}\)</span> and the surface <span class="math inline">\(\mathcal{S}\)</span>.<p></p>
-<p>The basic idea is as follows: If <span class="math inline">\(U \subseteq \mathbb{R}^2\)</span> is open and <span class="math inline">\(\mathbf{p}\in U\)</span>, then <span class="math inline">\(T_p U = \mathbb{R}^2\)</span>. We can associate to any point <span class="math inline">\(\mathbf{v}\in T_p U\)</span> a directional derivative <span class="math display">\[
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 58: </strong>Tangent space and derivations</summary><div>The definition of tangent plane depends on the fact that <span class="math inline">\(\mathcal{S}\)</span> is contained in <span class="math inline">\(\mathbb{R}^3\)</span>. This is a serious drawback in many applications, as the surface <span class="math inline">\(\mathcal{S}\)</span> does not necessarily need to be Euclidean. There is a way to get rid of such dependence, and give an <em>intrinsic</em> definition of tangent plane, depending only on the point <span class="math inline">\(\mathbf{p}\)</span> and the surface <span class="math inline">\(\mathcal{S}\)</span>.<p></p>
+<p>The basic idea is as follows: If <span class="math inline">\(U \subseteq \mathbb{R}^2\)</span> is open and <span class="math inline">\(\mathbf{p}\in U\)</span>, then <span class="math inline">\(T_{\mathbf{p}} U = \mathbb{R}^2\)</span>. We can associate to any point <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} U\)</span> a directional derivative acting on smooth functions <span class="math inline">\(f \colon U \to \mathbb{R}\)</span>: <span class="math display">\[
 \mathbf{v}= (v_1,v_2) \mapsto \left. \frac{\partial }{\partial v} \right|_p =
 v_1 \, \left. \frac{\partial }{\partial x_1} \right|_p +
 v_2 \, \left. \frac{\partial }{\partial x_2} \right|_p
-\]</span> acting on smooth functions <span class="math inline">\(f \colon U \to \mathbb{R}\)</span>. The above directional derivative is called a <strong>derivation</strong>.</p>
-<p>The point is that derivations do not need to be defined through vectors, but as linear operators <span class="math inline">\(D\)</span> acting on smooth functions <span class="math inline">\(f \colon U \to \mathbb{R}\)</span>, and such that the Leibnitz rule holds: <span class="math display">\[
-D(fg) = f(\mathbf{p}) D(g) + g(\mathbf{p}) D(f)
-\]</span> where <span class="math inline">\(f,g \colon U \to \mathbb{R}\)</span> are smooth. The tangent plane at p can then be defined as <span class="math display">\[
-T_p U = \{ D \, \mbox{ derivation at  } \mathbf{p}\} \,.
-\]</span> Therefore <span class="math inline">\(T_p U\)</span> is a subset of the dual space of smooth functions.</p>
-<p>It is possible to do such construction directly on <span class="math inline">\(\mathcal{S}\)</span>, by introducing the concepts of <strong>germ</strong> of a function and of <strong>algebra</strong> of derivations. An in depth discussion can be found in Chapter 3.4 of <span class="citation" data-cites="abate-tovena">(<a href="references.html#ref-abate-tovena" role="doc-biblioref">Abate, Marco and Tovena, Francesca 2011</a>)</span>.</p>
+\]</span> The above directional derivative is called a <strong>derivation</strong>.</p>
+<p>The point is that derivations do not need to be defined through vectors, but can be defined as follows: <span class="math inline">\(D\)</span> is a <strong>derivation</strong> if</p>
+<ul>
+<li><span class="math inline">\(D \colon C^{\infty}(U) \to \mathbb{R}\)</span> is a linear operator, where <span class="math inline">\(C^{\infty}(U)\)</span> is the set of smooth functions <span class="math inline">\(f \colon U \to \mathbb{R}\)</span>,</li>
+<li><span class="math inline">\(D\)</span> satisfies the Leibnitz rule <span class="math display">\[
+D(fg) = f(\mathbf{p}) D(g) + g(\mathbf{p}) D(f) \,, \quad \forall \, f,g \in C^{\infty}(U) \,.
+\]</span></li>
+</ul>
+<p>The tangent plane at p can then be defined as <span class="math display">\[
+T_{\mathbf{p}} U = \{ D \, \mbox{ derivation at  } \mathbf{p}\} \,.
+\]</span> Therefore <span class="math display">\[
+T_{\mathbf{p}} U \subseteq (C^{\infty}(U))^* \,,
+\]</span> the dual space of smooth functions.</p>
+<p>It is possible to do such construction directly on <span class="math inline">\(\mathcal{S}\)</span>, by introducing the concepts of:</p>
+<ul>
+<li><strong>germ</strong> of a function</li>
+<li><strong>algebra</strong> of derivations, acting on germs</li>
+</ul>
+<p>An in depth discussion can be found in Chapter 3.4 of <span class="citation" data-cites="abate-tovena">(<a href="references.html#ref-abate-tovena" role="doc-biblioref">Abate, Marco and Tovena, Francesca 2011</a>)</span>.</p>
 </div></details>
 </div>
 
