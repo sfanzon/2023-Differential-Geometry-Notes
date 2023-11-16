@@ -85,58 +85,6 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Warning {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .TODO {
   --color1: #e7b1b4;
   --color2: #8c3236;
@@ -149,11 +97,63 @@ div.csl-indent {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -687,23 +687,23 @@ U:= [ 0, 2 \pi ] \times \mathbb{R}\,.
 \]</span> is a disconnected set.<p></p>
 <p>To see that <span class="math inline">\(\mathcal{S}\)</span> is not a surface, suppose there exists an atlas <span class="math inline">\(\{{\pmb{\sigma}}_i\}\)</span> of <span class="math inline">\(\mathcal{S}\)</span> <span class="math display">\[
 {\pmb{\sigma}}_i \colon U_i \to {\pmb{\sigma}}_i(U_i) \subseteq \mathcal{S}\,.
-\]</span> In particular there exists a chart <span class="math inline">\({\pmb{\sigma}}_{i_0}\)</span> such that <span class="math display">\[
-{\pmb{0}}\in {\pmb{\sigma}}_{i_0}(U_{i_0}) \,.
-\]</span> Let <span class="math inline">\(\mathbf{x}_0 \in U_{i_0}\)</span> be the point such that <span class="math display">\[
-{\pmb{\sigma}}_{i_0}(\mathbf{x}_0) = {\pmb{0}}\,.
-\]</span> Consider the ball <span class="math inline">\(B_{\varepsilon}(\mathbf{x}_0)\)</span> for any <span class="math inline">\(\varepsilon&gt; 0\)</span>. Since <span class="math inline">\({\pmb{\sigma}}_{i_0}\)</span> is a homeomorphism, we deduce that <span class="math display">\[
-{\pmb{\sigma}}_{i_0}(B_{\varepsilon}(\mathbf{x}_0))
+\]</span> In particular there exists a chart <span class="math inline">\({\pmb{\sigma}}\)</span> such that <span class="math display">\[
+{\pmb{0}}\in {\pmb{\sigma}}(U) \,.
+\]</span> Let <span class="math inline">\(\mathbf{x}_0 \in U\)</span> be the point such that <span class="math display">\[
+{\pmb{\sigma}}(\mathbf{x}_0) = {\pmb{0}}\,.
+\]</span> Since <span class="math inline">\(U\)</span> is open in <span class="math inline">\(\mathbb{R}^2\)</span>, there exists <span class="math inline">\(\varepsilon&gt;0\)</span> such that <span class="math inline">\(B_{\varepsilon}(\mathbf{x}_0) \subseteq U\)</span>. Since <span class="math inline">\({\pmb{\sigma}}\)</span> is a homeomorphism, we deduce that <span class="math display">\[
+{\pmb{\sigma}}(B_{\varepsilon}(\mathbf{x}_0))
 \]</span> is open in <span class="math inline">\(\mathcal{S}\)</span>. Hence there exists an open set <span class="math inline">\(W\)</span> in <span class="math inline">\(\mathbb{R}^3\)</span> such that <span class="math display">\[
-{\pmb{\sigma}}_{i_0}(B_{\varepsilon}(\mathbf{x}_0)) = \mathcal{S}\cap W \,.
-\]</span> As <span class="math inline">\({\pmb{0}}\in {\pmb{\sigma}}_{i_0}(B_{\varepsilon}(\mathbf{x}_0))\)</span> and <span class="math inline">\(W\)</span> is open in <span class="math inline">\(\mathbb{R}^3\)</span>, it follows that <span class="math inline">\(W\)</span> contains points of both <span class="math inline">\(\mathcal{S}^-\)</span> and <span class="math inline">\(\mathcal{S}^+\)</span>, with <span class="math display">\[
+{\pmb{\sigma}}(B_{\varepsilon}(\mathbf{x}_0)) = {\pmb{\sigma}}(U) \cap W \,.
+\]</span> As <span class="math inline">\({\pmb{0}}\in {\pmb{\sigma}}(B_{\varepsilon}(\mathbf{x}_0))\)</span>, we conclude that <span class="math inline">\({\pmb{0}}\in W\)</span>. Since <span class="math inline">\(W\)</span> is open in <span class="math inline">\(\mathbb{R}^3\)</span>, there exists <span class="math inline">\(\delta &gt; 0\)</span> such that <span class="math display">\[
+B_{\delta} ({\pmb{0}}) \subseteq W \,.
+\]</span> In particular we deduce that <span class="math display">\[
+B_{\delta} ({\pmb{0}}) \cap {\pmb{\sigma}}(U) \subseteq  {\pmb{\sigma}}(B_{\varepsilon}(\mathbf{x}_0)) \,.
+\]</span> Hence <span class="math inline">\({\pmb{\sigma}}(B_{\varepsilon}(\mathbf{x}_0))\)</span> contains points of both <span class="math inline">\(\mathcal{S}^-\)</span> and <span class="math inline">\(\mathcal{S}^+\)</span>, with <span class="math display">\[
 \mathcal{S}^- := \mathcal{S}\cap \{ z &lt; 0 \}   \,, \quad
 \mathcal{S}^+ := \mathcal{S}\cap \{ z &gt; 0 \}   \,.
-\]</span></p>
-<blockquote class="blockquote">
-<p>This is because <span class="math inline">\(W\)</span> contains a ball of suitable radius <span class="math inline">\(\delta&gt;0\)</span> and centered at <span class="math inline">\({\pmb{0}}\)</span>.</p>
-</blockquote>
-<p>Hence <span class="math inline">\({\pmb{\sigma}}_{i_0}(B_{\varepsilon}(\mathbf{x}_0))\)</span> contains points of <span class="math inline">\(\mathcal{S}^-\)</span> and <span class="math inline">\(\mathcal{S}^+\)</span>, implying that <span class="math display">\[
-V := {\pmb{\sigma}}_{i_0}(B_{\varepsilon}(\mathbf{x}_0)) \smallsetminus \{{\pmb{0}}\}
+\]</span> This implies that <span class="math display">\[
+V := {\pmb{\sigma}}(B_{\varepsilon}(\mathbf{x}_0)) \smallsetminus \{{\pmb{0}}\}
 \]</span> is disconnected, with disconnection given by <span class="math display">\[
 V = ( V \cap \mathcal{S}^- ) \cup (V \cap \mathcal{S}^+) \,.
 \]</span> However <span class="math inline">\(V\)</span> is homeomorphic to <span class="math display">\[
@@ -1599,7 +1599,7 @@ dF_{\mathbf{p}} \colon \mathbb{R}^2 \to \mathbb{R}^2 \,.
 dF_{\mathbf{p}} \colon T_{\mathbf{p}} \mathcal{S}_1 \to T_{F(\mathbf{p})} \mathcal{S}_2 \,.
 \]</span> Let us see how to precisely formulate this.</p>
 <div id="Definition-59" class="Definition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 59</strong></summary><div>Let<p></p>
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 59</strong></summary><div>Let <span class="math inline">\(\mathcal{S}_1\)</span> and <span class="math inline">\(\mathcal{S}_2\)</span> be regular surfaces and <span class="math inline">\(f \colon \mathcal{S}_1 \to \mathcal{S}_2\)</span> a smooth map.<p></p>
 </div></details>
 </div>
 </section>

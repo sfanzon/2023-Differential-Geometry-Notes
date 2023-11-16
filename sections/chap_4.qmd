@@ -659,34 +659,38 @@ atlas $\{\sss_i\}$ of $\SSS$
 $$
 \sss_i \colon U_i \to \sss_i(U_i) \subseteq \SSS \,.
 $$
-In particular there exists a chart $\sss_{i_0}$ such that 
+In particular there exists a chart $\sss$ such that 
 $$
-\zero \in \sss_{i_0}(U_{i_0}) \,.
+\zero \in \sss (U) \,.
 $$
-Let $\xx_0 \in U_{i_0}$ be the point such that
+Let $\xx_0 \in U$ be the point such that
 $$
-\sss_{i_0}(\xx_0) = \zero \,.
+\sss (\xx_0) = \zero \,.
 $$
-Consider the ball $B_{\e}(\xx_0)$ for any $\e > 0$. Since $\sss_{i_0}$ is a homeomorphism, we deduce that
+Since $U$ is open in $\R^2$, there exists $\e>0$ such that $B_{\e}(\xx_0) \subseteq U$. Since $\sss$ is a homeomorphism, we deduce that
 $$
-\sss_{i_0}(B_{\e}(\xx_0))
+\sss (B_{\e}(\xx_0))
 $$
 is open in $\SSS$. Hence there exists an open set $W$ in $\R^3$ such that
 $$
-\sss_{i_0}(B_{\e}(\xx_0)) = \SSS \cap W \,.
+\sss(B_{\e}(\xx_0)) = \sss(U) \cap W \,.
 $$
-As $\zero \in \sss_{i_0}(B_{\e}(\xx_0))$ and $W$ is open in $\R^3$, it follows that
-$W$ contains points of both $\SSS^-$ and $\SSS^+$, with
+As $\zero \in \sss (B_{\e}(\xx_0))$, we conclude that $\zero \in W$. Since $W$ is open in $\R^3$, there exists $\delta > 0$ such that
+$$
+B_{\delta} (\zero) \subseteq W \,.
+$$
+In particular we deduce that
+$$
+B_{\delta} (\zero) \cap \sss(U) \subseteq  \sss(B_{\e}(\xx_0)) \,.
+$$
+Hence $\sss(B_{\e}(\xx_0))$ contains points of both $\SSS^-$ and $\SSS^+$, with
 $$
 \SSS^- := \SSS \cap \{ z < 0 \}   \,, \quad
 \SSS^+ := \SSS \cap \{ z > 0 \}   \,.
 $$
-
->This is because $W$ contains a ball of suitable radius $\delta>0$ and centered at $\zero$.
-
-Hence $\sss_{i_0}(B_{\e}(\xx_0))$ contains points of $\SSS^-$ and $\SSS^+$, implying that 
+This implies that
 $$
-V := \sss_{i_0}(B_{\e}(\xx_0)) \smallsetminus \{\zero\}
+V := \sss (B_{\e}(\xx_0)) \smallsetminus \{\zero\}
 $$
 is disconnected, with disconnection given by
 $$
@@ -2379,7 +2383,7 @@ Let us see how to precisely formulate this.
 
 ::: Definition
 
-Let
+Let $\SSS_1$ and $\SSS_2$ be regular surfaces and $f \colon \SSS_1 \to \SSS_2$ a smooth map.
 
 :::
 
