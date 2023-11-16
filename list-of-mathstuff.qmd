@@ -727,8 +727,20 @@
 
  [**Definition 4.55**](#tangent-plane): Tangent plane\Pageref{tangent-plane}
 
- [**Remark 4.56**](#equation-of-tangent-plane): Equation of tangent plane\Pageref{equation-of-tangent-plane}
+ [**Proposition 4.56**](#equation-of-tangent-plane): Equation of tangent plane\Pageref{equation-of-tangent-plane}
+
+ [**Proof**](#Proof*-4.12)\Pageref{Proof*-4.12}
 
  [**Example 4.57**](#Example-4.57)\Pageref{Example-4.57}
 
  [**Remark 4.58**](#tangent-space-and-derivations): Tangent space and derivations\Pageref{tangent-space-and-derivations}
+
+ [**Definition 4.59**](#Definition-4.59)\Pageref{Definition-4.59}
+
+ [**Definition 4.60**](#level-surface-1): Level surface\Pageref{level-surface-1}
+
+ [**Theorem 4.61**](#theorem-level-surface-bis)\Pageref{theorem-level-surface-bis}
+
+ [**Proposition 4.62**](#Proposition-4.62)\Pageref{Proposition-4.62}
+
+ [**Proof**](#Proof*-4.13)\Pageref{Proof*-4.13}

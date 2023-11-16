@@ -339,7 +339,7 @@ Non-vanishing Jacobian determinant is a necessary condition for being a diffeomo
 
 Let $f \colon U \to \R^n$ with $U \subseteq \R^n$ open. Suppose $f$ is a diffeomorphism on $U$. Then 
 $$
-\det Jf (\xx) \neq 0 \,, \quad   \forall \, \xx \in \R^n \,.
+\det Jf (\xx) \neq 0 \,, \quad   \forall \, \xx \in U \,.
 $$
 
 :::
@@ -1234,10 +1234,11 @@ plt.show()
 ::: Definition
 ### Level surface
 
-Let $f \colon \R^3 \to \R$ be smooth. The **level surface** associated with $f$ is the set
+Let $V \subseteq \R^3$ be an open set and $f \colon V \to \R$ be smooth. The **level surface** associated with $f$ is the set
 $$
-\SSS_f := f^{-1}(0) = \{ (x,y,z) \in \R^3 \divider f(x,y,z) = 0  \} \,.
+\SSS_f := f^{-1}(0) = \{ (x,y,z) \in V \divider f(x,y,z) = 0  \} \,.
 $$
+
 
 :::
 
@@ -2191,27 +2192,53 @@ is called the **tangent plane** to $\SSS$ at $\pp$.
 
 
 
-::: Remark
+
+
+::: Proposition
 ### Equation of tangent plane
 
-Let $\SSS$ be regular and $\pp \in \SSS$. Given a chart $\sss$ at $\pp$, we know that 
+Let $\SSS$ be a regular surface and $\pp \in \SSS$. Let $\sss$ be a regular chart at $\pp$, with
 $$
-T_{\pp} \SSS = \operatorname{span} \{  \sss_u, \sss_v \} \,.
+\sss(u_0,v_0) = \pp = (x_0,y_0,z_0) \,.
 $$
-Notice that the vector
+Let 
 $$
-\nn := \sss_u \times \sss_v 
+\nn := \sss_u (u_0,v_0) \times \sss_v (u_0,v_0) \,.
 $$
-is orthogonal to both $\sss_u$ and $\sss_v$. Hence $\nn$ is orthogonal to $T_{\pp} \SSS$. The equation for $T_{\pp} \SSS$ is then
+The equation of the plane $T_{\pp} \SSS$ is given by
 $$
-(x,y,z) \cdot \nn = k \,,
+{\nn}_1 (x-x_0) + {\nn}_2 (y-x_0) + {\nn}_3 (z-z_0) = 0 \,, \quad 
+\forall \, (x,y,z) \in \R^3 \,,
+$$
+where $\nn = ({\nn}_1,{\nn}_2,{\nn}_3)$.
+
+:::
+
+
+::: Proof
+
+By Theorem \ref{theorem-tangent-plane} we know that
+$$
+T_{\pp} \SSS = \operatorname{span} \{  \sss_u (u_0,v_0), \sss_v (u_0,v_0) \} \,.
+$$
+By the properties of cross product, the vector $\nn$ is orthogonal to both
+$\sss_u (u_0,v_0)$ and $\sss_v (u_0,v_0)$. Therefore it is orthogonal to
+$T_{\pp} \SSS$. The equation for $T_{\pp} \SSS$ is then
+$$
+(x,y,z) \cdot \nn = k \,, \forall \, (x,y,z) \in \R^3 \,,
 $$
 for some $k \in \R$. To compute $k$, it is sufficient to evaluate the above equation at $\pp$, since $\pp$ belongs to $T_{\pp} \SSS$. We obtain
 $$
-k = \pp \cdot \nn \,.
+k = \pp \cdot \nn  \,.
 $$
+Hence the equation for $T_{\pp} \SSS$ is
+$$
+(x-x_0,y-y_0,z-z_0) \cdot \nn = 0 \,, \quad  \forall \, (x,y,z) \in \R^3 \,,
+$$
+ending the proof.
 
 :::
+
 
 
 ::: Example
@@ -2324,6 +2351,138 @@ An in depth discussion can be found in Chapter 3.4 of [@abate-tovena].
 
 :::
 
+
+
+
+## Derivatives of functions
+
+
+Let $F \colon U \to V$ with $U,V \subseteq \R^2$ open. Suppose $F$ is smooth. The differential of $F$ at $\pp \in U$ is a linear map 
+$$
+dF_{\pp} \colon \R^2 \to \R^2 \,.
+$$
+We have seen that 
+$$
+T_{\pp} U = \R^2 
+$$
+and therefore we can interpret $dF_{\pp}$ as a map between tangent planes:
+$$
+dF_{\pp} \colon \R^2 \to \R^2 \,.
+$$
+Similarly, if $F \colon \SSS_1 \to \SSS_2$ is a smooth map between surfaces,
+we can define its differential at $\pp \in \SSS_1$ as a linear map
+$$
+dF_{\pp} \colon T_{\pp} \SSS_1 \to T_{F(\pp)} \SSS_2 \,.
+$$
+Let us see how to precisely formulate this.
+
+
+::: Definition
+
+Let
+
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+## Examples of Surfaces
+
+
+### Level surfaces
+
+We have already seen level surfaces. Let us recall the defintion.
+
+::: Definition
+### Level surface
+
+Let $V \subseteq \R^3$ be an open set and $f \colon V \to \R$ be smooth. The **level surface** associated with $f$ is the set
+$$
+\SSS_f := f^{-1}(0) = \{ (x,y,z) \in V \divider f(x,y,z) = 0  \} \,.
+$$
+
+:::
+
+
+The following Theorem gives a sufficient condition for $\SSS_f$ to be
+a regular surface. 
+
+
+
+::: {.Theorem #theorem-level-surface-bis}
+
+Let $V \subseteq \R^3$ be an open set and $f \colon V \to \R$ be smooth. 
+Suppose that 
+$$
+\nabla f (x,y,z) \neq 0 \,, \quad \forall \, (x,y,z) \in V \,.
+$$
+Then $\SSS_f$ is a regular surface.
+
+:::
+
+
+Let us give a characterization of the tangent plane to $\SSS_f$.
+
+
+::: Proposition
+
+Let $V \subseteq \R^3$ be an open set and $f \colon V \to \R$ be smooth. 
+Suppose that 
+$$
+\nabla f (x,y,z) \neq 0 \,, \quad \forall \, (x,y,z) \in V \,.
+$$
+Then $\nabla f(\pp)$ is orthogonal to $T_{\pp} \SSS_f$. In particular,
+the equation of $T_{\pp} \SSS_f$ is given by
+$$
+\partial_{x} f (\pp) (x-x_0)  + \partial_{y} f (\pp) (y-y_0)    + \partial_{z} f (\pp) (z-z_0) = 0 \,, \forall \, (x,y,z) \in \R^3\,,   
+$${#eq-tangent-plane-level-surface}
+where $\pp = (x_0,y_0,z_0)$.
+
+:::
+
+::: Proof
+
+Let $\vv \in T_{\pp} \SSS_f$. By definition there exists a smooth curve 
+$$
+\g \colon (-\e,\e) \to \SSS_f \subseteq \R^3 
+$$
+such that
+$$
+\g(0) = \pp \,, \quad \dg(0)=\vv \,.
+$$
+Since $\g(t) \in \SSS_f$, we have that
+$$
+f(\g(t)) = 0 \,, \quad \forall t \in (-\e,\e) \,.
+$$
+By chain rule we get
+$$
+\nabla f (\g(t)) \cdot \dg(t) = 0 \,, \quad \forall t \in (-\e,\e) \,.
+$$
+Evaluating the above at $t=0$ yields
+$$
+0 = \nabla f (\g(0)) \cdot \dg(0) = \nabla f (\pp) \cdot \vv \,,
+$$
+showing that $\vv$ is orthogonal to $\nabla f (\pp)$. Since $\vv$ is arbitrary, we conclude that $\nabla f (\pp)$ is orthogonal to $T_{\pp} \SSS_f$.
+
+In particular, the equation for $T_{\pp} \SSS_f$ is
+$$
+\nabla f(\pp) \cdot (x,y,z) = k \,, \quad \forall \, (x,y,z) \in \R^3 \,,
+$$
+for some $k \in \R$. Choosing $(x,y,z)=(x_0,y_0,z_0) = \pp$ yields
+$$
+k = \nabla f(\pp) \cdot (x_0,y_0,z_0) \,.
+$$
+Hence (@eq-tangent-plane-level-surface) is the equation for $T_{\pp} \SSS_f$.
+
+:::
 
 
 

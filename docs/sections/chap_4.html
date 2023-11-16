@@ -85,19 +85,11 @@ div.csl-indent {
   }
 }</script>
 <style>
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -105,21 +97,41 @@ div.csl-indent {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Question {
+.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
 .Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
 .Proof {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .Important {
   --color1: #f4cce0;
@@ -129,33 +141,21 @@ div.csl-indent {
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Definition {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Theorem {
+.Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
 .Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
 }
 </style>
 
@@ -269,6 +269,11 @@ div.csl-indent {
   <li><a href="#transition-maps" id="toc-transition-maps" class="nav-link" data-scroll-target="#transition-maps"><span class="header-section-number">4.6</span> Transition maps</a></li>
   <li><a href="#functions-between-surfaces" id="toc-functions-between-surfaces" class="nav-link" data-scroll-target="#functions-between-surfaces"><span class="header-section-number">4.7</span> Functions between surfaces</a></li>
   <li><a href="#tangent-space" id="toc-tangent-space" class="nav-link" data-scroll-target="#tangent-space"><span class="header-section-number">4.8</span> Tangent space</a></li>
+  <li><a href="#derivatives-of-functions" id="toc-derivatives-of-functions" class="nav-link" data-scroll-target="#derivatives-of-functions"><span class="header-section-number">4.9</span> Derivatives of functions</a></li>
+  <li><a href="#examples-of-surfaces" id="toc-examples-of-surfaces" class="nav-link" data-scroll-target="#examples-of-surfaces"><span class="header-section-number">4.10</span> Examples of Surfaces</a>
+  <ul class="collapse">
+  <li><a href="#level-surfaces-1" id="toc-level-surfaces-1" class="nav-link" data-scroll-target="#level-surfaces-1"><span class="header-section-number">4.10.1</span> Level surfaces</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -474,7 +479,7 @@ g(x,y) := (x^2,y^2,x-y)
 <p>Non-vanishing Jacobian determinant is a necessary condition for being a diffeomorphism.</p>
 <div id="Proposition-18" class="Proposition">
 <p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 18</strong></summary><div>Let <span class="math inline">\(f \colon U \to \mathbb{R}^n\)</span> with <span class="math inline">\(U \subseteq \mathbb{R}^n\)</span> open. Suppose <span class="math inline">\(f\)</span> is a diffeomorphism on <span class="math inline">\(U\)</span>. Then <span class="math display">\[
-\det Jf (\mathbf{x}) \neq 0 \,, \quad   \forall \, \mathbf{x}\in \mathbb{R}^n \,.
+\det Jf (\mathbf{x}) \neq 0 \,, \quad   \forall \, \mathbf{x}\in U \,.
 \]</span><p></p>
 </div></details>
 </div>
@@ -955,8 +960,8 @@ L = \{ (u,0) \, \colon \,u \in \mathbb{R}\} \,.
 <section id="level-surfaces" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="level-surfaces"><span class="header-section-number">4.4</span> Level surfaces</h2>
 <div id="level-surface" class="Definition" title="Level surface">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 36: </strong>Level surface</summary><div>Let <span class="math inline">\(f \colon \mathbb{R}^3 \to \mathbb{R}\)</span> be smooth. The <strong>level surface</strong> associated with <span class="math inline">\(f\)</span> is the set <span class="math display">\[
-\mathcal{S}_f := f^{-1}(0) = \{ (x,y,z) \in \mathbb{R}^3 \, \colon \,f(x,y,z) = 0  \} \,.
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 36: </strong>Level surface</summary><div>Let <span class="math inline">\(V \subseteq \mathbb{R}^3\)</span> be an open set and <span class="math inline">\(f \colon V \to \mathbb{R}\)</span> be smooth. The <strong>level surface</strong> associated with <span class="math inline">\(f\)</span> is the set <span class="math display">\[
+\mathcal{S}_f := f^{-1}(0) = \{ (x,y,z) \in V \, \colon \,f(x,y,z) = 0  \} \,.
 \]</span><p></p>
 </div></details>
 </div>
@@ -1492,16 +1497,27 @@ T_{\mathbf{p}} \mathcal{S}
 \]</span> is called the <strong>tangent plane</strong> to <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>.<p></p>
 </div></details>
 </div>
-<div id="equation-of-tangent-plane" class="Remark" title="Equation of tangent plane">
-<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 56: </strong>Equation of tangent plane</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be regular and <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. Given a chart <span class="math inline">\({\pmb{\sigma}}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>, we know that <span class="math display">\[
-T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{  {\pmb{\sigma}}_u, {\pmb{\sigma}}_v \} \,.
-\]</span> Notice that the vector <span class="math display">\[
-\mathbf{n}:= {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v
-\]</span> is orthogonal to both <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span>. Hence <span class="math inline">\(\mathbf{n}\)</span> is orthogonal to <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. The equation for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is then <span class="math display">\[
-(x,y,z) \cdot \mathbf{n}= k \,,
+<div id="equation-of-tangent-plane" class="Proposition" title="Equation of tangent plane">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 56: </strong>Equation of tangent plane</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. Let <span class="math inline">\({\pmb{\sigma}}\)</span> be a regular chart at <span class="math inline">\(\mathbf{p}\)</span>, with <span class="math display">\[
+{\pmb{\sigma}}(u_0,v_0) = \mathbf{p}= (x_0,y_0,z_0) \,.
+\]</span> Let <span class="math display">\[
+\mathbf{n}:= {\pmb{\sigma}}_u (u_0,v_0) \times {\pmb{\sigma}}_v (u_0,v_0) \,.
+\]</span> The equation of the plane <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is given by <span class="math display">\[
+{\mathbf{n}}_1 (x-x_0) + {\mathbf{n}}_2 (y-x_0) + {\mathbf{n}}_3 (z-z_0) = 0 \,, \quad
+\forall \, (x,y,z) \in \mathbb{R}^3 \,,
+\]</span> where <span class="math inline">\(\mathbf{n}= ({\mathbf{n}}_1,{\mathbf{n}}_2,{\mathbf{n}}_3)\)</span>.<p></p>
+</div></details>
+</div>
+<div id="Proof*-12" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>By Theorem <a href="chap_4.html#theorem-tangent-plane">54</a> we know that <span class="math display">\[
+T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{  {\pmb{\sigma}}_u (u_0,v_0), {\pmb{\sigma}}_v (u_0,v_0) \} \,.
+\]</span> By the properties of cross product, the vector <span class="math inline">\(\mathbf{n}\)</span> is orthogonal to both <span class="math inline">\({\pmb{\sigma}}_u (u_0,v_0)\)</span> and <span class="math inline">\({\pmb{\sigma}}_v (u_0,v_0)\)</span>. Therefore it is orthogonal to <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. The equation for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is then <span class="math display">\[
+(x,y,z) \cdot \mathbf{n}= k \,, \forall \, (x,y,z) \in \mathbb{R}^3 \,,
 \]</span> for some <span class="math inline">\(k \in \mathbb{R}\)</span>. To compute <span class="math inline">\(k\)</span>, it is sufficient to evaluate the above equation at <span class="math inline">\(\mathbf{p}\)</span>, since <span class="math inline">\(\mathbf{p}\)</span> belongs to <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. We obtain <span class="math display">\[
 k = \mathbf{p}\cdot \mathbf{n}\,.
-\]</span><p></p>
+\]</span> Hence the equation for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is <span class="math display">\[
+(x-x_0,y-y_0,z-z_0) \cdot \mathbf{n}= 0 \,, \quad  \forall \, (x,y,z) \in \mathbb{R}^3 \,,
+\]</span> ending the proof.<p></p>
 </div></details>
 </div>
 <div id="Example-57" class="Example">
@@ -1570,6 +1586,69 @@ T_{\mathbf{p}} U \subseteq (C^{\infty}(U))^* \,,
 <p>An in depth discussion can be found in Chapter 3.4 of <span class="citation" data-cites="abate-tovena">(<a href="references.html#ref-abate-tovena" role="doc-biblioref">Abate, Marco and Tovena, Francesca 2011</a>)</span>.</p>
 </div></details>
 </div>
+</section>
+<section id="derivatives-of-functions" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="derivatives-of-functions"><span class="header-section-number">4.9</span> Derivatives of functions</h2>
+<p>Let <span class="math inline">\(F \colon U \to V\)</span> with <span class="math inline">\(U,V \subseteq \mathbb{R}^2\)</span> open. Suppose <span class="math inline">\(F\)</span> is smooth. The differential of <span class="math inline">\(F\)</span> at <span class="math inline">\(\mathbf{p}\in U\)</span> is a linear map <span class="math display">\[
+dF_{\mathbf{p}} \colon \mathbb{R}^2 \to \mathbb{R}^2 \,.
+\]</span> We have seen that <span class="math display">\[
+T_{\mathbf{p}} U = \mathbb{R}^2
+\]</span> and therefore we can interpret <span class="math inline">\(dF_{\mathbf{p}}\)</span> as a map between tangent planes: <span class="math display">\[
+dF_{\mathbf{p}} \colon \mathbb{R}^2 \to \mathbb{R}^2 \,.
+\]</span> Similarly, if <span class="math inline">\(F \colon \mathcal{S}_1 \to \mathcal{S}_2\)</span> is a smooth map between surfaces, we can define its differential at <span class="math inline">\(\mathbf{p}\in \mathcal{S}_1\)</span> as a linear map <span class="math display">\[
+dF_{\mathbf{p}} \colon T_{\mathbf{p}} \mathcal{S}_1 \to T_{F(\mathbf{p})} \mathcal{S}_2 \,.
+\]</span> Let us see how to precisely formulate this.</p>
+<div id="Definition-59" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 59</strong></summary><div>Let<p></p>
+</div></details>
+</div>
+</section>
+<section id="examples-of-surfaces" class="level2" data-number="4.10">
+<h2 data-number="4.10" class="anchored" data-anchor-id="examples-of-surfaces"><span class="header-section-number">4.10</span> Examples of Surfaces</h2>
+<section id="level-surfaces-1" class="level3" data-number="4.10.1">
+<h3 data-number="4.10.1" class="anchored" data-anchor-id="level-surfaces-1"><span class="header-section-number">4.10.1</span> Level surfaces</h3>
+<p>We have already seen level surfaces. Let us recall the defintion.</p>
+<div id="level-surface-1" class="Definition" title="Level surface">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 60: </strong>Level surface</summary><div>Let <span class="math inline">\(V \subseteq \mathbb{R}^3\)</span> be an open set and <span class="math inline">\(f \colon V \to \mathbb{R}\)</span> be smooth. The <strong>level surface</strong> associated with <span class="math inline">\(f\)</span> is the set <span class="math display">\[
+\mathcal{S}_f := f^{-1}(0) = \{ (x,y,z) \in V \, \colon \,f(x,y,z) = 0  \} \,.
+\]</span><p></p>
+</div></details>
+</div>
+<p>The following Theorem gives a sufficient condition for <span class="math inline">\(\mathcal{S}_f\)</span> to be a regular surface.</p>
+<div id="theorem-level-surface-bis" class="Theorem">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 61</strong></summary><div>Let <span class="math inline">\(V \subseteq \mathbb{R}^3\)</span> be an open set and <span class="math inline">\(f \colon V \to \mathbb{R}\)</span> be smooth. Suppose that <span class="math display">\[
+\nabla f (x,y,z) \neq 0 \,, \quad \forall \, (x,y,z) \in V \,.
+\]</span> Then <span class="math inline">\(\mathcal{S}_f\)</span> is a regular surface.<p></p>
+</div></details>
+</div>
+<p>Let us give a characterization of the tangent plane to <span class="math inline">\(\mathcal{S}_f\)</span>.</p>
+<div id="Proposition-62" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 62</strong></summary><div>Let <span class="math inline">\(V \subseteq \mathbb{R}^3\)</span> be an open set and <span class="math inline">\(f \colon V \to \mathbb{R}\)</span> be smooth. Suppose that <span class="math display">\[
+\nabla f (x,y,z) \neq 0 \,, \quad \forall \, (x,y,z) \in V \,.
+\]</span> Then <span class="math inline">\(\nabla f(\mathbf{p})\)</span> is orthogonal to <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}_f\)</span>. In particular, the equation of <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}_f\)</span> is given by <span id="eq-tangent-plane-level-surface"><span class="math display">\[
+\partial_{x} f (\mathbf{p}) (x-x_0)  + \partial_{y} f (\mathbf{p}) (y-y_0)    + \partial_{z} f (\mathbf{p}) (z-z_0) = 0 \,, \forall \, (x,y,z) \in \mathbb{R}^3\,,   
+\tag{4.3}\]</span></span> where <span class="math inline">\(\mathbf{p}= (x_0,y_0,z_0)\)</span>.<p></p>
+</div></details>
+</div>
+<div id="Proof*-13" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Let <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}_f\)</span>. By definition there exists a smooth curve <span class="math display">\[
+{\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to \mathcal{S}_f \subseteq \mathbb{R}^3
+\]</span> such that <span class="math display">\[
+{\pmb{\gamma}}(0) = \mathbf{p}\,, \quad \dot{{\pmb{\gamma}}}(0)=\mathbf{v}\,.
+\]</span> Since <span class="math inline">\({\pmb{\gamma}}(t) \in \mathcal{S}_f\)</span>, we have that <span class="math display">\[
+f({\pmb{\gamma}}(t)) = 0 \,, \quad \forall t \in (-\varepsilon,\varepsilon) \,.
+\]</span> By chain rule we get <span class="math display">\[
+\nabla f ({\pmb{\gamma}}(t)) \cdot \dot{{\pmb{\gamma}}}(t) = 0 \,, \quad \forall t \in (-\varepsilon,\varepsilon) \,.
+\]</span> Evaluating the above at <span class="math inline">\(t=0\)</span> yields <span class="math display">\[
+0 = \nabla f ({\pmb{\gamma}}(0)) \cdot \dot{{\pmb{\gamma}}}(0) = \nabla f (\mathbf{p}) \cdot \mathbf{v}\,,
+\]</span> showing that <span class="math inline">\(\mathbf{v}\)</span> is orthogonal to <span class="math inline">\(\nabla f (\mathbf{p})\)</span>. Since <span class="math inline">\(\mathbf{v}\)</span> is arbitrary, we conclude that <span class="math inline">\(\nabla f (\mathbf{p})\)</span> is orthogonal to <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}_f\)</span>.<p></p>
+<p>In particular, the equation for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}_f\)</span> is <span class="math display">\[
+\nabla f(\mathbf{p}) \cdot (x,y,z) = k \,, \quad \forall \, (x,y,z) \in \mathbb{R}^3 \,,
+\]</span> for some <span class="math inline">\(k \in \mathbb{R}\)</span>. Choosing <span class="math inline">\((x,y,z)=(x_0,y_0,z_0) = \mathbf{p}\)</span> yields <span class="math display">\[
+k = \nabla f(\mathbf{p}) \cdot (x_0,y_0,z_0) \,.
+\]</span> Hence (<a href="#eq-tangent-plane-level-surface"><span>4.3</span></a>) is the equation for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}_f\)</span>.</p>
+</div></details>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -1580,6 +1659,7 @@ Abate, Marco, and Tovena, Francesca. 2011. <em>Curves and Surfaces</em>. Springe
 Pressley, Andrew. 2010. <em>Elementary Differential Geometry</em>. Second Edition. Springer.
 </div>
 </div>
+</section>
 </section>
 
 </main> <!-- /main -->
