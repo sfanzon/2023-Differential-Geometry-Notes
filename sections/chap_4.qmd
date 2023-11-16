@@ -1875,9 +1875,59 @@ Let $\SSS_1$ and $\SSS_2$ be regular surfaces. We say that $\SSS_1$ and $\SSS_2$
 :::
 
 
-The idea is that two diffeomorphic surfaces are essentially the same. Indeed, it is immediate to show that being diffeomorphic is an equivalence relation on the set of regular surfaces.
+The key ideas around diffeomorphisms are:
+
+- Two diffeomorphic surfaces are essentially the same. Indeed, it is immediate to show that being diffeomorphic is an equivalence relation on the set of regular surfaces. 
+
+- Two diffeomorphic surfaces have essentially the same charts, as shown in the next proposition.
 
 
+::: Proposition
+
+Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ be smooth. If 
+$\sss \colon U \to \SSS$ is a regular chart for $\SSS$ at $\pp$, then
+$$
+\widetilde{\sss} := f \circ \sss \colon U \to \widetilde{\SSS}
+$$
+is a regular chart for $\widetilde{\SSS}$ at $f(\pp)$.
+
+:::
+
+
+::: Proof
+
+Let $\sss_2 \colon U_2 \to \widetilde{\SSS}$ be a regular chart for $\widetilde{\SSS}$ at $f(\pp)$. By definition of diffeomorphism between surfaces, the map
+$$
+\Phi := \sss_2^{-1} \circ f \circ \sss \colon U \to U_2
+$$
+is a diffeomorphism. Therfore 
+$$
+(f \circ \sss) (u,v) = \sss_2  \left( \Phi(u,v) \right)
+$$
+with $\Phi$ diffeomorphism, meaning that $f \circ \sss$ is a reparametrization of 
+$\sss_2$. Since $\sss_2$ is regular, by Proposition \ref{proposition-transition-maps} we deduce
+that $f \circ \sss$ is regular.
+
+:::
+
+
+We conclude with the definition of local diffeomorphism between surfaces.
+
+::: Definition
+### Local diffeomorphism
+
+Let $\SSS_1$ and $\SSS_2$ be regular surfaces. A smooth map $f \colon \SSS_1 \to \SSS_2$ 
+is called a **local diffeomorphism** if for each point $\pp \in \SSS_1$ there exists
+an open set $V \subseteq \SSS_1$ such that $f(V) \subseteq \SSS_2$ is open and 
+$$
+f \colon V \to f(V)
+$$
+is a diffeomorphism between surfaces.
+
+:::
+
+
+The above definition is well posed since open subsets of surfaces are themselves surfaces.
 
 
 
@@ -1964,7 +2014,9 @@ Let $\SSS$ be regular and $\pp \in \SSS$. Let $\sss \colon U \to \sss(U) \subset
 $$
 \sss(u_0,v_0) = \pp \,.
 $$
-Let $\g \colon (-\e,\e) \to \R^3$ be a smooth curve such that
+We have:
+
+1. Suppose $\g \colon (-\e,\e) \to \R^3$ is a smooth curve such that
 $$
 \g(-\e,\e) \subseteq \sss(U) \,, \quad \g(0) = \pp \,.
 $$
@@ -1980,6 +2032,20 @@ and
 $$
 u(0)=u_0 \,, \quad v(0) = v_0 \,.
 $$
+
+2. Conversely, assume $u , v \colon (-\e,\e) \to \R$ are smooth functions such that
+$$
+u(0)=u_0 \,, \quad v(0) = v_0 \,.
+$$
+Then
+$$
+\g (t):= \sss (u(t),v(t))
+$$
+is a smooth curve such that 
+$$
+\g(-\e,\e) \subseteq \SSS \,, \quad  \g(0)=\pp \,.
+$$
+
 
 :::
 
@@ -2071,6 +2137,9 @@ $$
 \sss(u(t),v(t)) = \sss ((F^{-1} \circ \g)) (t) = \g(t) \,,
 $$
 as we wanted to show.
+
+
+The converse statement is trivial.
 :::
 
 
@@ -2358,40 +2427,137 @@ An in depth discussion can be found in Chapter 3.4 of [@abate-tovena].
 
 
 
-## Derivatives of functions
+## Differential of smooth functions
 
 
-Let $F \colon U \to V$ with $U,V \subseteq \R^2$ open. Suppose $F$ is smooth. The differential of $F$ at $\pp \in U$ is a linear map 
+Let $f \colon U \to V$ with $U,V \subseteq \R^2$ open. Suppose $f$ is smooth. The differential of $f$ at $\pp \in U$ is a linear map 
 $$
-dF_{\pp} \colon \R^2 \to \R^2 \,.
+df_{\pp} \colon \R^2 \to \R^2 \,.
 $$
 We have seen that 
 $$
 T_{\pp} U = \R^2 
 $$
-and therefore we can interpret $dF_{\pp}$ as a map between tangent planes:
+and therefore we can interpret $df_{\pp}$ as a map between tangent planes:
 $$
-dF_{\pp} \colon \R^2 \to \R^2 \,.
+df_{\pp} \colon \R^2 \to \R^2 \,.
 $$
-Similarly, if $F \colon \SSS_1 \to \SSS_2$ is a smooth map between surfaces,
-we can define its differential at $\pp \in \SSS_1$ as a linear map
+Similarly, if $f \colon \SSS \to \widetilde{\SSS}$ is a smooth map between surfaces,
+we can define its differential at $\pp \in \SSS$ as a linear map
 $$
-dF_{\pp} \colon T_{\pp} \SSS_1 \to T_{F(\pp)} \SSS_2 \,.
+df_{\pp} \colon T_{\pp} \SSS \to T_{f(\pp)} \widetilde{\SSS} \,.
 $$
-Let us see how to precisely formulate this.
+To define such map, we need the following lemma.
 
 
-::: Definition
+::: {.Lemma  #lemma-derivative}
 
-Let $\SSS_1$ and $\SSS_2$ be regular surfaces and $f \colon \SSS_1 \to \SSS_2$ a smooth map.
+Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ a smooth map.
+For $\vv \in T_{\pp} \SSS$ let $\g \colon (-\e,\e) \to \SSS$ be such that
+$$
+\g(0) = \pp \,, \quad \dg(0) = \vv \,.
+$$
+Define
+$$
+\tg := f \circ \g \colon (-\e,\e) \to \widetilde{\SSS} \,. 
+$$
+Then $\tg$ is a smooth curve into $\R^3$ and 
+$$
+\widetilde{\vv} \in T_{f(\pp)} \widetilde{\SSS} \,, \quad \widetilde{\vv} := \dtg (0) \,.
+$$
+
+:::
+
+
+
+::: Proof
+
+Note that 
+$$
+\tg = i \circ f \circ \g \,, 
+$$
+with $i \colon \widetilde{\SSS} \to \R^3$ inclusion map. Since $i,f,\g$ are smooth, we conclude that $\tg \colon (-\e,\e) \to \R^3$ is smooth. Moreover 
+$$
+\tg(0) = f (\g(0)) = f(\pp) \,,
+$$
+and therefore 
+$$
+ \widetilde{\vv} := \dtg (0) \in T_{f(\pp)} \widetilde{\SSS} \,,
+$$
+by definition of tangent space. 
 
 :::
 
 
 
 
+::: Definition
+### Differential of smooth function
+
+Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ a smooth map. 
+The differential $df_{\pp}$ of $f$ at $\pp$ is defined as the map
+$$
+df_{\pp} \colon T_{\pp} \SSS \to T_{f(\pp)} \widetilde{\SSS} \,,  \quad df_{\pp}(\vv) := \widetilde{\vv} \,,
+$$
+where $\widetilde{\vv}$ is as in Lemma \ref{lemma-derivative}.
+
+:::
 
 
+
+We now show that $df_{\pp}$ is well-defined and linear. Moreover we provide a representation of
+$df_{\pp}$ as a matrix.
+
+
+::: Proposition
+
+Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ a smooth map. Denote the differential of $f$ by
+$$
+df_{\pp} \colon T_{\pp} \SSS \to T_{f(\pp)} \widetilde{\SSS} \,.
+$$
+We have:
+
+1. $df_{\pp} (\vv)$ does not depend on the choice of $\g$.
+2. $df_{\pp}$ is linear, that is,
+$$
+df_{\pp} (\lambda \vv + \mu \ww) = \lambda df_{\pp} (\vv) + \mu df_{\pp} (\ww) \,, 
+$$
+for all $\vv,\ww \in T_{\pp} \SSS$ and $\lambda,\mu \in \R$.
+3. Let 
+$$
+\sss \colon U \to \SSS \,, \quad \widetilde{\sss} \colon \widetilde{U} \to \widetilde{\SSS} \,,
+$$
+be regular charts at $\pp$ and $f(\pp)$, respectively. Denote by 
+$$
+(u,v)  \mapsto ( \alpha(u,v), \beta(u,v) ) 
+$$
+the components of the smooth map
+$$
+\Psi := \widetilde{\sss}^{-1} \circ f \circ \sss \colon U \to \widetilde{U} \,.
+$$
+The matrix of the linear map $df_{\pp}$ with respect to the basis 
+$$
+\{ \sss_u , \sss_v \} \,\, \mbox{ on } \,\, T_{\pp} \SSS \,, \quad
+\{ \widetilde{\sss}_{\tilde{u}} , \widetilde{\sss}_{\tilde{v}} \} \,\, \mbox{ on } \,\, T_{f(\pp)} \widetilde{\SSS} \,,
+$$
+is given by the Jacobian of the map $\Psi$, that is,
+$$
+J\Psi = \left(
+\begin{array}{cc}
+\alpha_u & \alpha_v \\
+\beta_u & \beta_v \\
+\end{array}
+\right) \,.
+$$
+
+
+:::
+
+
+::: Proof
+
+TO DO
+:::
 
 
 
@@ -2492,6 +2658,8 @@ Hence (@eq-tangent-plane-level-surface) is the equation for $T_{\pp} \SSS_f$.
 
 
 
+
+
 ::: {.content-hidden}
 
 
@@ -2530,6 +2698,9 @@ $$
 \sphere^2 = \{ \xx \in \R^3 \, \colon \, \norm{\xx} = 1 \} 
 $$
 the unit sphere in $\R^3$.
+
+
+
 
 ::: Definition
 

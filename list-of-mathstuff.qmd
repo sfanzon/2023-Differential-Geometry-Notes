@@ -711,36 +711,50 @@
 
  [**Definition 4.49**](#Definition-4.49)\Pageref{Definition-4.49}
 
- [**Assumption 4.50**](#Assumption-4.50)\Pageref{Assumption-4.50}
-
- [**Definition 4.51**](#tangent-vectors-and-tangent-space): Tangent vectors and tangent space\Pageref{tangent-vectors-and-tangent-space}
-
- [**Example 4.52**](#Example-4.52)\Pageref{Example-4.52}
-
- [**Lemma 4.53**](#lemma-curve-S)\Pageref{lemma-curve-S}
+ [**Proposition 4.50**](#Proposition-4.50)\Pageref{Proposition-4.50}
 
  [**Proof**](#Proof*-4.10)\Pageref{Proof*-4.10}
 
- [**Theorem 4.54**](#theorem-tangent-plane)\Pageref{theorem-tangent-plane}
+ [**Definition 4.51**](#local-diffeomorphism): Local diffeomorphism\Pageref{local-diffeomorphism}
+
+ [**Assumption 4.52**](#Assumption-4.52)\Pageref{Assumption-4.52}
+
+ [**Definition 4.53**](#tangent-vectors-and-tangent-space): Tangent vectors and tangent space\Pageref{tangent-vectors-and-tangent-space}
+
+ [**Example 4.54**](#Example-4.54)\Pageref{Example-4.54}
+
+ [**Lemma 4.55**](#lemma-curve-S)\Pageref{lemma-curve-S}
 
  [**Proof**](#Proof*-4.11)\Pageref{Proof*-4.11}
 
- [**Definition 4.55**](#tangent-plane): Tangent plane\Pageref{tangent-plane}
-
- [**Proposition 4.56**](#equation-of-tangent-plane): Equation of tangent plane\Pageref{equation-of-tangent-plane}
+ [**Theorem 4.56**](#theorem-tangent-plane)\Pageref{theorem-tangent-plane}
 
  [**Proof**](#Proof*-4.12)\Pageref{Proof*-4.12}
 
- [**Example 4.57**](#Example-4.57)\Pageref{Example-4.57}
+ [**Definition 4.57**](#tangent-plane): Tangent plane\Pageref{tangent-plane}
 
- [**Remark 4.58**](#tangent-space-and-derivations): Tangent space and derivations\Pageref{tangent-space-and-derivations}
-
- [**Definition 4.59**](#Definition-4.59)\Pageref{Definition-4.59}
-
- [**Definition 4.60**](#level-surface-1): Level surface\Pageref{level-surface-1}
-
- [**Theorem 4.61**](#theorem-level-surface-bis)\Pageref{theorem-level-surface-bis}
-
- [**Proposition 4.62**](#Proposition-4.62)\Pageref{Proposition-4.62}
+ [**Proposition 4.58**](#equation-of-tangent-plane): Equation of tangent plane\Pageref{equation-of-tangent-plane}
 
  [**Proof**](#Proof*-4.13)\Pageref{Proof*-4.13}
+
+ [**Example 4.59**](#Example-4.59)\Pageref{Example-4.59}
+
+ [**Remark 4.60**](#tangent-space-and-derivations): Tangent space and derivations\Pageref{tangent-space-and-derivations}
+
+ [**Lemma 4.61**](#lemma-derivative)\Pageref{lemma-derivative}
+
+ [**Proof**](#Proof*-4.14)\Pageref{Proof*-4.14}
+
+ [**Definition 4.62**](#differential-of-smooth-function): Differential of smooth function\Pageref{differential-of-smooth-function}
+
+ [**Proposition 4.63**](#Proposition-4.63)\Pageref{Proposition-4.63}
+
+ [**Proof**](#Proof*-4.15)\Pageref{Proof*-4.15}
+
+ [**Definition 4.64**](#level-surface-1): Level surface\Pageref{level-surface-1}
+
+ [**Theorem 4.65**](#theorem-level-surface-bis)\Pageref{theorem-level-surface-bis}
+
+ [**Proposition 4.66**](#Proposition-4.66)\Pageref{Proposition-4.66}
+
+ [**Proof**](#Proof*-4.16)\Pageref{Proof*-4.16}
