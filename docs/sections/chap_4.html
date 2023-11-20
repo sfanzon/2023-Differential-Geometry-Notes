@@ -85,27 +85,23 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .Question {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
 }
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Theorem {
+.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -113,17 +109,33 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Lemma {
+.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .Proof {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
+}
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
 .Important {
   --color1: #f4cce0;
@@ -137,25 +149,13 @@ div.csl-indent {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
 .Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
 }
 </style>
 
@@ -273,6 +273,11 @@ div.csl-indent {
   <li><a href="#examples-of-surfaces" id="toc-examples-of-surfaces" class="nav-link" data-scroll-target="#examples-of-surfaces"><span class="header-section-number">4.10</span> Examples of Surfaces</a>
   <ul class="collapse">
   <li><a href="#level-surfaces-1" id="toc-level-surfaces-1" class="nav-link" data-scroll-target="#level-surfaces-1"><span class="header-section-number">4.10.1</span> Level surfaces</a></li>
+  <li><a href="#quadrics" id="toc-quadrics" class="nav-link" data-scroll-target="#quadrics"><span class="header-section-number">4.10.2</span> Quadrics</a></li>
+  </ul></li>
+  <li><a href="#ruled-surfaces" id="toc-ruled-surfaces" class="nav-link" data-scroll-target="#ruled-surfaces"><span class="header-section-number">4.11</span> Ruled surfaces</a>
+  <ul class="collapse">
+  <li><a href="#surfaces-of-revolution" id="toc-surfaces-of-revolution" class="nav-link" data-scroll-target="#surfaces-of-revolution"><span class="header-section-number">4.11.1</span> Surfaces of Revolution</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -943,7 +948,7 @@ U := \left\{ (\theta,\phi)  \in \mathbb{R}^2 \, \colon \,-\frac{\pi}{2} &lt; \th
 \]</span> showing that <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly dependent along the line <span class="math display">\[
 L = \{ (u,0) \, \colon \,u \in \mathbb{R}\} \,.
 \]</span> Hence <span class="math inline">\({\pmb{\sigma}}\)</span> is not a regular chart.<p></p>
-<p>Looking at Figure <a href="#fig-plot-cusp">Figure&nbsp;<span>4.3</span></a>, it is clear that <span class="math inline">\(\mathcal{S}\)</span> is not regular, since <span class="math inline">\(\mathcal{S}\)</span> has a cusp along the line <span class="math inline">\(L\)</span>.</p>
+<p>Looking at Figure <a href="#fig-plot-cusp">Figure&nbsp;<span>4.3</span></a>, it is clear that <span class="math inline">\(\mathcal{S}\)</span> is not regular, since <span class="math inline">\(\mathcal{S}\)</span> has a cusp along the line <span class="math inline">\({\pmb{\sigma}}(L)\)</span>.</p>
 </div></details>
 </div>
 <div class="cell" data-execution_count="2">
@@ -1693,10 +1698,43 @@ J\Psi = \left(
 </ol>
 </div></details>
 </div>
-<div id="Proof*-15" class="Proof">
-<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>TO DO<p></p>
+<p>For a proof, see the discussion at page <span class="math inline">\(87\)</span> of <span class="citation" data-cites="pressley">(<a href="references.html#ref-pressley" role="doc-biblioref">Pressley 2010</a>)</span>.</p>
+<div id="Proposition-64" class="Proposition">
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 64</strong></summary><div>
+<p>The following hold:</p>
+<ol type="1">
+<li><p>If <span class="math inline">\(\mathcal{S}\)</span> is a regular surface and <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>, the differential at <span class="math inline">\(\mathbf{p}\)</span> of the identity map <span class="math display">\[
+I \colon \mathcal{S}\to \mathcal{S}\,, \quad I(x):=x \,,
+\]</span> is the identity map <span class="math display">\[
+I \colon T_{\mathbf{p}} (\mathcal{S}) \to T_{\mathbf{p}} (\mathcal{S}) \,, \quad I(v):=v \,.
+\]</span></p></li>
+<li><p>If <span class="math inline">\(\mathcal{S}_1\)</span>, <span class="math inline">\(\mathcal{S}_2\)</span> and <span class="math inline">\(\mathcal{S}_3\)</span> are regular surfaces and <span class="math display">\[
+f \colon \mathcal{S}_1 \to \mathcal{S}_2 \,, \quad
+g \colon \mathcal{S}_2 \to \mathcal{S}_3 \,,
+\]</span> are smooth maps, then <span class="math display">\[
+d_{\mathbf{p}} ( g \circ f ) = d_{f({\pmb{\pi}})} g \circ d_{\mathbf{p}} f \,,
+\]</span> for all <span class="math inline">\(\mathbf{p}\in T_{\mathbf{p}} \mathcal{S}_1\)</span>.</p></li>
+<li><p>If <span class="math inline">\(\mathcal{S}_1\)</span>, <span class="math inline">\(\mathcal{S}_2\)</span> are regular surfaces and <span class="math display">\[
+f \colon \mathcal{S}_1 \to \mathcal{S}_2 \,,
+\]</span> is a diffeomorphism, then the differential <span class="math display">\[
+d_{\mathbf{p}} \colon T_{\mathbf{p}} \mathcal{S}_1 \to T_{f(\mathbf{p})} \mathcal{S}_2
+\]</span> is invertible for all <span class="math inline">\(\mathbf{p}\in \mathcal{S}_1\)</span>.</p></li>
+</ol>
 </div></details>
 </div>
+<p>For a proof see Proposition 4.4.5 in <span class="citation" data-cites="pressley">(<a href="references.html#ref-pressley" role="doc-biblioref">Pressley 2010</a>)</span>. The above proposition says that the differential of diffeomorphism is invertible. The converse statement is true locally.</p>
+<div id="Theorem-65" class="Theorem">
+<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 65</strong></summary><div>
+<p>Let <span class="math inline">\(\mathcal{S}_1\)</span> and <span class="math inline">\(\mathcal{S}_2\)</span> be regular surfaces. Suppose that <span class="math display">\[
+f \colon \mathcal{S}_1 \to \mathcal{S}_2
+\]</span> is smooth. They are equivalent:</p>
+<ol type="1">
+<li><span class="math inline">\(f\)</span> is a local diffeomorphism.</li>
+<li>The differential <span class="math inline">\(d_{\mathbf{p}} f \colon T_{\mathbf{p}} \mathcal{S}_1 \to T_{f(\mathbf{p})} \mathcal{S}_2\)</span> is invertible for all <span class="math inline">\(\mathbf{p}\in \mathcal{S}_1\)</span>.</li>
+</ol>
+</div></details>
+</div>
+<p>The proof is based on the Inverse Function Theorem, see Proposition 4.4.6 in <span class="citation" data-cites="pressley">(<a href="references.html#ref-pressley" role="doc-biblioref">Pressley 2010</a>)</span>.</p>
 </section>
 <section id="examples-of-surfaces" class="level2" data-number="4.10">
 <h2 data-number="4.10" class="anchored" data-anchor-id="examples-of-surfaces"><span class="header-section-number">4.10</span> Examples of Surfaces</h2>
@@ -1704,28 +1742,28 @@ J\Psi = \left(
 <h3 data-number="4.10.1" class="anchored" data-anchor-id="level-surfaces-1"><span class="header-section-number">4.10.1</span> Level surfaces</h3>
 <p>We have already seen level surfaces. Let us recall the defintion.</p>
 <div id="level-surface-1" class="Definition" title="Level surface">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 64: </strong>Level surface</summary><div>Let <span class="math inline">\(V \subseteq \mathbb{R}^3\)</span> be an open set and <span class="math inline">\(f \colon V \to \mathbb{R}\)</span> be smooth. The <strong>level surface</strong> associated with <span class="math inline">\(f\)</span> is the set <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 66: </strong>Level surface</summary><div>Let <span class="math inline">\(V \subseteq \mathbb{R}^3\)</span> be an open set and <span class="math inline">\(f \colon V \to \mathbb{R}\)</span> be smooth. The <strong>level surface</strong> associated with <span class="math inline">\(f\)</span> is the set <span class="math display">\[
 \mathcal{S}_f := f^{-1}(0) = \{ (x,y,z) \in V \, \colon \,f(x,y,z) = 0  \} \,.
 \]</span><p></p>
 </div></details>
 </div>
 <p>The following Theorem gives a sufficient condition for <span class="math inline">\(\mathcal{S}_f\)</span> to be a regular surface.</p>
 <div id="theorem-level-surface-bis" class="Theorem">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 65</strong></summary><div>Let <span class="math inline">\(V \subseteq \mathbb{R}^3\)</span> be an open set and <span class="math inline">\(f \colon V \to \mathbb{R}\)</span> be smooth. Suppose that <span class="math display">\[
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 67</strong></summary><div>Let <span class="math inline">\(V \subseteq \mathbb{R}^3\)</span> be an open set and <span class="math inline">\(f \colon V \to \mathbb{R}\)</span> be smooth. Suppose that <span class="math display">\[
 \nabla f (x,y,z) \neq 0 \,, \quad \forall \, (x,y,z) \in V \,.
 \]</span> Then <span class="math inline">\(\mathcal{S}_f\)</span> is a regular surface.<p></p>
 </div></details>
 </div>
 <p>Let us give a characterization of the tangent plane to <span class="math inline">\(\mathcal{S}_f\)</span>.</p>
-<div id="Proposition-66" class="Proposition">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 66</strong></summary><div>Let <span class="math inline">\(V \subseteq \mathbb{R}^3\)</span> be an open set and <span class="math inline">\(f \colon V \to \mathbb{R}\)</span> be smooth. Suppose that <span class="math display">\[
+<div id="Proposition-68" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 68</strong></summary><div>Let <span class="math inline">\(V \subseteq \mathbb{R}^3\)</span> be an open set and <span class="math inline">\(f \colon V \to \mathbb{R}\)</span> be smooth. Suppose that <span class="math display">\[
 \nabla f (x,y,z) \neq 0 \,, \quad \forall \, (x,y,z) \in V \,.
 \]</span> Then <span class="math inline">\(\nabla f(\mathbf{p})\)</span> is orthogonal to <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}_f\)</span>. In particular, the equation of <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}_f\)</span> is given by <span id="eq-tangent-plane-level-surface"><span class="math display">\[
 \partial_{x} f (\mathbf{p}) (x-x_0)  + \partial_{y} f (\mathbf{p}) (y-y_0)    + \partial_{z} f (\mathbf{p}) (z-z_0) = 0 \,, \forall \, (x,y,z) \in \mathbb{R}^3\,,   
 \tag{4.3}\]</span></span> where <span class="math inline">\(\mathbf{p}= (x_0,y_0,z_0)\)</span>.<p></p>
 </div></details>
 </div>
-<div id="Proof*-16" class="Proof">
+<div id="Proof*-15" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Let <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}_f\)</span>. By definition there exists a smooth curve <span class="math display">\[
 {\pmb{\gamma}}\colon (-\varepsilon,\varepsilon) \to \mathcal{S}_f \subseteq \mathbb{R}^3
 \]</span> such that <span class="math display">\[
@@ -1742,6 +1780,190 @@ f({\pmb{\gamma}}(t)) = 0 \,, \quad \forall t \in (-\varepsilon,\varepsilon) \,.
 \]</span> for some <span class="math inline">\(k \in \mathbb{R}\)</span>. Choosing <span class="math inline">\((x,y,z)=(x_0,y_0,z_0) = \mathbf{p}\)</span> yields <span class="math display">\[
 k = \nabla f(\mathbf{p}) \cdot (x_0,y_0,z_0) \,.
 \]</span> Hence (<a href="#eq-tangent-plane-level-surface"><span>4.3</span></a>) is the equation for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}_f\)</span>.</p>
+</div></details>
+</div>
+</section>
+<section id="quadrics" class="level3" data-number="4.10.2">
+<h3 data-number="4.10.2" class="anchored" data-anchor-id="quadrics"><span class="header-section-number">4.10.2</span> Quadrics</h3>
+<p>Quadrics are level surfaces <span class="math display">\[
+S_f = \left\{  (x,y,z) \in \mathbb{R}^3 \, \colon \,f(x,y,z) = 0   \right\} \,,
+\]</span> where <span class="math display">\[\begin{align*}
+f(x,y,z)  = &amp; a_1 x^2 + a_2 y^2 + a_3 z^2 + 2a_4 xy + 2a_5 xz + 2a_6 yz + \\
+          &amp; + b_1 x + b_2 y + b_3 z + c  \,,
+\end{align*}\]</span> for some coefficients <span class="math inline">\(a_i,b_i,c \in \mathbb{R}\)</span>. Let <span class="math display">\[
+A =  
+\left(
+\begin{array}{ccc}
+a_1 &amp; a_4 &amp; a_6 \\
+a_4 &amp; a_2 &amp; a_5 \\
+a_6 &amp; a_5 &amp; a_3
+\end{array}
+\right)  \in \mathbb{R}^{3 \times 3} \,,
+\]</span> and <span class="math display">\[
+\mathbf{x}= (x,y,z)^T \,, \quad \pmb{b} = (b_1,b_2,b_3)^T \,.
+\]</span> Then <span class="math inline">\(f\)</span> can be represented by the quadratic form <span class="math display">\[
+f(\mathbf{x}) = \mathbf{x}^T A \mathbf{x}+ \pmb{b} \cdot \mathbf{x}+ c \,.
+\]</span> The expression <span class="math inline">\(f=0\)</span> is called a <strong>quadric equation</strong>.</p>
+<p>As stated in the following theorem, there are <span class="math inline">\(14\)</span> quadrics in total. Out of these:</p>
+<ul>
+<li>9 are <em>interesting</em> surfaces,</li>
+<li>3 are planes,</li>
+<li>1 is a line,</li>
+<li>1 is a point.</li>
+</ul>
+<div id="theorem-quadrics" class="Theorem">
+<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 69</strong></summary><div>
+<p>Suppose <span class="math inline">\(\mathcal{S}\)</span> is a level surface defined by a quadric equation. Then, up to rigid motions, <span class="math inline">\(\mathcal{S}\)</span> can be described by one of the following equations:</p>
+<ol type="1">
+<li><p>Ellipsoid: <span class="math inline">\(\dfrac{x^2}{p^2} + \dfrac{y^2}{q^2} + \dfrac{z^2}{r^2} = 1\)</span>.</p></li>
+<li><p>Hyperboloid of one sheet: <span class="math inline">\(\dfrac{x^2}{p^2} + \dfrac{y^2}{q^2} - \dfrac{z^2}{r^2} = 1\)</span></p></li>
+<li><p>Hyperboloid of two sheets: <span class="math inline">\(\dfrac{x^2}{p^2} - \dfrac{y^2}{q^2} - \dfrac{z^2}{r^2} = 1\)</span></p></li>
+<li><p>Elliptic Paraboloid: <span class="math inline">\(\dfrac{x^2}{p^2} + \dfrac{y^2}{q^2} = z\)</span></p></li>
+<li><p>Hyperbolic Paraboloid: <span class="math inline">\(\dfrac{x^2}{p^2} - \dfrac{y^2}{q^2} = z\)</span></p></li>
+<li><p>Quadric Cone: <span class="math inline">\(\dfrac{x^2}{p^2} + \dfrac{y^2}{q^2} - \dfrac{z^2}{r^2} = 0\)</span></p></li>
+<li><p>Elliptic Cylinder: <span class="math inline">\(\dfrac{x^2}{p^2} + \dfrac{y^2}{q^2} = 1\)</span></p></li>
+<li><p>Hyperbolic Cylinder: <span class="math inline">\(\dfrac{x^2}{p^2} - \dfrac{y^2}{q^2} = 1\)</span></p></li>
+<li><p>Parabolic Cylinder: <span class="math inline">\(\dfrac{x^2}{p^2} = y\)</span></p></li>
+<li><p>Plane: <span class="math inline">\(x = 0\)</span></p></li>
+<li><p>Two parallel planes: <span class="math inline">\(x^2 = p^2\)</span></p></li>
+<li><p>Two intersecting planes: <span class="math inline">\(\dfrac{x^2}{p^2} - \dfrac{y^2}{q^2} = 0\)</span></p></li>
+<li><p>Straight line: <span class="math inline">\(\dfrac{x^2}{p^2} + \dfrac{y^2}{q^2} = 0\)</span></p></li>
+<li><p>Single point: <span class="math inline">\(\dfrac{x^2}{p^2} + \dfrac{y^2}{q^2} + \dfrac{z^2}{r^2} = 0\)</span></p></li>
+</ol>
+</div></details>
+</div>
+<p>The proof of Theorem <a href="chap_4.html#theorem-quadrics">69</a> follows by diagonalizing the symmetric matrix <span class="math inline">\(A\)</span>, and by studying the eigenvalues, see Theorem 5.5.2 in <span class="citation" data-cites="pressley">(<a href="references.html#ref-pressley" role="doc-biblioref">Pressley 2010</a>)</span>.</p>
+<div id="Example-70" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 70</strong></summary><div>The sphere is described by <span class="math display">\[
+S = \{ (x,y,z) \in \mathbb{R}^3 \, \colon \,x^2 + y^2 + z^2 = 1 \} \,.
+\]</span> This is an ellipsoid with <span class="math display">\[
+p = q = r = 1 \,.
+\]</span> In particular we can write the sphere as the quadric equation: <span class="math display">\[
+\mathbf{x}^T
+\left(
+\begin{array}{ccc}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{array}
+\right)  \mathbf{x}= 1 \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="Example-71" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 71</strong></summary><div>Consider the level surface <span class="math display">\[
+\mathcal{S}=   \{ (x,y,z) \in \mathbb{R}^3 \, \colon \,f(x,y,z) = 0 \}
+\]</span> with <span class="math display">\[
+f(x,y,z) = x^2 + 2y^2 - 4z^2 + 2xy + yz - 6xz + 1 = 0 \,.
+\]</span> Therefore <span class="math inline">\(\mathcal{S}\)</span> is a quadric. The matrix associated to <span class="math inline">\(f\)</span> is <span class="math display">\[
+A =  
+\left(
+\begin{array}{ccc}
+1 &amp; 1 &amp; -3 \\
+1 &amp; 2 &amp; 1/2 \\
+-3 &amp; 1/2 &amp; -4
+\end{array}
+\right)  \,.
+\]</span> Diagonalizing the matrix <span class="math inline">\(A\)</span> we obtain <span class="math inline">\(A=PDP^{-1}\)</span>, with <span class="math inline">\(P\)</span> matrix of eigenvectors and <span class="math display">\[
+D =  
+\left(
+\begin{array}{ccc}
+-5.51 &amp; 0 &amp; 0 \\
+0 &amp; 1.55 &amp; 0 \\
+0 &amp; 0 &amp; 2.96
+\end{array}
+\right)  \,.
+\]</span> Therefore, up to changing basis via the matrix <span class="math inline">\(P\)</span>, <span class="math inline">\(S\)</span> can be described by the quadric equation <span class="math display">\[
+5.51 \widetilde{x}^2 - 1.55 \widetilde{y}^2 - 2.96 \widetilde{z}^2 = 1  \,,
+\]</span> showing that <span class="math inline">\(S\)</span> is a Hyperboloid of two sheets.<p></p>
+</div></details>
+</div>
+</section>
+</section>
+<section id="ruled-surfaces" class="level2" data-number="4.11">
+<h2 data-number="4.11" class="anchored" data-anchor-id="ruled-surfaces"><span class="header-section-number">4.11</span> Ruled surfaces</h2>
+<p>A ruled surface is a surface obtained as union of straight lines, called the rulings of the surface. By using curves, ruled surfaces can be defined in the following way.</p>
+<div id="ruled-surface" class="Definition" title="Ruled surface">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 72: </strong>Ruled surface</summary><div>
+<p>Let <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathbb{R}^3\)</span> be a smooth curve and <span class="math inline">\(\pmb{a} \colon (a,b) \to \mathbb{R}^3\)</span> a vector, such that <span class="math inline">\({\pmb{\gamma}}(t)\)</span> and <span class="math inline">\(\pmb{a}(t)\)</span> are linearly independent for all <span class="math inline">\(t \in (a,b)\)</span>. A <strong>ruled surface</strong> is a surface with chart <span class="math display">\[
+{\pmb{\sigma}}(u,v) = {\pmb{\gamma}}(u) + v \pmb{a}(u) \,.
+\]</span> We say that:</p>
+<ul>
+<li><span class="math inline">\({\pmb{\gamma}}\)</span> is the <strong>base curve</strong></li>
+<li>The lines <span class="math inline">\(v \mapsto v \pmb{a}(u)\)</span> are the <strong>rulings</strong></li>
+</ul>
+</div></details>
+</div>
+<div id="Proposition-73" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 73</strong></summary><div>A ruled surface <span class="math inline">\(\mathcal{S}\)</span> is regular if <span class="math inline">\(v\)</span> is sufficiently small.<p></p>
+</div></details>
+</div>
+<div id="Proof*-16" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>A chart for <span class="math inline">\(\mathcal{S}\)</span> is <span class="math display">\[
+{\pmb{\sigma}}_u = \dot{{\pmb{\gamma}}}(u) + v \dot{\pmb{a}}(u) \,, \quad
+{\pmb{\sigma}}_v = \pmb{a}(u) \,,
+\]</span> with <span class="math inline">\(\dot{{\pmb{\gamma}}}\)</span> and <span class="math inline">\(\pmb{a}\)</span> linerly independent. Thus <span class="math inline">\(\dot{{\pmb{\gamma}}}(u) + v \dot{\pmb{a}}(u)\)</span> and <span class="math inline">\(\pmb{a}\)</span> are linearly independent for <span class="math inline">\(v\)</span> sufficiently small.<p></p>
+</div></details>
+</div>
+<p>The same base curve can yield multiple ruled surfaces. For example, if <span class="math inline">\({\pmb{\gamma}}\)</span> is a circle, we can obtain both the unit cylinder and the Möbius strip.</p>
+<div id="unit-cylinder-1" class="Example" title="Unit Cylinder">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 74: </strong>Unit Cylinder</summary><div>As seen in Example <a href="chap_4.html#example-unit-cylinder">30</a>, the cylinder is a surface with atlas <span class="math inline">\(\mathcal{A}=\{{\pmb{\sigma}}_1,{\pmb{\sigma}}_2\}\)</span>, where <span class="math inline">\({\pmb{\sigma}}_1\)</span> and <span class="math inline">\({\pmb{\sigma}}_2\)</span> are suitable restriction of <span class="math display">\[
+{\pmb{\sigma}}(u,v) = (\cos(u), \cos(u),v ) \,, \quad (u,v) \in [0,2\pi) \times \mathbb{R}\,.
+\]</span> We have <span class="math display">\[
+{\pmb{\sigma}}(u,v) = {\pmb{\gamma}}(u) + v \pmb{a}(u) \,,
+\]</span> with <span class="math display">\[
+{\pmb{\gamma}}(u):= (\cos(u), \cos(u),0 ) \,, \quad \pmb{a} = (0,0,1) \,.
+\]</span> Hence the unit cylinder is a ruled surface, see <a href="#fig-cylinder-ruled">Figure&nbsp;<span>4.6</span></a>.<p></p>
+</div></details>
+</div>
+<div id="fig-cylinder-ruled" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../images/surfaces_ruled.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.6: Unit cylinder is a ruled surface with base curve <span class="math inline">\({\pmb{\gamma}}\)</span> and rulings given by vertical lines.</figcaption>
+</figure>
+</div>
+<div id="möbius-strip" class="Example" title="Möbius strip">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 75: </strong>Möbius strip</summary><div>The Möbius strip is a ruled surface with chart <span class="math display">\[
+{\pmb{\sigma}}= {\pmb{\gamma}}(u) + v \pmb{a}(u) \,, \quad u \in (0,2\pi), \, v \in \left( -\frac12, \frac12 \right) \,,
+\]</span> where <span class="math display">\[
+{\pmb{\gamma}}(u) = (\cos(u), \sin(u), 0)
+\]</span> is the unit circle and <span class="math display">\[
+\pmb{a} = \left(   -\sin \left( \frac{u}{2} \right) \cos(u),
+                  -\sin \left( \frac{u}{2} \right) \sin(u),
+                   \cos \left( \frac{u}{2} \right)   \right)
+\]</span> is a vector which does a full rotation while going around the unit circle <span class="math inline">\({\pmb{\gamma}}\)</span>. This is shown in <a href="#fig-mobius-ruled">Figure&nbsp;<span>4.7</span></a>.<p></p>
+</div></details>
+</div>
+<div id="fig-mobius-ruled" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../images/surfaces_ruled_2.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.7: The Möbius strip is a ruled surface with base curve <span class="math inline">\({\pmb{\gamma}}\)</span> and rulings given by rotating vertical lines.</figcaption>
+</figure>
+</div>
+<section id="surfaces-of-revolution" class="level3" data-number="4.11.1">
+<h3 data-number="4.11.1" class="anchored" data-anchor-id="surfaces-of-revolution"><span class="header-section-number">4.11.1</span> Surfaces of Revolution</h3>
+<p>Surfaces of revolution are obtained by rotating a curve about the <span class="math inline">\(z\)</span>-axis.</p>
+<div id="surface-of-revolution" class="Definition" title="Surface of revolution">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 76: </strong>Surface of revolution</summary><div>Let <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathbb{R}^3\)</span> be a smooth curve in the <span class="math inline">\((x,z)\)</span>-plane, that is, <span class="math display">\[
+{\pmb{\gamma}}(u) = (f(u), 0 , g(u)) \,.
+\]</span> Suppose that <span class="math inline">\(f&gt;0\)</span>. The surface obtained by rotating <span class="math inline">\({\pmb{\gamma}}\)</span> about the <span class="math inline">\(z\)</span>-axis is called <strong>surface of revolution</strong>. A chart for <span class="math inline">\(\mathcal{S}\)</span> is given by <span class="math display">\[
+{\pmb{\sigma}}(u,v) :=  (f(u) \cos(v), f(u)\sin(v), g(u)) \,, \,\, u \in (a,b) \,, \, v \in [0,2\pi) \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="proposition-revolution" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 77</strong></summary><div>A surface of revolution is regular if and only if <span class="math inline">\({\pmb{\gamma}}\)</span> is regular.<p></p>
+</div></details>
+</div>
+<div id="Proof*-17" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>We have <span class="math display">\[\begin{align*}
+{\pmb{\sigma}}_u &amp; = \left(\dot{f}(u) \cos(v), \dot{f}(u) \sin(v), \dot{g}(u) \right) \,, \\
+{\pmb{\sigma}}_v &amp; = \left(-f(u)\sin(v), f(u) \cos(v), 0 \right) \,.
+\end{align*}\]</span> Therefore <span class="math display">\[
+{\pmb{\sigma}}_u \times {\pmb{\sigma}}_v = \left( f \dot{g} \cos(v), -\dot{f} g \sin(v), f \dot{f} \right)
+\]</span> and <span class="math display">\[
+\left\| {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v \right\|^2 = f^2 \left( \dot{f}^2 + \dot{g}^2 \right) = f^2 \left\| {\pmb{\gamma}} \right\|^2 \,.
+\]</span> Recall that <span class="math inline">\(f &gt; 0\)</span> by definition, so that <span class="math inline">\(f^2 \neq 0\)</span>. Therefore <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly independent if and only if <span class="math inline">\({\pmb{\gamma}}\)</span> is regular.<p></p>
 </div></details>
 </div>
 

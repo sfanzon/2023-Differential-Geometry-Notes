@@ -749,12 +749,36 @@
 
  [**Proposition 4.63**](#Proposition-4.63)\Pageref{Proposition-4.63}
 
+ [**Proposition 4.64**](#Proposition-4.64)\Pageref{Proposition-4.64}
+
+ [**Theorem 4.65**](#Theorem-4.65)\Pageref{Theorem-4.65}
+
+ [**Definition 4.66**](#level-surface-1): Level surface\Pageref{level-surface-1}
+
+ [**Theorem 4.67**](#theorem-level-surface-bis)\Pageref{theorem-level-surface-bis}
+
+ [**Proposition 4.68**](#Proposition-4.68)\Pageref{Proposition-4.68}
+
  [**Proof**](#Proof*-4.15)\Pageref{Proof*-4.15}
 
- [**Definition 4.64**](#level-surface-1): Level surface\Pageref{level-surface-1}
+ [**Theorem 4.69**](#theorem-quadrics)\Pageref{theorem-quadrics}
 
- [**Theorem 4.65**](#theorem-level-surface-bis)\Pageref{theorem-level-surface-bis}
+ [**Example 4.70**](#Example-4.70)\Pageref{Example-4.70}
 
- [**Proposition 4.66**](#Proposition-4.66)\Pageref{Proposition-4.66}
+ [**Example 4.71**](#Example-4.71)\Pageref{Example-4.71}
+
+ [**Definition 4.72**](#ruled-surface): Ruled surface\Pageref{ruled-surface}
+
+ [**Proposition 4.73**](#Proposition-4.73)\Pageref{Proposition-4.73}
 
  [**Proof**](#Proof*-4.16)\Pageref{Proof*-4.16}
+
+ [**Example 4.74**](#unit-cylinder-1): Unit Cylinder\Pageref{unit-cylinder-1}
+
+ [**Example 4.75**](#möbius-strip): Möbius strip\Pageref{möbius-strip}
+
+ [**Definition 4.76**](#surface-of-revolution): Surface of revolution\Pageref{surface-of-revolution}
+
+ [**Proposition 4.77**](#proposition-revolution)\Pageref{proposition-revolution}
+
+ [**Proof**](#Proof*-4.17)\Pageref{Proof*-4.17}
