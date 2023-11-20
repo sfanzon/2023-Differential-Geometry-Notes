@@ -192,9 +192,9 @@ Let $f \colon U \subseteq \R^n \to V \subseteq \R^m$ with $U,V$ open. We say tha
 
 Let $f \colon U \subseteq \R^n \to \R^m$ with $U$ open. We say that $f$ is differentiable at $\xx \in U$ if there exists a linear map $df_{\xx} \colon \R^n \to \R^m$ such that
 $$
-\lim_{\e \to 0} \   \frac{ f(\xx + \e \pmb{h} )  - f(\xx) - \e \, df_{\xx}(\pmb{h}) }{ \e } = 0 \,,
+\lim_{\e \to 0} \   \frac{ f(\xx + \e \mathbf{h} )  - f(\xx) - \e \, df_{\xx}(\mathbf{h}) }{ \e } = 0 \,,
 $$
-for all $\pmb{h} \in \R^n$, where the limit is taken in $\R^m$. The map $df_{\xx}$ is called the **differential** of $f$ at $\xx$. 
+for all $\mathbf{h} \in \R^n$, where the limit is taken in $\R^m$. The map $df_{\xx}$ is called the **differential** of $f$ at $\xx$. 
 
 :::
 
@@ -488,18 +488,18 @@ $$
 $$
 Let
 
-- $\pp,\pmb{q} \in \R^3$ be ortoghonal to each other and to $\ww$.
-- $\pmb{a} \in \pi$ be any point in the plane.
+- $\pp,\mathbf{q} \in \R^3$ be ortoghonal to each other and to $\ww$.
+- $\mathbf{a} \in \pi$ be any point in the plane.
 
 
-If $\xx \in \pi$ then $\xx-\pmb{a}$ is parallel to the plane and $\pi$ can be
+If $\xx \in \pi$ then $\xx-\mathbf{a}$ is parallel to the plane and $\pi$ can be
 equivalently represented as
 $$
-\pi = \{ \pmb{a} + u \pp + v \pmb{q} \divider u,v \in \R \} \,.
+\pi = \{ \mathbf{a} + u \pp + v \mathbf{q} \divider u,v \in \R \} \,.
 $$
 Define the map
 $$
-\sss \colon \R^2 \to \pi \,, \quad \sss(u,v):= \pmb{a} + u \pp + v \pmb{q} \,.
+\sss \colon \R^2 \to \pi \,, \quad \sss(u,v):= \mathbf{a} + u \pp + v \mathbf{q} \,.
 $$
 We have:
 
@@ -509,7 +509,7 @@ We have:
 - The inverse of $\sss$ is 
 $$
 \sss^{-1} \colon \pi \to \R^2 \,, \quad 
-\sss^{-1} (\xx) = ( (\xx - \pmb{a}) \cdot \pp , (\xx - \pmb{a}) \cdot \pmb{q}  ) \,.
+\sss^{-1} (\xx) = ( (\xx - \mathbf{a}) \cdot \pp , (\xx - \mathbf{a}) \cdot \mathbf{q}  ) \,.
 $$
 - As $\sss^{-1}$ is continuous, then $\sss$ is a homeomorphism between $\R^2$ and $\pi$. 
 
@@ -839,19 +839,19 @@ the map $\sss_i$ is a regular chart for all $i \in I$.
 ::: Example
 ### 2D Plane in $\R^3$
 
-Let $\pmb{a}, \pp, \pmb{q} \in \R^3$, with $\pp$ and $\pmb{q}$ orthogonal. We have shown that the plane
+Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$, with $\pp$ and $\mathbf{q}$ orthogonal. We have shown that the plane
 $$
-\pi = \{ \pmb{a} + u \pp + v \pmb{q} \divider u,v \in \R \} 
+\pi = \{ \mathbf{a} + u \pp + v \mathbf{q} \divider u,v \in \R \} 
 $$
 is a surface with atlas $\mathcal{A} = \{\sss\}$, where
 $$
-\sss \colon \R^2 \to \pi \,, \quad \sss(u,v):= \pmb{a} + u \pp + v \pmb{q} \,.
+\sss \colon \R^2 \to \pi \,, \quad \sss(u,v):= \mathbf{a} + u \pp + v \mathbf{q} \,.
 $$
 Then $\pi$ is a regular surface, because $\sss$ is a regular chart. To see this, compute
 $$
-\sss_u = \pp  \,, \quad \sss_v = \pmb{q} \,.
+\sss_u = \pp  \,, \quad \sss_v = \mathbf{q} \,.
 $$
-Since $\pp$ and $\pmb{q}$ are orthogonal, then they are linearly independent. Thus $\sss_u$ and $\sss_v$ are linearly independent, and $\sss$ is a regular chart.
+Since $\pp$ and $\mathbf{q}$ are orthogonal, then they are linearly independent. Thus $\sss_u$ and $\sss_v$ are linearly independent, and $\sss$ is a regular chart.
 
 :::
 
@@ -2740,11 +2740,11 @@ a_6 & a_5 & a_3
 $$
 and
 $$
-\xx = (x,y,z)^T \,, \quad \pmb{b} = (b_1,b_2,b_3)^T \,.
+\xx = (x,y,z)^T \,, \quad \mathbf{b} = (b_1,b_2,b_3)^T \,.
 $$
 Then $f$ can be represented by the quadratic form
 $$
-f(\xx) = \xx^T A \xx + \pmb{b} \cdot \xx + c \,.
+f(\xx) = \xx^T A \xx + \mathbf{b} \cdot \xx + c \,.
 $$
 The expression $f=0$ is called a **quadric equation**.
 
@@ -2878,15 +2878,15 @@ in the following way.
 ::: Definition
 ### Ruled surface
 
-Let $\g \colon (a,b) \to \R^3$ be a smooth curve and $\pmb{a} \colon (a,b) \to \R^3$ a vector, such that $\g(t)$ and $\pmb{a}(t)$ are linearly independent for all $t \in (a,b)$. A **ruled surface** is a surface with 
+Let $\g \colon (a,b) \to \R^3$ be a smooth curve and $\mathbf{a} \colon (a,b) \to \R^3$ a vector, such that $\g(t)$ and $\mathbf{a}(t)$ are linearly independent for all $t \in (a,b)$. A **ruled surface** is a surface with 
 chart
 $$
-\sss(u,v) = \g(u) + v \pmb{a}(u) \,.
+\sss(u,v) = \g(u) + v \mathbf{a}(u) \,.
 $$
 We say that:
 
 - $\g$ is the **base curve**
-- The lines $v \mapsto v \pmb{a}(u)$ are the **rulings**
+- The lines $v \mapsto v \mathbf{a}(u)$ are the **rulings**
 
 :::
 
@@ -2901,10 +2901,10 @@ A ruled surface $\SSS$ is regular if $v$ is sufficiently small.
 
 A chart for $\SSS$ is
 $$
-\sss_u = \dg(u) + v \dot{\pmb{a}}(u) \,, \quad
-\sss_v = \pmb{a}(u) \,,
+\sss_u = \dg(u) + v \dot{\mathbf{a}}(u) \,, \quad
+\sss_v = \mathbf{a}(u) \,,
 $$
-with $\dg$ and $\pmb{a}$ linerly independent. Thus $\dg(u) + v \dot{\pmb{a}}(u)$ and $\pmb{a}$ are linearly independent for
+with $\dg$ and $\mathbf{a}$ linerly independent. Thus $\dg(u) + v \dot{\mathbf{a}}(u)$ and $\mathbf{a}$ are linearly independent for
 $v$ sufficiently small. 
 
 :::
@@ -2924,11 +2924,11 @@ $$
 $$
 We have
 $$
-\sss(u,v) = \g(u) + v \pmb{a}(u) \,,
+\sss(u,v) = \g(u) + v \mathbf{a}(u) \,,
 $$
 with
 $$
-\g(u):= (\cos(u), \cos(u),0 ) \,, \quad \pmb{a} = (0,0,1) \,.
+\g(u):= (\cos(u), \cos(u),0 ) \,, \quad \mathbf{a} = (0,0,1) \,.
 $$
 Hence the unit cylinder is a ruled surface, see @fig-cylinder-ruled.
 
@@ -2944,7 +2944,7 @@ Hence the unit cylinder is a ruled surface, see @fig-cylinder-ruled.
 
 The Möbius strip is a ruled surface with chart
 $$
-\sss = \g(u) + v \pmb{a}(u) \,, \quad u \in (0,2\pi), \, v \in \left( -\frac12, \frac12 \right) \,,
+\sss = \g(u) + v \mathbf{a}(u) \,, \quad u \in (0,2\pi), \, v \in \left( -\frac12, \frac12 \right) \,,
 $$
 where 
 $$
@@ -2952,7 +2952,7 @@ $$
 $$
 is the unit circle and
 $$
-\pmb{a} = \left(   -\sin \left( \frac{u}{2} \right) \cos(u),
+\mathbf{a} = \left(   -\sin \left( \frac{u}{2} \right) \cos(u),
                   -\sin \left( \frac{u}{2} \right) \sin(u),
                    \cos \left( \frac{u}{2} \right)   \right) 
 $$
@@ -3052,8 +3052,351 @@ Therefore $\g$ is regular. By Proposition \ref{proposition-revolution} we  concl
 ## First fundamental form
 
 
+We want to measure distances on a surface. The object that allows one to compute lengths, angles and areas on a surface, is the first **fundamental form** of the surface.
 
 
+### Length on surfaces
+
+Let $\SSS$ be a surface and consider two points $\pp, \mathbf{q} \in \SSS$. The euclidean distance between $\pp$ and $\mathbf{q}$ is 
+$$
+\norm{\pp - \mathbf{q}} \,.
+$$
+However this measures the length of the straight segment which connects $\pp$ to $\mathbf{q}$. We are interested in measuring the distance on $\SSS$.
+A way to measure such distance is the following: Suppose 
+$$
+\g \colon (t_0,t_1) \to \SSS
+$$ 
+is a smooth curve such that
+$$
+\g(t_0) = \pp\,, \quad \g(t_1) = \mathbf{q} \,.
+$$
+The distance between $\pp$ and $\mathbf{q}$ on $\SSS$ is the length of $\g$, i.e.,
+$$
+\int_{t_0}^{t_1} \norm{ \dg (t) } \, dt \,.
+$$
+
+::: Question 
+
+How do we compute the above integral? 
+
+:::
+
+
+Since $\g(t) \in \SSS$, by definition
+we have
+$$
+\dg(t) \in T_{\xx} S \,, \quad \xx := \g(t) \,.
+$$
+Therefore, computing $\norm{\dg(t)}$ is equivalent
+to computing the length of tangent vectors. This motivates the definition of first fundemantal form.
+
+
+::: Definition
+### First fundamental form
+
+Let $\SSS$ be a regular surface and $\pp \in \SSS$. The 
+**first fundamental form** of $\SSS$ at $\pp$ is the map
+$$
+I_{\pp} \colon T_{\pp} \SSS \to \R \,, \quad I_{\pp} (\vv) := \vv \cdot \vv \,.
+$$
+
+
+:::
+
+
+Two observations:
+
+- The first fundamental form of $\SSS$ at $\pp$ is the map obtained by restricting the scalar product of $\R^3$ to $T_{\pp} \SSS$.
+
+- Note that 
+$$
+I_{\pp} (\vv) = \| \vv \|^2 \,,
+$$
+so that $I_{\pp}$ is computing the length of tangent vectors.
+
+
+
+::: Remark
+### Computing the first fundamental form {#remark-fff}
+
+The first fundamental form can be computed through regular charts. Let
+$\sss$ be a chart at $\pp$. Then 
+$$
+T_{\pp} \SSS = \operatorname{span} \{ \sss_u, \sss_v \} \,.
+$$
+Therefore a vector $\vv \in T_{\pp} \SSS$ can be written as linear combination
+$$
+\vv = \lambda \sss_u + \mu \sss_v
+$$
+for some $\lambda,\mu \in \R$. Introduce the linear maps
+$$
+du, dv \colon T_{\pp} \SSS \to \R \,, \quad du(\vv) := \lambda \,,  
+\quad dv(\vv) := \mu \,.
+$$
+Define also
+$$
+E := \sss_u \cdot \sss_u \,, \quad  F := \sss_u \cdot \sss_v \,, \quad 
+G := \sss_v \cdot \sss_v \,.
+$$
+We have
+\begin{align*}
+I_{\pp} (\vv) & = \vv \cdot \vv = \lambda^2 \, \sss_u \cdot \sss_v + 2\lambda \mu \, \sss_u \cdot \sss_v + \mu^2 \, \sss_v \cdot \sss_v \\
+& = E \, du(\vv)^2 + 2F \, du(\vv) \, dv(\vv) + G \, dv(\vv)^2 \,.
+\end{align*}
+
+:::
+
+
+The above remark motivates the following definition.
+
+
+::: Definition
+### First fundamental form of a chart
+
+Let $\SSS$ be a regular surface and $\sss$ be a regular chart. Let
+$$
+E := \sss_u \cdot \sss_u \,, \quad  F := \sss_u \cdot \sss_v \,, \quad 
+G := \sss_v \cdot \sss_v \,.
+$$
+The **first fundamental form** of $\sss$ is the expression
+$$
+E \, du^2 + 2F \, du \, dv + G \, dv^2 \,.
+$$
+This can be represented by the bilinear form
+$$
+(du , dv)^T \mathcal{F}_1  (du , dv)\,,
+$$
+where 
+$$
+\mathcal{F}_1 :=
+\left( 
+\begin{array}{cc}  
+E & F \\
+F & G 
+\end{array}
+\right) \,.
+$$
+
+
+:::
+
+
+
+::: Remark
+### Scalar product between tangent vectors  {#remark-fff-sp}
+
+Let $\SSS$ be a regular surface and $\sss$ be a chart at $\pp$. For
+$\vv, \ww \in T_{\pp}(\SSS)$ we have
+$$
+\vv = \lambda_1 \sss_u + \mu_1 \sss_v \,, \quad 
+\ww = \lambda_2 \sss_u + \mu_2 \sss_v \,.
+$$
+We have
+\begin{align*}
+\vv \cdot \ww & = (\lambda_1 \sss_u + \mu_1 \sss_v) \cdot  ( \lambda_2 \sss_u + \mu_2 \sss_v) \\
+              & = \lambda_1 \lambda_2 \, \sss_u \cdot \sss_u + 
+                 (\lambda_1\mu_2 + \lambda_2 \mu_1 ) \sss_u \cdot \sss_v
+                 + \mu_1 \mu_2 \, \sss_v \cdot \sss_v \\
+              & = \lambda_1 \lambda_2 \, E + 
+                 (\lambda_1\mu_2 + \lambda_2 \mu_1 ) F
+                 + \mu_1 \mu_2 \, G \\
+              & = (\lambda_1 , \mu_1)^T 
+                  \left( 
+                  \begin{array}{cc}  
+                  E & F \\
+                  F & G 
+                  \end{array}
+                  \right)
+                  (\lambda_2 , \mu_2) \,. 
+\end{align*}
+Therefore the first fundamental form can also be used to compute the scalar product of two tangent vectors.
+
+:::
+
+
+
+
+Finally, let us show how the first fundamental form allows to compute the
+length of curves on $\SSS$.
+
+
+::: {.Proposition  #proposition-fff-length}
+
+Let $\SSS$ be a regular surface with chart $\sss \colon U \to \R^3$. Suppose
+$$
+\g \colon (t_0,t_1) \to \sss(U)
+$$
+is a smooth curve. Then
+$$
+\g(t) = \sss (u(t), v(t)) \,,
+$$
+for some smooth functions $u,v$ and 
+$$
+\int_{t_0}^{t_1} \norm{\dg(t)} \, dt =
+\int_{t_0}^{t_1} \sqrt{  E \dot{u}^2 + 2F \dot u \dot v + G \dot{v}^2  } \, dt \,,
+$$
+where $E,F,G$ are computed at the point $(u(t),v(t))$.
+
+:::
+
+
+::: Proof 
+
+Since $\g$ takes values into $\sss(U)$, by Lemma \ref{lemma-curve-S} there exist smooth functions $u,v$ such that 
+$$
+\g(t) = \sss (u(t), v(t)) \,, \quad \forall \, t \in (t_0,t_1) \,.
+$$
+By chain rule we have
+$$
+\dg(t) = \dot u (t) \sss_u( u(t),v(t) ) + \dot v (t) \sss_v( u(t),v(t) ) \,.
+$$
+By Remark \ref{remark-fff} (or direct calculation) we get
+$$
+\norm{\dg(t)}^2 = \dg \cdot \dg =  E \, \dot{u}^2  + 2F \, \dot{u} \dot{v} + G \, \dot{v}^2 \,,
+$$
+concluding the proof.
+
+
+:::
+
+
+
+::: Example
+### Cone
+
+Consider the cone with chart
+$$
+\sss (u,v)=(u \cos(v), u \sin (v), u) \,.
+$$
+
+1. Prove that the first fundamental form of $\sss$ is
+$$
+2 \, du^2 + u^2 \, dv^2 \,.
+$$
+
+2. Let $\g (t):= \sss(t,t)$. Show that
+$$
+\int_{\pi/2}^{\pi} \norm{\dg(t)} \, dt = \int_{\pi/2}^{\pi} \sqrt{  2 + t^2  } \, dt  \,.
+$$
+
+> We have
+$$
+\sss_u = (\cos(v), \sin (v), 1) \,, \quad 
+\sss_v = (- u \sin(v), u \cos (v), 0) \,.
+$$
+Therefore
+\begin{align*}
+E & = \sss_u \cdot \sss_u = \cos^2(v) + \sin^2 (v) + 1 = 2 \\
+F & = \sss_u \cdot \sss_v = - u \cos(v) \sin(v) + u \cos(v) \sin(v) = 0 \\
+G & = \sss_v \cdot \sss_v = u^2 \sin^2(v) + u^2 \cos^2(v) = u^2   
+\end{align*}
+The first fundamental form of $\sss$ is 
+$$
+2 \, du^2 + u^2 \, dv^2 \,.
+$$
+Concering the curve $\g$, we have
+$$
+\g(t) := \sss(t,t) \,,
+$$
+so that 
+$$
+u(t) = t \,, \quad v(t) = t \,.
+$$
+In particular
+$$
+\dot u = 1\,, \quad \dot v = 1
+$$ 
+and 
+\begin{align*}
+E(u(t),v(t)) & = E(t,t) = 2 \\
+F(u(t),v(t)) & = F(t,t) = 0 \\
+G(u(t),v(t)) & = G(t,t) = t^2  \,.
+\end{align*}
+By Proposition \ref{proposition-fff-length} we have
+\begin{align*}
+\int_{\pi/2}^{\pi} \norm{\dg(t)} \, dt & = 
+\int_{\pi/2}^{\pi} \sqrt{  E \dot{u}^2 + 2F \dot u \dot v + G \dot{v}^2  } \, dt \\
+& = \int_{\pi/2}^{\pi} \sqrt{  2 + t^2  } \, dt   \,.
+\end{align*}
+
+:::
+
+
+
+::: Example
+### Plane
+
+Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$ be orthonormal vectors and consider the plane with chart
+$$
+\sss(u,v) = \mathbf{a} + u \pp + v \mathbf{q} \,.
+$$
+Prove that the first fundamental form of $\sss$ is
+$$
+du^2 + dv^2 \,.
+$$
+
+> We have
+$$
+\sss_u = \pp \,, \quad \sss_v = \mathbf{q}
+$$
+and therefore 
+\begin{align*}
+E & = \sss_u \cdot \sss_u = \norm{\pp}^2 = 1 \\
+F & = \sss_u \cdot \sss_v = \pp \cdot \mathbf{q} = 0 \\
+G & = \sss_v \cdot \sss_v = \norm{\mathbf{q}}^2 = 1 \\
+\end{align*}
+Then the first fundamental form is
+$$
+E \, du^2 + 2 F\, du \, dv + G \, dv^2 = du^2 + dv^2 \,.  
+$$
+
+:::
+
+
+The above example should not be surprising, since distances on a plane
+are the same as Euclidean distances, given that straight segments are 
+contained in the plane.  
+
+
+::: Example
+### Unit cylinder
+
+Consider the unit cylinder with chart
+$$
+\sss(u,v) = (\cos(v), \sin(v),  u)  \,.
+$$
+Prove that the first fundamental form of $\sss$ is
+$$
+du^2 + dv^2 \,.
+$$
+
+> We have
+$$
+\sss_u = (0,0,1) \,, \quad \sss_v = (-\sin(v),\cos(v), 0 ) 
+$$
+and therefore 
+\begin{align*}
+E & = \sss_u \cdot \sss_u =  1 \\
+F & = \sss_u \cdot \sss_v = 0 \\
+G & = \sss_v \cdot \sss_v = 1 \\
+\end{align*}
+Then the first fundamental form is
+$$
+E \, du^2 + 2 F\, du \, dv + G \, dv^2 = du^2 + dv^2 \,.  
+$$
+
+:::
+
+
+::: Remark
+
+We have seen that a plane and the unit cylinder have the same first fundamental form 
+$$
+du^2 + dv^2 \,.
+$$
+Therefore lengths are the same on the two surfaces.
+
+:::
 
 
 

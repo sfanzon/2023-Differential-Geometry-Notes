@@ -784,3 +784,25 @@
  [**Proof**](#Proof*-4.17)\Pageref{Proof*-4.17}
 
  [**Example 4.78**](#catenoid): Catenoid\Pageref{catenoid}
+
+ [**Question 4.79**](#Question-4.79)\Pageref{Question-4.79}
+
+ [**Definition 4.80**](#first-fundamental-form-1): First fundamental form\Pageref{first-fundamental-form-1}
+
+ [**Remark 4.81**](#remark-fff): Computing the first fundamental form\Pageref{remark-fff}
+
+ [**Definition 4.82**](#first-fundamental-form-of-a-chart): First fundamental form of a chart\Pageref{first-fundamental-form-of-a-chart}
+
+ [**Remark 4.83**](#remark-fff-sp): Scalar product between tangent vectors\Pageref{remark-fff-sp}
+
+ [**Proposition 4.84**](#proposition-fff-length)\Pageref{proposition-fff-length}
+
+ [**Proof**](#Proof*-4.18)\Pageref{Proof*-4.18}
+
+ [**Example 4.85**](#cone): Cone\Pageref{cone}
+
+ [**Example 4.86**](#plane): Plane\Pageref{plane}
+
+ [**Example 4.87**](#unit-cylinder-2): Unit cylinder\Pageref{unit-cylinder-2}
+
+ [**Remark 4.88**](#Remark-4.88)\Pageref{Remark-4.88}

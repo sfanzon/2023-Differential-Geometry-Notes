@@ -85,55 +85,7 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
 .Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Warning {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -141,19 +93,67 @@ div.csl-indent {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Question {
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
 }
 .Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Important {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -277,7 +277,10 @@ div.csl-indent {
   <li><a href="#ruled-surfaces" id="toc-ruled-surfaces" class="nav-link" data-scroll-target="#ruled-surfaces"><span class="header-section-number">4.10.3</span> Ruled surfaces</a></li>
   <li><a href="#surfaces-of-revolution" id="toc-surfaces-of-revolution" class="nav-link" data-scroll-target="#surfaces-of-revolution"><span class="header-section-number">4.10.4</span> Surfaces of Revolution</a></li>
   </ul></li>
-  <li><a href="#first-fundamental-form" id="toc-first-fundamental-form" class="nav-link" data-scroll-target="#first-fundamental-form"><span class="header-section-number">4.11</span> First fundamental form</a></li>
+  <li><a href="#first-fundamental-form" id="toc-first-fundamental-form" class="nav-link" data-scroll-target="#first-fundamental-form"><span class="header-section-number">4.11</span> First fundamental form</a>
+  <ul class="collapse">
+  <li><a href="#length-on-surfaces" id="toc-length-on-surfaces" class="nav-link" data-scroll-target="#length-on-surfaces"><span class="header-section-number">4.11.1</span> Length on surfaces</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -411,8 +414,8 @@ f = (f_1,\ldots,f_m) \,.
 </div>
 <div id="differentiable-function" class="Definition" title="Differentiable Function">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 10: </strong>Differentiable Function</summary><div>Let <span class="math inline">\(f \colon U \subseteq \mathbb{R}^n \to \mathbb{R}^m\)</span> with <span class="math inline">\(U\)</span> open. We say that <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\(\mathbf{x}\in U\)</span> if there exists a linear map <span class="math inline">\(df_{\mathbf{x}} \colon \mathbb{R}^n \to \mathbb{R}^m\)</span> such that <span class="math display">\[
-\lim_{\varepsilon\to 0} \   \frac{ f(\mathbf{x}+ \varepsilon\pmb{h} )  - f(\mathbf{x}) - \varepsilon\, df_{\mathbf{x}}(\pmb{h}) }{ \varepsilon} = 0 \,,
-\]</span> for all <span class="math inline">\(\pmb{h} \in \mathbb{R}^n\)</span>, where the limit is taken in <span class="math inline">\(\mathbb{R}^m\)</span>. The map <span class="math inline">\(df_{\mathbf{x}}\)</span> is called the <strong>differential</strong> of <span class="math inline">\(f\)</span> at <span class="math inline">\(\mathbf{x}\)</span>.<p></p>
+\lim_{\varepsilon\to 0} \   \frac{ f(\mathbf{x}+ \varepsilon\mathbf{h} )  - f(\mathbf{x}) - \varepsilon\, df_{\mathbf{x}}(\mathbf{h}) }{ \varepsilon} = 0 \,,
+\]</span> for all <span class="math inline">\(\mathbf{h} \in \mathbb{R}^n\)</span>, where the limit is taken in <span class="math inline">\(\mathbb{R}^m\)</span>. The map <span class="math inline">\(df_{\mathbf{x}}\)</span> is called the <strong>differential</strong> of <span class="math inline">\(f\)</span> at <span class="math inline">\(\mathbf{x}\)</span>.<p></p>
 </div></details>
 </div>
 <p>We denote by <span class="math inline">\(\{\mathbf{e}_i\}_{i=1}^n\)</span> the standard basis of <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
@@ -581,13 +584,13 @@ L_n := \left\{ \left(x, \frac{n \pi}{2} \right) \, \colon \,x \in \mathbb{R}\rig
 \pi  = \{  \mathbf{x}\in \mathbb{R}^3 \, \colon \,\mathbf{x}\cdot \mathbf{w}= \lambda \} \,.
 \]</span> Let<p></p>
 <ul>
-<li><span class="math inline">\(\mathbf{p},\pmb{q} \in \mathbb{R}^3\)</span> be ortoghonal to each other and to <span class="math inline">\(\mathbf{w}\)</span>.</li>
-<li><span class="math inline">\(\pmb{a} \in \pi\)</span> be any point in the plane.</li>
+<li><span class="math inline">\(\mathbf{p},\mathbf{q} \in \mathbb{R}^3\)</span> be ortoghonal to each other and to <span class="math inline">\(\mathbf{w}\)</span>.</li>
+<li><span class="math inline">\(\mathbf{a} \in \pi\)</span> be any point in the plane.</li>
 </ul>
-<p>If <span class="math inline">\(\mathbf{x}\in \pi\)</span> then <span class="math inline">\(\mathbf{x}-\pmb{a}\)</span> is parallel to the plane and <span class="math inline">\(\pi\)</span> can be equivalently represented as <span class="math display">\[
-\pi = \{ \pmb{a} + u \mathbf{p}+ v \pmb{q} \, \colon \,u,v \in \mathbb{R}\} \,.
+<p>If <span class="math inline">\(\mathbf{x}\in \pi\)</span> then <span class="math inline">\(\mathbf{x}-\mathbf{a}\)</span> is parallel to the plane and <span class="math inline">\(\pi\)</span> can be equivalently represented as <span class="math display">\[
+\pi = \{ \mathbf{a} + u \mathbf{p}+ v \mathbf{q} \, \colon \,u,v \in \mathbb{R}\} \,.
 \]</span> Define the map <span class="math display">\[
-{\pmb{\sigma}}\colon \mathbb{R}^2 \to \pi \,, \quad {\pmb{\sigma}}(u,v):= \pmb{a} + u \mathbf{p}+ v \pmb{q} \,.
+{\pmb{\sigma}}\colon \mathbb{R}^2 \to \pi \,, \quad {\pmb{\sigma}}(u,v):= \mathbf{a} + u \mathbf{p}+ v \mathbf{q} \,.
 \]</span> We have:</p>
 <ul>
 <li><span class="math inline">\({\pmb{\sigma}}\)</span> is smooth.</li>
@@ -595,7 +598,7 @@ L_n := \left\{ \left(x, \frac{n \pi}{2} \right) \, \colon \,x \in \mathbb{R}\rig
 <li><span class="math inline">\({\pmb{\sigma}}(\mathbb{R}^2)\)</span> is open in <span class="math inline">\(\pi\)</span>, since <span class="math inline">\({\pmb{\sigma}}(\mathbb{R}^2) = \pi\)</span>.</li>
 <li>The inverse of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
 {\pmb{\sigma}}^{-1} \colon \pi \to \mathbb{R}^2 \,, \quad
-{\pmb{\sigma}}^{-1} (\mathbf{x}) = ( (\mathbf{x}- \pmb{a}) \cdot \mathbf{p}, (\mathbf{x}- \pmb{a}) \cdot \pmb{q}  ) \,.
+{\pmb{\sigma}}^{-1} (\mathbf{x}) = ( (\mathbf{x}- \mathbf{a}) \cdot \mathbf{p}, (\mathbf{x}- \mathbf{a}) \cdot \mathbf{q}  ) \,.
 \]</span></li>
 <li>As <span class="math inline">\({\pmb{\sigma}}^{-1}\)</span> is continuous, then <span class="math inline">\({\pmb{\sigma}}\)</span> is a homeomorphism between <span class="math inline">\(\mathbb{R}^2\)</span> and <span class="math inline">\(\pi\)</span>.</li>
 </ul>
@@ -795,13 +798,13 @@ J{\pmb{\sigma}}(u,v) =
 </div></details>
 </div>
 <div id="d-plane-in-mathbbr3-1" class="Example" title="2D Plane in \mathbb{R}^3">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 29: </strong>2D Plane in <span class="math inline">\(\mathbb{R}^3\)</span></summary><div>Let <span class="math inline">\(\pmb{a}, \mathbf{p}, \pmb{q} \in \mathbb{R}^3\)</span>, with <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\pmb{q}\)</span> orthogonal. We have shown that the plane <span class="math display">\[
-\pi = \{ \pmb{a} + u \mathbf{p}+ v \pmb{q} \, \colon \,u,v \in \mathbb{R}\}
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 29: </strong>2D Plane in <span class="math inline">\(\mathbb{R}^3\)</span></summary><div>Let <span class="math inline">\(\mathbf{a}, \mathbf{p}, \mathbf{q} \in \mathbb{R}^3\)</span>, with <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\mathbf{q}\)</span> orthogonal. We have shown that the plane <span class="math display">\[
+\pi = \{ \mathbf{a} + u \mathbf{p}+ v \mathbf{q} \, \colon \,u,v \in \mathbb{R}\}
 \]</span> is a surface with atlas <span class="math inline">\(\mathcal{A} = \{{\pmb{\sigma}}\}\)</span>, where <span class="math display">\[
-{\pmb{\sigma}}\colon \mathbb{R}^2 \to \pi \,, \quad {\pmb{\sigma}}(u,v):= \pmb{a} + u \mathbf{p}+ v \pmb{q} \,.
+{\pmb{\sigma}}\colon \mathbb{R}^2 \to \pi \,, \quad {\pmb{\sigma}}(u,v):= \mathbf{a} + u \mathbf{p}+ v \mathbf{q} \,.
 \]</span> Then <span class="math inline">\(\pi\)</span> is a regular surface, because <span class="math inline">\({\pmb{\sigma}}\)</span> is a regular chart. To see this, compute <span class="math display">\[
-{\pmb{\sigma}}_u = \mathbf{p}\,, \quad {\pmb{\sigma}}_v = \pmb{q} \,.
-\]</span> Since <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\pmb{q}\)</span> are orthogonal, then they are linearly independent. Thus <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly independent, and <span class="math inline">\({\pmb{\sigma}}\)</span> is a regular chart.<p></p>
+{\pmb{\sigma}}_u = \mathbf{p}\,, \quad {\pmb{\sigma}}_v = \mathbf{q} \,.
+\]</span> Since <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\mathbf{q}\)</span> are orthogonal, then they are linearly independent. Thus <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly independent, and <span class="math inline">\({\pmb{\sigma}}\)</span> is a regular chart.<p></p>
 </div></details>
 </div>
 <div id="example-unit-cylinder" class="Example" title="Unit cylinder">
@@ -1799,9 +1802,9 @@ a_6 &amp; a_5 &amp; a_3
 \end{array}
 \right)  \in \mathbb{R}^{3 \times 3} \,,
 \]</span> and <span class="math display">\[
-\mathbf{x}= (x,y,z)^T \,, \quad \pmb{b} = (b_1,b_2,b_3)^T \,.
+\mathbf{x}= (x,y,z)^T \,, \quad \mathbf{b} = (b_1,b_2,b_3)^T \,.
 \]</span> Then <span class="math inline">\(f\)</span> can be represented by the quadratic form <span class="math display">\[
-f(\mathbf{x}) = \mathbf{x}^T A \mathbf{x}+ \pmb{b} \cdot \mathbf{x}+ c \,.
+f(\mathbf{x}) = \mathbf{x}^T A \mathbf{x}+ \mathbf{b} \cdot \mathbf{x}+ c \,.
 \]</span> The expression <span class="math inline">\(f=0\)</span> is called a <strong>quadric equation</strong>.</p>
 <p>As stated in the following theorem, there are <span class="math inline">\(14\)</span> quadrics in total. Out of these:</p>
 <ul>
@@ -1883,12 +1886,12 @@ D =
 <p>A ruled surface is a surface obtained as union of straight lines, called the rulings of the surface. By using curves, ruled surfaces can be defined in the following way.</p>
 <div id="ruled-surface" class="Definition" title="Ruled surface">
 <details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 72: </strong>Ruled surface</summary><div>
-<p>Let <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathbb{R}^3\)</span> be a smooth curve and <span class="math inline">\(\pmb{a} \colon (a,b) \to \mathbb{R}^3\)</span> a vector, such that <span class="math inline">\({\pmb{\gamma}}(t)\)</span> and <span class="math inline">\(\pmb{a}(t)\)</span> are linearly independent for all <span class="math inline">\(t \in (a,b)\)</span>. A <strong>ruled surface</strong> is a surface with chart <span class="math display">\[
-{\pmb{\sigma}}(u,v) = {\pmb{\gamma}}(u) + v \pmb{a}(u) \,.
+<p>Let <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathbb{R}^3\)</span> be a smooth curve and <span class="math inline">\(\mathbf{a} \colon (a,b) \to \mathbb{R}^3\)</span> a vector, such that <span class="math inline">\({\pmb{\gamma}}(t)\)</span> and <span class="math inline">\(\mathbf{a}(t)\)</span> are linearly independent for all <span class="math inline">\(t \in (a,b)\)</span>. A <strong>ruled surface</strong> is a surface with chart <span class="math display">\[
+{\pmb{\sigma}}(u,v) = {\pmb{\gamma}}(u) + v \mathbf{a}(u) \,.
 \]</span> We say that:</p>
 <ul>
 <li><span class="math inline">\({\pmb{\gamma}}\)</span> is the <strong>base curve</strong></li>
-<li>The lines <span class="math inline">\(v \mapsto v \pmb{a}(u)\)</span> are the <strong>rulings</strong></li>
+<li>The lines <span class="math inline">\(v \mapsto v \mathbf{a}(u)\)</span> are the <strong>rulings</strong></li>
 </ul>
 </div></details>
 </div>
@@ -1898,9 +1901,9 @@ D =
 </div>
 <div id="Proof*-16" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>A chart for <span class="math inline">\(\mathcal{S}\)</span> is <span class="math display">\[
-{\pmb{\sigma}}_u = \dot{{\pmb{\gamma}}}(u) + v \dot{\pmb{a}}(u) \,, \quad
-{\pmb{\sigma}}_v = \pmb{a}(u) \,,
-\]</span> with <span class="math inline">\(\dot{{\pmb{\gamma}}}\)</span> and <span class="math inline">\(\pmb{a}\)</span> linerly independent. Thus <span class="math inline">\(\dot{{\pmb{\gamma}}}(u) + v \dot{\pmb{a}}(u)\)</span> and <span class="math inline">\(\pmb{a}\)</span> are linearly independent for <span class="math inline">\(v\)</span> sufficiently small.<p></p>
+{\pmb{\sigma}}_u = \dot{{\pmb{\gamma}}}(u) + v \dot{\mathbf{a}}(u) \,, \quad
+{\pmb{\sigma}}_v = \mathbf{a}(u) \,,
+\]</span> with <span class="math inline">\(\dot{{\pmb{\gamma}}}\)</span> and <span class="math inline">\(\mathbf{a}\)</span> linerly independent. Thus <span class="math inline">\(\dot{{\pmb{\gamma}}}(u) + v \dot{\mathbf{a}}(u)\)</span> and <span class="math inline">\(\mathbf{a}\)</span> are linearly independent for <span class="math inline">\(v\)</span> sufficiently small.<p></p>
 </div></details>
 </div>
 <p>The same base curve can yield multiple ruled surfaces. For example, if <span class="math inline">\({\pmb{\gamma}}\)</span> is a circle, we can obtain both the unit cylinder and the Möbius strip.</p>
@@ -1908,9 +1911,9 @@ D =
 <p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 74: </strong>Unit Cylinder</summary><div>As seen in Example <a href="chap_4.html#example-unit-cylinder">30</a>, the cylinder is a surface with atlas <span class="math inline">\(\mathcal{A}=\{{\pmb{\sigma}}_1,{\pmb{\sigma}}_2\}\)</span>, where <span class="math inline">\({\pmb{\sigma}}_1\)</span> and <span class="math inline">\({\pmb{\sigma}}_2\)</span> are suitable restriction of <span class="math display">\[
 {\pmb{\sigma}}(u,v) = (\cos(u), \cos(u),v ) \,, \quad (u,v) \in [0,2\pi) \times \mathbb{R}\,.
 \]</span> We have <span class="math display">\[
-{\pmb{\sigma}}(u,v) = {\pmb{\gamma}}(u) + v \pmb{a}(u) \,,
+{\pmb{\sigma}}(u,v) = {\pmb{\gamma}}(u) + v \mathbf{a}(u) \,,
 \]</span> with <span class="math display">\[
-{\pmb{\gamma}}(u):= (\cos(u), \cos(u),0 ) \,, \quad \pmb{a} = (0,0,1) \,.
+{\pmb{\gamma}}(u):= (\cos(u), \cos(u),0 ) \,, \quad \mathbf{a} = (0,0,1) \,.
 \]</span> Hence the unit cylinder is a ruled surface, see <a href="#fig-cylinder-ruled">Figure&nbsp;<span>4.6</span></a>.<p></p>
 </div></details>
 </div>
@@ -1922,11 +1925,11 @@ D =
 </div>
 <div id="möbius-strip" class="Example" title="Möbius strip">
 <p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 75: </strong>Möbius strip</summary><div>The Möbius strip is a ruled surface with chart <span class="math display">\[
-{\pmb{\sigma}}= {\pmb{\gamma}}(u) + v \pmb{a}(u) \,, \quad u \in (0,2\pi), \, v \in \left( -\frac12, \frac12 \right) \,,
+{\pmb{\sigma}}= {\pmb{\gamma}}(u) + v \mathbf{a}(u) \,, \quad u \in (0,2\pi), \, v \in \left( -\frac12, \frac12 \right) \,,
 \]</span> where <span class="math display">\[
 {\pmb{\gamma}}(u) = (\cos(u), \sin(u), 0)
 \]</span> is the unit circle and <span class="math display">\[
-\pmb{a} = \left(   -\sin \left( \frac{u}{2} \right) \cos(u),
+\mathbf{a} = \left(   -\sin \left( \frac{u}{2} \right) \cos(u),
                   -\sin \left( \frac{u}{2} \right) \sin(u),
                    \cos \left( \frac{u}{2} \right)   \right)
 \]</span> is a vector which does a full rotation while going around the unit circle <span class="math inline">\({\pmb{\gamma}}\)</span>. This is shown in <a href="#fig-mobius-ruled">Figure&nbsp;<span>4.7</span></a>.<p></p>
@@ -1988,6 +1991,208 @@ f(u) = \cosh (u) \,.
 </section>
 <section id="first-fundamental-form" class="level2" data-number="4.11">
 <h2 data-number="4.11" class="anchored" data-anchor-id="first-fundamental-form"><span class="header-section-number">4.11</span> First fundamental form</h2>
+<p>We want to measure distances on a surface. The object that allows one to compute lengths, angles and areas on a surface, is the first <strong>fundamental form</strong> of the surface.</p>
+<section id="length-on-surfaces" class="level3" data-number="4.11.1">
+<h3 data-number="4.11.1" class="anchored" data-anchor-id="length-on-surfaces"><span class="header-section-number">4.11.1</span> Length on surfaces</h3>
+<p>Let <span class="math inline">\(\mathcal{S}\)</span> be a surface and consider two points <span class="math inline">\(\mathbf{p}, \mathbf{q} \in \mathcal{S}\)</span>. The euclidean distance between <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\mathbf{q}\)</span> is <span class="math display">\[
+\left\| \mathbf{p}- \mathbf{q} \right\| \,.
+\]</span> However this measures the length of the straight segment which connects <span class="math inline">\(\mathbf{p}\)</span> to <span class="math inline">\(\mathbf{q}\)</span>. We are interested in measuring the distance on <span class="math inline">\(\mathcal{S}\)</span>. A way to measure such distance is the following: Suppose <span class="math display">\[
+{\pmb{\gamma}}\colon (t_0,t_1) \to \mathcal{S}
+\]</span> is a smooth curve such that <span class="math display">\[
+{\pmb{\gamma}}(t_0) = \mathbf{p}\,, \quad {\pmb{\gamma}}(t_1) = \mathbf{q} \,.
+\]</span> The distance between <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\mathbf{q}\)</span> on <span class="math inline">\(\mathcal{S}\)</span> is the length of <span class="math inline">\({\pmb{\gamma}}\)</span>, i.e., <span class="math display">\[
+\int_{t_0}^{t_1} \left\|  \dot{{\pmb{\gamma}}}(t)  \right\| \, dt \,.
+\]</span></p>
+<div id="Question-79" class="Question">
+<p></p><details class="Question fbx-simplebox fbx-default" open=""><summary><strong>Question 79</strong></summary><div>How do we compute the above integral?<p></p>
+</div></details>
+</div>
+<p>Since <span class="math inline">\({\pmb{\gamma}}(t) \in \mathcal{S}\)</span>, by definition we have <span class="math display">\[
+\dot{{\pmb{\gamma}}}(t) \in T_{\mathbf{x}} S \,, \quad \mathbf{x}:= {\pmb{\gamma}}(t) \,.
+\]</span> Therefore, computing <span class="math inline">\(\left\| \dot{{\pmb{\gamma}}}(t) \right\|\)</span> is equivalent to computing the length of tangent vectors. This motivates the definition of first fundemantal form.</p>
+<div id="first-fundamental-form-1" class="Definition" title="First fundamental form">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 80: </strong>First fundamental form</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. The <strong>first fundamental form</strong> of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> is the map <span class="math display">\[
+I_{\mathbf{p}} \colon T_{\mathbf{p}} \mathcal{S}\to \mathbb{R}\,, \quad I_{\mathbf{p}} (\mathbf{v}) := \mathbf{v}\cdot \mathbf{v}\,.
+\]</span><p></p>
+</div></details>
+</div>
+<p>Two observations:</p>
+<ul>
+<li><p>The first fundamental form of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> is the map obtained by restricting the scalar product of <span class="math inline">\(\mathbb{R}^3\)</span> to <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>.</p></li>
+<li><p>Note that <span class="math display">\[
+I_{\mathbf{p}} (\mathbf{v}) = \| \mathbf{v}\|^2 \,,
+\]</span> so that <span class="math inline">\(I_{\mathbf{p}}\)</span> is computing the length of tangent vectors.</p></li>
+</ul>
+<div id="remark-fff" class="Remark" title="Computing the first fundamental form">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 81: </strong>Computing the first fundamental form</summary><div>The first fundamental form can be computed through regular charts. Let <span class="math inline">\({\pmb{\sigma}}\)</span> be a chart at <span class="math inline">\(\mathbf{p}\)</span>. Then <span class="math display">\[
+T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u, {\pmb{\sigma}}_v \} \,.
+\]</span> Therefore a vector <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span> can be written as linear combination <span class="math display">\[
+\mathbf{v}= \lambda {\pmb{\sigma}}_u + \mu {\pmb{\sigma}}_v
+\]</span> for some <span class="math inline">\(\lambda,\mu \in \mathbb{R}\)</span>. Introduce the linear maps <span class="math display">\[
+du, dv \colon T_{\mathbf{p}} \mathcal{S}\to \mathbb{R}\,, \quad du(\mathbf{v}) := \lambda \,,  
+\quad dv(\mathbf{v}) := \mu \,.
+\]</span> Define also <span class="math display">\[
+E := {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_u \,, \quad  F := {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v \,, \quad
+G := {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v \,.
+\]</span> We have <span class="math display">\[\begin{align*}
+I_{\mathbf{p}} (\mathbf{v}) &amp; = \mathbf{v}\cdot \mathbf{v}= \lambda^2 \, {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v + 2\lambda \mu \, {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v + \mu^2 \, {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v \\
+&amp; = E \, du(\mathbf{v})^2 + 2F \, du(\mathbf{v}) \, dv(\mathbf{v}) + G \, dv(\mathbf{v})^2 \,.
+\end{align*}\]</span><p></p>
+</div></details>
+</div>
+<p>The above remark motivates the following definition.</p>
+<div id="first-fundamental-form-of-a-chart" class="Definition" title="First fundamental form of a chart">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 82: </strong>First fundamental form of a chart</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\({\pmb{\sigma}}\)</span> be a regular chart. Let <span class="math display">\[
+E := {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_u \,, \quad  F := {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v \,, \quad
+G := {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v \,.
+\]</span> The <strong>first fundamental form</strong> of <span class="math inline">\({\pmb{\sigma}}\)</span> is the expression <span class="math display">\[
+E \, du^2 + 2F \, du \, dv + G \, dv^2 \,.
+\]</span> This can be represented by the bilinear form <span class="math display">\[
+(du , dv)^T \mathcal{F}_1  (du , dv)\,,
+\]</span> where <span class="math display">\[
+\mathcal{F}_1 :=
+\left(
+\begin{array}{cc}  
+E &amp; F \\
+F &amp; G
+\end{array}
+\right) \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="remark-fff-sp" class="Remark" title="Scalar product between tangent vectors">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 83: </strong>Scalar product between tangent vectors</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\({\pmb{\sigma}}\)</span> be a chart at <span class="math inline">\(\mathbf{p}\)</span>. For <span class="math inline">\(\mathbf{v}, \mathbf{w}\in T_{\mathbf{p}}(\mathcal{S})\)</span> we have <span class="math display">\[
+\mathbf{v}= \lambda_1 {\pmb{\sigma}}_u + \mu_1 {\pmb{\sigma}}_v \,, \quad
+\mathbf{w}= \lambda_2 {\pmb{\sigma}}_u + \mu_2 {\pmb{\sigma}}_v \,.
+\]</span> We have <span class="math display">\[\begin{align*}
+\mathbf{v}\cdot \mathbf{w}&amp; = (\lambda_1 {\pmb{\sigma}}_u + \mu_1 {\pmb{\sigma}}_v) \cdot  ( \lambda_2 {\pmb{\sigma}}_u + \mu_2 {\pmb{\sigma}}_v) \\
+              &amp; = \lambda_1 \lambda_2 \, {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_u +
+                 (\lambda_1\mu_2 + \lambda_2 \mu_1 ) {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v
+                 + \mu_1 \mu_2 \, {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v \\
+              &amp; = \lambda_1 \lambda_2 \, E +
+                 (\lambda_1\mu_2 + \lambda_2 \mu_1 ) F
+                 + \mu_1 \mu_2 \, G \\
+              &amp; = (\lambda_1 , \mu_1)^T
+                  \left(
+                  \begin{array}{cc}  
+                  E &amp; F \\
+                  F &amp; G
+                  \end{array}
+                  \right)
+                  (\lambda_2 , \mu_2) \,.
+\end{align*}\]</span> Therefore the first fundamental form can also be used to compute the scalar product of two tangent vectors.<p></p>
+</div></details>
+</div>
+<p>Finally, let us show how the first fundamental form allows to compute the length of curves on <span class="math inline">\(\mathcal{S}\)</span>.</p>
+<div id="proposition-fff-length" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 84</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface with chart <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span>. Suppose <span class="math display">\[
+{\pmb{\gamma}}\colon (t_0,t_1) \to {\pmb{\sigma}}(U)
+\]</span> is a smooth curve. Then <span class="math display">\[
+{\pmb{\gamma}}(t) = {\pmb{\sigma}}(u(t), v(t)) \,,
+\]</span> for some smooth functions <span class="math inline">\(u,v\)</span> and <span class="math display">\[
+\int_{t_0}^{t_1} \left\| \dot{{\pmb{\gamma}}}(t) \right\| \, dt =
+\int_{t_0}^{t_1} \sqrt{  E \dot{u}^2 + 2F \dot u \dot v + G \dot{v}^2  } \, dt \,,
+\]</span> where <span class="math inline">\(E,F,G\)</span> are computed at the point <span class="math inline">\((u(t),v(t))\)</span>.<p></p>
+</div></details>
+</div>
+<div id="Proof*-18" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Since <span class="math inline">\({\pmb{\gamma}}\)</span> takes values into <span class="math inline">\({\pmb{\sigma}}(U)\)</span>, by Lemma <a href="chap_4.html#lemma-curve-S">55</a> there exist smooth functions <span class="math inline">\(u,v\)</span> such that <span class="math display">\[
+{\pmb{\gamma}}(t) = {\pmb{\sigma}}(u(t), v(t)) \,, \quad \forall \, t \in (t_0,t_1) \,.
+\]</span> By chain rule we have <span class="math display">\[
+\dot{{\pmb{\gamma}}}(t) = \dot u (t) {\pmb{\sigma}}_u( u(t),v(t) ) + \dot v (t) {\pmb{\sigma}}_v( u(t),v(t) ) \,.
+\]</span> By Remark <a href="chap_4.html#remark-fff">81</a> (or direct calculation) we get <span class="math display">\[
+\left\| \dot{{\pmb{\gamma}}}(t) \right\|^2 = \dot{{\pmb{\gamma}}}\cdot \dot{{\pmb{\gamma}}}=  E \, \dot{u}^2  + 2F \, \dot{u} \dot{v} + G \, \dot{v}^2 \,,
+\]</span> concluding the proof.<p></p>
+</div></details>
+</div>
+<div id="cone" class="Example" title="Cone">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 85: </strong>Cone</summary><div>
+<p>Consider the cone with chart <span class="math display">\[
+{\pmb{\sigma}}(u,v)=(u \cos(v), u \sin (v), u) \,.
+\]</span></p>
+<ol type="1">
+<li><p>Prove that the first fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
+2 \, du^2 + u^2 \, dv^2 \,.
+\]</span></p></li>
+<li><p>Let <span class="math inline">\({\pmb{\gamma}}(t):= {\pmb{\sigma}}(t,t)\)</span>. Show that <span class="math display">\[
+\int_{\pi/2}^{\pi} \left\| \dot{{\pmb{\gamma}}}(t) \right\| \, dt = \int_{\pi/2}^{\pi} \sqrt{  2 + t^2  } \, dt  \,.
+\]</span></p></li>
+</ol>
+<blockquote class="blockquote">
+<p>We have <span class="math display">\[
+{\pmb{\sigma}}_u = (\cos(v), \sin (v), 1) \,, \quad
+{\pmb{\sigma}}_v = (- u \sin(v), u \cos (v), 0) \,.
+\]</span> Therefore <span class="math display">\[\begin{align*}
+E &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_u = \cos^2(v) + \sin^2 (v) + 1 = 2 \\
+F &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v = - u \cos(v) \sin(v) + u \cos(v) \sin(v) = 0 \\
+G &amp; = {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v = u^2 \sin^2(v) + u^2 \cos^2(v) = u^2   
+\end{align*}\]</span> The first fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
+2 \, du^2 + u^2 \, dv^2 \,.
+\]</span> Concering the curve <span class="math inline">\({\pmb{\gamma}}\)</span>, we have <span class="math display">\[
+{\pmb{\gamma}}(t) := {\pmb{\sigma}}(t,t) \,,
+\]</span> so that <span class="math display">\[
+u(t) = t \,, \quad v(t) = t \,.
+\]</span> In particular <span class="math display">\[
+\dot u = 1\,, \quad \dot v = 1
+\]</span> and <span class="math display">\[\begin{align*}
+E(u(t),v(t)) &amp; = E(t,t) = 2 \\
+F(u(t),v(t)) &amp; = F(t,t) = 0 \\
+G(u(t),v(t)) &amp; = G(t,t) = t^2  \,.
+\end{align*}\]</span> By Proposition <a href="chap_4.html#proposition-fff-length">84</a> we have <span class="math display">\[\begin{align*}
+\int_{\pi/2}^{\pi} \left\| \dot{{\pmb{\gamma}}}(t) \right\| \, dt &amp; =
+\int_{\pi/2}^{\pi} \sqrt{  E \dot{u}^2 + 2F \dot u \dot v + G \dot{v}^2  } \, dt \\
+&amp; = \int_{\pi/2}^{\pi} \sqrt{  2 + t^2  } \, dt   \,.
+\end{align*}\]</span></p>
+</blockquote>
+</div></details>
+</div>
+<div id="plane" class="Example" title="Plane">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 86: </strong>Plane</summary><div>
+<p>Let <span class="math inline">\(\mathbf{a}, \mathbf{p}, \mathbf{q} \in \mathbb{R}^3\)</span> be orthonormal vectors and consider the plane with chart <span class="math display">\[
+{\pmb{\sigma}}(u,v) = \mathbf{a} + u \mathbf{p}+ v \mathbf{q} \,.
+\]</span> Prove that the first fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
+du^2 + dv^2 \,.
+\]</span></p>
+<blockquote class="blockquote">
+<p>We have <span class="math display">\[
+{\pmb{\sigma}}_u = \mathbf{p}\,, \quad {\pmb{\sigma}}_v = \mathbf{q}
+\]</span> and therefore <span class="math display">\[\begin{align*}
+E &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_u = \left\| \mathbf{p} \right\|^2 = 1 \\
+F &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v = \mathbf{p}\cdot \mathbf{q} = 0 \\
+G &amp; = {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v = \left\| \mathbf{q} \right\|^2 = 1 \\
+\end{align*}\]</span> Then the first fundamental form is <span class="math display">\[
+E \, du^2 + 2 F\, du \, dv + G \, dv^2 = du^2 + dv^2 \,.  
+\]</span></p>
+</blockquote>
+</div></details>
+</div>
+<p>The above example should not be surprising, since distances on a plane are the same as Euclidean distances, given that straight segments are contained in the plane.</p>
+<div id="unit-cylinder-2" class="Example" title="Unit cylinder">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 87: </strong>Unit cylinder</summary><div>
+<p>Consider the unit cylinder with chart <span class="math display">\[
+{\pmb{\sigma}}(u,v) = (\cos(v), \sin(v),  u)  \,.
+\]</span> Prove that the first fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
+du^2 + dv^2 \,.
+\]</span></p>
+<blockquote class="blockquote">
+<p>We have <span class="math display">\[
+{\pmb{\sigma}}_u = (0,0,1) \,, \quad {\pmb{\sigma}}_v = (-\sin(v),\cos(v), 0 )
+\]</span> and therefore <span class="math display">\[\begin{align*}
+E &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_u =  1 \\
+F &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v = 0 \\
+G &amp; = {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v = 1 \\
+\end{align*}\]</span> Then the first fundamental form is <span class="math display">\[
+E \, du^2 + 2 F\, du \, dv + G \, dv^2 = du^2 + dv^2 \,.  
+\]</span></p>
+</blockquote>
+</div></details>
+</div>
+<div id="Remark-88" class="Remark">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 88</strong></summary><div>We have seen that a plane and the unit cylinder have the same first fundamental form <span class="math display">\[
+du^2 + dv^2 \,.
+\]</span> Therefore lengths are the same on the two surfaces.<p></p>
+</div></details>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -1998,6 +2203,7 @@ Abate, Marco, and Tovena, Francesca. 2011. <em>Curves and Surfaces</em>. Springe
 Pressley, Andrew. 2010. <em>Elementary Differential Geometry</em>. Second Edition. Springer.
 </div>
 </div>
+</section>
 </section>
 
 </main> <!-- /main -->
