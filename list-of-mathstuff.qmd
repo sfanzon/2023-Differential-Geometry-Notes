@@ -782,3 +782,5 @@
  [**Proposition 4.77**](#proposition-revolution)\Pageref{proposition-revolution}
 
  [**Proof**](#Proof*-4.17)\Pageref{Proof*-4.17}
+
+ [**Example 4.78**](#catenoid): Catenoid\Pageref{catenoid}

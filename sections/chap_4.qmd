@@ -2868,7 +2868,7 @@ showing that $S$ is a Hyperboloid of two sheets.
 
 
 
-## Ruled surfaces
+### Ruled surfaces
 
 
 A ruled surface is a surface obtained as union of straight lines, called the rulings of the surface. By using curves, ruled surfaces can be defined
@@ -3018,3 +3018,99 @@ Therefore $\sss_u$ and $\sss_v$ are linearly independent if and only if $\g$ is 
 :::
 
 
+
+::: Example
+### Catenoid
+
+The catenoid is the surface of revolution obtained by rotating the catenary about the $z$-axis, see @fig-catenoid. Recall that the catenary function is defined by
+$$
+f(u) = \cosh (u) \,.  
+$$
+Therefore the catenoid is obtained by rotating 
+$$
+\g(u) = \left(  \cosh (u), 0 , u \right) \,.
+$$
+A chart for the catenoid is given by
+$$
+\sss (u,v) = (\cosh (u) \cos(v), \cosh (u)\sin(v), u) \,, 
+$$
+where $u \in \R$ and  $v \in [0,2\pi)$. Note that $f>0$ and 
+$$
+\dg = \left(  \sinh (u), 0 , 1 \right) \,, \quad 
+\norm{\dg}^2 = 1+ \sinh(u)^2 \geq 1 \,.
+$$
+Therefore $\g$ is regular. By Proposition \ref{proposition-revolution} we  conclude that the catenoid is a regular surface.
+
+
+:::
+
+
+![The Catenoid is the surface of revolution obtained by rotating the catenary about the $z$-axis.](/images/surface_catenoid.png){#fig-catenoid width=70%}
+
+
+
+## First fundamental form
+
+
+
+
+
+
+
+
+
+
+::: {.content-hidden}
+
+
+
+::: Definition
+
+
+Let $U \subset \R^2$ be open. A surface chart 
+$$
+\sss \colon U \to \R^3
+$$
+is called a **conformal parametrization** if the first fundamental form satisfies
+$$
+E \, du^2 + F \, du \ dv + G \, dv^2 = \lambda(u,v)  ( du^2 +  dv^2)
+$$
+for some smooth function $\lambda  \colon U \to \R$.
+
+
+:::
+
+
+
+
+::: Definition
+
+Let $\SSS$ be a surface and $\sss \colon U \to V \cap \SSS$  a surface chart. The principal unit normal to $\SSS$ is 
+$$
+\mathbf{N} = \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v} } \,. 
+$$
+:::
+
+
+
+Denote by 
+$$
+\sphere^2 = \{ \xx \in \R^3 \, \colon \, \norm{\xx} = 1 \} 
+$$
+the unit sphere in $\R^3$.
+
+
+
+
+::: Definition
+
+Let $\SSS$ be a surface and denote by $\mathbf{N}$ the principal unit normal. The **Gauss map** of $\SSS$ is the map $G \colon \SSS  \to \sphere^2$ defined by 
+$$
+G(\pp):= \NN(\pp) \,.
+$$
+The **Weingarten map** is the derivative of the Gauss map, denoted by $\WW \colon T_{\pp}\SSS  \to T_{G(\pp)} \sphere^2$.
+:::
+
+
+
+:::

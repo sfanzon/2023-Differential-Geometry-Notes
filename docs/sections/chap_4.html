@@ -89,59 +89,11 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Proof {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
 }
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -149,13 +101,61 @@ div.csl-indent {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Warning {
+.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
 .DONE {
   --color1: #cce7b1;
   --color2: #86b754;
+}
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 </style>
 
@@ -274,11 +274,10 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#level-surfaces-1" id="toc-level-surfaces-1" class="nav-link" data-scroll-target="#level-surfaces-1"><span class="header-section-number">4.10.1</span> Level surfaces</a></li>
   <li><a href="#quadrics" id="toc-quadrics" class="nav-link" data-scroll-target="#quadrics"><span class="header-section-number">4.10.2</span> Quadrics</a></li>
+  <li><a href="#ruled-surfaces" id="toc-ruled-surfaces" class="nav-link" data-scroll-target="#ruled-surfaces"><span class="header-section-number">4.10.3</span> Ruled surfaces</a></li>
+  <li><a href="#surfaces-of-revolution" id="toc-surfaces-of-revolution" class="nav-link" data-scroll-target="#surfaces-of-revolution"><span class="header-section-number">4.10.4</span> Surfaces of Revolution</a></li>
   </ul></li>
-  <li><a href="#ruled-surfaces" id="toc-ruled-surfaces" class="nav-link" data-scroll-target="#ruled-surfaces"><span class="header-section-number">4.11</span> Ruled surfaces</a>
-  <ul class="collapse">
-  <li><a href="#surfaces-of-revolution" id="toc-surfaces-of-revolution" class="nav-link" data-scroll-target="#surfaces-of-revolution"><span class="header-section-number">4.11.1</span> Surfaces of Revolution</a></li>
-  </ul></li>
+  <li><a href="#first-fundamental-form" id="toc-first-fundamental-form" class="nav-link" data-scroll-target="#first-fundamental-form"><span class="header-section-number">4.11</span> First fundamental form</a></li>
   </ul>
 </nav>
     </div>
@@ -1879,9 +1878,8 @@ D =
 </div></details>
 </div>
 </section>
-</section>
-<section id="ruled-surfaces" class="level2" data-number="4.11">
-<h2 data-number="4.11" class="anchored" data-anchor-id="ruled-surfaces"><span class="header-section-number">4.11</span> Ruled surfaces</h2>
+<section id="ruled-surfaces" class="level3" data-number="4.10.3">
+<h3 data-number="4.10.3" class="anchored" data-anchor-id="ruled-surfaces"><span class="header-section-number">4.10.3</span> Ruled surfaces</h3>
 <p>A ruled surface is a surface obtained as union of straight lines, called the rulings of the surface. By using curves, ruled surfaces can be defined in the following way.</p>
 <div id="ruled-surface" class="Definition" title="Ruled surface">
 <details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 72: </strong>Ruled surface</summary><div>
@@ -1940,8 +1938,9 @@ D =
 <figcaption class="figure-caption">Figure&nbsp;4.7: The Möbius strip is a ruled surface with base curve <span class="math inline">\({\pmb{\gamma}}\)</span> and rulings given by rotating vertical lines.</figcaption>
 </figure>
 </div>
-<section id="surfaces-of-revolution" class="level3" data-number="4.11.1">
-<h3 data-number="4.11.1" class="anchored" data-anchor-id="surfaces-of-revolution"><span class="header-section-number">4.11.1</span> Surfaces of Revolution</h3>
+</section>
+<section id="surfaces-of-revolution" class="level3" data-number="4.10.4">
+<h3 data-number="4.10.4" class="anchored" data-anchor-id="surfaces-of-revolution"><span class="header-section-number">4.10.4</span> Surfaces of Revolution</h3>
 <p>Surfaces of revolution are obtained by rotating a curve about the <span class="math inline">\(z\)</span>-axis.</p>
 <div id="surface-of-revolution" class="Definition" title="Surface of revolution">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 76: </strong>Surface of revolution</summary><div>Let <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathbb{R}^3\)</span> be a smooth curve in the <span class="math inline">\((x,z)\)</span>-plane, that is, <span class="math display">\[
@@ -1966,6 +1965,29 @@ D =
 \]</span> Recall that <span class="math inline">\(f &gt; 0\)</span> by definition, so that <span class="math inline">\(f^2 \neq 0\)</span>. Therefore <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly independent if and only if <span class="math inline">\({\pmb{\gamma}}\)</span> is regular.<p></p>
 </div></details>
 </div>
+<div id="catenoid" class="Example" title="Catenoid">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 78: </strong>Catenoid</summary><div>The catenoid is the surface of revolution obtained by rotating the catenary about the <span class="math inline">\(z\)</span>-axis, see <a href="#fig-catenoid">Figure&nbsp;<span>4.8</span></a>. Recall that the catenary function is defined by <span class="math display">\[
+f(u) = \cosh (u) \,.  
+\]</span> Therefore the catenoid is obtained by rotating <span class="math display">\[
+{\pmb{\gamma}}(u) = \left(  \cosh (u), 0 , u \right) \,.
+\]</span> A chart for the catenoid is given by <span class="math display">\[
+{\pmb{\sigma}}(u,v) = (\cosh (u) \cos(v), \cosh (u)\sin(v), u) \,,
+\]</span> where <span class="math inline">\(u \in \mathbb{R}\)</span> and <span class="math inline">\(v \in [0,2\pi)\)</span>. Note that <span class="math inline">\(f&gt;0\)</span> and <span class="math display">\[
+\dot{{\pmb{\gamma}}}= \left(  \sinh (u), 0 , 1 \right) \,, \quad
+\left\| \dot{{\pmb{\gamma}}} \right\|^2 = 1+ \sinh(u)^2 \geq 1 \,.
+\]</span> Therefore <span class="math inline">\({\pmb{\gamma}}\)</span> is regular. By Proposition <a href="chap_4.html#proposition-revolution">77</a> we conclude that the catenoid is a regular surface.<p></p>
+</div></details>
+</div>
+<div id="fig-catenoid" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../images/surface_catenoid.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.8: The Catenoid is the surface of revolution obtained by rotating the catenary about the <span class="math inline">\(z\)</span>-axis.</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="first-fundamental-form" class="level2" data-number="4.11">
+<h2 data-number="4.11" class="anchored" data-anchor-id="first-fundamental-form"><span class="header-section-number">4.11</span> First fundamental form</h2>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -1976,7 +1998,6 @@ Abate, Marco, and Tovena, Francesca. 2011. <em>Curves and Surfaces</em>. Springe
 Pressley, Andrew. 2010. <em>Elementary Differential Geometry</em>. Second Edition. Springer.
 </div>
 </div>
-</section>
 </section>
 
 </main> <!-- /main -->
