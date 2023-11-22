@@ -57,7 +57,326 @@ $$
 
 
 Before proceeding with the formal definition of surface, we need to establish
-some basic notation and terminology regarding the topology of $\R^n$ and smooth maps from $\R^n$ into $\R^m$.
+some basic notation and terminology regarding linear algebra, the topology of $\R^n$, and calculus for smooth maps from $\R^n$ into $\R^m$.
+
+
+
+
+### Linear algebra
+
+Before proceeding with the first fundamental form, we revise some linear algebra.
+
+::: Definition
+### Bilinear form
+
+Let $V$ be a vector space and $B \colon V \times V \to \R$. 
+We say that:
+
+- $B$ is **bilinear** if
+\begin{align*}
+B(\lambda_1 \vv_1 + \lambda_2 \vv_2 , \ww) & = \lambda_1 B(\vv_1,\ww) + \lambda_2 B(\vv_2,\ww) \,, \\
+B(\ww, \lambda_1 \vv_1 + \lambda_2 \vv_2 ) & = \lambda_1 B(\ww,\vv_1) + \lambda_2 B(\ww, \vv_2) \,. 
+\end{align*}
+for all $\vv_i,\ww \in V$, $\lambda_i \in \R$.
+
+- $B$ is **symmetric** if 
+$$
+B(\vv,\ww) = B(\ww, \vv) 
+$$
+for all $\vv,\ww \in V$.
+
+
+A bilinear map $B$ is called **bilinear form** on $V$.
+
+:::
+
+
+Bilinear forms can be represented by a matrix.
+
+
+::: Remark
+### Matrix representation for bilinear forms
+
+Let $\{\vv_1, \ldots , \vv_n \}$ be a basis for the vector space $V$. 
+Given a bilinear form $B \colon V \times V \to \R$ we define the matrix
+$$
+M := \left(  B(\vv_i,\vv_j) \right)_{i,j=1}^n \in \R^{n \times n} \,.
+$$
+Then 
+$$
+B(\vv,\ww) = \vv^T \,M \, \ww \,. 
+$$
+
+> *Proof.* We can write $\vv$ and $\ww$ in cordinates as
+$$
+\vv = \sum_{i=1}^n \lambda_i \vv_i \,, \quad 
+\ww = \sum_{i=1}^n \mu_i \vv_i \,,
+$$
+for suitable coefficients $\lambda_i, \mu_i \in \R$. Using bilinearity of $B$
+we get
+\begin{align*}
+B(\vv,\ww) & = B \left(  \sum_{i=1}^n \lambda_i \vv_i, \sum_{j=1}^n \mu_j \vv_j   \right) \\
+           & = \sum_{i,j=1}^n \lambda_i \mu_j B(\vv_i,\vv_j) \\
+           & = \vv^T M \ww \,.
+\end{align*}
+
+:::
+
+
+
+::: Definition 
+### Quadratic form
+
+Let $V$ be a vector space and $B \colon V \times V \to \R$ be a bilinear form. The **quadratic** form associated to $B$ is the map 
+$$
+Q \colon V \to \R \,, \quad Q(\vv) := B(\vv, \vv) \,.
+$$
+
+
+:::
+
+
+A symmetric bilinear form is uniquely determinded by its quadratic form, 
+as stated in the following proposition.
+
+
+::: Proposition
+
+Let $B \colon V \times V \to \R$ be a symmetric bilinear form and 
+$Q \colon V \to \R$ the associated quadratic form. Then
+$$
+B(u,v) = \frac12 \left(  Q(\vv + \ww) - Q(\vv) - Q(\ww)       \right) \,.
+$$
+for all $\vv,\ww \in V$.
+
+:::
+
+The proof is an easy check, and is left as an exercise.
+
+
+::: Definition 
+### Inner product
+
+Let $V$ be a vector space. An inner product on $V$ is a symmetric bilinear form $\scp{\cdot}{\cdot} \colon V \times V \to \R$ such that
+$$
+\scp{\vv}{\vv} > 0 \,, \quad \forall \, \vv \in V \,.
+$$
+Moreover:
+
+- The **length** of a vector $\vv \in V$ with respect to $B$ is defined as
+$$
+\| \vv \|  := \sqrt{\scp{\vv}{\vv}} \,.
+$$
+
+- Two vectors $\vv,\ww \in V$ are **orthogonal** if 
+$$
+\scp{\vv}{\ww} = 0 \,.
+$$
+
+
+:::
+
+
+::: Example
+
+Let $V = \R^n$ and consider the euclidean scalar product
+$$
+\vv \cdot \ww = \sum_{i=1}^n v_i w_i \,,
+$$
+where $\vv = (v_1,\ldots,v_n)$, $\ww = (w_1,\ldots,w_n)$. Then 
+$$
+\scp{\vv}{\ww} := \vv \cdot \ww
+$$
+is an inner product on $\R^n$.
+
+:::
+
+
+::: Proposition 
+
+Let $V$ be a vector space and $\scp{\cdot}{\cdot}$ an inner product on $V$. There exists an **orthonormal** basis $\{\vv_1, \ldots, \vv_n\}$ of $V$, that is, such that 
+$$
+\scp{\vv_i}{\vv_j} = 
+\begin{cases}
+1 & \mbox{ if } \, i = j  \\
+0 & \mbox{ if } \, i \neq j  \\
+\end{cases}
+$$
+In particular, the matrix $M$ associated to $\scp{\cdot}{\cdot}$ is the identity.
+
+:::
+
+
+
+::: Definition
+### Linear map
+
+Let $V,W$ be vector spaces and $L \colon V \to W$. We say that $L$ is **linear** if 
+$$
+L(\lambda \vv + \mu \ww) = \lambda L(\vv) + \mu L(\ww) 
+$$
+for all $\vv,\ww \in V$ and $\lambda,\mu \in \R$. 
+:::
+
+
+
+
+::: Proposition
+### Matrix representation of linear maps
+
+
+Let $V,W$ be vector spaces and $L \colon V \to W$ be a linear map.
+Let $\{\vv_1, \ldots, \vv_n\}$ be a basis of $V$ and 
+$\{ {\ww}_1 , \ldots, \ww_m\}$ be a basis of $W$. Then there exists a 
+matrix $M \in \R^{m \times n}$ such that
+$$
+L \vv = M \vv \,, \quad \forall \, \vv \in V \,. 
+$$
+Specifically, $M \in \R^{n \times n}$ is called the matrix associated to 
+$L$ with respect to the basis $\{\vv_1,\ldots,\vv_n\}$ of $V$ and $\{ww_1 \ldots,\ww_m\}$ of $W$, and is defined by 
+$$
+M := \left(  
+\begin{array}{ccc}
+a_{11} & \ldots & a_{1n} \\
+\vdots & \ddots & \vdots \\
+a_{m1} & \ldots & a_{mn}
+\end{array}
+\right) \,,
+$$
+where $a_{ij}$ are such that 
+$$
+L(\vv_i) = a_{1i} \ww_1 + \ldots + a_{mi} \ww_m = \sum_{k=1}^m a_{ki} \ww_k  \,.
+$$
+In other words, the columns of $M$ are given by the coordinates of the vectors $L(\vv_i)$ with respect to the basis $\{\ww_1, \ldots,\ww_m\}$.
+
+
+:::
+
+
+
+
+::: Definition
+### Self-adjoint map
+
+Let $V$ be a vector space, $\scp{\cdot}{\cdot}$ an inner product and $L \colon V \to V$ a linear map. We say that $L$ is **self-adjoint** if
+$$
+\scp{\vv}{L(\ww)} = \scp{L(\vv)}{\ww} \,, \quad \forall \, \vv , \, \ww \in V \,.
+$$
+
+:::
+
+
+
+
+
+::: Theorem
+### Spectral Theorem
+
+Let $V$ be a vector space, $\scp{\cdot}{\cdot}$ an inner product, and $L \colon V \to V$ a self-adjoint linear map. There exist an orthonormal 
+basis of $V$
+$$
+\{ \vv_1, \ldots, \vv_n \} \,,
+$$
+where $\vv_i$ are eigenvectors of $L$, that is,
+$$
+L \vv_i = \lambda_i \vv_i
+$$
+for some eigevalue $\lambda_i \in \R$. In particular, the matrix of 
+$L$ with respect to the basis $\{\vv_1,\ldots,\vv_n\}$ is diagonal:
+$$
+M = \operatorname{diag} (\lambda_1,\ldots, \lambda_n)  = 
+\left(  
+\begin{array}{cccc}
+\lambda_1 &  0         & \ldots & 0 \\
+    0     &  \lambda_2 & \ldots & 0 \\
+  \vdots     &  \vdots & \ddots & \vdots \\
+  0     &  0 & \ldots & \lambda_n \\
+\end{array}
+\right) \,.
+$$
+
+
+:::
+
+
+
+There is also a matrix version of the spectral theorem.
+
+
+::: Definition
+
+Let $A \in \R^{n \times n}$ be a matrix. We say that:
+
+- $A$ is **symmetric** if 
+$$
+A^T = A \,.
+$$
+
+- $A$ is **orthogonal** if 
+$$
+A^T A = I  \,,
+$$
+where $I$ is the identity matrix.
+
+:::
+
+
+
+
+::: Definition
+### Matrix eigenvalues
+
+Let $A \in \R^{n \times n}$ be a matrix. An **eigenvalue** of $A$ is a number $\lambda \in \R$ such that 
+$$
+\det ( A - \lambda I  ) = 0 \,,
+$$
+where $I$ is the identity matrix. An **eigenvector** of $A$ with eigenvalue $\lambda$ is a vector $\vv \neq 0$ such that
+$$
+A \vv = \lambda \vv \,.
+$$
+
+:::
+
+
+
+
+::: Theorem
+### Spectral Theorem for matrices
+
+Let $A \in \R^{n \times n}$ be a symmetric matrix. Consider $\R^n$ equipped with the euclidean scalar product. There exist an orthonormal 
+basis of $V$
+$$
+\{ \vv_1, \ldots, \vv_n \} \,,
+$$
+where $\vv_i$ are eigenvectors of $A$, that is,
+$$
+A \vv_i = \lambda_i \vv_i
+$$
+for some eigevalue $\lambda_i \in \R$. Moreover
+$$
+A = P D P^T \,,
+$$
+where
+\begin{align*}
+P & := \left( \vv_1 \vert \ldots \vert \vv_n \right) \\
+D & := \operatorname{diag} (\lambda_1,\ldots, \lambda_n)  = 
+\left(  
+\begin{array}{cccc}
+\lambda_1 &  0         & \ldots & 0 \\
+    0     &  \lambda_1 & \ldots & 0 \\
+  \vdots     &  \vdots & \ddots & \vdots \\
+  0     &  0 & \ldots & \lambda_n \\
+\end{array}
+\right) \,.
+\end{align*}
+
+
+:::
+
+
+
+
+
 
 
 
@@ -1882,7 +2201,7 @@ The key ideas around diffeomorphisms are:
 - Two diffeomorphic surfaces have essentially the same charts, as shown in the next proposition.
 
 
-::: Proposition
+::: {.Proposition  #proposition-f-chart}
 
 Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ be smooth. If 
 $\sss \colon U \to \SSS$ is a regular chart for $\SSS$ at $\pp$, then
@@ -2509,7 +2828,7 @@ We now show that $df_{\pp}$ is well-defined and linear. Moreover we provide a re
 $df_{\pp}$ as a matrix.
 
 
-::: Proposition
+::: {.Proposition #proposition-differential-smooth}
 
 Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ a smooth map. Denote the differential of $f$ by
 $$
@@ -2535,6 +2854,11 @@ the components of the smooth map
 $$
 \Psi := \widetilde{\sss}^{-1} \circ f \circ \sss \colon U \to \widetilde{U} \,.
 $$
+In particular 
+$$
+\widetilde{\sss} (  \alpha(u,v) , \beta(u,v) ) = \sss (f(u,v)) \,, 
+\quad \forall \, (u,v) \in U \,.
+$$
 The matrix of the linear map $df_{\pp}$ with respect to the basis 
 $$
 \{ \sss_u , \sss_v \} \,\, \mbox{ on } \,\, T_{\pp} \SSS \,, \quad
@@ -2542,7 +2866,7 @@ $$
 $$
 is given by the Jacobian of the map $\Psi$, that is,
 $$
-J\Psi = \left(
+d_{\pp} f = J\Psi = \left(
 \begin{array}{cc}
 \alpha_u & \alpha_v \\
 \beta_u & \beta_v \\
@@ -3049,10 +3373,20 @@ Therefore $\g$ is regular. By Proposition \ref{proposition-revolution} we  concl
 
 
 
+
+
+
+
+
 ## First fundamental form
 
 
 We want to measure distances on a surface. The object that allows one to compute lengths, angles and areas on a surface, is the first **fundamental form** of the surface.
+
+
+
+
+
 
 
 ### Length on surfaces
@@ -3095,9 +3429,9 @@ to computing the length of tangent vectors. This motivates the definition of fir
 ### First fundamental form
 
 Let $\SSS$ be a regular surface and $\pp \in \SSS$. The 
-**first fundamental form** of $\SSS$ at $\pp$ is the map
+**first fundamental form** of $\SSS$ at $\pp$ is the bilinear symmetric map
 $$
-I_{\pp} \colon T_{\pp} \SSS \to \R \,, \quad I_{\pp} (\vv) := \vv \cdot \vv \,.
+I_{\pp} \colon T_{\pp} \SSS \times T_{\pp} \SSS \to \R \,, \quad I_{\pp} (\vv,\ww) := \vv \cdot \ww \,.
 $$
 
 
@@ -3110,21 +3444,84 @@ Two observations:
 
 - Note that 
 $$
-I_{\pp} (\vv) = \| \vv \|^2 \,,
+I_{\pp} (\vv,\vv) = \| \vv \|^2 \,,
 $$
-so that $I_{\pp}$ is computing the length of tangent vectors.
+so that $I_{\pp}$ can be used to compute the length of tangent vectors.
 
 
 
-::: Remark
-### Computing the first fundamental form {#remark-fff}
+::: Proposition
+### Matrix representation of first fundamental form  {#proposition-fff-sp}
 
-The first fundamental form can be computed through regular charts. Let
-$\sss$ be a chart at $\pp$. Then 
+Let $\sss$ be a regular chart of $\SSS$ at $\pp$. Then 
 $$
-T_{\pp} \SSS = \operatorname{span} \{ \sss_u, \sss_v \} \,.
+I_{\pp} (\vv, \ww) = \vv \cdot \ww  = \vv^T \mathcal{F}_1 \ww \,, \quad  \forall \, \vv, \, \ww \in T_{\pp} \SSS \,,
 $$
-Therefore a vector $\vv \in T_{\pp} \SSS$ can be written as linear combination
+where 
+$$
+\mathcal{F}_1 := 
+\left(
+\begin{array}{cc}
+E & F \\
+F & G
+\end{array}
+\right) \,,
+$$
+with
+$$
+E := \sss_u \cdot \sss_u \,, \quad  F := \sss_u \cdot \sss_v \,, \quad 
+G := \sss_v \cdot \sss_v \,.
+$$
+
+:::
+
+
+::: Proof
+
+By Theorem \ref{theorem-tangent-plane} we have
+$$
+T_{\pp} \SSS = \operatorname{span} \{ \sss_u, \sss_v \} \,,
+$$
+meaning that $\{\sss_u,\sss_v\}$ is a basis for $T_{\pp} \SSS$. 
+Since $I_{\pp}$ is a bilinear symmetric form on $T_{\pp} \SSS$, by we have
+that
+$$
+I_{\pp} (\vv,\ww) = \vv^T M \ww
+$$
+with 
+$$
+M := 
+\left(
+\begin{array}{cc}
+I_{\pp} (\sss_u , \sss_u) & I_{\pp} (\sss_u , \sss_v) \\
+I_{\pp} (\sss_v , \sss_u) & I_{\pp} (\sss_v , \sss_v) \\
+\end{array}
+\right)
+=
+\left(
+\begin{array}{cc}
+\sss_u \cdot \sss_u &  \sss_u \cdot \sss_v \\
+\sss_v \cdot \sss_u &  \sss_v \cdot \sss_v \\
+\end{array}
+\right) \,.
+$$
+Since $\sss_v \cdot \sss_u = \sss_u \cdot \sss_v$, the proof is concluded.
+
+:::
+
+
+Traditionally, the first fundamental form is written as the quadratic form
+$$
+E \, du^2 + 2F \, du \, dv + G \, dv^2 \,.
+$$
+Let us make this notation precise.
+
+
+::: Definition
+### First fundamental form of a chart
+
+Let $\SSS$ be a regular surface and $\sss$ be a regular chart. Consider 
+the basis $\{\sss_u,\sss_v\}$ of $T_{\pp}$. Therefore a vector $\vv \in T_{\pp} \SSS$ can be written as linear combination
 $$
 \vv = \lambda \sss_u + \mu \sss_v
 $$
@@ -3138,85 +3535,45 @@ $$
 E := \sss_u \cdot \sss_u \,, \quad  F := \sss_u \cdot \sss_v \,, \quad 
 G := \sss_v \cdot \sss_v \,.
 $$
-We have
+The **first fundamental form** of $\sss$ is the quadratic form
+$$
+E \, du^2 + 2F \, du \, dv + G \, dv^2 \,.
+$${#eq-fff-chart}
+
+:::
+
+
+::: {.Proposition  #proposition-fff-quadratic}
+
+The quadratic form associated to $I_{\pp}$ is 
+$$
+E \, du^2 + 2F \, du \, dv + G \, dv^2 \,.
+$$
+Explicitly, this means
+$$
+I_{\pp} (\vv,\vv) = E \, du (\vv)^2 + 2F \, du(\vv) \, dv(\vv) + G \, dv(\vv)^2 \,
+$$
+for all $v \in T_{\pp} \SSS$,
+
+:::
+
+::: Proof
+
+Since 
+$$
+\vv = \lambda \sss_u + \mu \sss_v \,,
+$$
+we have that
 \begin{align*}
-I_{\pp} (\vv) & = \vv \cdot \vv = \lambda^2 \, \sss_u \cdot \sss_v + 2\lambda \mu \, \sss_u \cdot \sss_v + \mu^2 \, \sss_v \cdot \sss_v \\
+I_{\pp} (\vv,\vv) & = \vv \cdot \vv \\
+&= \lambda^2 \, \sss_u \cdot \sss_v + 2\lambda \mu \, \sss_u \cdot \sss_v + \mu^2 \, \sss_v \cdot \sss_v \\
 & = E \, du(\vv)^2 + 2F \, du(\vv) \, dv(\vv) + G \, dv(\vv)^2 \,.
 \end{align*}
 
 :::
 
 
-The above remark motivates the following definition.
-
-
-::: Definition
-### First fundamental form of a chart
-
-Let $\SSS$ be a regular surface and $\sss$ be a regular chart. Let
-$$
-E := \sss_u \cdot \sss_u \,, \quad  F := \sss_u \cdot \sss_v \,, \quad 
-G := \sss_v \cdot \sss_v \,.
-$$
-The **first fundamental form** of $\sss$ is the expression
-$$
-E \, du^2 + 2F \, du \, dv + G \, dv^2 \,.
-$$
-This can be represented by the bilinear form
-$$
-(du , dv)^T \mathcal{F}_1  (du , dv)\,,
-$$
-where 
-$$
-\mathcal{F}_1 :=
-\left( 
-\begin{array}{cc}  
-E & F \\
-F & G 
-\end{array}
-\right) \,.
-$$
-
-
-:::
-
-
-
-::: Remark
-### Scalar product between tangent vectors  {#remark-fff-sp}
-
-Let $\SSS$ be a regular surface and $\sss$ be a chart at $\pp$. For
-$\vv, \ww \in T_{\pp}(\SSS)$ we have
-$$
-\vv = \lambda_1 \sss_u + \mu_1 \sss_v \,, \quad 
-\ww = \lambda_2 \sss_u + \mu_2 \sss_v \,.
-$$
-We have
-\begin{align*}
-\vv \cdot \ww & = (\lambda_1 \sss_u + \mu_1 \sss_v) \cdot  ( \lambda_2 \sss_u + \mu_2 \sss_v) \\
-              & = \lambda_1 \lambda_2 \, \sss_u \cdot \sss_u + 
-                 (\lambda_1\mu_2 + \lambda_2 \mu_1 ) \sss_u \cdot \sss_v
-                 + \mu_1 \mu_2 \, \sss_v \cdot \sss_v \\
-              & = \lambda_1 \lambda_2 \, E + 
-                 (\lambda_1\mu_2 + \lambda_2 \mu_1 ) F
-                 + \mu_1 \mu_2 \, G \\
-              & = (\lambda_1 , \mu_1)^T 
-                  \left( 
-                  \begin{array}{cc}  
-                  E & F \\
-                  F & G 
-                  \end{array}
-                  \right)
-                  (\lambda_2 , \mu_2) \,. 
-\end{align*}
-Therefore the first fundamental form can also be used to compute the scalar product of two tangent vectors.
-
-:::
-
-
-
-
-Finally, let us show how the first fundamental form allows to compute the
+Let us show how the first fundamental form allows to compute the
 length of curves on $\SSS$.
 
 
@@ -3250,10 +3607,18 @@ By chain rule we have
 $$
 \dg(t) = \dot u (t) \sss_u( u(t),v(t) ) + \dot v (t) \sss_v( u(t),v(t) ) \,.
 $$
-By Remark \ref{remark-fff} (or direct calculation) we get
+The above means that the coefficients of $\dg$ with respect to the basis $\{\sss_u,\sss_v\}$ are $\dot u, \dot v$, i.e.,
 $$
-\norm{\dg(t)}^2 = \dg \cdot \dg =  E \, \dot{u}^2  + 2F \, \dot{u} \dot{v} + G \, \dot{v}^2 \,,
+du(\g) = \dot u \,, \quad dv(\g) = \dot v \,.
 $$
+By Proposition \ref{proposition-fff-quadratic} we get
+\begin{align*}
+\norm{\dg(t)}^2 & = \dg \cdot \dg \\
+                & = I_{\pp} (\dg , \dg ) \\
+                & = E \, du(\g)^2  + 2F \, du(\g) dv(\g) + G \, dv(\g)^2 \\ 
+                & = E \, \dot{u}^2  + 2F \, \dot{u} \dot{v} + G \, \dot{v}^2 
+                \,,
+\end{align*}
 concluding the proof.
 
 
@@ -3398,6 +3763,212 @@ Therefore lengths are the same on the two surfaces.
 
 :::
 
+
+
+
+
+### Local isometry
+
+
+We have seen that a plane $\pmb{\pi}$ and a cylinder $\mathcal{C}$ have the same first fundamental form. This means that scalar product on the two surfaces is the same, as is the length of curves. In this case we say that 
+$\pmb{\pi}$ and $\mathcal{C}$ are locally isometric. Let us give a general definition of such concept.
+
+
+
+::: Definition 
+### Local isometry
+
+Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces. A smooth map 
+$f \colon \SSS \to \widetilde{\SSS}$ is a **local isometry** if for all $\pp \in \SSS$ the 
+differential $d_{\pp}f \colon T_{\pp} \SSS \to T_{f(\pp)} \widetilde{\SSS}$ satisfies
+$$
+\vv \cdot \ww = d_{\pp}f (\vv) \cdot d_{\pp}f (\ww) \,, \quad 
+\forall \, \vv, \ww \in T_{\pp} \SSS \,. 
+$$
+We say that $\SSS$ and $\widetilde{\SSS}$ are **locally isometric** if 
+there exists a local isometry $f \colon \SSS \to \widetilde{\SSS}$.
+
+
+:::
+
+
+::: Notation
+
+For brevity we denote 
+$$
+\scp{\vv}{\ww} = \vv \cdot \ww  \,, \quad 
+\scp{\vv}{\ww}_f = d_{\pp}f (\vv) \cdot d_{\pp}f (\ww) \,.
+$$
+
+:::
+
+
+
+Local isometries preserve the length of curves, as shown in the following proposition.
+
+
+::: Proposition
+
+Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ be smooth. They are equivalent:
+
+1. $f$ is a local isometry
+2. Let $\g$ be a curve in $\SSS$ and consider the curve $\tg = f \circ \g$ on $\widetilde{\SSS}$. Then $\g$ and $\tg$ have the same length.
+
+:::
+
+
+::: Proof
+
+*Part 1.* Suppose $\g \colon (t_0,t_1) \to \SSS$ is a smooth curve. 
+Consider the smooth curve $\tg := f \circ \g \colon (t_0,t_1) \to \widetilde{\SSS}$. Setting $\pp :=\g(t)$, by definition of differential of a function between surfaces we have
+$$
+\dtg(t) = df_{\pp} (\dg(t)) \,.
+$$
+Hence
+\begin{align*}
+\norm{\dtg(t)}^2 & = \dtg(t) \cdot \dtg(t) \\
+               & = df_{\pp} (\dg(t)) \cdot df_{\pp} (\dg(t)) \\
+               & = \dg(t) \cdot \dg(t) \\
+               & = \norm{\dg(t)}^2
+\end{align*}
+where in the second last inequality we used that $f$ is a local isometry.
+Therefore $\g$ and $\tg$ have the same length:
+$$
+\int_{t_0}^{t_1} \norm{\dtg(t)}\, dt 
+= \int_{t_0}^{t_1} \norm{\dg(t)}\, dt \,.
+$$
+
+*Part 2.* Let $\vv \in T_{\pp} \SSS$. Then there exists a curve $\g \colon (-\e,\e) \to \SSS$ such that
+$$
+\g(0) = \pp \,, \quad \dg(0) = \vv \,.
+$$
+Define the curve $\tg := f \circ \g \colon (-\e,\e) \to \widetilde{\SSS}$. By assumption $\g$ and $\tg$ have the same length, that is,
+$$
+\int_{-\e}^{\e} \sqrt{ \dtg(t) \cdot \dtg(t) }\, dt 
+= \int_{-\e}^{\e} \sqrt{ \dg(t) \cdot \dg(t) }\, dt \,.
+$$
+Since the above is true for each $\e>0$, we infer
+$$
+\dtg(0) \cdot \dtg(0) = \dg(0) \cdot \dg(0) \,.
+$$
+Recall that by definition of differential we have
+$$
+df_{\pp} (\vv) = \dtg(0) \,.
+$$
+Therefore 
+\begin{align*}
+df_{\pp} (\vv) \cdot df_{\pp} (\vv) & = \dtg(0) \cdot \dtg(0) \\
+                                    & = \dg(0) \cdot \dg(0) \\
+                                    & = \vv \cdot \vv \,.
+\end{align*}
+As $\vv$ was arbitrary, we showed that 
+$$
+df_{\pp} (\vv) \cdot df_{\pp} (\vv) = \vv \cdot \vv \,, \quad \forall \, \vv \in T_{\pp}(\SSS) \,.  
+$$
+Thanks to the identity
+$$
+\vv \cdot \ww = \frac12 \left(   (\vv + \ww ) \cdot (\vv + \ww ) - \vv \cdot \vv - \ww \cdot \ww       \right) \,,
+$$
+we conclude that
+$$
+df_{\pp} (\vv) \cdot df_{\pp} (\ww) = \vv \cdot \ww \,, \quad  \forall \, \vv, \ww \in T_{\pp} \SSS \,,
+$$
+showing that $f$ is a local isometry.
+
+:::
+
+
+
+We have seen that local isometries preserve the length of curves. 
+It also happen that they preserve the first fundamental form.
+
+
+::: Theorem
+
+Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ a smooth function. They are equivalent:
+
+1. $f$ is a local isometry.
+2. Let $\sss$ be a regular chart of $\SSS$ and consider $\widetilde{\sss} = f \circ \sss$. Then $\sss$ and $\widetilde{\sss}$ have the same first fundamental form.
+
+:::
+
+
+::: Proof
+
+*Part 1.* Suppose that $f$ is a local isometry, that is,
+$$
+{\vv} \cdot {\ww} = d_{\pp} f ({\vv}) \cdot d_{\pp} f ({\ww}) \,, \quad \forall \, {\vv} , {\ww} \in T_{\pp} \SSS \,.
+$$
+Let $\sss$ be a chart for $\SSS$ at $\pp$. Define $\widetilde{\sss} = f \circ \sss$. By Proposition \ref{proposition-f-chart}, $\widetilde{\sss}$ is a regualar chart of $\widetilde{\SSS}$ at $f(\pp)$. 
+Denote
+$$ 
+E := \sss_u \cdot \sss_v \,, \quad 
+\widetilde{E} := \widetilde{\sss}_u \cdot \widetilde{\sss}_v 
+$$
+Now, recall the statement of Proposition \ref{proposition-differential-smooth}: if
+$$
+\widetilde{\sss} ( \alpha(u,v), \beta(u,v) ) = f ( \sss (u,v) ) \,,
+$$
+for some smooth maps 
+$$
+\alpha,\beta \colon U \to \widetilde{U} \,,
+$$
+then the matrix of $d_{\pp} f$ with respect to the basis 
+$$
+\{ \sss_u , \sss_v \} \,\,\, \mbox{ of } \,\,\, T_{\pp} \SSS \,, \quad  
+\{ \widetilde{\sss}_u , \widetilde{\sss}_v \} \,\,\, \mbox{ of } \,\,\, T_{f(\pp)} \widetilde{\SSS} \,,
+$$
+is given by
+$$
+d_{\pp} f = 
+\left(
+\begin{array}{cc}
+\alpha_u & \alpha_v \\
+\beta_u  & \beta_v
+\end{array}
+\right) \,.
+$$
+In our case, we have
+$$
+\widetilde{\sss} (u, v ) = f ( \sss (u,v) )\,,
+$$
+so that 
+$$
+\alpha(u,v) = u \,, \quad 
+\beta(u,v) = v \,.
+$$
+Therefore 
+$$
+d_{\pp} f = 
+\left(
+\begin{array}{cc}
+\alpha_u & \alpha_v \\
+\beta_u  & \beta_v
+\end{array}
+\right) 
+=
+\left(
+\begin{array}{cc}
+1 & 0 \\
+0  & 1
+\end{array}
+\right) \,,
+$$
+which means that 
+\begin{align*}
+d_{\pp} f(\sss_u)  & = 1 \cdot \widetilde{\sss}_u + 0 \cdot \widetilde{\sss}_v = \widetilde{\sss}_u \\
+d_{\pp} f(\sss_v)  & = 0 \cdot \widetilde{\sss}_u + 1 \cdot \widetilde{\sss}_v = \widetilde{\sss}_v \\
+\end{align*}
+Usingg that $f$ is a local isometry we get
+To this end, note that 
+\begin{align*}
+E & := \sss_u \cdot \sss_v \\
+  & = d_{\pp} f (\sss_u) \cdot d_{\pp} f (\sss_u) \\
+  & = \widetilde{\sss}_u \cdot \widetilde{\sss}_v \\
+  & = \widetilde{E}
+\end{align*}
+
+:::
 
 
 
