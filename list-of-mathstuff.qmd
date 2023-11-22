@@ -849,7 +849,7 @@
 
  [**Proof**](#Proof*-4.22)\Pageref{Proof*-4.22}
 
- [**Theorem 4.106**](#Theorem-4.106)\Pageref{Theorem-4.106}
+ [**Theorem 4.106**](#theorem-local-isometry)\Pageref{theorem-local-isometry}
 
  [**Proof**](#Proof*-4.23)\Pageref{Proof*-4.23}
 
@@ -864,3 +864,25 @@
  [**Proposition 4.110**](#Proposition-4.110)\Pageref{Proposition-4.110}
 
  [**Proof**](#Proof*-4.25)\Pageref{Proof*-4.25}
+
+ [**Definition 4.111**](#conformal-map): Conformal map\Pageref{conformal-map}
+
+ [**Remark 4.112**](#Remark-4.112)\Pageref{Remark-4.112}
+
+ [**Proposition 4.113**](#Proposition-4.113)\Pageref{Proposition-4.113}
+
+ [**Proof**](#Proof*-4.26)\Pageref{Proof*-4.26}
+
+ [**Theorem 4.114**](#theorem-conformal)\Pageref{theorem-conformal}
+
+ [**Proof**](#Proof*-4.27)\Pageref{Proof*-4.27}
+
+ [**Corollary 4.115**](#corollary-conformal)\Pageref{corollary-conformal}
+
+ [**Example 4.116**](#example-conformal): Conformal maps are not local isometries\Pageref{example-conformal}
+
+ [**Definition 4.117**](#definition-conformally-flat): Conformally flat surface and conformal parametrization\Pageref{definition-conformally-flat}
+
+ [**Proposition 4.118**](#Proposition-4.118)\Pageref{Proposition-4.118}
+
+ [**Proof**](#Proof*-4.28)\Pageref{Proof*-4.28}

@@ -2856,7 +2856,7 @@ $$
 $$
 In particular 
 $$
-\widetilde{\sss} (  \alpha(u,v) , \beta(u,v) ) = \sss (f(u,v)) \,, 
+\widetilde{\sss} (  \alpha(u,v) , \beta(u,v) ) = f(\sss (u,v)) \,, 
 \quad \forall \, (u,v) \in U \,.
 $$
 The matrix of the linear map $df_{\pp}$ with respect to the basis 
@@ -2902,7 +2902,7 @@ g \colon \SSS_2 \to \SSS_3 \,,
 $$
 are smooth maps, then 
 $$
-d_{\pp} ( g \circ f ) = d_{f(\p)} g \circ d_{\pp} f \,,
+d_{\pp} ( g \circ f ) = d_{f(\pp)} g \circ d_{\pp} f \,,
 $$
 for all $\pp \in T_{\pp} \SSS_1$.
 
@@ -3521,7 +3521,7 @@ Since $\sss_v \cdot \sss_u = \sss_u \cdot \sss_v$, the proof is concluded.
 
 Traditionally, the first fundamental form is written as the quadratic form
 $$
-E \, du^2 + 2F \, du \, dv + G \, dv^2 \,.
+\mathcal{F}_1 = E \, du^2 + 2F \, du \, dv + G \, dv^2 \,.
 $$
 Let us make this notation precise.
 
@@ -3546,7 +3546,7 @@ G := \sss_v \cdot \sss_v \,.
 $$
 The **first fundamental form** of $\sss$ is the quadratic form
 $$
-E \, du^2 + 2F \, du \, dv + G \, dv^2 \,.
+\mathcal{F}_1 = E \, du^2 + 2F \, du \, dv + G \, dv^2 \,.
 $${#eq-fff-chart}
 
 :::
@@ -3554,11 +3554,7 @@ $${#eq-fff-chart}
 
 ::: {.Proposition  #proposition-fff-quadratic}
 
-The quadratic form associated to $I_{\pp}$ is 
-$$
-E \, du^2 + 2F \, du \, dv + G \, dv^2 \,.
-$$
-Explicitly, this means
+The quadratic form associated to $I_{\pp}$ is $\mathcal{F}_1$, that is,
 $$
 I_{\pp} (\vv,\vv) = E \, du (\vv)^2 + 2F \, du(\vv) \, dv(\vv) + G \, dv(\vv)^2 \,
 $$
@@ -3645,7 +3641,7 @@ $$
 
 1. Prove that the first fundamental form of $\sss$ is
 $$
-2 \, du^2 + u^2 \, dv^2 \,.
+\mathcal{F}_1 = 2 \, du^2 + u^2 \, dv^2 \,.
 $$
 
 2. Let $\g (t):= \sss(t,t)$. Show that
@@ -3666,7 +3662,7 @@ G & = \sss_v \cdot \sss_v = u^2 \sin^2(v) + u^2 \cos^2(v) = u^2
 \end{align*}
 The first fundamental form of $\sss$ is 
 $$
-2 \, du^2 + u^2 \, dv^2 \,.
+\mathcal{F}_1 = 2 \, du^2 + u^2 \, dv^2 \,.
 $$
 Concering the curve $\g$, we have
 $$
@@ -3706,7 +3702,7 @@ $$
 $$
 Prove that the first fundamental form of $\sss$ is
 $$
-du^2 + dv^2 \,.
+\mathcal{F}_1 = du^2 + dv^2 \,.
 $$
 
 > We have
@@ -3721,7 +3717,7 @@ G & = \sss_v \cdot \sss_v = \norm{\mathbf{q}}^2 = 1 \\
 \end{align*}
 Then the first fundamental form is
 $$
-E \, du^2 + 2 F\, du \, dv + G \, dv^2 = du^2 + dv^2 \,.  
+\mathcal{F}_1 = E \, du^2 + 2 F\, du \, dv + G \, dv^2 = du^2 + dv^2 \,.  
 $$
 
 :::
@@ -3741,7 +3737,7 @@ $$
 $$
 Prove that the first fundamental form of $\sss$ is
 $$
-du^2 + dv^2 \,.
+\mathcal{F}_1 = du^2 + dv^2 \,.
 $$
 
 > We have
@@ -3756,7 +3752,7 @@ G & = \sss_v \cdot \sss_v = 1 \\
 \end{align*}
 Then the first fundamental form is
 $$
-E \, du^2 + 2 F\, du \, dv + G \, dv^2 = du^2 + dv^2 \,.  
+\mathcal{F}_1 = E \, du^2 + 2 F\, du \, dv + G \, dv^2 = du^2 + dv^2 \,.  
 $$
 
 :::
@@ -3766,7 +3762,7 @@ $$
 
 We have seen that a plane and the unit cylinder have the same first fundamental form 
 $$
-du^2 + dv^2 \,.
+\mathcal{F}_1 = du^2 + dv^2 \,.
 $$
 Therefore lengths are the same on the two surfaces.
 
@@ -3807,8 +3803,13 @@ there exists a local isometry $f \colon \SSS \to \widetilde{\SSS}$.
 
 For brevity we denote 
 $$
-\scp{\vv}{\ww} = \vv \cdot \ww  \,, \quad 
-\scp{\vv}{\ww}_f = d_{\pp}f (\vv) \cdot d_{\pp}f (\ww) \,.
+\scp{\vv}{\ww} := \vv \cdot \ww  \,, \quad 
+\scp{\vv}{\ww}_f := d_{\pp}f (\vv) \cdot d_{\pp}f (\ww) \,,
+$$
+and also
+$$
+\| \vv \| := \sqrt{ \scp{v}{v} } \,, \quad  
+\| \vv \|_f := \sqrt{ \scp{v}{v}_f } \,.
 $$
 
 :::
@@ -3819,11 +3820,11 @@ $$
 A local diffeomorphism $f \colon \SSS \to \widetilde{\SSS}$ is a local isometry if and only 
 if 
 $$
-\vv \cdot \vv = d_{\pp}f (\vv) \cdot d_{\pp}f (\vv) \,, \quad 
+\scp{\vv}{\vv} = \scp{\vv}{\vv}_f  \,, \quad 
 \forall \, \vv \in T_{\pp} \SSS \,. 
 $$
 
-> The proof follows from the elementary identity 
+> The proof follows from the elementary identity for 
 $$
 \vv \cdot \ww = \frac12 \left(   (\vv + \ww ) \cdot (\vv + \ww ) - \vv \cdot \vv - \ww \cdot \ww       \right) \,, 
 $$
@@ -3903,12 +3904,28 @@ We have seen that local isometries preserve the length of curves.
 It also happen that they preserve the first fundamental form.
 
 
-::: Theorem
+::: {.Theorem  #theorem-local-isometry}
 
 Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ be a local diffeomorphism. They are equivalent:
 
 1. $f$ is a local isometry.
-2. Let $\sss$ be a regular chart of $\SSS$ and consider $\widetilde{\sss} = f \circ \sss$. Then $\sss$ and $\widetilde{\sss}$ have the same first fundamental form.
+2. Let $\sss \colon U \to \SSS$ be a regular chart of $\SSS$ and consider the chart of $\widetilde{\SSS}$ given by  
+$$
+\widetilde{\sss} = f \circ \sss \colon U \to \widetilde{\SSS} \,.
+$$
+Then $\sss$ and $\widetilde{\sss}$ have the same first fundamental form, that is, 
+$$
+E = \widetilde{E} \,, \quad F = \widetilde{F} \,, \quad G = \widetilde{G} \,,
+$$
+where 
+\begin{align*}
+E & = \sss_u \cdot \sss_u \,, \quad
+F = \sss_u \cdot \sss_v \,, \quad
+G = \sss_v \cdot \sss_v \,, \\
+\widetilde{E} & = \widetilde{\sss}_u \cdot \widetilde{\sss}_u \,, \quad
+\widetilde{F}  = \widetilde{\sss}_u \cdot \widetilde{\sss}_v \,, \quad
+\widetilde{G}  = \widetilde{\sss}_v \cdot \widetilde{\sss}_v \,.
+\end{align*}
 
 :::
 
@@ -3919,13 +3936,7 @@ Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \wi
 $$
 {\vv} \cdot {\ww} = d_{\pp} f ({\vv}) \cdot d_{\pp} f ({\ww}) \,, \quad \forall \, {\vv} , {\ww} \in T_{\pp} \SSS \,.
 $$
-Let $\sss$ be a chart for $\SSS$ at $\pp$. Define $\widetilde{\sss} = f \circ \sss$. By Proposition \ref{proposition-f-chart}, $\widetilde{\sss}$ is a regualar chart of $\widetilde{\SSS}$ at $f(\pp)$. 
-Denote
-$$ 
-E := \sss_u \cdot \sss_v \,, \quad 
-\widetilde{E} := \widetilde{\sss}_u \cdot \widetilde{\sss}_v 
-$$
-Now, recall the statement of Proposition \ref{proposition-differential-smooth}: if
+Let $\sss$ be a chart for $\SSS$ at $\pp$. Define $\widetilde{\sss} = f \circ \sss$. By Proposition \ref{proposition-f-chart}, $\widetilde{\sss}$ is a regualar chart of $\widetilde{\SSS}$ at $f(\pp)$. Now, recall the statement of Proposition \ref{proposition-differential-smooth}: if
 $$
 \widetilde{\sss} ( \alpha(u,v), \beta(u,v) ) = f ( \sss (u,v) ) \,,
 $$
@@ -3948,7 +3959,7 @@ d_{\pp} f =
 \end{array}
 \right) \,.
 $$
-In our case, we have
+In our case, we have $U = \widetilde{U}$ and
 $$
 \widetilde{\sss} (u, v ) = f ( \sss (u,v) )\,,
 $$
@@ -4006,12 +4017,6 @@ showing that $\sss$ and $\widetilde{\sss}$ have the same first fundamental form.
 
 
 *Part 2.* Define $\widetilde{\sss} = f \circ \sss$ and suppose that $\sss$ and $\widetilde{\sss}$ have the same first fundamental form. In particular they hold
-$$
-E = \widetilde{E}\,, \quad 
-F = \widetilde{F}\,, \quad 
-G = \widetilde{G}\,,
-$$
-which imply
 \begin{align*}
 \sss_u \cdot \sss_u & = \widetilde{\sss}_u \cdot \widetilde{\sss}_u \\
 \sss_u \cdot \sss_v & = \widetilde{\sss}_u \cdot \widetilde{\sss}_v \\
@@ -4100,7 +4105,7 @@ $$
 
 By definition the angle between $\vv$ and $\ww$ is
 $$
-\cos(\theta) = \frac{ \vv \cdot \ww }{ \| \vv \| \,  \| \vv \| } \,.
+\cos(\theta) = \frac{ \vv \cdot \ww }{ \| \vv \| \,  \| \ww \| } \,.
 $${#eq-angle-proof}
 The vectors $\{\sss_u,\sss_v\}$ form a basis of $T_{\pp} \SSS$. Therefore 
 $$
@@ -4249,16 +4254,395 @@ Substituting in (@eq-angle-curves-proof) we conclude.
 
 
 Local isometries are maps which preserve the **scalar product** of tangent vectors. We want to consider maps which preserve the **angle** of tangent
-vectors.
+vectors. These will be called **conformal maps**.
 
+
+::: Definition
+### Conformal map
+
+Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces. A local diffeomorphism $f \colon \SSS \to \widetilde{\SSS}$ is a **conformal mapping** if for all $\pp \in \SSS$ and $\vv , \ww \in T_{\pp} \SSS$ is holds
+$$
+\theta = \tilde{\theta} \,,
+$$
+with $\theta$, $\tilde{\theta}$ the angles between $\vv, \ww$ and $d_{\pp} f(\vv)$, $d_{\pp} f(\ww)$, respectively.
+
+
+:::
 
 
 ![Sketch of conformal map $f$ between $\SSS$ and $\widetilde{\SSS}$. The angles between tangent vectors are preserved by $d_{\pp} f$.](/images/fff_conformal_map.png){width=70%}
 
 
 
+::: Remark
+
+We have that $f$ is a conformal map if and only if
+$$
+\frac{ \scp{\vv}{\ww} }{ \| \vv \| \, \| \ww \| } = 
+\frac{ \scp{\vv}{\ww}_f  }{ \| \vv \|_f \, \| \ww \|_f } \,, \quad \forall \, \vv , \ww \in T_{\pp} \SSS \,.
+$$
+
+
+> This follows immediately by the definition of angle between tangent vectors.
+
+:::
+
+
+
+
+::: Proposition
+
+Let $f$ be a local isometry. Then $f$ is a conformal map.
+
+:::
+
+
+::: Proof
+
+
+By definition of local isometry we have
+$$
+\scp{\vv}{\ww} =  \scp{\vv}{\ww}_f  \,, \quad \forall \, \vv , \ww \in T_{\pp} \SSS \,.
+$$
+In particular we have
+$$
+\| \vv \|^2  = \scp{\vv}{\vv} 
+             = \scp{\vv}{\vv}_f 
+             = \| \vv \|^2_f \,,
+$$
+for all $\vv \in T_{\pp} \SSS$. Therefore 
+$$
+\frac{ \scp{\vv}{\ww} }{ \| \vv \| \, \| \ww \| } = 
+\frac{ \scp{\vv}{\ww}_f }{ \| \vv \|_f \, \| \ww \|_f } \,,
+$$
+showing that $f$ is a conformal map.
+
+
+:::
+
+
+Therefore every local isometry is a conformal map. The converse is false,
+as we will show in Example \ref{example-conformal} below. 
+Before giving the example, let us provide a characterization of conformal
+maps in terms of the first fundamental form.
+
+
+::: {.Theorem #theorem-conformal}
+
+Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ a local diffeomorphism. They are equivalent:
+
+1. $f$ is a conformal map.
+2. There exists a function $\lambda \colon \SSS \to \R$ such that 
+$$
+\scp{\vv}{\ww}_f =  \lambda (\pp) \, \scp{\vv}{\ww} \,, \quad \forall \, \vv,\ww \in T_{\pp} \SSS \,.
+$$
+
+:::
+
+
+::: Proof
+
+*Step 1.* Suppose $f$ is a conformal map, so that 
+$$
+\frac{ \scp{\vv}{\ww} }{ \| \vv \| \, \| \ww \| } = 
+\frac{ \scp{\vv}{\ww}_f }{ \| \vv \|_f \, \| \ww \|_f } \,, \quad \forall \, \vv , \ww \in T_{\pp} \SSS \,.
+$${#eq-theorem-conformal-proof}
+Let $\{\pmb{\alpha}_1,\pmb{\alpha}_2\}$ be an orthonormal basis for $T_{\pp} \SSS$, that is, 
+$$
+\scp{\pmb{\alpha}_1}{\pmb{\alpha}_2} = 0 \,, \quad
+\| \pmb{\alpha}_1  \| = \| \pmb{\alpha}_2 \| = 1 \,.
+$$
+Define 
+\begin{align*}
+\lambda(\pp) & := \scp{\pmb{\alpha_1}}{\pmb{\alpha_1}}_f = \| \pmb{\alpha_1} \|_f^2 \,, \\
+\mu(\pp) & := \scp{\pmb{\alpha_1}}{\pmb{\alpha_2}}_f \,, \\
+\nu(\pp) & := \scp{\pmb{\alpha_2}}{\pmb{\alpha_2}}_f = \| \pmb{\alpha_2} \|_f^2   \,.
+\end{align*}
+By (@eq-theorem-conformal-proof) we have
+$$
+\frac{\scp{\pmb{\alpha_1}}{\pmb{\alpha_2}}}{ \| \pmb{\alpha_1} \| \| \pmb{\alpha_2} \|  } = 
+\frac{\scp{\pmb{\alpha_1}}{\pmb{\alpha_2}}_f}{ \| \pmb{\alpha_1} \|_f \| \pmb{\alpha_2} \|_f  } \,.
+$$
+Since $\pmb{\alpha}_1 \cdot \pmb{\alpha}_2 = 0$, from the above we get
+$$
+\mu (\pp) = \scp{\pmb{\alpha}_1}{\pmb{\alpha}_2 } = 0 \,.
+$$
+Moreover, since $\pmb{\alpha}_1$ and $\pmb{\alpha}_2$ are orthonormal, 
+the angle between $\pmb{\alpha}_1$ and $\pmb{\alpha}_1 + \pmb{\alpha}_2$ is
+$\theta = \pi/4$. By definition of angle between vectors, we infer
+$$
+\frac{\sqrt{2}}{2} = \cos (\theta) = \frac{ \scp{\pmb{\alpha}_1}{\pmb{\alpha}_1 + \pmb{\alpha}_2}  }{ \| \pmb{\alpha}_1 \| \| \pmb{\alpha}_1 + \pmb{\alpha}_1 \| } \,. 
+$$
+On the other hand, using (@eq-theorem-conformal-proof) we get
+$$
+\frac{ \scp{\pmb{\alpha}_1}{\pmb{\alpha}_1 + \pmb{\alpha}_2}  }{ \| \pmb{\alpha}_1 \| \| \pmb{\alpha}_1 + \pmb{\alpha}_1 \| } =
+\frac{ \scp{\pmb{\alpha}_1}{\pmb{\alpha}_1 + \pmb{\alpha}_2}_f  }{ \| \pmb{\alpha}_1 \|_f \| \pmb{\alpha}_1 + \pmb{\alpha}_2 \|_f } \,. 
+$$
+The numerator of the right hand side satisfies
+\begin{align*}
+ \scp{\pmb{\alpha}_1}{\pmb{\alpha}_1 + \pmb{\alpha}_2}_f & 
+ =  \scp{\pmb{\alpha}_1}{\pmb{\alpha}_1 }_f +  \scp{\pmb{\alpha}_1}{\pmb{\alpha}_2}_f  \\
+ & = \lambda(\pp) + \mu (\pp) \\
+ & = \lambda(\pp) \,,
+\end{align*}
+since $\mu (\pp) = 0$. Concerning the denominator, we have
+\begin{align*}
+\| \pmb{\alpha}_1 + \pmb{\alpha}_2 \|_f^2 & = 
+\| \pmb{\alpha}_1  \|_f^2 + \scp{\pmb{\alpha}_1}{\pmb{\alpha}_2}_f  + 
+\| \pmb{\alpha}_2 \|_f^2 \\
+& = \lambda(\pp) + \mu(\pp) + \nu (\pp) \\
+& = \lambda(\pp) + \nu (\pp)  \,,
+\end{align*}
+since $\mu (\pp) = 0$. Putting together the last 4 groups of equations, we obtain
+$$
+\frac{\sqrt{2}}{2} = \frac{ \lambda }{ \lambda^{1/2} (\lambda + \nu)^{1/2} } \,.
+$$
+Rearraging the above equation yields
+$$
+\lambda (\pp) = \nu (\pp) \,.
+$$
+Now let $\vv \in T_{\pp} \SSS$. Since $\{ \pmb{\alpha}_1, \pmb{\alpha}_2\}$ is a basis for $T_{\pp} \SSS$, there exist $v_1,v_2 \in \R$ such that
+$$
+\vv = v_1 \pmb{\alpha}_1 + v_2 \pmb{\alpha}_2 \,.
+$$
+Therefore 
+\begin{align*}
+\scp{\vv}{\vv} & = v_1^2 \scp{\pmb{\alpha}_1}{\pmb{\alpha}_1} + 
+                2 v_1 v_2 \scp{\pmb{\alpha}_1}{\pmb{\alpha}_2} +
+                v_2^2 \scp{\pmb{\alpha}_2}{\pmb{\alpha}_2} \\
+                & = v_1^2 + v_2^2 \,, 
+\end{align*}
+where we used that $\pmb{\alpha}_1$ and $\pmb{\alpha}_2$ are orthonormal.
+On the other hand,
+\begin{align*}
+\scp{\vv}{\vv}_f & = v_1^2 \scp{\pmb{\alpha}_1}{\pmb{\alpha}_1}_f + 
+                2 v_1 v_2 \scp{\pmb{\alpha}_1}{\pmb{\alpha}_2}_f +
+                v_2^2 \scp{\pmb{\alpha}_2}{\pmb{\alpha}_2}_f \\
+               & = v_1^2 \, \lambda(\pp) + 
+                2 v_1 v_2 \, \mu(\pp) +
+                v_2^2 \, \nu(\pp) \\
+                & =  \lambda(\pp) \, (v_1^2 + v_2^2) \,,
+\end{align*}
+where we used that $\lambda(\pp) = \nu(\pp)$ and $\mu (\pp) = 0$. Thus
+$$
+\scp{\vv}{\vv}_f = \lambda(\pp) \, (v_1^2 + v_2^2) =\lambda(\pp) \, \scp{\vv}{\vv} \,, 
+$$
+for all $\vv \in T_{\pp} \SSS$. Since $\scp{\cdot}{\cdot}$ and 
+$\scp{\cdot}{\cdot}_f$, by arguing as in Remark \ref{remark-local-isometry} we conclude that 
+$$
+\scp{\vv}{\ww}_f = \lambda(\pp) \, \scp{\vv}{\ww}  
+$$
+for all $\vv,\ww \in T_{\pp} \SSS$.
+
+
+*Step 2.* Suppose that there exists a function $\lambda \colon \SSS \to \R$ such that 
+$$
+\scp{\vv}{\ww}_f =  \lambda (\pp) \, \scp{\vv}{\ww} \,, \quad \forall \, \vv,\ww \in T_{\pp} \SSS \,.
+$$
+In particular, we have
+$$
+\| \vv \|_f  = \sqrt{\lambda(\pp)} \| \vv \| \,, \quad \forall \, \vv \in T_{\pp} \SSS \,.
+$$
+Then 
+$$
+\frac{\scp{\vv}{\ww}_f}{ \| \vv \|_f  \| \ww \|_f } = 
+\frac{\lambda (\pp) \, \scp{\vv}{\ww}}{  \sqrt{\lambda(\pp)} \| \vv \|  \sqrt{\lambda(\pp)} \| \ww \| }  = 
+\frac{\scp{\vv}{\ww}}{ \| \vv \|  \| \ww \| }  \,,
+$$
+showing that $f$ is a conformal map.
+
+:::
+
+
+
+::: {.Corollary #corollary-conformal}
+
+Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ be a local diffeomorphism. They are equivalent:
+
+1. $f$ is a conformal map.
+2. Let $\sss \colon U \to \SSS$ be a regular chart of $\SSS$ and consider the chart of $\widetilde{\SSS}$ given by 
+$$
+\widetilde{\sss} = f \circ \sss \colon U \to \widetilde{\SSS} \,.
+$$ 
+There exists $\lambda \colon U \to \R$ such that 
+$$
+\widetilde{\mathcal{F}}_1 = \lambda (u,v) \mathcal{F}_1 \,, \quad \forall \, (u,v) \in U \,,
+$$
+where $\mathcal{F}_1$ and $\widetilde{\mathcal{F}}_1$ are the first fundamental forms of $\sss$ and $\widetilde{\sss}$, respectively.
+
+:::
+
+
+The follows by using Theorem \ref{theorem-conformal}, and by adapting the
+argument in the proof of Theorem \ref{theorem-local-isometry}.
+
+
+::: Example 
+### Conformal maps are not local isometries {#example-conformal}
+
+Consider the plane $\SSS$ with chart 
+$$
+\sss(u,v) := (u,v,0) \,,
+$$
+and the surface $\widetilde{\SSS}$ with chart
+$$
+\widetilde{\sss}(u,v) := \left(  \sech(u) \cos(v), \sech(u) \sin(v) , \tanh (u) \right) \,.
+$$
+We have
+$$
+\sss_u = (1,0,0) \,, \quad 
+\sss_v = (0,1,0) \,,
+$$
+so that 
+\begin{align*}
+E & = \sss_u \cdot \sss_u =  1 \\ 
+F & = \sss_u \cdot \sss_v =  0 \\ 
+G & = \sss_v \cdot \sss_v =  1 \\ 
+\end{align*}
+Therefore the first fundamental form of $\SSS$ is
+$$
+\mathcal{F}_1 = du^2 + dv^2 \,.
+$$
+Using the identitities
+\begin{align*}
+\frac{d}{du} \left( \sech (u)  \right) & = - \sech (u) \tanh (u) \,, \\
+\frac{d}{du} \left( \tanh (u) \right)  & = {\sech}^2 (u) \,,
+\end{align*}
+we obtain
+\begin{align*}
+\widetilde{\sss}_u & = ( -\sech(u) \tanh(u) \cos(v), -\sech(u) \tanh(u) \sin(v), {\sech}^2(u) ) \\
+\widetilde{\sss}_v & = ( -\sech(u) \sin(v), \sech(u) \cos(v), 0 ) 
+\end{align*}
+By recalling that
+$$
+{\sech}^2 (u) + {\tanh}^2 (u) = 1 \,,
+$$
+we compute
+\begin{align*}
+\widetilde{E} & = \widetilde{\sss}_u \cdot \widetilde{\sss}_u = {\sech}^2(u) ({\tanh}^2(u) + {\sech}^2(u)) = {\sech}^2(u) \\ 
+\widetilde{F} & = \widetilde{\sss}_u \cdot \widetilde{\sss}_v =  0 \\ 
+\widetilde{G} & = \widetilde{\sss}_v \cdot \widetilde{\sss}_v =  {\sech}^2(u) (\cos^2(v) + \sin^2(v)) = {\sech}^2(u) \\ 
+\end{align*}
+Hence the first fundamental form of $\widetilde{\SSS}$ is
+$$
+\widetilde{\mathcal{F}}_1 = {\sech}^2(u) \, \left(  du^2 + dv^2 \right) \,.
+$$
+Now, consider the map $f \colon \SSS \to \widetilde{\SSS}$ defined by
+$$
+f(u,v,0) = \widetilde{\sss} (u,v) \,.
+$$
+In particular $f$ satisfies
+$$
+f( \sss( u,v) ) = \widetilde{\sss} (u,v) \,.
+$$
+We have:
+
+- $f$ is not a local isometry.
+
+> If $f$ was a local isometry, by Theorem \ref{theorem-local-isometry} we would conclude that $\sss$ and $\widetilde{\sss} = f \circ \sss$ have the same first fundamental form. However 
+$$
+\mathcal{F}_1 = du^2 + dv^2 \neq {\sech}^2(u) \, \left(  du^2 + dv^2 \right) 
+= \widetilde{\mathcal{F}}_1  \,.
+$$
+
+- $f$ is a conformal map. 
+
+> The first fundamental forms of $\sss$ and $\widetilde{\sss} = f \circ \sss$ satisfy
+$$
+\widetilde{\mathcal{F}}_1  = \lambda(u,v) \, \mathcal{F}_1  \,, \quad 
+\lambda(u,v) := {\sech}(u) \,.
+$$
+Therefore $f$ is a conformal map by Corollary \ref{corollary-conformal}.
+
+
+:::
+
+
+
+We conclude with the definition of **conformally flat surface** and **conformal parametrization**. 
+
+
+::: Definition
+### Conformally flat surface and conformal parametrization {#definition-conformally-flat}
+
+Let $\SSS$ be a regular surface and 
+$$
+\sss \colon U  \to  \SSS
+$$ 
+be a regular chart of $\SSS$. We say that
+$\SSS$ is **conformally flat** and $\sss$ is a **conformal parametrization**
+if the first fundamental form of $\sss$ satisfies
+$$
+\mathcal{F}_1 = \lambda(u,v)  ( du^2 +  dv^2)
+$$
+for some smooth function $\lambda \colon U \to \R$.
+
+
+:::
+
+
+Definition \ref{definition-conformally-flat} is motivated by the following 
+proposition: It states that angles on conformally flat surfaces look like angles on a plane.
+
+
+::: Proposition
+
+
+Let $\SSS$ be a regular surface and
+$$
+\sss \colon U  \to  \sss(U) \subseteq \SSS
+$$ 
+be a regular chart of $\SSS$. Define the plane $\p$ charted by
+$$
+\widetilde{\sss} (u,v) = (u,v,0) \,, \quad \forall \, (u,v) \in U \,.
+$$
+They are equivalent:
+
+- $\sss$ is a conformal parametrization.
+
+- There exists a conformal map $f \colon \pi \to \sss(U) \subseteq \SSS$.
+
+:::
+
+
+::: Proof
+
+Define the diffeomorphism $f \colon \p \to \SSS$ by
+$$
+f(u,v,0) = \sss(u,v) \,.
+$$
+In particular 
+$$
+f( \widetilde{\sss}(u,v) ) = \sss(u,v) \,.
+$$
+By Corollary \ref{corollary-conformal} we have that $f$ is a conformal map
+if and only if there exists $\lambda \colon \p \to \R$ such that 
+$$
+\mathcal{F}_1 = \lambda(u,v) \widetilde{\mathcal{F}}_1  \,,
+$$
+where $\mathcal{F}_1$ and $\widetilde{\mathcal{F}}_1$ are the first fundamental forms of $\SSS$ and $\p$, respectively. Since $\p$ is a plane,
+the first fundamental form is given by 
+$$
+\widetilde{\mathcal{F}}_1 = du^2 + dv^2 \,.
+$$
+Therefore 
+$$
+\mathcal{F}_1 = \lambda(u,v) \left(   du^2 + dv^2   \right)\,,
+$$
+showing that $\sss$ is a conformal parametrization.
+
+:::
+
+
+
+
+
+::: {.content-hidden}
 
 ### Equiareal maps
+
+
+For this part, see Lecure 9 of Will's Notes (not that long) and section 6.4 in Pressley.
 
 
 ![The area of a small region $R$ on a surface $\SSS$ can be approximated by the area of the rectangle of sides $\sss_u$ and $\sss_v$. Such area is $\| \sss_u \times \sss_v \|$.](/images/fff_area.png){width=70%}
@@ -4300,6 +4684,11 @@ We have also shown that:
 
 
 
+:::
+
+
+
+
 
 
 
@@ -4307,21 +4696,7 @@ We have also shown that:
 
 
 
-::: Definition
 
-
-Let $U \subset \R^2$ be open. A surface chart 
-$$
-\sss \colon U \to \R^3
-$$
-is called a **conformal parametrization** if the first fundamental form satisfies
-$$
-E \, du^2 + F \, du \ dv + G \, dv^2 = \lambda(u,v)  ( du^2 +  dv^2)
-$$
-for some smooth function $\lambda  \colon U \to \R$.
-
-
-:::
 
 
 

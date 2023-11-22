@@ -85,47 +85,23 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Conjecture {
+.Question {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Warning {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Notation {
+.Definition {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
-.Proposition {
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -133,27 +109,51 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
 }
 .Proof {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
 }
-.Question {
+.Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Corollary {
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -285,8 +285,6 @@ div.csl-indent {
   <li><a href="#angles-on-surfaces" id="toc-angles-on-surfaces" class="nav-link" data-scroll-target="#angles-on-surfaces"><span class="header-section-number">4.11.3</span> Angles on surfaces</a></li>
   <li><a href="#angle-between-curves" id="toc-angle-between-curves" class="nav-link" data-scroll-target="#angle-between-curves"><span class="header-section-number">4.11.4</span> Angle between curves</a></li>
   <li><a href="#conformal-maps" id="toc-conformal-maps" class="nav-link" data-scroll-target="#conformal-maps"><span class="header-section-number">4.11.5</span> Conformal maps</a></li>
-  <li><a href="#equiareal-maps" id="toc-equiareal-maps" class="nav-link" data-scroll-target="#equiareal-maps"><span class="header-section-number">4.11.6</span> Equiareal maps</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">4.11.7</span> Summary</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1868,7 +1866,7 @@ df_{\mathbf{p}} (\lambda \mathbf{v}+ \mu \mathbf{w}) = \lambda df_{\mathbf{p}} (
 \]</span> the components of the smooth map <span class="math display">\[
 \Psi := \widetilde{{\pmb{\sigma}}}^{-1} \circ f \circ {\pmb{\sigma}}\colon U \to \widetilde{U} \,.
 \]</span> In particular <span class="math display">\[
-\widetilde{{\pmb{\sigma}}} (  \alpha(u,v) , \beta(u,v) ) = {\pmb{\sigma}}(f(u,v)) \,,
+\widetilde{{\pmb{\sigma}}} (  \alpha(u,v) , \beta(u,v) ) = f({\pmb{\sigma}}(u,v)) \,,
 \quad \forall \, (u,v) \in U \,.
 \]</span> The matrix of the linear map <span class="math inline">\(df_{\mathbf{p}}\)</span> with respect to the basis <span class="math display">\[
 \{ {\pmb{\sigma}}_u , {\pmb{\sigma}}_v \} \,\, \mbox{ on } \,\, T_{\mathbf{p}} \mathcal{S}\,, \quad
@@ -1898,7 +1896,7 @@ I \colon T_{\mathbf{p}} (\mathcal{S}) \to T_{\mathbf{p}} (\mathcal{S}) \,, \quad
 f \colon \mathcal{S}_1 \to \mathcal{S}_2 \,, \quad
 g \colon \mathcal{S}_2 \to \mathcal{S}_3 \,,
 \]</span> are smooth maps, then <span class="math display">\[
-d_{\mathbf{p}} ( g \circ f ) = d_{f({\pmb{\pi}})} g \circ d_{\mathbf{p}} f \,,
+d_{\mathbf{p}} ( g \circ f ) = d_{f(\mathbf{p})} g \circ d_{\mathbf{p}} f \,,
 \]</span> for all <span class="math inline">\(\mathbf{p}\in T_{\mathbf{p}} \mathcal{S}_1\)</span>.</p></li>
 <li><p>If <span class="math inline">\(\mathcal{S}_1\)</span>, <span class="math inline">\(\mathcal{S}_2\)</span> are regular surfaces and <span class="math display">\[
 f \colon \mathcal{S}_1 \to \mathcal{S}_2 \,,
@@ -2258,7 +2256,7 @@ I_{\mathbf{p}} ({\pmb{\sigma}}_v , {\pmb{\sigma}}_u) &amp; I_{\mathbf{p}} ({\pmb
 </div></details>
 </div>
 <p>Traditionally, the first fundamental form is written as the quadratic form <span class="math display">\[
-E \, du^2 + 2F \, du \, dv + G \, dv^2 \,.
+\mathcal{F}_1 = E \, du^2 + 2F \, du \, dv + G \, dv^2 \,.
 \]</span> Let us make this notation precise.</p>
 <div id="first-fundamental-form-of-a-chart" class="Definition" title="First fundamental form of a chart">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 96: </strong>First fundamental form of a chart</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\({\pmb{\sigma}}\)</span> be a regular chart. Consider the basis <span class="math inline">\(\{{\pmb{\sigma}}_u,{\pmb{\sigma}}_v\}\)</span> of <span class="math inline">\(T_{\mathbf{p}}\)</span>. Therefore a vector <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span> can be written as linear combination <span class="math display">\[
@@ -2270,14 +2268,12 @@ du, dv \colon T_{\mathbf{p}} \mathcal{S}\to \mathbb{R}\,, \quad du(\mathbf{v}) :
 E := {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_u \,, \quad  F := {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v \,, \quad
 G := {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v \,.
 \]</span> The <strong>first fundamental form</strong> of <span class="math inline">\({\pmb{\sigma}}\)</span> is the quadratic form <span id="eq-fff-chart"><span class="math display">\[
-E \, du^2 + 2F \, du \, dv + G \, dv^2 \,.
+\mathcal{F}_1 = E \, du^2 + 2F \, du \, dv + G \, dv^2 \,.
 \tag{4.4}\]</span></span><p></p>
 </div></details>
 </div>
 <div id="proposition-fff-quadratic" class="Proposition">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 97</strong></summary><div>The quadratic form associated to <span class="math inline">\(I_{\mathbf{p}}\)</span> is <span class="math display">\[
-E \, du^2 + 2F \, du \, dv + G \, dv^2 \,.
-\]</span> Explicitly, this means <span class="math display">\[
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 97</strong></summary><div>The quadratic form associated to <span class="math inline">\(I_{\mathbf{p}}\)</span> is <span class="math inline">\(\mathcal{F}_1\)</span>, that is, <span class="math display">\[
 I_{\mathbf{p}} (\mathbf{v},\mathbf{v}) = E \, du (\mathbf{v})^2 + 2F \, du(\mathbf{v}) \, dv(\mathbf{v}) + G \, dv(\mathbf{v})^2 \,
 \]</span> for all <span class="math inline">\(v \in T_{\mathbf{p}} \mathcal{S}\)</span>,<p></p>
 </div></details>
@@ -2327,7 +2323,7 @@ du({\pmb{\gamma}}) = \dot u \,, \quad dv({\pmb{\gamma}}) = \dot v \,.
 \]</span></p>
 <ol type="1">
 <li><p>Prove that the first fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
-2 \, du^2 + u^2 \, dv^2 \,.
+\mathcal{F}_1 = 2 \, du^2 + u^2 \, dv^2 \,.
 \]</span></p></li>
 <li><p>Let <span class="math inline">\({\pmb{\gamma}}(t):= {\pmb{\sigma}}(t,t)\)</span>. Show that <span class="math display">\[
 \int_{\pi/2}^{\pi} \left\| \dot{{\pmb{\gamma}}}(t) \right\| \, dt = \int_{\pi/2}^{\pi} \sqrt{  2 + t^2  } \, dt  \,.
@@ -2342,7 +2338,7 @@ E &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_u = \cos^2(v) + \sin^2 (v) + 1 =
 F &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v = - u \cos(v) \sin(v) + u \cos(v) \sin(v) = 0 \\
 G &amp; = {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v = u^2 \sin^2(v) + u^2 \cos^2(v) = u^2   
 \end{align*}\]</span> The first fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
-2 \, du^2 + u^2 \, dv^2 \,.
+\mathcal{F}_1 = 2 \, du^2 + u^2 \, dv^2 \,.
 \]</span> Concering the curve <span class="math inline">\({\pmb{\gamma}}\)</span>, we have <span class="math display">\[
 {\pmb{\gamma}}(t) := {\pmb{\sigma}}(t,t) \,,
 \]</span> so that <span class="math display">\[
@@ -2366,7 +2362,7 @@ G(u(t),v(t)) &amp; = G(t,t) = t^2  \,.
 <p>Let <span class="math inline">\(\mathbf{a}, \mathbf{p}, \mathbf{q} \in \mathbb{R}^3\)</span> be orthonormal vectors and consider the plane with chart <span class="math display">\[
 {\pmb{\sigma}}(u,v) = \mathbf{a} + u \mathbf{p}+ v \mathbf{q} \,.
 \]</span> Prove that the first fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
-du^2 + dv^2 \,.
+\mathcal{F}_1 = du^2 + dv^2 \,.
 \]</span></p>
 <blockquote class="blockquote">
 <p>We have <span class="math display">\[
@@ -2376,7 +2372,7 @@ E &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_u = \left\| \mathbf{p} \right\|^
 F &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v = \mathbf{p}\cdot \mathbf{q} = 0 \\
 G &amp; = {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v = \left\| \mathbf{q} \right\|^2 = 1 \\
 \end{align*}\]</span> Then the first fundamental form is <span class="math display">\[
-E \, du^2 + 2 F\, du \, dv + G \, dv^2 = du^2 + dv^2 \,.  
+\mathcal{F}_1 = E \, du^2 + 2 F\, du \, dv + G \, dv^2 = du^2 + dv^2 \,.  
 \]</span></p>
 </blockquote>
 </div></details>
@@ -2387,7 +2383,7 @@ E \, du^2 + 2 F\, du \, dv + G \, dv^2 = du^2 + dv^2 \,.
 <p>Consider the unit cylinder with chart <span class="math display">\[
 {\pmb{\sigma}}(u,v) = (\cos(v), \sin(v),  u)  \,.
 \]</span> Prove that the first fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
-du^2 + dv^2 \,.
+\mathcal{F}_1 = du^2 + dv^2 \,.
 \]</span></p>
 <blockquote class="blockquote">
 <p>We have <span class="math display">\[
@@ -2397,14 +2393,14 @@ E &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_u =  1 \\
 F &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v = 0 \\
 G &amp; = {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v = 1 \\
 \end{align*}\]</span> Then the first fundamental form is <span class="math display">\[
-E \, du^2 + 2 F\, du \, dv + G \, dv^2 = du^2 + dv^2 \,.  
+\mathcal{F}_1 = E \, du^2 + 2 F\, du \, dv + G \, dv^2 = du^2 + dv^2 \,.  
 \]</span></p>
 </blockquote>
 </div></details>
 </div>
 <div id="Remark-102" class="Remark">
 <p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 102</strong></summary><div>We have seen that a plane and the unit cylinder have the same first fundamental form <span class="math display">\[
-du^2 + dv^2 \,.
+\mathcal{F}_1 = du^2 + dv^2 \,.
 \]</span> Therefore lengths are the same on the two surfaces.<p></p>
 </div></details>
 </div>
@@ -2427,19 +2423,22 @@ du^2 + dv^2 \,.
 </div>
 <div id="Notation*-21" class="Notation">
 <p></p><details class="Notation fbx-simplebox fbx-default" open=""><summary><strong>Notation</strong></summary><div>For brevity we denote <span class="math display">\[
-\left\langle \mathbf{v},\mathbf{w} \right\rangle = \mathbf{v}\cdot \mathbf{w}\,, \quad
-\left\langle \mathbf{v},\mathbf{w} \right\rangle_f = d_{\mathbf{p}}f (\mathbf{v}) \cdot d_{\mathbf{p}}f (\mathbf{w}) \,.
+\left\langle \mathbf{v},\mathbf{w} \right\rangle := \mathbf{v}\cdot \mathbf{w}\,, \quad
+\left\langle \mathbf{v},\mathbf{w} \right\rangle_f := d_{\mathbf{p}}f (\mathbf{v}) \cdot d_{\mathbf{p}}f (\mathbf{w}) \,,
+\]</span> and also <span class="math display">\[
+\| \mathbf{v}\| := \sqrt{ \left\langle v,v \right\rangle } \,, \quad  
+\| \mathbf{v}\|_f := \sqrt{ \left\langle v,v \right\rangle_f } \,.
 \]</span><p></p>
 </div></details>
 </div>
 <div id="remark-local-isometry" class="Remark">
 <details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 104</strong></summary><div>
 <p>A local diffeomorphism <span class="math inline">\(f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\)</span> is a local isometry if and only if <span class="math display">\[
-\mathbf{v}\cdot \mathbf{v}= d_{\mathbf{p}}f (\mathbf{v}) \cdot d_{\mathbf{p}}f (\mathbf{v}) \,, \quad
+\left\langle \mathbf{v},\mathbf{v} \right\rangle = \left\langle \mathbf{v},\mathbf{v} \right\rangle_f  \,, \quad
 \forall \, \mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\,.
 \]</span></p>
 <blockquote class="blockquote">
-<p>The proof follows from the elementary identity <span class="math display">\[
+<p>The proof follows from the elementary identity for <span class="math display">\[
 \mathbf{v}\cdot \mathbf{w}= \frac12 \left(   (\mathbf{v}+ \mathbf{w}) \cdot (\mathbf{v}+ \mathbf{w}) - \mathbf{v}\cdot \mathbf{v}- \mathbf{w}\cdot \mathbf{w}\right) \,,
 \]</span> which holds for all <span class="math inline">\(\mathbf{v}, \mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\)</span> (and more in general in arbitrary vector spaces with inner product).</p>
 </blockquote>
@@ -2486,22 +2485,31 @@ df_{\mathbf{p}} (\mathbf{v}) \cdot df_{\mathbf{p}} (\mathbf{v}) = \mathbf{v}\cdo
 </div></details>
 </div>
 <p>We have seen that local isometries preserve the length of curves. It also happen that they preserve the first fundamental form.</p>
-<div id="Theorem-106" class="Theorem">
+<div id="theorem-local-isometry" class="Theorem">
 <details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 106</strong></summary><div>
 <p>Let <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> be regular surfaces and <span class="math inline">\(f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\)</span> be a local diffeomorphism. They are equivalent:</p>
 <ol type="1">
 <li><span class="math inline">\(f\)</span> is a local isometry.</li>
-<li>Let <span class="math inline">\({\pmb{\sigma}}\)</span> be a regular chart of <span class="math inline">\(\mathcal{S}\)</span> and consider <span class="math inline">\(\widetilde{{\pmb{\sigma}}} = f \circ {\pmb{\sigma}}\)</span>. Then <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> have the same first fundamental form.</li>
+<li>Let <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathcal{S}\)</span> be a regular chart of <span class="math inline">\(\mathcal{S}\)</span> and consider the chart of <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> given by<br>
+<span class="math display">\[
+\widetilde{{\pmb{\sigma}}} = f \circ {\pmb{\sigma}}\colon U \to \widetilde{\mathcal{S}} \,.
+\]</span> Then <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> have the same first fundamental form, that is, <span class="math display">\[
+E = \widetilde{E} \,, \quad F = \widetilde{F} \,, \quad G = \widetilde{G} \,,
+\]</span> where <span class="math display">\[\begin{align*}
+E &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_u \,, \quad
+F = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v \,, \quad
+G = {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v \,, \\
+\widetilde{E} &amp; = \widetilde{{\pmb{\sigma}}}_u \cdot \widetilde{{\pmb{\sigma}}}_u \,, \quad
+\widetilde{F}  = \widetilde{{\pmb{\sigma}}}_u \cdot \widetilde{{\pmb{\sigma}}}_v \,, \quad
+\widetilde{G}  = \widetilde{{\pmb{\sigma}}}_v \cdot \widetilde{{\pmb{\sigma}}}_v \,.
+\end{align*}\]</span></li>
 </ol>
 </div></details>
 </div>
 <div id="Proof*-23" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Part 1.</em> Suppose that <span class="math inline">\(f\)</span> is a local isometry, that is, <span class="math display">\[
 {\mathbf{v}} \cdot {\mathbf{w}} = d_{\mathbf{p}} f ({\mathbf{v}}) \cdot d_{\mathbf{p}} f ({\mathbf{w}}) \,, \quad \forall \, {\mathbf{v}} , {\mathbf{w}} \in T_{\mathbf{p}} \mathcal{S}\,.
-\]</span> Let <span class="math inline">\({\pmb{\sigma}}\)</span> be a chart for <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>. Define <span class="math inline">\(\widetilde{{\pmb{\sigma}}} = f \circ {\pmb{\sigma}}\)</span>. By Proposition <a href="chap_4.html#proposition-f-chart">64</a>, <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> is a regualar chart of <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> at <span class="math inline">\(f(\mathbf{p})\)</span>. Denote <span class="math display">\[
-E := {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v \,, \quad
-\widetilde{E} := \widetilde{{\pmb{\sigma}}}_u \cdot \widetilde{{\pmb{\sigma}}}_v
-\]</span> Now, recall the statement of Proposition <a href="chap_4.html#proposition-differential-smooth">77</a>: if <span class="math display">\[
+\]</span> Let <span class="math inline">\({\pmb{\sigma}}\)</span> be a chart for <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>. Define <span class="math inline">\(\widetilde{{\pmb{\sigma}}} = f \circ {\pmb{\sigma}}\)</span>. By Proposition <a href="chap_4.html#proposition-f-chart">64</a>, <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> is a regualar chart of <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> at <span class="math inline">\(f(\mathbf{p})\)</span>. Now, recall the statement of Proposition <a href="chap_4.html#proposition-differential-smooth">77</a>: if <span class="math display">\[
 \widetilde{{\pmb{\sigma}}} ( \alpha(u,v), \beta(u,v) ) = f ( {\pmb{\sigma}}(u,v) ) \,,
 \]</span> for some smooth maps <span class="math display">\[
 \alpha,\beta \colon U \to \widetilde{U} \,,
@@ -2516,7 +2524,7 @@ d_{\mathbf{p}} f =
 \beta_u  &amp; \beta_v
 \end{array}
 \right) \,.
-\]</span> In our case, we have <span class="math display">\[
+\]</span> In our case, we have <span class="math inline">\(U = \widetilde{U}\)</span> and <span class="math display">\[
 \widetilde{{\pmb{\sigma}}} (u, v ) = f ( {\pmb{\sigma}}(u,v) )\,,
 \]</span> so that <span class="math display">\[
 \alpha(u,v) = u \,, \quad
@@ -2555,11 +2563,7 @@ G &amp; = {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v
   &amp; = \widetilde{{\pmb{\sigma}}}_v \cdot \widetilde{{\pmb{\sigma}}}_v
     = \widetilde{G} \,,
 \end{align*}\]</span> showing that <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> have the same first fundamental form.<p></p>
-<p><em>Part 2.</em> Define <span class="math inline">\(\widetilde{{\pmb{\sigma}}} = f \circ {\pmb{\sigma}}\)</span> and suppose that <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> have the same first fundamental form. In particular they hold <span class="math display">\[
-E = \widetilde{E}\,, \quad
-F = \widetilde{F}\,, \quad
-G = \widetilde{G}\,,
-\]</span> which imply <span class="math display">\[\begin{align*}
+<p><em>Part 2.</em> Define <span class="math inline">\(\widetilde{{\pmb{\sigma}}} = f \circ {\pmb{\sigma}}\)</span> and suppose that <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> have the same first fundamental form. In particular they hold <span class="math display">\[\begin{align*}
 {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_u &amp; = \widetilde{{\pmb{\sigma}}}_u \cdot \widetilde{{\pmb{\sigma}}}_u \\
 {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v &amp; = \widetilde{{\pmb{\sigma}}}_u \cdot \widetilde{{\pmb{\sigma}}}_v \\
 {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v &amp; = \widetilde{{\pmb{\sigma}}}_v \cdot \widetilde{{\pmb{\sigma}}}_v
@@ -2615,7 +2619,7 @@ d_{\mathbf{p}} f (\mathbf{v}) &amp; = d_{\mathbf{p}} f(\lambda {\pmb{\sigma}}_u 
 </div>
 <div id="Proof*-24" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>By definition the angle between <span class="math inline">\(\mathbf{v}\)</span> and <span class="math inline">\(\mathbf{w}\)</span> is <span id="eq-angle-proof"><span class="math display">\[
-\cos(\theta) = \frac{ \mathbf{v}\cdot \mathbf{w}}{ \| \mathbf{v}\| \,  \| \mathbf{v}\| } \,.
+\cos(\theta) = \frac{ \mathbf{v}\cdot \mathbf{w}}{ \| \mathbf{v}\| \,  \| \mathbf{w}\| } \,.
 \tag{4.5}\]</span></span> The vectors <span class="math inline">\(\{{\pmb{\sigma}}_u,{\pmb{\sigma}}_v\}\)</span> form a basis of <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. Therefore <span class="math display">\[
 \mathbf{v}= \lambda {\pmb{\sigma}}_u + \mu {\pmb{\sigma}}_v \,, \quad  
 \mathbf{w}= \tilde{\lambda} {\pmb{\sigma}}_u + \tilde{\mu} {\pmb{\sigma}}_v \,.
@@ -2706,53 +2710,231 @@ d_{\mathbf{p}} f (\mathbf{v}) &amp; = d_{\mathbf{p}} f(\lambda {\pmb{\sigma}}_u 
 </section>
 <section id="conformal-maps" class="level3" data-number="4.11.5">
 <h3 data-number="4.11.5" class="anchored" data-anchor-id="conformal-maps"><span class="header-section-number">4.11.5</span> Conformal maps</h3>
-<p>Local isometries are maps which preserve the <strong>scalar product</strong> of tangent vectors. We want to consider maps which preserve the <strong>angle</strong> of tangent vectors.</p>
+<p>Local isometries are maps which preserve the <strong>scalar product</strong> of tangent vectors. We want to consider maps which preserve the <strong>angle</strong> of tangent vectors. These will be called <strong>conformal maps</strong>.</p>
+<div id="conformal-map" class="Definition" title="Conformal map">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 111: </strong>Conformal map</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> be regular surfaces. A local diffeomorphism <span class="math inline">\(f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\)</span> is a <strong>conformal mapping</strong> if for all <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span> and <span class="math inline">\(\mathbf{v}, \mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\)</span> is holds <span class="math display">\[
+\theta = \tilde{\theta} \,,
+\]</span> with <span class="math inline">\(\theta\)</span>, <span class="math inline">\(\tilde{\theta}\)</span> the angles between <span class="math inline">\(\mathbf{v}, \mathbf{w}\)</span> and <span class="math inline">\(d_{\mathbf{p}} f(\mathbf{v})\)</span>, <span class="math inline">\(d_{\mathbf{p}} f(\mathbf{w})\)</span>, respectively.<p></p>
+</div></details>
+</div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../images/fff_conformal_map.png" class="img-fluid figure-img" style="width:70.0%"></p>
 <figcaption class="figure-caption">Sketch of conformal map <span class="math inline">\(f\)</span> between <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span>. The angles between tangent vectors are preserved by <span class="math inline">\(d_{\mathbf{p}} f\)</span>.</figcaption>
 </figure>
 </div>
-</section>
-<section id="equiareal-maps" class="level3" data-number="4.11.6">
-<h3 data-number="4.11.6" class="anchored" data-anchor-id="equiareal-maps"><span class="header-section-number">4.11.6</span> Equiareal maps</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/fff_area.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">The area of a small region <span class="math inline">\(R\)</span> on a surface <span class="math inline">\(\mathcal{S}\)</span> can be approximated by the area of the rectangle of sides <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span>. Such area is <span class="math inline">\(\| {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v \|\)</span>.</figcaption>
-</figure>
+<div id="Remark-112" class="Remark">
+<details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 112</strong></summary><div>
+<p>We have that <span class="math inline">\(f\)</span> is a conformal map if and only if <span class="math display">\[
+\frac{ \left\langle \mathbf{v},\mathbf{w} \right\rangle }{ \| \mathbf{v}\| \, \| \mathbf{w}\| } =
+\frac{ \left\langle \mathbf{v},\mathbf{w} \right\rangle_f  }{ \| \mathbf{v}\|_f \, \| \mathbf{w}\|_f } \,, \quad \forall \, \mathbf{v}, \mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\,.
+\]</span></p>
+<blockquote class="blockquote">
+<p>This follows immediately by the definition of angle between tangent vectors.</p>
+</blockquote>
+</div></details>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/fff_equiareal.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Sketch of equiareal map <span class="math inline">\(f\)</span> between the surfaces <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span>. The area of the region <span class="math inline">\(R\)</span> is the same of the area of <span class="math inline">\(f(R)\)</span>.</figcaption>
-</figure>
+<div id="Proposition-113" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 113</strong></summary><div>Let <span class="math inline">\(f\)</span> be a local isometry. Then <span class="math inline">\(f\)</span> is a conformal map.<p></p>
+</div></details>
 </div>
-</section>
-<section id="summary" class="level3" data-number="4.11.7">
-<h3 data-number="4.11.7" class="anchored" data-anchor-id="summary"><span class="header-section-number">4.11.7</span> Summary</h3>
-<p>Let us conclude with a summary for this section. We have introduced the <strong>first fundamental form</strong> as the restriction of the euclidean scalar product to the tangent space. The first fundamental form allows to compute:</p>
+<div id="Proof*-26" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>By definition of local isometry we have <span class="math display">\[
+\left\langle \mathbf{v},\mathbf{w} \right\rangle =  \left\langle \mathbf{v},\mathbf{w} \right\rangle_f  \,, \quad \forall \, \mathbf{v}, \mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\,.
+\]</span> In particular we have <span class="math display">\[
+\| \mathbf{v}\|^2  = \left\langle \mathbf{v},\mathbf{v} \right\rangle
+             = \left\langle \mathbf{v},\mathbf{v} \right\rangle_f
+             = \| \mathbf{v}\|^2_f \,,
+\]</span> for all <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span>. Therefore <span class="math display">\[
+\frac{ \left\langle \mathbf{v},\mathbf{w} \right\rangle }{ \| \mathbf{v}\| \, \| \mathbf{w}\| } =
+\frac{ \left\langle \mathbf{v},\mathbf{w} \right\rangle_f }{ \| \mathbf{v}\|_f \, \| \mathbf{w}\|_f } \,,
+\]</span> showing that <span class="math inline">\(f\)</span> is a conformal map.<p></p>
+</div></details>
+</div>
+<p>Therefore every local isometry is a conformal map. The converse is false, as we will show in Example <a href="chap_4.html#example-conformal">116</a> below. Before giving the example, let us provide a characterization of conformal maps in terms of the first fundamental form.</p>
+<div id="theorem-conformal" class="Theorem">
+<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 114</strong></summary><div>
+<p>Let <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> be regular surfaces and <span class="math inline">\(f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\)</span> a local diffeomorphism. They are equivalent:</p>
+<ol type="1">
+<li><span class="math inline">\(f\)</span> is a conformal map.</li>
+<li>There exists a function <span class="math inline">\(\lambda \colon \mathcal{S}\to \mathbb{R}\)</span> such that <span class="math display">\[
+\left\langle \mathbf{v},\mathbf{w} \right\rangle_f =  \lambda (\mathbf{p}) \, \left\langle \mathbf{v},\mathbf{w} \right\rangle \,, \quad \forall \, \mathbf{v},\mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\,.
+\]</span></li>
+</ol>
+</div></details>
+</div>
+<div id="Proof*-27" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Step 1.</em> Suppose <span class="math inline">\(f\)</span> is a conformal map, so that <span id="eq-theorem-conformal-proof"><span class="math display">\[
+\frac{ \left\langle \mathbf{v},\mathbf{w} \right\rangle }{ \| \mathbf{v}\| \, \| \mathbf{w}\| } =
+\frac{ \left\langle \mathbf{v},\mathbf{w} \right\rangle_f }{ \| \mathbf{v}\|_f \, \| \mathbf{w}\|_f } \,, \quad \forall \, \mathbf{v}, \mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\,.
+\tag{4.7}\]</span></span> Let <span class="math inline">\(\{\pmb{\alpha}_1,\pmb{\alpha}_2\}\)</span> be an orthonormal basis for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>, that is, <span class="math display">\[
+\left\langle \pmb{\alpha}_1,\pmb{\alpha}_2 \right\rangle = 0 \,, \quad
+\| \pmb{\alpha}_1  \| = \| \pmb{\alpha}_2 \| = 1 \,.
+\]</span> Define <span class="math display">\[\begin{align*}
+\lambda(\mathbf{p}) &amp; := \left\langle \pmb{\alpha_1},\pmb{\alpha_1} \right\rangle_f = \| \pmb{\alpha_1} \|_f^2 \,, \\
+\mu(\mathbf{p}) &amp; := \left\langle \pmb{\alpha_1},\pmb{\alpha_2} \right\rangle_f \,, \\
+\nu(\mathbf{p}) &amp; := \left\langle \pmb{\alpha_2},\pmb{\alpha_2} \right\rangle_f = \| \pmb{\alpha_2} \|_f^2   \,.
+\end{align*}\]</span> By (<a href="#eq-theorem-conformal-proof"><span>4.7</span></a>) we have <span class="math display">\[
+\frac{\left\langle \pmb{\alpha_1},\pmb{\alpha_2} \right\rangle}{ \| \pmb{\alpha_1} \| \| \pmb{\alpha_2} \|  } =
+\frac{\left\langle \pmb{\alpha_1},\pmb{\alpha_2} \right\rangle_f}{ \| \pmb{\alpha_1} \|_f \| \pmb{\alpha_2} \|_f  } \,.
+\]</span> Since <span class="math inline">\(\pmb{\alpha}_1 \cdot \pmb{\alpha}_2 = 0\)</span>, from the above we get <span class="math display">\[
+\mu (\mathbf{p}) = \left\langle \pmb{\alpha}_1,\pmb{\alpha}_2  \right\rangle = 0 \,.
+\]</span> Moreover, since <span class="math inline">\(\pmb{\alpha}_1\)</span> and <span class="math inline">\(\pmb{\alpha}_2\)</span> are orthonormal, the angle between <span class="math inline">\(\pmb{\alpha}_1\)</span> and <span class="math inline">\(\pmb{\alpha}_1 + \pmb{\alpha}_2\)</span> is <span class="math inline">\(\theta = \pi/4\)</span>. By definition of angle between vectors, we infer <span class="math display">\[
+\frac{\sqrt{2}}{2} = \cos (\theta) = \frac{ \left\langle \pmb{\alpha}_1,\pmb{\alpha}_1 + \pmb{\alpha}_2 \right\rangle  }{ \| \pmb{\alpha}_1 \| \| \pmb{\alpha}_1 + \pmb{\alpha}_1 \| } \,.
+\]</span> On the other hand, using (<a href="#eq-theorem-conformal-proof"><span>4.7</span></a>) we get <span class="math display">\[
+\frac{ \left\langle \pmb{\alpha}_1,\pmb{\alpha}_1 + \pmb{\alpha}_2 \right\rangle  }{ \| \pmb{\alpha}_1 \| \| \pmb{\alpha}_1 + \pmb{\alpha}_1 \| } =
+\frac{ \left\langle \pmb{\alpha}_1,\pmb{\alpha}_1 + \pmb{\alpha}_2 \right\rangle_f  }{ \| \pmb{\alpha}_1 \|_f \| \pmb{\alpha}_1 + \pmb{\alpha}_2 \|_f } \,.
+\]</span> The numerator of the right hand side satisfies <span class="math display">\[\begin{align*}
+\left\langle \pmb{\alpha}_1,\pmb{\alpha}_1 + \pmb{\alpha}_2 \right\rangle_f &amp;
+=  \left\langle \pmb{\alpha}_1,\pmb{\alpha}_1  \right\rangle_f +  \left\langle \pmb{\alpha}_1,\pmb{\alpha}_2 \right\rangle_f  \\
+&amp; = \lambda(\mathbf{p}) + \mu (\mathbf{p}) \\
+&amp; = \lambda(\mathbf{p}) \,,
+\end{align*}\]</span> since <span class="math inline">\(\mu (\mathbf{p}) = 0\)</span>. Concerning the denominator, we have <span class="math display">\[\begin{align*}
+\| \pmb{\alpha}_1 + \pmb{\alpha}_2 \|_f^2 &amp; =
+\| \pmb{\alpha}_1  \|_f^2 + \left\langle \pmb{\alpha}_1,\pmb{\alpha}_2 \right\rangle_f  +
+\| \pmb{\alpha}_2 \|_f^2 \\
+&amp; = \lambda(\mathbf{p}) + \mu(\mathbf{p}) + \nu (\mathbf{p}) \\
+&amp; = \lambda(\mathbf{p}) + \nu (\mathbf{p})  \,,
+\end{align*}\]</span> since <span class="math inline">\(\mu (\mathbf{p}) = 0\)</span>. Putting together the last 4 groups of equations, we obtain <span class="math display">\[
+\frac{\sqrt{2}}{2} = \frac{ \lambda }{ \lambda^{1/2} (\lambda + \nu)^{1/2} } \,.
+\]</span> Rearraging the above equation yields <span class="math display">\[
+\lambda (\mathbf{p}) = \nu (\mathbf{p}) \,.
+\]</span> Now let <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span>. Since <span class="math inline">\(\{ \pmb{\alpha}_1, \pmb{\alpha}_2\}\)</span> is a basis for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>, there exist <span class="math inline">\(v_1,v_2 \in \mathbb{R}\)</span> such that <span class="math display">\[
+\mathbf{v}= v_1 \pmb{\alpha}_1 + v_2 \pmb{\alpha}_2 \,.
+\]</span> Therefore <span class="math display">\[\begin{align*}
+\left\langle \mathbf{v},\mathbf{v} \right\rangle &amp; = v_1^2 \left\langle \pmb{\alpha}_1,\pmb{\alpha}_1 \right\rangle +
+                2 v_1 v_2 \left\langle \pmb{\alpha}_1,\pmb{\alpha}_2 \right\rangle +
+                v_2^2 \left\langle \pmb{\alpha}_2,\pmb{\alpha}_2 \right\rangle \\
+                &amp; = v_1^2 + v_2^2 \,,
+\end{align*}\]</span> where we used that <span class="math inline">\(\pmb{\alpha}_1\)</span> and <span class="math inline">\(\pmb{\alpha}_2\)</span> are orthonormal. On the other hand, <span class="math display">\[\begin{align*}
+\left\langle \mathbf{v},\mathbf{v} \right\rangle_f &amp; = v_1^2 \left\langle \pmb{\alpha}_1,\pmb{\alpha}_1 \right\rangle_f +
+                2 v_1 v_2 \left\langle \pmb{\alpha}_1,\pmb{\alpha}_2 \right\rangle_f +
+                v_2^2 \left\langle \pmb{\alpha}_2,\pmb{\alpha}_2 \right\rangle_f \\
+               &amp; = v_1^2 \, \lambda(\mathbf{p}) +
+                2 v_1 v_2 \, \mu(\mathbf{p}) +
+                v_2^2 \, \nu(\mathbf{p}) \\
+                &amp; =  \lambda(\mathbf{p}) \, (v_1^2 + v_2^2) \,,
+\end{align*}\]</span> where we used that <span class="math inline">\(\lambda(\mathbf{p}) = \nu(\mathbf{p})\)</span> and <span class="math inline">\(\mu (\mathbf{p}) = 0\)</span>. Thus <span class="math display">\[
+\left\langle \mathbf{v},\mathbf{v} \right\rangle_f = \lambda(\mathbf{p}) \, (v_1^2 + v_2^2) =\lambda(\mathbf{p}) \, \left\langle \mathbf{v},\mathbf{v} \right\rangle \,,
+\]</span> for all <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span>. Since <span class="math inline">\(\left\langle \cdot,\cdot \right\rangle\)</span> and <span class="math inline">\(\left\langle \cdot,\cdot \right\rangle_f\)</span>, by arguing as in Remark <a href="chap_4.html#remark-local-isometry">104</a> we conclude that <span class="math display">\[
+\left\langle \mathbf{v},\mathbf{w} \right\rangle_f = \lambda(\mathbf{p}) \, \left\langle \mathbf{v},\mathbf{w} \right\rangle  
+\]</span> for all <span class="math inline">\(\mathbf{v},\mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\)</span>.<p></p>
+<p><em>Step 2.</em> Suppose that there exists a function <span class="math inline">\(\lambda \colon \mathcal{S}\to \mathbb{R}\)</span> such that <span class="math display">\[
+\left\langle \mathbf{v},\mathbf{w} \right\rangle_f =  \lambda (\mathbf{p}) \, \left\langle \mathbf{v},\mathbf{w} \right\rangle \,, \quad \forall \, \mathbf{v},\mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\,.
+\]</span> In particular, we have <span class="math display">\[
+\| \mathbf{v}\|_f  = \sqrt{\lambda(\mathbf{p})} \| \mathbf{v}\| \,, \quad \forall \, \mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\,.
+\]</span> Then <span class="math display">\[
+\frac{\left\langle \mathbf{v},\mathbf{w} \right\rangle_f}{ \| \mathbf{v}\|_f  \| \mathbf{w}\|_f } =
+\frac{\lambda (\mathbf{p}) \, \left\langle \mathbf{v},\mathbf{w} \right\rangle}{  \sqrt{\lambda(\mathbf{p})} \| \mathbf{v}\|  \sqrt{\lambda(\mathbf{p})} \| \mathbf{w}\| }  =
+\frac{\left\langle \mathbf{v},\mathbf{w} \right\rangle}{ \| \mathbf{v}\|  \| \mathbf{w}\| }  \,,
+\]</span> showing that <span class="math inline">\(f\)</span> is a conformal map.</p>
+</div></details>
+</div>
+<div id="corollary-conformal" class="Corollary">
+<details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 115</strong></summary><div>
+<p>Let <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> be regular surfaces and <span class="math inline">\(f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\)</span> be a local diffeomorphism. They are equivalent:</p>
+<ol type="1">
+<li><span class="math inline">\(f\)</span> is a conformal map.</li>
+<li>Let <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathcal{S}\)</span> be a regular chart of <span class="math inline">\(\mathcal{S}\)</span> and consider the chart of <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> given by <span class="math display">\[
+\widetilde{{\pmb{\sigma}}} = f \circ {\pmb{\sigma}}\colon U \to \widetilde{\mathcal{S}} \,.
+\]</span> There exists <span class="math inline">\(\lambda \colon U \to \mathbb{R}\)</span> such that <span class="math display">\[
+\widetilde{\mathcal{F}}_1 = \lambda (u,v) \mathcal{F}_1 \,, \quad \forall \, (u,v) \in U \,,
+\]</span> where <span class="math inline">\(\mathcal{F}_1\)</span> and <span class="math inline">\(\widetilde{\mathcal{F}}_1\)</span> are the first fundamental forms of <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span>, respectively.</li>
+</ol>
+</div></details>
+</div>
+<p>The follows by using Theorem <a href="chap_4.html#theorem-conformal">114</a>, and by adapting the argument in the proof of Theorem <a href="chap_4.html#theorem-local-isometry">106</a>.</p>
+<div id="example-conformal" class="Example" title="Conformal maps are not local isometries">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 116: </strong>Conformal maps are not local isometries</summary><div>
+<p>Consider the plane <span class="math inline">\(\mathcal{S}\)</span> with chart <span class="math display">\[
+{\pmb{\sigma}}(u,v) := (u,v,0) \,,
+\]</span> and the surface <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> with chart <span class="math display">\[
+\widetilde{{\pmb{\sigma}}}(u,v) := \left(  \mathop{\mathrm{sech}}(u) \cos(v), \mathop{\mathrm{sech}}(u) \sin(v) , \tanh (u) \right) \,.
+\]</span> We have <span class="math display">\[
+{\pmb{\sigma}}_u = (1,0,0) \,, \quad
+{\pmb{\sigma}}_v = (0,1,0) \,,
+\]</span> so that <span class="math display">\[\begin{align*}
+E &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_u =  1 \\
+F &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v =  0 \\
+G &amp; = {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v =  1 \\
+\end{align*}\]</span> Therefore the first fundamental form of <span class="math inline">\(\mathcal{S}\)</span> is <span class="math display">\[
+\mathcal{F}_1 = du^2 + dv^2 \,.
+\]</span> Using the identitities <span class="math display">\[\begin{align*}
+\frac{d}{du} \left( \mathop{\mathrm{sech}}(u)  \right) &amp; = - \mathop{\mathrm{sech}}(u) \tanh (u) \,, \\
+\frac{d}{du} \left( \tanh (u) \right)  &amp; = {\mathop{\mathrm{sech}}}^2 (u) \,,
+\end{align*}\]</span> we obtain <span class="math display">\[\begin{align*}
+\widetilde{{\pmb{\sigma}}}_u &amp; = ( -\mathop{\mathrm{sech}}(u) \tanh(u) \cos(v), -\mathop{\mathrm{sech}}(u) \tanh(u) \sin(v), {\mathop{\mathrm{sech}}}^2(u) ) \\
+\widetilde{{\pmb{\sigma}}}_v &amp; = ( -\mathop{\mathrm{sech}}(u) \sin(v), \mathop{\mathrm{sech}}(u) \cos(v), 0 )
+\end{align*}\]</span> By recalling that <span class="math display">\[
+{\mathop{\mathrm{sech}}}^2 (u) + {\tanh}^2 (u) = 1 \,,
+\]</span> we compute <span class="math display">\[\begin{align*}
+\widetilde{E} &amp; = \widetilde{{\pmb{\sigma}}}_u \cdot \widetilde{{\pmb{\sigma}}}_u = {\mathop{\mathrm{sech}}}^2(u) ({\tanh}^2(u) + {\mathop{\mathrm{sech}}}^2(u)) = {\mathop{\mathrm{sech}}}^2(u) \\
+\widetilde{F} &amp; = \widetilde{{\pmb{\sigma}}}_u \cdot \widetilde{{\pmb{\sigma}}}_v =  0 \\
+\widetilde{G} &amp; = \widetilde{{\pmb{\sigma}}}_v \cdot \widetilde{{\pmb{\sigma}}}_v =  {\mathop{\mathrm{sech}}}^2(u) (\cos^2(v) + \sin^2(v)) = {\mathop{\mathrm{sech}}}^2(u) \\
+\end{align*}\]</span> Hence the first fundamental form of <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> is <span class="math display">\[
+\widetilde{\mathcal{F}}_1 = {\mathop{\mathrm{sech}}}^2(u) \, \left(  du^2 + dv^2 \right) \,.
+\]</span> Now, consider the map <span class="math inline">\(f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\)</span> defined by <span class="math display">\[
+f(u,v,0) = \widetilde{{\pmb{\sigma}}} (u,v) \,.
+\]</span> In particular <span class="math inline">\(f\)</span> satisfies <span class="math display">\[
+f( {\pmb{\sigma}}( u,v) ) = \widetilde{{\pmb{\sigma}}} (u,v) \,.
+\]</span> We have:</p>
 <ul>
-<li>Inner product between tangent vectors</li>
-<li>Angle between tangent vectors</li>
-<li>Area of surface regions</li>
+<li><span class="math inline">\(f\)</span> is not a local isometry.</li>
 </ul>
-<p>In particular we can use the first fundamental form to compute:</p>
+<blockquote class="blockquote">
+<p>If <span class="math inline">\(f\)</span> was a local isometry, by Theorem <a href="chap_4.html#theorem-local-isometry">106</a> we would conclude that <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}} = f \circ {\pmb{\sigma}}\)</span> have the same first fundamental form. However <span class="math display">\[
+\mathcal{F}_1 = du^2 + dv^2 \neq {\mathop{\mathrm{sech}}}^2(u) \, \left(  du^2 + dv^2 \right)
+= \widetilde{\mathcal{F}}_1  \,.
+\]</span></p>
+</blockquote>
 <ul>
-<li>Length of curves on a surface</li>
-<li>Angle between curves on a surface</li>
+<li><span class="math inline">\(f\)</span> is a conformal map.</li>
 </ul>
-<p>We have also introduced maps preserving certain quantities:</p>
+<blockquote class="blockquote">
+<p>The first fundamental forms of <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}} = f \circ {\pmb{\sigma}}\)</span> satisfy <span class="math display">\[
+\widetilde{\mathcal{F}}_1  = \lambda(u,v) \, \mathcal{F}_1  \,, \quad
+\lambda(u,v) := {\mathop{\mathrm{sech}}}(u) \,.
+\]</span> Therefore <span class="math inline">\(f\)</span> is a conformal map by Corollary <a href="chap_4.html#corollary-conformal">115</a>.</p>
+</blockquote>
+</div></details>
+</div>
+<p>We conclude with the definition of <strong>conformally flat surface</strong> and <strong>conformal parametrization</strong>.</p>
+<div id="definition-conformally-flat" class="Definition" title="Conformally flat surface and conformal parametrization">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 117: </strong>Conformally flat surface and conformal parametrization</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math display">\[
+{\pmb{\sigma}}\colon U  \to  \mathcal{S}
+\]</span> be a regular chart of <span class="math inline">\(\mathcal{S}\)</span>. We say that <span class="math inline">\(\mathcal{S}\)</span> is <strong>conformally flat</strong> and <span class="math inline">\({\pmb{\sigma}}\)</span> is a <strong>conformal parametrization</strong> if the first fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> satisfies <span class="math display">\[
+\mathcal{F}_1 = \lambda(u,v)  ( du^2 +  dv^2)
+\]</span> for some smooth function <span class="math inline">\(\lambda \colon U \to \mathbb{R}\)</span>.<p></p>
+</div></details>
+</div>
+<p>Definition <a href="chap_4.html#definition-conformally-flat">117</a> is motivated by the following proposition: It states that angles on conformally flat surfaces look like angles on a plane.</p>
+<div id="Proposition-118" class="Proposition">
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 118</strong></summary><div>
+<p>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math display">\[
+{\pmb{\sigma}}\colon U  \to  {\pmb{\sigma}}(U) \subseteq \mathcal{S}
+\]</span> be a regular chart of <span class="math inline">\(\mathcal{S}\)</span>. Define the plane <span class="math inline">\({\pmb{\pi}}\)</span> charted by <span class="math display">\[
+\widetilde{{\pmb{\sigma}}} (u,v) = (u,v,0) \,, \quad \forall \, (u,v) \in U \,.
+\]</span> They are equivalent:</p>
 <ul>
-<li>Local isometries: They preserve scalar product of tangent vectors, and length of curves</li>
-<li>Conformal maps: They preserve the angle between tangent vectors, and between curves</li>
-<li>Equiareal maps: They preserve areas of surface regions</li>
+<li><p><span class="math inline">\({\pmb{\sigma}}\)</span> is a conformal parametrization.</p></li>
+<li><p>There exists a conformal map <span class="math inline">\(f \colon \pi \to {\pmb{\sigma}}(U) \subseteq \mathcal{S}\)</span>.</p></li>
 </ul>
-<p>We have also shown that:</p>
-<ul>
-<li>Conformal maps are local isometries</li>
-<li>Local isometries are not conformal (in general)</li>
-</ul>
+</div></details>
+</div>
+<div id="Proof*-28" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Define the diffeomorphism <span class="math inline">\(f \colon {\pmb{\pi}}\to \mathcal{S}\)</span> by <span class="math display">\[
+f(u,v,0) = {\pmb{\sigma}}(u,v) \,.
+\]</span> In particular <span class="math display">\[
+f( \widetilde{{\pmb{\sigma}}}(u,v) ) = {\pmb{\sigma}}(u,v) \,.
+\]</span> By Corollary <a href="chap_4.html#corollary-conformal">115</a> we have that <span class="math inline">\(f\)</span> is a conformal map if and only if there exists <span class="math inline">\(\lambda \colon {\pmb{\pi}}\to \mathbb{R}\)</span> such that <span class="math display">\[
+\mathcal{F}_1 = \lambda(u,v) \widetilde{\mathcal{F}}_1  \,,
+\]</span> where <span class="math inline">\(\mathcal{F}_1\)</span> and <span class="math inline">\(\widetilde{\mathcal{F}}_1\)</span> are the first fundamental forms of <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\({\pmb{\pi}}\)</span>, respectively. Since <span class="math inline">\({\pmb{\pi}}\)</span> is a plane, the first fundamental form is given by <span class="math display">\[
+\widetilde{\mathcal{F}}_1 = du^2 + dv^2 \,.
+\]</span> Therefore <span class="math display">\[
+\mathcal{F}_1 = \lambda(u,v) \left(   du^2 + dv^2   \right)\,,
+\]</span> showing that <span class="math inline">\({\pmb{\sigma}}\)</span> is a conformal parametrization.<p></p>
+</div></details>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
