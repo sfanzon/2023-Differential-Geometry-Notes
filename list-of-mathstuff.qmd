@@ -839,14 +839,28 @@
 
  [**Remark 4.102**](#Remark-4.102)\Pageref{Remark-4.102}
 
- [**Definition 4.103**](#local-isometry-1): Local isometry\Pageref{local-isometry-1}
+ [**Definition 4.103**](#local-isometry): Local isometry\Pageref{local-isometry}
 
  [**Notation**](#Notation*-4.21)\Pageref{Notation*-4.21}
 
- [**Proposition 4.104**](#Proposition-4.104)\Pageref{Proposition-4.104}
+ [**Remark 4.104**](#remark-local-isometry)\Pageref{remark-local-isometry}
+
+ [**Proposition 4.105**](#Proposition-4.105)\Pageref{Proposition-4.105}
 
  [**Proof**](#Proof*-4.22)\Pageref{Proof*-4.22}
 
- [**Theorem 4.105**](#Theorem-4.105)\Pageref{Theorem-4.105}
+ [**Theorem 4.106**](#Theorem-4.106)\Pageref{Theorem-4.106}
 
  [**Proof**](#Proof*-4.23)\Pageref{Proof*-4.23}
+
+ [**Definition 4.107**](#angle-between-tangent-vectors): Angle between tangent vectors\Pageref{angle-between-tangent-vectors}
+
+ [**Proposition 4.108**](#Proposition-4.108)\Pageref{Proposition-4.108}
+
+ [**Proof**](#Proof*-4.24)\Pageref{Proof*-4.24}
+
+ [**Definition 4.109**](#angle-between-curves-1): Angle between curves\Pageref{angle-between-curves-1}
+
+ [**Proposition 4.110**](#Proposition-4.110)\Pageref{Proposition-4.110}
+
+ [**Proof**](#Proof*-4.25)\Pageref{Proof*-4.25}

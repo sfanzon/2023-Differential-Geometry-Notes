@@ -3381,7 +3381,16 @@ Therefore $\g$ is regular. By Proposition \ref{proposition-revolution} we  concl
 ## First fundamental form
 
 
-We want to measure distances on a surface. The object that allows one to compute lengths, angles and areas on a surface, is the first **fundamental form** of the surface.
+In this section we introduce the first **fundamental form** of a surface. This will allow us to compute:
+
+- Inner product between tangent vectors
+- Angle between tangent vectors
+- Area of surface regions
+
+Moreover we can compute
+
+- Length of curves on a surface
+- Angle between curves on a surface
 
 
 
@@ -3767,7 +3776,7 @@ Therefore lengths are the same on the two surfaces.
 
 
 
-### Local isometry
+### Local isometries
 
 
 We have seen that a plane $\pmb{\pi}$ and a cylinder $\mathcal{C}$ have the same first fundamental form. This means that scalar product on the two surfaces is the same, as is the length of curves. In this case we say that 
@@ -3778,7 +3787,7 @@ $\pmb{\pi}$ and $\mathcal{C}$ are locally isometric. Let us give a general defin
 ::: Definition 
 ### Local isometry
 
-Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces. A smooth map 
+Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces. A local diffeomorphism 
 $f \colon \SSS \to \widetilde{\SSS}$ is a **local isometry** if for all $\pp \in \SSS$ the 
 differential $d_{\pp}f \colon T_{\pp} \SSS \to T_{f(\pp)} \widetilde{\SSS}$ satisfies
 $$
@@ -3803,13 +3812,30 @@ $$
 :::
 
 
+::: {.Remark #remark-local-isometry}
+
+A local diffeomorphism $f \colon \SSS \to \widetilde{\SSS}$ is a local isometry if and only 
+if 
+$$
+\vv \cdot \vv = d_{\pp}f (\vv) \cdot d_{\pp}f (\vv) \,, \quad 
+\forall \, \vv \in T_{\pp} \SSS \,. 
+$$
+
+> The proof follows from the elementary identity 
+$$
+\vv \cdot \ww = \frac12 \left(   (\vv + \ww ) \cdot (\vv + \ww ) - \vv \cdot \vv - \ww \cdot \ww       \right) \,, 
+$$
+which holds for all $\vv, \ww \in T_{\pp} \SSS$ (and more in general in arbitrary vector spaces with inner product).
+
+:::
+
 
 Local isometries preserve the length of curves, as shown in the following proposition.
 
 
 ::: Proposition
 
-Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ be smooth. They are equivalent:
+Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ be a local diffeomorphism. They are equivalent:
 
 1. $f$ is a local isometry
 2. Let $\g$ be a curve in $\SSS$ and consider the curve $\tg = f \circ \g$ on $\widetilde{\SSS}$. Then $\g$ and $\tg$ have the same length.
@@ -3865,15 +3891,7 @@ As $\vv$ was arbitrary, we showed that
 $$
 df_{\pp} (\vv) \cdot df_{\pp} (\vv) = \vv \cdot \vv \,, \quad \forall \, \vv \in T_{\pp}(\SSS) \,.  
 $$
-Thanks to the identity
-$$
-\vv \cdot \ww = \frac12 \left(   (\vv + \ww ) \cdot (\vv + \ww ) - \vv \cdot \vv - \ww \cdot \ww       \right) \,,
-$$
-we conclude that
-$$
-df_{\pp} (\vv) \cdot df_{\pp} (\ww) = \vv \cdot \ww \,, \quad  \forall \, \vv, \ww \in T_{\pp} \SSS \,,
-$$
-showing that $f$ is a local isometry.
+Thanks to Remark \ref{remark-local-isometry} we conclude that $f$ is a local isometry.
 
 :::
 
@@ -3885,7 +3903,7 @@ It also happen that they preserve the first fundamental form.
 
 ::: Theorem
 
-Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ a smooth function. They are equivalent:
+Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ be a local diffeomorphism. They are equivalent:
 
 1. $f$ is a local isometry.
 2. Let $\sss$ be a regular chart of $\SSS$ and consider $\widetilde{\sss} = f \circ \sss$. Then $\sss$ and $\widetilde{\sss}$ have the same first fundamental form.
@@ -3962,14 +3980,300 @@ d_{\pp} f(\sss_v)  & = 0 \cdot \widetilde{\sss}_u + 1 \cdot \widetilde{\sss}_v =
 Usingg that $f$ is a local isometry we get
 To this end, note that 
 \begin{align*}
-E & := \sss_u \cdot \sss_v \\
-  & = d_{\pp} f (\sss_u) \cdot d_{\pp} f (\sss_u) \\
-  & = \widetilde{\sss}_u \cdot \widetilde{\sss}_v \\
-  & = \widetilde{E}
+E & = \sss_u \cdot \sss_u 
+    = d_{\pp} f (\sss_u) \cdot d_{\pp} f (\sss_u) \\
+  & = \widetilde{\sss}_u \cdot \widetilde{\sss}_u 
+    = \widetilde{E} \,.
 \end{align*}
+Simlarly, we obtain also
+\begin{align*}
+F & = \sss_u \cdot \sss_v 
+    = d_{\pp} f (\sss_u) \cdot d_{\pp} f (\sss_v) \\
+  & = \widetilde{\sss}_u \cdot \widetilde{\sss}_v 
+    = \widetilde{F} \,,
+\end{align*}
+and
+\begin{align*}
+G & = \sss_v \cdot \sss_v 
+    = d_{\pp} f (\sss_v) \cdot d_{\pp} f (\sss_v) \\
+  & = \widetilde{\sss}_v \cdot \widetilde{\sss}_v 
+    = \widetilde{G} \,,
+\end{align*}
+showing that $\sss$ and $\widetilde{\sss}$ have the same first fundamental form.
+
+
+
+*Part 2.* Define $\widetilde{\sss} = f \circ \sss$ and suppose that $\sss$ and $\widetilde{\sss}$ have the same first fundamental form. In particular they hold
+$$
+E = \widetilde{E}\,, \quad 
+F = \widetilde{F}\,, \quad 
+G = \widetilde{G}\,,
+$$
+which imply
+\begin{align*}
+\sss_u \cdot \sss_u & = \widetilde{\sss}_u \cdot \widetilde{\sss}_u \\
+\sss_u \cdot \sss_v & = \widetilde{\sss}_u \cdot \widetilde{\sss}_v \\
+\sss_v \cdot \sss_v & = \widetilde{\sss}_v \cdot \widetilde{\sss}_v 
+\end{align*}
+As discussed above, since $\widetilde{\sss} = f \circ \sss$, by Proposition \ref{proposition-differential-smooth} we get
+$$
+d_{\pp} f(\sss_u)  = \widetilde{\sss}_u \,, \quad 
+d_{\pp} f(\sss_v)  = \widetilde{\sss}_v \,.
+$$
+Let $\vv \in T_{\pp} \SSS$. Since $\{\sss_u,\sss_v\}$ is a basis for $T_{\pp} \SSS$ we get
+$$
+\vv = \lambda \sss_u + \mu \sss_v 
+$$
+for some $\lambda,\mu \in \R$. Therefore
+\begin{align*}
+d_{\pp} f (\vv) & = d_{\pp} f(\lambda \sss_u + \mu \sss_v ) \\
+                & = \lambda \, d_{\pp} f (\sss_u) + \mu \, d_{\pp} f (\sss_v)\\
+                & = \lambda \widetilde{\sss}_u + \mu \widetilde{\sss}_v \,.
+\end{align*}
+Hence
+\begin{align*}
+\vv \cdot \vv & = ( \lambda \sss_u + \mu \sss_v ) \cdot  (\lambda \sss_u + \mu \sss_v) \\
+              & = \lambda^2 (\sss_u \cdot \sss_v) + 2 \lambda\mu (\sss_u \cdot \sss_v) + \mu^2 (\sss_v \cdot \sss_v) \\ 
+              & = \lambda^2 ( \widetilde{\sss}_u \cdot \widetilde{\sss}_u) +
+              2\lambda \mu ( \widetilde{\sss}_u \cdot \widetilde{\sss}_v) + 
+              \mu^2 ( \widetilde{\sss}_v \cdot \widetilde{\sss}_v) \\
+              & = (\lambda \widetilde{\sss}_u + \mu \widetilde{\sss}_v) 
+              \cdot (\lambda \widetilde{\sss}_u + \mu \widetilde{\sss}_v) \\
+              & = d_{\pp} f (\vv) \cdot 
+                  d_{\pp} f (\vv) \,, 
+\end{align*}
+showing that 
+$$
+\vv \cdot \vv = d_{\pp} f (\vv) \cdot d_{\pp} f (\vv)  \,, \quad \forall \, \vv \in T_{\pp} \SSS \,.
+$$
+By Remark \ref{remark-local-isometry} we conclude that $f$ is a local isometry.
 
 :::
 
+
+
+
+### Angles on surfaces
+
+
+We want to define the notion of angle between tangent vectors.
+
+
+::: Definition
+### Angle between tangent vectors
+
+Let $\SSS$ be a regular surface and $\pp \in \SSS$. The angle between
+two vectors $\vv , \ww \in T_{\pp} \SSS$ is defined as the number $\theta$ such that
+$$
+\cos(\theta) = \frac{ \vv \cdot \ww }{ \| \vv \| \,  \| \ww \| } \,.
+$$
+
+:::
+
+
+The angle between tangent vectors can be computed in terms of local charts.
+
+
+::: Proposition
+
+Let $\SSS$ be a regular surface and $\sss$ a regular chart at $\pp$. 
+Let $\vv, \ww \in T_{\pp} \SSS$. Then 
+$$
+\cos(\theta) = \frac{ E  \lambda \tilde \lambda + F (  \lambda {\tilde \mu}+ \tilde \lambda \mu) + G  \mu \tilde \mu }{ (E  \lambda^2 + 2 F  \lambda \mu + G \mu^2 )^{1/2} (E  \tilde{\lambda}^2 + 2 F  {\tilde{\lambda}} {\tilde{\mu}} + G {\tilde{\mu}}^2 )^{1/2} } \,,
+$$
+where $\lambda,\mu,\tilde{\lambda},\tilde{\mu} \in \R$ are such that 
+$$
+\vv = \lambda \sss_u + \mu \sss_v \,, \quad  
+\ww = \tilde{\lambda} \sss_u + \tilde{\mu} \sss_v \,.
+$$
+
+:::
+
+
+::: Proof
+
+By definition the angle between $\vv$ and $\ww$ is
+$$
+\cos(\theta) = \frac{ \vv \cdot \ww }{ \| \vv \| \,  \| \vv \| } \,.
+$${#eq-angle-proof}
+The vectors $\{\sss_u,\sss_v\}$ form a basis of $T_{\pp} \SSS$. Therefore 
+$$
+\vv = \lambda \sss_u + \mu \sss_v \,, \quad  
+\ww = \tilde{\lambda} \sss_u + \tilde{\mu} \sss_v \,.
+$$
+for some $\lambda,\mu,\tilde{\lambda},\tilde{\mu} \in \R$. Hence, the coordinates of $\vv$ and $\ww$ with respect to the basis
+$\{\sss_u,\sss_v\}$ are
+$$
+\vv = (\lambda , \mu ) \,, \quad 
+\ww = ({\tilde{\lambda}}  , {\tilde{\mu}} ) \,.
+$$
+By Proposition \ref{proposition-fff-sp} we get
+\begin{align*}
+\vv \cdot \ww & = I_{\pp}(\vv,\ww) \\
+               & = (\lambda , \mu) 
+               \left(
+               \begin{array}{cc}
+               E & F \\
+               F & G
+               \end{array}
+               \right)
+               ( \tilde{\lambda}  , \tilde{\mu} )^T \\
+               & =  E  \lambda \tilde \lambda + F (  \lambda {\tilde \mu}+ {\tilde{\lambda}} \mu ) + G  \mu  \tilde \mu \,.
+\end{align*}
+Similarly, we obtain
+\begin{align*}
+\| \vv \|^2 & = \vv \cdot \vv = E  {\lambda}^2 + 2 F  \lambda \mu + G \mu^2  \\
+\| \ww \|^2 & = \ww \cdot \ww = E  \tilde{\lambda}^2 + 2 F  \tilde{\lambda} \tilde{\mu}  + G  \tilde{\mu}^2 \,.  
+\end{align*}
+Substituting in (@eq-angle-proof) we conclude.
+
+:::
+
+
+
+
+
+### Angle between curves
+
+Since tangent vectors are derivatives of curves with values in $\SSS$, it also makes sense to define the angle between two intersecting curves.
+
+
+
+::: Definition
+### Angle between curves
+
+Let $\SSS$ be a regular surface and suppose to have two curves
+$$
+\g \colon (a,b) \to \SSS \,, \quad \tg \colon (\tilde{a},\tilde{b}) \to \SSS
+$$
+such that 
+$$
+\g(t_0) = \pp \,, \quad \tg( \tilde{t}_0 ) = \pp \,.
+$$
+Then 
+$$
+\dg(t_0) \,, \, \dtg( \tilde{t}_0 )  \in T_{\pp} \SSS \,.
+$$
+The angle $\theta$ between $\g$ and $\tg$ is the angle between $\dg(t_0)$ and $\dtg( \tilde{t}_0 )$, that is,
+$$
+\cos(\theta) = \frac{ \dg \cdot \dtg }{ \| \dg \| \,  \| \dtg \| } \,,
+$$
+where $\tg$ is evaluated at $t_0$ and $\dtg$ at $\tilde{t}_0$.
+
+:::
+
+
+::: Proposition
+
+Let $\SSS$ be a regular surface and $\sss$ a regular chart at $\pp$. 
+Suppose given two curves
+$$
+\g \colon (a,b) \to \SSS \,, \quad \tg \colon (\tilde{a},\tilde{b}) \to \SSS
+$$
+such that 
+$$
+\g(t_0) = \pp \,, \quad \tg( \tilde{t}_0 ) = \pp \,.
+$$
+The angle between $\g$ and $\tg$ is
+$$
+\cos(\theta) = \frac{ E  \dot u \dot{\tilde u} + F ( \dot u \dot{\tilde v}+ \dot{\tilde{u}} \dot v) + G \dot v \dot{\tilde v} }{ (E  \dot{u}^2 + 2 F  \dot u \dot v + G \dot{v}^2 )^{1/2} (E  \dot{\tilde{u}}^2 + 2 F  \dot{\tilde{u}} \dot{\tilde{v}} + G \dot{\tilde{v}}^2 )^{1/2} } \,,
+$$
+where $u,v,\tilde{u},\tilde{v}$ are smooth functions such that
+$$
+\g(t) = \sss (u(t),v(t)) \,, \quad 
+\tg(t) = \sss (\tilde{u}(t),\tilde{v}(t)) \,.
+$$
+
+:::
+
+
+::: Proof
+
+By definition the angle between $\g$ and $\tg$ is
+$$
+\cos(\theta) = \frac{ \dg \cdot \dtg }{ \| \dg \| \,  \| \dtg \| } \,.
+$${#eq-angle-curves-proof}
+As $\g, \tg$ are smooth curves with values in $\SSS$, by Lemma \ref{lemma-curve-S} there exist smooth functions $u,v,\tilde{u},\tilde{v}$ such that
+$$
+\g(t) = \sss (u(t),v(t)) \,, \quad 
+\tg(t) = \sss (\tilde{u}(t),\tilde{v}(t)) \,.
+$$
+Differentiating the above expressions we obtain
+$$
+\dg = \dot u \sss_u + \dot v \sss_v \,, \quad 
+\dtg = \dot{\tilde{u}} \sss_u + \dot{\tilde{v}} \sss_v \,.
+$$
+Therefore the coordinates of $\dg$ and $\dtg$ with respect to the basis
+$\{\sss_u,\sss_v\}$ of $T_{\pp} \SSS$ are
+$$
+\dg = (\dot u , \dot v) \,, \quad 
+\dtg = (\dot{\tilde{u}}  , \dot{\tilde{v}} ) \,.
+$$
+By Proposition \ref{proposition-fff-sp} we get
+\begin{align*}
+\dg \cdot \dtg & = I_{\pp}(\dg,\dtg) \\
+               & = (\dot u , \dot v) 
+               \left(
+               \begin{array}{cc}
+               E & F \\
+               F & G
+               \end{array}
+               \right)
+               (\dot{\tilde{u}}  , \dot{\tilde{v}} )^T \\
+               & =  E  \dot u \dot{\tilde u} + F ( \dot u \dot{\tilde v}+ \dot{\tilde{u}} \dot v) + G \dot v \dot{\tilde v} \,.
+\end{align*}
+Similarly, we obtain
+\begin{align*}
+\| \dg \|^2 & = \dg \cdot \dg = E  \dot{u}^2 + 2 F  \dot u \dot v + G \dot{v}^2  \\
+\| \dtg \|^2 & = \dtg \cdot \dtg = E  \dot{\tilde{u}}^2 + 2 F  \dot{\tilde{u}} \dot{\tilde{v}}  + G \dot{\tilde{v}}^2 \,.  
+\end{align*}
+Substituting in (@eq-angle-curves-proof) we conclude.
+
+:::
+
+
+### Conformal maps
+
+
+Local isometries are maps which preserve the **scalar product** of tangent vectors. We want to consider maps which preserve the **angle** of tangent
+vectors.
+
+
+
+
+### Equiareal maps
+
+
+
+
+
+
+### Summary
+
+Let us conclude with a summary for this section. We have introduced the 
+**first fundamental form** as the restriction of the euclidean scalar product to the tangent space. The first fundamental form allows to compute:
+
+- Inner product between tangent vectors
+- Angle between tangent vectors
+- Area of surface regions
+
+
+In particular we can use the first fundamental form to compute:
+
+- Length of curves on a surface
+- Angle between curves on a surface
+
+
+We have also introduced maps preserving certain quantities:
+
+- Local isometries: They preserve scalar product of tangent vectors, and length of curves
+- Conformal maps: They preserve the angle between tangent vectors, and between curves
+- Equiareal maps: They preserve areas of surface regions
+
+We have also shown that:
+
+- Conformal maps are local isometries
+- Local isometries are not conformal (in general)
 
 
 

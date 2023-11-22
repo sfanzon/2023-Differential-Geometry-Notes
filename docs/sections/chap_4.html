@@ -85,55 +85,15 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
 }
 .Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Assumption {
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -141,21 +101,61 @@ div.csl-indent {
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
 .Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
 .Definition {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.Conjecture {
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
 .Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
 </style>
 
@@ -281,7 +281,12 @@ div.csl-indent {
   <li><a href="#first-fundamental-form" id="toc-first-fundamental-form" class="nav-link" data-scroll-target="#first-fundamental-form"><span class="header-section-number">4.11</span> First fundamental form</a>
   <ul class="collapse">
   <li><a href="#length-on-surfaces" id="toc-length-on-surfaces" class="nav-link" data-scroll-target="#length-on-surfaces"><span class="header-section-number">4.11.1</span> Length on surfaces</a></li>
-  <li><a href="#local-isometry" id="toc-local-isometry" class="nav-link" data-scroll-target="#local-isometry"><span class="header-section-number">4.11.2</span> Local isometry</a></li>
+  <li><a href="#local-isometries" id="toc-local-isometries" class="nav-link" data-scroll-target="#local-isometries"><span class="header-section-number">4.11.2</span> Local isometries</a></li>
+  <li><a href="#angles-on-surfaces" id="toc-angles-on-surfaces" class="nav-link" data-scroll-target="#angles-on-surfaces"><span class="header-section-number">4.11.3</span> Angles on surfaces</a></li>
+  <li><a href="#angle-between-curves" id="toc-angle-between-curves" class="nav-link" data-scroll-target="#angle-between-curves"><span class="header-section-number">4.11.4</span> Angle between curves</a></li>
+  <li><a href="#conformal-maps" id="toc-conformal-maps" class="nav-link" data-scroll-target="#conformal-maps"><span class="header-section-number">4.11.5</span> Conformal maps</a></li>
+  <li><a href="#equiareal-maps" id="toc-equiareal-maps" class="nav-link" data-scroll-target="#equiareal-maps"><span class="header-section-number">4.11.6</span> Equiareal maps</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">4.11.7</span> Summary</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -2170,7 +2175,17 @@ f(u) = \cosh (u) \,.
 </section>
 <section id="first-fundamental-form" class="level2" data-number="4.11">
 <h2 data-number="4.11" class="anchored" data-anchor-id="first-fundamental-form"><span class="header-section-number">4.11</span> First fundamental form</h2>
-<p>We want to measure distances on a surface. The object that allows one to compute lengths, angles and areas on a surface, is the first <strong>fundamental form</strong> of the surface.</p>
+<p>In this section we introduce the first <strong>fundamental form</strong> of a surface. This will allow us to compute:</p>
+<ul>
+<li>Inner product between tangent vectors</li>
+<li>Angle between tangent vectors</li>
+<li>Area of surface regions</li>
+</ul>
+<p>Moreover we can compute</p>
+<ul>
+<li>Length of curves on a surface</li>
+<li>Angle between curves on a surface</li>
+</ul>
 <section id="length-on-surfaces" class="level3" data-number="4.11.1">
 <h3 data-number="4.11.1" class="anchored" data-anchor-id="length-on-surfaces"><span class="header-section-number">4.11.1</span> Length on surfaces</h3>
 <p>Let <span class="math inline">\(\mathcal{S}\)</span> be a surface and consider two points <span class="math inline">\(\mathbf{p}, \mathbf{q} \in \mathcal{S}\)</span>. The euclidean distance between <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\mathbf{q}\)</span> is <span class="math display">\[
@@ -2394,11 +2409,11 @@ du^2 + dv^2 \,.
 </div></details>
 </div>
 </section>
-<section id="local-isometry" class="level3" data-number="4.11.2">
-<h3 data-number="4.11.2" class="anchored" data-anchor-id="local-isometry"><span class="header-section-number">4.11.2</span> Local isometry</h3>
+<section id="local-isometries" class="level3" data-number="4.11.2">
+<h3 data-number="4.11.2" class="anchored" data-anchor-id="local-isometries"><span class="header-section-number">4.11.2</span> Local isometries</h3>
 <p>We have seen that a plane <span class="math inline">\(\pmb{\pi}\)</span> and a cylinder <span class="math inline">\(\mathcal{C}\)</span> have the same first fundamental form. This means that scalar product on the two surfaces is the same, as is the length of curves. In this case we say that <span class="math inline">\(\pmb{\pi}\)</span> and <span class="math inline">\(\mathcal{C}\)</span> are locally isometric. Let us give a general definition of such concept.</p>
-<div id="local-isometry-1" class="Definition" title="Local isometry">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 103: </strong>Local isometry</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> be regular surfaces. A smooth map <span class="math inline">\(f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\)</span> is a <strong>local isometry</strong> if for all <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span> the differential <span class="math inline">\(d_{\mathbf{p}}f \colon T_{\mathbf{p}} \mathcal{S}\to T_{f(\mathbf{p})} \widetilde{\mathcal{S}}\)</span> satisfies <span class="math display">\[
+<div id="local-isometry" class="Definition" title="Local isometry">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 103: </strong>Local isometry</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> be regular surfaces. A local diffeomorphism <span class="math inline">\(f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\)</span> is a <strong>local isometry</strong> if for all <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span> the differential <span class="math inline">\(d_{\mathbf{p}}f \colon T_{\mathbf{p}} \mathcal{S}\to T_{f(\mathbf{p})} \widetilde{\mathcal{S}}\)</span> satisfies <span class="math display">\[
 \mathbf{v}\cdot \mathbf{w}= d_{\mathbf{p}}f (\mathbf{v}) \cdot d_{\mathbf{p}}f (\mathbf{w}) \,, \quad
 \forall \, \mathbf{v}, \mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\,.
 \]</span> We say that <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> are <strong>locally isometric</strong> if there exists a local isometry <span class="math inline">\(f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\)</span>.<p></p>
@@ -2411,10 +2426,23 @@ du^2 + dv^2 \,.
 \]</span><p></p>
 </div></details>
 </div>
+<div id="remark-local-isometry" class="Remark">
+<details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 104</strong></summary><div>
+<p>A local diffeomorphism <span class="math inline">\(f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\)</span> is a local isometry if and only if <span class="math display">\[
+\mathbf{v}\cdot \mathbf{v}= d_{\mathbf{p}}f (\mathbf{v}) \cdot d_{\mathbf{p}}f (\mathbf{v}) \,, \quad
+\forall \, \mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\,.
+\]</span></p>
+<blockquote class="blockquote">
+<p>The proof follows from the elementary identity <span class="math display">\[
+\mathbf{v}\cdot \mathbf{w}= \frac12 \left(   (\mathbf{v}+ \mathbf{w}) \cdot (\mathbf{v}+ \mathbf{w}) - \mathbf{v}\cdot \mathbf{v}- \mathbf{w}\cdot \mathbf{w}\right) \,,
+\]</span> which holds for all <span class="math inline">\(\mathbf{v}, \mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\)</span> (and more in general in arbitrary vector spaces with inner product).</p>
+</blockquote>
+</div></details>
+</div>
 <p>Local isometries preserve the length of curves, as shown in the following proposition.</p>
-<div id="Proposition-104" class="Proposition">
-<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 104</strong></summary><div>
-<p>Let <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> be regular surfaces and <span class="math inline">\(f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\)</span> be smooth. They are equivalent:</p>
+<div id="Proposition-105" class="Proposition">
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 105</strong></summary><div>
+<p>Let <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> be regular surfaces and <span class="math inline">\(f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\)</span> be a local diffeomorphism. They are equivalent:</p>
 <ol type="1">
 <li><span class="math inline">\(f\)</span> is a local isometry</li>
 <li>Let <span class="math inline">\({\pmb{\gamma}}\)</span> be a curve in <span class="math inline">\(\mathcal{S}\)</span> and consider the curve <span class="math inline">\(\widetilde{{\pmb{\gamma}}}= f \circ {\pmb{\gamma}}\)</span> on <span class="math inline">\(\widetilde{\mathcal{S}}\)</span>. Then <span class="math inline">\({\pmb{\gamma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> have the same length.</li>
@@ -2448,17 +2476,13 @@ df_{\mathbf{p}} (\mathbf{v}) \cdot df_{\mathbf{p}} (\mathbf{v}) &amp; = \dot{\wi
                                     &amp; = \mathbf{v}\cdot \mathbf{v}\,.
 \end{align*}\]</span> As <span class="math inline">\(\mathbf{v}\)</span> was arbitrary, we showed that <span class="math display">\[
 df_{\mathbf{p}} (\mathbf{v}) \cdot df_{\mathbf{p}} (\mathbf{v}) = \mathbf{v}\cdot \mathbf{v}\,, \quad \forall \, \mathbf{v}\in T_{\mathbf{p}}(\mathcal{S}) \,.  
-\]</span> Thanks to the identity <span class="math display">\[
-\mathbf{v}\cdot \mathbf{w}= \frac12 \left(   (\mathbf{v}+ \mathbf{w}) \cdot (\mathbf{v}+ \mathbf{w}) - \mathbf{v}\cdot \mathbf{v}- \mathbf{w}\cdot \mathbf{w}\right) \,,
-\]</span> we conclude that <span class="math display">\[
-df_{\mathbf{p}} (\mathbf{v}) \cdot df_{\mathbf{p}} (\mathbf{w}) = \mathbf{v}\cdot \mathbf{w}\,, \quad  \forall \, \mathbf{v}, \mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\,,
-\]</span> showing that <span class="math inline">\(f\)</span> is a local isometry.</p>
+\]</span> Thanks to Remark <a href="chap_4.html#remark-local-isometry">104</a> we conclude that <span class="math inline">\(f\)</span> is a local isometry.</p>
 </div></details>
 </div>
 <p>We have seen that local isometries preserve the length of curves. It also happen that they preserve the first fundamental form.</p>
-<div id="Theorem-105" class="Theorem">
-<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 105</strong></summary><div>
-<p>Let <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> be regular surfaces and <span class="math inline">\(f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\)</span> a smooth function. They are equivalent:</p>
+<div id="Theorem-106" class="Theorem">
+<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 106</strong></summary><div>
+<p>Let <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> be regular surfaces and <span class="math inline">\(f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\)</span> be a local diffeomorphism. They are equivalent:</p>
 <ol type="1">
 <li><span class="math inline">\(f\)</span> is a local isometry.</li>
 <li>Let <span class="math inline">\({\pmb{\sigma}}\)</span> be a regular chart of <span class="math inline">\(\mathcal{S}\)</span> and consider <span class="math inline">\(\widetilde{{\pmb{\sigma}}} = f \circ {\pmb{\sigma}}\)</span>. Then <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> have the same first fundamental form.</li>
@@ -2510,13 +2534,189 @@ d_{\mathbf{p}} f =
 d_{\mathbf{p}} f({\pmb{\sigma}}_u)  &amp; = 1 \cdot \widetilde{{\pmb{\sigma}}}_u + 0 \cdot \widetilde{{\pmb{\sigma}}}_v = \widetilde{{\pmb{\sigma}}}_u \\
 d_{\mathbf{p}} f({\pmb{\sigma}}_v)  &amp; = 0 \cdot \widetilde{{\pmb{\sigma}}}_u + 1 \cdot \widetilde{{\pmb{\sigma}}}_v = \widetilde{{\pmb{\sigma}}}_v \\
 \end{align*}\]</span> Usingg that <span class="math inline">\(f\)</span> is a local isometry we get To this end, note that <span class="math display">\[\begin{align*}
-E &amp; := {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v \\
-  &amp; = d_{\mathbf{p}} f ({\pmb{\sigma}}_u) \cdot d_{\mathbf{p}} f ({\pmb{\sigma}}_u) \\
-  &amp; = \widetilde{{\pmb{\sigma}}}_u \cdot \widetilde{{\pmb{\sigma}}}_v \\
-  &amp; = \widetilde{E}
-\end{align*}\]</span><p></p>
+E &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_u
+    = d_{\mathbf{p}} f ({\pmb{\sigma}}_u) \cdot d_{\mathbf{p}} f ({\pmb{\sigma}}_u) \\
+  &amp; = \widetilde{{\pmb{\sigma}}}_u \cdot \widetilde{{\pmb{\sigma}}}_u
+    = \widetilde{E} \,.
+\end{align*}\]</span> Simlarly, we obtain also <span class="math display">\[\begin{align*}
+F &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v
+    = d_{\mathbf{p}} f ({\pmb{\sigma}}_u) \cdot d_{\mathbf{p}} f ({\pmb{\sigma}}_v) \\
+  &amp; = \widetilde{{\pmb{\sigma}}}_u \cdot \widetilde{{\pmb{\sigma}}}_v
+    = \widetilde{F} \,,
+\end{align*}\]</span> and <span class="math display">\[\begin{align*}
+G &amp; = {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v
+    = d_{\mathbf{p}} f ({\pmb{\sigma}}_v) \cdot d_{\mathbf{p}} f ({\pmb{\sigma}}_v) \\
+  &amp; = \widetilde{{\pmb{\sigma}}}_v \cdot \widetilde{{\pmb{\sigma}}}_v
+    = \widetilde{G} \,,
+\end{align*}\]</span> showing that <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> have the same first fundamental form.<p></p>
+<p><em>Part 2.</em> Define <span class="math inline">\(\widetilde{{\pmb{\sigma}}} = f \circ {\pmb{\sigma}}\)</span> and suppose that <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> have the same first fundamental form. In particular they hold <span class="math display">\[
+E = \widetilde{E}\,, \quad
+F = \widetilde{F}\,, \quad
+G = \widetilde{G}\,,
+\]</span> which imply <span class="math display">\[\begin{align*}
+{\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_u &amp; = \widetilde{{\pmb{\sigma}}}_u \cdot \widetilde{{\pmb{\sigma}}}_u \\
+{\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v &amp; = \widetilde{{\pmb{\sigma}}}_u \cdot \widetilde{{\pmb{\sigma}}}_v \\
+{\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v &amp; = \widetilde{{\pmb{\sigma}}}_v \cdot \widetilde{{\pmb{\sigma}}}_v
+\end{align*}\]</span> As discussed above, since <span class="math inline">\(\widetilde{{\pmb{\sigma}}} = f \circ {\pmb{\sigma}}\)</span>, by Proposition <a href="chap_4.html#proposition-differential-smooth">77</a> we get <span class="math display">\[
+d_{\mathbf{p}} f({\pmb{\sigma}}_u)  = \widetilde{{\pmb{\sigma}}}_u \,, \quad
+d_{\mathbf{p}} f({\pmb{\sigma}}_v)  = \widetilde{{\pmb{\sigma}}}_v \,.
+\]</span> Let <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span>. Since <span class="math inline">\(\{{\pmb{\sigma}}_u,{\pmb{\sigma}}_v\}\)</span> is a basis for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> we get <span class="math display">\[
+\mathbf{v}= \lambda {\pmb{\sigma}}_u + \mu {\pmb{\sigma}}_v
+\]</span> for some <span class="math inline">\(\lambda,\mu \in \mathbb{R}\)</span>. Therefore <span class="math display">\[\begin{align*}
+d_{\mathbf{p}} f (\mathbf{v}) &amp; = d_{\mathbf{p}} f(\lambda {\pmb{\sigma}}_u + \mu {\pmb{\sigma}}_v ) \\
+                &amp; = \lambda \, d_{\mathbf{p}} f ({\pmb{\sigma}}_u) + \mu \, d_{\mathbf{p}} f ({\pmb{\sigma}}_v)\\
+                &amp; = \lambda \widetilde{{\pmb{\sigma}}}_u + \mu \widetilde{{\pmb{\sigma}}}_v \,.
+\end{align*}\]</span> Hence <span class="math display">\[\begin{align*}
+\mathbf{v}\cdot \mathbf{v}&amp; = ( \lambda {\pmb{\sigma}}_u + \mu {\pmb{\sigma}}_v ) \cdot  (\lambda {\pmb{\sigma}}_u + \mu {\pmb{\sigma}}_v) \\
+              &amp; = \lambda^2 ({\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v) + 2 \lambda\mu ({\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v) + \mu^2 ({\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v) \\
+              &amp; = \lambda^2 ( \widetilde{{\pmb{\sigma}}}_u \cdot \widetilde{{\pmb{\sigma}}}_u) +
+              2\lambda \mu ( \widetilde{{\pmb{\sigma}}}_u \cdot \widetilde{{\pmb{\sigma}}}_v) +
+              \mu^2 ( \widetilde{{\pmb{\sigma}}}_v \cdot \widetilde{{\pmb{\sigma}}}_v) \\
+              &amp; = (\lambda \widetilde{{\pmb{\sigma}}}_u + \mu \widetilde{{\pmb{\sigma}}}_v)
+              \cdot (\lambda \widetilde{{\pmb{\sigma}}}_u + \mu \widetilde{{\pmb{\sigma}}}_v) \\
+              &amp; = d_{\mathbf{p}} f (\mathbf{v}) \cdot
+                  d_{\mathbf{p}} f (\mathbf{v}) \,,
+\end{align*}\]</span> showing that <span class="math display">\[
+\mathbf{v}\cdot \mathbf{v}= d_{\mathbf{p}} f (\mathbf{v}) \cdot d_{\mathbf{p}} f (\mathbf{v})  \,, \quad \forall \, \mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\,.
+\]</span> By Remark <a href="chap_4.html#remark-local-isometry">104</a> we conclude that <span class="math inline">\(f\)</span> is a local isometry.</p>
 </div></details>
 </div>
+</section>
+<section id="angles-on-surfaces" class="level3" data-number="4.11.3">
+<h3 data-number="4.11.3" class="anchored" data-anchor-id="angles-on-surfaces"><span class="header-section-number">4.11.3</span> Angles on surfaces</h3>
+<p>We want to define the notion of angle between tangent vectors.</p>
+<div id="angle-between-tangent-vectors" class="Definition" title="Angle between tangent vectors">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 107: </strong>Angle between tangent vectors</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. The angle between two vectors <span class="math inline">\(\mathbf{v}, \mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\)</span> is defined as the number <span class="math inline">\(\theta\)</span> such that <span class="math display">\[
+\cos(\theta) = \frac{ \mathbf{v}\cdot \mathbf{w}}{ \| \mathbf{v}\| \,  \| \mathbf{w}\| } \,.
+\]</span><p></p>
+</div></details>
+</div>
+<p>The angle between tangent vectors can be computed in terms of local charts.</p>
+<div id="Proposition-108" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 108</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\({\pmb{\sigma}}\)</span> a regular chart at <span class="math inline">\(\mathbf{p}\)</span>. Let <span class="math inline">\(\mathbf{v}, \mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\)</span>. Then <span class="math display">\[
+\cos(\theta) = \frac{ E  \lambda \tilde \lambda + F (  \lambda {\tilde \mu}+ \tilde \lambda \mu) + G  \mu \tilde \mu }{ (E  \lambda^2 + 2 F  \lambda \mu + G \mu^2 )^{1/2} (E  \tilde{\lambda}^2 + 2 F  {\tilde{\lambda}} {\tilde{\mu}} + G {\tilde{\mu}}^2 )^{1/2} } \,,
+\]</span> where <span class="math inline">\(\lambda,\mu,\tilde{\lambda},\tilde{\mu} \in \mathbb{R}\)</span> are such that <span class="math display">\[
+\mathbf{v}= \lambda {\pmb{\sigma}}_u + \mu {\pmb{\sigma}}_v \,, \quad  
+\mathbf{w}= \tilde{\lambda} {\pmb{\sigma}}_u + \tilde{\mu} {\pmb{\sigma}}_v \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="Proof*-24" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>By definition the angle between <span class="math inline">\(\mathbf{v}\)</span> and <span class="math inline">\(\mathbf{w}\)</span> is <span id="eq-angle-proof"><span class="math display">\[
+\cos(\theta) = \frac{ \mathbf{v}\cdot \mathbf{w}}{ \| \mathbf{v}\| \,  \| \mathbf{v}\| } \,.
+\tag{4.5}\]</span></span> The vectors <span class="math inline">\(\{{\pmb{\sigma}}_u,{\pmb{\sigma}}_v\}\)</span> form a basis of <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. Therefore <span class="math display">\[
+\mathbf{v}= \lambda {\pmb{\sigma}}_u + \mu {\pmb{\sigma}}_v \,, \quad  
+\mathbf{w}= \tilde{\lambda} {\pmb{\sigma}}_u + \tilde{\mu} {\pmb{\sigma}}_v \,.
+\]</span> for some <span class="math inline">\(\lambda,\mu,\tilde{\lambda},\tilde{\mu} \in \mathbb{R}\)</span>. Hence, the coordinates of <span class="math inline">\(\mathbf{v}\)</span> and <span class="math inline">\(\mathbf{w}\)</span> with respect to the basis <span class="math inline">\(\{{\pmb{\sigma}}_u,{\pmb{\sigma}}_v\}\)</span> are <span class="math display">\[
+\mathbf{v}= (\lambda , \mu ) \,, \quad
+\mathbf{w}= ({\tilde{\lambda}}  , {\tilde{\mu}} ) \,.
+\]</span> By Proposition <a href="chap_4.html#proposition-fff-sp">95</a> we get <span class="math display">\[\begin{align*}
+\mathbf{v}\cdot \mathbf{w}&amp; = I_{\mathbf{p}}(\mathbf{v},\mathbf{w}) \\
+               &amp; = (\lambda , \mu)
+               \left(
+               \begin{array}{cc}
+               E &amp; F \\
+               F &amp; G
+               \end{array}
+               \right)
+               ( \tilde{\lambda}  , \tilde{\mu} )^T \\
+               &amp; =  E  \lambda \tilde \lambda + F (  \lambda {\tilde \mu}+ {\tilde{\lambda}} \mu ) + G  \mu  \tilde \mu \,.
+\end{align*}\]</span> Similarly, we obtain <span class="math display">\[\begin{align*}
+\| \mathbf{v}\|^2 &amp; = \mathbf{v}\cdot \mathbf{v}= E  {\lambda}^2 + 2 F  \lambda \mu + G \mu^2  \\
+\| \mathbf{w}\|^2 &amp; = \mathbf{w}\cdot \mathbf{w}= E  \tilde{\lambda}^2 + 2 F  \tilde{\lambda} \tilde{\mu}  + G  \tilde{\mu}^2 \,.  
+\end{align*}\]</span> Substituting in (<a href="#eq-angle-proof"><span>4.5</span></a>) we conclude.<p></p>
+</div></details>
+</div>
+</section>
+<section id="angle-between-curves" class="level3" data-number="4.11.4">
+<h3 data-number="4.11.4" class="anchored" data-anchor-id="angle-between-curves"><span class="header-section-number">4.11.4</span> Angle between curves</h3>
+<p>Since tangent vectors are derivatives of curves with values in <span class="math inline">\(\mathcal{S}\)</span>, it also makes sense to define the angle between two intersecting curves.</p>
+<div id="angle-between-curves-1" class="Definition" title="Angle between curves">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 109: </strong>Angle between curves</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and suppose to have two curves <span class="math display">\[
+{\pmb{\gamma}}\colon (a,b) \to \mathcal{S}\,, \quad \widetilde{{\pmb{\gamma}}}\colon (\tilde{a},\tilde{b}) \to \mathcal{S}
+\]</span> such that <span class="math display">\[
+{\pmb{\gamma}}(t_0) = \mathbf{p}\,, \quad \widetilde{{\pmb{\gamma}}}( \tilde{t}_0 ) = \mathbf{p}\,.
+\]</span> Then <span class="math display">\[
+\dot{{\pmb{\gamma}}}(t_0) \,, \, \dot{\widetilde{{\pmb{\gamma}}}}( \tilde{t}_0 )  \in T_{\mathbf{p}} \mathcal{S}\,.
+\]</span> The angle <span class="math inline">\(\theta\)</span> between <span class="math inline">\({\pmb{\gamma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is the angle between <span class="math inline">\(\dot{{\pmb{\gamma}}}(t_0)\)</span> and <span class="math inline">\(\dot{\widetilde{{\pmb{\gamma}}}}( \tilde{t}_0 )\)</span>, that is, <span class="math display">\[
+\cos(\theta) = \frac{ \dot{{\pmb{\gamma}}}\cdot \dot{\widetilde{{\pmb{\gamma}}}}}{ \| \dot{{\pmb{\gamma}}}\| \,  \| \dot{\widetilde{{\pmb{\gamma}}}}\| } \,,
+\]</span> where <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is evaluated at <span class="math inline">\(t_0\)</span> and <span class="math inline">\(\dot{\widetilde{{\pmb{\gamma}}}}\)</span> at <span class="math inline">\(\tilde{t}_0\)</span>.<p></p>
+</div></details>
+</div>
+<div id="Proposition-110" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 110</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\({\pmb{\sigma}}\)</span> a regular chart at <span class="math inline">\(\mathbf{p}\)</span>. Suppose given two curves <span class="math display">\[
+{\pmb{\gamma}}\colon (a,b) \to \mathcal{S}\,, \quad \widetilde{{\pmb{\gamma}}}\colon (\tilde{a},\tilde{b}) \to \mathcal{S}
+\]</span> such that <span class="math display">\[
+{\pmb{\gamma}}(t_0) = \mathbf{p}\,, \quad \widetilde{{\pmb{\gamma}}}( \tilde{t}_0 ) = \mathbf{p}\,.
+\]</span> The angle between <span class="math inline">\({\pmb{\gamma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is <span class="math display">\[
+\cos(\theta) = \frac{ E  \dot u \dot{\tilde u} + F ( \dot u \dot{\tilde v}+ \dot{\tilde{u}} \dot v) + G \dot v \dot{\tilde v} }{ (E  \dot{u}^2 + 2 F  \dot u \dot v + G \dot{v}^2 )^{1/2} (E  \dot{\tilde{u}}^2 + 2 F  \dot{\tilde{u}} \dot{\tilde{v}} + G \dot{\tilde{v}}^2 )^{1/2} } \,,
+\]</span> where <span class="math inline">\(u,v,\tilde{u},\tilde{v}\)</span> are smooth functions such that <span class="math display">\[
+{\pmb{\gamma}}(t) = {\pmb{\sigma}}(u(t),v(t)) \,, \quad
+\widetilde{{\pmb{\gamma}}}(t) = {\pmb{\sigma}}(\tilde{u}(t),\tilde{v}(t)) \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="Proof*-25" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>By definition the angle between <span class="math inline">\({\pmb{\gamma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is <span id="eq-angle-curves-proof"><span class="math display">\[
+\cos(\theta) = \frac{ \dot{{\pmb{\gamma}}}\cdot \dot{\widetilde{{\pmb{\gamma}}}}}{ \| \dot{{\pmb{\gamma}}}\| \,  \| \dot{\widetilde{{\pmb{\gamma}}}}\| } \,.
+\tag{4.6}\]</span></span> As <span class="math inline">\({\pmb{\gamma}}, \widetilde{{\pmb{\gamma}}}\)</span> are smooth curves with values in <span class="math inline">\(\mathcal{S}\)</span>, by Lemma <a href="chap_4.html#lemma-curve-S">69</a> there exist smooth functions <span class="math inline">\(u,v,\tilde{u},\tilde{v}\)</span> such that <span class="math display">\[
+{\pmb{\gamma}}(t) = {\pmb{\sigma}}(u(t),v(t)) \,, \quad
+\widetilde{{\pmb{\gamma}}}(t) = {\pmb{\sigma}}(\tilde{u}(t),\tilde{v}(t)) \,.
+\]</span> Differentiating the above expressions we obtain <span class="math display">\[
+\dot{{\pmb{\gamma}}}= \dot u {\pmb{\sigma}}_u + \dot v {\pmb{\sigma}}_v \,, \quad
+\dot{\widetilde{{\pmb{\gamma}}}}= \dot{\tilde{u}} {\pmb{\sigma}}_u + \dot{\tilde{v}} {\pmb{\sigma}}_v \,.
+\]</span> Therefore the coordinates of <span class="math inline">\(\dot{{\pmb{\gamma}}}\)</span> and <span class="math inline">\(\dot{\widetilde{{\pmb{\gamma}}}}\)</span> with respect to the basis <span class="math inline">\(\{{\pmb{\sigma}}_u,{\pmb{\sigma}}_v\}\)</span> of <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> are <span class="math display">\[
+\dot{{\pmb{\gamma}}}= (\dot u , \dot v) \,, \quad
+\dot{\widetilde{{\pmb{\gamma}}}}= (\dot{\tilde{u}}  , \dot{\tilde{v}} ) \,.
+\]</span> By Proposition <a href="chap_4.html#proposition-fff-sp">95</a> we get <span class="math display">\[\begin{align*}
+\dot{{\pmb{\gamma}}}\cdot \dot{\widetilde{{\pmb{\gamma}}}}&amp; = I_{\mathbf{p}}(\dot{{\pmb{\gamma}}},\dot{\widetilde{{\pmb{\gamma}}}}) \\
+               &amp; = (\dot u , \dot v)
+               \left(
+               \begin{array}{cc}
+               E &amp; F \\
+               F &amp; G
+               \end{array}
+               \right)
+               (\dot{\tilde{u}}  , \dot{\tilde{v}} )^T \\
+               &amp; =  E  \dot u \dot{\tilde u} + F ( \dot u \dot{\tilde v}+ \dot{\tilde{u}} \dot v) + G \dot v \dot{\tilde v} \,.
+\end{align*}\]</span> Similarly, we obtain <span class="math display">\[\begin{align*}
+\| \dot{{\pmb{\gamma}}}\|^2 &amp; = \dot{{\pmb{\gamma}}}\cdot \dot{{\pmb{\gamma}}}= E  \dot{u}^2 + 2 F  \dot u \dot v + G \dot{v}^2  \\
+\| \dot{\widetilde{{\pmb{\gamma}}}}\|^2 &amp; = \dot{\widetilde{{\pmb{\gamma}}}}\cdot \dot{\widetilde{{\pmb{\gamma}}}}= E  \dot{\tilde{u}}^2 + 2 F  \dot{\tilde{u}} \dot{\tilde{v}}  + G \dot{\tilde{v}}^2 \,.  
+\end{align*}\]</span> Substituting in (<a href="#eq-angle-curves-proof"><span>4.6</span></a>) we conclude.<p></p>
+</div></details>
+</div>
+</section>
+<section id="conformal-maps" class="level3" data-number="4.11.5">
+<h3 data-number="4.11.5" class="anchored" data-anchor-id="conformal-maps"><span class="header-section-number">4.11.5</span> Conformal maps</h3>
+<p>Local isometries are maps which preserve the <strong>scalar product</strong> of tangent vectors. We want to consider maps which preserve the <strong>angle</strong> of tangent vectors.</p>
+</section>
+<section id="equiareal-maps" class="level3" data-number="4.11.6">
+<h3 data-number="4.11.6" class="anchored" data-anchor-id="equiareal-maps"><span class="header-section-number">4.11.6</span> Equiareal maps</h3>
+</section>
+<section id="summary" class="level3" data-number="4.11.7">
+<h3 data-number="4.11.7" class="anchored" data-anchor-id="summary"><span class="header-section-number">4.11.7</span> Summary</h3>
+<p>Let us conclude with a summary for this section. We have introduced the <strong>first fundamental form</strong> as the restriction of the euclidean scalar product to the tangent space. The first fundamental form allows to compute:</p>
+<ul>
+<li>Inner product between tangent vectors</li>
+<li>Angle between tangent vectors</li>
+<li>Area of surface regions</li>
+</ul>
+<p>In particular we can use the first fundamental form to compute:</p>
+<ul>
+<li>Length of curves on a surface</li>
+<li>Angle between curves on a surface</li>
+</ul>
+<p>We have also introduced maps preserving certain quantities:</p>
+<ul>
+<li>Local isometries: They preserve scalar product of tangent vectors, and length of curves</li>
+<li>Conformal maps: They preserve the angle between tangent vectors, and between curves</li>
+<li>Equiareal maps: They preserve areas of surface regions</li>
+</ul>
+<p>We have also shown that:</p>
+<ul>
+<li>Conformal maps are local isometries</li>
+<li>Local isometries are not conformal (in general)</li>
+</ul>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
