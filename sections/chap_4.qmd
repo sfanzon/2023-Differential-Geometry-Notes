@@ -3797,8 +3797,10 @@ $$
 We say that $\SSS$ and $\widetilde{\SSS}$ are **locally isometric** if 
 there exists a local isometry $f \colon \SSS \to \widetilde{\SSS}$.
 
-
 :::
+
+
+![Sketch of local isometry $f$ between $\SSS$ and $\widetilde{\SSS}$. The scalar product between tangent vectors $\vv$ and $\ww$ is preserved by $d_{\pp}f$.](/images/fff_local_isometry.png){width=70%}
 
 
 ::: Notation
@@ -4071,6 +4073,10 @@ $$
 :::
 
 
+![Sketch of angle $\theta$ between two vectors $\vv,\ww$ in $T_{\pp} \SSS$.](/images/fff_angle_vectors.png){width=70%}
+
+
+
 The angle between tangent vectors can be computed in terms of local charts.
 
 
@@ -4163,6 +4169,11 @@ where $\tg$ is evaluated at $t_0$ and $\dtg$ at $\tilde{t}_0$.
 :::
 
 
+
+![Sketch of angle $\theta$ between two curves $\g$ and $\tg$ on $\SSS$.](/images/fff_angle_curves.png){width=70%}
+
+
+
 ::: Proposition
 
 Let $\SSS$ be a regular surface and $\sss$ a regular chart at $\pp$. 
@@ -4232,6 +4243,8 @@ Substituting in (@eq-angle-curves-proof) we conclude.
 :::
 
 
+
+
 ### Conformal maps
 
 
@@ -4240,10 +4253,20 @@ vectors.
 
 
 
+![Sketch of conformal map $f$ between $\SSS$ and $\widetilde{\SSS}$. The angles between tangent vectors are preserved by $d_{\pp} f$.](/images/fff_conformal_map.png){width=70%}
+
+
+
 
 ### Equiareal maps
 
 
+![The area of a small region $R$ on a surface $\SSS$ can be approximated by the area of the rectangle of sides $\sss_u$ and $\sss_v$. Such area is $\| \sss_u \times \sss_v \|$.](/images/fff_area.png){width=70%}
+
+
+
+
+![Sketch of equiareal map $f$ between the surfaces $\SSS$ and $\widetilde{\SSS}$. The area of the region $R$ is the same of the area of $f(R)$.](/images/fff_equiareal.png){width=70%}
 
 
 
@@ -4274,6 +4297,8 @@ We have also shown that:
 
 - Conformal maps are local isometries
 - Local isometries are not conformal (in general)
+
+
 
 
 

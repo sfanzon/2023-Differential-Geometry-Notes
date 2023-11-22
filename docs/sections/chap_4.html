@@ -85,49 +85,9 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
 }
 .Assumption {
   --color1: #f4cce0;
@@ -137,7 +97,15 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Lemma {
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -145,17 +113,49 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .Remark {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Notation {
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Definition {
   --color1: #c6e6ed;
   --color2: #1995ad;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 </style>
 
@@ -2419,6 +2419,12 @@ du^2 + dv^2 \,.
 \]</span> We say that <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> are <strong>locally isometric</strong> if there exists a local isometry <span class="math inline">\(f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\)</span>.<p></p>
 </div></details>
 </div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/fff_local_isometry.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Sketch of local isometry <span class="math inline">\(f\)</span> between <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span>. The scalar product between tangent vectors <span class="math inline">\(\mathbf{v}\)</span> and <span class="math inline">\(\mathbf{w}\)</span> is preserved by <span class="math inline">\(d_{\mathbf{p}}f\)</span>.</figcaption>
+</figure>
+</div>
 <div id="Notation*-21" class="Notation">
 <p></p><details class="Notation fbx-simplebox fbx-default" open=""><summary><strong>Notation</strong></summary><div>For brevity we denote <span class="math display">\[
 \left\langle \mathbf{v},\mathbf{w} \right\rangle = \mathbf{v}\cdot \mathbf{w}\,, \quad
@@ -2591,6 +2597,12 @@ d_{\mathbf{p}} f (\mathbf{v}) &amp; = d_{\mathbf{p}} f(\lambda {\pmb{\sigma}}_u 
 \]</span><p></p>
 </div></details>
 </div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/fff_angle_vectors.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Sketch of angle <span class="math inline">\(\theta\)</span> between two vectors <span class="math inline">\(\mathbf{v},\mathbf{w}\)</span> in <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>.</figcaption>
+</figure>
+</div>
 <p>The angle between tangent vectors can be computed in terms of local charts.</p>
 <div id="Proposition-108" class="Proposition">
 <p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 108</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\({\pmb{\sigma}}\)</span> a regular chart at <span class="math inline">\(\mathbf{p}\)</span>. Let <span class="math inline">\(\mathbf{v}, \mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\)</span>. Then <span class="math display">\[
@@ -2643,6 +2655,12 @@ d_{\mathbf{p}} f (\mathbf{v}) &amp; = d_{\mathbf{p}} f(\lambda {\pmb{\sigma}}_u 
 \]</span> where <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> is evaluated at <span class="math inline">\(t_0\)</span> and <span class="math inline">\(\dot{\widetilde{{\pmb{\gamma}}}}\)</span> at <span class="math inline">\(\tilde{t}_0\)</span>.<p></p>
 </div></details>
 </div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/fff_angle_curves.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Sketch of angle <span class="math inline">\(\theta\)</span> between two curves <span class="math inline">\({\pmb{\gamma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\gamma}}}\)</span> on <span class="math inline">\(\mathcal{S}\)</span>.</figcaption>
+</figure>
+</div>
 <div id="Proposition-110" class="Proposition">
 <p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 110</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\({\pmb{\sigma}}\)</span> a regular chart at <span class="math inline">\(\mathbf{p}\)</span>. Suppose given two curves <span class="math display">\[
 {\pmb{\gamma}}\colon (a,b) \to \mathcal{S}\,, \quad \widetilde{{\pmb{\gamma}}}\colon (\tilde{a},\tilde{b}) \to \mathcal{S}
@@ -2689,9 +2707,27 @@ d_{\mathbf{p}} f (\mathbf{v}) &amp; = d_{\mathbf{p}} f(\lambda {\pmb{\sigma}}_u 
 <section id="conformal-maps" class="level3" data-number="4.11.5">
 <h3 data-number="4.11.5" class="anchored" data-anchor-id="conformal-maps"><span class="header-section-number">4.11.5</span> Conformal maps</h3>
 <p>Local isometries are maps which preserve the <strong>scalar product</strong> of tangent vectors. We want to consider maps which preserve the <strong>angle</strong> of tangent vectors.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/fff_conformal_map.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Sketch of conformal map <span class="math inline">\(f\)</span> between <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span>. The angles between tangent vectors are preserved by <span class="math inline">\(d_{\mathbf{p}} f\)</span>.</figcaption>
+</figure>
+</div>
 </section>
 <section id="equiareal-maps" class="level3" data-number="4.11.6">
 <h3 data-number="4.11.6" class="anchored" data-anchor-id="equiareal-maps"><span class="header-section-number">4.11.6</span> Equiareal maps</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/fff_area.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">The area of a small region <span class="math inline">\(R\)</span> on a surface <span class="math inline">\(\mathcal{S}\)</span> can be approximated by the area of the rectangle of sides <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span>. Such area is <span class="math inline">\(\| {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v \|\)</span>.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/fff_equiareal.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Sketch of equiareal map <span class="math inline">\(f\)</span> between the surfaces <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span>. The area of the region <span class="math inline">\(R\)</span> is the same of the area of <span class="math inline">\(f(R)\)</span>.</figcaption>
+</figure>
+</div>
 </section>
 <section id="summary" class="level3" data-number="4.11.7">
 <h3 data-number="4.11.7" class="anchored" data-anchor-id="summary"><span class="header-section-number">4.11.7</span> Summary</h3>
