@@ -4641,6 +4641,23 @@ showing that $\sss$ is a conformal parametrization.
 
 
 
+::: Example
+
+The cylinder $\SSS$ charted by
+$$
+\sss (u,v) := (\cos(u), \sin(u), v)
+$$
+is conformally flat, since the first fundamental form of $\sss$ is
+$$
+\mathcal{F}_1 = du^2 + dv^2 \,.
+$$
+Therefore $\sss$ is a conformal parametrization of $\SSS$.
+
+:::
+
+
+
+
 
 
 ::: {.content-hidden}
@@ -4702,7 +4719,32 @@ We have also shown that:
 ## Second fundamental form
 
 
-Discussion pressley
+The first fundamental form allows to measure distances on a surface. However it does not give any information on how curved a surface is: For example, we saw that a plane and a cylinder have the 
+same first fundamental form
+$$
+\mathcal{F}_1 = du^2 + dv^2 \,.
+$$
+However the plane is flat, while the cylinder curves. We would like to find a measure of curvature 
+which allows us to tell these two surfaces apart.
+
+We proceed similarly to what we did we curves. Recall that if $\g$ is a unit speed curve, the curvature of $\g$ is defined as
+$$
+\kappa (t) = \norm{\ddg(t)} \,.
+$$
+The quantity $\kappa(t)$ gave us a measure of how much $\g$ is deviating from a straight line. Similarly, we would like
+to quantify how much a surface $\SSS$ is deviating from the tangent plane $T_{\pp} \SSS$. Recall
+that 
+$$
+T_{\pp} \SSS = \operatorname{span} \{ \sss_u , \sss_v \} \,,
+$$
+where $\sss$ is a regular chart of $\SSS$ at $\pp$. Therefore the unit vector 
+$$
+\NN := \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v } }
+$$
+is orthogonal to $T_{\pp} \SSS$. 
+
+
+
 
 
 

@@ -85,11 +85,7 @@ div.csl-indent {
   }
 }</script>
 <style>
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Lemma {
+.Question {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -97,51 +93,11 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Warning {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
 .Example {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Corollary {
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -149,13 +105,57 @@ div.csl-indent {
   --color1: #cce7b1;
   --color2: #86b754;
 }
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
 .Remark {
   --color1: #bce5de;
   --color2: #21aa93;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 </style>
 
@@ -2939,11 +2939,28 @@ f( \widetilde{{\pmb{\sigma}}}(u,v) ) = {\pmb{\sigma}}(u,v) \,.
 \]</span> showing that <span class="math inline">\({\pmb{\sigma}}\)</span> is a conformal parametrization.<p></p>
 </div></details>
 </div>
+<div id="Example-119" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 119</strong></summary><div>The cylinder <span class="math inline">\(\mathcal{S}\)</span> charted by <span class="math display">\[
+{\pmb{\sigma}}(u,v) := (\cos(u), \sin(u), v)
+\]</span> is conformally flat, since the first fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
+\mathcal{F}_1 = du^2 + dv^2 \,.
+\]</span> Therefore <span class="math inline">\({\pmb{\sigma}}\)</span> is a conformal parametrization of <span class="math inline">\(\mathcal{S}\)</span>.<p></p>
+</div></details>
+</div>
 </section>
 </section>
 <section id="second-fundamental-form" class="level2" data-number="4.12">
 <h2 data-number="4.12" class="anchored" data-anchor-id="second-fundamental-form"><span class="header-section-number">4.12</span> Second fundamental form</h2>
-<p>Discussion pressley</p>
+<p>The first fundamental form allows to measure distances on a surface. However it does not give any information on how curved a surface is: For example, we saw that a plane and a cylinder have the same first fundamental form <span class="math display">\[
+\mathcal{F}_1 = du^2 + dv^2 \,.
+\]</span> However the plane is flat, while the cylinder curves. We would like to find a measure of curvature which allows us to tell these two surfaces apart.</p>
+<p>We proceed similarly to what we did we curves. Recall that if <span class="math inline">\({\pmb{\gamma}}\)</span> is a unit speed curve, the curvature of <span class="math inline">\({\pmb{\gamma}}\)</span> is defined as <span class="math display">\[
+\kappa (t) = \left\| \ddot{{\pmb{\gamma}}}(t) \right\| \,.
+\]</span> The quantity <span class="math inline">\(\kappa(t)\)</span> gave us a measure of how much <span class="math inline">\({\pmb{\gamma}}\)</span> is deviating from a straight line. Similarly, we would like to quantify how much a surface <span class="math inline">\(\mathcal{S}\)</span> is deviating from the tangent plane <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. Recall that <span class="math display">\[
+T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sigma}}_v \} \,,
+\]</span> where <span class="math inline">\({\pmb{\sigma}}\)</span> is a regular chart of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>. Therefore the unit vector <span class="math display">\[
+\mathbf{N}:= \frac{ {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v }{ \left\| {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v  \right\| }
+\]</span> is orthogonal to <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">

@@ -62,7 +62,7 @@ we conclude that $\ddg(t)$ is parallel to $\mathbf{n}(t)$. Since $\mathbf{n}(t)$
 $$
 \ddg(t)  = \kappa(t) \, \mathbf{n}(t) \,.
 $$
-Note that, since $\nn$ is unitary, we have
+As $\nn$ is unitary, we have
 $$
 \kappa(t) = \norm{ \ddg(t) }
 $$
@@ -72,11 +72,11 @@ Now, approximate $\g$ at $t$ with its second order Taylor polynomial:
 $$
 \g(t+t_0) = \g(t) + \dg(t) t_0 + \frac{\ddg(t)}{2} t_0^2 + o(t_0)
 $$
-with the remainder $o(t_0)$ is such that 
+where the remainder $o(t_0)$ is such that 
 $$
 \lim_{t_0 \to 0} \ \frac{o(t_0)}{t_0^2} = 0 \,.
 $$
-Therefore, forgetting about the remainder, 
+Therefore, discarding the remainder, 
 $$
 \g(t+t_0) - \g(t) \approx \dg(t) t_0 + \frac{\ddg(t)}{2} t_0^2 \,.
 $$

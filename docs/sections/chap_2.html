@@ -85,11 +85,7 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Assumption {
+.Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -97,23 +93,27 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
 .Notation {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.Warning {
+.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Problem {
+.Important {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -125,37 +125,37 @@ div.csl-indent {
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Proof {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
 }
-.Theorem {
+.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
 }
 .Definition {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.Lemma {
+.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
 }
 .Question {
   --color1: #f4cce0;
   --color2: #db4d92;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
 }
 </style>
 
@@ -322,14 +322,14 @@ div.csl-indent {
 \dot{{\pmb{\gamma}}}(t) \cdot \ddot{{\pmb{\gamma}}}(t) = 0 \quad \mbox{ and } \quad   \dot{{\pmb{\gamma}}}(t) \cdot \mathbf{n}(t)= 0 \,,
 \]</span> we conclude that <span class="math inline">\(\ddot{{\pmb{\gamma}}}(t)\)</span> is parallel to <span class="math inline">\(\mathbf{n}(t)\)</span>. Since <span class="math inline">\(\mathbf{n}(t)\)</span> is a unit vector, there exists a scalar <span class="math inline">\(\kappa(t)\)</span> such that <span class="math display">\[
 \ddot{{\pmb{\gamma}}}(t)  = \kappa(t) \, \mathbf{n}(t) \,.
-\]</span> Note that, since <span class="math inline">\(\mathbf{n}\)</span> is unitary, we have <span class="math display">\[
+\]</span> As <span class="math inline">\(\mathbf{n}\)</span> is unitary, we have <span class="math display">\[
 \kappa(t) = \left\|  \ddot{{\pmb{\gamma}}}(t)  \right\|
 \]</span></p>
 <p>Now, approximate <span class="math inline">\({\pmb{\gamma}}\)</span> at <span class="math inline">\(t\)</span> with its second order Taylor polynomial: <span class="math display">\[
 {\pmb{\gamma}}(t+t_0) = {\pmb{\gamma}}(t) + \dot{{\pmb{\gamma}}}(t) t_0 + \frac{\ddot{{\pmb{\gamma}}}(t)}{2} t_0^2 + o(t_0)
-\]</span> with the remainder <span class="math inline">\(o(t_0)\)</span> is such that <span class="math display">\[
+\]</span> where the remainder <span class="math inline">\(o(t_0)\)</span> is such that <span class="math display">\[
 \lim_{t_0 \to 0} \ \frac{o(t_0)}{t_0^2} = 0 \,.
-\]</span> Therefore, forgetting about the remainder, <span class="math display">\[
+\]</span> Therefore, discarding the remainder, <span class="math display">\[
 {\pmb{\gamma}}(t+t_0) - {\pmb{\gamma}}(t) \approx \dot{{\pmb{\gamma}}}(t) t_0 + \frac{\ddot{{\pmb{\gamma}}}(t)}{2} t_0^2 \,.
 \]</span> Multiplying by <span class="math inline">\(\mathbf{n}(t)\)</span> we get <span class="math display">\[
 ({\pmb{\gamma}}(t+t_0) - {\pmb{\gamma}}(t)) \cdot \mathbf{n}(t) \approx \dot{{\pmb{\gamma}}}(t) \cdot \mathbf{n}(t) t_0 +
