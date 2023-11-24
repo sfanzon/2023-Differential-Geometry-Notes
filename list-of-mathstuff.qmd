@@ -817,74 +817,82 @@
 
  [**Definition 4.94**](#first-fundamental-form-1): First fundamental form\Pageref{first-fundamental-form-1}
 
- [**Proposition 4.95**](#proposition-fff-sp): Matrix representation of first fundamental form\Pageref{proposition-fff-sp}
-
- [**Proof**](#Proof*-4.18)\Pageref{Proof*-4.18}
+ [**Definition 4.95**](#coordinate-functions-on-tangent-plane): Coordinate functions on tangent plane\Pageref{coordinate-functions-on-tangent-plane}
 
  [**Definition 4.96**](#first-fundamental-form-of-a-chart): First fundamental form of a chart\Pageref{first-fundamental-form-of-a-chart}
 
  [**Proposition 4.97**](#proposition-fff-quadratic)\Pageref{proposition-fff-quadratic}
 
- [**Proof**](#Proof*-4.19)\Pageref{Proof*-4.19}
+ [**Proof**](#Proof*-4.18)\Pageref{Proof*-4.18}
 
- [**Proposition 4.98**](#proposition-fff-length)\Pageref{proposition-fff-length}
+ [**Remark 4.98**](#linear-algebra-interpretation): Linear algebra interpretation\Pageref{linear-algebra-interpretation}
 
- [**Proof**](#Proof*-4.20)\Pageref{Proof*-4.20}
+ [**Notation**](#Notation*-4.19)\Pageref{Notation*-4.19}
 
- [**Example 4.99**](#cone): Cone\Pageref{cone}
+ [**Remark 4.99**](#remark-fff-reparametrization): First fundamental form and reparametrizations\Pageref{remark-fff-reparametrization}
 
- [**Example 4.100**](#plane): Plane\Pageref{plane}
+ [**Example 4.100**](#example-fff-plane): Plane\Pageref{example-fff-plane}
 
  [**Example 4.101**](#unit-cylinder-2): Unit cylinder\Pageref{unit-cylinder-2}
 
  [**Remark 4.102**](#Remark-4.102)\Pageref{Remark-4.102}
 
- [**Definition 4.103**](#local-isometry): Local isometry\Pageref{local-isometry}
+ [**Proposition 4.103**](#proposition-fff-length)\Pageref{proposition-fff-length}
+
+ [**Proof**](#Proof*-4.20)\Pageref{Proof*-4.20}
+
+ [**Example 4.104**](#cone): Cone\Pageref{cone}
+
+ [**Definition 4.105**](#local-isometry): Local isometry\Pageref{local-isometry}
 
  [**Notation**](#Notation*-4.21)\Pageref{Notation*-4.21}
 
- [**Remark 4.104**](#remark-local-isometry)\Pageref{remark-local-isometry}
+ [**Remark 4.106**](#remark-local-isometry)\Pageref{remark-local-isometry}
 
- [**Proposition 4.105**](#Proposition-4.105)\Pageref{Proposition-4.105}
+ [**Proposition 4.107**](#Proposition-4.107)\Pageref{Proposition-4.107}
 
  [**Proof**](#Proof*-4.22)\Pageref{Proof*-4.22}
 
- [**Theorem 4.106**](#theorem-local-isometry)\Pageref{theorem-local-isometry}
+ [**Theorem 4.108**](#theorem-local-isometry)\Pageref{theorem-local-isometry}
 
  [**Proof**](#Proof*-4.23)\Pageref{Proof*-4.23}
 
- [**Definition 4.107**](#angle-between-tangent-vectors): Angle between tangent vectors\Pageref{angle-between-tangent-vectors}
-
- [**Proposition 4.108**](#Proposition-4.108)\Pageref{Proposition-4.108}
-
- [**Proof**](#Proof*-4.24)\Pageref{Proof*-4.24}
-
- [**Definition 4.109**](#angle-between-curves-1): Angle between curves\Pageref{angle-between-curves-1}
+ [**Definition 4.109**](#angle-between-tangent-vectors): Angle between tangent vectors\Pageref{angle-between-tangent-vectors}
 
  [**Proposition 4.110**](#Proposition-4.110)\Pageref{Proposition-4.110}
 
+ [**Proof**](#Proof*-4.24)\Pageref{Proof*-4.24}
+
+ [**Definition 4.111**](#angle-between-curves-1): Angle between curves\Pageref{angle-between-curves-1}
+
+ [**Proposition 4.112**](#Proposition-4.112)\Pageref{Proposition-4.112}
+
  [**Proof**](#Proof*-4.25)\Pageref{Proof*-4.25}
 
- [**Definition 4.111**](#conformal-map): Conformal map\Pageref{conformal-map}
+ [**Definition 4.113**](#conformal-map): Conformal map\Pageref{conformal-map}
 
- [**Remark 4.112**](#Remark-4.112)\Pageref{Remark-4.112}
+ [**Remark 4.114**](#Remark-4.114)\Pageref{Remark-4.114}
 
- [**Proposition 4.113**](#Proposition-4.113)\Pageref{Proposition-4.113}
+ [**Proposition 4.115**](#Proposition-4.115)\Pageref{Proposition-4.115}
 
  [**Proof**](#Proof*-4.26)\Pageref{Proof*-4.26}
 
- [**Theorem 4.114**](#theorem-conformal)\Pageref{theorem-conformal}
+ [**Theorem 4.116**](#theorem-conformal)\Pageref{theorem-conformal}
 
  [**Proof**](#Proof*-4.27)\Pageref{Proof*-4.27}
 
- [**Corollary 4.115**](#corollary-conformal)\Pageref{corollary-conformal}
+ [**Corollary 4.117**](#corollary-conformal)\Pageref{corollary-conformal}
 
- [**Example 4.116**](#example-conformal): Conformal maps are not local isometries\Pageref{example-conformal}
+ [**Example 4.118**](#example-conformal): Conformal maps are not local isometries\Pageref{example-conformal}
 
- [**Definition 4.117**](#definition-conformally-flat): Conformally flat surface and conformal parametrization\Pageref{definition-conformally-flat}
+ [**Definition 4.119**](#definition-conformally-flat): Conformally flat surface and conformal parametrization\Pageref{definition-conformally-flat}
 
- [**Proposition 4.118**](#Proposition-4.118)\Pageref{Proposition-4.118}
+ [**Proposition 4.120**](#Proposition-4.120)\Pageref{Proposition-4.120}
 
  [**Proof**](#Proof*-4.28)\Pageref{Proof*-4.28}
 
- [**Example 4.119**](#Example-4.119)\Pageref{Example-4.119}
+ [**Example 4.121**](#Example-4.121)\Pageref{Example-4.121}
+
+ [**Definition 4.122**](#principal-unit-normal): Principal Unit Normal\Pageref{principal-unit-normal}
+
+ [**Definition 4.123**](#second-fundamental-form-of-a-chart): Second fundamental form of a chart\Pageref{second-fundamental-form-of-a-chart}

@@ -3202,7 +3202,7 @@ in the following way.
 ::: Definition
 ### Ruled surface
 
-Let $\g \colon (a,b) \to \R^3$ be a smooth curve and $\mathbf{a} \colon (a,b) \to \R^3$ a vector, such that $\g(t)$ and $\mathbf{a}(t)$ are linearly independent for all $t \in (a,b)$. A **ruled surface** is a surface with 
+Let $\g \colon (a,b) \to \R^3$ be a smooth curve and $\mathbf{a} \colon (a,b) \to \R^3$ a vector, such that $\dg(t)$ and $\mathbf{a}(t)$ are linearly independent for all $t \in (a,b)$. A **ruled surface** is a surface with 
 chart
 $$
 \sss(u,v) = \g(u) + v \mathbf{a}(u) \,.
@@ -3431,7 +3431,7 @@ $$
 \dg(t) \in T_{\xx} S \,, \quad \xx := \g(t) \,.
 $$
 Therefore, computing $\norm{\dg(t)}$ is equivalent
-to computing the length of tangent vectors. This motivates the definition of first fundemantal form.
+to computing the length of tangent vectors. This motivates the definition of first fundamental form.
 
 
 ::: Definition
@@ -3447,7 +3447,7 @@ $$
 :::
 
 
-Two observations:
+Three observations:
 
 - The first fundamental form of $\SSS$ at $\pp$ is the map obtained by restricting the scalar product of $\R^3$ to $T_{\pp} \SSS$.
 
@@ -3457,16 +3457,164 @@ I_{\pp} (\vv,\vv) = \| \vv \|^2 \,,
 $$
 so that $I_{\pp}$ can be used to compute the length of tangent vectors.
 
+- The definition of $I_{\pp}$ does not depend on a chosen chart.
 
 
-::: Proposition
-### Matrix representation of first fundamental form  {#proposition-fff-sp}
+To use the first fundamental form in practice, we need to express $I_{\pp}$ in terms of local
+charts. We first need to define the coordinates functions $du$ and $dv$ on $T_{\pp} S$.
 
-Let $\sss$ be a regular chart of $\SSS$ at $\pp$. Then 
+
+::: Definition
+### Coordinate functions on tangent plane
+
+Let $\sss \colon U \to \R^3$ be a regular chart of $\SSS$. 
+For each $\pp \in \sss(U)$ we have
 $$
-I_{\pp} (\vv, \ww) = \vv \cdot \ww  = \vv^T \mathcal{F}_1 \ww \,, \quad  \forall \, \vv, \, \ww \in T_{\pp} \SSS \,,
+T_{\pp} \SSS = \operatorname{span} \{\sss_u,\sss_v\} \,,
 $$
-where 
+where $\sss_u$ and $\sss_v$ are evaluated at the point $(u_0,v_0) \in U$ such that 
+$$
+\sss(u_0,v_0)=\pp \,.
+$$
+Therefore, for each $\vv \in T_{\pp} \SSS$, there exist $\lambda,\mu \in \R$ such that
+$$
+\vv = \lambda \sss_u + \mu \sss_v \,.
+$$
+The **coordinate functions** on $T_{\pp} \SSS$ are the linear maps
+$$
+du, dv \colon T_{\pp} \SSS \to \R \,, \quad du(\vv) := \lambda \,,  
+\quad dv(\vv) := \mu \,.
+$$
+
+:::
+
+
+::: Definition
+### First fundamental form of a chart
+
+Let $\sss \colon U \to \R^3$ be a regular chart of $\SSS$. Define the functions
+$$
+E , F , G \colon U \to \R 
+$$
+by setting
+$$
+E := \sss_u \cdot \sss_u \,, \quad  F := \sss_u \cdot \sss_v \,, \quad 
+G := \sss_v \cdot \sss_v \,.
+$$
+Let $\pp \in \sss(U)$ and denote by $(u_0,v_0) \in U$ the point such that
+$$
+\sss(u_0,v_0) = \pp \,.
+$$
+The **first fundamental form** of $\sss$ at $\pp$ is the quadratic form
+$$
+\mathcal{F}_1 \colon T_{\pp} \SSS \to \R
+$$
+defined by
+$$
+\mathcal{F}_1 (\vv) := E \, du^2(\vv) + 2F \, du(\vv) \, dv (\vv)+ G \, dv^2 (\vv) \,,
+$${#eq-fff-chart}
+for all $\vv \in T_{\pp} \SSS$, where $E,F,G$ are evaluated at $(u_0,v_0)$.
+
+:::
+
+
+We usually omit the dependence on $\vv$ in (@eq-fff-chart), and write
+$$
+\mathcal{F}_1 = E \, du^2 + 2F \, du \, dv + G \, dv^2 \,. 
+$$
+The quadratic form $\mathcal{F}_1$ is related to $I_{\pp}$ in the following way.
+
+
+
+
+::: {.Proposition  #proposition-fff-quadratic}
+
+Let $\sss \colon U \to \R^3$ be a regular chart of $\SSS$, and $\pp \in \sss(U)$. Then
+$$
+I_{\pp} (\vv,\ww) = (du (\vv), dv(\ww) )  \, 
+\left( 
+\begin{array}{cc}
+E & F \\
+F & G 
+\end{array}
+\right) \, (du(\vv) , dv(\ww))^T \,,
+$$
+for all $\vv,\ww \in T_{\pp} \SSS$. In particular, $\mathcal{F}_1$ is the quadratic form associated to the symmetric bilinear form $I_{\pp}$, that is,
+$$
+\mathcal{F}_1 (\vv) = I_{\pp} (\vv,\vv) \,, \quad \forall \, \vv \in T_{\pp} \SSS \,.
+$$
+
+
+:::
+
+::: Proof
+
+By Theorem \ref{theorem-tangent-plane} we have
+$$
+T_{\pp} \SSS = \operatorname{span} \{ \sss_u, \sss_v \} \,.
+$$
+Therefore, for $\vv,\ww \in T_{\pp} \SSS$, there exist $\lambda_1,\lambda_2,\mu_1,\mu_2 \in \R$ such that 
+$$
+\vv = \lambda_1 \sss_u + \mu_1 \sss_v \,, \quad 
+\ww = \lambda_2 \sss_u + \mu_2 \sss_v \,.
+$$
+We have
+\begin{align*}
+I_{\pp} (\vv,\ww) & = \vv \cdot \ww \\
+& = \lambda_1 \lambda_2 \, \sss_u \cdot \sss_v + ( \lambda_1 \mu_2 + \lambda_2 \mu_1 ) \, \sss_u \cdot \sss_v + \mu_1 \mu_2 \, \sss_v \cdot \sss_v \\
+& = E \, du (\vv) dv(\ww)  + F \, ( du(\vv) \, dv(\ww) + du(\ww) + dv(\vv) ) \\
+& \qquad  + G \,  dv(\vv) dv(\ww) \\
+& = (du (\vv), dv(\ww) )  \, 
+\left( 
+\begin{array}{cc}
+E & F \\
+F & G 
+\end{array}
+\right) \, (du(\vv) , dv(\ww))^T \,.
+\end{align*}
+The fact that $I_{\pp}(\vv,\vv) = \mathcal{F}_1(\vv)$ is now trivial.
+
+:::
+
+
+
+::: Remark
+### Linear algebra interpretation 
+
+Using a bit of linear algebra, Proposition \ref{proposition-fff-quadratic} becomes very
+clear: $I_{\pp}$ is a symmetric bilinear form on the vector space $T_{\pp} \SSS$. 
+Fixing the basis $\{ \sss_u, \sss_v \}$ for $T_{\pp} \SSS$, we can represent $I_{\pp}$ via the matrix
+\begin{align*}
+M & := 
+\left(
+\begin{array}{cc}
+I_{\pp} (\sss_u , \sss_u) & I_{\pp} (\sss_u , \sss_v) \\
+I_{\pp} (\sss_v , \sss_u) & I_{\pp} (\sss_v , \sss_v) \\
+\end{array}
+\right) \\
+& =
+\left(
+\begin{array}{cc}
+\sss_u \cdot \sss_u &  \sss_u \cdot \sss_v \\
+\sss_v \cdot \sss_u &  \sss_v \cdot \sss_v \\
+\end{array}
+\right) \\
+& =
+\left(
+\begin{array}{cc}
+E & F \\
+F & G \\
+\end{array}
+\right) \,,
+\end{align*}
+where we used that $\sss_u \cdot \sss_v = \sss_v \cdot \sss_u$. 
+
+:::
+
+
+::: Notation
+
+With a little abuse of notation, we also denote by $\mathcal{F}_1$ the $2 \times 2$ matrix
 $$
 \mathcal{F}_1 := 
 \left(
@@ -3474,136 +3622,189 @@ $$
 E & F \\
 F & G
 \end{array}
-\right) \,,
-$$
-with
-$$
-E := \sss_u \cdot \sss_u \,, \quad  F := \sss_u \cdot \sss_v \,, \quad 
-G := \sss_v \cdot \sss_v \,.
+\right) \,.
 $$
 
 :::
 
 
-::: Proof
 
-By Theorem \ref{theorem-tangent-plane} we have
+::: Remark
+### First fundamental form and reparametrizations  {#remark-fff-reparametrization}
+
+The first fundamental form $I_{\pp}$ depends only on the surface $\SSS$ and the point $\pp$. 
+Instead the representation of $I_{\pp}$
 $$
-T_{\pp} \SSS = \operatorname{span} \{ \sss_u, \sss_v \} \,,
+\mathcal{F}_1 = E \, du^2 + 2F \, du dv + G \, dv^2
 $$
-meaning that $\{\sss_u,\sss_v\}$ is a basis for $T_{\pp} \SSS$. 
-Since $I_{\pp}$ is a bilinear symmetric form on $T_{\pp} \SSS$, by we have
-that
+depends on the choice of chart $\sss \colon U \to \R^3$. Indeed suppose that $\widetilde{\sss} \colon \widetilde{U} \to \R^3$ is a reparametrization of $\sss$, that is, 
 $$
-I_{\pp} (\vv,\ww) = \vv^T M \ww
+\widetilde{\sss} = \sss \circ \Phi \,,
 $$
-with 
+where $\Phi \colon \widetilde{U} \to U$ is a diffeomorphism. Recall that we denote the components
+$\Phi^1$ and $\Phi^2$ of $\Phi$ by
 $$
-M := 
-\left(
+(\tilde{u}, \tilde{v}) \mapsto u (\tilde{u}, \tilde{v}) \,, \quad 
+(\tilde{u}, \tilde{v}) \mapsto v (\tilde{u}, \tilde{v}) \,,
+$$
+respectively. The Jacobian of $\Phi$ is then
+$$
+J\Phi = \left(   
 \begin{array}{cc}
-I_{\pp} (\sss_u , \sss_u) & I_{\pp} (\sss_u , \sss_v) \\
-I_{\pp} (\sss_v , \sss_u) & I_{\pp} (\sss_v , \sss_v) \\
-\end{array}
-\right)
-=
-\left(
-\begin{array}{cc}
-\sss_u \cdot \sss_u &  \sss_u \cdot \sss_v \\
-\sss_v \cdot \sss_u &  \sss_v \cdot \sss_v \\
+ \dfrac{\partial u}{\partial \tilde u}  &  \dfrac{\partial u}{\partial \tilde v}  \\
+ \dfrac{\partial v}{\partial \tilde u}  &  \dfrac{\partial v}{\partial \tilde v}
 \end{array}
 \right) \,.
 $$
-Since $\sss_v \cdot \sss_u = \sss_u \cdot \sss_v$, the proof is concluded.
+Denote the first fundamental form of $\widetilde{\sss}$ by
+$$
+\widetilde{\mathcal{F}}_1 = \widetilde{E} \, d\tilde{u}^2 + 2 \widetilde{F} \, d\tilde{u} d\tilde{v} + \widetilde{G} \, d\tilde{v}^2 \,.
+$$
+The linear maps $du, dv$ and $d\tilde{u}, d\tilde{v}$ are related by
+$$
+du = \frac{\partial u}{\partial \tilde{u}} \, d\tilde{u} + \frac{\partial u}{\partial \tilde{v}} \, d\tilde{v} \,, \quad 
+dv = \frac{\partial v}{\partial \tilde{u}} \, d\tilde{u} + \frac{\partial v}{\partial \tilde{v}} \, d\tilde{v} 
+$${#eq-fff-change-basis-1}
+Moreover the matrices of $\mathcal{F}_1$ and $\widetilde{\mathcal{F}}_1$ are related by
+$$
+\left(
+\begin{array}{cc}
+\widetilde{E} & \widetilde{F} \\
+\widetilde{F} & \widetilde{G}
+\end{array}
+\right)  
+= 
+(J \Phi)^T \,
+\left(
+\begin{array}{cc}
+E & F \\
+F & G
+\end{array}
+\right)
+\, 
+J \Phi  \,.
+$${#eq-fff-change-basis-2}
+
+> The proof of the above statements follows by basic linear algebra: The pairs $\{\sss_u,\sss_u\}$ and $\{\widetilde{\sss}_{\tilde{u}} , \widetilde{\sss}_{\tilde{v}} \}$ are bases for the vector space $T_{\pp} \SSS$. The change of basis matrix is given exactly by $J\Phi$. Therefore formulas (@eq-fff-change-basis-1) and (@eq-fff-change-basis-2) are consequence of change of basis results for linear maps and bilinear forms, respectively.
+
 
 :::
 
 
-Traditionally, the first fundamental form is written as the quadratic form
-$$
-\mathcal{F}_1 = E \, du^2 + 2F \, du \, dv + G \, dv^2 \,.
-$$
-Let us make this notation precise.
+Let us compute the first fundamental form of a plane and of a cylinder.
 
 
-::: Definition
-### First fundamental form of a chart
+::: Example
+### Plane   {#example-fff-plane}
 
-Let $\SSS$ be a regular surface and $\sss$ be a regular chart. Consider 
-the basis $\{\sss_u,\sss_v\}$ of $T_{\pp}$. Therefore a vector $\vv \in T_{\pp} \SSS$ can be written as linear combination
+Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$. Suppose that $\pp$ and $\mathbf{q}$ are orthonormal vectors, that is,
 $$
-\vv = \lambda \sss_u + \mu \sss_v
+\norm{\pp} = \norm{\mathbf{q}} = 1 \,, \quad \pp \cdot \mathbf{q} = 0 \,. 
 $$
-for some $\lambda,\mu \in \R$. Introduce the linear maps
+Consider the plane with chart
 $$
-du, dv \colon T_{\pp} \SSS \to \R \,, \quad du(\vv) := \lambda \,,  
-\quad dv(\vv) := \mu \,.
+\sss(u,v) = \mathbf{a} + u \pp + v \mathbf{q} \,, \quad (u,v) \in \R^2 \,.
 $$
-Define also
+Prove that the first fundamental form of $\sss$ is
 $$
-E := \sss_u \cdot \sss_u \,, \quad  F := \sss_u \cdot \sss_v \,, \quad 
-G := \sss_v \cdot \sss_v \,.
+\mathcal{F}_1 = du^2 + dv^2 \,.
 $$
-The **first fundamental form** of $\sss$ is the quadratic form
-$$
-\mathcal{F}_1 = E \, du^2 + 2F \, du \, dv + G \, dv^2 \,.
-$${#eq-fff-chart}
 
-:::
-
-
-::: {.Proposition  #proposition-fff-quadratic}
-
-Let $\SSS$ be a regular surface and $\sss$ be a regular chart. Then
+> We have
 $$
-I_{\pp} (\vv,\ww) = E \, du (\vv) dv(\ww) + F \, ( du(\vv) \, dv(\ww) + du(\ww) + dv(\vv) ) + G \, dv(\vv) dv(\ww) \,
+\sss_u = \pp \,, \quad \sss_v = \mathbf{q}
 $$
-for all $\vv,\ww \in T_{\pp} \SSS$. The quadratic form associated to $I_{\pp}$ is $\mathcal{F}_1$, that is,
-$$
-I_{\pp} (\vv,\vv) = E \, du (\vv)^2 + 2F \, du(\vv) \, dv(\vv) + G \, dv(\vv)^2 \,
-$$
-for all $\vv \in T_{\pp} \SSS$,
-
-:::
-
-::: Proof
-
-Since 
-$$
-\vv = \lambda_1 \sss_u + \mu_1 \sss_v \,, \quad 
-\vv = \lambda_2 \sss_u + \mu_2 \sss_v \,,
-$$
-we have that
+and therefore 
 \begin{align*}
-I_{\pp} (\vv,\ww) & = \vv \cdot \ww \\
-& = \lambda_1 \lambda_2 \, \sss_u \cdot \sss_v + ( \lambda_1 \mu_2 + \lambda_2 \mu_1 ) \, \sss_u \cdot \sss_v + \mu_1 \mu_2 \, \sss_v \cdot \sss_v \\
-& = E \, du (\vv) dv(\ww)  + F \, ( du(\vv) \, dv(\ww) + du(\ww) + dv(\vv) ) + G \,  dv(\vv) dv(\ww) \,.
+E & = \sss_u \cdot \sss_u = \norm{\pp}^2 = 1 \\
+F & = \sss_u \cdot \sss_v = \pp \cdot \mathbf{q} = 0 \\
+G & = \sss_v \cdot \sss_v = \norm{\mathbf{q}}^2 = 1 \\
 \end{align*}
-The fact that $I_{\pp}(\vv,\vv) = \mathcal{F}_1$ is now trivial.
+Then the first fundamental form is
+$$
+\mathcal{F}_1 = E \, du^2 + 2 F\, du \, dv + G \, dv^2 = du^2 + dv^2 \,.  
+$$
 
 :::
+
+
+Two remarks concerning Example \ref{example-fff-plane} :
+
+- The above example should not be surprising, since distances on a plane are the same as Euclidean distances, given that straight segments are contained in the plane.
+- If we drop the assumption of $\pp$ and $\mathbf{q}$ being orthonormal, then 
+$$
+\mathcal{F}_1 = \norm{\pp}^2 \, du^2 + \pp \cdot \mathbf{q} \, du \, dv + \norm{\mathbf{q}}^2 \, dv^2 \,.
+$$
+Again, this is not surprising, due to Remark \ref{remark-fff-reparametrization}.
+
+
+::: Example
+### Unit cylinder
+
+Consider the unit cylinder with chart
+$$
+\sss(u,v) = (\cos(u), \sin(u),  v)  \,, \quad (u,v) \in (0,2\pi) \times \R \,.
+$$
+Prove that the first fundamental form of $\sss$ is
+$$
+\mathcal{F}_1 = du^2 + dv^2 \,.
+$$
+
+> We have
+$$
+\sss_u = (-\sin(u),\cos(u), 0 )  \,, \quad \sss_v = (0,0,1) \,, 
+$$
+and therefore 
+\begin{align*}
+E & = \sss_u \cdot \sss_u =  1 \\
+F & = \sss_u \cdot \sss_v = 0 \\
+G & = \sss_v \cdot \sss_v = 1 \\
+\end{align*}
+Then the first fundamental form is
+$$
+\mathcal{F}_1 = E \, du^2 + 2 F\, du \, dv + G \, dv^2 = du^2 + dv^2 \,.  
+$$
+
+:::
+
+
+::: Remark
+
+We have seen that a plane and the unit cylinder have the same first fundamental form 
+$$
+\mathcal{F}_1 = du^2 + dv^2 \,.
+$$
+Therefore lengths are the same on the two surfaces.
+
+:::
+
+
+
+
+
+### Length of curves
 
 
 Let us show how the first fundamental form allows to compute the
-length of curves on $\SSS$.
+length of curves with values on surfaces.
 
 
 ::: {.Proposition  #proposition-fff-length}
 
 Let $\SSS$ be a regular surface with chart $\sss \colon U \to \R^3$. Suppose
 $$
-\g \colon (t_0,t_1) \to \sss(U)
+\g \colon (t_0,t_1) \to \sss(U) \subseteq \SSS 
 $$
 is a smooth curve. Then
 $$
 \g(t) = \sss (u(t), v(t)) \,,
 $$
-for some smooth functions $u,v$ and 
+for some smooth functions $u,v \colon (t_0,t_1) \to \R$ and 
 $$
 \int_{t_0}^{t_1} \norm{\dg(t)} \, dt =
 \int_{t_0}^{t_1} \sqrt{  E \dot{u}^2 + 2F \dot u \dot v + G \dot{v}^2  } \, dt \,,
 $$
-where $E,F,G$ are computed at the point $(u(t),v(t))$.
+where $\dot u, \dot v$ are computed at $t$, and $E,F,G$ are computed at $(u(t),v(t))$.
 
 :::
 
@@ -3620,13 +3821,13 @@ $$
 $$
 The above means that the coefficients of $\dg$ with respect to the basis $\{\sss_u,\sss_v\}$ are $\dot u, \dot v$, i.e.,
 $$
-du(\g) = \dot u \,, \quad dv(\g) = \dot v \,.
+du(dg) = \dot u \,, \quad dv(\dg) = \dot v \,.
 $$
 By Proposition \ref{proposition-fff-quadratic} we get
 \begin{align*}
 \norm{\dg(t)}^2 & = \dg \cdot \dg \\
                 & = I_{\pp} (\dg , \dg ) \\
-                & = E \, du(\g)^2  + 2F \, du(\g) dv(\g) + G \, dv(\g)^2 \\ 
+                & = E \, du(\dg)^2  + 2F \, du(\dg) dv(\g) + G \, dv(\dg)^2 \\ 
                 & = E \, \dot{u}^2  + 2F \, \dot{u} \dot{v} + G \, \dot{v}^2 
                 \,,
 \end{align*}
@@ -3637,13 +3838,16 @@ concluding the proof.
 
 
 
+
+
 ::: Example
 ### Cone
 
 Consider the cone with chart
 $$
-\sss (u,v)=(u \cos(v), u \sin (v), u) \,.
+\sss (u,v)=(u \cos(v), u \sin (v), u) \,, 
 $$
+where $u > 0$ and $v \in [0,2\pi]$.
 
 1. Prove that the first fundamental form of $\sss$ is
 $$
@@ -3698,81 +3902,6 @@ By Proposition \ref{proposition-fff-length} we have
 :::
 
 
-
-::: Example
-### Plane
-
-Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$ be orthonormal vectors and consider the plane with chart
-$$
-\sss(u,v) = \mathbf{a} + u \pp + v \mathbf{q} \,.
-$$
-Prove that the first fundamental form of $\sss$ is
-$$
-\mathcal{F}_1 = du^2 + dv^2 \,.
-$$
-
-> We have
-$$
-\sss_u = \pp \,, \quad \sss_v = \mathbf{q}
-$$
-and therefore 
-\begin{align*}
-E & = \sss_u \cdot \sss_u = \norm{\pp}^2 = 1 \\
-F & = \sss_u \cdot \sss_v = \pp \cdot \mathbf{q} = 0 \\
-G & = \sss_v \cdot \sss_v = \norm{\mathbf{q}}^2 = 1 \\
-\end{align*}
-Then the first fundamental form is
-$$
-\mathcal{F}_1 = E \, du^2 + 2 F\, du \, dv + G \, dv^2 = du^2 + dv^2 \,.  
-$$
-
-:::
-
-
-The above example should not be surprising, since distances on a plane
-are the same as Euclidean distances, given that straight segments are 
-contained in the plane.  
-
-
-::: Example
-### Unit cylinder
-
-Consider the unit cylinder with chart
-$$
-\sss(u,v) = (\cos(v), \sin(v),  u)  \,.
-$$
-Prove that the first fundamental form of $\sss$ is
-$$
-\mathcal{F}_1 = du^2 + dv^2 \,.
-$$
-
-> We have
-$$
-\sss_u = (0,0,1) \,, \quad \sss_v = (-\sin(v),\cos(v), 0 ) 
-$$
-and therefore 
-\begin{align*}
-E & = \sss_u \cdot \sss_u =  1 \\
-F & = \sss_u \cdot \sss_v = 0 \\
-G & = \sss_v \cdot \sss_v = 1 \\
-\end{align*}
-Then the first fundamental form is
-$$
-\mathcal{F}_1 = E \, du^2 + 2 F\, du \, dv + G \, dv^2 = du^2 + dv^2 \,.  
-$$
-
-:::
-
-
-::: Remark
-
-We have seen that a plane and the unit cylinder have the same first fundamental form 
-$$
-\mathcal{F}_1 = du^2 + dv^2 \,.
-$$
-Therefore lengths are the same on the two surfaces.
-
-:::
 
 
 
@@ -3830,7 +3959,7 @@ $$
 \forall \, \vv \in T_{\pp} \SSS \,. 
 $$
 
-> The proof follows from the elementary identity for 
+> The proof follows from the elementary identity
 $$
 \vv \cdot \ww = \frac12 \left(   (\vv + \ww ) \cdot (\vv + \ww ) - \vv \cdot \vv - \ww \cdot \ww       \right) \,, 
 $$
@@ -4124,7 +4253,7 @@ $$
 \vv = (\lambda , \mu ) \,, \quad 
 \ww = ({\tilde{\lambda}}  , {\tilde{\mu}} ) \,.
 $$
-By Proposition \ref{proposition-fff-sp} we get
+By Proposition \ref{proposition-fff-quadratic} we get
 \begin{align*}
 \vv \cdot \ww & = I_{\pp}(\vv,\ww) \\
                & = (\lambda , \mu) 
@@ -4231,7 +4360,7 @@ $$
 \dg = (\dot u , \dot v) \,, \quad 
 \dtg = (\dot{\tilde{u}}  , \dot{\tilde{v}} ) \,.
 $$
-By Proposition \ref{proposition-fff-sp} we get
+By Proposition \ref{proposition-fff-quadratic} we get
 \begin{align*}
 \dg \cdot \dtg & = I_{\pp}(\dg,\dtg) \\
                & = (\dot u , \dot v) 
@@ -4641,6 +4770,8 @@ showing that $\sss$ is a conformal parametrization.
 
 
 
+
+
 ::: Example
 
 The cylinder $\SSS$ charted by
@@ -4741,8 +4872,117 @@ where $\sss$ is a regular chart of $\SSS$ at $\pp$. Therefore the unit vector
 $$
 \NN := \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v } }
 $$
-is orthogonal to $T_{\pp} \SSS$. 
+is orthogonal to $T_{\pp} \SSS$. Let $(u_0,v_0) \in \R^2$ be the point such that
+$$
+\sss(u_0,v_0) = \pp \,.
+$$
+As the scalar quantities $\Delta u$ and $\Delta v$ vary, the point
+$$
+\sss ( u_0 + \Delta u , v_0 + \Delta v ) \in \SSS
+$$
+deviates from the tangent plane $T_{\pp} \SSS$. Since $\NN$ is orthogonal to $T_{\pp} \SSS$, the deviation is given by
+$$
+\delta := \left[  \sss(  u_0 + \Delta u , v_0 + \Delta v  ) - \sss (u_0,v_0)    \right] \cdot \NN \,,
+$$
+as shown in @fig-sff-sketch. 
 
+![The point $\sss(u_0 + \Delta u, v_0 + \Delta v)$ on $\SSS$ deviates from $T_{\pp}\SSS$ by a quantity $\delta$.](/images/sff_sketch.png){#fig-sff-sketch width=70%}
+
+Using Taylor's formula we get
+\begin{align*}
+\sss(u_0 + \Delta u , v_0 + \Delta v)  & = \sss(u_0,v_0) +  \sss_u (u_0,v_0) \, \Delta u + 
+                                          \sss_v (u_0,v_0) \, \Delta v  \\
+                                       & \,\, +  \frac12 \left(  \sss_{uu}(u_0,v_0) (\Delta u)^2 +  2 \sss_{uv}(u_0,v_0) \Delta u \Delta v  +{\sss}_{vv}(u_0,v_0) (\Delta v)^2    \right) \\ 
+                                       &  \,\, + R(\Delta u , \Delta v) \,,
+\end{align*}
+where $R(\Delta u , \Delta v)$ is a remainder such that
+$$
+\lim_{\Delta \to 0} \, \frac{R(\Delta u , \Delta v) }{\Delta }  =  0 \,, \quad \Delta := (\Delta u)^2 + (\Delta v)^2 \,. 
+$$
+Since $\NN$ is orthogonal to $\sss_u$ and $\sss_v$, if we multiply the above Taylor expansion by $\NN$, and ignore the remainder, we obtain
+$$
+\delta =  \frac12 \left(  L  (\Delta u)^2 +  2 M \Delta u \Delta v  + N (\Delta v)^2    \right) \,,
+$$
+where we set 
+$$
+L := \sss_{uu}  \cdot \NN \,, \quad 
+M := \sss_{uv}  \cdot \NN \,, \quad 
+N := \sss_{vv}  \cdot \NN \,.
+$$
+The expression
+$$
+\mathcal{F}_2 :=  L \, du^2 +  2 M  \,du dv  + N \, dv^2 
+$$
+is called the **second fundamental form** of $\SSS$. Therefore $\mathcal{F}_2$ measures how much the normal vector $\NN$ changes while moving across $\SSS$. Let us make the definition
+of $\mathcal{F}_2$ precise.
+
+
+::: Definition
+### Principal Unit Normal
+
+Let $\SSS$ be a regular surface and $\sss \colon U \to \SSS$ a regular chart. The **principal unit normal** to $\SSS$ is 
+$$
+\NN := \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v} } \,. 
+$$
+
+:::
+
+Note that $\NN$ is well defined, since 
+$$
+\sss_u \times \sss_v \neq 0 \,,
+$$
+being $\sss$ regular.
+
+
+
+
+::: Definition
+### Second fundamental form of a chart
+
+Let $\SSS$ be a regular surface and $\sss$ be a regular chart at $\pp \in \SSS$. 
+Let $(u_0,v_0)$ be such that
+$$
+\sss(u_0,v_0) = \pp \,.
+$$
+For $\vv \in T_{\pp} \SSS$ there exist
+$\lambda,\mu \in \R$ such that
+$$
+\vv = \lambda \sss_u + \mu \sss_v \,,
+$$
+where $\sss_u$ and $\sss_v$ are evaluated at $(u_0,v_0)$.
+Define the linear maps
+$$
+du, dv \colon T_{\pp} \SSS \to \R \,, \quad du(\vv) := \lambda \,,  
+\quad dv(\vv) := \mu \,.
+$$
+Define
+$$
+L := \sss_{uu} \cdot \NN \,, \quad  M := \sss_{uv} \cdot \NN \,, \quad 
+N := \sss_{vv} \cdot \NN \,,
+$$
+where $\sss_{uu}$, $\sss_{uv}$, $\sss_{vv}$ are evaluated at $(u_0,v_0)$.
+The **second fundamental form** of $\sss$ is the quadratic form
+$$
+Q(\vv) := L \, du^2(\vv) + 2M \, du(\vv) \, dv(\vv) + N \, dv^2(\vv) \,.
+$$
+Denoting by 
+$$
+\mathcal{F}_2 = 
+\left(
+\begin{array}{cc}
+L & M \\
+M & N 
+\end{array}
+\right)
+$$
+we have
+$$
+Q(\vv) = \vv^T \, \mathcal{F}_2 \vv \,.
+$$
+
+:::
+
+With a little abuse of notation, we will denote $Q$ by $\mathcal{F}_2$.
 
 
 
@@ -4753,13 +4993,6 @@ is orthogonal to $T_{\pp} \SSS$.
 ::: {.content-hidden}
 
 
-::: Definition
-
-Let $\SSS$ be a surface and $\sss \colon U \to V \cap \SSS$  a surface chart. The principal unit normal to $\SSS$ is 
-$$
-\mathbf{N} = \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v} } \,. 
-$$
-:::
 
 
 
