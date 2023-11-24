@@ -85,21 +85,17 @@ div.csl-indent {
   }
 }</script>
 <style>
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .DONE {
   --color1: #cce7b1;
   --color2: #86b754;
-}
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
 }
 .Conjecture {
   --color1: #f4cce0;
@@ -109,43 +105,35 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .Example {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
 .Proof {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
 }
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .TODO {
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
 .Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Warning {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -153,7 +141,19 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -2219,7 +2219,7 @@ I_{\mathbf{p}} (\mathbf{v},\mathbf{v}) = \| \mathbf{v}\|^2 \,,
 <li><p>The definition of <span class="math inline">\(I_{\mathbf{p}}\)</span> does not depend on a chosen chart.</p></li>
 </ul>
 <p>To use the first fundamental form in practice, we need to express <span class="math inline">\(I_{\mathbf{p}}\)</span> in terms of local charts. We first need to define the coordinates functions <span class="math inline">\(du\)</span> and <span class="math inline">\(dv\)</span> on <span class="math inline">\(T_{\mathbf{p}} S\)</span>.</p>
-<div id="coordinate-functions-on-tangent-plane" class="Definition" title="Coordinate functions on tangent plane">
+<div id="definition-coordinate-functions" class="Definition" title="Coordinate functions on tangent plane">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 95: </strong>Coordinate functions on tangent plane</summary><div>Let <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span> be a regular chart of <span class="math inline">\(\mathcal{S}\)</span>. For each <span class="math inline">\(\mathbf{p}\in {\pmb{\sigma}}(U)\)</span> we have <span class="math display">\[
 T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{{\pmb{\sigma}}_u,{\pmb{\sigma}}_v\} \,,
 \]</span> where <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are evaluated at the point <span class="math inline">\((u_0,v_0) \in U\)</span> such that <span class="math display">\[
@@ -2408,7 +2408,7 @@ G &amp; = {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v = \left\| \mathbf{q} \right\|^
 <p>We have <span class="math display">\[
 {\pmb{\sigma}}_u = (-\sin(u),\cos(u), 0 )  \,, \quad {\pmb{\sigma}}_v = (0,0,1) \,,
 \]</span> and therefore <span class="math display">\[\begin{align*}
-E &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_u =  1 \\
+E &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_u = 1 \\
 F &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v = 0 \\
 G &amp; = {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v = 1 \\
 \end{align*}\]</span> Then the first fundamental form is <span class="math display">\[
@@ -3077,8 +3077,8 @@ N := {\pmb{\sigma}}_{vv}  \cdot \mathbf{N}\,.
 \mathcal{F}_2 :=  L \, du^2 +  2 M  \,du dv  + N \, dv^2
 \]</span> is called the <strong>second fundamental form</strong> of <span class="math inline">\(\mathcal{S}\)</span>. Therefore <span class="math inline">\(\mathcal{F}_2\)</span> measures how much the normal vector <span class="math inline">\(\mathbf{N}\)</span> changes while moving across <span class="math inline">\(\mathcal{S}\)</span>. Let us make the definition of <span class="math inline">\(\mathcal{F}_2\)</span> precise.</p>
 <div id="principal-unit-normal" class="Definition" title="Principal Unit Normal">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 122: </strong>Principal Unit Normal</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathcal{S}\)</span> a regular chart. The <strong>principal unit normal</strong> to <span class="math inline">\(\mathcal{S}\)</span> is <span class="math display">\[
-\mathbf{N}:= \frac{ {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v }{ \left\| {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v \right\| } \,.
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 122: </strong>Principal Unit Normal</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathcal{S}\)</span> a regular chart. The <strong>principal unit normal</strong> to <span class="math inline">\(\mathcal{S}\)</span> is the function <span class="math display">\[
+\mathbf{N}\colon U \to \mathbb{R}^3 \,, \quad \mathbf{N}:= \frac{ {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v }{ \left\| {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v \right\| } \,.
 \]</span><p></p>
 </div></details>
 </div>
@@ -3086,32 +3086,133 @@ N := {\pmb{\sigma}}_{vv}  \cdot \mathbf{N}\,.
 {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v \neq 0 \,,
 \]</span> being <span class="math inline">\({\pmb{\sigma}}\)</span> regular.</p>
 <div id="second-fundamental-form-of-a-chart" class="Definition" title="Second fundamental form of a chart">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 123: </strong>Second fundamental form of a chart</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\({\pmb{\sigma}}\)</span> be a regular chart at <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. Let <span class="math inline">\((u_0,v_0)\)</span> be such that <span class="math display">\[
-{\pmb{\sigma}}(u_0,v_0) = \mathbf{p}\,.
-\]</span> For <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span> there exist <span class="math inline">\(\lambda,\mu \in \mathbb{R}\)</span> such that <span class="math display">\[
-\mathbf{v}= \lambda {\pmb{\sigma}}_u + \mu {\pmb{\sigma}}_v \,,
-\]</span> where <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are evaluated at <span class="math inline">\((u_0,v_0)\)</span>. Define the linear maps <span class="math display">\[
-du, dv \colon T_{\mathbf{p}} \mathcal{S}\to \mathbb{R}\,, \quad du(\mathbf{v}) := \lambda \,,  
-\quad dv(\mathbf{v}) := \mu \,.
-\]</span> Define <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 123: </strong>Second fundamental form of a chart</summary><div>Let <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span> be a regular chart of <span class="math inline">\(\mathcal{S}\)</span>. Define the functions <span class="math display">\[
+L , M , N \colon U \to \mathbb{R}
+\]</span> by setting <span class="math display">\[
 L := {\pmb{\sigma}}_{uu} \cdot \mathbf{N}\,, \quad  M := {\pmb{\sigma}}_{uv} \cdot \mathbf{N}\,, \quad
-N := {\pmb{\sigma}}_{vv} \cdot \mathbf{N}\,,
-\]</span> where <span class="math inline">\({\pmb{\sigma}}_{uu}\)</span>, <span class="math inline">\({\pmb{\sigma}}_{uv}\)</span>, <span class="math inline">\({\pmb{\sigma}}_{vv}\)</span> are evaluated at <span class="math inline">\((u_0,v_0)\)</span>. The <strong>second fundamental form</strong> of <span class="math inline">\({\pmb{\sigma}}\)</span> is the quadratic form <span class="math display">\[
-Q(\mathbf{v}) := L \, du^2(\mathbf{v}) + 2M \, du(\mathbf{v}) \, dv(\mathbf{v}) + N \, dv^2(\mathbf{v}) \,.
-\]</span> Denoting by <span class="math display">\[
+N := {\pmb{\sigma}}_{vv} \cdot \mathbf{N}\,.
+\]</span> Let <span class="math inline">\(\mathbf{p}\in {\pmb{\sigma}}(U)\)</span> and denote by <span class="math inline">\((u_0,v_0) \in U\)</span> the point such that <span class="math display">\[
+{\pmb{\sigma}}(u_0,v_0) = \mathbf{p}\,.
+\]</span> The <strong>second fundamental form</strong> of <span class="math inline">\({\pmb{\sigma}}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> is the quadratic form <span class="math display">\[
+\mathcal{F}_2 \colon T_{\mathbf{p}} \mathcal{S}\to \mathbb{R}
+\]</span> defined by <span id="eq-sff-chart"><span class="math display">\[
+\mathcal{F}_2 (\mathbf{v}) := L \, du^2(\mathbf{v}) + 2M \, du(\mathbf{v}) \, dv (\mathbf{v})+ N \, dv^2 (\mathbf{v}) \,,
+\tag{4.10}\]</span></span> for all <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span>. Here <span class="math inline">\(L,M,N\)</span> are evaluated at <span class="math inline">\((u_0,v_0)\)</span>, and <span class="math inline">\(du\)</span>, <span class="math inline">\(dv\)</span> are the coordinate functions as in Definition <a href="chap_4.html#definition-coordinate-functions">95</a>.<p></p>
+</div></details>
+</div>
+<div id="Notation*-29" class="Notation">
+<p></p><details class="Notation fbx-simplebox fbx-default" open=""><summary><strong>Notation</strong></summary><div>With a little abuse of notation, we also denote by <span class="math inline">\(\mathcal{F}_2\)</span> the <span class="math inline">\(2 \times 2\)</span> matrix <span class="math display">\[
 \mathcal{F}_2 =
 \left(
 \begin{array}{cc}
 L &amp; M \\
 M &amp; N
 \end{array}
-\right)
-\]</span> we have <span class="math display">\[
-Q(\mathbf{v}) = \mathbf{v}^T \, \mathcal{F}_2 \mathbf{v}\,.
+\right) \,.
 \]</span><p></p>
 </div></details>
 </div>
-<p>With a little abuse of notation, we will denote <span class="math inline">\(Q\)</span> by <span class="math inline">\(\mathcal{F}_2\)</span>.</p>
+<div id="second-fundamental-form-and-reparametrizations" class="Remark" title="Second fundamental form and reparametrizations">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 124: </strong>Second fundamental form and reparametrizations</summary><div>The second fundamental form <span class="math display">\[
+\mathcal{F}_2 = L \, du^2 + 2M \, du dv + N \, dv^2
+\]</span> depends on the choice of chart <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span>. Indeed, let us adopt the same notations as Remark <a href="chap_4.html#remark-fff-reparametrization">99</a>. Suppose that <span class="math inline">\(\widetilde{{\pmb{\sigma}}} \colon \widetilde{U} \to \mathbb{R}^3\)</span> is a reparametrization of <span class="math inline">\({\pmb{\sigma}}\)</span> with <span class="math display">\[
+\widetilde{{\pmb{\sigma}}} = {\pmb{\sigma}}\circ \Phi \,,
+\]</span> where <span class="math inline">\(\Phi \colon \widetilde{U} \to U\)</span> is a diffeomorphism. Denote the second fundamental form of <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> by <span class="math display">\[
+\widetilde{\mathcal{F}}_2 = \widetilde{L} \, d\tilde{u}^2 + 2 \widetilde{M} \, d\tilde{u} d\tilde{v} + \widetilde{N} \, d\tilde{v}^2 \,.
+\]</span> The matrices of <span class="math inline">\(\mathcal{F}_2\)</span> and <span class="math inline">\(\widetilde{\mathcal{F}}_2\)</span> are related by <span class="math display">\[
+\left(
+\begin{array}{cc}
+\widetilde{L} &amp; \widetilde{M} \\
+\widetilde{M} &amp; \widetilde{N}
+\end{array}
+\right)  
+=
+(J \Phi)^T \,
+\left(
+\begin{array}{cc}
+L &amp; M \\
+M &amp; N
+\end{array}
+\right)
+\,
+J \Phi  \,.
+\]</span><p></p>
+<p>Again, the proof follows by a simple change of basis argument.</p>
+</div></details>
+</div>
+<p>Let us show that a plane and a cylinder have different second fundamental forms.</p>
+<div id="plane" class="Example" title="Plane">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 125: </strong>Plane</summary><div>
+<p>Let <span class="math inline">\(\mathbf{a}, \mathbf{p}, \mathbf{q} \in \mathbb{R}^3\)</span>. Suppose that <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\mathbf{q}\)</span> are orthonormal vectors, that is, <span class="math display">\[
+\left\| \mathbf{p} \right\| = \left\| \mathbf{q} \right\| = 1 \,, \quad \mathbf{p}\cdot \mathbf{q} = 0 \,.
+\]</span> Consider the plane with chart <span class="math display">\[
+{\pmb{\sigma}}(u,v) = \mathbf{a} + u \mathbf{p}+ v \mathbf{q} \,, \quad (u,v) \in \mathbb{R}^2 \,.
+\]</span> Prove that the second fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
+\mathcal{F}_2 = 0 \,.
+\]</span> This reflects the intuition that a plane is flat, and therefore there is no <em>curvature</em>.</p>
+<blockquote class="blockquote">
+<p>We have <span class="math display">\[
+{\pmb{\sigma}}_u = \mathbf{p}\,, \quad {\pmb{\sigma}}_v = \mathbf{q} \,.
+\]</span> The principal unit normal is <span class="math display">\[
+\mathbf{N}= \frac{\mathbf{p}\times \mathbf{q}}{\left\|  \mathbf{p}\times \mathbf{q}  \right\|   } \,,
+\]</span> while the second derivatives are <span class="math display">\[
+{\pmb{\sigma}}_{\mathbf{u}} = {\pmb{\sigma}}_{\mathbf{u}} = {\pmb{\sigma}}_{\mathbf{u}} = {\pmb{0}}\,.
+\]</span> Therefore <span class="math display">\[\begin{align*}
+L &amp; = {\pmb{\sigma}}_{uu} \cdot \mathbf{N}= 0 \\
+M &amp; = {\pmb{\sigma}}_{uv} \cdot \mathbf{N}= 0 \\
+N &amp; = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}= 0 \\
+\end{align*}\]</span> and the second fundamental form is <span class="math display">\[
+\mathcal{F}_2 = L \, du^2 + 2 M\, du \, dv + N \, dv^2 = 0 \,.  
+\]</span></p>
+</blockquote>
+</div></details>
+</div>
+<div id="unit-cylinder-3" class="Example" title="Unit cylinder">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 126: </strong>Unit cylinder</summary><div>
+<p>Consider the unit cylinder with chart <span class="math display">\[
+{\pmb{\sigma}}(u,v) = (\cos(u), \sin(u),  v)  \,, \quad (u,v) \in (0,2\pi) \times \mathbb{R}\,.
+\]</span> Prove that the second fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
+\mathcal{F}_2 = -  du^2 \,.
+\]</span> This reflects the intuition that the cylinder curves only when moving in the <span class="math inline">\(v\)</span>-direction. In such direction we are moving on a circle of radius <span class="math inline">\(1\)</span>, therefore we expect the curvature to be <span class="math inline">\(-1\)</span>.</p>
+<blockquote class="blockquote">
+<p>We have <span class="math display">\[
+{\pmb{\sigma}}_u = (-\sin(u),\cos(u), 0 )  \,, \quad {\pmb{\sigma}}_v = (0,0,1) \,,
+\]</span> and also <span class="math display">\[
+{\pmb{\sigma}}_{uu}  = (-\cos(u), - \sin(u), 0 ) \,, \quad {\pmb{\sigma}}_{uv} = {\pmb{\sigma}}_{vv} = {\pmb{0}}\,.
+\]</span> We have also <span class="math display">\[
+{\pmb{\sigma}}_u \times {\pmb{\sigma}}_v  =
+\left|  
+\begin{array}{ccc}
+\mathbf{i}&amp; \mathbf{j}&amp; \mathbf{k}\\
+-\sin(u) &amp; \cos(u) &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{array}
+\right|
+= (\cos(u), \sin(u),0)
+\]</span> so that <span class="math display">\[
+\left\|  {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v  \right\| = \sqrt{ \cos^2(u) + \sin^2(u)  } = 1 \,.
+\]</span> The principal unit normal is <span class="math display">\[
+\mathbf{N}= \frac{{\pmb{\sigma}}_u \times {\pmb{\sigma}}_v}{ \left\| {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v \right\| } = (\cos(u), \sin(u),0) \,.
+\]</span> We finally compute <span class="math display">\[\begin{align*}
+L &amp; = {\pmb{\sigma}}_{uu} \cdot \mathbf{N}\\
+&amp; = (-\cos(u), - \sin(u), 0 ) \cdot (\cos(u), \sin(u),0) \\
+&amp; = - \cos^2(u) - \sin^2(u) = - 1 \\
+M &amp; = {\pmb{\sigma}}_{uv} \cdot \mathbf{N}= 0 \\
+N &amp; = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}= 0 \\
+\end{align*}\]</span> The second fundamental form is <span class="math display">\[
+\mathcal{F}_2 = L \, du^2 + 2 M\, du \, dv + N \, dv^2 = - du^2  \,.  
+\]</span></p>
+</blockquote>
+</div></details>
+</div>
+<div id="Remark-127" class="Remark">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 127</strong></summary><div>We have seen that a plane and the unit cylinder have the same first fundamental form <span class="math display">\[
+\mathcal{F}_1 = \widetilde{\mathcal{F}}_1 = du^2 + dv^2 \,,
+\]</span> while their second fundamental forms differ: we have <span class="math display">\[
+\mathcal{F}_2 = 0 \,, \quad \widetilde{\mathcal{F}}_2 = - du^2   \,,
+\]</span> respectively.<p></p>
+</div></details>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">

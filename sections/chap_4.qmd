@@ -3465,7 +3465,7 @@ charts. We first need to define the coordinates functions $du$ and $dv$ on $T_{\
 
 
 ::: Definition
-### Coordinate functions on tangent plane
+### Coordinate functions on tangent plane  {#definition-coordinate-functions}
 
 Let $\sss \colon U \to \R^3$ be a regular chart of $\SSS$. 
 For each $\pp \in \sss(U)$ we have
@@ -3756,7 +3756,7 @@ $$
 $$
 and therefore 
 \begin{align*}
-E & = \sss_u \cdot \sss_u =  1 \\
+E & = \sss_u \cdot \sss_u = 1 \\
 F & = \sss_u \cdot \sss_v = 0 \\
 G & = \sss_v \cdot \sss_v = 1 \\
 \end{align*}
@@ -4920,9 +4920,9 @@ of $\mathcal{F}_2$ precise.
 ::: Definition
 ### Principal Unit Normal
 
-Let $\SSS$ be a regular surface and $\sss \colon U \to \SSS$ a regular chart. The **principal unit normal** to $\SSS$ is 
+Let $\SSS$ be a regular surface and $\sss \colon U \to \SSS$ a regular chart. The **principal unit normal** to $\SSS$ is the function
 $$
-\NN := \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v} } \,. 
+\NN \colon U \to \R^3 \,, \quad \NN := \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v} } \,. 
 $$
 
 :::
@@ -4939,33 +4939,36 @@ being $\sss$ regular.
 ::: Definition
 ### Second fundamental form of a chart
 
-Let $\SSS$ be a regular surface and $\sss$ be a regular chart at $\pp \in \SSS$. 
-Let $(u_0,v_0)$ be such that
+Let $\sss \colon U \to \R^3$ be a regular chart of $\SSS$. Define the functions
+$$
+L , M , N \colon U \to \R 
+$$
+by setting
+$$
+L := \sss_{uu} \cdot \NN  \,, \quad  M := \sss_{uv} \cdot \NN \,, \quad 
+N := \sss_{vv} \cdot \NN \,.
+$$
+Let $\pp \in \sss(U)$ and denote by $(u_0,v_0) \in U$ the point such that
 $$
 \sss(u_0,v_0) = \pp \,.
 $$
-For $\vv \in T_{\pp} \SSS$ there exist
-$\lambda,\mu \in \R$ such that
+The **second fundamental form** of $\sss$ at $\pp$ is the quadratic form
 $$
-\vv = \lambda \sss_u + \mu \sss_v \,,
+\mathcal{F}_2 \colon T_{\pp} \SSS \to \R
 $$
-where $\sss_u$ and $\sss_v$ are evaluated at $(u_0,v_0)$.
-Define the linear maps
+defined by
 $$
-du, dv \colon T_{\pp} \SSS \to \R \,, \quad du(\vv) := \lambda \,,  
-\quad dv(\vv) := \mu \,.
-$$
-Define
-$$
-L := \sss_{uu} \cdot \NN \,, \quad  M := \sss_{uv} \cdot \NN \,, \quad 
-N := \sss_{vv} \cdot \NN \,,
-$$
-where $\sss_{uu}$, $\sss_{uv}$, $\sss_{vv}$ are evaluated at $(u_0,v_0)$.
-The **second fundamental form** of $\sss$ is the quadratic form
-$$
-Q(\vv) := L \, du^2(\vv) + 2M \, du(\vv) \, dv(\vv) + N \, dv^2(\vv) \,.
-$$
-Denoting by 
+\mathcal{F}_2 (\vv) := L \, du^2(\vv) + 2M \, du(\vv) \, dv (\vv)+ N \, dv^2 (\vv) \,,
+$${#eq-sff-chart}
+for all $\vv \in T_{\pp} \SSS$. Here $L,M,N$ are evaluated at $(u_0,v_0)$, and 
+$du$, $dv$ are the coordinate functions as in Definition \ref{definition-coordinate-functions}.
+
+:::
+
+
+::: Notation 
+
+With a little abuse of notation, we also denote by $\mathcal{F}_2$ the $2 \times 2$ matrix
 $$
 \mathcal{F}_2 = 
 \left(
@@ -4973,16 +4976,176 @@ $$
 L & M \\
 M & N 
 \end{array}
-\right)
-$$
-we have
-$$
-Q(\vv) = \vv^T \, \mathcal{F}_2 \vv \,.
+\right) \,.
 $$
 
 :::
 
-With a little abuse of notation, we will denote $Q$ by $\mathcal{F}_2$.
+
+
+::: Remark
+### Second fundamental form and reparametrizations  
+
+The second fundamental form
+$$
+\mathcal{F}_2 = L \, du^2 + 2M \, du dv + N \, dv^2
+$$
+depends on the choice of chart $\sss \colon U \to \R^3$. Indeed, let us adopt the same notations 
+as Remark \ref{remark-fff-reparametrization}. Suppose that $\widetilde{\sss} \colon \widetilde{U} \to \R^3$ is a reparametrization of $\sss$ with 
+$$
+\widetilde{\sss} = \sss \circ \Phi \,,
+$$
+where $\Phi \colon \widetilde{U} \to U$ is a diffeomorphism. Denote the second fundamental form of $\widetilde{\sss}$ by
+$$
+\widetilde{\mathcal{F}}_2 = \widetilde{L} \, d\tilde{u}^2 + 2 \widetilde{M} \, d\tilde{u} d\tilde{v} + \widetilde{N} \, d\tilde{v}^2 \,.
+$$
+The matrices of $\mathcal{F}_2$ and $\widetilde{\mathcal{F}}_2$ are related by
+$$
+\left(
+\begin{array}{cc}
+\widetilde{L} & \widetilde{M} \\
+\widetilde{M} & \widetilde{N}
+\end{array}
+\right)  
+= 
+(J \Phi)^T \,
+\left(
+\begin{array}{cc}
+L & M \\
+M & N
+\end{array}
+\right)
+\, 
+J \Phi  \,.
+$$
+
+Again, the proof follows by a simple change of basis argument.
+
+:::
+
+
+
+
+Let us show that a plane and a cylinder have different second fundamental forms.
+
+
+
+::: Example
+### Plane   
+
+Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$. Suppose that $\pp$ and $\mathbf{q}$ are orthonormal vectors, that is,
+$$
+\norm{\pp} = \norm{\mathbf{q}} = 1 \,, \quad \pp \cdot \mathbf{q} = 0 \,. 
+$$
+Consider the plane with chart
+$$
+\sss(u,v) = \mathbf{a} + u \pp + v \mathbf{q} \,, \quad (u,v) \in \R^2 \,.
+$$
+Prove that the second fundamental form of $\sss$ is
+$$
+\mathcal{F}_2 = 0 \,.
+$$
+This reflects the intuition that a plane is flat, and therefore there is no *curvature*. 
+
+> We have
+$$
+\sss_u = \pp \,, \quad \sss_v = \mathbf{q} \,.
+$$
+The principal unit normal is
+$$
+\NN = \frac{\pp \times \mathbf{q}}{\norm{ \pp \times \mathbf{q} }   } \,,
+$$
+while the second derivatives are
+$$
+\sss_{\uu} = \sss_{\uu} = \sss_{\uu} = \zero \,.
+$$
+Therefore
+\begin{align*}
+L & = \sss_{uu} \cdot \NN = 0 \\
+M & = \sss_{uv} \cdot \NN = 0 \\
+N & = \sss_{vv} \cdot \NN = 0 \\
+\end{align*}
+and the second fundamental form is
+$$
+\mathcal{F}_2 = L \, du^2 + 2 M\, du \, dv + N \, dv^2 = 0 \,.  
+$$
+
+:::
+
+
+
+
+::: Example
+### Unit cylinder
+
+Consider the unit cylinder with chart
+$$
+\sss(u,v) = (\cos(u), \sin(u),  v)  \,, \quad (u,v) \in (0,2\pi) \times \R \,.
+$$
+Prove that the second fundamental form of $\sss$ is
+$$
+\mathcal{F}_2 = -  du^2 \,.
+$$
+This reflects the intuition that the cylinder curves only when moving in the $v$-direction.
+In such direction we are moving on a circle of radius $1$, therefore we expect the curvature 
+to be $-1$.
+
+> We have
+$$
+\sss_u = (-\sin(u),\cos(u), 0 )  \,, \quad \sss_v = (0,0,1) \,, 
+$$
+and also
+$$
+\sss_{uu}  = (-\cos(u), - \sin(u), 0 ) \,, \quad \sss_{uv} = \sss_{vv} = \zero \,.
+$$
+We have also 
+$$
+\sss_u \times \sss_v  =
+\left|  
+\begin{array}{ccc}
+\ii & \jj & \kk \\
+-\sin(u) & \cos(u) & 0 \\
+0 & 0 & 1
+\end{array}
+\right|
+ = (\cos(u), \sin(u),0)
+$$
+so that 
+$$
+\norm{ \sss_u \times \sss_v } = \sqrt{ \cos^2(u) + \sin^2(u)  } = 1 \,. 
+$$
+The principal unit normal is
+$$
+\NN = \frac{\sss_u \times \sss_v}{ \norm{\sss_u \times \sss_v} } = (\cos(u), \sin(u),0) \,.
+$$
+We finally compute
+\begin{align*}
+L & = \sss_{uu} \cdot \NN \\
+  & = (-\cos(u), - \sin(u), 0 ) \cdot (\cos(u), \sin(u),0) \\
+  & = - \cos^2(u) - \sin^2(u) = - 1 \\
+M & = \sss_{uv} \cdot \NN = 0 \\
+N & = \sss_{vv} \cdot \NN = 0 \\
+\end{align*}
+The second fundamental form is
+$$
+\mathcal{F}_2 = L \, du^2 + 2 M\, du \, dv + N \, dv^2 = - du^2  \,.  
+$$
+
+:::
+
+
+::: Remark
+
+We have seen that a plane and the unit cylinder have the same first fundamental form 
+$$
+\mathcal{F}_1 = \widetilde{\mathcal{F}}_1 = du^2 + dv^2 \,,
+$$
+while their second fundamental forms differ: we have
+$$
+\mathcal{F}_2 = 0 \,, \quad \widetilde{\mathcal{F}}_2 = - du^2   \,,
+$$
+respectively.
+:::
 
 
 

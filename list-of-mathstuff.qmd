@@ -817,7 +817,7 @@
 
  [**Definition 4.94**](#first-fundamental-form-1): First fundamental form\Pageref{first-fundamental-form-1}
 
- [**Definition 4.95**](#coordinate-functions-on-tangent-plane): Coordinate functions on tangent plane\Pageref{coordinate-functions-on-tangent-plane}
+ [**Definition 4.95**](#definition-coordinate-functions): Coordinate functions on tangent plane\Pageref{definition-coordinate-functions}
 
  [**Definition 4.96**](#first-fundamental-form-of-a-chart): First fundamental form of a chart\Pageref{first-fundamental-form-of-a-chart}
 
@@ -896,3 +896,13 @@
  [**Definition 4.122**](#principal-unit-normal): Principal Unit Normal\Pageref{principal-unit-normal}
 
  [**Definition 4.123**](#second-fundamental-form-of-a-chart): Second fundamental form of a chart\Pageref{second-fundamental-form-of-a-chart}
+
+ [**Notation**](#Notation*-4.29)\Pageref{Notation*-4.29}
+
+ [**Remark 4.124**](#second-fundamental-form-and-reparametrizations): Second fundamental form and reparametrizations\Pageref{second-fundamental-form-and-reparametrizations}
+
+ [**Example 4.125**](#plane): Plane\Pageref{plane}
+
+ [**Example 4.126**](#unit-cylinder-3): Unit cylinder\Pageref{unit-cylinder-3}
+
+ [**Remark 4.127**](#Remark-4.127)\Pageref{Remark-4.127}
