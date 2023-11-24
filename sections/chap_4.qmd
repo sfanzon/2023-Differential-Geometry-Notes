@@ -2203,7 +2203,7 @@ The key ideas around diffeomorphisms are:
 
 ::: {.Proposition  #proposition-f-chart}
 
-Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ be smooth. If 
+Let $\SSS$ and $\widetilde{\SSS}$ be regular surfaces and $f \colon \SSS \to \widetilde{\SSS}$ be a diffeomorphism. If 
 $\sss \colon U \to \SSS$ is a regular chart for $\SSS$ at $\pp$, then
 $$
 \widetilde{\sss} := f \circ \sss \colon U \to \widetilde{\SSS}
@@ -2644,7 +2644,7 @@ We want to compute the tangent plane $T_{\pp} \SSS$.
 First, we need to check that $\sss$ is regular. We have
 \begin{align*}
 \sss_u & = \left(  - \sqrt{1-v} \sin(u) , \sqrt{1-v} \cos(u), 0        \right) \\
-\sss_v & = \left(   - \frac{1}{2} (1-v)^{-1/2}  \cos(u) , - \frac{1}{2} (1-v)^{-1/2}   \sin(u), 1        \right) 
+\sss_v & = \left(    \frac{1}{2} (1-v)^{-1/2}  \cos(u) , \frac{1}{2} (1-v)^{-1/2}   \sin(u), 1        \right) 
 \end{align*}
 As the last component of $\sss_u$ is $0$ and the last component of $\sss_v$ is $1$, we conclude that $\sss_u$ and $\sss_v$ are linearly independent. Thus $\sss$ is regular. 
 
@@ -2663,10 +2663,10 @@ To find the equation of $T_{\pp} \SSS$ we compute:
 \begin{array}{ccc}
 \ii & \jj & \kk \\
 - \sqrt{1-v} \sin(u) & \sqrt{1-v} \cos(u) & 0 \\
-- \frac{1}{2} (1-v)^{-1/2}  \cos(u) & - \frac{1}{2} (1-v)^{-1/2}   \sin(u) & 1
+\frac{1}{2} (1-v)^{-1/2}  \cos(u) & \frac{1}{2} (1-v)^{-1/2}   \sin(u) & 1
 \end{array}
 \right| \\
-& = \left(  \sqrt{1-v} \cos(u) , \sqrt{1-v} \sin(u), \frac12        \right) 
+& = \left(  \sqrt{1-v} \cos(u) , \sqrt{1-v} \sin(u), - \frac12        \right) 
 \end{align*}
 For 
 $$
@@ -2678,7 +2678,7 @@ $$
 $$
 and therefore 
 $$
-\nn = (\sss_u \times \sss_v)(u_0,v_0) =  \left(  \frac{\sqrt 2}{2}, \frac{\sqrt 2}{2} , \frac{1}{2}   \right) \,.
+\nn = (\sss_u \times \sss_v)(u_0,v_0) =  \left(  \frac{\sqrt 2}{2}, \frac{\sqrt 2}{2} , -\frac{1}{2}   \right) \,.
 $$
 The equation for $T_{\pp} \SSS$ is therefore
 $$
@@ -2686,7 +2686,7 @@ $$
 $$
 for some $k \in \R$. The above reads
 $$
-\frac{\sqrt 2}{2} \, x + \frac{\sqrt 2}{2} \, y + \frac{1}{2} \, z = k \,.
+\frac{\sqrt 2}{2} \, x + \frac{\sqrt 2}{2} \, y - \frac{1}{2} \, z = k \,.
 $$
 We are left to compute $k$. The point $\pp$ belongs to $T_{\pp} \SSS$, and therefore 
 $$
@@ -2694,7 +2694,7 @@ $$
 $$
 The equation for $T_{\pp} \SSS$ is then
 $$
-\frac{\sqrt 2}{2} \, x + \frac{\sqrt 2}{2} \, y + \frac{1}{2} \, z = 1 \,.
+\frac{\sqrt 2}{2} \, x + \frac{\sqrt 2}{2} \, y - \frac{1}{2} \, z = 1 \,.
 $$
 :::
 
@@ -3554,11 +3554,15 @@ $${#eq-fff-chart}
 
 ::: {.Proposition  #proposition-fff-quadratic}
 
-The quadratic form associated to $I_{\pp}$ is $\mathcal{F}_1$, that is,
+Let $\SSS$ be a regular surface and $\sss$ be a regular chart. Then
+$$
+I_{\pp} (\vv,\ww) = E \, du (\vv) dv(\ww) + F \, ( du(\vv) \, dv(\ww) + du(\ww) + dv(\vv) ) + G \, dv(\vv) dv(\ww) \,
+$$
+for all $\vv,\ww \in T_{\pp} \SSS$. The quadratic form associated to $I_{\pp}$ is $\mathcal{F}_1$, that is,
 $$
 I_{\pp} (\vv,\vv) = E \, du (\vv)^2 + 2F \, du(\vv) \, dv(\vv) + G \, dv(\vv)^2 \,
 $$
-for all $v \in T_{\pp} \SSS$,
+for all $\vv \in T_{\pp} \SSS$,
 
 :::
 
@@ -3566,14 +3570,16 @@ for all $v \in T_{\pp} \SSS$,
 
 Since 
 $$
-\vv = \lambda \sss_u + \mu \sss_v \,,
+\vv = \lambda_1 \sss_u + \mu_1 \sss_v \,, \quad 
+\vv = \lambda_2 \sss_u + \mu_2 \sss_v \,,
 $$
 we have that
 \begin{align*}
-I_{\pp} (\vv,\vv) & = \vv \cdot \vv \\
-&= \lambda^2 \, \sss_u \cdot \sss_v + 2\lambda \mu \, \sss_u \cdot \sss_v + \mu^2 \, \sss_v \cdot \sss_v \\
-& = E \, du(\vv)^2 + 2F \, du(\vv) \, dv(\vv) + G \, dv(\vv)^2 \,.
+I_{\pp} (\vv,\ww) & = \vv \cdot \ww \\
+& = \lambda_1 \lambda_2 \, \sss_u \cdot \sss_v + ( \lambda_1 \mu_2 + \lambda_2 \mu_1 ) \, \sss_u \cdot \sss_v + \mu_1 \mu_2 \, \sss_v \cdot \sss_v \\
+& = E \, du (\vv) dv(\ww)  + F \, ( du(\vv) \, dv(\ww) + du(\ww) + dv(\vv) ) + G \,  dv(\vv) dv(\ww) \,.
 \end{align*}
+The fact that $I_{\pp}(\vv,\vv) = \mathcal{F}_1$ is now trivial.
 
 :::
 
@@ -4643,6 +4649,8 @@ showing that $\sss$ is a conformal parametrization.
 
 
 For this part, see Lecure 9 of Will's Notes (not that long) and section 6.4 in Pressley.
+In Lecure 10 of Will's Notes there is an application to the theorem
+of archimedes. Looks pretty cool.
 
 
 ![The area of a small region $R$ on a surface $\SSS$ can be approximated by the area of the rectangle of sides $\sss_u$ and $\sss_v$. Such area is $\| \sss_u \times \sss_v \|$.](/images/fff_area.png){width=70%}
@@ -4691,14 +4699,16 @@ We have also shown that:
 
 
 
+## Second fundamental form
+
+
+Discussion pressley
+
+
+
+
 
 ::: {.content-hidden}
-
-
-
-
-
-
 
 
 ::: Definition

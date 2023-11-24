@@ -85,7 +85,31 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Question {
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -97,19 +121,15 @@ div.csl-indent {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Assumption {
+.Question {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
 .Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -121,11 +141,7 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Lemma {
+.Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -133,29 +149,13 @@ div.csl-indent {
   --color1: #cce7b1;
   --color2: #86b754;
 }
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.Warning {
+.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
 </style>
 
@@ -286,6 +286,7 @@ div.csl-indent {
   <li><a href="#angle-between-curves" id="toc-angle-between-curves" class="nav-link" data-scroll-target="#angle-between-curves"><span class="header-section-number">4.11.4</span> Angle between curves</a></li>
   <li><a href="#conformal-maps" id="toc-conformal-maps" class="nav-link" data-scroll-target="#conformal-maps"><span class="header-section-number">4.11.5</span> Conformal maps</a></li>
   </ul></li>
+  <li><a href="#second-fundamental-form" id="toc-second-fundamental-form" class="nav-link" data-scroll-target="#second-fundamental-form"><span class="header-section-number">4.12</span> Second fundamental form</a></li>
   </ul>
 </nav>
     </div>
@@ -1505,7 +1506,7 @@ g(f(\mathbf{p})) \in {\pmb{\sigma}}_3 (U_3) \,.
 <li><p>Two diffeomorphic surfaces have essentially the same charts, as shown in the next proposition.</p></li>
 </ul>
 <div id="proposition-f-chart" class="Proposition">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 64</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> be regular surfaces and <span class="math inline">\(f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\)</span> be smooth. If <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathcal{S}\)</span> is a regular chart for <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>, then <span class="math display">\[
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 64</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> be regular surfaces and <span class="math inline">\(f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\)</span> be a diffeomorphism. If <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathcal{S}\)</span> is a regular chart for <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>, then <span class="math display">\[
 \widetilde{{\pmb{\sigma}}} := f \circ {\pmb{\sigma}}\colon U \to \widetilde{\mathcal{S}}
 \]</span> is a regular chart for <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> at <span class="math inline">\(f(\mathbf{p})\)</span>.<p></p>
 </div></details>
@@ -1750,7 +1751,7 @@ k = \mathbf{p}\cdot \mathbf{n}\,.
 \]</span> We want to compute the tangent plane <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>.<p></p>
 <p>First, we need to check that <span class="math inline">\({\pmb{\sigma}}\)</span> is regular. We have <span class="math display">\[\begin{align*}
 {\pmb{\sigma}}_u &amp; = \left(  - \sqrt{1-v} \sin(u) , \sqrt{1-v} \cos(u), 0        \right) \\
-{\pmb{\sigma}}_v &amp; = \left(   - \frac{1}{2} (1-v)^{-1/2}  \cos(u) , - \frac{1}{2} (1-v)^{-1/2}   \sin(u), 1        \right)
+{\pmb{\sigma}}_v &amp; = \left(    \frac{1}{2} (1-v)^{-1/2}  \cos(u) , \frac{1}{2} (1-v)^{-1/2}   \sin(u), 1        \right)
 \end{align*}\]</span> As the last component of <span class="math inline">\({\pmb{\sigma}}_u\)</span> is <span class="math inline">\(0\)</span> and the last component of <span class="math inline">\({\pmb{\sigma}}_v\)</span> is <span class="math inline">\(1\)</span>, we conclude that <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are linearly independent. Thus <span class="math inline">\({\pmb{\sigma}}\)</span> is regular.</p>
 <p>Suppose <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span> is such that <span class="math display">\[
 {\pmb{\sigma}}(u_0,v_0) = \mathbf{p}
@@ -1762,24 +1763,24 @@ T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u (u_0,v_0) , 
 \begin{array}{ccc}
 \mathbf{i}&amp; \mathbf{j}&amp; \mathbf{k}\\
 - \sqrt{1-v} \sin(u) &amp; \sqrt{1-v} \cos(u) &amp; 0 \\
-- \frac{1}{2} (1-v)^{-1/2}  \cos(u) &amp; - \frac{1}{2} (1-v)^{-1/2}   \sin(u) &amp; 1
+\frac{1}{2} (1-v)^{-1/2}  \cos(u) &amp; \frac{1}{2} (1-v)^{-1/2}   \sin(u) &amp; 1
 \end{array}
 \right| \\
-&amp; = \left(  \sqrt{1-v} \cos(u) , \sqrt{1-v} \sin(u), \frac12        \right)
+&amp; = \left(  \sqrt{1-v} \cos(u) , \sqrt{1-v} \sin(u), - \frac12        \right)
 \end{align*}\]</span> For <span class="math display">\[
 (u_0,v_0) = \left( \frac{\pi}{4}, 0 \right)
 \]</span> we have <span class="math display">\[
 \mathbf{p}= {\pmb{\sigma}}(u_0,v_0)  = \left( \frac{\sqrt 2}{2}, \frac{\sqrt 2}{2}, 0  \right) \,,
 \]</span> and therefore <span class="math display">\[
-\mathbf{n}= ({\pmb{\sigma}}_u \times {\pmb{\sigma}}_v)(u_0,v_0) =  \left(  \frac{\sqrt 2}{2}, \frac{\sqrt 2}{2} , \frac{1}{2}   \right) \,.
+\mathbf{n}= ({\pmb{\sigma}}_u \times {\pmb{\sigma}}_v)(u_0,v_0) =  \left(  \frac{\sqrt 2}{2}, \frac{\sqrt 2}{2} , -\frac{1}{2}   \right) \,.
 \]</span> The equation for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is therefore <span class="math display">\[
 (x,y,z) \cdot \mathbf{n}= k \,,
 \]</span> for some <span class="math inline">\(k \in \mathbb{R}\)</span>. The above reads <span class="math display">\[
-\frac{\sqrt 2}{2} \, x + \frac{\sqrt 2}{2} \, y + \frac{1}{2} \, z = k \,.
+\frac{\sqrt 2}{2} \, x + \frac{\sqrt 2}{2} \, y - \frac{1}{2} \, z = k \,.
 \]</span> We are left to compute <span class="math inline">\(k\)</span>. The point <span class="math inline">\(\mathbf{p}\)</span> belongs to <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>, and therefore <span class="math display">\[
 \frac{\sqrt 2}{2} \, \frac{\sqrt 2}{2} + \frac{\sqrt 2}{2} \, \frac{\sqrt 2}{2} = k \quad \implies \quad k = 1 \,.
 \]</span> The equation for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is then <span class="math display">\[
-\frac{\sqrt 2}{2} \, x + \frac{\sqrt 2}{2} \, y + \frac{1}{2} \, z = 1 \,.
+\frac{\sqrt 2}{2} \, x + \frac{\sqrt 2}{2} \, y - \frac{1}{2} \, z = 1 \,.
 \]</span></p>
 </div></details>
 </div>
@@ -2273,19 +2274,22 @@ G := {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v \,.
 </div></details>
 </div>
 <div id="proposition-fff-quadratic" class="Proposition">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 97</strong></summary><div>The quadratic form associated to <span class="math inline">\(I_{\mathbf{p}}\)</span> is <span class="math inline">\(\mathcal{F}_1\)</span>, that is, <span class="math display">\[
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 97</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\({\pmb{\sigma}}\)</span> be a regular chart. Then <span class="math display">\[
+I_{\mathbf{p}} (\mathbf{v},\mathbf{w}) = E \, du (\mathbf{v}) dv(\mathbf{w}) + F \, ( du(\mathbf{v}) \, dv(\mathbf{w}) + du(\mathbf{w}) + dv(\mathbf{v}) ) + G \, dv(\mathbf{v}) dv(\mathbf{w}) \,
+\]</span> for all <span class="math inline">\(\mathbf{v},\mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\)</span>. The quadratic form associated to <span class="math inline">\(I_{\mathbf{p}}\)</span> is <span class="math inline">\(\mathcal{F}_1\)</span>, that is, <span class="math display">\[
 I_{\mathbf{p}} (\mathbf{v},\mathbf{v}) = E \, du (\mathbf{v})^2 + 2F \, du(\mathbf{v}) \, dv(\mathbf{v}) + G \, dv(\mathbf{v})^2 \,
-\]</span> for all <span class="math inline">\(v \in T_{\mathbf{p}} \mathcal{S}\)</span>,<p></p>
+\]</span> for all <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span>,<p></p>
 </div></details>
 </div>
 <div id="Proof*-19" class="Proof">
 <p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Since <span class="math display">\[
-\mathbf{v}= \lambda {\pmb{\sigma}}_u + \mu {\pmb{\sigma}}_v \,,
+\mathbf{v}= \lambda_1 {\pmb{\sigma}}_u + \mu_1 {\pmb{\sigma}}_v \,, \quad
+\mathbf{v}= \lambda_2 {\pmb{\sigma}}_u + \mu_2 {\pmb{\sigma}}_v \,,
 \]</span> we have that <span class="math display">\[\begin{align*}
-I_{\mathbf{p}} (\mathbf{v},\mathbf{v}) &amp; = \mathbf{v}\cdot \mathbf{v}\\
-&amp;= \lambda^2 \, {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v + 2\lambda \mu \, {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v + \mu^2 \, {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v \\
-&amp; = E \, du(\mathbf{v})^2 + 2F \, du(\mathbf{v}) \, dv(\mathbf{v}) + G \, dv(\mathbf{v})^2 \,.
-\end{align*}\]</span><p></p>
+I_{\mathbf{p}} (\mathbf{v},\mathbf{w}) &amp; = \mathbf{v}\cdot \mathbf{w}\\
+&amp; = \lambda_1 \lambda_2 \, {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v + ( \lambda_1 \mu_2 + \lambda_2 \mu_1 ) \, {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v + \mu_1 \mu_2 \, {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v \\
+&amp; = E \, du (\mathbf{v}) dv(\mathbf{w})  + F \, ( du(\mathbf{v}) \, dv(\mathbf{w}) + du(\mathbf{w}) + dv(\mathbf{v}) ) + G \,  dv(\mathbf{v}) dv(\mathbf{w}) \,.
+\end{align*}\]</span> The fact that <span class="math inline">\(I_{\mathbf{p}}(\mathbf{v},\mathbf{v}) = \mathcal{F}_1\)</span> is now trivial.<p></p>
 </div></details>
 </div>
 <p>Let us show how the first fundamental form allows to compute the length of curves on <span class="math inline">\(\mathcal{S}\)</span>.</p>
@@ -2935,6 +2939,11 @@ f( \widetilde{{\pmb{\sigma}}}(u,v) ) = {\pmb{\sigma}}(u,v) \,.
 \]</span> showing that <span class="math inline">\({\pmb{\sigma}}\)</span> is a conformal parametrization.<p></p>
 </div></details>
 </div>
+</section>
+</section>
+<section id="second-fundamental-form" class="level2" data-number="4.12">
+<h2 data-number="4.12" class="anchored" data-anchor-id="second-fundamental-form"><span class="header-section-number">4.12</span> Second fundamental form</h2>
+<p>Discussion pressley</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -2945,7 +2954,6 @@ Abate, Marco, and Tovena, Francesca. 2011. <em>Curves and Surfaces</em>. Springe
 Pressley, Andrew. 2010. <em>Elementary Differential Geometry</em>. Second Edition. Springer.
 </div>
 </div>
-</section>
 </section>
 
 </main> <!-- /main -->
