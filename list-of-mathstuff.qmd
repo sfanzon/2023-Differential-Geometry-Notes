@@ -937,6 +937,20 @@
 
  [**Definition 4.140**](#gauss-map): Gauss map\Pageref{gauss-map}
 
- [**Remark 4.141**](#Remark-4.141)\Pageref{Remark-4.141}
+ [**Example 4.141**](#Example-4.141)\Pageref{Example-4.141}
 
- [**Definition 4.142**](#weingarten-map): Weingarten map\Pageref{weingarten-map}
+ [**Remark 4.142**](#Remark-4.142)\Pageref{Remark-4.142}
+
+ [**Definition 4.143**](#weingarten-map): Weingarten map\Pageref{weingarten-map}
+
+ [**Important**](#Important*-4.32)\Pageref{Important*-4.32}
+
+ [**Remark 4.144**](#Remark-4.144)\Pageref{Remark-4.144}
+
+ [**Definition 4.145**](#second-fundamental-form-of-a-surface): Second fundamental form of a surface\Pageref{second-fundamental-form-of-a-surface}
+
+ [**Remark 4.146**](#Remark-4.146)\Pageref{Remark-4.146}
+
+ [**Remark 4.147**](#matrix-of-the-second-fundamental-form): Matrix of the second fundamental form\Pageref{matrix-of-the-second-fundamental-form}
+
+ [**Theorem 4.148**](#Theorem-4.148)\Pageref{Theorem-4.148}

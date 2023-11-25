@@ -5515,27 +5515,230 @@ $$
 
 ![The Gauss map ${\mathcal{G}}_{\SSS}$ of $\SSS$ is defined as ${\mathcal{G}}_{\SSS}(\pp):= \NN(\pp)$. Note that ${\mathcal{G}}_{\SSS}(\pp) \in \sphere^2$.](/images/sff_gauss_map.png){width=70%}
 
+
+
+::: Example
+
+1. Suppose $\SSS$ is the unit sphere $\sphere^2$. Then 
+${\mathcal{G}}_{\SSS} \colon \SSS \to \sphere^2$ is the identity, see @fig-gauss-sphere.
+
+2. Let $\mathbf{a} , \vv ,\ww \in \R^3$ with $\vv$ and $\ww$ linearly independent.
+Let $\SSS$ be the plane 
+$$
+\sss (u,v):= \mathbf{a} + \vv u + \mathbf{\ww} v \,, \quad \forall \, (u,v) \in \R^2 \,.
+$$
+The Gauss map of $\SSS$ is constant:
+$$
+\mathcal{G}_{\SSS} (\pp) = \NN (\pp) = \frac{ \vv \times \ww  }{ \| \vv \times \ww \| } \,,
+$$
+for all $\pp \in \SSS$, see @fig-gauss-plane.
+
+3. Let $\SSS$ be the unit cylinder
+$$
+\sss(u,v) = (\cos(u), \sin(u),  v)  \,, \quad (u,v) \in (0,2\pi) \times \R \,.
+$$
+Then
+$$
+\sss_u = (-\sin(u),\cos(u), 0 )  \,, \quad \sss_v = (0,0,1) \,,
+$$
+and
+$$
+\sss_u \times \sss_v = 
+\left|
+\begin{array}{ccc}
+\ii & \jj & \kk \\
+-\sin(u) & \cos(u) & 0 \\
+0  &  0 &  1 
+\end{array}
+\right|
+= (\cos(u), \sin(u), 0) \,.
+$$
+Therefore 
+$$
+\norm{ \sss_u \times \sss_v } = 1 \,,
+$$
+and 
+$$
+\NN = \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v } } = (\cos(u), \sin(u), 0) \,.
+$$
+The Gauss map of $\SSS$ is
+$$
+\mathcal{G}_{\SSS} (u,v) = (\cos(u), \sin(u), 0) \,.
+$$
+Note that $\mathcal{G}_{\SSS}$ maps $\SSS$ into the equator of $\sphere^2$, see @fig-gauss-cylinder.
+
+
+:::
+
+
+![The Gauss map ${\mathcal{G}}_{\SSS}$ of a sphere is the identity.](/images/sff_gauss_sphere.png){#fig-gauss-sphere width=70%}
+
+
+![The Gauss map ${\mathcal{G}}_{\SSS}$ of a plane is constant.](/images/sff_gauss_plane.png){#fig-gauss-plane width=70%}
+
+
+![If $\SSS$ is the unit cylinder, the Gauss map ${\mathcal{G}}_{\SSS}$ maps $\SSS$ into the equator of $\sphere^2$.](/images/sff_gauss_cylinder.png){#fig-gauss-cylinder width=70%}
+
+
+
+
 ::: Remark
 
-By definition the Gauss map is smooth. Therefore it is well defined its differential:
+By definition, the Gauss map is a smooth function between surfaces. Therefore the differential of 
+$\mathcal{G}_{\SSS}$ is well defined, and
 $$
 d_{\pp} {\mathcal{G}}_{\SSS} \colon T_{\pp} \SSS \to T_{{\mathcal{G}}_{\SSS}(\pp)} \sphere^2 \,,
 $$
-for all $\pp \in \SSS$.
+for all $\pp \in \SSS$. We have that
+$$
+T_{{\mathcal{G}}_{\SSS}(\pp)} \sphere^2 = T_{\pp} \SSS \,,
+$${#eq-gauss-identification}
+see @fig-weingarten. Therefore
+$$
+d_{\pp} {\mathcal{G}}_{\SSS} \colon T_{\pp} \SSS \to T_{\pp} \SSS \,.
+$$
+
+> *Proof.* The tangent plane $T_{{\mathcal{G}}_{\SSS}(\pp)} \sphere^2$ passes through the origin and
+$$
+\mathcal{G}(\pp) \perp T_{{\mathcal{G}}_{\SSS}(\pp)} \sphere^2 \,.
+$$
+By definition $\mathcal{G}(\pp) = \NN(\pp)$, and thus
+$$
+\NN(\pp) \perp T_{{\mathcal{G}}_{\SSS}(\pp)} \sphere^2 \,.
+$$
+Since by definition
+$$
+\NN(\pp) \perp T_{\pp} \SSS \,,
+$$
+we infer (@eq-gauss-identification).
 
 ::: 
 
- which is 
-called the Weingarten map
+
+
+![We ca identify $T_{{\mathcal{G}}_{\SSS}(\pp)} \sphere^2$ with $T_{\pp} \SSS$. This is because $\mathcal{G}(\pp) \perp T_{{\mathcal{G}}_{\SSS}(\pp)} \sphere^2$ and $\mathcal{G}(\pp) = \NN(\pp)$.](/images/sff_weingarten.png){#fig-weingarten width=70%}
+
+
 
 
 ::: Definition
 ### Weingarten map
 
-The **Weingarten map** is the derivative of the Gauss map, denoted by $\WW \colon T_{\pp}\SSS  \to T_{G(\pp)} \sphere^2$.
+Let $\SSS$ be an orientable surface and $\mathcal{G} \colon \SSS \to \sphere^2$ its Gauss map. 
+The **Weingarten map** $\WW_{\pp, \SSS}$ of $\SSS$ at $\pp$ is the negative differential of the 
+Gauss map at $\pp$, that is,
+$$
+\WW_{\pp,\SSS} \colon T_{\pp}\SSS  \to T_{\pp} \SSS \,, \quad  \WW_{\pp,\SSS}(\vv) := -d_{\pp} \mathcal{G} (\vv) \,,
+$$
+for all $\vv \in T_{\pp} \SSS$.
 
 :::
 
+
+::: Important
+
+The Gauss map encodes information on the standard unit normal $\NN$ to $\SSS$. Hence its derivative, the Weingarten map, detects the rate of change of $\NN$.
+
+:::
+
+::: Remark
+
+The minus sign in the definition of $\WW_{\pp,\SSS}$ is a convention, just like we defined the torsion
+to be the scalar $\tau$ such that
+$$
+\dot{\bb} = - \tau \nn \,.
+$$
+
+:::
+
+The Weingarten map allows us to define a bilnear form on $T_{\pp} \SSS$. We call such bilinear form the **second fundamental form** of $\SSS$. 
+
+
+::: Definition
+### Second fundamental form of a surface
+
+
+Let $\SSS$ be an orientable surface and denote by 
+$$
+\WW_{\pp,\SSS} \colon T_{\pp} \SSS \to T_{\pp} \SSS 
+$$
+its Weingarten map at $\pp$. The **second fundamental form** of $\SSS$ at $\pp$ is the map
+$$
+II_{\pp} \colon T_{\pp} \SSS \times T_{\pp} \SSS \to \R
+$$ 
+defined by
+$$
+II_{\pp}(\vv,\ww) := \WW_{\pp, \SSS}(\vv) \cdot \ww \,, \quad \forall \, \vv , \ww \in T_{\pp} \SSS \,.
+$$
+
+:::
+
+::: Remark
+
+The second fudamental form of $\SSS$ is a bilinear symmetric map.
+
+> Indeed, $II_{\pp}$ is symmetric because the scalar product is symmetric. Moreover $\WW_{\pp,\SSS}$ is
+linear, being the differential of a smooth map. Hence $II_{\pp}$ is bilinear.
+
+:::
+
+
+::: Remark 
+### Matrix of the second fundamental form
+
+
+Let $\sss$ be a chart at $\pp \in \SSS$. Since $II_{\pp}$ is a bilinear form on 
+$T_{\pp} \SSS$, it can be represented by the $2 \times 2$ matrix 
+$$
+A = 
+\left( 
+\begin{array}{cc}
+II_{\pp} (\sss_u \cdot \sss_u) & II_{\pp} (\sss_u \cdot \sss_v) \\
+II_{\pp} (\sss_v \cdot \sss_u) & II_{\pp} (\sss_v \cdot \sss_v) 
+\end{array}
+\right)  \,,
+$$
+given that $\{ \sss_u, \sss_v\}$ is a basis for $T_{\pp} \SSS$. In a not so shocking turn of events, it happens that
+$$
+A = \mathcal{F}_2 = 
+\left( 
+\begin{array}{cc}
+L & M \\
+M & N 
+\end{array}
+\right) 
+$$
+where
+$$
+L = \sss_{uu} \cdot \NN \,, \quad 
+M = \sss_{uv} \cdot \NN \,, \quad 
+N = \sss_{vv} \cdot \NN \,.
+$$
+Therefore, the second fundamental form $II_{\pp}$ coincides with the second fundamental form $\mathcal{F}_{2}$ of the chart $\sss$. We prove this statement in the next theorem.
+
+:::
+
+
+::: Theorem
+
+Let $\SSS$ be an orientable surface and $\sss \colon U \to \R^3$ be a regular chart.
+Let $\pp \in \sss(U)$. Then
+$$
+II_{\pp} (\vv,\ww) = (du (\vv), dv(\ww) )  \, 
+\left( 
+\begin{array}{cc}
+L & M \\
+M & N 
+\end{array}
+\right) \, (du(\vv) , dv(\ww))^T \,,
+$$
+for all $\vv,\ww \in T_{\pp} \SSS$. In particular, $\mathcal{F}_2$ is the quadratic form associated to the symmetric bilinear form $II_{\pp}$, that is,
+$$
+\mathcal{F}_2 (\vv) = {II}_{\pp} (\vv,\vv) \,, \quad \forall \, \vv \in T_{\pp} \SSS \,.
+$$
+
+
+:::
 
 
 

@@ -85,55 +85,7 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Lemma {
+.Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -141,11 +93,7 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Warning {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proposition {
+.Important {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -153,7 +101,59 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Corollary {
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -3406,15 +3406,154 @@ N &amp; = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}= 0 \\
 <figcaption class="figure-caption">The Gauss map <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}\)</span> of <span class="math inline">\(\mathcal{S}\)</span> is defined as <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}(\mathbf{p}):= \mathbf{N}(\mathbf{p})\)</span>. Note that <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}(\mathbf{p}) \in \mathbb{S}^2\)</span>.</figcaption>
 </figure>
 </div>
-<div id="Remark-141" class="Remark">
-<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 141</strong></summary><div>By definition the Gauss map is smooth. Therefore it is well defined its differential: <span class="math display">\[
-d_{\mathbf{p}} {\mathcal{G}}_{\mathcal{S}} \colon T_{\mathbf{p}} \mathcal{S}\to T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2 \,,
-\]</span> for all <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>.<p></p>
+<div id="Example-141" class="Example">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 141</strong></summary><div>
+<ol type="1">
+<li><p>Suppose <span class="math inline">\(\mathcal{S}\)</span> is the unit sphere <span class="math inline">\(\mathbb{S}^2\)</span>. Then <span class="math inline">\({\mathcal{G}}_{\mathcal{S}} \colon \mathcal{S}\to \mathbb{S}^2\)</span> is the identity, see <a href="#fig-gauss-sphere">Figure&nbsp;<span>4.11</span></a>.</p></li>
+<li><p>Let <span class="math inline">\(\mathbf{a} , \mathbf{v},\mathbf{w}\in \mathbb{R}^3\)</span> with <span class="math inline">\(\mathbf{v}\)</span> and <span class="math inline">\(\mathbf{w}\)</span> linearly independent. Let <span class="math inline">\(\mathcal{S}\)</span> be the plane <span class="math display">\[
+{\pmb{\sigma}}(u,v):= \mathbf{a} + \mathbf{v}u + \mathbf{\mathbf{w}} v \,, \quad \forall \, (u,v) \in \mathbb{R}^2 \,.
+\]</span> The Gauss map of <span class="math inline">\(\mathcal{S}\)</span> is constant: <span class="math display">\[
+\mathcal{G}_{\mathcal{S}} (\mathbf{p}) = \mathbf{N}(\mathbf{p}) = \frac{ \mathbf{v}\times \mathbf{w}}{ \| \mathbf{v}\times \mathbf{w}\| } \,,
+\]</span> for all <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>, see <a href="#fig-gauss-plane">Figure&nbsp;<span>4.12</span></a>.</p></li>
+<li><p>Let <span class="math inline">\(\mathcal{S}\)</span> be the unit cylinder <span class="math display">\[
+{\pmb{\sigma}}(u,v) = (\cos(u), \sin(u),  v)  \,, \quad (u,v) \in (0,2\pi) \times \mathbb{R}\,.
+\]</span> Then <span class="math display">\[
+{\pmb{\sigma}}_u = (-\sin(u),\cos(u), 0 )  \,, \quad {\pmb{\sigma}}_v = (0,0,1) \,,
+\]</span> and <span class="math display">\[
+{\pmb{\sigma}}_u \times {\pmb{\sigma}}_v =
+\left|
+\begin{array}{ccc}
+\mathbf{i}&amp; \mathbf{j}&amp; \mathbf{k}\\
+-\sin(u) &amp; \cos(u) &amp; 0 \\
+0  &amp;  0 &amp;  1
+\end{array}
+\right|
+= (\cos(u), \sin(u), 0) \,.
+\]</span> Therefore <span class="math display">\[
+\left\|  {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v  \right\| = 1 \,,
+\]</span> and <span class="math display">\[
+\mathbf{N}= \frac{ {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v }{ \left\| {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v  \right\| } = (\cos(u), \sin(u), 0) \,.
+\]</span> The Gauss map of <span class="math inline">\(\mathcal{S}\)</span> is <span class="math display">\[
+\mathcal{G}_{\mathcal{S}} (u,v) = (\cos(u), \sin(u), 0) \,.
+\]</span> Note that <span class="math inline">\(\mathcal{G}_{\mathcal{S}}\)</span> maps <span class="math inline">\(\mathcal{S}\)</span> into the equator of <span class="math inline">\(\mathbb{S}^2\)</span>, see <a href="#fig-gauss-cylinder">Figure&nbsp;<span>4.13</span></a>.</p></li>
+</ol>
 </div></details>
 </div>
-<p>which is called the Weingarten map</p>
+<div id="fig-gauss-sphere" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../images/sff_gauss_sphere.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.11: The Gauss map <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}\)</span> of a sphere is the identity.</figcaption>
+</figure>
+</div>
+<div id="fig-gauss-plane" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../images/sff_gauss_plane.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.12: The Gauss map <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}\)</span> of a plane is constant.</figcaption>
+</figure>
+</div>
+<div id="fig-gauss-cylinder" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../images/sff_gauss_cylinder.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.13: If <span class="math inline">\(\mathcal{S}\)</span> is the unit cylinder, the Gauss map <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}\)</span> maps <span class="math inline">\(\mathcal{S}\)</span> into the equator of <span class="math inline">\(\mathbb{S}^2\)</span>.</figcaption>
+</figure>
+</div>
+<div id="Remark-142" class="Remark">
+<details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 142</strong></summary><div>
+<p>By definition, the Gauss map is a smooth function between surfaces. Therefore the differential of <span class="math inline">\(\mathcal{G}_{\mathcal{S}}\)</span> is well defined, and <span class="math display">\[
+d_{\mathbf{p}} {\mathcal{G}}_{\mathcal{S}} \colon T_{\mathbf{p}} \mathcal{S}\to T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2 \,,
+\]</span> for all <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. We have that <span id="eq-gauss-identification"><span class="math display">\[
+T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2 = T_{\mathbf{p}} \mathcal{S}\,,
+\tag{4.11}\]</span></span> see <a href="#fig-weingarten">Figure&nbsp;<span>4.14</span></a>. Therefore <span class="math display">\[
+d_{\mathbf{p}} {\mathcal{G}}_{\mathcal{S}} \colon T_{\mathbf{p}} \mathcal{S}\to T_{\mathbf{p}} \mathcal{S}\,.
+\]</span></p>
+<blockquote class="blockquote">
+<p><em>Proof.</em> The tangent plane <span class="math inline">\(T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2\)</span> passes through the origin and <span class="math display">\[
+\mathcal{G}(\mathbf{p}) \perp T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2 \,.
+\]</span> By definition <span class="math inline">\(\mathcal{G}(\mathbf{p}) = \mathbf{N}(\mathbf{p})\)</span>, and thus <span class="math display">\[
+\mathbf{N}(\mathbf{p}) \perp T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2 \,.
+\]</span> Since by definition <span class="math display">\[
+\mathbf{N}(\mathbf{p}) \perp T_{\mathbf{p}} \mathcal{S}\,,
+\]</span> we infer (<a href="#eq-gauss-identification"><span>4.11</span></a>).</p>
+</blockquote>
+</div></details>
+</div>
+<div id="fig-weingarten" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../images/sff_weingarten.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.14: We ca identify <span class="math inline">\(T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2\)</span> with <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. This is because <span class="math inline">\(\mathcal{G}(\mathbf{p}) \perp T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2\)</span> and <span class="math inline">\(\mathcal{G}(\mathbf{p}) = \mathbf{N}(\mathbf{p})\)</span>.</figcaption>
+</figure>
+</div>
 <div id="weingarten-map" class="Definition" title="Weingarten map">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 142: </strong>Weingarten map</summary><div>The <strong>Weingarten map</strong> is the derivative of the Gauss map, denoted by <span class="math inline">\(\mathcal{W}\colon T_{\mathbf{p}}\mathcal{S}\to T_{G(\mathbf{p})} \mathbb{S}^2\)</span>.<p></p>
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 143: </strong>Weingarten map</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be an orientable surface and <span class="math inline">\(\mathcal{G} \colon \mathcal{S}\to \mathbb{S}^2\)</span> its Gauss map. The <strong>Weingarten map</strong> <span class="math inline">\(\mathcal{W}_{\mathbf{p}, \mathcal{S}}\)</span> of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> is the negative differential of the Gauss map at <span class="math inline">\(\mathbf{p}\)</span>, that is, <span class="math display">\[
+\mathcal{W}_{\mathbf{p},\mathcal{S}} \colon T_{\mathbf{p}}\mathcal{S}\to T_{\mathbf{p}} \mathcal{S}\,, \quad  \mathcal{W}_{\mathbf{p},\mathcal{S}}(\mathbf{v}) := -d_{\mathbf{p}} \mathcal{G} (\mathbf{v}) \,,
+\]</span> for all <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span>.<p></p>
+</div></details>
+</div>
+<div id="Important*-32" class="Important">
+<p></p><details class="Important fbx-simplebox fbx-default" open=""><summary><strong>Important</strong></summary><div>The Gauss map encodes information on the standard unit normal <span class="math inline">\(\mathbf{N}\)</span> to <span class="math inline">\(\mathcal{S}\)</span>. Hence its derivative, the Weingarten map, detects the rate of change of <span class="math inline">\(\mathbf{N}\)</span>.<p></p>
+</div></details>
+</div>
+<div id="Remark-144" class="Remark">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 144</strong></summary><div>The minus sign in the definition of <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span> is a convention, just like we defined the torsion to be the scalar <span class="math inline">\(\tau\)</span> such that <span class="math display">\[
+\dot{\mathbf{b}} = - \tau \mathbf{n}\,.
+\]</span><p></p>
+</div></details>
+</div>
+<p>The Weingarten map allows us to define a bilnear form on <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. We call such bilinear form the <strong>second fundamental form</strong> of <span class="math inline">\(\mathcal{S}\)</span>.</p>
+<div id="second-fundamental-form-of-a-surface" class="Definition" title="Second fundamental form of a surface">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 145: </strong>Second fundamental form of a surface</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be an orientable surface and denote by <span class="math display">\[
+\mathcal{W}_{\mathbf{p},\mathcal{S}} \colon T_{\mathbf{p}} \mathcal{S}\to T_{\mathbf{p}} \mathcal{S}
+\]</span> its Weingarten map at <span class="math inline">\(\mathbf{p}\)</span>. The <strong>second fundamental form</strong> of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> is the map <span class="math display">\[
+II_{\mathbf{p}} \colon T_{\mathbf{p}} \mathcal{S}\times T_{\mathbf{p}} \mathcal{S}\to \mathbb{R}
+\]</span> defined by <span class="math display">\[
+II_{\mathbf{p}}(\mathbf{v},\mathbf{w}) := \mathcal{W}_{\mathbf{p}, \mathcal{S}}(\mathbf{v}) \cdot \mathbf{w}\,, \quad \forall \, \mathbf{v}, \mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="Remark-146" class="Remark">
+<details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 146</strong></summary><div>
+<p>The second fudamental form of <span class="math inline">\(\mathcal{S}\)</span> is a bilinear symmetric map.</p>
+<blockquote class="blockquote">
+<p>Indeed, <span class="math inline">\(II_{\mathbf{p}}\)</span> is symmetric because the scalar product is symmetric. Moreover <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span> is linear, being the differential of a smooth map. Hence <span class="math inline">\(II_{\mathbf{p}}\)</span> is bilinear.</p>
+</blockquote>
+</div></details>
+</div>
+<div id="matrix-of-the-second-fundamental-form" class="Remark" title="Matrix of the second fundamental form">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 147: </strong>Matrix of the second fundamental form</summary><div>Let <span class="math inline">\({\pmb{\sigma}}\)</span> be a chart at <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. Since <span class="math inline">\(II_{\mathbf{p}}\)</span> is a bilinear form on <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>, it can be represented by the <span class="math inline">\(2 \times 2\)</span> matrix <span class="math display">\[
+A =
+\left(
+\begin{array}{cc}
+II_{\mathbf{p}} ({\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_u) &amp; II_{\mathbf{p}} ({\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v) \\
+II_{\mathbf{p}} ({\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_u) &amp; II_{\mathbf{p}} ({\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v)
+\end{array}
+\right)  \,,
+\]</span> given that <span class="math inline">\(\{ {\pmb{\sigma}}_u, {\pmb{\sigma}}_v\}\)</span> is a basis for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. In a not so shocking turn of events, it happens that <span class="math display">\[
+A = \mathcal{F}_2 =
+\left(
+\begin{array}{cc}
+L &amp; M \\
+M &amp; N
+\end{array}
+\right)
+\]</span> where <span class="math display">\[
+L = {\pmb{\sigma}}_{uu} \cdot \mathbf{N}\,, \quad
+M = {\pmb{\sigma}}_{uv} \cdot \mathbf{N}\,, \quad
+N = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}\,.
+\]</span> Therefore, the second fundamental form <span class="math inline">\(II_{\mathbf{p}}\)</span> coincides with the second fundamental form <span class="math inline">\(\mathcal{F}_{2}\)</span> of the chart <span class="math inline">\({\pmb{\sigma}}\)</span>. We prove this statement in the next theorem.<p></p>
+</div></details>
+</div>
+<div id="Theorem-148" class="Theorem">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 148</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be an orientable surface and <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span> be a regular chart. Let <span class="math inline">\(\mathbf{p}\in {\pmb{\sigma}}(U)\)</span>. Then <span class="math display">\[
+II_{\mathbf{p}} (\mathbf{v},\mathbf{w}) = (du (\mathbf{v}), dv(\mathbf{w}) )  \,
+\left(
+\begin{array}{cc}
+L &amp; M \\
+M &amp; N
+\end{array}
+\right) \, (du(\mathbf{v}) , dv(\mathbf{w}))^T \,,
+\]</span> for all <span class="math inline">\(\mathbf{v},\mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\)</span>. In particular, <span class="math inline">\(\mathcal{F}_2\)</span> is the quadratic form associated to the symmetric bilinear form <span class="math inline">\(II_{\mathbf{p}}\)</span>, that is, <span class="math display">\[
+\mathcal{F}_2 (\mathbf{v}) = {II}_{\mathbf{p}} (\mathbf{v},\mathbf{v}) \,, \quad \forall \, \mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\,.
+\]</span><p></p>
 </div></details>
 </div>
 
