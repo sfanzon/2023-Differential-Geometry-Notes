@@ -25,7 +25,7 @@ There is only one available direction in which to move on a curve:
 Surfaces are 2D objects in $\R^3$. There are two directions in which one can move on a surface. 
 
 
-![Sketch of a surfaces: Sphere, Torus, Möbius Strip.](/images/surfaces_example.png){width=70%}
+![Sketch of a surfaces: Sphere, Torus, Möbius band.](/images/surfaces_example.png){width=70%}
 
 
 
@@ -3292,7 +3292,7 @@ $v$ sufficiently small.
 
 The same base curve can yield multiple ruled surfaces.
 For example, if $\g$ is a circle, we can obtain both the unit cylinder
-and the Möbius strip. 
+and the Möbius band. 
 
 
 ::: Example
@@ -3319,10 +3319,10 @@ Hence the unit cylinder is a ruled surface, see @fig-cylinder-ruled.
 
 
 ::: Example
-### Möbius strip
+### Möbius band  {#example-mobius}
 
 
-The Möbius strip is a ruled surface with chart
+The Möbius band is a ruled surface with chart
 $$
 \sss = \g(u) + v \mathbf{a}(u) \,, \quad u \in (0,2\pi), \, v \in \left( -\frac12, \frac12 \right) \,,
 $$
@@ -3343,7 +3343,7 @@ circle $\g$. This is shown in @fig-mobius-ruled.
 
 
 
-![The Möbius strip is a ruled surface with base curve $\g$ and rulings given by rotating vertical lines.](/images/surfaces_ruled_2.png){#fig-mobius-ruled width=70%}
+![The Möbius band is a ruled surface with base curve $\g$ and rulings given by rotating vertical lines.](/images/surfaces_ruled_2.png){#fig-mobius-ruled width=70%}
 
 
 
@@ -4902,7 +4902,8 @@ We have also shown that:
 
 
 
-## Second fundamental form
+## Curvatures
+
 
 
 The first fundamental form allows to measure distances on a surface. However it does not give any information on how curved a surface is: For example, we saw that a plane and a cylinder have the 
@@ -4913,7 +4914,281 @@ $$
 However the plane is flat, while the cylinder curves. We would like to find a measure of curvature 
 which allows us to tell these two surfaces apart.
 
-We proceed similarly to what we did we curves. Recall that if $\g$ is a unit speed curve, the curvature of $\g$ is defined as
+
+
+
+### Unit normal and orientability
+
+
+Before talking about curvatures, we need to clarify what we mean by normal
+vector to a surface and orientability. Let $\SSS$ be a regular surface and $\pp \in \SSS$. The tangent plane $T_{\pp} \SSS$ passes through the origin. Therefore $T_{\pp} \SSS$ is completely determined by giving a unit vector $\NN$ perpendicular to it:
+$$
+T_{\pp} \SSS = \{ \xx \in \R^3 \divider \xx \cdot \NN = 0 \} \,.
+$$
+In this case we write
+$$
+\NN \perp T_{\pp} \SSS \,,
+$$
+to denote that $\NN$ is **perpendicular** to $T_{\pp} \SSS$. Clearly, also $-\NN$ is a unit vector, and
+$$
+(- \NN) \perp T_{\pp} \SSS \,. 
+$$
+
+
+::: Question 
+
+Which unit normal should we choose between $\NN$ and $-\NN$?
+
+:::
+
+There is no right answer to the above question. One way to proceed is the following.
+
+
+::: {.Remark   #remark-normal-chart}
+
+Suppose that $\sss \colon U \to \R^3$ is a regular chart for $\SSS$. Let $\pp \in \sss(U)$. Then
+$$
+T_{\pp} \SSS = \operatorname{span} \{ \sss_u , \sss_v \} \,.
+$$
+Therefore we can choose the unit normal to $T_{\pp} \SSS$ as 
+$$
+\NN_{\sss} :=  \frac{ \sss_u \times \sss_v }{ \norm{ \sss_u \times \sss_v } } \,.
+$$
+Clearly $\NN_{\sss}$ has unit norm. Moreover 
+$$
+\NN_{\sss} \cdot \sss_u = 0 \,, \quad \NN_{\sss} \cdot \sss_v = 0
+$$
+by the properties of cross product, showing that $\NN_{\sss}$ is perpendicular to $T_{\pp} \SSS$.
+
+There is however an issue: $\NN_{\sss}$ is not independent on the choice of chart $\sss$. Indeed, suppose that $\widetilde{\sss} \colon  \widetilde{U} \to \R^3$ is a reparametrization of $\sss$, that is, 
+$$
+\widetilde{\sss} = \sss \circ \Phi \,, \quad \Phi \colon \widetilde{U} \to U \,,
+$$
+with $\Phi$ diffeomorphism. As shown in the proof of Proposition \ref{proposition-transition-maps}, we have
+$$
+\widetilde{\sss}_{\tilde{u}} \times \widetilde{\sss}_{\tilde{v}}
+= \det J\Phi  \, (\sss_u \times \sss_v) \,.
+$$
+Hence
+$$
+\NN_{\widetilde{\sss}} = \frac{ \widetilde{\sss}_{\tilde{u}} \times \widetilde{\sss}_{\tilde{v}} }{\norm{\widetilde{\sss}_{\tilde{u}} \times \widetilde{\sss}_{\tilde{v}}}} = \frac{\det J\Phi}{|\det J\Phi|} \frac{\sss_u \times \sss_v}{\norm{\sss_u \times \sss_v}} = \pm \NN_{\sss} \,.
+$$
+Therefore the sign on the right hand side depends on the sign of the Jacobian determinant of the transition map $\Phi$.
+
+:::
+
+
+The above remark motivates the following definitions.
+
+
+
+::: Definition
+### Standard unit normal of a chart
+
+Let $\SSS$ be a regular surface and $\sss \colon U \to \R^3$ a regular chart. The **standard unit normal** of $\sss$ is the smooth function
+$$
+\NN_{\sss} \colon U \to \R^3 \,, \quad \NN_{\sss} := \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v} } \,. 
+$$
+
+:::
+
+
+
+::: Definition
+### Charts with same orientation
+
+Let $\SSS$ be a regular surface and $\sss \colon U \to \R^3$, $\widetilde{\sss} \colon \widetilde{U} \to \R^3$ regular charts such that 
+$$
+\sss(U) \cap \widetilde{\sss} (\widetilde{U}) \neq \emptyset \,.
+$$
+Denote by $\Phi$ the transition map between $\widetilde{\sss}$ and $\sss$. We say that: 
+
+1. $\sss$ and $\widetilde{\sss}$ determine the **same orientation** if 
+$$
+\det J \Phi > 0 \,,
+$$
+where $\Phi$ is defined.
+
+2. $\sss$ and $\widetilde{\sss}$ determine **opposite orientations** if 
+$$
+\det J \Phi < 0 \,,
+$$
+where $\Phi$ is defined.
+
+:::
+
+
+
+If a surface can be covered by charts with the same orientation, it is called orientable.
+
+
+::: Definition
+### Orientable surface
+
+Let $\SSS$ be a regular surface. We say that $\SSS$ is **orientable** if there exists an 
+atlas $\mathcal{A} = \{ \sss_i \}_{i \in I}$ with the property: If $\sss_i, \sss_j \in \mathcal{A}$ are such that $\sss_i (U_i) \cap \sss_j (U_j) \neq \emptyset$, then
+$$
+\det J \Phi > 0 \,,
+$$
+where $\Phi$ is the transition map between $\sss_i$ and $\sss_j$.
+
+
+:::
+
+
+
+::: Example
+
+All the surfaces we encountered in these Lecture Notes
+are orientable, except for the Möbius band in Example \ref{example-mobius}. Details about the non-orientability of the Möbius band can be found in Example 4.5.3 in [@pressley].
+
+:::
+
+
+::: Example
+
+Let $\sss \colon U \to \R^3$ be a regular chart. Then 
+$$
+\SSS_{\sss} := \sss(U)
+$$ 
+is a regular surface with atlas $\mathcal{A}=\{\sss\}$. Therefore $\SSS_{\sss}$ is orientable.
+
+> This is because we have only one chart. Therefore any transition map $\Phi$ will be the identity,
+so that $\det J \Phi = 1 > 0$.
+
+:::
+
+
+::: Warning
+### Orientability is a global property
+
+The above example is saying that orientability is a global property: To determine wether 
+a surface $\SSS$ is orientable, we need to examine the transition maps for the entire atlas 
+$\mathcal{A}$. This is because a single local parametrization $\sss(U) \subseteq \SSS$ is always orientable.
+
+:::
+
+
+
+
+::: Remark
+
+Let $\sss$ and $\widetilde{\sss}$ be regular charts with transition map $\Phi$. We have seen in 
+Remark \ref{remark-normal-chart} that
+$$
+\NN_{\widetilde{\sss}} = \frac{ \det J \Phi }{ |\det J \Phi| } \, \NN_{\sss} \,.
+$$ 
+If $\sss$ and $\widetilde{\sss}$ determine the same orientation, then 
+$$
+\det J \Phi > 0 \,,
+$$
+which implies
+$$
+\NN_{\widetilde{\sss}} =  \NN_{\sss} \,.
+$$
+Hence, if $\SSS$ is an orientable surface, one can define a unit normal vector at each point of 
+$\SSS$, without ambiguity.
+
+:::
+
+
+
+
+::: Definition
+### Standard unit normal of a surface
+
+Let $\SSS$ be a regular surface. A **standard unit normal** of $\SSS$ is a smooth function
+$\NN \colon \SSS \to \R^3$ such that
+$$
+\NN (\pp) \perp T_{\pp} \SSS \,, \quad \| \NN (\pp) \| = 1 \,, \quad \forall \, \pp \in \SSS \, .
+$$
+
+:::
+
+
+::: Warning 
+
+We require the function $\pp \mapsto \NN(\pp)$ to be globally defined on $\SSS$ and smooth.  
+
+:::
+
+
+
+
+::: Proposition
+
+Let $\SSS$ be a regular surface. They are equivalent:
+
+1. $\SSS$ is orientable.
+
+2. There exists a standard unit normal $\NN$ to $\SSS$.
+
+:::
+
+The proof follows from the above arguments. For details, we refer the reader to Proposition 4.3.7 in [@abate-tovena].
+
+
+Note that, even if a surface is orientable, we always have two choices for the sign of the standard unit normal $\NN$. 
+
+
+::: Example
+
+Let $\mathbf{a} , \pp ,\mathbf{q} \in \R^3$ and suppose that $\pp$ and $\mathbf{q}$ are linearly independent.
+The plane spanned by $\pp ,\mathbf{q}$ and passing through $\mathbf{a}$ can be parametrized by 
+$$
+\sss (u,v):= \mathbf{a} + \pp u + \mathbf{q} v \,, \quad \forall \, (u,v) \in \R^2 \,.
+$$
+An alternative parametrization is given by
+$$
+\widetilde{\sss} (u,v):= \mathbf{a}  + \mathbf{q} u + \pp v  \,, \quad \forall \, (u,v) \in \R^2 \,.
+$$
+We have
+$$
+\sss_u = \pp \,, \quad 
+\sss_v = \mathbf{q} \,, \quad 
+$$
+and therefore
+$$
+\NN_{\sss} = \frac{ \pp \times \mathbf{q}  }{ \norm{ \pp \times \mathbf{q} } } \,.
+$$
+Similarly, we have
+$$
+\NN_{\widetilde{\sss}} = \frac{ \mathbf{q} \times \pp   }{ \norm{ \mathbf{q} \times \pp } } =
+ \frac{ - \pp \times \mathbf{q}  }{ \norm{ \pp \times \mathbf{q}  } } \,,
+$$
+showing that
+$$
+\NN_{\sss} = - \NN_{\widetilde{\sss}} \,.
+$$
+Hence $\sss$ and $\tilde{\sss}$ determine opposite orientations.
+
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Second fundamental form
+
+
+We can now start our discussion about curvature of surfaces. We can make a similar argument to the one
+we made for curves: If $\g$ is a unit speed curve, the curvature of $\g$ is defined as
 $$
 \kappa (t) = \norm{\ddg(t)} \,.
 $$
@@ -4923,11 +5198,11 @@ that
 $$
 T_{\pp} \SSS = \operatorname{span} \{ \sss_u , \sss_v \} \,,
 $$
-where $\sss$ is a regular chart of $\SSS$ at $\pp$. Therefore the unit vector 
+where $\sss$ is a regular chart of $\SSS$ at $\pp$. The standard unit normal of $\sss$ is
 $$
-\NN := \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v } }
+\NN = \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v } } \,,
 $$
-is orthogonal to $T_{\pp} \SSS$. Let $(u_0,v_0) \in \R^2$ be the point such that
+which is orthogonal to $T_{\pp} \SSS$. Let $(u_0,v_0) \in \R^2$ be the point such that
 $$
 \sss(u_0,v_0) = \pp \,.
 $$
@@ -4968,32 +5243,17 @@ The expression
 $$
 \mathcal{F}_2 :=  L \, du^2 +  2 M  \,du dv  + N \, dv^2 
 $$
-is called the **second fundamental form** of $\SSS$. Therefore $\mathcal{F}_2$ measures how much the surface $\SSS$ deviates from being a plane. Let us give a precise definition for $\mathcal{F}_2$.
-
-
-::: Definition
-### Principal Unit Normal
-
-Let $\SSS$ be a regular surface and $\sss \colon U \to \SSS$ a regular chart. The **principal unit normal** to $\SSS$ is the function
-$$
-\NN \colon U \to \R^3 \,, \quad \NN := \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v} } \,. 
-$$
-
-:::
-
-Note that $\NN$ is well defined, since 
-$$
-\sss_u \times \sss_v \neq 0 \,,
-$$
-being $\sss$ regular.
-
-
+is called the **second fundamental form** of $\SSS$. Therefore $\mathcal{F}_2$ measures how much the surface $\SSS$ deviates from being a plane. Let us make this definition precise.
 
 
 ::: Definition
 ### Second fundamental form of a chart
 
-Let $\sss \colon U \to \R^3$ be a regular chart of $\SSS$. Define the functions
+Let $\sss \colon U \to \R^3$ be a regular chart of $\SSS$. Denote the standard unit normal of $\sss$ by
+$$
+\NN \colon U \to \R^3 \,, \quad \NN = \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v } } \,.
+$$
+Define the functions
 $$
 L , M , N \colon U \to \R 
 $$
@@ -5077,18 +5337,11 @@ $\det J\Phi < 0$.
 
 > Formula (@eq-sff-repar) holds by a change of variable argument. The sign depends on the sign of  $\det J\Phi$ because
 $$
-\widetilde{\sss}_{\tilde{u}} \times \widetilde{\sss}_{\tilde{v}}
-= \det J\Phi  \, (\sss_u \times \sss_v) \,,
+\widetilde{\NN} = \frac{ \widetilde{\sss}_{\tilde{u}} \times \widetilde{\sss}_{\tilde{v}} }{\norm{\widetilde{\sss}_{\tilde{u}} \times \widetilde{\sss}_{\tilde{v}}}} = \frac{\det J\Phi}{|\det J\Phi|} \frac{\sss_u \times \sss_v}{\norm{\sss_u \times \sss_v}} = \pm \NN \,,
 $$
-as shown in the proof of Proposition \ref{proposition-transition-maps}. 
-Therefore
-$$
-\widetilde{\NN} = \frac{ \widetilde{\sss}_{\tilde{u}} \times \widetilde{\sss}_{\tilde{v}} }{\norm{\widetilde{\sss}_{\tilde{u}} \times \widetilde{\sss}_{\tilde{v}}}} = \frac{\det J\Phi}{|\det J\Phi|} \frac{\sss_u \times \sss_v}{\norm{\sss_u \times \sss_v}} = \pm \NN \,.
-$$
+as shown in Remark \ref{remark-normal-chart}.
 
 :::
-
-
 
 
 Let us show that a plane and a cylinder have different second fundamental forms.
@@ -5220,20 +5473,30 @@ respectively.
 
 
 Another way to quantify how much a surface $\SSS$ is curving is by 
-examining the behavior of the principal unit normal $\NN$. If 
-$\SSS$ is a plane spanned by vectors $\pp$ and $\mathbf{q}$, then its unit normal
+examining the behavior of standard unit normal $\NN$. If 
+$\SSS$ is a plane spanned by vectors $\pp$ and $\mathbf{q}$, then its standard unit normal is
 $$
-\NN = \frac{\pp \times \mathbf{q}}{ \norm{\pp \times \mathbf{q}} } 
+\NN = \frac{\pp \times \mathbf{q}}{ \norm{\pp \times \mathbf{q}} } \,,
 $$
-is constant. If $\SSS$ is a general surface, measuring the variation of $\NN$ will tell us how much $\SSS$ is deviating from being a plane. This
-is the idea behind the definition of Gauss map and Weingarten maps.
+which is constant across $\SSS$. If $\SSS$ is a general surface, measuring the variation of $\NN$ will tell us how much $\SSS$ is deviating from being a plane. This
+is the idea behind the definition of the **Gauss** and **Weingarten** maps.
 
 
-To introduce the Gauss map, first define by 
+::: Remark 
+
+Let $\NN \colon \SSS \to \R^3$ be a standard unit normal to $\SSS$, that is, $\NN$ is a smooth map 
+such that
 $$
-\sphere^2 = \{ \xx \in \R^3 \, \colon \, \norm{\xx} = 1 \} 
+\NN(\pp) \perp T_{\pp} \SSS \,, \quad \| \NN(\pp) \| = 1 \,, \quad \forall  \, \pp \in \SSS \,. 
 $$
-the unit sphere in $\R^3$.
+Since $T_{\pp} \SSS$ passes through the origin and $\NN$ has norm $1$, it follows that
+$$
+\NN (\pp) \in 
+\sphere^2 := \{ \xx \in \R^3 \, \colon \, \| \xx \| = 1 \}  \,,
+$$
+where $\sphere^2$ is the unit sphere in $\R^3$.
+
+:::
 
 
 
@@ -5241,12 +5504,38 @@ the unit sphere in $\R^3$.
 ::: Definition
 ### Gauss map
 
-Let $\SSS$ be a surface and denote by $\mathbf{N}$ the principal unit normal. The **Gauss map** of $\SSS$ is the map $G \colon \SSS  \to \sphere^2$ defined by 
+Let $\SSS$ be an orientable surface and $\NN$ a standard unit normal to $\SSS$. The **Gauss map** of 
+$\SSS$ is the map 
 $$
-G(\pp):= \NN(\pp) \,.
+{\mathcal{G}}_{\SSS} \colon \SSS  \to \sphere^2 \,, \quad 
+{\mathcal{G}}_{\SSS} (\pp):= \NN(\pp) \,.
 $$
-The **Weingarten map** is the derivative of the Gauss map, denoted by $\WW \colon T_{\pp}\SSS  \to T_{G(\pp)} \sphere^2$.
+
 :::
+
+![The Gauss map ${\mathcal{G}}_{\SSS}$ of $\SSS$ is defined as ${\mathcal{G}}_{\SSS}(\pp):= \NN(\pp)$. Note that ${\mathcal{G}}_{\SSS}(\pp) \in \sphere^2$.](/images/sff_gauss_map.png){width=70%}
+
+::: Remark
+
+By definition the Gauss map is smooth. Therefore it is well defined its differential:
+$$
+d_{\pp} {\mathcal{G}}_{\SSS} \colon T_{\pp} \SSS \to T_{{\mathcal{G}}_{\SSS}(\pp)} \sphere^2 \,,
+$$
+for all $\pp \in \SSS$.
+
+::: 
+
+ which is 
+called the Weingarten map
+
+
+::: Definition
+### Weingarten map
+
+The **Weingarten map** is the derivative of the Gauss map, denoted by $\WW \colon T_{\pp}\SSS  \to T_{G(\pp)} \sphere^2$.
+
+:::
+
 
 
 

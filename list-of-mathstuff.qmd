@@ -805,7 +805,7 @@
 
  [**Example 4.89**](#unit-cylinder-1): Unit Cylinder\Pageref{unit-cylinder-1}
 
- [**Example 4.90**](#möbius-strip): Möbius strip\Pageref{möbius-strip}
+ [**Example 4.90**](#example-mobius): Möbius band\Pageref{example-mobius}
 
  [**Definition 4.91**](#surface-of-revolution): Surface of revolution\Pageref{surface-of-revolution}
 
@@ -895,18 +895,48 @@
 
  [**Example 4.122**](#Example-4.122)\Pageref{Example-4.122}
 
- [**Definition 4.123**](#principal-unit-normal): Principal Unit Normal\Pageref{principal-unit-normal}
+ [**Question 4.123**](#Question-4.123)\Pageref{Question-4.123}
 
- [**Definition 4.124**](#second-fundamental-form-of-a-chart): Second fundamental form of a chart\Pageref{second-fundamental-form-of-a-chart}
+ [**Remark 4.124**](#remark-normal-chart)\Pageref{remark-normal-chart}
 
- [**Notation**](#Notation*-4.29)\Pageref{Notation*-4.29}
+ [**Definition 4.125**](#standard-unit-normal-of-a-chart): Standard unit normal of a chart\Pageref{standard-unit-normal-of-a-chart}
 
- [**Remark 4.125**](#second-fundamental-form-and-reparametrizations): Second fundamental form and reparametrizations\Pageref{second-fundamental-form-and-reparametrizations}
+ [**Definition 4.126**](#charts-with-same-orientation): Charts with same orientation\Pageref{charts-with-same-orientation}
 
- [**Example 4.126**](#plane): Plane\Pageref{plane}
+ [**Definition 4.127**](#orientable-surface): Orientable surface\Pageref{orientable-surface}
 
- [**Example 4.127**](#unit-cylinder-3): Unit cylinder\Pageref{unit-cylinder-3}
+ [**Example 4.128**](#Example-4.128)\Pageref{Example-4.128}
 
- [**Remark 4.128**](#Remark-4.128)\Pageref{Remark-4.128}
+ [**Example 4.129**](#Example-4.129)\Pageref{Example-4.129}
 
- [**Definition 4.129**](#gauss-map): Gauss map\Pageref{gauss-map}
+ [**Warning**](#orientability-is-a-global-property): Orientability is a global property\Pageref{orientability-is-a-global-property}
+
+ [**Remark 4.130**](#Remark-4.130)\Pageref{Remark-4.130}
+
+ [**Definition 4.131**](#standard-unit-normal-of-a-surface): Standard unit normal of a surface\Pageref{standard-unit-normal-of-a-surface}
+
+ [**Warning**](#Warning*-4.30)\Pageref{Warning*-4.30}
+
+ [**Proposition 4.132**](#Proposition-4.132)\Pageref{Proposition-4.132}
+
+ [**Example 4.133**](#Example-4.133)\Pageref{Example-4.133}
+
+ [**Definition 4.134**](#second-fundamental-form-of-a-chart): Second fundamental form of a chart\Pageref{second-fundamental-form-of-a-chart}
+
+ [**Notation**](#Notation*-4.31)\Pageref{Notation*-4.31}
+
+ [**Remark 4.135**](#second-fundamental-form-and-reparametrizations): Second fundamental form and reparametrizations\Pageref{second-fundamental-form-and-reparametrizations}
+
+ [**Example 4.136**](#plane): Plane\Pageref{plane}
+
+ [**Example 4.137**](#unit-cylinder-3): Unit cylinder\Pageref{unit-cylinder-3}
+
+ [**Remark 4.138**](#Remark-4.138)\Pageref{Remark-4.138}
+
+ [**Remark 4.139**](#Remark-4.139)\Pageref{Remark-4.139}
+
+ [**Definition 4.140**](#gauss-map): Gauss map\Pageref{gauss-map}
+
+ [**Remark 4.141**](#Remark-4.141)\Pageref{Remark-4.141}
+
+ [**Definition 4.142**](#weingarten-map): Weingarten map\Pageref{weingarten-map}
