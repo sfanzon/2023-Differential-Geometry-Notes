@@ -2287,7 +2287,7 @@ $$
 
 
 
-![Tangent space $T_{\pp} \SSS$ of surface $\SSS$ at the point $\pp$. A tangent vector $\vv$ coincides with $\dg(0)$ for some $\g \colon (-\e,\e) \to \SSS$ such that $\g(0)= \pp$.](/images/tangent_space.png){width=80%}
+![Tangent space $T_{\pp} \SSS$ of surface $\SSS$ at the point $\pp$. A tangent vector $\vv$ coincides with $\dg(0)$ for some $\g \colon (-\e,\e) \to \SSS$ such that $\g(0)= \pp$.](/images/tangent_space.png){#fig-tangent-plane width=80%}
 
 
 
@@ -2457,8 +2457,8 @@ $$
 $$
 as we wanted to show.
 
-
 The converse statement is trivial.
+
 :::
 
 
@@ -2585,6 +2585,34 @@ is called the **tangent plane** to $\SSS$ at $\pp$.
 
 
 
+::: {.Remark  #remark-affine-plane}
+
+By definition $T_{\pp} \SSS$ is a vector subspace of $\R^3$. 
+As such, it holds that 
+$$
+\zero \in T_{\pp} \SSS \,.
+$$
+
+> To see this, take the curve $\g(t) \equiv \pp$. Then $\g(0) = \pp$ and $\dg(0) = \zero$, showing that $\zero \in T_{\pp} \SSS$.
+
+Therefore $T_{\pp} \SSS$ is a plane through the origin, no matter where the point $\pp \in \SSS$ is located. When we draw the tangent plane as a plane resting on the surface, see @fig-tangent-plane, we are not drawing $T_{\pp} \SSS$, but rather the plane 
+$$
+\pp + T_{\pp} \SSS \,,
+$$
+which is the **affine tangent plane** through $\pp \in \SSS$.
+
+:::
+
+
+It is possible to give a cartesian equation for the tangent plane
+$$
+T_{\pp} \SSS
+$$
+and for the affine tangent plane
+$$
+\pp + T_{\pp} \SSS \,.
+$$
+
 
 ::: Proposition
 ### Equation of tangent plane
@@ -2597,12 +2625,17 @@ Let
 $$
 \nn := \sss_u (u_0,v_0) \times \sss_v (u_0,v_0) \,.
 $$
-The equation of the plane $T_{\pp} \SSS$ is given by
+The equation of the tangent plane $T_{\pp} \SSS$ is given by
 $$
-{\nn}_1 (x-x_0) + {\nn}_2 (y-x_0) + {\nn}_3 (z-z_0) = 0 \,, \quad 
+{\nn}_1 x + {\nn}_2 y + {\nn}_3 z = 0 \,, \quad 
 \forall \, (x,y,z) \in \R^3 \,,
 $$
 where $\nn = ({\nn}_1,{\nn}_2,{\nn}_3)$.
+The equation of the affine tangent plane $\pp + T_{\pp} \SSS$ is given by
+$$
+{\nn}_1 (x-x_0) + {\nn}_2 (y-x_0) + {\nn}_3 (z-z_0) = 0 \,, \quad 
+\forall \, (x,y,z) \in \R^3 \,.
+$$
 
 :::
 
@@ -2617,13 +2650,17 @@ By the properties of cross product, the vector $\nn$ is orthogonal to both
 $\sss_u (u_0,v_0)$ and $\sss_v (u_0,v_0)$. Therefore it is orthogonal to
 $T_{\pp} \SSS$. The equation for $T_{\pp} \SSS$ is then
 $$
-(x,y,z) \cdot \nn = k \,, \forall \, (x,y,z) \in \R^3 \,,
+(x,y,z) \cdot \nn = 0 \,, \forall \, (x,y,z) \in \R^3 \,.
 $$
-for some $k \in \R$. To compute $k$, it is sufficient to evaluate the above equation at $\pp$, since $\pp$ belongs to $T_{\pp} \SSS$. We obtain
+In particular, the equation for the affine tangent plane $\pp + T_{\pp} \SSS$ is
+$$
+(x,y,z) \cdot \nn = k \,, \quad  \forall \, (x,y,z) \in \R^3 \,,
+$$
+for some $k \in \R$. To compute $k$, it is sufficient to evaluate the above equation at $\pp$, since $\pp$ belongs to $\pp + T_{\pp} \SSS$. We obtain
 $$
 k = \pp \cdot \nn  \,.
 $$
-Hence the equation for $T_{\pp} \SSS$ is
+Hence the equation for $\pp + T_{\pp} \SSS$ is
 $$
 (x-x_0,y-y_0,z-z_0) \cdot \nn = 0 \,, \quad  \forall \, (x,y,z) \in \R^3 \,,
 $$
@@ -2633,13 +2670,14 @@ ending the proof.
 
 
 
+
 ::: Example
 
 Consider the surface $\SSS$ defined by the chart
 $$
 \sss (u,v) := \left(   \sqrt{1-v} \cos(u) , \sqrt{1-v} \sin(u), v        \right) \,.
 $$
-We want to compute the tangent plane $T_{\pp} \SSS$.
+We want to compute the equation for the tangent plane $T_{\pp} \SSS$, and for the affine tangent plane $\pp + T_{\pp} \SSS$.
 
 First, we need to check that $\sss$ is regular. We have
 \begin{align*}
@@ -2682,20 +2720,25 @@ $$
 $$
 The equation for $T_{\pp} \SSS$ is therefore
 $$
-(x,y,z) \cdot \nn = k \,,
+(x,y,z) \cdot \nn = 0 \,, \quad \forall \, (x,y,z) \in \R^3 \,.
 $$
-for some $k \in \R$. The above reads
+The above reads
 $$
-\frac{\sqrt 2}{2} \, x + \frac{\sqrt 2}{2} \, y - \frac{1}{2} \, z = k \,.
+\frac{\sqrt 2}{2} \, x + \frac{\sqrt 2}{2} \, y - \frac{1}{2} \, z = 0 \,.
 $$
-We are left to compute $k$. The point $\pp$ belongs to $T_{\pp} \SSS$, and therefore 
+The equation for $\pp + T_{\pp} \SSS$ is instead
+$$
+\frac{\sqrt 2}{2} \, x + \frac{\sqrt 2}{2} \, y - \frac{1}{2} \, z = k \,,
+$$
+for some $k \in \R$. To compute $k$, note that $\pp \in \pp + T_{\pp} \SSS$, and therefore 
 $$
 \frac{\sqrt 2}{2} \, \frac{\sqrt 2}{2} + \frac{\sqrt 2}{2} \, \frac{\sqrt 2}{2} = k \quad \implies \quad k = 1 \,.
 $$
-The equation for $T_{\pp} \SSS$ is then
+The equation for $\pp + T_{\pp} \SSS$ is then
 $$
 \frac{\sqrt 2}{2} \, x + \frac{\sqrt 2}{2} \, y - \frac{1}{2} \, z = 1 \,.
 $$
+
 :::
 
 
@@ -2993,8 +3036,12 @@ $$
 Then $\nabla f(\pp)$ is orthogonal to $T_{\pp} \SSS_f$. In particular,
 the equation of $T_{\pp} \SSS_f$ is given by
 $$
+\partial_{x} f (\pp) x  + \partial_{y} f (\pp) y    + \partial_{z} f (\pp) z = 0 \,, \quad  \forall \, (x,y,z) \in \R^3\,.   
+$$
+The equation for $\pp + T_{\pp} \SSS_f$ is given by
+$$
 \partial_{x} f (\pp) (x-x_0)  + \partial_{y} f (\pp) (y-y_0)    + \partial_{z} f (\pp) (z-z_0) = 0 \,, \forall \, (x,y,z) \in \R^3\,,   
-$${#eq-tangent-plane-level-surface}
+$$
 where $\pp = (x_0,y_0,z_0)$.
 
 :::
@@ -3011,27 +3058,36 @@ $$
 $$
 Since $\g(t) \in \SSS_f$, we have that
 $$
-f(\g(t)) = 0 \,, \quad \forall t \in (-\e,\e) \,.
+f(\g(t)) = 0 \,, \quad \forall \, t \in (-\e,\e) \,.
 $$
 By chain rule we get
 $$
-\nabla f (\g(t)) \cdot \dg(t) = 0 \,, \quad \forall t \in (-\e,\e) \,.
+\nabla f (\g(t)) \cdot \dg(t) = 0 \,, \quad \forall \, t \in (-\e,\e) \,.
 $$
 Evaluating the above at $t=0$ yields
 $$
 0 = \nabla f (\g(0)) \cdot \dg(0) = \nabla f (\pp) \cdot \vv \,,
 $$
-showing that $\vv$ is orthogonal to $\nabla f (\pp)$. Since $\vv$ is arbitrary, we conclude that $\nabla f (\pp)$ is orthogonal to $T_{\pp} \SSS_f$.
-
-In particular, the equation for $T_{\pp} \SSS_f$ is
+showing that $\vv$ is orthogonal to $\nabla f (\pp)$. Since $\vv$ is arbitrary, we conclude that $\nabla f (\pp)$ is orthogonal to $T_{\pp} \SSS_f$. In particular, the equation for $T_{\pp} \SSS_f$ is
+$$
+\nabla f(\pp) \cdot (x,y,z) = 0 \,, \quad \forall \, (x,y,z) \in \R^3 \,.
+$$
+Therefore the equation for $\pp + T_{\pp} \SSS$ is given by
 $$
 \nabla f(\pp) \cdot (x,y,z) = k \,, \quad \forall \, (x,y,z) \in \R^3 \,,
 $$
-for some $k \in \R$. Choosing $(x,y,z)=(x_0,y_0,z_0) = \pp$ yields
+for some $k \in \R$. Since $\pp \in \pp + T_{\pp} \SSS$, we can substitute 
+$$
+(x,y,z)=(x_0,y_0,z_0) = \pp 
+$$
+in the above equation to obtain
 $$
 k = \nabla f(\pp) \cdot (x_0,y_0,z_0) \,.
 $$
-Hence (@eq-tangent-plane-level-surface) is the equation for $T_{\pp} \SSS_f$.
+Hence the equation for $\pp + T_{\pp} \SSS$ is
+$$
+\nabla f(\pp) \cdot (x-x_0,y-y_0,z-z_0) = 0 \,, \quad \forall \, (x,y,z) \in \R^3 \,.
+$$
 
 :::
 
@@ -3461,7 +3517,7 @@ so that $I_{\pp}$ can be used to compute the length of tangent vectors.
 
 
 To use the first fundamental form in practice, we need to express $I_{\pp}$ in terms of local
-charts. We first need to define the coordinates functions $du$ and $dv$ on $T_{\pp} S$.
+charts. To this end, we first define the coordinates functions $du$ and $dv$ on $T_{\pp} S$.
 
 
 ::: Definition
@@ -3581,8 +3637,7 @@ The fact that $I_{\pp}(\vv,\vv) = \mathcal{F}_1(\vv)$ is now trivial.
 ::: Remark
 ### Linear algebra interpretation 
 
-Using a bit of linear algebra, Proposition \ref{proposition-fff-quadratic} becomes very
-clear: $I_{\pp}$ is a symmetric bilinear form on the vector space $T_{\pp} \SSS$. 
+Using linear algebra, Proposition \ref{proposition-fff-quadratic} has a clear interpretation, as follows. $I_{\pp}$ is a symmetric bilinear form on the vector space $T_{\pp} \SSS$. 
 Fixing the basis $\{ \sss_u, \sss_v \}$ for $T_{\pp} \SSS$, we can represent $I_{\pp}$ via the matrix
 \begin{align*}
 M & := 
@@ -4913,8 +4968,7 @@ The expression
 $$
 \mathcal{F}_2 :=  L \, du^2 +  2 M  \,du dv  + N \, dv^2 
 $$
-is called the **second fundamental form** of $\SSS$. Therefore $\mathcal{F}_2$ measures how much the normal vector $\NN$ changes while moving across $\SSS$. Let us make the definition
-of $\mathcal{F}_2$ precise.
+is called the **second fundamental form** of $\SSS$. Therefore $\mathcal{F}_2$ measures how much the surface $\SSS$ deviates from being a plane. Let us give a precise definition for $\mathcal{F}_2$.
 
 
 ::: Definition
@@ -5008,7 +5062,7 @@ $$
 \end{array}
 \right)  
 = 
-(J \Phi)^T \,
+\pm (J \Phi)^T \,
 \left(
 \begin{array}{cc}
 L & M \\
@@ -5016,10 +5070,21 @@ M & N
 \end{array}
 \right)
 \, 
-J \Phi  \,.
-$$
+J \Phi  \,,
+$${#eq-sff-repar}
+where (@eq-sff-repar) holds with $+$ if $\det J\Phi > 0$ and $-$ if
+$\det J\Phi < 0$. 
 
-Again, the proof follows by a simple change of basis argument.
+> Formula (@eq-sff-repar) holds by a change of variable argument. The sign depends on the sign of  $\det J\Phi$ because
+$$
+\widetilde{\sss}_{\tilde{u}} \times \widetilde{\sss}_{\tilde{v}}
+= \det J\Phi  \, (\sss_u \times \sss_v) \,,
+$$
+as shown in the proof of Proposition \ref{proposition-transition-maps}. 
+Therefore
+$$
+\widetilde{\NN} = \frac{ \widetilde{\sss}_{\tilde{u}} \times \widetilde{\sss}_{\tilde{v}} }{\norm{\widetilde{\sss}_{\tilde{u}} \times \widetilde{\sss}_{\tilde{v}}}} = \frac{\det J\Phi}{|\det J\Phi|} \frac{\sss_u \times \sss_v}{\norm{\sss_u \times \sss_v}} = \pm \NN \,.
+$$
 
 :::
 
@@ -5151,15 +5216,20 @@ respectively.
 
 
 
+### Gauss and Weingarten maps
 
 
-::: {.content-hidden}
+Another way to quantify how much a surface $\SSS$ is curving is by 
+examining the behavior of the principal unit normal $\NN$. If 
+$\SSS$ is a plane spanned by vectors $\pp$ and $\mathbf{q}$, then its unit normal
+$$
+\NN = \frac{\pp \times \mathbf{q}}{ \norm{\pp \times \mathbf{q}} } 
+$$
+is constant. If $\SSS$ is a general surface, measuring the variation of $\NN$ will tell us how much $\SSS$ is deviating from being a plane. This
+is the idea behind the definition of Gauss map and Weingarten maps.
 
 
-
-
-
-Denote by 
+To introduce the Gauss map, first define by 
 $$
 \sphere^2 = \{ \xx \in \R^3 \, \colon \, \norm{\xx} = 1 \} 
 $$
@@ -5169,6 +5239,7 @@ the unit sphere in $\R^3$.
 
 
 ::: Definition
+### Gauss map
 
 Let $\SSS$ be a surface and denote by $\mathbf{N}$ the principal unit normal. The **Gauss map** of $\SSS$ is the map $G \colon \SSS  \to \sphere^2$ defined by 
 $$
@@ -5179,4 +5250,9 @@ The **Weingarten map** is the derivative of the Gauss map, denoted by $\WW \colo
 
 
 
-:::
+
+
+
+
+
+

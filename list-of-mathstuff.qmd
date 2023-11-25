@@ -761,148 +761,152 @@
 
  [**Definition 4.71**](#tangent-plane): Tangent plane\Pageref{tangent-plane}
 
- [**Proposition 4.72**](#equation-of-tangent-plane): Equation of tangent plane\Pageref{equation-of-tangent-plane}
+ [**Remark 4.72**](#remark-affine-plane)\Pageref{remark-affine-plane}
+
+ [**Proposition 4.73**](#equation-of-tangent-plane): Equation of tangent plane\Pageref{equation-of-tangent-plane}
 
  [**Proof**](#Proof*-4.13)\Pageref{Proof*-4.13}
 
- [**Example 4.73**](#Example-4.73)\Pageref{Example-4.73}
+ [**Example 4.74**](#Example-4.74)\Pageref{Example-4.74}
 
- [**Remark 4.74**](#tangent-space-and-derivations): Tangent space and derivations\Pageref{tangent-space-and-derivations}
+ [**Remark 4.75**](#tangent-space-and-derivations): Tangent space and derivations\Pageref{tangent-space-and-derivations}
 
- [**Lemma 4.75**](#lemma-derivative)\Pageref{lemma-derivative}
+ [**Lemma 4.76**](#lemma-derivative)\Pageref{lemma-derivative}
 
  [**Proof**](#Proof*-4.14)\Pageref{Proof*-4.14}
 
- [**Definition 4.76**](#differential-of-smooth-function): Differential of smooth function\Pageref{differential-of-smooth-function}
+ [**Definition 4.77**](#differential-of-smooth-function): Differential of smooth function\Pageref{differential-of-smooth-function}
 
- [**Proposition 4.77**](#proposition-differential-smooth)\Pageref{proposition-differential-smooth}
+ [**Proposition 4.78**](#proposition-differential-smooth)\Pageref{proposition-differential-smooth}
 
- [**Proposition 4.78**](#Proposition-4.78)\Pageref{Proposition-4.78}
+ [**Proposition 4.79**](#Proposition-4.79)\Pageref{Proposition-4.79}
 
- [**Theorem 4.79**](#Theorem-4.79)\Pageref{Theorem-4.79}
+ [**Theorem 4.80**](#Theorem-4.80)\Pageref{Theorem-4.80}
 
- [**Definition 4.80**](#level-surface-1): Level surface\Pageref{level-surface-1}
+ [**Definition 4.81**](#level-surface-1): Level surface\Pageref{level-surface-1}
 
- [**Theorem 4.81**](#theorem-level-surface-bis)\Pageref{theorem-level-surface-bis}
+ [**Theorem 4.82**](#theorem-level-surface-bis)\Pageref{theorem-level-surface-bis}
 
- [**Proposition 4.82**](#Proposition-4.82)\Pageref{Proposition-4.82}
+ [**Proposition 4.83**](#Proposition-4.83)\Pageref{Proposition-4.83}
 
  [**Proof**](#Proof*-4.15)\Pageref{Proof*-4.15}
 
- [**Theorem 4.83**](#theorem-quadrics)\Pageref{theorem-quadrics}
-
- [**Example 4.84**](#Example-4.84)\Pageref{Example-4.84}
+ [**Theorem 4.84**](#theorem-quadrics)\Pageref{theorem-quadrics}
 
  [**Example 4.85**](#Example-4.85)\Pageref{Example-4.85}
 
- [**Definition 4.86**](#ruled-surface): Ruled surface\Pageref{ruled-surface}
+ [**Example 4.86**](#Example-4.86)\Pageref{Example-4.86}
 
- [**Proposition 4.87**](#Proposition-4.87)\Pageref{Proposition-4.87}
+ [**Definition 4.87**](#ruled-surface): Ruled surface\Pageref{ruled-surface}
+
+ [**Proposition 4.88**](#Proposition-4.88)\Pageref{Proposition-4.88}
 
  [**Proof**](#Proof*-4.16)\Pageref{Proof*-4.16}
 
- [**Example 4.88**](#unit-cylinder-1): Unit Cylinder\Pageref{unit-cylinder-1}
+ [**Example 4.89**](#unit-cylinder-1): Unit Cylinder\Pageref{unit-cylinder-1}
 
- [**Example 4.89**](#möbius-strip): Möbius strip\Pageref{möbius-strip}
+ [**Example 4.90**](#möbius-strip): Möbius strip\Pageref{möbius-strip}
 
- [**Definition 4.90**](#surface-of-revolution): Surface of revolution\Pageref{surface-of-revolution}
+ [**Definition 4.91**](#surface-of-revolution): Surface of revolution\Pageref{surface-of-revolution}
 
- [**Proposition 4.91**](#proposition-revolution)\Pageref{proposition-revolution}
+ [**Proposition 4.92**](#proposition-revolution)\Pageref{proposition-revolution}
 
  [**Proof**](#Proof*-4.17)\Pageref{Proof*-4.17}
 
- [**Example 4.92**](#catenoid): Catenoid\Pageref{catenoid}
+ [**Example 4.93**](#catenoid): Catenoid\Pageref{catenoid}
 
- [**Question 4.93**](#Question-4.93)\Pageref{Question-4.93}
+ [**Question 4.94**](#Question-4.94)\Pageref{Question-4.94}
 
- [**Definition 4.94**](#first-fundamental-form-1): First fundamental form\Pageref{first-fundamental-form-1}
+ [**Definition 4.95**](#first-fundamental-form-1): First fundamental form\Pageref{first-fundamental-form-1}
 
- [**Definition 4.95**](#definition-coordinate-functions): Coordinate functions on tangent plane\Pageref{definition-coordinate-functions}
+ [**Definition 4.96**](#definition-coordinate-functions): Coordinate functions on tangent plane\Pageref{definition-coordinate-functions}
 
- [**Definition 4.96**](#first-fundamental-form-of-a-chart): First fundamental form of a chart\Pageref{first-fundamental-form-of-a-chart}
+ [**Definition 4.97**](#first-fundamental-form-of-a-chart): First fundamental form of a chart\Pageref{first-fundamental-form-of-a-chart}
 
- [**Proposition 4.97**](#proposition-fff-quadratic)\Pageref{proposition-fff-quadratic}
+ [**Proposition 4.98**](#proposition-fff-quadratic)\Pageref{proposition-fff-quadratic}
 
  [**Proof**](#Proof*-4.18)\Pageref{Proof*-4.18}
 
- [**Remark 4.98**](#linear-algebra-interpretation): Linear algebra interpretation\Pageref{linear-algebra-interpretation}
+ [**Remark 4.99**](#linear-algebra-interpretation): Linear algebra interpretation\Pageref{linear-algebra-interpretation}
 
  [**Notation**](#Notation*-4.19)\Pageref{Notation*-4.19}
 
- [**Remark 4.99**](#remark-fff-reparametrization): First fundamental form and reparametrizations\Pageref{remark-fff-reparametrization}
+ [**Remark 4.100**](#remark-fff-reparametrization): First fundamental form and reparametrizations\Pageref{remark-fff-reparametrization}
 
- [**Example 4.100**](#example-fff-plane): Plane\Pageref{example-fff-plane}
+ [**Example 4.101**](#example-fff-plane): Plane\Pageref{example-fff-plane}
 
- [**Example 4.101**](#unit-cylinder-2): Unit cylinder\Pageref{unit-cylinder-2}
+ [**Example 4.102**](#unit-cylinder-2): Unit cylinder\Pageref{unit-cylinder-2}
 
- [**Remark 4.102**](#Remark-4.102)\Pageref{Remark-4.102}
+ [**Remark 4.103**](#Remark-4.103)\Pageref{Remark-4.103}
 
- [**Proposition 4.103**](#proposition-fff-length)\Pageref{proposition-fff-length}
+ [**Proposition 4.104**](#proposition-fff-length)\Pageref{proposition-fff-length}
 
  [**Proof**](#Proof*-4.20)\Pageref{Proof*-4.20}
 
- [**Example 4.104**](#cone): Cone\Pageref{cone}
+ [**Example 4.105**](#cone): Cone\Pageref{cone}
 
- [**Definition 4.105**](#local-isometry): Local isometry\Pageref{local-isometry}
+ [**Definition 4.106**](#local-isometry): Local isometry\Pageref{local-isometry}
 
  [**Notation**](#Notation*-4.21)\Pageref{Notation*-4.21}
 
- [**Remark 4.106**](#remark-local-isometry)\Pageref{remark-local-isometry}
+ [**Remark 4.107**](#remark-local-isometry)\Pageref{remark-local-isometry}
 
- [**Proposition 4.107**](#Proposition-4.107)\Pageref{Proposition-4.107}
+ [**Proposition 4.108**](#Proposition-4.108)\Pageref{Proposition-4.108}
 
  [**Proof**](#Proof*-4.22)\Pageref{Proof*-4.22}
 
- [**Theorem 4.108**](#theorem-local-isometry)\Pageref{theorem-local-isometry}
+ [**Theorem 4.109**](#theorem-local-isometry)\Pageref{theorem-local-isometry}
 
  [**Proof**](#Proof*-4.23)\Pageref{Proof*-4.23}
 
- [**Definition 4.109**](#angle-between-tangent-vectors): Angle between tangent vectors\Pageref{angle-between-tangent-vectors}
+ [**Definition 4.110**](#angle-between-tangent-vectors): Angle between tangent vectors\Pageref{angle-between-tangent-vectors}
 
- [**Proposition 4.110**](#Proposition-4.110)\Pageref{Proposition-4.110}
+ [**Proposition 4.111**](#Proposition-4.111)\Pageref{Proposition-4.111}
 
  [**Proof**](#Proof*-4.24)\Pageref{Proof*-4.24}
 
- [**Definition 4.111**](#angle-between-curves-1): Angle between curves\Pageref{angle-between-curves-1}
+ [**Definition 4.112**](#angle-between-curves-1): Angle between curves\Pageref{angle-between-curves-1}
 
- [**Proposition 4.112**](#Proposition-4.112)\Pageref{Proposition-4.112}
+ [**Proposition 4.113**](#Proposition-4.113)\Pageref{Proposition-4.113}
 
  [**Proof**](#Proof*-4.25)\Pageref{Proof*-4.25}
 
- [**Definition 4.113**](#conformal-map): Conformal map\Pageref{conformal-map}
+ [**Definition 4.114**](#conformal-map): Conformal map\Pageref{conformal-map}
 
- [**Remark 4.114**](#Remark-4.114)\Pageref{Remark-4.114}
+ [**Remark 4.115**](#Remark-4.115)\Pageref{Remark-4.115}
 
- [**Proposition 4.115**](#Proposition-4.115)\Pageref{Proposition-4.115}
+ [**Proposition 4.116**](#Proposition-4.116)\Pageref{Proposition-4.116}
 
  [**Proof**](#Proof*-4.26)\Pageref{Proof*-4.26}
 
- [**Theorem 4.116**](#theorem-conformal)\Pageref{theorem-conformal}
+ [**Theorem 4.117**](#theorem-conformal)\Pageref{theorem-conformal}
 
  [**Proof**](#Proof*-4.27)\Pageref{Proof*-4.27}
 
- [**Corollary 4.117**](#corollary-conformal)\Pageref{corollary-conformal}
+ [**Corollary 4.118**](#corollary-conformal)\Pageref{corollary-conformal}
 
- [**Example 4.118**](#example-conformal): Conformal maps are not local isometries\Pageref{example-conformal}
+ [**Example 4.119**](#example-conformal): Conformal maps are not local isometries\Pageref{example-conformal}
 
- [**Definition 4.119**](#definition-conformally-flat): Conformally flat surface and conformal parametrization\Pageref{definition-conformally-flat}
+ [**Definition 4.120**](#definition-conformally-flat): Conformally flat surface and conformal parametrization\Pageref{definition-conformally-flat}
 
- [**Proposition 4.120**](#Proposition-4.120)\Pageref{Proposition-4.120}
+ [**Proposition 4.121**](#Proposition-4.121)\Pageref{Proposition-4.121}
 
  [**Proof**](#Proof*-4.28)\Pageref{Proof*-4.28}
 
- [**Example 4.121**](#Example-4.121)\Pageref{Example-4.121}
+ [**Example 4.122**](#Example-4.122)\Pageref{Example-4.122}
 
- [**Definition 4.122**](#principal-unit-normal): Principal Unit Normal\Pageref{principal-unit-normal}
+ [**Definition 4.123**](#principal-unit-normal): Principal Unit Normal\Pageref{principal-unit-normal}
 
- [**Definition 4.123**](#second-fundamental-form-of-a-chart): Second fundamental form of a chart\Pageref{second-fundamental-form-of-a-chart}
+ [**Definition 4.124**](#second-fundamental-form-of-a-chart): Second fundamental form of a chart\Pageref{second-fundamental-form-of-a-chart}
 
  [**Notation**](#Notation*-4.29)\Pageref{Notation*-4.29}
 
- [**Remark 4.124**](#second-fundamental-form-and-reparametrizations): Second fundamental form and reparametrizations\Pageref{second-fundamental-form-and-reparametrizations}
+ [**Remark 4.125**](#second-fundamental-form-and-reparametrizations): Second fundamental form and reparametrizations\Pageref{second-fundamental-form-and-reparametrizations}
 
- [**Example 4.125**](#plane): Plane\Pageref{plane}
+ [**Example 4.126**](#plane): Plane\Pageref{plane}
 
- [**Example 4.126**](#unit-cylinder-3): Unit cylinder\Pageref{unit-cylinder-3}
+ [**Example 4.127**](#unit-cylinder-3): Unit cylinder\Pageref{unit-cylinder-3}
 
- [**Remark 4.127**](#Remark-4.127)\Pageref{Remark-4.127}
+ [**Remark 4.128**](#Remark-4.128)\Pageref{Remark-4.128}
+
+ [**Definition 4.129**](#gauss-map): Gauss map\Pageref{gauss-map}
