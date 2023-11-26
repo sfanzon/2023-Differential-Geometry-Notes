@@ -835,7 +835,7 @@
 
  [**Example 4.101**](#example-fff-plane): Plane\Pageref{example-fff-plane}
 
- [**Example 4.102**](#unit-cylinder-2): Unit cylinder\Pageref{unit-cylinder-2}
+ [**Example 4.102**](#example-cylinder-fff): Unit cylinder\Pageref{example-cylinder-fff}
 
  [**Remark 4.103**](#Remark-4.103)\Pageref{Remark-4.103}
 
@@ -903,54 +903,90 @@
 
  [**Definition 4.126**](#charts-with-same-orientation): Charts with same orientation\Pageref{charts-with-same-orientation}
 
- [**Definition 4.127**](#orientable-surface): Orientable surface\Pageref{orientable-surface}
+ [**Example 4.127**](#Example-4.127)\Pageref{Example-4.127}
 
- [**Example 4.128**](#Example-4.128)\Pageref{Example-4.128}
+ [**Definition 4.128**](#orientable-surface): Orientable surface\Pageref{orientable-surface}
 
  [**Example 4.129**](#Example-4.129)\Pageref{Example-4.129}
 
+ [**Example 4.130**](#Example-4.130)\Pageref{Example-4.130}
+
  [**Warning**](#orientability-is-a-global-property): Orientability is a global property\Pageref{orientability-is-a-global-property}
 
- [**Remark 4.130**](#Remark-4.130)\Pageref{Remark-4.130}
+ [**Remark 4.131**](#Remark-4.131)\Pageref{Remark-4.131}
 
- [**Definition 4.131**](#standard-unit-normal-of-a-surface): Standard unit normal of a surface\Pageref{standard-unit-normal-of-a-surface}
+ [**Definition 4.132**](#unit-normal-of-a-surface): Unit normal of a surface\Pageref{unit-normal-of-a-surface}
 
  [**Warning**](#Warning*-4.30)\Pageref{Warning*-4.30}
 
- [**Proposition 4.132**](#Proposition-4.132)\Pageref{Proposition-4.132}
+ [**Proposition 4.133**](#Proposition-4.133)\Pageref{Proposition-4.133}
 
- [**Example 4.133**](#Example-4.133)\Pageref{Example-4.133}
-
- [**Definition 4.134**](#second-fundamental-form-of-a-chart): Second fundamental form of a chart\Pageref{second-fundamental-form-of-a-chart}
+ [**Definition 4.134**](#standard-unit-normal-of-a-surface): Standard unit normal of a surface\Pageref{standard-unit-normal-of-a-surface}
 
  [**Notation**](#Notation*-4.31)\Pageref{Notation*-4.31}
 
- [**Remark 4.135**](#second-fundamental-form-and-reparametrizations): Second fundamental form and reparametrizations\Pageref{second-fundamental-form-and-reparametrizations}
+ [**Definition 4.135**](#second-fundamental-form-of-a-chart): Second fundamental form of a chart\Pageref{second-fundamental-form-of-a-chart}
 
- [**Example 4.136**](#plane): Plane\Pageref{plane}
+ [**Notation**](#Notation*-4.32)\Pageref{Notation*-4.32}
 
- [**Example 4.137**](#unit-cylinder-3): Unit cylinder\Pageref{unit-cylinder-3}
+ [**Remark 4.136**](#second-fundamental-form-and-reparametrizations): Second fundamental form and reparametrizations\Pageref{second-fundamental-form-and-reparametrizations}
 
- [**Remark 4.138**](#Remark-4.138)\Pageref{Remark-4.138}
+ [**Example 4.137**](#example-sff-plane): Plane\Pageref{example-sff-plane}
+
+ [**Example 4.138**](#example-cylinder-sff): Unit cylinder\Pageref{example-cylinder-sff}
 
  [**Remark 4.139**](#Remark-4.139)\Pageref{Remark-4.139}
 
- [**Definition 4.140**](#gauss-map): Gauss map\Pageref{gauss-map}
+ [**Remark 4.140**](#Remark-4.140)\Pageref{Remark-4.140}
 
- [**Example 4.141**](#Example-4.141)\Pageref{Example-4.141}
+ [**Definition 4.141**](#gauss-map): Gauss map\Pageref{gauss-map}
 
- [**Remark 4.142**](#Remark-4.142)\Pageref{Remark-4.142}
+ [**Remark 4.142**](#remark-gauss-coordinates)\Pageref{remark-gauss-coordinates}
 
- [**Definition 4.143**](#weingarten-map): Weingarten map\Pageref{weingarten-map}
-
- [**Important**](#Important*-4.32)\Pageref{Important*-4.32}
+ [**Example 4.143**](#Example-4.143)\Pageref{Example-4.143}
 
  [**Remark 4.144**](#Remark-4.144)\Pageref{Remark-4.144}
 
- [**Definition 4.145**](#second-fundamental-form-of-a-surface): Second fundamental form of a surface\Pageref{second-fundamental-form-of-a-surface}
+ [**Definition 4.145**](#weingarten-map): Weingarten map\Pageref{weingarten-map}
+
+ [**Important**](#Important*-4.33)\Pageref{Important*-4.33}
 
  [**Remark 4.146**](#Remark-4.146)\Pageref{Remark-4.146}
 
- [**Remark 4.147**](#matrix-of-the-second-fundamental-form): Matrix of the second fundamental form\Pageref{matrix-of-the-second-fundamental-form}
+ [**Definition 4.147**](#second-fundamental-form-of-a-surface): Second fundamental form of a surface\Pageref{second-fundamental-form-of-a-surface}
 
- [**Theorem 4.148**](#Theorem-4.148)\Pageref{Theorem-4.148}
+ [**Remark 4.148**](#Remark-4.148)\Pageref{Remark-4.148}
+
+ [**Remark 4.149**](#matrix-of-the-second-fundamental-form): Matrix of the second fundamental form\Pageref{matrix-of-the-second-fundamental-form}
+
+ [**Theorem 4.150**](#theorem-sff-chart)\Pageref{theorem-sff-chart}
+
+ [**Lemma 4.151**](#lemma-normal-derivatives)\Pageref{lemma-normal-derivatives}
+
+ [**Proof**](#Proof*-4.34)\Pageref{Proof*-4.34}
+
+ [**Lemma 4.152**](#lemma-weingarten)\Pageref{lemma-weingarten}
+
+ [**Proof**](#Proof*-4.35)\Pageref{Proof*-4.35}
+
+ [**Proof**](#proof-of-theorem): Proof of Theorem 4.150\Pageref{proof-of-theorem}
+
+ [**Theorem 4.153**](#theorem-weingarten): Matrix of Weingarten map\Pageref{theorem-weingarten}
+
+ [**Proof**](#Proof*-4.37)\Pageref{Proof*-4.37}
+
+ [**Important**](#Important*-4.38)\Pageref{Important*-4.38}
+
+ [**Example 4.154**](#helicoid): Helicoid\Pageref{helicoid}
+
+ [**Definition 4.155**](#gaussian-and-mean-curvature-1): Gaussian and mean curvature\Pageref{gaussian-and-mean-curvature-1}
+
+ [**Notation**](#trace-of-a-2-times-2-matrix): Trace of a $2 \times 2$ matrix\Pageref{trace-of-a-2-times-2-matrix}
+
+ [**Proposition 4.156**](#Proposition-4.156)\Pageref{Proposition-4.156}
+
+ [**Proof**](#Proof*-4.40)\Pageref{Proof*-4.40}
+
+ [**Example 4.157**](#plane): Plane\Pageref{plane}
+
+ [**Example 4.158**](#unit-cylinder-2): Unit cylinder\Pageref{unit-cylinder-2}

@@ -3628,7 +3628,12 @@ F & G
 \end{array}
 \right) \, (du(\vv) , dv(\ww))^T \,.
 \end{align*}
-The fact that $I_{\pp}(\vv,\vv) = \mathcal{F}_1(\vv)$ is now trivial.
+The fact that 
+$$
+I_{\pp}(\vv,\vv) = \mathcal{F}_1(\vv)
+$$ 
+follows from the first part of the 
+statement and definition of $\mathcal{F}_1$.
 
 :::
 
@@ -3794,7 +3799,7 @@ Again, this is not surprising, due to Remark \ref{remark-fff-reparametrization}.
 
 
 ::: Example
-### Unit cylinder
+### Unit cylinder  {#example-cylinder-fff}
 
 Consider the unit cylinder with chart
 $$
@@ -4967,7 +4972,7 @@ $$
 with $\Phi$ diffeomorphism. As shown in the proof of Proposition \ref{proposition-transition-maps}, we have
 $$
 \widetilde{\sss}_{\tilde{u}} \times \widetilde{\sss}_{\tilde{v}}
-= \det J\Phi  \, (\sss_u \times \sss_v) \,.
+= \det (J\Phi)  \, \sss_u \times \sss_v \,.
 $$
 Hence
 $$
@@ -5019,19 +5024,61 @@ where $\Phi$ is defined.
 
 
 
+::: Example
+
+Let $\mathbf{a} , \pp ,\mathbf{q} \in \R^3$ and suppose that $\pp$ and $\mathbf{q}$ are linearly independent.
+The plane spanned by $\pp ,\mathbf{q}$ and passing through $\mathbf{a}$ can be parametrized by 
+$$
+\sss (u,v):= \mathbf{a} + \pp u + \mathbf{q} v \,, \quad \forall \, (u,v) \in \R^2 \,.
+$$
+An alternative parametrization is given by
+$$
+\widetilde{\sss} (u,v):= \mathbf{a}  + \mathbf{q} u + \pp v  \,, \quad \forall \, (u,v) \in \R^2 \,.
+$$
+We have
+$$
+\sss_u = \pp \,, \quad 
+\sss_v = \mathbf{q} \,, \quad 
+$$
+and therefore
+$$
+\NN_{\sss} = \frac{ \pp \times \mathbf{q}  }{ \norm{ \pp \times \mathbf{q} } } \,.
+$$
+Similarly, we have
+$$
+\NN_{\widetilde{\sss}} = \frac{ \mathbf{q} \times \pp   }{ \norm{ \mathbf{q} \times \pp } } =
+ \frac{ - \pp \times \mathbf{q}  }{ \norm{ \pp \times \mathbf{q}  } } \,,
+$$
+showing that
+$$
+\NN_{\sss} = - \NN_{\widetilde{\sss}} \,.
+$$
+Hence $\sss$ and $\tilde{\sss}$ determine opposite orientations.
+
+:::
+
+
+
+
+
 If a surface can be covered by charts with the same orientation, it is called orientable.
 
 
 ::: Definition
 ### Orientable surface
 
-Let $\SSS$ be a regular surface. We say that $\SSS$ is **orientable** if there exists an 
-atlas $\mathcal{A} = \{ \sss_i \}_{i \in I}$ with the property: If $\sss_i, \sss_j \in \mathcal{A}$ are such that $\sss_i (U_i) \cap \sss_j (U_j) \neq \emptyset$, then
+Let $\SSS$ be a regular surface. Then:
+
+1. An atlas $\mathcal{A} = \{ \sss_i \}_{i \in I}$ is **oriented** if the following property holds: 
 $$
+\sss_i (U_i) \cap \sss_j (U_j) \neq \emptyset \quad \implies \quad 
 \det J \Phi > 0 \,,
 $$
 where $\Phi$ is the transition map between $\sss_i$ and $\sss_j$.
 
+2. $\SSS$ is **orientable** if there exists an oriented atlas $\mathcal{A}$.
+
+3. If an oriented atlas $\mathcal{A}$ is assigned, we say that $\SSS$ is **oriented** by $\mathcal{A}$.
 
 :::
 
@@ -5095,9 +5142,9 @@ $\SSS$, without ambiguity.
 
 
 ::: Definition
-### Standard unit normal of a surface
+### Unit normal of a surface
 
-Let $\SSS$ be a regular surface. A **standard unit normal** of $\SSS$ is a smooth function
+Let $\SSS$ be a regular surface. A **unit normal** of $\SSS$ is a smooth function
 $\NN \colon \SSS \to \R^3$ such that
 $$
 \NN (\pp) \perp T_{\pp} \SSS \,, \quad \| \NN (\pp) \| = 1 \,, \quad \forall \, \pp \in \SSS \, .
@@ -5121,58 +5168,42 @@ Let $\SSS$ be a regular surface. They are equivalent:
 
 1. $\SSS$ is orientable.
 
-2. There exists a standard unit normal $\NN$ to $\SSS$.
+2. There exists a unit normal $\NN \colon \SSS \to \R^3$.
 
 :::
 
 The proof follows from the above arguments. For details, we refer the reader to Proposition 4.3.7 in [@abate-tovena].
 
 
-Note that, even if a surface is orientable, we always have two choices for the sign of the standard unit normal $\NN$. 
+
+In view of the above propostion, for an oriented surface there is a natural choice of unit normal, 
+which we call **standard unit normal** of $\SSS$. 
 
 
-::: Example
+::: Definition
+### Standard unit normal of a surface
 
-Let $\mathbf{a} , \pp ,\mathbf{q} \in \R^3$ and suppose that $\pp$ and $\mathbf{q}$ are linearly independent.
-The plane spanned by $\pp ,\mathbf{q}$ and passing through $\mathbf{a}$ can be parametrized by 
+Let $\SSS$ be a regular surface oriented by the atlas $\mathcal{A}$. The **standard unit normal**
+to $\SSS$ is the map $\NN \colon \SSS \to \R^3$ such that
 $$
-\sss (u,v):= \mathbf{a} + \pp u + \mathbf{q} v \,, \quad \forall \, (u,v) \in \R^2 \,.
+\NN \circ \sss = \NN_{\sss} \,,
 $$
-An alternative parametrization is given by
+for each chart $\sss \in \mathcal{A}$, where 
 $$
-\widetilde{\sss} (u,v):= \mathbf{a}  + \mathbf{q} u + \pp v  \,, \quad \forall \, (u,v) \in \R^2 \,.
+\NN_{\sss} \colon U \to \R^3 \,, \quad  \NN_{\sss} = \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v} }
 $$
-We have
-$$
-\sss_u = \pp \,, \quad 
-\sss_v = \mathbf{q} \,, \quad 
-$$
-and therefore
-$$
-\NN_{\sss} = \frac{ \pp \times \mathbf{q}  }{ \norm{ \pp \times \mathbf{q} } } \,.
-$$
-Similarly, we have
-$$
-\NN_{\widetilde{\sss}} = \frac{ \mathbf{q} \times \pp   }{ \norm{ \mathbf{q} \times \pp } } =
- \frac{ - \pp \times \mathbf{q}  }{ \norm{ \pp \times \mathbf{q}  } } \,,
-$$
-showing that
-$$
-\NN_{\sss} = - \NN_{\widetilde{\sss}} \,.
-$$
-Hence $\sss$ and $\tilde{\sss}$ determine opposite orientations.
+is the standard unit normal of $\sss$.
 
 :::
 
 
 
 
+::: Notation
 
+In the following we will denote by $\NN$ both the standard unit normal of $\SSS$ and of a chart. 
 
-
-
-
-
+:::
 
 
 
@@ -5349,7 +5380,7 @@ Let us show that a plane and a cylinder have different second fundamental forms.
 
 
 ::: Example
-### Plane   
+### Plane   {#example-sff-plane}
 
 Let $\mathbf{a}, \pp, \mathbf{q} \in \R^3$. Suppose that $\pp$ and $\mathbf{q}$ are orthonormal vectors, that is,
 $$
@@ -5394,7 +5425,7 @@ $$
 
 
 ::: Example
-### Unit cylinder
+### Unit cylinder  {#example-cylinder-sff}
 
 Consider the unit cylinder with chart
 $$
@@ -5484,8 +5515,7 @@ is the idea behind the definition of the **Gauss** and **Weingarten** maps.
 
 ::: Remark 
 
-Let $\NN \colon \SSS \to \R^3$ be a standard unit normal to $\SSS$, that is, $\NN$ is a smooth map 
-such that
+Let $\SSS$ be oriented and $\NN \colon \SSS \to \R^3$ be the standard unit normal. In particular $\NN$ is a smooth map and 
 $$
 \NN(\pp) \perp T_{\pp} \SSS \,, \quad \| \NN(\pp) \| = 1 \,, \quad \forall  \, \pp \in \SSS \,. 
 $$
@@ -5494,7 +5524,7 @@ $$
 \NN (\pp) \in 
 \sphere^2 := \{ \xx \in \R^3 \, \colon \, \| \xx \| = 1 \}  \,,
 $$
-where $\sphere^2$ is the unit sphere in $\R^3$.
+where $\sphere^2$ is the unit sphere in $\R^3$. Thus $\NN \colon \SSS \to \sphere^2$.
 
 :::
 
@@ -5504,7 +5534,7 @@ where $\sphere^2$ is the unit sphere in $\R^3$.
 ::: Definition
 ### Gauss map
 
-Let $\SSS$ be an orientable surface and $\NN$ a standard unit normal to $\SSS$. The **Gauss map** of 
+Let $\SSS$ be an oriented surface and $\NN$ the standard unit normal to $\SSS$. The **Gauss map** of 
 $\SSS$ is the map 
 $$
 {\mathcal{G}}_{\SSS} \colon \SSS  \to \sphere^2 \,, \quad 
@@ -5515,6 +5545,24 @@ $$
 
 ![The Gauss map ${\mathcal{G}}_{\SSS}$ of $\SSS$ is defined as ${\mathcal{G}}_{\SSS}(\pp):= \NN(\pp)$. Note that ${\mathcal{G}}_{\SSS}(\pp) \in \sphere^2$.](/images/sff_gauss_map.png){width=70%}
 
+
+
+::: {.Remark #remark-gauss-coordinates}
+
+The Gauss map of $\SSS$ is just the standard unit normal of $\SSS$. By definition
+of standard unit normal to $\SSS$ we obtain that 
+$$
+\mathcal{G}_{\SSS} \circ \sss = \NN
+$$
+for all charts $\sss \colon U \to \R^3$, where $\NN = \NN_{\sss}$ is the standard unit normal to $\sss$,
+that is, 
+$$
+\NN \colon U \to \R^3 \,, \quad 
+\NN := \frac{ \sss_u \times \sss_v }{ \norm{ \sss_u \times \sss_v } } \,.
+$$
+
+
+:::
 
 
 ::: Example
@@ -5529,7 +5577,7 @@ $$
 $$
 The Gauss map of $\SSS$ is constant:
 $$
-\mathcal{G}_{\SSS} (\pp) = \NN (\pp) = \frac{ \vv \times \ww  }{ \| \vv \times \ww \| } \,,
+\mathcal{G}_{\SSS} (\pp) = \frac{ \vv \times \ww  }{ \| \vv \times \ww \| } \,,
 $$
 for all $\pp \in \SSS$, see @fig-gauss-plane.
 
@@ -5563,8 +5611,9 @@ $$
 $$
 The Gauss map of $\SSS$ is
 $$
-\mathcal{G}_{\SSS} (u,v) = (\cos(u), \sin(u), 0) \,.
+\mathcal{G}_{\SSS} (\pp) = (\cos(u_0), \sin(u_0), 0) \,,
 $$
+where $(u_0,v_0)$ is such that $\sss(u_0,v_0)=\pp$. 
 Note that $\mathcal{G}_{\SSS}$ maps $\SSS$ into the equator of $\sphere^2$, see @fig-gauss-cylinder.
 
 
@@ -5675,10 +5724,9 @@ $$
 
 ::: Remark
 
-The second fudamental form of $\SSS$ is a bilinear symmetric map.
+The second fudamental form $II_{\pp}$ of $\SSS$ is bilinear. 
 
-> Indeed, $II_{\pp}$ is symmetric because the scalar product is symmetric. Moreover $\WW_{\pp,\SSS}$ is
-linear, being the differential of a smooth map. Hence $II_{\pp}$ is bilinear.
+> Indeed, $\WW_{\pp,\SSS}$ is linear, being the differential of a smooth map. Hence $II_{\pp}$ is bilinear, given that the scalar product is bilinear.
 
 :::
 
@@ -5693,8 +5741,8 @@ $$
 A = 
 \left( 
 \begin{array}{cc}
-II_{\pp} (\sss_u \cdot \sss_u) & II_{\pp} (\sss_u \cdot \sss_v) \\
-II_{\pp} (\sss_v \cdot \sss_u) & II_{\pp} (\sss_v \cdot \sss_v) 
+II_{\pp} (\sss_u, \sss_u) & II_{\pp} (\sss_u , \sss_v) \\
+II_{\pp} (\sss_v, \sss_u) & II_{\pp} (\sss_v , \sss_v) 
 \end{array}
 \right)  \,,
 $$
@@ -5719,10 +5767,14 @@ Therefore, the second fundamental form $II_{\pp}$ coincides with the second fund
 :::
 
 
-::: Theorem
+::: {.Theorem #theorem-sff-chart }
 
 Let $\SSS$ be an orientable surface and $\sss \colon U \to \R^3$ be a regular chart.
-Let $\pp \in \sss(U)$. Then
+Let $\pp \in \sss(U)$. 
+
+1. The second funamental form $II_{\pp}$ is a symmetric bilinear map.
+
+2. It holds
 $$
 II_{\pp} (\vv,\ww) = (du (\vv), dv(\ww) )  \, 
 \left( 
@@ -5732,7 +5784,14 @@ M & N
 \end{array}
 \right) \, (du(\vv) , dv(\ww))^T \,,
 $$
-for all $\vv,\ww \in T_{\pp} \SSS$. In particular, $\mathcal{F}_2$ is the quadratic form associated to the symmetric bilinear form $II_{\pp}$, that is,
+for all $\vv,\ww \in T_{\pp} \SSS$, where
+$$
+L = \sss_{uu} \cdot \NN \,, \quad 
+M = \sss_{uv} \cdot \NN \,, \quad 
+N = \sss_{vv} \cdot \NN \,.
+$$
+
+3. $\mathcal{F}_2$ is the quadratic form associated to $II_{\pp}$, that is,
 $$
 \mathcal{F}_2 (\vv) = {II}_{\pp} (\vv,\vv) \,, \quad \forall \, \vv \in T_{\pp} \SSS \,.
 $$
@@ -5741,10 +5800,821 @@ $$
 :::
 
 
+To prove Theorem \ref{theorem-sff-chart} we use the following two Lemmas.
+
+
+::: {.Lemma  #lemma-normal-derivatives}
+
+Let $\sss \colon U \to \R^3$ be a regular chart with standard unit normal $\NN \colon U \to \R^3$. 
+Then
+\begin{align*}
+\NN_{u} \cdot \sss_u & = - L \,,\\
+\NN_{u} \cdot \sss_v & = \NN_{v} \cdot \sss_u = - M \,, \\
+\NN_{v} \cdot \sss_v & = - N \,.
+\end{align*}
+
+:::
+
+
+::: Proof
+
+The vectors $\sss_u$ and $\sss_v$ form a basis for $T_{\pp} \SSS$. Since $\NN$ is orthogonal to 
+$T_{\pp} \SSS$ by definition, it follows that
+$$
+\NN \cdot \sss_u = 0 \,, \quad 
+\NN \cdot \sss_v = 0 \,.
+$$
+Differentiating the above with respect to $u$ and $v$ yields the thesis. For example, we have
+$$
+\frac{\partial}{\partial u} (\NN \cdot \sss_u) = 0 \,.
+$$
+On the other hand, by chain rule,
+$$
+\frac{\partial}{\partial u} (\NN \cdot \sss_u) = \NN_u \cdot \sss_u + \NN \cdot \sss_{uu} = 
+\NN_u \cdot \sss_u + L \,,
+$$
+from which we infer
+$$
+\NN_u \cdot \sss_u = - L \,.
+$$
+The rest of the proof follows similarly.
+
+:::
+
+
+::: {.Lemma  #lemma-weingarten}
+
+Let $\SSS$ be an orientable surface and $\WW_{\pp,\SSS} \colon T_{\pp} \SSS \to T_{\pp} \SSS$ be 
+its Weingarten map at $\pp$. Let $\sss$ be a regular chart at $\pp$, with $\sss(u_0,v_0) = \pp$. Then
+$$
+\WW_{\pp,\SSS} (\sss_u) = - \NN_u \,, \quad 
+\WW_{\pp,\SSS} (\sss_v) = - \NN_v \,,
+$$
+where $\sss_u,\sss_v,\NN_u,\NN_v$ are evaluated at $(u_0,v_0)$.
+
+:::
+
+
+::: Proof
+
+Since $\WW_{\pp,\SSS}$ is defined as $- d_{\pp} \mathcal{G}_{\SSS}$, we can compute 
+$\WW_{\pp,\SSS} (\sss_u)$ and $\WW_{\pp,\SSS} (\sss_v)$ by using the definition of differential of
+a smooth function. To this end, consider the curve
+$$
+\g (t) := \sss ( u_0 + t , v_0 ) \,.
+$$
+We have that $\g$ is a smooth curve in $\SSS$ and
+$$
+\dg(t) =  \sss_u( u_0 + t, v_0 ) \,.
+$$
+Therefore
+$$
+\g(0) = \sss(u_0,v_0) = \pp \,, \quad \dg(0) = \sss_u (u_0,v_0) \,.
+$$
+Define
+$$
+\tg(t) := (\mathcal{G}_{\SSS} \circ \g )(t) \,.
+$$
+By Remark \ref{remark-gauss-coordinates}
+$$
+\tg(t) = \mathcal{G}_{\SSS} (\g(t)) = \mathcal{G}_{\SSS} (\sss(u_0 + t , v_0)) = \NN (u_0 + t , v_0) \,.
+$$
+Thus
+$$
+\dtg(t) = \NN_u (u_0 + t , v_0) \,, \quad \dtg(0) = \NN_u (u_0 , v_0) \,.
+$$
+By definition of differential, we have
+$$
+\WW_{\pp,\SSS} (\sss_u)  = - d_{\pp} \mathcal{G}_{\SSS} (\sss_u) 
+                         = - \dtg (0) 
+                         = - \NN_u (u_0,v_0) \,,
+$$
+as we wanted to prove. To show that
+$$
+\WW_{\pp,\SSS} (\sss_v) = - \NN_v (u_0,v_0) \,,
+$$
+it is sufficient to consider the curve
+$$
+\g (t) := \sss ( u_0 , v_0 + t ) \,,
+$$
+and argue similarly. This is left as an exercise.
+
+
+:::
+
+
+We can now prove Theorem \ref{theorem-sff-chart}
+
+
+::: Proof
+### Proof of Theorem \ref{theorem-sff-chart}
+
+By Theorem \ref{theorem-tangent-plane} we have
+$$
+T_{\pp} \SSS = \operatorname{span} \{ \sss_u, \sss_v \} \,.
+$$
+Therefore, for $\vv,\ww \in T_{\pp} \SSS$, there exist $\lambda_1,\lambda_2,\mu_1,\mu_2 \in \R$ such that 
+$$
+\vv = \lambda_1 \sss_u + \mu_1 \sss_v \,, \quad 
+\ww = \lambda_2 \sss_u + \mu_2 \sss_v \,.
+$$
+By bilinearity of $II_{\pp}$ we infer
+\begin{align*}
+{II}_{\pp} (\vv,\ww) & = \lambda_1 \lambda_2 \, II_{\pp}(\sss_u , \sss_u)  +  \lambda_1 \mu_2 \,  II_{\pp}(\sss_u , \sss_v) \\ 
+& \,\,\,\, + \lambda_2 \mu_1  \,  II_{\pp}(\sss_v , \sss_u)  + \mu_1 \mu_2 \,  II_{\pp}(\sss_v , \sss_v) \\
+& = du(\vv) du(\ww) \, II_{\pp}(\sss_u , \sss_u)  +  du(\vv) dv(\ww) \,  II_{\pp}(\sss_u , \sss_v) \\ 
+& \,\,\,\, + dv(\vv) du(\ww)  \,  II_{\pp}(\sss_v , \sss_u)  + dv(\vv) dv(\ww) \,  II_{\pp}(\sss_v , \sss_v) \\
+& = (du (\vv), dv(\ww) )  \, 
+\left( 
+\begin{array}{cc}
+II_{\pp}(\sss_u , \sss_u) & II_{\pp}(\sss_u , \sss_v) \\
+II_{\pp}(\sss_v , \sss_u) & II_{\pp}(\sss_v , \sss_v) 
+\end{array}
+\right) \, (du(\vv) , dv(\ww))^T \,.
+\end{align*}
+By Lemma \ref{lemma-weingarten} and Lemma \ref{lemma-normal-derivatives} we have
+$$
+\WW_{\pp, \SSS} (\sss_u) = - \NN_u \,, \quad L = - \NN_u \cdot \sss_u \,.
+$$
+Therefore, using the above and the definition of $II_{\pp}$, we get
+$$
+II_{\pp} (\sss_u,\sss_u) = \WW_{\pp,\SSS} (\sss_u) \cdot \sss_u = - \NN_u \cdot \sss_u = L \,.
+$$
+With similar calculations we obtain 
+$$
+II_{\pp} (\sss_u,\sss_v) = II_{\pp} (\sss_v,\sss_u) = M \,, \quad
+II_{\pp} (\sss_v,\sss_v) = N \,,
+$$
+concluding the proof of point 2. In particular this also proves that $II_{\pp}$ is symmetric, which is Point 1 of the statement. The fact that 
+$$
+II_{\pp}(\vv,\vv) = \mathcal{F}_2(\vv)
+$$ 
+follows from Point 2 and definition of $\mathcal{F}_2$.
+
+:::
+
+
+
+
+### Matrix of Weingarten map
+
+
+The Weingarten map is a linear map
+$$
+\WW_{\pp,\SSS} \colon T_{\pp} \SSS \to T_{\pp} \SSS \,.
+$$
+We would like to find a formula to compute $\WW_{\pp,\SSS}$. This is easily done: Given a chart $\sss$ at $\pp$, we have that $\{\sss_u,\sss_v\}$ is a basis 
+for the vector space $T_{\pp} \SSS$. Therefore there exists a $2 \times 2$ matrix $A$
+which represents $\WW_{\pp,\SSS}$, that is, 
+$$
+\WW_{\pp,\SSS}(\vv) = A \vv \,, \quad \forall \, \vv \in T_{\pp} \SSS \,.
+$$
+It turns out that
+$$
+A = \mathcal{F}_1^{-1} \mathcal{F}_2 \,,
+$$
+where we recall that
+$$
+\mathcal{F}_1 =
+\left(
+\begin{array}{cc}
+E & F \\
+F & G
+\end{array}
+\right)\,, \quad 
+\mathcal{F}_2 =
+\left(
+\begin{array}{cc}
+L & M \\
+M & N
+\end{array}
+\right) \,,
+$$
+where
+\begin{align*}
+E & = \sss_u \cdot \sss_u \,, & F & =  \sss_u \cdot \sss_v \, , & G & =  \sss_v \cdot \sss_v \,,  \\
+L & = \sss_{uu} \cdot \NN \, ,  & M & =  \sss_{uv} \cdot \NN \,, & N & =  \sss_{vv} \cdot \NN \,, 
+\end{align*}
+and
+$$
+\NN = \frac{ \sss_u \times \sss_v }{ \norm{ \sss_u \times \sss_v } } \,.
+$$
+Let us prove this claim.
+
+
+::: Theorem
+### Matrix of Weingarten map  {#theorem-weingarten}
+
+Let $\SSS$ be an orientable surface and $\WW_{\pp,\SSS} \colon T_{\pp} \SSS \to T_{\pp} \SSS$ be 
+its Weingarten map at $\pp$. Let $\sss$ be a regular chart at $\pp$, with $\sss(u_0,v_0) = \pp$. Then
+$$
+\WW_{\pp,\SSS} (\vv) = \mathcal{F}_1^{-1} \mathcal{F}_2   \left(
+\begin{array}{c}
+\lambda \\
+\mu
+\end{array}
+\right)\,, \quad \forall \, v \in T_{\pp} \SSS \,,
+$$
+where 
+$$
+\vv = \lambda \sss_u + \mu \sss_v \,,
+$$
+with $\sss_u$ and $\sss_v$ evaluated at $(u_0,v_0)$.
+
+:::
+
+::: Proof
+
+By Theorem \ref{theorem-tangent-plane} we know that $\{\sss_u,\sss_v\}$ is a basis of 
+$T_{\pp} \SSS$. Since $\WW_{\pp,\SSS} \colon T_{\pp} \SSS \to T_{\pp} \SSS$ is linear, by standard linear algebra results there exist coefficients $a,b,c,d \in \R$ such that
+$$
+\WW_{\pp,\SSS} (\vv) = 
+\left(
+\begin{array}{cc} 
+a & b \\
+c & d
+\end{array}
+\right) 
+\left(
+\begin{array}{c}
+\lambda \\
+\mu
+\end{array}
+\right)\, \quad \forall \, \vv \in T_{\pp} \SSS \,,
+$$
+where
+$$
+\vv = \lambda \sss_u + \mu \sss_v \,.
+$$
+The coefficients $a,b,c,d \in \R$ can be compute by solving the linear system
+\begin{align*}
+\WW_{\pp,\SSS} (\sss_u) & = a \sss_u + b \sss_v \\
+\WW_{\pp,\SSS} (\sss_v) & = c \sss_u + d \sss_v \,.
+\end{align*}
+By Lemma \ref{lemma-weingarten} we have
+$$
+\WW_{\pp,\SSS} (\sss_u) = - \NN_u \,, \quad 
+\WW_{\pp,\SSS} (\sss_v) = - \NN_v \,,
+$$
+so that we obtain
+\begin{align*}
+- \NN_u & = a \sss_u + b \sss_v \\
+- \NN_v & = c \sss_u + d \sss_v \,.
+\end{align*}
+Taking the scalar product of the above equations with $\sss_u$ and $\sss_v$ we get
+\begin{align*}
+- \NN_u \cdot \sss_u & = a (\sss_u \cdot \sss_u) + b (\sss_v \cdot \sss_u) \\
+- \NN_u \cdot \sss_v & = a (\sss_u \cdot \sss_v) + b (\sss_v \cdot \sss_v) \\
+- \NN_v \cdot \sss_u & = c (\sss_u \cdot \sss_u) + d (\sss_v \cdot \sss_u) \\
+- \NN_v \cdot \sss_v & = c (\sss_u \cdot \sss_v) + d (\sss_v \cdot \sss_v) 
+\end{align*}
+By Lemma \ref{lemma-normal-derivatives} we have
+\begin{align*}
+\NN_u \cdot \sss_u & = - L \,,  & \NN_u \cdot \sss_v & = - M \,, \\
+\NN_v \cdot \sss_u & = - M \,,  & \NN_v \cdot \sss_v & = - N \,. \\
+\end{align*}
+If in addition we recall the definition of $E,F,G$, we obtain
+\begin{align*}
+L & = a E + b F \\
+M & = a F + b G \\
+M & = c E + d F \\
+N & = c F + d G 
+\end{align*}
+The above equations are equivalent to the matrix multiplication
+$$
+\left(
+\begin{array}{cc} 
+L & M \\
+M & N
+\end{array}
+\right)
+=
+\left(
+\begin{array}{cc} 
+a & b \\
+c & d
+\end{array}
+\right)
+\left(
+\begin{array}{cc} 
+E & F \\
+F & G
+\end{array}
+\right) \,,
+$$
+which reads
+$$
+\mathcal{F}_1 A = \mathcal{F}_2 \,.
+$$
+Now, recall that the first fundamental form is defined by 
+$$
+\mathcal{F}_1 (\vv,\ww) = \vv \cdot \ww \,, \quad  \forall \, \vv , \ww \in T_{\pp} \SSS \,,
+$$
+which is a scalar product. Therefore the matrix $\mathcal{F}_1$ is positive definite, and
+in particular 
+$$
+\det \mathcal{F}_1 > 0 \,.
+$$
+This means $\mathcal{F}_1$ is invertible and 
+$$
+A = \mathcal{F}_1^{-1} \mathcal{F}_2 \,,
+$$
+concluding the proof.
+
+:::
+
+
+::: Important
+
+A matrix $A \in \R^{n \times n}$ is invertible if and only if $\det A \neq 0$. In such case
+the inverse $A^{-1}$ is computed via the formula
+$$
+A^{-1} = \frac{1}{\det A} \, \operatorname{cof}(A)^T \,,
+$$
+where $\operatorname{cof}(A)$ is the cofactor matrix of $A$. For $n=2$ the above formula
+reads:
+$$
+\left(
+\begin{array}{cc}
+a & b \\
+c & d 
+\end{array}
+\right)^{-1}
+=
+\frac{1}{ad - bc}  \,
+\left(
+\begin{array}{cc}
+d & -b \\
+-c & a 
+\end{array}
+\right) \,.
+$$
+If the matrix is diagonal, then 
+$$
+\left(
+\begin{array}{cc}
+\lambda & 0 \\
+0 & \mu 
+\end{array}
+\right) 
+=
+\left(
+\begin{array}{cc}
+1/\lambda & 0 \\
+0 & 1/\mu 
+\end{array}
+\right) \,.
+$$
+
+
+:::
+
+
+::: Example
+### Helicoid
+
+The Helicoid is charted by
+$$
+\sss (u,v) = (u \cos (v), u \sin(v) , \lambda v) \,, \quad u \in [0,1] \,, \, v \in [0,4\pi) \,,
+$$
+where $\lambda>0$ is a constant, see @fig-helicoid. Prove that the matrix of the Weingarten map is
+$$
+\WW = 
+\left(
+\begin{array}{cc}
+0 & - \dfrac{\lambda}{(u^2 + \lambda^2)^{1/2}} \\
+\dfrac{\lambda}{(u^2 + \lambda^2)^{3/2}} & 0 
+\end{array}
+\right) \,.
+$$
+
+
+> *Solution.* We compute
+\begin{align*}
+\sss_u & = ( \cos(v), \sin(v), 0  )  \\
+\sss_v & = ( - u \sin(v), u \cos(v), \lambda  )  \\
+\sss_{uu} & = ( 0, 0, 0  )  \\
+\sss_{uv} & = (- \sin(v), \cos(v), 0 ) \\
+\sss_{vv} & = ( - u \cos(v), - u \sin(v), 0 ) \\
+\end{align*}
+from which
+\begin{align*}
+E & = \sss_u \cdot \sss_u = 1 \\
+F & = \sss_u \cdot \sss_v = 0 \\
+G & = \sss_v \cdot \sss_v = u^2 + \lambda^2 \,, 
+\end{align*}
+so that the first fundamental form is
+$$
+\mathcal{F}_1 = 
+\left(
+\begin{array}{cc}
+E & F \\
+F & G 
+\end{array}
+\right)
+=
+\left(
+\begin{array}{cc}
+1 & 0 \\
+0 & u^2 + \lambda^2 
+\end{array}
+\right) \,.
+$$
+Since $\mathcal{F}_1$ is diagonal, the inverse is immediately computed
+$$
+\mathcal{F}_1^{-1}
+=
+\left(
+\begin{array}{cc}
+1 & 0 \\
+0 & \dfrac{1}{u^2 + \lambda^2}
+\end{array}
+\right) \,.
+$$
+Moreover
+\begin{align*}
+\sss_u \times \sss_v & = 
+\left|
+\begin{array}{ccc}
+\ii & \jj & \kk \\
+\cos(v)  &  \sin(v)  &  0 \\
+-u \sin(v) & u \cos(v) & \lambda 
+\end{array}
+\right| \\
+& =
+(\lambda \sin (v), - \lambda \cos(v), u)
+\end{align*}
+and so
+$$
+\norm{\sss_u \times \sss_v} = \sqrt{u^2 + \lambda^2} \,.
+$$
+The standard unit normal to $\sss$ is 
+$$
+\NN  = \frac{ \sss_u \times \sss_v }{ \norm{\sss_u \times \sss_v} } = 
+\frac{1}{\sqrt{u^2 + \lambda^2}} \, (\lambda \sin(v), -\lambda \cos(v), u) \,.
+$$
+Hence
+\begin{align*}
+L & = \sss_{uu} \cdot \NN = 0 \\
+M & = \sss_{uv} \cdot \NN = - \frac{\lambda}{\sqrt{u^2 + \lambda^2}} \\
+N & = \sss_{vv} \cdot \NN = 0 \\
+\end{align*}
+and the second funamental form $\mathcal{F}_2$ is
+$$
+\mathcal{F}_2 = 
+\left(
+\begin{array}{cc}
+L & M \\
+M & N 
+\end{array}
+\right)
+=
+\left(
+\begin{array}{cc}
+0 & - \dfrac{\lambda}{\sqrt{u^2 + \lambda^2}} \\
+- \dfrac{\lambda}{\sqrt{u^2 + \lambda^2}} & 0
+\end{array}
+\right) \,.
+$$
+Finally
+\begin{align*}
+\WW & = \mathcal{F}_1^{-1} \mathcal{F}_2 \\
+    & =
+\left( 
+\begin{array}{cc}
+1 & 0 \\
+0 & \dfrac{1}{u^2 + \lambda^2}
+\end{array}
+\right)    
+\left(
+\begin{array}{cc}
+0 & - \dfrac{\lambda}{\sqrt{u^2 + \lambda^2}} \\
+- \dfrac{\lambda}{\sqrt{u^2 + \lambda^2}} & 0
+\end{array}
+\right) \\
+& = 
+\left(
+\begin{array}{cc}
+0 & - \dfrac{\lambda}{(u^2 + \lambda^2)^{1/2}} \\
+\dfrac{\lambda}{(u^2 + \lambda^2)^{3/2}} & 0 
+\end{array}
+\right) \,.
+\end{align*}
+
+:::
+
+
+
+```{python}
+#| echo: false
+#| fig-cap: "Plot of Helicoid."
+#| label: fig-helicoid
+
+# Importing numpy, matplotlib and mplot3d
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits import mplot3d
+
+# Generates figure object of size 4 x 4
+fig = plt.figure(figsize = (4,4))
+
+# Generates 3D axes
+ax = plt.axes(projection = '3d')
+
+# Shows axes grid
+ax.grid(True)
+
+# Generates coordinates u and v by dividing
+# the intervals (0,1) and (0,2pi) in 100 parts
+u = np.linspace(0, 1, 100)
+v = np.linspace(0, 4*np.pi, 100)
+
+# Generates grid [U,V] from the coordinates u, v
+U, V = np.meshgrid(u, v)
+
+# Computes the surface on grid [U,V]
+x = U * np.cos(V) 
+y = U * np.sin(V)
+z = V
+
+# Plots the cone
+ax.plot_surface(x, y, z, rstride = 5, cstride = 5, color = 'dimgray', edgecolors = 'snow')
+
+
+
+
+# Setting axes labels
+ax.set_xlabel('x', labelpad=10)
+ax.set_ylabel('y', labelpad=10)
+ax.set_zlabel('z', labelpad=10)
+
+# Setting viewing angle
+ax.view_init(elev = 26, azim = 35)
+
+# Showing the plot
+plt.show()
+```
+
+
+### Gaussian and mean curvature
+
+
+The Weingarten map of $\SSS$ encodes the rate of change of the standard unit normal
+$\NN$. We use this map to produce scalar values, which we call **curvatures**. The
+first two curvatures that we consider are called **Gaussian** and **mean** curvatures.
+
+
+
+::: Definition
+### Gaussian and mean curvature
+
+Let $\SSS$ be an orientable surface and let $\WW$ denote the matrix of
+the Weingarten map $\WW_{\pp,\SSS}$ of $\SSS$ at $\pp$. We define:
+
+- The **Gaussian curvature** of $\SSS$ at $\pp$ as
+$$
+K := \det \WW \,,
+$$
+
+- The **mean curvature** of $\SSS$ at $\pp$ as
+$$
+H := \frac12 \, \operatorname{trace} \WW \,,
+$$
+
+:::
+
+
+::: Notation
+### Trace of a $2 \times 2$ matrix
+
+We recall that the **trace** of a $2 \times 2$ matrix $A$ is defined as the sum of the diagonal
+entries, that is,
+$$
+\operatorname{trace} A = a + d \,, \quad
+A = 
+\left(
+\begin{array}{cc}
+a & b \\
+c & d
+\end{array}
+\right) \,.
+$$
+
+:::
+
+
+Since we have shown that the matrix of the Weingarten map is
+$$
+\WW = \mathcal{F}_1^{-1} \mathcal{F}_2 \,,
+$$
+we can express $K$ and $H$ in terms of the first and second fundamental forms.
+
+
+::: Proposition
+
+Let $\SSS$ be an orientable surface and $\sss$ a regular chart at $\pp$. Then
+$$
+K =
+\frac{ LN-M^2 }{ EG - F^2 } \,, \quad 
+H = 
+\frac{LG - 2MF - NE}{2 (EG - F^2)} \,.
+$$
+
+:::
+
+
+::: Proof
+
+By Theorem \ref{theorem-weingarten} the matrix of the Weingarten map $\WW_{\pp,\SSS}$ of $\SSS$ at $\pp$ is given by
+$$
+\WW = \mathcal{F}_1^{-1} \mathcal{F}_2 \,.
+$$
+We have
+\begin{align*}
+\det \mathcal{F}_1 & = 
+\det \left(
+\begin{array}{cc}
+E & F \\
+F & G
+\end{array}
+\right) = EF - G^2 \,, \\
+\det \mathcal{F}_2 & = 
+\det \left(
+\begin{array}{cc}
+L & M \\
+M & N
+\end{array}
+\right) = LN - M^2 \,.
+\end{align*}
+By the properties of determinant we get
+$$
+\det \mathcal{F}_1^{-1} = \frac{1}{\det \mathcal{F}_1} = \frac{1}{EF - G^2} \,,
+$$
+and therefore
+\begin{align*}
+K & = \det \WW  = \det \left( \mathcal{F}_1^{-1} \mathcal{F}_2 \right) \\
+  & = \left( \det \mathcal{F}_1^{-1} \right) \,  \left(\det \mathcal{F}_2 \right)
+= \frac{ LN-M^2 }{ EG - F^2 } \, .
+\end{align*}
+To compute $H$ we need to find the diagonal entries of $\WW$. Since 
+$$
+\mathcal{F}_1^{-1} = 
+\frac{1}{EG - F^2} 
+\left(
+\begin{array}{cc}
+G & -F \\
+-F & E
+\end{array}
+\right) 
+$$
+we have
+$$
+\WW = \frac{1}{EG - F^2} 
+\left(
+\begin{array}{cc}
+G & -F \\
+-F & E
+\end{array}
+\right) 
+\left(
+\begin{array}{cc}
+L & M \\
+M & N
+\end{array}
+\right) \,.
+$$
+From the above we compute
+\begin{align*}
+w_{11} & = \frac{1}{EG - F^2} \left( LG - MF  \right) \\
+w_{22} & = \frac{1}{EG - F^2} \left( -MF + EN  \right) \\
+\end{align*}
+Therefore
+\begin{align*}
+H & = \frac12 \operatorname{trace} \WW \\
+  & = \frac12 \left (w_{11} + w_{22} \right) \\
+  & = \frac{LG - 2MF + EN}{2 (EG - F^2)}  \,.
+\end{align*}
+
+:::
 
 
 
 
 
+::: Example
+### Plane
+
+Consider the plane charted by
+$$
+\sss (u,v) = \mathbf{a} + \pp u + \mathbf{q} v \,, \quad u \in (0,2\pi)\,, \, u, v \in \R \,.
+$$
+We have already computed in Example \ref{example-fff-plane} and Example \ref{example-sff-plane} that the first and second
+fundamental forms of $\sss$ are
+$$
+\mathcal{F}_1 =
+\left(
+\begin{array}{cc}
+1 & 0 \\
+0 & 1
+\end{array}
+\right) \,, \quad 
+\mathcal{F}_2 =
+\left(
+\begin{array}{cc}
+0 & 0 \\
+0 & 0
+\end{array}
+\right) \,.
+$$
+Therefore the matrix of the Weingarten map is
+$$
+\WW  = \mathcal{F}_1^{-1} \mathcal{F}_2 
+= 
+\left(
+\begin{array}{cc}
+0 & 0 \\
+0 & 0
+\end{array}
+\right)  \,.
+$$
+Hence the Gaussian curvature is
+$$
+K = \det \WW = 0 \,,
+$$
+while the mean curvature is
+$$
+H = \frac12 \, \operatorname{trace} \WW =  0 \,.
+$$
 
 
+
+:::
+
+
+
+::: Example
+### Unit cylinder
+
+Consider the unit cylinder charted by
+$$
+\sss (u,v) = (\cos(u), \sin(u), v) \,, \quad u \in (0,2\pi)\,, \, v \in \R \,.
+$$
+We have already computed in Example \ref{example-cylinder-fff} and Example \ref{example-cylinder-sff}  that the first and second
+fundamental forms of $\sss$ are
+$$
+\mathcal{F}_1 =
+\left(
+\begin{array}{cc}
+1 & 0 \\
+0 & 1
+\end{array}
+\right) \,, \quad 
+\mathcal{F}_2 =
+\left(
+\begin{array}{cc}
+-1 & 0 \\
+0 & 0
+\end{array}
+\right) \,.
+$$
+Therefore the matrix of the Weingarten map is
+\begin{align*}
+\WW & = \mathcal{F}_1^{-1} \mathcal{F}_2 \\
+& =
+\left(
+\begin{array}{cc}
+1 & 0 \\
+0 & 1
+\end{array}
+\right) 
+\left(
+\begin{array}{cc}
+-1 & 0 \\
+0 & 0
+\end{array}
+\right)  \\
+& =
+\left(
+\begin{array}{cc}
+-1 & 0 \\
+0 & 0
+\end{array}
+\right)  \,.
+\end{align*}
+Therefore the Gaussian curvature is
+$$
+K = \det \WW = 0 \,,
+$$
+while the mean curvature is
+$$
+H = \frac12 \, \operatorname{trace} \WW =  - \frac12 \,.
+$$
+
+
+
+:::
+
+
+
+
+### Principal curvatures
