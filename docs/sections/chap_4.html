@@ -85,30 +85,6 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
@@ -117,19 +93,23 @@ div.csl-indent {
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
-.Problem {
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Assumption {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Question {
+.Important {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Corollary {
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -141,19 +121,39 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Lemma {
+.Question {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Goal {
+.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
 .Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Notation {
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Definition {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
@@ -286,15 +286,20 @@ div.csl-indent {
   <li><a href="#angles-on-surfaces" id="toc-angles-on-surfaces" class="nav-link" data-scroll-target="#angles-on-surfaces"><span class="header-section-number">4.11.4</span> Angles on surfaces</a></li>
   <li><a href="#angle-between-curves" id="toc-angle-between-curves" class="nav-link" data-scroll-target="#angle-between-curves"><span class="header-section-number">4.11.5</span> Angle between curves</a></li>
   <li><a href="#conformal-maps" id="toc-conformal-maps" class="nav-link" data-scroll-target="#conformal-maps"><span class="header-section-number">4.11.6</span> Conformal maps</a></li>
+  <li><a href="#conformal-parametrizations" id="toc-conformal-parametrizations" class="nav-link" data-scroll-target="#conformal-parametrizations"><span class="header-section-number">4.11.7</span> Conformal parametrizations</a></li>
   </ul></li>
-  <li><a href="#curvatures" id="toc-curvatures" class="nav-link" data-scroll-target="#curvatures"><span class="header-section-number">4.12</span> Curvatures</a>
+  <li><a href="#second-fudamental-form" id="toc-second-fudamental-form" class="nav-link" data-scroll-target="#second-fudamental-form"><span class="header-section-number">4.12</span> Second fudamental form</a>
   <ul class="collapse">
   <li><a href="#unit-normal-and-orientability" id="toc-unit-normal-and-orientability" class="nav-link" data-scroll-target="#unit-normal-and-orientability"><span class="header-section-number">4.12.1</span> Unit normal and orientability</a></li>
-  <li><a href="#second-fundamental-form" id="toc-second-fundamental-form" class="nav-link" data-scroll-target="#second-fundamental-form"><span class="header-section-number">4.12.2</span> Second fundamental form</a></li>
+  <li><a href="#definition-of-second-fundamental-form" id="toc-definition-of-second-fundamental-form" class="nav-link" data-scroll-target="#definition-of-second-fundamental-form"><span class="header-section-number">4.12.2</span> Definition of Second fundamental form</a></li>
   <li><a href="#gauss-and-weingarten-maps" id="toc-gauss-and-weingarten-maps" class="nav-link" data-scroll-target="#gauss-and-weingarten-maps"><span class="header-section-number">4.12.3</span> Gauss and Weingarten maps</a></li>
   <li><a href="#matrix-of-weingarten-map" id="toc-matrix-of-weingarten-map" class="nav-link" data-scroll-target="#matrix-of-weingarten-map"><span class="header-section-number">4.12.4</span> Matrix of Weingarten map</a></li>
-  <li><a href="#gaussian-and-mean-curvature" id="toc-gaussian-and-mean-curvature" class="nav-link" data-scroll-target="#gaussian-and-mean-curvature"><span class="header-section-number">4.12.5</span> Gaussian and mean curvature</a></li>
-  <li><a href="#principal-curvatures" id="toc-principal-curvatures" class="nav-link" data-scroll-target="#principal-curvatures"><span class="header-section-number">4.12.6</span> Principal curvatures</a></li>
+  </ul></li>
+  <li><a href="#curvatures" id="toc-curvatures" class="nav-link" data-scroll-target="#curvatures"><span class="header-section-number">4.13</span> Curvatures</a>
+  <ul class="collapse">
+  <li><a href="#gaussian-and-mean-curvature" id="toc-gaussian-and-mean-curvature" class="nav-link" data-scroll-target="#gaussian-and-mean-curvature"><span class="header-section-number">4.13.1</span> Gaussian and mean curvature</a></li>
+  <li><a href="#principal-curvatures" id="toc-principal-curvatures" class="nav-link" data-scroll-target="#principal-curvatures"><span class="header-section-number">4.13.2</span> Principal curvatures</a></li>
+  <li><a href="#normal-and-geodesic-curvatures" id="toc-normal-and-geodesic-curvatures" class="nav-link" data-scroll-target="#normal-and-geodesic-curvatures"><span class="header-section-number">4.13.3</span> Normal and geodesic curvatures</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -618,7 +623,7 @@ f = (f_1,\ldots,f_m) \,.
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 26: </strong>Jacobian Matrix</summary><div>The linear map <span class="math inline">\(df_{\mathbf{x}} \colon \mathbb{R}^n \to \mathbb{R}^m\)</span> can be represented in matrix form, with respect to the Euclidean basis, by the Jacobian matrix <span class="math display">\[
 Jf(x):= \left( \frac{\partial f_i}{\partial x_j} \right)_{i,j}  \in \mathbb{R}^{m \times n} \,.
 \]</span> If <span class="math inline">\(m=n\)</span> then <span class="math inline">\(Jf \in \mathbb{R}^{n \times n}\)</span> is a square matrix and we can compute its determinant, denoted by <span class="math display">\[
-\det Jf \,.
+\det (Jf) \,.
 \]</span><p></p>
 </div></details>
 </div>
@@ -2280,26 +2285,26 @@ G := {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v \,.
 \]</span> Let <span class="math inline">\(\mathbf{p}\in {\pmb{\sigma}}(U)\)</span> and denote by <span class="math inline">\((u_0,v_0) \in U\)</span> the point such that <span class="math display">\[
 {\pmb{\sigma}}(u_0,v_0) = \mathbf{p}\,.
 \]</span> The <strong>first fundamental form</strong> of <span class="math inline">\({\pmb{\sigma}}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> is the quadratic form <span class="math display">\[
-\mathcal{F}_1 \colon T_{\mathbf{p}} \mathcal{S}\to \mathbb{R}
+\mathscr{F}_1 \colon T_{\mathbf{p}} \mathcal{S}\to \mathbb{R}
 \]</span> defined by <span id="eq-fff-chart"><span class="math display">\[
-\mathcal{F}_1 (\mathbf{v}) := E \, du^2(\mathbf{v}) + 2F \, du(\mathbf{v}) \, dv (\mathbf{v})+ G \, dv^2 (\mathbf{v}) \,,
+\mathscr{F}_1 (\mathbf{v}) := E \, du^2(\mathbf{v}) + 2F \, du(\mathbf{v}) \, dv (\mathbf{v})+ G \, dv^2 (\mathbf{v}) \,,
 \tag{4.3}\]</span></span> for all <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span>, where <span class="math inline">\(E,F,G\)</span> are evaluated at <span class="math inline">\((u_0,v_0)\)</span>.<p></p>
 </div></details>
 </div>
 <p>We usually omit the dependence on <span class="math inline">\(\mathbf{v}\)</span> in (<a href="#eq-fff-chart"><span>4.3</span></a>), and write <span class="math display">\[
-\mathcal{F}_1 = E \, du^2 + 2F \, du \, dv + G \, dv^2 \,.
-\]</span> The quadratic form <span class="math inline">\(\mathcal{F}_1\)</span> is related to <span class="math inline">\(I_{\mathbf{p}}\)</span> in the following way.</p>
+\mathscr{F}_1 = E \, du^2 + 2F \, du \, dv + G \, dv^2 \,.
+\]</span> The quadratic form <span class="math inline">\(\mathscr{F}_1\)</span> is related to <span class="math inline">\(I_{\mathbf{p}}\)</span> in the following way.</p>
 <div id="proposition-fff-quadratic" class="Proposition">
 <p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 98</strong></summary><div>Let <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span> be a regular chart of <span class="math inline">\(\mathcal{S}\)</span>, and <span class="math inline">\(\mathbf{p}\in {\pmb{\sigma}}(U)\)</span>. Then <span class="math display">\[
-I_{\mathbf{p}} (\mathbf{v},\mathbf{w}) = (du (\mathbf{v}), dv(\mathbf{w}) )  \,
+I_{\mathbf{p}} (\mathbf{v},\mathbf{w}) = (du (\mathbf{v}), dv(\mathbf{v}) )  \,
 \left(
 \begin{array}{cc}
 E &amp; F \\
 F &amp; G
 \end{array}
-\right) \, (du(\mathbf{v}) , dv(\mathbf{w}))^T \,,
-\]</span> for all <span class="math inline">\(\mathbf{v},\mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\)</span>. In particular, <span class="math inline">\(\mathcal{F}_1\)</span> is the quadratic form associated to the symmetric bilinear form <span class="math inline">\(I_{\mathbf{p}}\)</span>, that is, <span class="math display">\[
-\mathcal{F}_1 (\mathbf{v}) = I_{\mathbf{p}} (\mathbf{v},\mathbf{v}) \,, \quad \forall \, \mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\,.
+\right) \, (du(\mathbf{w}) , dv(\mathbf{w}))^T \,,
+\]</span> for all <span class="math inline">\(\mathbf{v},\mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\)</span>. In particular, <span class="math inline">\(\mathscr{F}_1\)</span> is the quadratic form associated to the symmetric bilinear form <span class="math inline">\(I_{\mathbf{p}}\)</span>, that is, <span class="math display">\[
+\mathscr{F}_1 (\mathbf{v}) = I_{\mathbf{p}} (\mathbf{v},\mathbf{v}) \,, \quad \forall \, \mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\,.
 \]</span><p></p>
 </div></details>
 </div>
@@ -2312,18 +2317,18 @@ T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u, {\pmb{\sigm
 \]</span> We have <span class="math display">\[\begin{align*}
 I_{\mathbf{p}} (\mathbf{v},\mathbf{w}) &amp; = \mathbf{v}\cdot \mathbf{w}\\
 &amp; = \lambda_1 \lambda_2 \, {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v + ( \lambda_1 \mu_2 + \lambda_2 \mu_1 ) \, {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v + \mu_1 \mu_2 \, {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v \\
-&amp; = E \, du (\mathbf{v}) dv(\mathbf{w})  + F \, ( du(\mathbf{v}) \, dv(\mathbf{w}) + du(\mathbf{w}) + dv(\mathbf{v}) ) \\
+&amp; = E \, du (\mathbf{v}) du(\mathbf{w})  + F \, ( du(\mathbf{v}) \, dv(\mathbf{w}) + du(\mathbf{w}) dv(\mathbf{v}) ) \\
 &amp; \qquad  + G \,  dv(\mathbf{v}) dv(\mathbf{w}) \\
-&amp; = (du (\mathbf{v}), dv(\mathbf{w}) )  \,
+&amp; = (du (\mathbf{v}), dv(\mathbf{v}) )  \,
 \left(
 \begin{array}{cc}
 E &amp; F \\
 F &amp; G
 \end{array}
-\right) \, (du(\mathbf{v}) , dv(\mathbf{w}))^T \,.
+\right) \, (du(\mathbf{w}) , dv(\mathbf{w}))^T \,.
 \end{align*}\]</span> The fact that <span class="math display">\[
-I_{\mathbf{p}}(\mathbf{v},\mathbf{v}) = \mathcal{F}_1(\mathbf{v})
-\]</span> follows from the first part of the statement and definition of <span class="math inline">\(\mathcal{F}_1\)</span>.<p></p>
+I_{\mathbf{p}}(\mathbf{v},\mathbf{v}) = \mathscr{F}_1(\mathbf{v})
+\]</span> follows from the first part of the statement and definition of <span class="math inline">\(\mathscr{F}_1\)</span>.<p></p>
 </div></details>
 </div>
 <div id="linear-algebra-interpretation" class="Remark" title="Linear algebra interpretation">
@@ -2353,8 +2358,8 @@ F &amp; G \\
 </div></details>
 </div>
 <div id="Notation*-19" class="Notation">
-<p></p><details class="Notation fbx-simplebox fbx-default" open=""><summary><strong>Notation</strong></summary><div>With a little abuse of notation, we also denote by <span class="math inline">\(\mathcal{F}_1\)</span> the <span class="math inline">\(2 \times 2\)</span> matrix <span class="math display">\[
-\mathcal{F}_1 :=
+<p></p><details class="Notation fbx-simplebox fbx-default" open=""><summary><strong>Notation</strong></summary><div>With a little abuse of notation, we also denote by <span class="math inline">\(\mathscr{F}_1\)</span> the <span class="math inline">\(2 \times 2\)</span> matrix <span class="math display">\[
+\mathscr{F}_1 :=
 \left(
 \begin{array}{cc}
 E &amp; F \\
@@ -2367,7 +2372,7 @@ F &amp; G
 <div id="remark-fff-reparametrization" class="Remark" title="First fundamental form and reparametrizations">
 <details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 100: </strong>First fundamental form and reparametrizations</summary><div>
 <p>The first fundamental form <span class="math inline">\(I_{\mathbf{p}}\)</span> depends only on the surface <span class="math inline">\(\mathcal{S}\)</span> and the point <span class="math inline">\(\mathbf{p}\)</span>. Instead the representation of <span class="math inline">\(I_{\mathbf{p}}\)</span> <span class="math display">\[
-\mathcal{F}_1 = E \, du^2 + 2F \, du dv + G \, dv^2
+\mathscr{F}_1 = E \, du^2 + 2F \, du dv + G \, dv^2
 \]</span> depends on the choice of chart <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span>. Indeed suppose that <span class="math inline">\(\widetilde{{\pmb{\sigma}}} \colon \widetilde{U} \to \mathbb{R}^3\)</span> is a reparametrization of <span class="math inline">\({\pmb{\sigma}}\)</span>, that is, <span class="math display">\[
 \widetilde{{\pmb{\sigma}}} = {\pmb{\sigma}}\circ \Phi \,,
 \]</span> where <span class="math inline">\(\Phi \colon \widetilde{U} \to U\)</span> is a diffeomorphism. Recall that we denote the components <span class="math inline">\(\Phi^1\)</span> and <span class="math inline">\(\Phi^2\)</span> of <span class="math inline">\(\Phi\)</span> by <span class="math display">\[
@@ -2381,11 +2386,11 @@ J\Phi = \left(
 \end{array}
 \right) \,.
 \]</span> Denote the first fundamental form of <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> by <span class="math display">\[
-\widetilde{\mathcal{F}}_1 = \widetilde{E} \, d\tilde{u}^2 + 2 \widetilde{F} \, d\tilde{u} d\tilde{v} + \widetilde{G} \, d\tilde{v}^2 \,.
+\widetilde{\mathscr{F}}_1 = \widetilde{E} \, d\tilde{u}^2 + 2 \widetilde{F} \, d\tilde{u} d\tilde{v} + \widetilde{G} \, d\tilde{v}^2 \,.
 \]</span> The linear maps <span class="math inline">\(du, dv\)</span> and <span class="math inline">\(d\tilde{u}, d\tilde{v}\)</span> are related by <span id="eq-fff-change-basis-1"><span class="math display">\[
 du = \frac{\partial u}{\partial \tilde{u}} \, d\tilde{u} + \frac{\partial u}{\partial \tilde{v}} \, d\tilde{v} \,, \quad
 dv = \frac{\partial v}{\partial \tilde{u}} \, d\tilde{u} + \frac{\partial v}{\partial \tilde{v}} \, d\tilde{v}
-\tag{4.4}\]</span></span> Moreover the matrices of <span class="math inline">\(\mathcal{F}_1\)</span> and <span class="math inline">\(\widetilde{\mathcal{F}}_1\)</span> are related by <span id="eq-fff-change-basis-2"><span class="math display">\[
+\tag{4.4}\]</span></span> Moreover the matrices of <span class="math inline">\(\mathscr{F}_1\)</span> and <span class="math inline">\(\widetilde{\mathscr{F}}_1\)</span> are related by <span id="eq-fff-change-basis-2"><span class="math display">\[
 \left(
 \begin{array}{cc}
 \widetilde{E} &amp; \widetilde{F} \\
@@ -2416,7 +2421,7 @@ J \Phi  \,.
 \]</span> Consider the plane with chart <span class="math display">\[
 {\pmb{\sigma}}(u,v) = \mathbf{a} + u \mathbf{p}+ v \mathbf{q} \,, \quad (u,v) \in \mathbb{R}^2 \,.
 \]</span> Prove that the first fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
-\mathcal{F}_1 = du^2 + dv^2 \,.
+\mathscr{F}_1 = du^2 + dv^2 \,.
 \]</span></p>
 <blockquote class="blockquote">
 <p>We have <span class="math display">\[
@@ -2426,7 +2431,7 @@ E &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_u = \left\| \mathbf{p} \right\|^
 F &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v = \mathbf{p}\cdot \mathbf{q} = 0 \\
 G &amp; = {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v = \left\| \mathbf{q} \right\|^2 = 1 \\
 \end{align*}\]</span> Then the first fundamental form is <span class="math display">\[
-\mathcal{F}_1 = E \, du^2 + 2 F\, du \, dv + G \, dv^2 = du^2 + dv^2 \,.  
+\mathscr{F}_1 = E \, du^2 + 2 F\, du \, dv + G \, dv^2 = du^2 + dv^2 \,.  
 \]</span></p>
 </blockquote>
 </div></details>
@@ -2435,7 +2440,7 @@ G &amp; = {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v = \left\| \mathbf{q} \right\|^
 <ul>
 <li>The above example should not be surprising, since distances on a plane are the same as Euclidean distances, given that straight segments are contained in the plane.</li>
 <li>If we drop the assumption of <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\mathbf{q}\)</span> being orthonormal, then <span class="math display">\[
-\mathcal{F}_1 = \left\| \mathbf{p} \right\|^2 \, du^2 + \mathbf{p}\cdot \mathbf{q} \, du \, dv + \left\| \mathbf{q} \right\|^2 \, dv^2 \,.
+\mathscr{F}_1 = \left\| \mathbf{p} \right\|^2 \, du^2 + \mathbf{p}\cdot \mathbf{q} \, du \, dv + \left\| \mathbf{q} \right\|^2 \, dv^2 \,.
 \]</span> Again, this is not surprising, due to Remark <a href="chap_4.html#remark-fff-reparametrization">100</a>.</li>
 </ul>
 <div id="example-cylinder-fff" class="Example" title="Unit cylinder">
@@ -2443,7 +2448,7 @@ G &amp; = {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v = \left\| \mathbf{q} \right\|^
 <p>Consider the unit cylinder with chart <span class="math display">\[
 {\pmb{\sigma}}(u,v) = (\cos(u), \sin(u),  v)  \,, \quad (u,v) \in (0,2\pi) \times \mathbb{R}\,.
 \]</span> Prove that the first fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
-\mathcal{F}_1 = du^2 + dv^2 \,.
+\mathscr{F}_1 = du^2 + dv^2 \,.
 \]</span></p>
 <blockquote class="blockquote">
 <p>We have <span class="math display">\[
@@ -2453,14 +2458,14 @@ E &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_u = 1 \\
 F &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v = 0 \\
 G &amp; = {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v = 1 \\
 \end{align*}\]</span> Then the first fundamental form is <span class="math display">\[
-\mathcal{F}_1 = E \, du^2 + 2 F\, du \, dv + G \, dv^2 = du^2 + dv^2 \,.  
+\mathscr{F}_1 = E \, du^2 + 2 F\, du \, dv + G \, dv^2 = du^2 + dv^2 \,.  
 \]</span></p>
 </blockquote>
 </div></details>
 </div>
 <div id="Remark-103" class="Remark">
 <p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 103</strong></summary><div>We have seen that a plane and the unit cylinder have the same first fundamental form <span class="math display">\[
-\mathcal{F}_1 = du^2 + dv^2 \,.
+\mathscr{F}_1 = du^2 + dv^2 \,.
 \]</span> Therefore lengths are the same on the two surfaces.<p></p>
 </div></details>
 </div>
@@ -2502,7 +2507,7 @@ du(dg) = \dot u \,, \quad dv(\dot{{\pmb{\gamma}}}) = \dot v \,.
 \]</span> where <span class="math inline">\(u &gt; 0\)</span> and <span class="math inline">\(v \in [0,2\pi]\)</span>.</p>
 <ol type="1">
 <li><p>Prove that the first fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
-\mathcal{F}_1 = 2 \, du^2 + u^2 \, dv^2 \,.
+\mathscr{F}_1 = 2 \, du^2 + u^2 \, dv^2 \,.
 \]</span></p></li>
 <li><p>Let <span class="math inline">\({\pmb{\gamma}}(t):= {\pmb{\sigma}}(t,t)\)</span>. Show that <span class="math display">\[
 \int_{\pi/2}^{\pi} \left\| \dot{{\pmb{\gamma}}}(t) \right\| \, dt = \int_{\pi/2}^{\pi} \sqrt{  2 + t^2  } \, dt  \,.
@@ -2517,7 +2522,7 @@ E &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_u = \cos^2(v) + \sin^2 (v) + 1 =
 F &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v = - u \cos(v) \sin(v) + u \cos(v) \sin(v) = 0 \\
 G &amp; = {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v = u^2 \sin^2(v) + u^2 \cos^2(v) = u^2   
 \end{align*}\]</span> The first fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
-\mathcal{F}_1 = 2 \, du^2 + u^2 \, dv^2 \,.
+\mathscr{F}_1 = 2 \, du^2 + u^2 \, dv^2 \,.
 \]</span> Concering the curve <span class="math inline">\({\pmb{\gamma}}\)</span>, we have <span class="math display">\[
 {\pmb{\gamma}}(t) := {\pmb{\sigma}}(t,t) \,,
 \]</span> so that <span class="math display">\[
@@ -2970,8 +2975,8 @@ d_{\mathbf{p}} f (\mathbf{v}) &amp; = d_{\mathbf{p}} f(\lambda {\pmb{\sigma}}_u 
 <li>Let <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathcal{S}\)</span> be a regular chart of <span class="math inline">\(\mathcal{S}\)</span> and consider the chart of <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> given by <span class="math display">\[
 \widetilde{{\pmb{\sigma}}} = f \circ {\pmb{\sigma}}\colon U \to \widetilde{\mathcal{S}} \,.
 \]</span> There exists <span class="math inline">\(\lambda \colon U \to \mathbb{R}\)</span> such that <span class="math display">\[
-\widetilde{\mathcal{F}}_1 = \lambda (u,v) \mathcal{F}_1 \,, \quad \forall \, (u,v) \in U \,,
-\]</span> where <span class="math inline">\(\mathcal{F}_1\)</span> and <span class="math inline">\(\widetilde{\mathcal{F}}_1\)</span> are the first fundamental forms of <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span>, respectively.</li>
+\widetilde{\mathscr{F}}_1 = \lambda (u,v) \mathscr{F}_1 \,, \quad \forall \, (u,v) \in U \,,
+\]</span> where <span class="math inline">\(\mathscr{F}_1\)</span> and <span class="math inline">\(\widetilde{\mathscr{F}}_1\)</span> are the first fundamental forms of <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span>, respectively.</li>
 </ol>
 </div></details>
 </div>
@@ -2979,8 +2984,8 @@ d_{\mathbf{p}} f (\mathbf{v}) &amp; = d_{\mathbf{p}} f(\lambda {\pmb{\sigma}}_u 
 <div id="example-conformal" class="Example" title="Conformal maps are not local isometries">
 <details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 119: </strong>Conformal maps are not local isometries</summary><div>
 <p>Consider the plane <span class="math inline">\(\mathcal{S}\)</span> with chart <span class="math display">\[
-{\pmb{\sigma}}(u,v) := (u,v,0) \,,
-\]</span> and the surface <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> with chart <span class="math display">\[
+{\pmb{\sigma}}(u,v) := (u,v,0) \,.
+\]</span> Let <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> be the sphere with parametrization <span class="math display">\[
 \widetilde{{\pmb{\sigma}}}(u,v) := \left(  \mathop{\mathrm{sech}}(u) \cos(v), \mathop{\mathrm{sech}}(u) \sin(v) , \tanh (u) \right) \,.
 \]</span> We have <span class="math display">\[
 {\pmb{\sigma}}_u = (1,0,0) \,, \quad
@@ -2990,7 +2995,7 @@ E &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_u =  1 \\
 F &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v =  0 \\
 G &amp; = {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v =  1 \\
 \end{align*}\]</span> Therefore the first fundamental form of <span class="math inline">\(\mathcal{S}\)</span> is <span class="math display">\[
-\mathcal{F}_1 = du^2 + dv^2 \,.
+\mathscr{F}_1 = du^2 + dv^2 \,.
 \]</span> Using the identitities <span class="math display">\[\begin{align*}
 \frac{d}{du} \left( \mathop{\mathrm{sech}}(u)  \right) &amp; = - \mathop{\mathrm{sech}}(u) \tanh (u) \,, \\
 \frac{d}{du} \left( \tanh (u) \right)  &amp; = {\mathop{\mathrm{sech}}}^2 (u) \,,
@@ -3004,7 +3009,7 @@ G &amp; = {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v =  1 \\
 \widetilde{F} &amp; = \widetilde{{\pmb{\sigma}}}_u \cdot \widetilde{{\pmb{\sigma}}}_v =  0 \\
 \widetilde{G} &amp; = \widetilde{{\pmb{\sigma}}}_v \cdot \widetilde{{\pmb{\sigma}}}_v =  {\mathop{\mathrm{sech}}}^2(u) (\cos^2(v) + \sin^2(v)) = {\mathop{\mathrm{sech}}}^2(u) \\
 \end{align*}\]</span> Hence the first fundamental form of <span class="math inline">\(\widetilde{\mathcal{S}}\)</span> is <span class="math display">\[
-\widetilde{\mathcal{F}}_1 = {\mathop{\mathrm{sech}}}^2(u) \, \left(  du^2 + dv^2 \right) \,.
+\widetilde{\mathscr{F}}_1 = {\mathop{\mathrm{sech}}}^2(u) \, \left(  du^2 + dv^2 \right) \,.
 \]</span> Now, consider the map <span class="math inline">\(f \colon \mathcal{S}\to \widetilde{\mathcal{S}}\)</span> defined by <span class="math display">\[
 f(u,v,0) = \widetilde{{\pmb{\sigma}}} (u,v) \,.
 \]</span> In particular <span class="math inline">\(f\)</span> satisfies <span class="math display">\[
@@ -3015,8 +3020,8 @@ f( {\pmb{\sigma}}( u,v) ) = \widetilde{{\pmb{\sigma}}} (u,v) \,.
 </ul>
 <blockquote class="blockquote">
 <p>If <span class="math inline">\(f\)</span> was a local isometry, by Theorem <a href="chap_4.html#theorem-local-isometry">109</a> we would conclude that <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}} = f \circ {\pmb{\sigma}}\)</span> have the same first fundamental form. However <span class="math display">\[
-\mathcal{F}_1 = du^2 + dv^2 \neq {\mathop{\mathrm{sech}}}^2(u) \, \left(  du^2 + dv^2 \right)
-= \widetilde{\mathcal{F}}_1  \,.
+\mathscr{F}_1 = du^2 + dv^2 \neq {\mathop{\mathrm{sech}}}^2(u) \, \left(  du^2 + dv^2 \right)
+= \widetilde{\mathscr{F}}_1  \,.
 \]</span></p>
 </blockquote>
 <ul>
@@ -3024,63 +3029,89 @@ f( {\pmb{\sigma}}( u,v) ) = \widetilde{{\pmb{\sigma}}} (u,v) \,.
 </ul>
 <blockquote class="blockquote">
 <p>The first fundamental forms of <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}} = f \circ {\pmb{\sigma}}\)</span> satisfy <span class="math display">\[
-\widetilde{\mathcal{F}}_1  = \lambda(u,v) \, \mathcal{F}_1  \,, \quad
+\widetilde{\mathscr{F}}_1  = \lambda(u,v) \, \mathscr{F}_1  \,, \quad
 \lambda(u,v) := {\mathop{\mathrm{sech}}}(u) \,.
 \]</span> Therefore <span class="math inline">\(f\)</span> is a conformal map by Corollary <a href="chap_4.html#corollary-conformal">118</a>.</p>
 </blockquote>
 </div></details>
 </div>
-<p>We conclude with the definition of <strong>conformally flat surface</strong> and <strong>conformal parametrization</strong>.</p>
+</section>
+<section id="conformal-parametrizations" class="level3" data-number="4.11.7">
+<h3 data-number="4.11.7" class="anchored" data-anchor-id="conformal-parametrizations"><span class="header-section-number">4.11.7</span> Conformal parametrizations</h3>
+<p>We conclude this section with the definition of <strong>conformally flat surface</strong> and <strong>conformal parametrization</strong>.</p>
 <div id="definition-conformally-flat" class="Definition" title="Conformally flat surface and conformal parametrization">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 120: </strong>Conformally flat surface and conformal parametrization</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math display">\[
 {\pmb{\sigma}}\colon U  \to  \mathcal{S}
 \]</span> be a regular chart of <span class="math inline">\(\mathcal{S}\)</span>. We say that <span class="math inline">\(\mathcal{S}\)</span> is <strong>conformally flat</strong> and <span class="math inline">\({\pmb{\sigma}}\)</span> is a <strong>conformal parametrization</strong> if the first fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> satisfies <span class="math display">\[
-\mathcal{F}_1 = \lambda(u,v)  ( du^2 +  dv^2)
+\mathscr{F}_1 = \lambda(u,v)  ( du^2 +  dv^2)
 \]</span> for some smooth function <span class="math inline">\(\lambda \colon U \to \mathbb{R}\)</span>.<p></p>
 </div></details>
 </div>
-<p>Definition <a href="chap_4.html#definition-conformally-flat">120</a> is motivated by the following proposition: It states that angles on conformally flat surfaces look like angles on a plane.</p>
-<div id="Proposition-121" class="Proposition">
-<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 121</strong></summary><div>
+<p>Definition <a href="chap_4.html#definition-conformally-flat">120</a> is motivated by the following Theorem: It states that angles on conformally flat surfaces look like angles on a plane.</p>
+<div id="Theorem-121" class="Theorem">
+<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 121</strong></summary><div>
 <p>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math display">\[
 {\pmb{\sigma}}\colon U  \to  {\pmb{\sigma}}(U) \subseteq \mathcal{S}
 \]</span> be a regular chart of <span class="math inline">\(\mathcal{S}\)</span>. Define the plane <span class="math inline">\({\pmb{\pi}}\)</span> charted by <span class="math display">\[
 \widetilde{{\pmb{\sigma}}} (u,v) = (u,v,0) \,, \quad \forall \, (u,v) \in U \,.
-\]</span> They are equivalent:</p>
+\]</span></p>
+<ol type="1">
+<li>They are equivalent:</li>
+</ol>
 <ul>
 <li><p><span class="math inline">\({\pmb{\sigma}}\)</span> is a conformal parametrization.</p></li>
 <li><p>There exists a conformal map <span class="math inline">\(f \colon \pi \to {\pmb{\sigma}}(U) \subseteq \mathcal{S}\)</span>.</p></li>
 </ul>
+<ol start="2" type="1">
+<li>A conformal parametrization <span class="math inline">\({\pmb{\sigma}}\)</span> preserves angles between vectors, in the following sense: Suppose <span class="math inline">\({\pmb{\gamma}}_1, {\pmb{\gamma}}_2\)</span> are curves in <span class="math inline">\(\mathbb{R}^{2}\)</span> and consider the corresponding curves on <span class="math inline">\(\mathcal{S}\)</span> given by <span class="math display">\[
+\widetilde{{\pmb{\gamma}}}_1 := {\pmb{\sigma}}\circ {\pmb{\gamma}}_1 \,, \quad \widetilde{{\pmb{\gamma}}}_2 = {\pmb{\sigma}}\circ {\pmb{\gamma}}_2 \,.
+\]</span> If <span class="math display">\[
+\dot{{\pmb{\gamma}}}_1 (t_0) \,, \dot{{\pmb{\gamma}}}_2(t_0) \,\, \mbox{ form an angle } \,\, \theta \,,
+\]</span> then <span class="math display">\[
+\dot{\widetilde{{\pmb{\gamma}}}}_1 (t_0) \,, \dot{\widetilde{{\pmb{\gamma}}}}_2(t_0) \,\, \mbox{ form an angle } \,\, \theta \,.
+\]</span></li>
+</ol>
 </div></details>
 </div>
 <div id="Proof*-28" class="Proof">
-<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Define the diffeomorphism <span class="math inline">\(f \colon {\pmb{\pi}}\to \mathcal{S}\)</span> by <span class="math display">\[
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Proof of Point 1.</em> Define the diffeomorphism <span class="math inline">\(f \colon {\pmb{\pi}}\to \mathcal{S}\)</span> by <span class="math display">\[
 f(u,v,0) = {\pmb{\sigma}}(u,v) \,.
 \]</span> In particular <span class="math display">\[
 f( \widetilde{{\pmb{\sigma}}}(u,v) ) = {\pmb{\sigma}}(u,v) \,.
 \]</span> By Corollary <a href="chap_4.html#corollary-conformal">118</a> we have that <span class="math inline">\(f\)</span> is a conformal map if and only if there exists <span class="math inline">\(\lambda \colon {\pmb{\pi}}\to \mathbb{R}\)</span> such that <span class="math display">\[
-\mathcal{F}_1 = \lambda(u,v) \widetilde{\mathcal{F}}_1  \,,
-\]</span> where <span class="math inline">\(\mathcal{F}_1\)</span> and <span class="math inline">\(\widetilde{\mathcal{F}}_1\)</span> are the first fundamental forms of <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\({\pmb{\pi}}\)</span>, respectively. Since <span class="math inline">\({\pmb{\pi}}\)</span> is a plane, the first fundamental form is given by <span class="math display">\[
-\widetilde{\mathcal{F}}_1 = du^2 + dv^2 \,.
+\mathscr{F}_1 = \lambda(u,v) \widetilde{\mathscr{F}}_1  \,,
+\]</span> where <span class="math inline">\(\mathscr{F}_1\)</span> and <span class="math inline">\(\widetilde{\mathscr{F}}_1\)</span> are the first fundamental forms of <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\({\pmb{\pi}}\)</span>, respectively. Since <span class="math inline">\({\pmb{\pi}}\)</span> is a plane, the first fundamental form is given by <span class="math display">\[
+\widetilde{\mathscr{F}}_1 = du^2 + dv^2 \,.
 \]</span> Therefore <span class="math display">\[
-\mathcal{F}_1 = \lambda(u,v) \left(   du^2 + dv^2   \right)\,,
+\mathscr{F}_1 = \lambda(u,v) \left(   du^2 + dv^2   \right)\,,
 \]</span> showing that <span class="math inline">\({\pmb{\sigma}}\)</span> is a conformal parametrization.<p></p>
+<p><em>Proof of Point 2.</em> Suppose <span class="math inline">\({\pmb{\sigma}}\)</span> is a conformal parametrization. By the proof of Point 1 we have that <span class="math display">\[
+f \colon \pi \to \mathcal{S}\,, \quad f(u,v,0) = {\pmb{\sigma}}(u,v) \,,
+\]</span> is a conformal map. Since <span class="math inline">\(T_{\mathbf{p}} \pi = \mathbb{R}^2\)</span> and <span class="math inline">\(f = {\pmb{\sigma}}\)</span>, it follows by the definition of differential and <span class="math inline">\(f\)</span> being conformal that the angle between <span class="math inline">\({\pmb{\gamma}}_1\)</span> and <span class="math inline">\({\pmb{\gamma}}_2\)</span> is the same as the angle between <span class="math inline">\(\widetilde{{\pmb{\gamma}}}_1\)</span> and <span class="math inline">\(\widetilde{{\pmb{\gamma}}}_2\)</span>.</p>
 </div></details>
 </div>
-<div id="Example-122" class="Example">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 122</strong></summary><div>The cylinder <span class="math inline">\(\mathcal{S}\)</span> charted by <span class="math display">\[
-{\pmb{\sigma}}(u,v) := (\cos(u), \sin(u), v)
+<div id="unit-cylinder-2" class="Example" title="Unit cylinder">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 122: </strong>Unit cylinder</summary><div>The cylinder <span class="math inline">\(\mathcal{S}\)</span> charted by <span class="math display">\[
+{\pmb{\sigma}}(u,v) = (\cos(u), \sin(u), v)
 \]</span> is conformally flat, since the first fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
-\mathcal{F}_1 = du^2 + dv^2 \,.
+\mathscr{F}_1 = du^2 + dv^2 \,.
 \]</span> Therefore <span class="math inline">\({\pmb{\sigma}}\)</span> is a conformal parametrization of <span class="math inline">\(\mathcal{S}\)</span>.<p></p>
 </div></details>
 </div>
+<div id="shpere" class="Example" title="Shpere">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 123: </strong>Shpere</summary><div>Consider the parametrization of the sphere <span class="math display">\[
+{\pmb{\sigma}}(u,v) = \left(  \mathop{\mathrm{sech}}(u) \cos(v), \mathop{\mathrm{sech}}(u) \sin(v) , \tanh (u) \right) \,.
+\]</span> In Example <a href="chap_4.html#example-conformal">119</a> we have seen that the first fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
+\mathscr{F}_1  = {\mathop{\mathrm{sech}}}(u) \, ( du^2 + dv^2 )  \,.
+\]</span> Therefore <span class="math inline">\({\pmb{\sigma}}\)</span> is a conformal parametrization of the sphere.<p></p>
+</div></details>
+</div>
 </section>
 </section>
-<section id="curvatures" class="level2" data-number="4.12">
-<h2 data-number="4.12" class="anchored" data-anchor-id="curvatures"><span class="header-section-number">4.12</span> Curvatures</h2>
+<section id="second-fudamental-form" class="level2" data-number="4.12">
+<h2 data-number="4.12" class="anchored" data-anchor-id="second-fudamental-form"><span class="header-section-number">4.12</span> Second fudamental form</h2>
 <p>The first fundamental form allows to measure distances on a surface. However it does not give any information on how curved a surface is: For example, we saw that a plane and a cylinder have the same first fundamental form <span class="math display">\[
-\mathcal{F}_1 = du^2 + dv^2 \,.
+\mathscr{F}_1 = du^2 + dv^2 \,.
 \]</span> However the plane is flat, while the cylinder curves. We would like to find a measure of curvature which allows us to tell these two surfaces apart.</p>
 <section id="unit-normal-and-orientability" class="level3" data-number="4.12.1">
 <h3 data-number="4.12.1" class="anchored" data-anchor-id="unit-normal-and-orientability"><span class="header-section-number">4.12.1</span> Unit normal and orientability</h3>
@@ -3091,13 +3122,13 @@ T_{\mathbf{p}} \mathcal{S}= \{ \mathbf{x}\in \mathbb{R}^3 \, \colon \,\mathbf{x}
 \]</span> to denote that <span class="math inline">\(\mathbf{N}\)</span> is <strong>perpendicular</strong> to <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. Clearly, also <span class="math inline">\(-\mathbf{N}\)</span> is a unit vector, and <span class="math display">\[
 (- \mathbf{N}) \perp T_{\mathbf{p}} \mathcal{S}\,.
 \]</span></p>
-<div id="Question-123" class="Question">
-<p></p><details class="Question fbx-simplebox fbx-default" open=""><summary><strong>Question 123</strong></summary><div>Which unit normal should we choose between <span class="math inline">\(\mathbf{N}\)</span> and <span class="math inline">\(-\mathbf{N}\)</span>?<p></p>
+<div id="Question-124" class="Question">
+<p></p><details class="Question fbx-simplebox fbx-default" open=""><summary><strong>Question 124</strong></summary><div>Which unit normal should we choose between <span class="math inline">\(\mathbf{N}\)</span> and <span class="math inline">\(-\mathbf{N}\)</span>?<p></p>
 </div></details>
 </div>
 <p>There is no right answer to the above question. One way to proceed is the following.</p>
 <div id="remark-normal-chart" class="Remark">
-<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 124</strong></summary><div>Suppose that <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span> is a regular chart for <span class="math inline">\(\mathcal{S}\)</span>. Let <span class="math inline">\(\mathbf{p}\in {\pmb{\sigma}}(U)\)</span>. Then <span class="math display">\[
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 125</strong></summary><div>Suppose that <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span> is a regular chart for <span class="math inline">\(\mathcal{S}\)</span>. Let <span class="math inline">\(\mathbf{p}\in {\pmb{\sigma}}(U)\)</span>. Then <span class="math display">\[
 T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sigma}}_v \} \,.
 \]</span> Therefore we can choose the unit normal to <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> as <span class="math display">\[
 \mathbf{N}_{{\pmb{\sigma}}} :=  \frac{ {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v }{ \left\|  {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v  \right\| } \,.
@@ -3116,13 +3147,13 @@ T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sig
 </div>
 <p>The above remark motivates the following definitions.</p>
 <div id="standard-unit-normal-of-a-chart" class="Definition" title="Standard unit normal of a chart">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 125: </strong>Standard unit normal of a chart</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span> a regular chart. The <strong>standard unit normal</strong> of <span class="math inline">\({\pmb{\sigma}}\)</span> is the smooth function <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 126: </strong>Standard unit normal of a chart</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span> a regular chart. The <strong>standard unit normal</strong> of <span class="math inline">\({\pmb{\sigma}}\)</span> is the smooth function <span class="math display">\[
 \mathbf{N}_{{\pmb{\sigma}}} \colon U \to \mathbb{R}^3 \,, \quad \mathbf{N}_{{\pmb{\sigma}}} := \frac{ {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v }{ \left\| {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v \right\| } \,.
 \]</span><p></p>
 </div></details>
 </div>
 <div id="charts-with-same-orientation" class="Definition" title="Charts with same orientation">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 126: </strong>Charts with same orientation</summary><div>
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 127: </strong>Charts with same orientation</summary><div>
 <p>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span>, <span class="math inline">\(\widetilde{{\pmb{\sigma}}} \colon \widetilde{U} \to \mathbb{R}^3\)</span> regular charts such that <span class="math display">\[
 {\pmb{\sigma}}(U) \cap \widetilde{{\pmb{\sigma}}} (\widetilde{U}) \neq \emptyset \,.
 \]</span> Denote by <span class="math inline">\(\Phi\)</span> the transition map between <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> and <span class="math inline">\({\pmb{\sigma}}\)</span>. We say that:</p>
@@ -3136,8 +3167,8 @@ T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sig
 </ol>
 </div></details>
 </div>
-<div id="Example-127" class="Example">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 127</strong></summary><div>Let <span class="math inline">\(\mathbf{a} , \mathbf{p},\mathbf{q} \in \mathbb{R}^3\)</span> and suppose that <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\mathbf{q}\)</span> are linearly independent. The plane spanned by <span class="math inline">\(\mathbf{p},\mathbf{q}\)</span> and passing through <span class="math inline">\(\mathbf{a}\)</span> can be parametrized by <span class="math display">\[
+<div id="Example-128" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 128</strong></summary><div>Let <span class="math inline">\(\mathbf{a} , \mathbf{p},\mathbf{q} \in \mathbb{R}^3\)</span> and suppose that <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\mathbf{q}\)</span> are linearly independent. The plane spanned by <span class="math inline">\(\mathbf{p},\mathbf{q}\)</span> and passing through <span class="math inline">\(\mathbf{a}\)</span> can be parametrized by <span class="math display">\[
 {\pmb{\sigma}}(u,v):= \mathbf{a} + \mathbf{p}u + \mathbf{q} v \,, \quad \forall \, (u,v) \in \mathbb{R}^2 \,.
 \]</span> An alternative parametrization is given by <span class="math display">\[
 \widetilde{{\pmb{\sigma}}} (u,v):= \mathbf{a}  + \mathbf{q} u + \mathbf{p}v  \,, \quad \forall \, (u,v) \in \mathbb{R}^2 \,.
@@ -3157,7 +3188,7 @@ T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sig
 <p>If a surface can be covered by charts with the same orientation, it is called orientable.</p>
 <div id="orientable-surface" class="Definition" title="Orientable surface">
 
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 128: </strong>Orientable surface</summary><div>
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 129: </strong>Orientable surface</summary><div>
 <p>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface. Then:</p>
 <ol type="1">
 <li><p>An atlas <span class="math inline">\(\mathcal{A} = \{ {\pmb{\sigma}}_i \}_{i \in I}\)</span> is <strong>oriented</strong> if the following property holds: <span class="math display">\[
@@ -3169,12 +3200,12 @@ T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sig
 </ol>
 </div></details>
 </div>
-<div id="Example-129" class="Example">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 129</strong></summary><div>All the surfaces we encountered in these Lecture Notes are orientable, except for the Möbius band in Example <a href="chap_4.html#example-mobius">90</a>. Details about the non-orientability of the Möbius band can be found in Example 4.5.3 in <span class="citation" data-cites="pressley">(<a href="references.html#ref-pressley" role="doc-biblioref">Pressley 2010</a>)</span>.<p></p>
+<div id="Example-130" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 130</strong></summary><div>All the surfaces we encountered in these Lecture Notes are orientable, except for the Möbius band in Example <a href="chap_4.html#example-mobius">90</a>. Details about the non-orientability of the Möbius band can be found in Example 4.5.3 in <span class="citation" data-cites="pressley">(<a href="references.html#ref-pressley" role="doc-biblioref">Pressley 2010</a>)</span>.<p></p>
 </div></details>
 </div>
-<div id="Example-130" class="Example">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 130</strong></summary><div>
+<div id="Example-131" class="Example">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 131</strong></summary><div>
 <p>Let <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span> be a regular chart. Then <span class="math display">\[
 \mathcal{S}_{{\pmb{\sigma}}} := {\pmb{\sigma}}(U)
 \]</span> is a regular surface with atlas <span class="math inline">\(\mathcal{A}=\{{\pmb{\sigma}}\}\)</span>. Therefore <span class="math inline">\(\mathcal{S}_{{\pmb{\sigma}}}\)</span> is orientable.</p>
@@ -3187,8 +3218,8 @@ T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sig
 <p></p><details class="Warning fbx-simplebox fbx-default" open=""><summary><strong>Warning: </strong>Orientability is a global property</summary><div>The above example is saying that orientability is a global property: To determine wether a surface <span class="math inline">\(\mathcal{S}\)</span> is orientable, we need to examine the transition maps for the entire atlas <span class="math inline">\(\mathcal{A}\)</span>. This is because a single local parametrization <span class="math inline">\({\pmb{\sigma}}(U) \subseteq \mathcal{S}\)</span> is always orientable.<p></p>
 </div></details>
 </div>
-<div id="Remark-131" class="Remark">
-<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 131</strong></summary><div>Let <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> be regular charts with transition map <span class="math inline">\(\Phi\)</span>. We have seen in Remark <a href="chap_4.html#remark-normal-chart">124</a> that <span class="math display">\[
+<div id="Remark-132" class="Remark">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 132</strong></summary><div>Let <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> be regular charts with transition map <span class="math inline">\(\Phi\)</span>. We have seen in Remark <a href="chap_4.html#remark-normal-chart">125</a> that <span class="math display">\[
 \mathbf{N}_{\widetilde{{\pmb{\sigma}}}} = \frac{ \det J \Phi }{ |\det J \Phi| } \, \mathbf{N}_{{\pmb{\sigma}}} \,.
 \]</span> If <span class="math inline">\({\pmb{\sigma}}\)</span> and <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> determine the same orientation, then <span class="math display">\[
 \det J \Phi &gt; 0 \,,
@@ -3198,7 +3229,7 @@ T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sig
 </div></details>
 </div>
 <div id="unit-normal-of-a-surface" class="Definition" title="Unit normal of a surface">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 132: </strong>Unit normal of a surface</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface. A <strong>unit normal</strong> of <span class="math inline">\(\mathcal{S}\)</span> is a smooth function <span class="math inline">\(\mathbf{N}\colon \mathcal{S}\to \mathbb{R}^3\)</span> such that <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 133: </strong>Unit normal of a surface</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface. A <strong>unit normal</strong> of <span class="math inline">\(\mathcal{S}\)</span> is a smooth function <span class="math inline">\(\mathbf{N}\colon \mathcal{S}\to \mathbb{R}^3\)</span> such that <span class="math display">\[
 \mathbf{N}(\mathbf{p}) \perp T_{\mathbf{p}} \mathcal{S}\,, \quad \| \mathbf{N}(\mathbf{p}) \| = 1 \,, \quad \forall \, \mathbf{p}\in \mathcal{S}\, .
 \]</span><p></p>
 </div></details>
@@ -3207,8 +3238,8 @@ T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sig
 <p></p><details class="Warning fbx-simplebox fbx-default" open=""><summary><strong>Warning</strong></summary><div>We require the function <span class="math inline">\(\mathbf{p}\mapsto \mathbf{N}(\mathbf{p})\)</span> to be globally defined on <span class="math inline">\(\mathcal{S}\)</span> and smooth.<p></p>
 </div></details>
 </div>
-<div id="Proposition-133" class="Proposition">
-<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 133</strong></summary><div>
+<div id="Proposition-134" class="Proposition">
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 134</strong></summary><div>
 <p>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface. They are equivalent:</p>
 <ol type="1">
 <li><p><span class="math inline">\(\mathcal{S}\)</span> is orientable.</p></li>
@@ -3219,7 +3250,7 @@ T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sig
 <p>The proof follows from the above arguments. For details, we refer the reader to Proposition 4.3.7 in <span class="citation" data-cites="abate-tovena">(<a href="references.html#ref-abate-tovena" role="doc-biblioref">Abate, Marco and Tovena, Francesca 2011</a>)</span>.</p>
 <p>In view of the above propostion, for an oriented surface there is a natural choice of unit normal, which we call <strong>standard unit normal</strong> of <span class="math inline">\(\mathcal{S}\)</span>.</p>
 <div id="standard-unit-normal-of-a-surface" class="Definition" title="Standard unit normal of a surface">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 134: </strong>Standard unit normal of a surface</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface oriented by the atlas <span class="math inline">\(\mathcal{A}\)</span>. The <strong>standard unit normal</strong> to <span class="math inline">\(\mathcal{S}\)</span> is the map <span class="math inline">\(\mathbf{N}\colon \mathcal{S}\to \mathbb{R}^3\)</span> such that <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 135: </strong>Standard unit normal of a surface</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface oriented by the atlas <span class="math inline">\(\mathcal{A}\)</span>. The <strong>standard unit normal</strong> to <span class="math inline">\(\mathcal{S}\)</span> is the map <span class="math inline">\(\mathbf{N}\colon \mathcal{S}\to \mathbb{R}^3\)</span> such that <span class="math display">\[
 \mathbf{N}\circ {\pmb{\sigma}}= \mathbf{N}_{{\pmb{\sigma}}} \,,
 \]</span> for each chart <span class="math inline">\({\pmb{\sigma}}\in \mathcal{A}\)</span>, where <span class="math display">\[
 \mathbf{N}_{{\pmb{\sigma}}} \colon U \to \mathbb{R}^3 \,, \quad  \mathbf{N}_{{\pmb{\sigma}}} = \frac{ {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v }{ \left\| {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v \right\| }
@@ -3231,8 +3262,8 @@ T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u , {\pmb{\sig
 </div></details>
 </div>
 </section>
-<section id="second-fundamental-form" class="level3" data-number="4.12.2">
-<h3 data-number="4.12.2" class="anchored" data-anchor-id="second-fundamental-form"><span class="header-section-number">4.12.2</span> Second fundamental form</h3>
+<section id="definition-of-second-fundamental-form" class="level3" data-number="4.12.2">
+<h3 data-number="4.12.2" class="anchored" data-anchor-id="definition-of-second-fundamental-form"><span class="header-section-number">4.12.2</span> Definition of Second fundamental form</h3>
 <p>We can now start our discussion about curvature of surfaces. We can make a similar argument to the one we made for curves: If <span class="math inline">\({\pmb{\gamma}}\)</span> is a unit speed curve, the curvature of <span class="math inline">\({\pmb{\gamma}}\)</span> is defined as <span class="math display">\[
 \kappa (t) = \left\| \ddot{{\pmb{\gamma}}}(t) \right\| \,.
 \]</span> The quantity <span class="math inline">\(\kappa(t)\)</span> gave us a measure of how much <span class="math inline">\({\pmb{\gamma}}\)</span> is deviating from a straight line. Similarly, we would like to quantify how much a surface <span class="math inline">\(\mathcal{S}\)</span> is deviating from the tangent plane <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. Recall that <span class="math display">\[
@@ -3266,10 +3297,10 @@ L := {\pmb{\sigma}}_{uu}  \cdot \mathbf{N}\,, \quad
 M := {\pmb{\sigma}}_{uv}  \cdot \mathbf{N}\,, \quad
 N := {\pmb{\sigma}}_{vv}  \cdot \mathbf{N}\,.
 \]</span> The expression <span class="math display">\[
-\mathcal{F}_2 :=  L \, du^2 +  2 M  \,du dv  + N \, dv^2
-\]</span> is called the <strong>second fundamental form</strong> of <span class="math inline">\(\mathcal{S}\)</span>. Therefore <span class="math inline">\(\mathcal{F}_2\)</span> measures how much the surface <span class="math inline">\(\mathcal{S}\)</span> deviates from being a plane. Let us make this definition precise.</p>
+\mathscr{F}_2 :=  L \, du^2 +  2 M  \,du dv  + N \, dv^2
+\]</span> is called the <strong>second fundamental form</strong> of <span class="math inline">\(\mathcal{S}\)</span>. Therefore <span class="math inline">\(\mathscr{F}_2\)</span> measures how much the surface <span class="math inline">\(\mathcal{S}\)</span> deviates from being a plane. Let us make this definition precise.</p>
 <div id="second-fundamental-form-of-a-chart" class="Definition" title="Second fundamental form of a chart">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 135: </strong>Second fundamental form of a chart</summary><div>Let <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span> be a regular chart of <span class="math inline">\(\mathcal{S}\)</span>. Denote the standard unit normal of <span class="math inline">\({\pmb{\sigma}}\)</span> by <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 136: </strong>Second fundamental form of a chart</summary><div>Let <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span> be a regular chart of <span class="math inline">\(\mathcal{S}\)</span>. Denote the standard unit normal of <span class="math inline">\({\pmb{\sigma}}\)</span> by <span class="math display">\[
 \mathbf{N}\colon U \to \mathbb{R}^3 \,, \quad \mathbf{N}= \frac{ {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v }{ \left\| {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v  \right\| } \,.
 \]</span> Define the functions <span class="math display">\[
 L , M , N \colon U \to \mathbb{R}
@@ -3279,15 +3310,15 @@ N := {\pmb{\sigma}}_{vv} \cdot \mathbf{N}\,.
 \]</span> Let <span class="math inline">\(\mathbf{p}\in {\pmb{\sigma}}(U)\)</span> and denote by <span class="math inline">\((u_0,v_0) \in U\)</span> the point such that <span class="math display">\[
 {\pmb{\sigma}}(u_0,v_0) = \mathbf{p}\,.
 \]</span> The <strong>second fundamental form</strong> of <span class="math inline">\({\pmb{\sigma}}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> is the quadratic form <span class="math display">\[
-\mathcal{F}_2 \colon T_{\mathbf{p}} \mathcal{S}\to \mathbb{R}
+\mathscr{F}_2 \colon T_{\mathbf{p}} \mathcal{S}\to \mathbb{R}
 \]</span> defined by <span id="eq-sff-chart"><span class="math display">\[
-\mathcal{F}_2 (\mathbf{v}) := L \, du^2(\mathbf{v}) + 2M \, du(\mathbf{v}) \, dv (\mathbf{v})+ N \, dv^2 (\mathbf{v}) \,,
+\mathscr{F}_2 (\mathbf{v}) := L \, du^2(\mathbf{v}) + 2M \, du(\mathbf{v}) \, dv (\mathbf{v})+ N \, dv^2 (\mathbf{v}) \,,
 \tag{4.9}\]</span></span> for all <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span>. Here <span class="math inline">\(L,M,N\)</span> are evaluated at <span class="math inline">\((u_0,v_0)\)</span>, and <span class="math inline">\(du\)</span>, <span class="math inline">\(dv\)</span> are the coordinate functions as in Definition <a href="chap_4.html#definition-coordinate-functions">96</a>.<p></p>
 </div></details>
 </div>
 <div id="Notation*-32" class="Notation">
-<p></p><details class="Notation fbx-simplebox fbx-default" open=""><summary><strong>Notation</strong></summary><div>With a little abuse of notation, we also denote by <span class="math inline">\(\mathcal{F}_2\)</span> the <span class="math inline">\(2 \times 2\)</span> matrix <span class="math display">\[
-\mathcal{F}_2 =
+<p></p><details class="Notation fbx-simplebox fbx-default" open=""><summary><strong>Notation</strong></summary><div>With a little abuse of notation, we also denote by <span class="math inline">\(\mathscr{F}_2\)</span> the <span class="math inline">\(2 \times 2\)</span> matrix <span class="math display">\[
+\mathscr{F}_2 =
 \left(
 \begin{array}{cc}
 L &amp; M \\
@@ -3298,14 +3329,14 @@ M &amp; N
 </div></details>
 </div>
 <div id="second-fundamental-form-and-reparametrizations" class="Remark" title="Second fundamental form and reparametrizations">
-<details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 136: </strong>Second fundamental form and reparametrizations</summary><div>
+<details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 137: </strong>Second fundamental form and reparametrizations</summary><div>
 <p>The second fundamental form <span class="math display">\[
-\mathcal{F}_2 = L \, du^2 + 2M \, du dv + N \, dv^2
+\mathscr{F}_2 = L \, du^2 + 2M \, du dv + N \, dv^2
 \]</span> depends on the choice of chart <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span>. Indeed, let us adopt the same notations as Remark <a href="chap_4.html#remark-fff-reparametrization">100</a>. Suppose that <span class="math inline">\(\widetilde{{\pmb{\sigma}}} \colon \widetilde{U} \to \mathbb{R}^3\)</span> is a reparametrization of <span class="math inline">\({\pmb{\sigma}}\)</span> with <span class="math display">\[
 \widetilde{{\pmb{\sigma}}} = {\pmb{\sigma}}\circ \Phi \,,
 \]</span> where <span class="math inline">\(\Phi \colon \widetilde{U} \to U\)</span> is a diffeomorphism. Denote the second fundamental form of <span class="math inline">\(\widetilde{{\pmb{\sigma}}}\)</span> by <span class="math display">\[
-\widetilde{\mathcal{F}}_2 = \widetilde{L} \, d\tilde{u}^2 + 2 \widetilde{M} \, d\tilde{u} d\tilde{v} + \widetilde{N} \, d\tilde{v}^2 \,.
-\]</span> The matrices of <span class="math inline">\(\mathcal{F}_2\)</span> and <span class="math inline">\(\widetilde{\mathcal{F}}_2\)</span> are related by <span id="eq-sff-repar"><span class="math display">\[
+\widetilde{\mathscr{F}}_2 = \widetilde{L} \, d\tilde{u}^2 + 2 \widetilde{M} \, d\tilde{u} d\tilde{v} + \widetilde{N} \, d\tilde{v}^2 \,.
+\]</span> The matrices of <span class="math inline">\(\mathscr{F}_2\)</span> and <span class="math inline">\(\widetilde{\mathscr{F}}_2\)</span> are related by <span id="eq-sff-repar"><span class="math display">\[
 \left(
 \begin{array}{cc}
 \widetilde{L} &amp; \widetilde{M} \\
@@ -3326,19 +3357,19 @@ J \Phi  \,,
 <blockquote class="blockquote">
 <p>Formula (<a href="#eq-sff-repar"><span>4.10</span></a>) holds by a change of variable argument. The sign depends on the sign of <span class="math inline">\(\det J\Phi\)</span> because <span class="math display">\[
 \widetilde{\mathbf{N}} = \frac{ \widetilde{{\pmb{\sigma}}}_{\tilde{u}} \times \widetilde{{\pmb{\sigma}}}_{\tilde{v}} }{\left\| \widetilde{{\pmb{\sigma}}}_{\tilde{u}} \times \widetilde{{\pmb{\sigma}}}_{\tilde{v}} \right\|} = \frac{\det J\Phi}{|\det J\Phi|} \frac{{\pmb{\sigma}}_u \times {\pmb{\sigma}}_v}{\left\| {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v \right\|} = \pm \mathbf{N}\,,
-\]</span> as shown in Remark <a href="chap_4.html#remark-normal-chart">124</a>.</p>
+\]</span> as shown in Remark <a href="chap_4.html#remark-normal-chart">125</a>.</p>
 </blockquote>
 </div></details>
 </div>
 <p>Let us show that a plane and a cylinder have different second fundamental forms.</p>
 <div id="example-sff-plane" class="Example" title="Plane">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 137: </strong>Plane</summary><div>
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 138: </strong>Plane</summary><div>
 <p>Let <span class="math inline">\(\mathbf{a}, \mathbf{p}, \mathbf{q} \in \mathbb{R}^3\)</span>. Suppose that <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\mathbf{q}\)</span> are orthonormal vectors, that is, <span class="math display">\[
 \left\| \mathbf{p} \right\| = \left\| \mathbf{q} \right\| = 1 \,, \quad \mathbf{p}\cdot \mathbf{q} = 0 \,.
 \]</span> Consider the plane with chart <span class="math display">\[
 {\pmb{\sigma}}(u,v) = \mathbf{a} + u \mathbf{p}+ v \mathbf{q} \,, \quad (u,v) \in \mathbb{R}^2 \,.
 \]</span> Prove that the second fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
-\mathcal{F}_2 = 0 \,.
+\mathscr{F}_2 = 0 \,.
 \]</span> This reflects the intuition that a plane is flat, and therefore there is no <em>curvature</em>.</p>
 <blockquote class="blockquote">
 <p>We have <span class="math display">\[
@@ -3352,17 +3383,17 @@ L &amp; = {\pmb{\sigma}}_{uu} \cdot \mathbf{N}= 0 \\
 M &amp; = {\pmb{\sigma}}_{uv} \cdot \mathbf{N}= 0 \\
 N &amp; = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}= 0 \\
 \end{align*}\]</span> and the second fundamental form is <span class="math display">\[
-\mathcal{F}_2 = L \, du^2 + 2 M\, du \, dv + N \, dv^2 = 0 \,.  
+\mathscr{F}_2 = L \, du^2 + 2 M\, du \, dv + N \, dv^2 = 0 \,.  
 \]</span></p>
 </blockquote>
 </div></details>
 </div>
 <div id="example-cylinder-sff" class="Example" title="Unit cylinder">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 138: </strong>Unit cylinder</summary><div>
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 139: </strong>Unit cylinder</summary><div>
 <p>Consider the unit cylinder with chart <span class="math display">\[
 {\pmb{\sigma}}(u,v) = (\cos(u), \sin(u),  v)  \,, \quad (u,v) \in (0,2\pi) \times \mathbb{R}\,.
 \]</span> Prove that the second fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
-\mathcal{F}_2 = -  du^2 \,.
+\mathscr{F}_2 = -  du^2 \,.
 \]</span> This reflects the intuition that the cylinder curves only when moving in the <span class="math inline">\(v\)</span>-direction. In such direction we are moving on a circle of radius <span class="math inline">\(1\)</span>, therefore we expect the curvature to be <span class="math inline">\(-1\)</span>.</p>
 <blockquote class="blockquote">
 <p>We have <span class="math display">\[
@@ -3390,16 +3421,16 @@ L &amp; = {\pmb{\sigma}}_{uu} \cdot \mathbf{N}\\
 M &amp; = {\pmb{\sigma}}_{uv} \cdot \mathbf{N}= 0 \\
 N &amp; = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}= 0 \\
 \end{align*}\]</span> The second fundamental form is <span class="math display">\[
-\mathcal{F}_2 = L \, du^2 + 2 M\, du \, dv + N \, dv^2 = - du^2  \,.  
+\mathscr{F}_2 = L \, du^2 + 2 M\, du \, dv + N \, dv^2 = - du^2  \,.  
 \]</span></p>
 </blockquote>
 </div></details>
 </div>
-<div id="Remark-139" class="Remark">
-<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 139</strong></summary><div>We have seen that a plane and the unit cylinder have the same first fundamental form <span class="math display">\[
-\mathcal{F}_1 = \widetilde{\mathcal{F}}_1 = du^2 + dv^2 \,,
+<div id="Remark-140" class="Remark">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 140</strong></summary><div>We have seen that a plane and the unit cylinder have the same first fundamental form <span class="math display">\[
+\mathscr{F}_1 = \widetilde{\mathscr{F}}_1 = du^2 + dv^2 \,,
 \]</span> while their second fundamental forms differ: we have <span class="math display">\[
-\mathcal{F}_2 = 0 \,, \quad \widetilde{\mathcal{F}}_2 = - du^2   \,,
+\mathscr{F}_2 = 0 \,, \quad \widetilde{\mathscr{F}}_2 = - du^2   \,,
 \]</span> respectively.<p></p>
 </div></details>
 </div>
@@ -3409,8 +3440,8 @@ N &amp; = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}= 0 \\
 <p>Another way to quantify how much a surface <span class="math inline">\(\mathcal{S}\)</span> is curving is by examining the behavior of standard unit normal <span class="math inline">\(\mathbf{N}\)</span>. If <span class="math inline">\(\mathcal{S}\)</span> is a plane spanned by vectors <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\mathbf{q}\)</span>, then its standard unit normal is <span class="math display">\[
 \mathbf{N}= \frac{\mathbf{p}\times \mathbf{q}}{ \left\| \mathbf{p}\times \mathbf{q} \right\| } \,,
 \]</span> which is constant across <span class="math inline">\(\mathcal{S}\)</span>. If <span class="math inline">\(\mathcal{S}\)</span> is a general surface, measuring the variation of <span class="math inline">\(\mathbf{N}\)</span> will tell us how much <span class="math inline">\(\mathcal{S}\)</span> is deviating from being a plane. This is the idea behind the definition of the <strong>Gauss</strong> and <strong>Weingarten</strong> maps.</p>
-<div id="Remark-140" class="Remark">
-<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 140</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be oriented and <span class="math inline">\(\mathbf{N}\colon \mathcal{S}\to \mathbb{R}^3\)</span> be the standard unit normal. In particular <span class="math inline">\(\mathbf{N}\)</span> is a smooth map and <span class="math display">\[
+<div id="Remark-141" class="Remark">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 141</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be oriented and <span class="math inline">\(\mathbf{N}\colon \mathcal{S}\to \mathbb{R}^3\)</span> be the standard unit normal. In particular <span class="math inline">\(\mathbf{N}\)</span> is a smooth map and <span class="math display">\[
 \mathbf{N}(\mathbf{p}) \perp T_{\mathbf{p}} \mathcal{S}\,, \quad \| \mathbf{N}(\mathbf{p}) \| = 1 \,, \quad \forall  \, \mathbf{p}\in \mathcal{S}\,.
 \]</span> Since <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> passes through the origin and <span class="math inline">\(\mathbf{N}\)</span> has norm <span class="math inline">\(1\)</span>, it follows that <span class="math display">\[
 \mathbf{N}(\mathbf{p}) \in
@@ -3419,7 +3450,7 @@ N &amp; = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}= 0 \\
 </div></details>
 </div>
 <div id="gauss-map" class="Definition" title="Gauss map">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 141: </strong>Gauss map</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be an oriented surface and <span class="math inline">\(\mathbf{N}\)</span> the standard unit normal to <span class="math inline">\(\mathcal{S}\)</span>. The <strong>Gauss map</strong> of <span class="math inline">\(\mathcal{S}\)</span> is the map <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 142: </strong>Gauss map</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be an oriented surface and <span class="math inline">\(\mathbf{N}\)</span> the standard unit normal to <span class="math inline">\(\mathcal{S}\)</span>. The <strong>Gauss map</strong> of <span class="math inline">\(\mathcal{S}\)</span> is the map <span class="math display">\[
 {\mathcal{G}}_{\mathcal{S}} \colon \mathcal{S}\to \mathbb{S}^2 \,, \quad
 {\mathcal{G}}_{\mathcal{S}} (\mathbf{p}):= \mathbf{N}(\mathbf{p}) \,.
 \]</span><p></p>
@@ -3432,7 +3463,7 @@ N &amp; = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}= 0 \\
 </figure>
 </div>
 <div id="remark-gauss-coordinates" class="Remark">
-<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 142</strong></summary><div>The Gauss map of <span class="math inline">\(\mathcal{S}\)</span> is just the standard unit normal of <span class="math inline">\(\mathcal{S}\)</span>. By definition of standard unit normal to <span class="math inline">\(\mathcal{S}\)</span> we obtain that <span class="math display">\[
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 143</strong></summary><div>The Gauss map of <span class="math inline">\(\mathcal{S}\)</span> is just the standard unit normal of <span class="math inline">\(\mathcal{S}\)</span>. By definition of standard unit normal to <span class="math inline">\(\mathcal{S}\)</span> we obtain that <span class="math display">\[
 \mathcal{G}_{\mathcal{S}} \circ {\pmb{\sigma}}= \mathbf{N}
 \]</span> for all charts <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span>, where <span class="math inline">\(\mathbf{N}= \mathbf{N}_{{\pmb{\sigma}}}\)</span> is the standard unit normal to <span class="math inline">\({\pmb{\sigma}}\)</span>, that is, <span class="math display">\[
 \mathbf{N}\colon U \to \mathbb{R}^3 \,, \quad
@@ -3440,8 +3471,8 @@ N &amp; = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}= 0 \\
 \]</span><p></p>
 </div></details>
 </div>
-<div id="Example-143" class="Example">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 143</strong></summary><div>
+<div id="Example-144" class="Example">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 144</strong></summary><div>
 <ol type="1">
 <li><p>Suppose <span class="math inline">\(\mathcal{S}\)</span> is the unit sphere <span class="math inline">\(\mathbb{S}^2\)</span>. Then <span class="math inline">\({\mathcal{G}}_{\mathcal{S}} \colon \mathcal{S}\to \mathbb{S}^2\)</span> is the identity, see <a href="#fig-gauss-sphere">Figure&nbsp;<span>4.11</span></a>.</p></li>
 <li><p>Let <span class="math inline">\(\mathbf{a} , \mathbf{v},\mathbf{w}\in \mathbb{R}^3\)</span> with <span class="math inline">\(\mathbf{v}\)</span> and <span class="math inline">\(\mathbf{w}\)</span> linearly independent. Let <span class="math inline">\(\mathcal{S}\)</span> be the plane <span class="math display">\[
@@ -3491,8 +3522,8 @@ N &amp; = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}= 0 \\
 <figcaption class="figure-caption">Figure&nbsp;4.13: If <span class="math inline">\(\mathcal{S}\)</span> is the unit cylinder, the Gauss map <span class="math inline">\({\mathcal{G}}_{\mathcal{S}}\)</span> maps <span class="math inline">\(\mathcal{S}\)</span> into the equator of <span class="math inline">\(\mathbb{S}^2\)</span>.</figcaption>
 </figure>
 </div>
-<div id="Remark-144" class="Remark">
-<details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 144</strong></summary><div>
+<div id="Remark-145" class="Remark">
+<details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 145</strong></summary><div>
 <p>By definition, the Gauss map is a smooth function between surfaces. Therefore the differential of <span class="math inline">\(\mathcal{G}_{\mathcal{S}}\)</span> is well defined, and <span class="math display">\[
 d_{\mathbf{p}} {\mathcal{G}}_{\mathcal{S}} \colon T_{\mathbf{p}} \mathcal{S}\to T_{{\mathcal{G}}_{\mathcal{S}}(\mathbf{p})} \mathbb{S}^2 \,,
 \]</span> for all <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. We have that <span id="eq-gauss-identification"><span class="math display">\[
@@ -3518,7 +3549,7 @@ d_{\mathbf{p}} {\mathcal{G}}_{\mathcal{S}} \colon T_{\mathbf{p}} \mathcal{S}\to 
 </figure>
 </div>
 <div id="weingarten-map" class="Definition" title="Weingarten map">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 145: </strong>Weingarten map</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be an orientable surface and <span class="math inline">\(\mathcal{G} \colon \mathcal{S}\to \mathbb{S}^2\)</span> its Gauss map. The <strong>Weingarten map</strong> <span class="math inline">\(\mathcal{W}_{\mathbf{p}, \mathcal{S}}\)</span> of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> is the negative differential of the Gauss map at <span class="math inline">\(\mathbf{p}\)</span>, that is, <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 146: </strong>Weingarten map</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be an orientable surface and <span class="math inline">\(\mathcal{G} \colon \mathcal{S}\to \mathbb{S}^2\)</span> its Gauss map. The <strong>Weingarten map</strong> <span class="math inline">\(\mathcal{W}_{\mathbf{p}, \mathcal{S}}\)</span> of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> is the negative differential of the Gauss map at <span class="math inline">\(\mathbf{p}\)</span>, that is, <span class="math display">\[
 \mathcal{W}_{\mathbf{p},\mathcal{S}} \colon T_{\mathbf{p}}\mathcal{S}\to T_{\mathbf{p}} \mathcal{S}\,, \quad  \mathcal{W}_{\mathbf{p},\mathcal{S}}(\mathbf{v}) := -d_{\mathbf{p}} \mathcal{G} (\mathbf{v}) \,,
 \]</span> for all <span class="math inline">\(\mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\)</span>.<p></p>
 </div></details>
@@ -3527,15 +3558,15 @@ d_{\mathbf{p}} {\mathcal{G}}_{\mathcal{S}} \colon T_{\mathbf{p}} \mathcal{S}\to 
 <p></p><details class="Important fbx-simplebox fbx-default" open=""><summary><strong>Important</strong></summary><div>The Gauss map encodes information on the standard unit normal <span class="math inline">\(\mathbf{N}\)</span> to <span class="math inline">\(\mathcal{S}\)</span>. Hence its derivative, the Weingarten map, detects the rate of change of <span class="math inline">\(\mathbf{N}\)</span>.<p></p>
 </div></details>
 </div>
-<div id="Remark-146" class="Remark">
-<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 146</strong></summary><div>The minus sign in the definition of <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span> is a convention, just like we defined the torsion to be the scalar <span class="math inline">\(\tau\)</span> such that <span class="math display">\[
+<div id="Remark-147" class="Remark">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 147</strong></summary><div>The minus sign in the definition of <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span> is a convention, just like we defined the torsion to be the scalar <span class="math inline">\(\tau\)</span> such that <span class="math display">\[
 \dot{\mathbf{b}} = - \tau \mathbf{n}\,.
 \]</span><p></p>
 </div></details>
 </div>
 <p>The Weingarten map allows us to define a bilnear form on <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. We call such bilinear form the <strong>second fundamental form</strong> of <span class="math inline">\(\mathcal{S}\)</span>.</p>
 <div id="second-fundamental-form-of-a-surface" class="Definition" title="Second fundamental form of a surface">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 147: </strong>Second fundamental form of a surface</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be an orientable surface and denote by <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 148: </strong>Second fundamental form of a surface</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be an orientable surface and denote by <span class="math display">\[
 \mathcal{W}_{\mathbf{p},\mathcal{S}} \colon T_{\mathbf{p}} \mathcal{S}\to T_{\mathbf{p}} \mathcal{S}
 \]</span> its Weingarten map at <span class="math inline">\(\mathbf{p}\)</span>. The <strong>second fundamental form</strong> of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> is the map <span class="math display">\[
 II_{\mathbf{p}} \colon T_{\mathbf{p}} \mathcal{S}\times T_{\mathbf{p}} \mathcal{S}\to \mathbb{R}
@@ -3544,8 +3575,8 @@ II_{\mathbf{p}}(\mathbf{v},\mathbf{w}) := \mathcal{W}_{\mathbf{p}, \mathcal{S}}(
 \]</span><p></p>
 </div></details>
 </div>
-<div id="Remark-148" class="Remark">
-<details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 148</strong></summary><div>
+<div id="Remark-149" class="Remark">
+<details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 149</strong></summary><div>
 <p>The second fudamental form <span class="math inline">\(II_{\mathbf{p}}\)</span> of <span class="math inline">\(\mathcal{S}\)</span> is bilinear.</p>
 <blockquote class="blockquote">
 <p>Indeed, <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span> is linear, being the differential of a smooth map. Hence <span class="math inline">\(II_{\mathbf{p}}\)</span> is bilinear, given that the scalar product is bilinear.</p>
@@ -3553,7 +3584,7 @@ II_{\mathbf{p}}(\mathbf{v},\mathbf{w}) := \mathcal{W}_{\mathbf{p}, \mathcal{S}}(
 </div></details>
 </div>
 <div id="matrix-of-the-second-fundamental-form" class="Remark" title="Matrix of the second fundamental form">
-<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 149: </strong>Matrix of the second fundamental form</summary><div>Let <span class="math inline">\({\pmb{\sigma}}\)</span> be a chart at <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. Since <span class="math inline">\(II_{\mathbf{p}}\)</span> is a bilinear form on <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>, it can be represented by the <span class="math inline">\(2 \times 2\)</span> matrix <span class="math display">\[
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 150: </strong>Matrix of the second fundamental form</summary><div>Let <span class="math inline">\({\pmb{\sigma}}\)</span> be a chart at <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. Since <span class="math inline">\(II_{\mathbf{p}}\)</span> is a bilinear form on <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>, it can be represented by the <span class="math inline">\(2 \times 2\)</span> matrix <span class="math display">\[
 A =
 \left(
 \begin{array}{cc}
@@ -3562,7 +3593,7 @@ II_{\mathbf{p}} ({\pmb{\sigma}}_v, {\pmb{\sigma}}_u) &amp; II_{\mathbf{p}} ({\pm
 \end{array}
 \right)  \,,
 \]</span> given that <span class="math inline">\(\{ {\pmb{\sigma}}_u, {\pmb{\sigma}}_v\}\)</span> is a basis for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. In a not so shocking turn of events, it happens that <span class="math display">\[
-A = \mathcal{F}_2 =
+A = \mathscr{F}_2 =
 \left(
 \begin{array}{cc}
 L &amp; M \\
@@ -3573,11 +3604,11 @@ M &amp; N
 L = {\pmb{\sigma}}_{uu} \cdot \mathbf{N}\,, \quad
 M = {\pmb{\sigma}}_{uv} \cdot \mathbf{N}\,, \quad
 N = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}\,.
-\]</span> Therefore, the second fundamental form <span class="math inline">\(II_{\mathbf{p}}\)</span> coincides with the second fundamental form <span class="math inline">\(\mathcal{F}_{2}\)</span> of the chart <span class="math inline">\({\pmb{\sigma}}\)</span>. We prove this statement in the next theorem.<p></p>
+\]</span> Therefore, the second fundamental form <span class="math inline">\(II_{\mathbf{p}}\)</span> coincides with the second fundamental form <span class="math inline">\(\mathscr{F}_{2}\)</span> of the chart <span class="math inline">\({\pmb{\sigma}}\)</span>. We prove this statement in the next theorem.<p></p>
 </div></details>
 </div>
 <div id="theorem-sff-chart" class="Theorem">
-<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 150</strong></summary><div>
+<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 151</strong></summary><div>
 <p>Let <span class="math inline">\(\mathcal{S}\)</span> be an orientable surface and <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span> be a regular chart. Let <span class="math inline">\(\mathbf{p}\in {\pmb{\sigma}}(U)\)</span>.</p>
 <ol type="1">
 <li><p>The second funamental form <span class="math inline">\(II_{\mathbf{p}}\)</span> is a symmetric bilinear map.</p></li>
@@ -3594,15 +3625,15 @@ L = {\pmb{\sigma}}_{uu} \cdot \mathbf{N}\,, \quad
 M = {\pmb{\sigma}}_{uv} \cdot \mathbf{N}\,, \quad
 N = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}\,.
 \]</span></p></li>
-<li><p><span class="math inline">\(\mathcal{F}_2\)</span> is the quadratic form associated to <span class="math inline">\(II_{\mathbf{p}}\)</span>, that is, <span class="math display">\[
-\mathcal{F}_2 (\mathbf{v}) = {II}_{\mathbf{p}} (\mathbf{v},\mathbf{v}) \,, \quad \forall \, \mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\,.
+<li><p><span class="math inline">\(\mathscr{F}_2\)</span> is the quadratic form associated to <span class="math inline">\(II_{\mathbf{p}}\)</span>, that is, <span class="math display">\[
+\mathscr{F}_2 (\mathbf{v}) = {II}_{\mathbf{p}} (\mathbf{v},\mathbf{v}) \,, \quad \forall \, \mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\,.
 \]</span></p></li>
 </ol>
 </div></details>
 </div>
-<p>To prove Theorem <a href="chap_4.html#theorem-sff-chart">150</a> we use the following two Lemmas.</p>
+<p>To prove Theorem <a href="chap_4.html#theorem-sff-chart">151</a> we use the following two Lemmas.</p>
 <div id="lemma-normal-derivatives" class="Lemma">
-<p></p><details class="Lemma fbx-simplebox fbx-default" open=""><summary><strong>Lemma 151</strong></summary><div>Let <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span> be a regular chart with standard unit normal <span class="math inline">\(\mathbf{N}\colon U \to \mathbb{R}^3\)</span>. Then <span class="math display">\[\begin{align*}
+<p></p><details class="Lemma fbx-simplebox fbx-default" open=""><summary><strong>Lemma 152</strong></summary><div>Let <span class="math inline">\({\pmb{\sigma}}\colon U \to \mathbb{R}^3\)</span> be a regular chart with standard unit normal <span class="math inline">\(\mathbf{N}\colon U \to \mathbb{R}^3\)</span>. Then <span class="math display">\[\begin{align*}
 \mathbf{N}_{u} \cdot {\pmb{\sigma}}_u &amp; = - L \,,\\
 \mathbf{N}_{u} \cdot {\pmb{\sigma}}_v &amp; = \mathbf{N}_{v} \cdot {\pmb{\sigma}}_u = - M \,, \\
 \mathbf{N}_{v} \cdot {\pmb{\sigma}}_v &amp; = - N \,.
@@ -3624,7 +3655,7 @@ N = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}\,.
 </div></details>
 </div>
 <div id="lemma-weingarten" class="Lemma">
-<p></p><details class="Lemma fbx-simplebox fbx-default" open=""><summary><strong>Lemma 152</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be an orientable surface and <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}} \colon T_{\mathbf{p}} \mathcal{S}\to T_{\mathbf{p}} \mathcal{S}\)</span> be its Weingarten map at <span class="math inline">\(\mathbf{p}\)</span>. Let <span class="math inline">\({\pmb{\sigma}}\)</span> be a regular chart at <span class="math inline">\(\mathbf{p}\)</span>, with <span class="math inline">\({\pmb{\sigma}}(u_0,v_0) = \mathbf{p}\)</span>. Then <span class="math display">\[
+<p></p><details class="Lemma fbx-simplebox fbx-default" open=""><summary><strong>Lemma 153</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be an orientable surface and <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}} \colon T_{\mathbf{p}} \mathcal{S}\to T_{\mathbf{p}} \mathcal{S}\)</span> be its Weingarten map at <span class="math inline">\(\mathbf{p}\)</span>. Let <span class="math inline">\({\pmb{\sigma}}\)</span> be a regular chart at <span class="math inline">\(\mathbf{p}\)</span>, with <span class="math inline">\({\pmb{\sigma}}(u_0,v_0) = \mathbf{p}\)</span>. Then <span class="math display">\[
 \mathcal{W}_{\mathbf{p},\mathcal{S}} ({\pmb{\sigma}}_u) = - \mathbf{N}_u \,, \quad
 \mathcal{W}_{\mathbf{p},\mathcal{S}} ({\pmb{\sigma}}_v) = - \mathbf{N}_v \,,
 \]</span> where <span class="math inline">\({\pmb{\sigma}}_u,{\pmb{\sigma}}_v,\mathbf{N}_u,\mathbf{N}_v\)</span> are evaluated at <span class="math inline">\((u_0,v_0)\)</span>.<p></p>
@@ -3639,7 +3670,7 @@ N = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}\,.
 {\pmb{\gamma}}(0) = {\pmb{\sigma}}(u_0,v_0) = \mathbf{p}\,, \quad \dot{{\pmb{\gamma}}}(0) = {\pmb{\sigma}}_u (u_0,v_0) \,.
 \]</span> Define <span class="math display">\[
 \widetilde{{\pmb{\gamma}}}(t) := (\mathcal{G}_{\mathcal{S}} \circ {\pmb{\gamma}})(t) \,.
-\]</span> By Remark <a href="chap_4.html#remark-gauss-coordinates">142</a> <span class="math display">\[
+\]</span> By Remark <a href="chap_4.html#remark-gauss-coordinates">143</a> <span class="math display">\[
 \widetilde{{\pmb{\gamma}}}(t) = \mathcal{G}_{\mathcal{S}} ({\pmb{\gamma}}(t)) = \mathcal{G}_{\mathcal{S}} ({\pmb{\sigma}}(u_0 + t , v_0)) = \mathbf{N}(u_0 + t , v_0) \,.
 \]</span> Thus <span class="math display">\[
 \dot{\widetilde{{\pmb{\gamma}}}}(t) = \mathbf{N}_u (u_0 + t , v_0) \,, \quad \dot{\widetilde{{\pmb{\gamma}}}}(0) = \mathbf{N}_u (u_0 , v_0) \,.
@@ -3654,9 +3685,9 @@ N = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}\,.
 \]</span> and argue similarly. This is left as an exercise.<p></p>
 </div></details>
 </div>
-<p>We can now prove Theorem <a href="chap_4.html#theorem-sff-chart">150</a></p>
-<div id="proof-of-theorem" class="Proof" title="Proof of Theorem 150">
-<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof: </strong>Proof of Theorem 150</summary><div>By Theorem <a href="chap_4.html#theorem-tangent-plane">70</a> we have <span class="math display">\[
+<p>We can now prove Theorem <a href="chap_4.html#theorem-sff-chart">151</a></p>
+<div id="proof-of-theorem" class="Proof" title="Proof of Theorem 151">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof: </strong>Proof of Theorem 151</summary><div>By Theorem <a href="chap_4.html#theorem-tangent-plane">70</a> we have <span class="math display">\[
 T_{\mathbf{p}} \mathcal{S}= \operatorname{span} \{ {\pmb{\sigma}}_u, {\pmb{\sigma}}_v \} \,.
 \]</span> Therefore, for <span class="math inline">\(\mathbf{v},\mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\)</span>, there exist <span class="math inline">\(\lambda_1,\lambda_2,\mu_1,\mu_2 \in \mathbb{R}\)</span> such that <span class="math display">\[
 \mathbf{v}= \lambda_1 {\pmb{\sigma}}_u + \mu_1 {\pmb{\sigma}}_v \,, \quad
@@ -3673,7 +3704,7 @@ II_{\mathbf{p}}({\pmb{\sigma}}_u , {\pmb{\sigma}}_u) &amp; II_{\mathbf{p}}({\pmb
 II_{\mathbf{p}}({\pmb{\sigma}}_v , {\pmb{\sigma}}_u) &amp; II_{\mathbf{p}}({\pmb{\sigma}}_v , {\pmb{\sigma}}_v)
 \end{array}
 \right) \, (du(\mathbf{v}) , dv(\mathbf{w}))^T \,.
-\end{align*}\]</span> By Lemma <a href="chap_4.html#lemma-weingarten">152</a> and Lemma <a href="chap_4.html#lemma-normal-derivatives">151</a> we have <span class="math display">\[
+\end{align*}\]</span> By Lemma <a href="chap_4.html#lemma-weingarten">153</a> and Lemma <a href="chap_4.html#lemma-normal-derivatives">152</a> we have <span class="math display">\[
 \mathcal{W}_{\mathbf{p}, \mathcal{S}} ({\pmb{\sigma}}_u) = - \mathbf{N}_u \,, \quad L = - \mathbf{N}_u \cdot {\pmb{\sigma}}_u \,.
 \]</span> Therefore, using the above and the definition of <span class="math inline">\(II_{\mathbf{p}}\)</span>, we get <span class="math display">\[
 II_{\mathbf{p}} ({\pmb{\sigma}}_u,{\pmb{\sigma}}_u) = \mathcal{W}_{\mathbf{p},\mathcal{S}} ({\pmb{\sigma}}_u) \cdot {\pmb{\sigma}}_u = - \mathbf{N}_u \cdot {\pmb{\sigma}}_u = L \,.
@@ -3681,8 +3712,8 @@ II_{\mathbf{p}} ({\pmb{\sigma}}_u,{\pmb{\sigma}}_u) = \mathcal{W}_{\mathbf{p},\m
 II_{\mathbf{p}} ({\pmb{\sigma}}_u,{\pmb{\sigma}}_v) = II_{\mathbf{p}} ({\pmb{\sigma}}_v,{\pmb{\sigma}}_u) = M \,, \quad
 II_{\mathbf{p}} ({\pmb{\sigma}}_v,{\pmb{\sigma}}_v) = N \,,
 \]</span> concluding the proof of point 2. In particular this also proves that <span class="math inline">\(II_{\mathbf{p}}\)</span> is symmetric, which is Point 1 of the statement. The fact that <span class="math display">\[
-II_{\mathbf{p}}(\mathbf{v},\mathbf{v}) = \mathcal{F}_2(\mathbf{v})
-\]</span> follows from Point 2 and definition of <span class="math inline">\(\mathcal{F}_2\)</span>.<p></p>
+II_{\mathbf{p}}(\mathbf{v},\mathbf{v}) = \mathscr{F}_2(\mathbf{v})
+\]</span> follows from Point 2 and definition of <span class="math inline">\(\mathscr{F}_2\)</span>.<p></p>
 </div></details>
 </div>
 </section>
@@ -3693,16 +3724,16 @@ II_{\mathbf{p}}(\mathbf{v},\mathbf{v}) = \mathcal{F}_2(\mathbf{v})
 \]</span> We would like to find a formula to compute <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span>. This is easily done: Given a chart <span class="math inline">\({\pmb{\sigma}}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>, we have that <span class="math inline">\(\{{\pmb{\sigma}}_u,{\pmb{\sigma}}_v\}\)</span> is a basis for the vector space <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. Therefore there exists a <span class="math inline">\(2 \times 2\)</span> matrix <span class="math inline">\(A\)</span> which represents <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span>, that is, <span class="math display">\[
 \mathcal{W}_{\mathbf{p},\mathcal{S}}(\mathbf{v}) = A \mathbf{v}\,, \quad \forall \, \mathbf{v}\in T_{\mathbf{p}} \mathcal{S}\,.
 \]</span> It turns out that <span class="math display">\[
-A = \mathcal{F}_1^{-1} \mathcal{F}_2 \,,
+A = \mathscr{F}_1^{-1} \mathscr{F}_2 \,,
 \]</span> where we recall that <span class="math display">\[
-\mathcal{F}_1 =
+\mathscr{F}_1 =
 \left(
 \begin{array}{cc}
 E &amp; F \\
 F &amp; G
 \end{array}
 \right)\,, \quad
-\mathcal{F}_2 =
+\mathscr{F}_2 =
 \left(
 \begin{array}{cc}
 L &amp; M \\
@@ -3716,8 +3747,8 @@ L &amp; = {\pmb{\sigma}}_{uu} \cdot \mathbf{N}\, ,  &amp; M &amp; =  {\pmb{\sigm
 \mathbf{N}= \frac{ {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v }{ \left\|  {\pmb{\sigma}}_u \times {\pmb{\sigma}}_v  \right\| } \,.
 \]</span> Let us prove this claim.</p>
 <div id="theorem-weingarten" class="Theorem" title="Matrix of Weingarten map">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 153: </strong>Matrix of Weingarten map</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be an orientable surface and <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}} \colon T_{\mathbf{p}} \mathcal{S}\to T_{\mathbf{p}} \mathcal{S}\)</span> be its Weingarten map at <span class="math inline">\(\mathbf{p}\)</span>. Let <span class="math inline">\({\pmb{\sigma}}\)</span> be a regular chart at <span class="math inline">\(\mathbf{p}\)</span>, with <span class="math inline">\({\pmb{\sigma}}(u_0,v_0) = \mathbf{p}\)</span>. Then <span class="math display">\[
-\mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{v}) = \mathcal{F}_1^{-1} \mathcal{F}_2   \left(
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 154: </strong>Matrix of Weingarten map</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be an orientable surface and <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}} \colon T_{\mathbf{p}} \mathcal{S}\to T_{\mathbf{p}} \mathcal{S}\)</span> be its Weingarten map at <span class="math inline">\(\mathbf{p}\)</span>. Let <span class="math inline">\({\pmb{\sigma}}\)</span> be a regular chart at <span class="math inline">\(\mathbf{p}\)</span>, with <span class="math inline">\({\pmb{\sigma}}(u_0,v_0) = \mathbf{p}\)</span>. Then <span class="math display">\[
+\mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{v}) = \mathscr{F}_1^{-1} \mathscr{F}_2   \left(
 \begin{array}{c}
 \lambda \\
 \mu
@@ -3748,7 +3779,7 @@ c &amp; d
 \]</span> The coefficients <span class="math inline">\(a,b,c,d \in \mathbb{R}\)</span> can be compute by solving the linear system <span class="math display">\[\begin{align*}
 \mathcal{W}_{\mathbf{p},\mathcal{S}} ({\pmb{\sigma}}_u) &amp; = a {\pmb{\sigma}}_u + b {\pmb{\sigma}}_v \\
 \mathcal{W}_{\mathbf{p},\mathcal{S}} ({\pmb{\sigma}}_v) &amp; = c {\pmb{\sigma}}_u + d {\pmb{\sigma}}_v \,.
-\end{align*}\]</span> By Lemma <a href="chap_4.html#lemma-weingarten">152</a> we have <span class="math display">\[
+\end{align*}\]</span> By Lemma <a href="chap_4.html#lemma-weingarten">153</a> we have <span class="math display">\[
 \mathcal{W}_{\mathbf{p},\mathcal{S}} ({\pmb{\sigma}}_u) = - \mathbf{N}_u \,, \quad
 \mathcal{W}_{\mathbf{p},\mathcal{S}} ({\pmb{\sigma}}_v) = - \mathbf{N}_v \,,
 \]</span> so that we obtain <span class="math display">\[\begin{align*}
@@ -3759,7 +3790,7 @@ c &amp; d
 - \mathbf{N}_u \cdot {\pmb{\sigma}}_v &amp; = a ({\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v) + b ({\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v) \\
 - \mathbf{N}_v \cdot {\pmb{\sigma}}_u &amp; = c ({\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_u) + d ({\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_u) \\
 - \mathbf{N}_v \cdot {\pmb{\sigma}}_v &amp; = c ({\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v) + d ({\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v)
-\end{align*}\]</span> By Lemma <a href="chap_4.html#lemma-normal-derivatives">151</a> we have <span class="math display">\[\begin{align*}
+\end{align*}\]</span> By Lemma <a href="chap_4.html#lemma-normal-derivatives">152</a> we have <span class="math display">\[\begin{align*}
 \mathbf{N}_u \cdot {\pmb{\sigma}}_u &amp; = - L \,,  &amp; \mathbf{N}_u \cdot {\pmb{\sigma}}_v &amp; = - M \,, \\
 \mathbf{N}_v \cdot {\pmb{\sigma}}_u &amp; = - M \,,  &amp; \mathbf{N}_v \cdot {\pmb{\sigma}}_v &amp; = - N \,. \\
 \end{align*}\]</span> If in addition we recall the definition of <span class="math inline">\(E,F,G\)</span>, we obtain <span class="math display">\[\begin{align*}
@@ -3788,19 +3819,19 @@ F &amp; G
 \end{array}
 \right) \,,
 \]</span> which reads <span class="math display">\[
-\mathcal{F}_1 A = \mathcal{F}_2 \,.
+\mathscr{F}_1 A = \mathscr{F}_2 \,.
 \]</span> Now, recall that the first fundamental form is defined by <span class="math display">\[
-\mathcal{F}_1 (\mathbf{v},\mathbf{w}) = \mathbf{v}\cdot \mathbf{w}\,, \quad  \forall \, \mathbf{v}, \mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\,,
-\]</span> which is a scalar product. Therefore the matrix <span class="math inline">\(\mathcal{F}_1\)</span> is positive definite, and in particular <span class="math display">\[
-\det \mathcal{F}_1 &gt; 0 \,.
-\]</span> This means <span class="math inline">\(\mathcal{F}_1\)</span> is invertible and <span class="math display">\[
-A = \mathcal{F}_1^{-1} \mathcal{F}_2 \,,
+\mathscr{F}_1 (\mathbf{v},\mathbf{w}) = \mathbf{v}\cdot \mathbf{w}\,, \quad  \forall \, \mathbf{v}, \mathbf{w}\in T_{\mathbf{p}} \mathcal{S}\,,
+\]</span> which is a scalar product. Therefore the matrix <span class="math inline">\(\mathscr{F}_1\)</span> is positive definite, and in particular <span class="math display">\[
+\det (\mathscr{F}_1) &gt; 0 \,.
+\]</span> This means <span class="math inline">\(\mathscr{F}_1\)</span> is invertible and <span class="math display">\[
+A = \mathscr{F}_1^{-1} \mathscr{F}_2 \,,
 \]</span> concluding the proof.<p></p>
 </div></details>
 </div>
 <div id="Important*-38" class="Important">
-<p></p><details class="Important fbx-simplebox fbx-default" open=""><summary><strong>Important</strong></summary><div>A matrix <span class="math inline">\(A \in \mathbb{R}^{n \times n}\)</span> is invertible if and only if <span class="math inline">\(\det A \neq 0\)</span>. In such case the inverse <span class="math inline">\(A^{-1}\)</span> is computed via the formula <span class="math display">\[
-A^{-1} = \frac{1}{\det A} \, \operatorname{cof}(A)^T \,,
+<p></p><details class="Important fbx-simplebox fbx-default" open=""><summary><strong>Important</strong></summary><div>A matrix <span class="math inline">\(A \in \mathbb{R}^{n \times n}\)</span> is invertible if and only if <span class="math inline">\(\det (A) \neq 0\)</span>. In such case the inverse <span class="math inline">\(A^{-1}\)</span> is computed via the formula <span class="math display">\[
+A^{-1} = \frac{1}{\det (A)} \, \operatorname{cof}(A)^T \,,
 \]</span> where <span class="math inline">\(\operatorname{cof}(A)\)</span> is the cofactor matrix of <span class="math inline">\(A\)</span>. For <span class="math inline">\(n=2\)</span> the above formula reads: <span class="math display">\[
 \left(
 \begin{array}{cc}
@@ -3834,7 +3865,7 @@ d &amp; -b \\
 </div></details>
 </div>
 <div id="helicoid" class="Example" title="Helicoid">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 154: </strong>Helicoid</summary><div>
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 155: </strong>Helicoid</summary><div>
 <p>The Helicoid is charted by <span class="math display">\[
 {\pmb{\sigma}}(u,v) = (u \cos (v), u \sin(v) , \lambda v) \,, \quad u \in [0,1] \,, \, v \in [0,4\pi) \,,
 \]</span> where <span class="math inline">\(\lambda&gt;0\)</span> is a constant, see <a href="#fig-helicoid">Figure&nbsp;<span>4.15</span></a>. Prove that the matrix of the Weingarten map is <span class="math display">\[
@@ -3858,7 +3889,7 @@ E &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_u = 1 \\
 F &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v = 0 \\
 G &amp; = {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v = u^2 + \lambda^2 \,,
 \end{align*}\]</span> so that the first fundamental form is <span class="math display">\[
-\mathcal{F}_1 =
+\mathscr{F}_1 =
 \left(
 \begin{array}{cc}
 E &amp; F \\
@@ -3872,8 +3903,8 @@ F &amp; G
 0 &amp; u^2 + \lambda^2
 \end{array}
 \right) \,.
-\]</span> Since <span class="math inline">\(\mathcal{F}_1\)</span> is diagonal, the inverse is immediately computed <span class="math display">\[
-\mathcal{F}_1^{-1}
+\]</span> Since <span class="math inline">\(\mathscr{F}_1\)</span> is diagonal, the inverse is immediately computed <span class="math display">\[
+\mathscr{F}_1^{-1}
 =
 \left(
 \begin{array}{cc}
@@ -3901,8 +3932,8 @@ F &amp; G
 L &amp; = {\pmb{\sigma}}_{uu} \cdot \mathbf{N}= 0 \\
 M &amp; = {\pmb{\sigma}}_{uv} \cdot \mathbf{N}= - \frac{\lambda}{\sqrt{u^2 + \lambda^2}} \\
 N &amp; = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}= 0 \\
-\end{align*}\]</span> and the second funamental form <span class="math inline">\(\mathcal{F}_2\)</span> is <span class="math display">\[
-\mathcal{F}_2 =
+\end{align*}\]</span> and the second funamental form <span class="math inline">\(\mathscr{F}_2\)</span> is <span class="math display">\[
+\mathscr{F}_2 =
 \left(
 \begin{array}{cc}
 L &amp; M \\
@@ -3917,7 +3948,7 @@ M &amp; N
 \end{array}
 \right) \,.
 \]</span> Finally <span class="math display">\[\begin{align*}
-\mathcal{W}&amp; = \mathcal{F}_1^{-1} \mathcal{F}_2 \\
+\mathcal{W}&amp; = \mathscr{F}_1^{-1} \mathscr{F}_2 \\
 &amp; =
 \left(
 \begin{array}{cc}
@@ -3952,19 +3983,100 @@ M &amp; N
 </div>
 </div>
 </div>
+<div id="example-weingarten-2" class="Example">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 156</strong></summary><div>
+<p>Find the Weingarten matrix of the following surface chart <span class="math display">\[
+{\pmb{\sigma}}(u, v) = \left(u-v, u+v, u^{2}+v^{2}\right) \,.
+\]</span></p>
+<blockquote class="blockquote">
+<p><em>Solution</em>. Start by computing the first fundamental form: <span class="math display">\[\begin{align*}
+{\pmb{\sigma}}_{u} &amp; =(1,1,2u) \\
+{\pmb{\sigma}}_{v} &amp; =(-1,1,2v) \\  
+E &amp; = {\pmb{\sigma}}_{u} \cdot {\pmb{\sigma}}_u  = 2 (1+2u^2) \\
+F &amp; = {\pmb{\sigma}}_{u} \cdot {\pmb{\sigma}}_v  = 4uv \\
+G &amp; = {\pmb{\sigma}}_{v} \cdot {\pmb{\sigma}}_v  = 2 (1+2v^2)
+\end{align*}\]</span> so that <span class="math display">\[
+\mathscr{F}_{1}=
+\left(
+\begin{array}{ll}
+E &amp; F \\
+F &amp; G
+\end{array}
+\right)
+=
+\left(\begin{array}{ll}
+2(1 + 2u^2) &amp; 4uv \\
+4uv &amp; 2(1 + 2v^2)
+\end{array}\right)
+\]</span> The determinant of <span class="math inline">\(\mathscr{F}_1\)</span> is <span class="math display">\[
+\det (\mathscr{F}_1) = 4 (1+2u^2 + 2v^2)
+\]</span> and therefore <span class="math display">\[\begin{align*}
+\mathscr{F}_{1}^{-1} &amp; = \frac{1}{\det (\mathscr{F}_1)}
+\left(
+\begin{array}{ll}
+G &amp; -F \\
+-F &amp; E
+\end{array}
+\right) \\
+&amp; = \frac{1}{2(1 + 2u^2 + 2v^2)}
+\,\left(\begin{array}{ll}
+1 + 2v^2 &amp; -2uv \\
+- 2uv &amp; 1 + 2u^2
+\end{array}\right) \,.
+\end{align*}\]</span> We now need to compute the second fundamental form <span class="math display">\[\begin{align*}
+{\pmb{\sigma}}_{u u} &amp; =(0,0,2) \\
+{\pmb{\sigma}}_{u v} &amp; =(0,0,0) \\
+{\pmb{\sigma}}_{v v} &amp; =(0,0,2) \\
+{\pmb{\sigma}}_{u} \times {\pmb{\sigma}}_{v} &amp; =\left|\begin{array}{ccc}
+\mathbf{i}&amp; \mathbf{j}&amp; \mathbf{k}\\
+1 &amp; 1 &amp; 2 u \\
+-1 &amp; 1 &amp; 2 v
+\end{array}\right| \\
+&amp; =2(v-u,-u-v, 1) \\
+\left\|{\pmb{\sigma}}_{u} \times {\pmb{\sigma}}_{v}\right\| &amp; =2\left( 1 + 2u^2 + 2v^2\right)^{\frac{1}{2}} \\
+\mathbf{N}&amp; =\frac{(v-u,-u-v, 1)}{ \left( 1 + 2 u^2 + 2 v^2 \right)^{\frac{1}{2}}} \\
+L &amp; = {\pmb{\sigma}}_{uu} \cdot \mathbf{N}=\frac{2}{\left( 1 + 2u^{2}+ 2v^{2}\right)^{\frac{1}{2}}} \\
+M &amp; = {\pmb{\sigma}}_{uv} \cdot \mathbf{N}= 0 \\
+N &amp; = {\pmb{\sigma}}_{vv} \cdot \mathbf{N}= \frac{2}{\left(1 + 2u^{2}+ 2v^{2}\right)^{\frac{1}{2}}}
+\end{align*}\]</span> so that <span class="math display">\[\begin{align*}
+\mathscr{F}_{2} &amp; =
+\left(\begin{array}{ll}
+L &amp; M \\
+M &amp; N
+\end{array}\right) \\
+&amp; =
+\frac{2}{\left( 1 + 2u^{2}+ 2v^{2}\right)^{\frac{1}{2}}} \, \left(\begin{array}{ll}
+1 &amp; 0 \\
+0 &amp; 1
+\end{array}\right) \,.
+\end{align*}\]</span> The matrix of the Weingarten map is <span class="math display">\[\begin{align*}
+\mathcal{W}&amp; = \mathscr{F}_1^{-1} \mathscr{F}_2 \\
+&amp; =
+\frac{1}{(1 + 2u^2 + 2v^2)^{\frac32}}
+\,\left(\begin{array}{ll}
+1 + 2v^2 &amp; -2uv \\
+- 2uv &amp; 1 + 2u^2
+\end{array}\right) \,.
+\end{align*}\]</span></p>
+</blockquote>
+</div></details>
+</div>
 </section>
-<section id="gaussian-and-mean-curvature" class="level3" data-number="4.12.5">
-<h3 data-number="4.12.5" class="anchored" data-anchor-id="gaussian-and-mean-curvature"><span class="header-section-number">4.12.5</span> Gaussian and mean curvature</h3>
+</section>
+<section id="curvatures" class="level2" data-number="4.13">
+<h2 data-number="4.13" class="anchored" data-anchor-id="curvatures"><span class="header-section-number">4.13</span> Curvatures</h2>
+<section id="gaussian-and-mean-curvature" class="level3" data-number="4.13.1">
+<h3 data-number="4.13.1" class="anchored" data-anchor-id="gaussian-and-mean-curvature"><span class="header-section-number">4.13.1</span> Gaussian and mean curvature</h3>
 <p>The Weingarten map of <span class="math inline">\(\mathcal{S}\)</span> encodes the rate of change of the standard unit normal <span class="math inline">\(\mathbf{N}\)</span>. We use this map to produce scalar values, which we call <strong>curvatures</strong>. The first two curvatures that we consider are called <strong>Gaussian</strong> and <strong>mean</strong> curvatures.</p>
 <div id="gaussian-and-mean-curvature-1" class="Definition" title="Gaussian and mean curvature">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 155: </strong>Gaussian and mean curvature</summary><div>
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 157: </strong>Gaussian and mean curvature</summary><div>
 <p>Let <span class="math inline">\(\mathcal{S}\)</span> be an orientable surface and let <span class="math inline">\(\mathcal{W}\)</span> denote the matrix of the Weingarten map <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span> of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>. We define:</p>
 <ul>
 <li><p>The <strong>Gaussian curvature</strong> of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> as <span class="math display">\[
-K := \det \mathcal{W}\,,
+K := \det (\mathcal{W}) \,,
 \]</span></p></li>
 <li><p>The <strong>mean curvature</strong> of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> as <span class="math display">\[
-H := \frac12 \, \operatorname{trace} \mathcal{W}\,,
+H := \frac12 \, \operatorname{trace} (\mathcal{W}) \,,
 \]</span></p></li>
 </ul>
 </div></details>
@@ -3983,10 +4095,10 @@ c &amp; d
 </div></details>
 </div>
 <p>Since we have shown that the matrix of the Weingarten map is <span class="math display">\[
-\mathcal{W}= \mathcal{F}_1^{-1} \mathcal{F}_2 \,,
+\mathcal{W}= \mathscr{F}_1^{-1} \mathscr{F}_2 \,,
 \]</span> we can express <span class="math inline">\(K\)</span> and <span class="math inline">\(H\)</span> in terms of the first and second fundamental forms.</p>
-<div id="Proposition-156" class="Proposition">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 156</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be an orientable surface and <span class="math inline">\({\pmb{\sigma}}\)</span> a regular chart at <span class="math inline">\(\mathbf{p}\)</span>. Then <span class="math display">\[
+<div id="Proposition-158" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 158</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be an orientable surface and <span class="math inline">\({\pmb{\sigma}}\)</span> a regular chart at <span class="math inline">\(\mathbf{p}\)</span>. Then <span class="math display">\[
 K =
 \frac{ LN-M^2 }{ EG - F^2 } \,, \quad
 H =
@@ -3995,31 +4107,31 @@ H =
 </div></details>
 </div>
 <div id="Proof*-40" class="Proof">
-<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>By Theorem <a href="chap_4.html#theorem-weingarten">153</a> the matrix of the Weingarten map <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span> of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> is given by <span class="math display">\[
-\mathcal{W}= \mathcal{F}_1^{-1} \mathcal{F}_2 \,.
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>By Theorem <a href="chap_4.html#theorem-weingarten">154</a> the matrix of the Weingarten map <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span> of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> is given by <span class="math display">\[
+\mathcal{W}= \mathscr{F}_1^{-1} \mathscr{F}_2 \,.
 \]</span> We have <span class="math display">\[\begin{align*}
-\det \mathcal{F}_1 &amp; =
-\det \left(
+\det (\mathscr{F}_1) &amp; =
+\left|
 \begin{array}{cc}
 E &amp; F \\
 F &amp; G
 \end{array}
-\right) = EF - G^2 \,, \\
-\det \mathcal{F}_2 &amp; =
-\det \left(
+\right| = EF - G^2 \,, \\
+\det (\mathscr{F}_2) &amp; =
+\left|
 \begin{array}{cc}
 L &amp; M \\
 M &amp; N
 \end{array}
-\right) = LN - M^2 \,.
+\right| = LN - M^2 \,.
 \end{align*}\]</span> By the properties of determinant we get <span class="math display">\[
-\det \mathcal{F}_1^{-1} = \frac{1}{\det \mathcal{F}_1} = \frac{1}{EF - G^2} \,,
+\det (\mathscr{F}_1^{-1}) = \frac{1}{\det (\mathscr{F}_1)} = \frac{1}{EF - G^2} \,,
 \]</span> and therefore <span class="math display">\[\begin{align*}
-K &amp; = \det \mathcal{W}= \det \left( \mathcal{F}_1^{-1} \mathcal{F}_2 \right) \\
-  &amp; = \left( \det \mathcal{F}_1^{-1} \right) \,  \left(\det \mathcal{F}_2 \right)
+K &amp; = \det (\mathcal{W})  = \det \left( \mathscr{F}_1^{-1} \mathscr{F}_2 \right) \\
+  &amp; =  \det (\mathscr{F}_1^{-1})  \det (\mathscr{F}_2)
 = \frac{ LN-M^2 }{ EG - F^2 } \, .
 \end{align*}\]</span> To compute <span class="math inline">\(H\)</span> we need to find the diagonal entries of <span class="math inline">\(\mathcal{W}\)</span>. Since <span class="math display">\[
-\mathcal{F}_1^{-1} =
+\mathscr{F}_1^{-1} =
 \frac{1}{EG - F^2}
 \left(
 \begin{array}{cc}
@@ -4052,17 +4164,17 @@ H &amp; = \frac12 \operatorname{trace} \mathcal{W}\\
 </div></details>
 </div>
 <div id="plane" class="Example" title="Plane">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 157: </strong>Plane</summary><div>Consider the plane charted by <span class="math display">\[
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 159: </strong>Plane</summary><div>Consider the plane charted by <span class="math display">\[
 {\pmb{\sigma}}(u,v) = \mathbf{a} + \mathbf{p}u + \mathbf{q} v \,, \quad u \in (0,2\pi)\,, \, u, v \in \mathbb{R}\,.
-\]</span> We have already computed in Example <a href="chap_4.html#example-fff-plane">101</a> and Example <a href="chap_4.html#example-sff-plane">137</a> that the first and second fundamental forms of <span class="math inline">\({\pmb{\sigma}}\)</span> are <span class="math display">\[
-\mathcal{F}_1 =
+\]</span> We have already computed in Example <a href="chap_4.html#example-fff-plane">101</a> and Example <a href="chap_4.html#example-sff-plane">138</a> that the first and second fundamental forms of <span class="math inline">\({\pmb{\sigma}}\)</span> are <span class="math display">\[
+\mathscr{F}_1 =
 \left(
 \begin{array}{cc}
 1 &amp; 0 \\
 0 &amp; 1
 \end{array}
 \right) \,, \quad
-\mathcal{F}_2 =
+\mathscr{F}_2 =
 \left(
 \begin{array}{cc}
 0 &amp; 0 \\
@@ -4070,7 +4182,7 @@ H &amp; = \frac12 \operatorname{trace} \mathcal{W}\\
 \end{array}
 \right) \,.
 \]</span> Therefore the matrix of the Weingarten map is <span class="math display">\[
-\mathcal{W}= \mathcal{F}_1^{-1} \mathcal{F}_2
+\mathcal{W}= \mathscr{F}_1^{-1} \mathscr{F}_2
 =
 \left(
 \begin{array}{cc}
@@ -4079,24 +4191,24 @@ H &amp; = \frac12 \operatorname{trace} \mathcal{W}\\
 \end{array}
 \right)  \,.
 \]</span> Hence the Gaussian curvature is <span class="math display">\[
-K = \det \mathcal{W}= 0 \,,
+K = \det (\mathcal{W}) = 0 \,,
 \]</span> while the mean curvature is <span class="math display">\[
 H = \frac12 \, \operatorname{trace} \mathcal{W}=  0 \,.
 \]</span><p></p>
 </div></details>
 </div>
-<div id="unit-cylinder-2" class="Example" title="Unit cylinder">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 158: </strong>Unit cylinder</summary><div>Consider the unit cylinder charted by <span class="math display">\[
+<div id="unit-cylinder-3" class="Example" title="Unit cylinder">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 160: </strong>Unit cylinder</summary><div>Consider the unit cylinder charted by <span class="math display">\[
 {\pmb{\sigma}}(u,v) = (\cos(u), \sin(u), v) \,, \quad u \in (0,2\pi)\,, \, v \in \mathbb{R}\,.
-\]</span> We have already computed in Example <a href="chap_4.html#example-cylinder-fff">102</a> and Example <a href="chap_4.html#example-cylinder-sff">138</a> that the first and second fundamental forms of <span class="math inline">\({\pmb{\sigma}}\)</span> are <span class="math display">\[
-\mathcal{F}_1 =
+\]</span> We have already computed in Example <a href="chap_4.html#example-cylinder-fff">102</a> and Example <a href="chap_4.html#example-cylinder-sff">139</a> that the first and second fundamental forms of <span class="math inline">\({\pmb{\sigma}}\)</span> are <span class="math display">\[
+\mathscr{F}_1 =
 \left(
 \begin{array}{cc}
 1 &amp; 0 \\
 0 &amp; 1
 \end{array}
 \right) \,, \quad
-\mathcal{F}_2 =
+\mathscr{F}_2 =
 \left(
 \begin{array}{cc}
 -1 &amp; 0 \\
@@ -4104,7 +4216,7 @@ H = \frac12 \, \operatorname{trace} \mathcal{W}=  0 \,.
 \end{array}
 \right) \,.
 \]</span> Therefore the matrix of the Weingarten map is <span class="math display">\[\begin{align*}
-\mathcal{W}&amp; = \mathcal{F}_1^{-1} \mathcal{F}_2 \\
+\mathcal{W}&amp; = \mathscr{F}_1^{-1} \mathscr{F}_2 \\
 &amp; =
 \left(
 \begin{array}{cc}
@@ -4126,15 +4238,232 @@ H = \frac12 \, \operatorname{trace} \mathcal{W}=  0 \,.
 \end{array}
 \right)  \,.
 \end{align*}\]</span> Therefore the Gaussian curvature is <span class="math display">\[
-K = \det \mathcal{W}= 0 \,,
+K = \det (\mathcal{W}) = 0 \,,
 \]</span> while the mean curvature is <span class="math display">\[
 H = \frac12 \, \operatorname{trace} \mathcal{W}=  - \frac12 \,.
 \]</span><p></p>
 </div></details>
 </div>
 </section>
-<section id="principal-curvatures" class="level3" data-number="4.12.6">
-<h3 data-number="4.12.6" class="anchored" data-anchor-id="principal-curvatures"><span class="header-section-number">4.12.6</span> Principal curvatures</h3>
+<section id="principal-curvatures" class="level3" data-number="4.13.2">
+<h3 data-number="4.13.2" class="anchored" data-anchor-id="principal-curvatures"><span class="header-section-number">4.13.2</span> Principal curvatures</h3>
+<p>We recall the definition of diagonalizable matrix.</p>
+<div id="Definition-161" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 161</strong></summary><div>Let <span class="math inline">\(A \in \mathbb{R}^{2 \times 2}\)</span>. We say that <span class="math inline">\(A\)</span> is <strong>diagonalizable</strong> if there exists a diagonal matrix <span class="math inline">\(D\)</span> and an invertible matrix <span class="math inline">\(P\)</span> such that <span class="math display">\[
+A = P^{-1} D P \,.
+\]</span><p></p>
+</div></details>
+</div>
+<p>Recall that <span class="math inline">\(\lambda \in \mathbb{R}\)</span> is an <strong>eigenvalue</strong> of <span class="math inline">\(A\)</span> with <strong>eigenvector</strong> <span class="math inline">\(\mathbf{v}\in \mathbb{R}^2\)</span> if <span class="math display">\[
+A \mathbf{v}= \lambda \mathbf{v}\,, \quad \mathbf{v}\neq 0 \,.
+\]</span> The eigenvalues of <span class="math inline">\(A\)</span> can be computed by solving the equation <span class="math display">\[
+P(\lambda) = 0 \,, \quad P(\lambda) := \det \left(  A - \lambda I  \right)  \,,
+\]</span> where <span class="math inline">\(P\)</span> is the <strong>characteristic polynomial</strong> of <span class="math inline">\(A\)</span>. The following linear algebra result says that symmetric matrices are diagonalizable.</p>
+<div id="theorem-diagonalizable" class="Theorem">
+<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 162</strong></summary><div>
+<p>Suppose <span class="math inline">\(A \in \mathbb{R}^{2 \times 2}\)</span> is symmetric. Then:</p>
+<ol type="1">
+<li><p>The equation <span class="math display">\[
+P(\lambda) = 0
+\]</span> admits two solutions <span class="math inline">\(\lambda, \mu \in \mathbb{R}\)</span>.</p></li>
+<li><p>There exist two linearly independent eigenvectors <span class="math display">\[
+\mathbf{v}= (v_1,v_2)\,, \quad  \mathbf{w}= (w_1,w_2) \,,
+\]</span> such that <span class="math display">\[
+A \mathbf{v}= \lambda \mathbf{v}\,, \quad A \mathbf{w}= \mu \mathbf{w}\,.
+\]</span></p></li>
+<li><p><span class="math inline">\(A\)</span> is diagonalizable, with <span class="math display">\[
+A = P^{-1} D P \,, \quad
+D =
+\left(
+\begin{array}{cc}
+\lambda &amp; 0 \\
+0   &amp; \mu
+\end{array}
+\right) \,, \quad
+P =
+\left(
+\begin{array}{cc}
+v_1 &amp; w_1 \\
+v_2   &amp; w_2
+\end{array}
+\right) \,.
+\]</span></p></li>
+</ol>
+</div></details>
+</div>
+<p>Therefore symmetric matrices are diagonalizable, with:</p>
+<ul>
+<li><span class="math inline">\(P\)</span> matrix of eigenvectors,</li>
+<li><span class="math inline">\(D\)</span> diagonal matrix of eigenvalues.</li>
+</ul>
+<p>We now prove that the Weingarten matrix is symmetric, and hence diagonalizable.</p>
+<div id="theorem-weingarten-diagonal" class="Theorem">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 163</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be an orientable surface and let <span class="math inline">\(\mathcal{W}\)</span> denote the matrix of the Weingarten map <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span> of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>. Then <span class="math inline">\(\mathcal{W}\)</span> admits eigenvalues <span class="math display">\[
+\kappa_1, \kappa_2 \in \mathbb{R}
+\]</span> and eigenvectors <span class="math display">\[
+\mathbf{t}_1 = (t_1^1,t_1^2), \quad
+\mathbf{t}_2 = (t_2^1,t_2^2), \quad
+\]</span> such that <span class="math display">\[
+\mathcal{W}\mathbf{t}_1 = \kappa_1 \mathbf{t}_1 \,, \quad
+\mathcal{W}\mathbf{t}_2 = \kappa_2 \mathbf{t}_2 \,.
+\]</span> In particular <span class="math inline">\(\mathcal{W}\)</span> is diagonalizable and <span class="math display">\[
+\mathcal{W}= P^{-1} D P \,, \quad
+D =
+\left(
+\begin{array}{cc}
+\kappa_1 &amp; 0 \\
+0   &amp; \kappa_2
+\end{array}
+\right) \,, \quad
+P =
+\left(
+\begin{array}{cc}
+t_1^1 &amp; t_2^2 \\
+t_1^2 &amp; t_2^2
+\end{array}
+\right) \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="Proof*-41" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>By Theorem <a href="chap_4.html#theorem-weingarten">154</a> <span class="math display">\[
+\mathcal{W}= \mathscr{F}_1^{-1} \mathscr{F}_2 \,.
+\]</span> We have that <span class="math display">\[
+\mathscr{F}_1^{-1} = \frac{1}{EG - F^2 }
+\left(
+\begin{array}{cc}
+G &amp; - F\\
+-F &amp; E
+\end{array}
+\right)  
+\]</span> showing that <span class="math inline">\(\mathcal{F}_1^{-1}\)</span> is symmetric. Since <span class="math inline">\(\mathcal{F}_2\)</span> is symmetric, and the product of symmetric matrices is symmetric, we conclude that <span class="math inline">\(\mathcal{W}\)</span> is symmetric. The thesis follows from Theorem <a href="chap_4.html#theorem-diagonalizable">162</a>.<p></p>
+</div></details>
+</div>
+<div id="Remark-164" class="Remark">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 164</strong></summary><div>If the Weingarten map has the form <span class="math display">\[
+\mathcal{W}=
+\left(
+\begin{array}{cc}
+\kappa_1 &amp; 0 \\
+0        &amp; \kappa_2
+\end{array}
+\right)
+\]</span> then <span class="math inline">\(\mathcal{W}\)</span> is already diagonal. The eigenvalues are <span class="math inline">\(\kappa_1\)</span> and <span class="math inline">\(\kappa_2\)</span>, with eigenvectors <span class="math display">\[
+\mathbf{t}_1 = \mathbf{e}_1 = (1,0) \,, \quad
+\mathbf{t}_2 = \mathbf{e}_2 = (0,1) \,.
+\]</span><p></p>
+</div></details>
+</div>
+<p>The eigenbvalues and eigenvectors of the weingarten map have a name.</p>
+<div id="principal-curvatures-and-vectors" class="Definition" title="Principal curvatures and vectors">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 165: </strong>Principal curvatures and vectors</summary><div>
+<p>Let <span class="math inline">\(\mathcal{S}\)</span> be an orientable surface and let <span class="math inline">\(\mathcal{W}\)</span> denote the matrix of the Weingarten map <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span> of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>. We define:</p>
+<ul>
+<li><p>The <strong>principal curvatures</strong> of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> as the eigenvalues <span class="math inline">\(\kappa_1, \kappa_2\)</span> of <span class="math inline">\(\mathcal{W}\)</span>.</p></li>
+<li><p>The <strong>principal vectors</strong> corresponding to <span class="math inline">\(\kappa_1\)</span> and <span class="math inline">\(\kappa_2\)</span> as the eigenvectors <span class="math inline">\(\mathbf{t_1}, \mathbf{t}_2\)</span>.</p></li>
+</ul>
+</div></details>
+</div>
+<p>The principal curvatures are related to the Gaussian and mean curvatures.</p>
+<div id="Proposition-166" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 166</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be an orientable surface. Then <span class="math display">\[
+K = \kappa_1 \kappa_2 \,, \quad H = \frac{\kappa_1 + \kappa_2}{2} \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="Proof*-42" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>By Theorem <a href="chap_4.html#theorem-weingarten-diagonal">163</a> we have <span class="math display">\[
+\mathcal{W}= P^{-1} D P \,, \quad
+D =
+\left(
+\begin{array}{cc}
+\kappa_1 &amp; 0 \\
+0        &amp; \kappa_2
+\end{array}
+\right) \,.
+\]</span> By the properties of determinant <span class="math display">\[
+\det \left(  A B \right) = \det (A) \det (B) \,, \quad \forall \, A,B \in \mathbb{R}^{2 \times 2} \,.
+\]</span> By definition of Gaussian curvature and the above formula we infer <span class="math display">\[\begin{align*}
+K &amp; = \det ( \mathcal{W}) \\
+  &amp; = \det \left( P^{-1} D P  \right) \\
+  &amp; = \det (P^{-1}) \det (D) \det (P) \\
+  &amp; = \det (D) \\
+  &amp; = \kappa_1 \kappa_2 \,,
+\end{align*}\]</span> where we also used that <span class="math display">\[
+\det(P^{-1}) = \frac{1}{\det(P)}  \,.
+\]</span> The trace satisfies <span class="math display">\[
+\operatorname{trace} \left(  A B \right) = \operatorname{trace} \left( BA \right) \,, \quad \forall \, A,B \in \mathbb{R}^{2 \times 2} \,.
+\]</span> By definition of mean curvature and the above formula we get <span class="math display">\[\begin{align*}
+H &amp; = \frac12 \operatorname{trace} (\mathcal{W}) \\
+  &amp; = \frac12 \operatorname{trace} \left( P^{-1} D P  \right) \\
+  &amp; = \frac12 \operatorname{trace} \left( P P^{-1} D  \right) \\
+  &amp; = \frac12 \operatorname{trace} \left( D  \right) \\
+  &amp; = \frac{1}{2} \left( \kappa_1  + \kappa_2 \right) \,,
+\end{align*}\]</span> concluding the proof.<p></p>
+</div></details>
+</div>
+<div id="Important*-43" class="Important">
+<p></p><details class="Important fbx-simplebox fbx-default" open=""><summary><strong>Important</strong></summary><div>In general <span class="math inline">\(\kappa_1\)</span> and <span class="math inline">\(\kappa_2\)</span> are hard to compute, as they require solving a second order equation. Instead <span class="math inline">\(K\)</span> and <span class="math inline">\(H\)</span> are easier to compute, as they are directly expressed in terms of the first and second fundamental form coefficients.<p></p>
+</div></details>
+</div>
+<div id="torus" class="Example" title="Torus">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 167: </strong>Torus</summary><div>Consider the torus charted by <span class="math display">\[
+{\pmb{\sigma}}(u,v) = \left( 3 \cos(u) \cos(v), 3 \cos(u) \sin(v), \sin(u) \right) \,.
+\]</span><p></p>
+<p><span class="math display">\[\begin{align*}
+{\pmb{\sigma}}_u &amp; = \left(   - 3 \sin(u) \cos(v), - 3 \sin(u) \sin(v)  , \cos(u)  \right) \\
+{\pmb{\sigma}}_v &amp; = \left(   - 3 \cos(u) \sin(v), 3 \cos(u) \cos(v)  , 0 \right) \\
+L &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_u = 9 \sin^2 (u)  + \cos^2 (u) = 8 \sin^2(u) + 1\\
+M &amp; = {\pmb{\sigma}}_u \cdot {\pmb{\sigma}}_v = 0 \\
+N &amp; = {\pmb{\sigma}}_v \cdot {\pmb{\sigma}}_v = 9 \cos^2 (u)   \\
+\end{align*}\]</span> So that <span class="math display">\[
+\mathscr{F}_1 =
+\left(   
+\begin{array}{cc}
+8 \sin^2(u) + 1   &amp;    0   \\
+0                         &amp; 9 \cos^2(u)
+\end{array}
+\right) \,.
+\]</span></p>
+</div></details>
+</div>
+</section>
+<section id="normal-and-geodesic-curvatures" class="level3" data-number="4.13.3">
+<h3 data-number="4.13.3" class="anchored" data-anchor-id="normal-and-geodesic-curvatures"><span class="header-section-number">4.13.3</span> Normal and geodesic curvatures</h3>
+<div id="Example-168" class="Example">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 168</strong></summary><div>
+<p>Consider the surface chart <span class="math display">\[
+{\pmb{\sigma}}(u, v) = \left(u-v, u+v, u^{2}+v^{2}\right) \,.
+\]</span> Show that <span class="math inline">\(\mathbf{p}= {\pmb{\sigma}}(1,0)\)</span> is an elliptic point.</p>
+<blockquote class="blockquote">
+<p><em>Solution.</em> In Example <a href="chap_4.html#example-weingarten-2">156</a> we have shown that the Weingarten matrix of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
+\mathcal{W}
+=
+\frac{1}{(1 + 2u^2 + 2v^2)^{\frac32}}
+\,\left(\begin{array}{ll}
+1 + 2v^2 &amp; -2uv \\
+- 2uv &amp; 1 + 2u^2
+\end{array}\right) \,.
+\]</span> For <span class="math inline">\(u=1\)</span> and <span class="math inline">\(v=1\)</span> we obtain <span class="math display">\[
+\mathcal{W}
+=
+\frac{1}{3^{\frac32}}
+\,\left(\begin{array}{ll}
+1  &amp; 0 \\
+0 &amp;  3
+\end{array}\right)
+=
+\left(\begin{array}{ll}
+3^{-\frac32}  &amp; 0 \\
+0 &amp;  3^{- \frac12}
+\end{array}\right) \,.
+\]</span> Therefore the principal curvatures at <span class="math inline">\(\mathbf{p}\)</span> are <span class="math display">\[
+\kappa_1 = 3^{-\frac32} \,, \quad
+\kappa_2 = 3^{-\frac12} \,. \quad
+\]</span> Since <span class="math inline">\(\kappa_1 &gt; 0\)</span> and <span class="math inline">\(\kappa_2 &gt; 0\)</span> we have that <span class="math inline">\(\mathbf{p}\)</span> is an elliptic point.</p>
+</blockquote>
+</div></details>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
