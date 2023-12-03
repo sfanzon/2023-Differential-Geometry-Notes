@@ -1015,4 +1015,16 @@
 
  [**Example 4.167**](#torus): Torus\Pageref{torus}
 
- [**Example 4.168**](#Example-4.168)\Pageref{Example-4.168}
+ [**Definition 4.168**](#Definition-4.168)\Pageref{Definition-4.168}
+
+ [**Theorem 4.169**](#Theorem-4.169)\Pageref{Theorem-4.169}
+
+ [**Theorem 4.170**](#Theorem-4.170)\Pageref{Theorem-4.170}
+
+ [**Theorem 4.171**](#Theorem-4.171)\Pageref{Theorem-4.171}
+
+ [**Example 4.172**](#Example-4.172)\Pageref{Example-4.172}
+
+ [**Definition 4.173**](#Definition-4.173)\Pageref{Definition-4.173}
+
+ [**Example 4.174**](#Example-4.174)\Pageref{Example-4.174}

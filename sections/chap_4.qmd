@@ -4561,7 +4561,7 @@ $$
 $$
 Since $\pmb{\alpha}_1 \cdot \pmb{\alpha}_2 = 0$, from the above we get
 $$
-\mu (\pp) = \scp{\pmb{\alpha}_1}{\pmb{\alpha}_2 } = 0 \,.
+\mu (\pp) = \scp{\pmb{\alpha}_1}{\pmb{\alpha}_2 }_f = 0 \,.
 $$
 Moreover, since $\pmb{\alpha}_1$ and $\pmb{\alpha}_2$ are orthonormal, 
 the angle between $\pmb{\alpha}_1$ and $\pmb{\alpha}_1 + \pmb{\alpha}_2$ is
@@ -4799,13 +4799,16 @@ $$
 
 1. They are equivalent:
 
-  - $\sss$ is a conformal parametrization.
+    - $\sss$ is a conformal parametrization.
 
-  - There exists a conformal map $f \colon \pi \to \sss(U) \subseteq \SSS$.
+    - There exists a conformal map $f \colon \pi \to \sss(U) \subseteq \SSS$.
 
 2. A conformal parametrization $\sss$ preserves angles between vectors,
-in the following sense: Suppose $\g_1, \g_2$ are curves in $\mathbb{R}^{2}$ and 
-consider the corresponding curves on $\SSS$ given by 
+in the following sense: Suppose $\g_1, \g_2$ are curves in $\mathbb{R}^{2}$ such that
+$$
+\g_1 (t_0) = \g_2 (t_0) \,.
+$$
+Consider the corresponding curves on $\SSS$ given by 
 $$
 \tg_1 := \sss \circ \g_1 \,, \quad \tg_2 = \sss \circ \g_2 \,.
 $$
@@ -5834,13 +5837,13 @@ Let $\pp \in \sss(U)$.
 
 2. It holds
 $$
-II_{\pp} (\vv,\ww) = (du (\vv), dv(\ww) )  \, 
+II_{\pp} (\vv,\ww) = (du (\vv), dv(\vv) )  \, 
 \left( 
 \begin{array}{cc}
 L & M \\
 M & N 
 \end{array}
-\right) \, (du(\vv) , dv(\ww))^T \,,
+\right) \, (du(\ww) , dv(\ww))^T \,,
 $$
 for all $\vv,\ww \in T_{\pp} \SSS$, where
 $$
@@ -5981,8 +5984,8 @@ By bilinearity of $II_{\pp}$ we infer
 {II}_{\pp} (\vv,\ww) & = \lambda_1 \lambda_2 \, II_{\pp}(\sss_u , \sss_u)  +  \lambda_1 \mu_2 \,  II_{\pp}(\sss_u , \sss_v) \\ 
 & \,\,\,\, + \lambda_2 \mu_1  \,  II_{\pp}(\sss_v , \sss_u)  + \mu_1 \mu_2 \,  II_{\pp}(\sss_v , \sss_v) \\
 & = du(\vv) du(\ww) \, II_{\pp}(\sss_u , \sss_u)  +  du(\vv) dv(\ww) \,  II_{\pp}(\sss_u , \sss_v) \\ 
-& \,\,\,\, + dv(\vv) du(\ww)  \,  II_{\pp}(\sss_v , \sss_u)  + dv(\vv) dv(\ww) \,  II_{\pp}(\sss_v , \sss_v) \\
-& = (du (\vv), dv(\ww) )  \, 
+& \,\,\,\, + dv(\vv) du(\vv)  \,  II_{\pp}(\sss_v , \sss_u)  + dv(\vv) dv(\ww) \,  II_{\pp}(\sss_v , \sss_v) \\
+& = (du (\ww), dv(\ww) )  \, 
 \left( 
 \begin{array}{cc}
 II_{\pp}(\sss_u , \sss_u) & II_{\pp}(\sss_u , \sss_v) \\
@@ -6164,16 +6167,35 @@ which reads
 $$
 \mathscr{F}_1 A = \mathscr{F}_2 \,.
 $$
-Now, recall that the first fundamental form is defined by 
+Now, notice that 
 $$
-\mathscr{F}_1 (\vv,\ww) = \vv \cdot \ww \,, \quad  \forall \, \vv , \ww \in T_{\pp} \SSS \,,
+\det \mathscr{F}_1 > 0 \,.
 $$
-which is a scalar product. Therefore the matrix $\mathscr{F}_1$ is positive definite, and
-in particular 
+
+> Indeed, recall Cauchy-Schwarz inequality:
 $$
-\det (\mathscr{F}_1) > 0 \,.
+\vv \cdot \vv \leq \| \vv \| \| \ww \| \,, \quad \forall \, \vv , \ww \in 
+\R^3 \,,
 $$
-This means $\mathscr{F}_1$ is invertible and 
+where the inequality is strict if and only if $\vv$ and $\ww$ are linearly independent. Since $\SSS$ is regular, we have that 
+$\sss_u$ and $\sss_v$ are linearly independent. Therefore by Cauchy-Schwarz 
+we have 
+$$
+\sss_u \cdot \sss_v  < \norm{ \sss_u } \norm{\sss_v} \,,
+$$
+and so, squaring both sides,
+$$
+\left( \sss_u \cdot \sss_v \right)^2 < \norm{ \sss_u }^2 \norm{\sss_v}^2 \,.
+$$
+Hence
+\begin{align*}
+\det (\mathscr{F}_1) & = EG-F^2 \\
+                     & =  \left(\sss_u \cdot \sss_u  \right) \left(\sss_v \cdot \sss_v  \right)  -  \left(\sss_u \cdot \sss_v \right)^2  \\
+                     & = \norm{ \sss_u }^2 \norm{\sss_v}^2 - \left(\sss_u \cdot \sss_v \right)^2 > 0 \,.
+\end{align*}
+
+
+In particular the matrix $\mathscr{F}_1$ is invertible and thus
 $$
 A = \mathscr{F}_1^{-1} \mathscr{F}_2 \,,
 $$
@@ -6519,6 +6541,16 @@ The matrix of the Weingarten map is
 ## Curvatures
 
 
+Curvatures of a surface $\SSS$ are scalars associated to the Weingarten 
+map $\WW_{\pp,\SSS}$. We will define:
+
+- Gaussian curvature
+- Mean curvature
+- Principal curvatures
+- Normal curvature
+- Geodesic curvature
+
+
 
 ### Gaussian and mean curvature
 
@@ -6819,7 +6851,7 @@ P(\lambda) = 0
 $$
 admits two solutions $\lambda, \mu \in \R$. 
 
-2. There exist two linearly independent eigenvectors
+2. There exist two orthonormal eigenvectors
 $$
 \vv = (v_1,v_2)\,, \quad  \ww = (w_1,w_2) \,,
 $$
@@ -6830,7 +6862,7 @@ $$
 
 3. $A$ is diagonalizable, with
 $$
-A = P^{-1} D P \,, \quad 
+A = P^{T} D P \,, \quad 
 D = 
 \left(
 \begin{array}{cc}
@@ -6941,7 +6973,7 @@ $$
 :::
 
 
-The eigenbvalues and eigenvectors of the weingarten map have a name.
+The eigenvalues and eigenvectors of the weingarten map have a name.
 
 
 ::: Definition
@@ -7030,35 +7062,186 @@ the first and second fundamental form coefficients.
 ::: Example
 ### Torus
 
-Consider the torus charted by
+Consider a circle $\mathcal{C}$ contained in the $xz$-plane, with center 
+at distance $b>0$ from the $z$-axis and radius $a$, with $0<a<b$. 
+The torus is obtained by rotating $\mathcal{C}$ around the $z$-axis. 
+This surface is charted by 
 $$
-\sss (u,v) = \left( 3 \cos(u) \cos(v), 3 \cos(u) \sin(v), \sin(u) \right) \,.
+\sss (\theta,\f) = \left( \left(a+b \cos(\theta) \right) \cos(\f), \left(a+b \cos(\theta) \right) \sin(\f), b\sin(\theta) \right) \,,
 $$
-
-
+where $\theta \in (-\pi/2,\pi/2)$ and $\f \in (0,2\pi)$.
+One can compute that the first and second fundamental forms are
 \begin{align*}
-\sss_u & = \left(   - 3 \sin(u) \cos(v), - 3 \sin(u) \sin(v)  , \cos(u)  \right) \\
-\sss_v & = \left(   - 3 \cos(u) \sin(v), 3 \cos(u) \cos(v)  , 0 \right) \\
-L & = \sss_u \cdot \sss_u = 9 \sin^2 (u)  + \cos^2 (u) = 8 \sin^2(u) + 1\\
-M & = \sss_u \cdot \sss_v = 0 \\
-N & = \sss_v \cdot \sss_v = 9 \cos^2 (u)   \\
-\end{align*}
-So that 
-$$
-\mathscr{F}_1 =
+\mathscr{F}_1 & =
 \left(   
 \begin{array}{cc}
-8 \sin^2(u) + 1   &    0   \\
-0                         & 9 \cos^2(u)
+b^2  &    0   \\
+0   & \left(a+b \cos(\theta) \right)^2 
+\end{array}
+\right)  \\
+\mathscr{F}_2 & =
+\left(   
+\begin{array}{cc}
+b  &    0   \\
+0   & \left(a+b \cos(\theta) \right) \cos(\theta)
+\end{array}
+\right) \,.
+\end{align*}
+Therefore the matrix of the Weingarten map is
+$$
+\WW = \mathscr{F}_1^{-1} \mathscr{F}_2 =
+\left(   
+\begin{array}{cc}
+\dfrac{1}{b}  &    0   \\
+0   & \dfrac{\cos(\theta)}{ a + b \cos(\theta)}
 \end{array}
 \right) \,.
 $$
+Since $\WW$ is diagonal, the eigenvalues are the diagonal entries. Therefore the principal curvatures are
+$$
+\kappa_1 = \frac{1}{b} \,, \quad 
+\kappa_2 = \dfrac{\cos(\theta)}{ a + b \cos(\theta)} \,.
+$$
+The Gaussian and mean curvature are
+\begin{align*}
+K & = \kappa_1 \kappa_2 = \dfrac{\cos(\theta)}{ b  \left(a + b \cos(\theta)\right)}  \\
+H & = \frac{\kappa_1 + \kappa_2}{2} =
+\dfrac{a + 2b \cos(\theta)}{2 b \left(a + b \cos(\theta)\right)}  
+\end{align*}
 :::
+
+
 
 
 
 ### Normal and geodesic curvatures
 
+
+
+
+
+\section*{Definition}
+
+::: Definition 
+
+Let $\sss$ be a chart for $\SSS$ and $\g \colon (a,b) \to \SSS$ a unit speed curve on $\SSS$. Then
+$$
+\ddg = \kappa_{n} \NN + \kappa_{g} (\NN \times \dg )
+$$
+for $\NN$ the standard unit normal to $\sss$. We say:
+
+- $\kappa_{n}$ is the **normal curvature**,
+- $\kappa_{g}$ is the **geodesic curvature**.
+
+:::
+
+
+::: Theorem
+
+Let $\sss$ be a chart for $\SSS$ and $\g \colon (a,b) \to \SSS$ a unit speed curve on $\SSS$. Then
+
+$$
+\kappa^{2}=\kappa_{n}^{2}+\kappa_{g}^{2}
+$$
+
+:::
+
+
+::: Theorem
+
+Let $\sss$ be a chart for $\SSS$. Then $\kappa_{1}$ and $\kappa_{2}$ are the minimum and maximum values of $\kappa_{n}$ for all unit speed curves on $S$.
+
+:::
+
+
+
+::: Theorem
+
+Let $\sss$ be a chart for $\SSS$ and 
+$$
+\g(t)=\sss(u(t), v(t))
+$$ 
+a unit speed curve on $\SSS$. Then
+$$
+\kappa_{n}=L \dot{u}^{2}+2 M \dot{u} \dot{v}+N \dot{v}^{2}
+$$
+
+:::
+
+
+::: Example
+
+Consider the chart for the sphere
+$$
+\sss(u, v)=(\cos (u) \sin (v), \sin (u) \sin (v), \cos (v))
+$$
+Show that the $\kappa_{n}(t)=1$ for all unit speed curves on the sphere.
+
+>*Solution.* We compute
+\begin{align*}
+L & =\sin ^{2}(v) \\
+M & =0 \\
+N & =1
+\end{align*}
+so that the normal curvature of a unit speed curve
+$$
+\g(t)=\sigma(u(t), v(t))
+$$ 
+is
+$$
+\kappa_{n}=\sin^{2}(v) \dot{u}^{2}+\dot{v}^{2}
+$$
+But $\g$ is unit speed, so that
+\begin{align*}
+1 & =  \|\dg\|^{2} \\
+  & =  \|(-\dot{u} \sin (u) \sin (v)+\dot{v} \cos (u) \cos (v), \dot{u} \cos (u) \sin (v)+ \\
+  & \qquad \dot{v} \sin (u) \cos (v),-\dot{v} \sin (v)) \|^{2} \\
+  & =  \dot{u} \sin^{2}(v)+\dot{v}^{2}
+\end{align*}
+Therefore
+$$
+\kappa_{n}=\sin^{2}(v) \dot{u}^{2}+\dot{v}^{2} = 1
+$$
+as required.
+
+
+:::
+
+
+
+### Point types
+
+
+
+::: Definition
+
+Let $\SSS$ be a surface. A point $\pp \in \SSS$ is
+
+
+- **Elliptic** if 
+$$
+\kappa_1(\pp) > 0 \quad \mbox{ and } \quad  \kappa_2(\pp) > 0
+$$
+
+- **Hyperbolic** if 
+$$
+\kappa_{1}(\mathbf{p})<0<\kappa_{2}(\mathbf{p})  \quad \mbox{or} \quad  \kappa_{1}(\mathbf{p})<0< \kappa_{2}(\mathbf{p})
+$$
+
+- **Parabolic** if 
+$$
+\kappa_{1}(\mathbf{p})=0 \, , \, \kappa_{2}(\mathbf{p}) \neq 0 \quad \mbox{ or } \quad \kappa_{1}(\mathbf{p}) \neq 0, \, \kappa_{2}(\mathbf{p})=0
+$$
+
+- **Planar** if 
+$$
+\kappa_{1}(\mathbf{p})=\kappa_{2}(\mathbf{p}) \neq 0
+$$
+
+
+- **Umbilical**
+
+:::
 
 
 
@@ -7097,9 +7280,9 @@ $$
 $$
 Therefore the principal curvatures at $\pp$ are
 $$
-\kappa_1 = 3^{-\frac32} \,, \quad
-\kappa_2 = 3^{-\frac12} \,. \quad
+\kappa_1(\pp) = 3^{-\frac32} \,, \quad
+\kappa_2(\pp) = 3^{-\frac12} \,. \quad
 $$
-Since $\kappa_1 > 0$ and $\kappa_2 > 0$ we have that $\pp$ is an elliptic point.
+Since $\kappa_1(\pp) > 0$ and $\kappa_2(\pp) > 0$ we have that $\pp$ is an elliptic point.
 
 :::
