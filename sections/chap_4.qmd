@@ -64,7 +64,7 @@ some basic notation and terminology regarding linear algebra, the topology of $\
 
 ### Linear algebra
 
-Before proceeding with the first fundamental form, we revise some linear algebra.
+
 
 ::: Definition
 ### Bilinear form
@@ -91,7 +91,29 @@ A bilinear map $B$ is called **bilinear form** on $V$.
 :::
 
 
+
+::: Notation
+
+Let $V$ be a vector space with basis $\{\vv_1,\ldots,\vv_n\}$. Then, for 
+a vector $\vv \in V$ there exist coefficients $\lambda_1, \ldots, \lambda_n$
+such that
+$$
+\vv = \lambda_1 \vv_1 +  \ldots  +\lambda_n \vv_n \,.
+$$
+We denote the vector of coefficients of $\vv$ by the column vector
+$$
+\xx := (\lambda_1, \ldots, \lambda_n)^T \in \R^n \,.
+$$
+The coefficients of a vector $\ww$ are denoted by
+$$
+\yy := (\mu_1 , \ldots, \mu_n )^T \,. 
+$$
+
+:::
+
+
 Bilinear forms can be represented by a matrix.
+
 
 
 ::: Remark
@@ -104,7 +126,7 @@ M := \left(  B(\vv_i,\vv_j) \right)_{i,j=1}^n \in \R^{n \times n} \,.
 $$
 Then 
 $$
-B(\vv,\ww) = \vv^T \,M \, \ww \,. 
+B(\vv,\ww) = \xx^T \,M \, \yy \,. 
 $$
 
 > *Proof.* We can write $\vv$ and $\ww$ in cordinates as
@@ -117,7 +139,7 @@ we get
 \begin{align*}
 B(\vv,\ww) & = B \left(  \sum_{i=1}^n \lambda_i \vv_i, \sum_{j=1}^n \mu_j \vv_j   \right) \\
            & = \sum_{i,j=1}^n \lambda_i \mu_j B(\vv_i,\vv_j) \\
-           & = \vv^T M \ww \,.
+           & = \xx^T M \yy \,.
 \end{align*}
 
 :::
@@ -221,7 +243,7 @@ for all $\vv,\ww \in V$ and $\lambda,\mu \in \R$.
 
 
 
-::: Proposition
+::: Remark
 ### Matrix representation of linear maps
 
 
@@ -230,10 +252,10 @@ Let $\{\vv_1, \ldots, \vv_n\}$ be a basis of $V$ and
 $\{ {\ww}_1 , \ldots, \ww_m\}$ be a basis of $W$. Then there exists a 
 matrix $M \in \R^{m \times n}$ such that
 $$
-L \vv = M \vv \,, \quad \forall \, \vv \in V \,. 
+L \vv = M \xx \,, \quad \forall \, \vv \in V \,. 
 $$
 Specifically, $M \in \R^{n \times n}$ is called the matrix associated to 
-$L$ with respect to the basis $\{\vv_1,\ldots,\vv_n\}$ of $V$ and $\{ww_1 \ldots,\ww_m\}$ of $W$, and is defined by 
+$L$ with respect to the basis $\{\vv_1,\ldots,\vv_n\}$ of $V$ and $\{\ww_1 \ldots,\ww_m\}$ of $W$, and is defined by 
 $$
 M := \left(  
 \begin{array}{ccc}
@@ -243,12 +265,29 @@ a_{m1} & \ldots & a_{mn}
 \end{array}
 \right) \,,
 $$
-where $a_{ij}$ are such that 
+where the coefficients $a_{ij}$ are such that 
 $$
-L(\vv_i) = a_{1i} \ww_1 + \ldots + a_{mi} \ww_m = \sum_{k=1}^m a_{ki} \ww_k  \,.
+L(\vv_j) = a_{1j} \ww_1 + \ldots + a_{mj} \ww_m = \sum_{i=1}^m a_{ij} \ww_i  \,.
 $$
-In other words, the columns of $M$ are given by the coordinates of the vectors $L(\vv_i)$ with respect to the basis $\{\ww_1, \ldots,\ww_m\}$.
+In other words, the columns of $M$ are given by the coordinates of the vectors $L(\vv_i)$ with respect to the basis $\{ \ww_1 , \ldots, \ww_m \}$.
 
+
+:::
+
+
+
+
+
+
+::: Definition
+### Eigenvalues and eigenvectors
+
+Let $V$ be a vector space and $L \colon V \to V$ a linear map.
+We say that $\lambda \in \R$ is an eigenvalue of $L$ if
+$$
+L(\vv) = \lambda \vv 
+$$
+for some $\vv \in V$ with $\vv \neq 0$. Such $\vv$ is called **eigenvector** of $L$ associated to the eigenvalue $\lambda$.
 
 :::
 
@@ -269,8 +308,9 @@ $$
 
 
 
+
 ::: Theorem
-### Spectral Theorem
+### Spectral Theorem   {#theorem-spectral}
 
 Let $V$ be a vector space, $\scp{\cdot}{\cdot}$ an inner product, and $L \colon V \to V$ a self-adjoint linear map. There exist an orthonormal 
 basis of $V$
@@ -300,7 +340,8 @@ $$
 
 
 
-There is also a matrix version of the spectral theorem.
+There is also a matrix version of the spectral theorem. To state it,
+we need to introduce some terminology.
 
 
 ::: Definition
@@ -322,18 +363,62 @@ where $I$ is the identity matrix.
 
 
 
+::: {.Remark  #remark-self-adoint}
+
+Let $L \colon V \to V$ be linear and $A \in \R^{n \times n}$ be the matrix
+associated to $L$ with respect to any basis $\{\vv_1,\ldots,\vv_n\}$ of
+$V$. They are equivalent:
+
+- $L$ is self-adjoint,
+- $A$ is symmetric.
+
+:::
+
+
+
 
 ::: Definition
 ### Matrix eigenvalues
 
 Let $A \in \R^{n \times n}$ be a matrix. An **eigenvalue** of $A$ is a number $\lambda \in \R$ such that 
 $$
-\det ( A - \lambda I  ) = 0 \,,
+A \vv = \lambda \vv \,,
 $$
-where $I$ is the identity matrix. An **eigenvector** of $A$ with eigenvalue $\lambda$ is a vector $\vv \neq 0$ such that
+for some $\vv \in \R^n$ with $\vv \neq 0$. The vector $\vv$ is called an **eigenvector** of $A$ with eigenvalue $\lambda$.
+
+:::
+
+
+
+
+::: Remark
+
+Let $A \in \R^{n \times n}$. The eigenvalues of $\lambda$ of $A$ can be computed by
+solving the **characteristic equation**
 $$
-A \vv = \lambda \vv \,.
+P(\lambda) = 0 \,,
 $$
+where $P$ is the **characteristic polynomial** of $A$, defined by
+$$
+P(\lambda) := \det ( A - \lambda I  ) \,.
+$$
+
+:::
+
+
+
+::: Remark 
+
+Let $L \colon V \to V$ be a linear map and $A$ the associated matrix 
+with respect to any basis of $V$. Then
+$$
+L(\vv) = A \xx \,, \quad \, \forall \, \vv \in V\,,
+$$
+where $\xx \in \R^n$ is the vector of coordinates of $\vv$.
+They are equivalent:
+
+- $\lambda$ is an eigenvalue of $L$ of eigenvector $\vv$,
+- $\lambda$ is an eigenvalue of $A$ of eigenvector $\xx$.
 
 :::
 
@@ -341,7 +426,7 @@ $$
 
 
 ::: Theorem
-### Spectral Theorem for matrices
+### Spectral Theorem for matrices {#theorem-spectral-matrix}
 
 Let $A \in \R^{n \times n}$ be a symmetric matrix. Consider $\R^n$ equipped with the euclidean scalar product. There exist an orthonormal 
 basis of $V$
@@ -372,6 +457,35 @@ D & := \operatorname{diag} (\lambda_1,\ldots, \lambda_n)  =
 
 
 :::
+
+
+
+::: Remark
+
+The corresponedence between Theorem \ref{theorem-spectral} and Theorem
+\ref{theorem-spectral-matrix} is as follows. Let $A \in \R^{n \times n}$ be symmetric and $\{\ww_1, \ldots, \ww_n\}$ be any orthonormal basis
+of the vector space $V$. Define the linear map $L \colon V \to V$
+such that
+$$
+L(\vv_j) =  \sum_{i=1}^n a_{ij} \ww_i  \,, \quad \forall \, j =1 , \ldots , n \, .
+$$
+In this way $A$ is the matrix associated to $L$ with respect to the 
+basis $\{\ww_1, \ldots, \ww_n\}$. Then 
+$L$ is self-adjoint. Moreover $L$ and $A$ have the same eigenvalues. 
+By the Spectral Theorem there exists an orthonormal basis $\{\vv_1,\ldots, \vv_n\}$ of $V$ such that the matrix of $L$ with respect to such basis, say $D$, is
+diagonal. Then 
+$$
+A = P D P^T 
+$$
+where $P$ is the matrix of change of basis between $\{\ww_1, \ldots, \ww_n\}$
+and $\{\vv_1, \ldots, \vv_n\}$, that is, $P = (p_{ij})$ where
+$$
+\ww_j = \sum_{i=1}^n p_{ij} \vv_i \,.
+$$
+
+
+:::
+
 
 
 
@@ -6599,6 +6713,20 @@ $$
 :::
 
 
+::: Remark
+
+The Gaussian curvature and mean curvature do not depend on the choice of basis of $T_{\pp} \SSS$. Indeed, if $\widetilde{\WW}$ is the 
+matrix of the Weingarten map with respect to the basis $\{\widetilde{\sss}_u,\widetilde{\sss}_v\}$ of $T_{\pp} \SSS$, then 
+$$
+\det (\WW) = \det (\widetilde{\WW}) \,, \quad 
+\operatorname{trace} (\WW) = \operatorname{trace} (\widetilde{\WW}) \,.
+$$
+
+> The above is true by a general linear algebra result: The determinant and trace of a matrix are invariant under change of basis.
+
+:::
+
+
 Since we have shown that the matrix of the Weingarten map is
 $$
 \WW = \mathscr{F}_1^{-1} \mathscr{F}_2 \,,
@@ -6749,7 +6877,7 @@ $$
 
 
 ::: Example
-### Unit cylinder
+### Unit cylinder  {#example-cylinder-curvatures}
 
 Consider the unit cylinder charted by
 $$
@@ -6815,100 +6943,102 @@ $$
 
 ### Principal curvatures
 
-
-We recall the definition of diagonalizable matrix. 
-
-::: Definition
-
-Let $A \in \R^{2 \times 2}$. We say that $A$ is **diagonalizable** if there exists a 
+Let $V$ be a two-dimensional vector space.
+For a linear map $L \colon V \to V$ we say that $\lambda \in \R$ is an **eigenvalue** of $L$ with **eigenvector** $\vv \in V$ if
+$$
+L(\vv)  = \lambda \vv \,, \quad \vv \neq 0 \,.
+$$
+Suppose $A \in \R^{2 \times 2}$ is the matrix of $L$ with respect to a basis $\{\vv_1,\vv_2\}$
+of $V$. Denote by 
+$$
+\xx= (\lambda,\mu) \,, \quad 
+\vv = \lambda \ww_1 + \mu \ww_2 \,.
+$$ 
+the vector of coordinates of $\vv$. Then
+$$
+A\vv = \lambda \vv \,,
+$$
+meaning that $\lambda$ is an eigenvalue of $A$ with eigenvector $\xx$.
+The eigenvalues of $A$ can be computed by solving the **characteristic equation**
+$$
+P(\lambda) = 0 \,, \quad P(\lambda) := \det \left(  A - \lambda I  \right)  \,,
+$$
+where $P$ is the **characteristic polynomial** of $A$. Finally, we recall that $A \in \R^{2 \times 2}$ is **diagonalizable** if there exists a 
 diagonal matrix $D$ and an invertible matrix $P$ such that
 $$
 A = P^{-1} D P \,.
 $$
 
-:::
-
-Recall that $\lambda \in \R$ is an **eigenvalue** of $A$ with **eigenvector** $\vv \in \R^2$ if
-$$
-A \vv = \lambda \vv \,, \quad \vv \neq 0 \,.
-$$
-The eigenvalues of $A$ can be computed by solving the equation
-$$
-P(\lambda) = 0 \,, \quad P(\lambda) := \det \left(  A - \lambda I  \right)  \,,
-$$
-where $P$ is the **characteristic polynomial** of $A$. 
-The following linear algebra result says that symmetric matrices are diagonalizable.
-
-
-
-::: {.Theorem #theorem-diagonalizable}
-
-Suppose $A \in \R^{2 \times 2}$ is symmetric. Then:
-
-1. The equation 
-$$
-P(\lambda) = 0
-$$
-admits two solutions $\lambda, \mu \in \R$. 
-
-2. There exist two orthonormal eigenvectors
-$$
-\vv = (v_1,v_2)\,, \quad  \ww = (w_1,w_2) \,,
-$$
-such that
-$$
-A \vv = \lambda \vv \,, \quad A \ww = \mu \ww \,.
-$$
-
-3. $A$ is diagonalizable, with
-$$
-A = P^{T} D P \,, \quad 
-D = 
-\left(
-\begin{array}{cc}
-\lambda & 0 \\
-0   & \mu
-\end{array}
-\right) \,, \quad 
-P = 
-\left(
-\begin{array}{cc}
-v_1 & w_1 \\
-v_2   & w_2
-\end{array}
-\right) \,.
-$$
-
-:::
-
-
-Therefore symmetric matrices are diagonalizable, with:
-
-- $P$ matrix of eigenvectors,
-- $D$ diagonal matrix of eigenvalues. 
-
-We now prove that the Weingarten matrix is symmetric, and hence diagonalizable.
 
 
 ::: {.Theorem  #theorem-weingarten-diagonal}
 
-Let $\SSS$ be an orientable surface and let $\WW$ denote the matrix of
-the Weingarten map $\WW_{\pp,\SSS}$ of $\SSS$ at $\pp$. Then $\WW$ admits 
-eigenvalues 
+Let $\SSS$ be an orientable surface and let $\WW_{\pp,\SSS}$ be the 
+Weingarten map at $\pp$. There exist scalars $\kappa_1, \kappa_2 \in \R$ and a basis 
+$\{\mathbf{t}_1,\mathbf{t}_2\}$ of $T_{\pp} \SSS$ such that 
 $$
-\kappa_1, \kappa_2 \in \R
-$$ 
-and eigenvectors 
+\WW_{\pp,\SSS} (\mathbf{t}_1) = \kappa_1 \mathbf{t}_1 \,, 
+\quad \WW_{\pp,\SSS} (\mathbf{t}_2) = \kappa_2 \mathbf{t}_2 \,.
 $$
-\mathbf{t}_1 = (t_1^1,t_1^2), \quad 
-\mathbf{t}_2 = (t_2^1,t_2^2), \quad 
+
+
+:::
+
+
+
+
+::: Proof
+
+Let $\{\sss_u,\sss_v\}$ be a basis of $T_{\pp} \SSS$ and let $\WW$ be 
+the matrix of $\WW_{\pp,\SSS}$ with respect to such basis.
+By Theorem \ref{theorem-weingarten} we have
 $$
-such that
+\WW = \mathscr{F}_1^{-1} \mathscr{F}_2 \,. 
 $$
-\WW \mathbf{t}_1 = \kappa_1 \mathbf{t}_1 \,, \quad 
-\WW \mathbf{t}_2 = \kappa_2 \mathbf{t}_2 \,. 
+Recall that
 $$
-In particular $\WW$ is diagonalizable and
+\mathscr{F}_1^{-1} = \frac{1}{EG - F^2 }
+\left( 
+\begin{array}{cc}
+G & - F\\
+-F & E
+\end{array}
+\right)  \,.
+$$
+Thus $\mathcal{F}_1^{-1}$ is symmetric. Since $\mathcal{F}_2$ is symmetric, and the product
+of symmetric matrices is symmetric, we conclude that $\WW$ is symmetric. 
+Therefore $\WW_{\pp,\SSS}$ is self-adjoint, see Remark \ref{remark-self-adoint}. The thesis now follows from the Spectral Theorem, see Theorem \ref{theorem-spectral}.
+
+:::
+
+
+The matrix version of Theorem \ref{theorem-weingarten-diagonal} is given in the following Corollary.
+
+
+::: {.Corollary #corollary-weingarten-diagonal}
+
+Let $\SSS$ be orientable, and let $\WW$ the matrix of the Weingarten map $\WW_{\pp,\SSS}$
+with respect to the basis $\{\sss_u,\sss_v\}$ of $T_{\pp}\SSS$, where $\sss$ is a regular chart at $\pp$. Let $\kappa_1,\kappa_2,\mathbf{t}_1,\mathbf{t}_2$ be as in Theorem \ref{theorem-weingarten-diagonal}.
+Let $\lambda_1, \lambda_2, \mu_1, \mu_2 \in \R$ be such that
+$$
+\mathbf{t}_1 = \lambda_1 \sss_u + \mu_1 \sss_v \,, \quad 
+\mathbf{t}_2 = \lambda_2 \sss_u + \mu_2 \sss_v \,.
+$$
+and denote 
+$$
+\xx_1 = (\lambda_1,\mu_1) \,, \quad 
+\xx_2 = (\lambda_2,\mu_2) \,.
+$$
+They hold:
+
+- The scalars $\kappa_1,\kappa_2$ are eingenvalues of $\WW$ of eigenvectors
+$\xx_1$ and $\xx_2$, that is,
+$$
+\WW \xx_1 = \kappa_1 \xx_1 \,, \quad 
+\WW \xx_2 = \kappa_2 \xx_2 \,.
+$$
+
+- The matrix $\WW$ is diagonalizable, with 
 $$
 \WW = P^{-1} D P \,, \quad 
 D = 
@@ -6921,40 +7051,33 @@ D =
 P = 
 \left(
 \begin{array}{cc}
-t_1^1 & t_2^2 \\
-t_1^2 & t_2^2
+\lambda_1 & \lambda_2 \\
+\mu_1 & \mu_2
 \end{array}
 \right) \,.
 $$
+
 
 :::
 
 
 ::: Proof
 
-By Theorem \ref{theorem-weingarten}
+Since 
 $$
-\WW = \mathscr{F}_1^{-1} \mathscr{F}_2 \,. 
+\WW_{\pp,\SSS} (\mathbf{t}_1) = \WW \xx_1 \,, \quad
+\WW_{\pp,\SSS} (\mathbf{t}_2) = \WW \xx_2 \,,
 $$
-We have that
-$$
-\mathscr{F}_1^{-1} = \frac{1}{EG - F^2 }
-\left( 
-\begin{array}{cc}
-G & - F\\
--F & E
-\end{array}
-\right)  
-$$
-showing that $\mathcal{F}_1^{-1}$ is symmetric. Since $\mathcal{F}_2$ is symmetric, and the product
-of symmetric matrices is symmetric, we conclude that $\WW$ is symmetric. The thesis follows from Theorem \ref{theorem-diagonalizable}.
+the thesis follows by Theorem \ref{theorem-weingarten-diagonal} and the
+Spectral Theorem for matrices, see Theorem \ref{theorem-spectral-matrix}.
 
 :::
 
 
+
 ::: Remark
 
-If the Weingarten map has the form
+If the matrix of the Weingarten map has the form
 $$
 \WW = 
 \left(
@@ -6964,10 +7087,15 @@ $$
 \end{array}
 \right)
 $$
-then $\WW$ is already diagonal. The eigenvalues are $\kappa_1$ and $\kappa_2$, with eigenvectors
+then $\WW$ is already diagonal. The eigenvalues of $\WW$ are $\kappa_1$ and $\kappa_2$, with eigenvectors
 $$
-\mathbf{t}_1 = \mathbf{e}_1 = (1,0) \,, \quad 
-\mathbf{t}_2 = \mathbf{e}_2 = (0,1) \,. 
+\xx_1 = (1,0) \,, \quad 
+\xx_2 = (0,1) \,. 
+$$
+Since $\WW$ is the matrix of the Weingarten map with respect to the
+basis $\{\sss_u,\sss_v\}$ of $T_{\pp} \SSS$, the above means
+$$
+\mathbf{t}_1 = \sss_u \,, \quad \mathbf{t}_2 = \sss_v \,.
 $$
 
 :::
@@ -6979,13 +7107,12 @@ The eigenvalues and eigenvectors of the weingarten map have a name.
 ::: Definition
 ### Principal curvatures and vectors
 
-Let $\SSS$ be an orientable surface and let $\WW$ denote the matrix of
-the Weingarten map $\WW_{\pp,\SSS}$ of $\SSS$ at $\pp$. We define:
+Let $\SSS$ be an orientable surface and $\WW_{\pp,\SSS}$ be the Weingarten map of $\SSS$ at $\pp$. We define:
 
-- The **principal curvatures** of $\SSS$ at $\pp$ as the eigenvalues $\kappa_1, \kappa_2$
-of $\WW$.
+- The **principal curvatures** of $\SSS$ at $\pp$ are the eigenvalues $\kappa_1, \kappa_2$
+of $\WW_{\pp,\SSS}$.
 
-- The **principal vectors** corresponding to $\kappa_1$ and $\kappa_2$ as the eigenvectors $\mathbf{t_1}, \mathbf{t}_2$.
+- The **principal vectors** corresponding to $\kappa_1$ and $\kappa_2$ are the eigenvectors $\mathbf{t_1}, \mathbf{t}_2$.
 
 :::
 
@@ -7060,6 +7187,49 @@ the first and second fundamental form coefficients.
 
 
 ::: Example
+### Unit Cylinder
+
+
+Consider the unit cylinder charted by
+$$
+\sss (u,v) = (\cos(u), \sin(u), v) \,, \quad u \in (0,2\pi)\,, \, v \in \R \,.
+$$
+We have already computed in Example \ref{example-cylinder-curvatures} that the matrix of the Weingarten map is
+$$
+\WW =
+\left(
+\begin{array}{cc}
+-1 & 0 \\
+0 & 0
+\end{array}
+\right)  \,.
+$$
+Since $\WW$ is diagonal, the eigenvalues are the diagonal entries of $\WW$ and
+eigenvectors are 
+$$
+\xx_1 = (1,0), \quad \xx_2 = (0,1) \,.
+$$
+Therefore the principal curvatures are 
+$$
+\kappa_1 = - 1 \,, \quad \kappa_2 = 0
+$$
+and the principal vectors are
+\begin{align*}
+\mathbf{t}_1 & = \sss_u = (-\sin(u),\cos(v),0) \,, \quad 
+\mathbf{t}_2 & = \sss_v = (0,0,1)\,,
+\end{align*}
+as shown in @fig-cylinder-principal.
+
+:::
+
+
+
+![Principal vectors of the unit cylinder.](/images/sff_principal_cylinder.png){#fig-cylinder-principal width=70%}
+
+
+
+
+::: Example
 ### Torus
 
 Consider a circle $\mathcal{C}$ contained in the $xz$-plane, with center 
@@ -7097,10 +7267,20 @@ $$
 \end{array}
 \right) \,.
 $$
-Since $\WW$ is diagonal, the eigenvalues are the diagonal entries. Therefore the principal curvatures are
+Since $\WW$ is diagonal, the eigenvalues are the diagonal entries of $\WW$ and
+eigenvectors are 
+$$
+\xx_1 = (1,0)\,, \quad \xx_2 = (0,1) \,.
+$$
+Therefore the principal curvatures are
 $$
 \kappa_1 = \frac{1}{b} \,, \quad 
-\kappa_2 = \dfrac{\cos(\theta)}{ a + b \cos(\theta)} \,.
+\kappa_2 = \dfrac{\cos(\theta)}{ a + b \cos(\theta)} \,,
+$$
+and the principal vectors
+$$
+\mathbf{t}_1 = \sss_u \,, \quad 
+\mathbf{t}_2 = \sss_v \,.
 $$
 The Gaussian and mean curvature are
 \begin{align*}
@@ -7108,7 +7288,101 @@ K & = \kappa_1 \kappa_2 = \dfrac{\cos(\theta)}{ b  \left(a + b \cos(\theta)\righ
 H & = \frac{\kappa_1 + \kappa_2}{2} =
 \dfrac{a + 2b \cos(\theta)}{2 b \left(a + b \cos(\theta)\right)}  
 \end{align*}
+
 :::
+
+
+
+
+### Local shape of a surface
+
+
+The principal curvatures allow to study the local shape of
+a surface $\SSS$ at a point $\pp$. We distinguish between $4$
+shapes.
+
+
+
+
+::: Definition
+### Local shape types
+
+Let $\SSS$ be a regular surface. A point $\pp \in \SSS$ is
+
+
+- **Elliptic** if 
+$$
+\kappa_1(\pp) > 0 \,, \, \kappa_2(\pp) > 0 \quad \mbox{ or } \quad  \kappa_1(\pp) < 0 \,, \, \kappa_2(\pp) < 0 
+$$
+
+- **Hyperbolic** if 
+$$
+\kappa_{1}(\mathbf{p})<0<\kappa_{2}(\mathbf{p})  \quad \mbox{ or } \quad  \kappa_{1}(\mathbf{p})<0< \kappa_{2}(\mathbf{p})
+$$
+
+- **Parabolic** if 
+$$
+\kappa_{1}(\mathbf{p})=0 \, , \, \kappa_{2}(\mathbf{p}) \neq 0 \quad \mbox{ or } \quad \kappa_{1}(\mathbf{p}) \neq 0, \, \kappa_{2}(\mathbf{p})=0
+$$
+
+- **Planar** if 
+$$
+\kappa_{1}(\mathbf{p})=\kappa_{2}(\mathbf{p}) = 0
+$$
+
+
+In addition we say that $\pp$ is **umbilic** if 
+$$
+\kappa_{1}(\mathbf{p})=\kappa_{2}(\mathbf{p}) \,.
+$$
+In such case $\pp$ might be **planar** or **elliptic**.
+
+:::
+
+
+
+::: Example
+
+Consider the surface chart
+$$
+\sss (u, v) = \left(u-v, u+v, u^{2}+v^{2}\right) \,.
+$$
+Show that $\pp = \sss(1,0)$ is an elliptic point.
+
+> *Solution.* In Example \ref{example-weingarten-2} we have shown that the Weingarten matrix of $\sss$ is
+$$
+\WW 
+ = 
+\frac{1}{(1 + 2u^2 + 2v^2)^{\frac32}}
+\,\left(\begin{array}{ll}
+1 + 2v^2 & -2uv \\
+- 2uv & 1 + 2u^2
+\end{array}\right) \,.
+$$
+For $u=1$ and $v=1$ we obtain
+$$
+\WW 
+ = 
+\frac{1}{3^{\frac32}}
+\,\left(\begin{array}{ll}
+1  & 0 \\
+0 &  3
+\end{array}\right)
+=
+\left(\begin{array}{ll}
+3^{-\frac32}  & 0 \\
+0 &  3^{- \frac12}
+\end{array}\right) \,.
+$$
+Therefore the principal curvatures at $\pp$ are
+$$
+\kappa_1(\pp) = 3^{-\frac32} \,, \quad
+\kappa_2(\pp) = 3^{-\frac12} \,. \quad
+$$
+Since $\kappa_1(\pp) > 0$ and $\kappa_2(\pp) > 0$ we have that $\pp$ is an elliptic point.
+
+:::
+
 
 
 
@@ -7117,10 +7391,6 @@ H & = \frac{\kappa_1 + \kappa_2}{2} =
 ### Normal and geodesic curvatures
 
 
-
-
-
-\section*{Definition}
 
 ::: Definition 
 
@@ -7208,81 +7478,3 @@ as required.
 :::
 
 
-
-### Point types
-
-
-
-::: Definition
-
-Let $\SSS$ be a surface. A point $\pp \in \SSS$ is
-
-
-- **Elliptic** if 
-$$
-\kappa_1(\pp) > 0 \quad \mbox{ and } \quad  \kappa_2(\pp) > 0
-$$
-
-- **Hyperbolic** if 
-$$
-\kappa_{1}(\mathbf{p})<0<\kappa_{2}(\mathbf{p})  \quad \mbox{or} \quad  \kappa_{1}(\mathbf{p})<0< \kappa_{2}(\mathbf{p})
-$$
-
-- **Parabolic** if 
-$$
-\kappa_{1}(\mathbf{p})=0 \, , \, \kappa_{2}(\mathbf{p}) \neq 0 \quad \mbox{ or } \quad \kappa_{1}(\mathbf{p}) \neq 0, \, \kappa_{2}(\mathbf{p})=0
-$$
-
-- **Planar** if 
-$$
-\kappa_{1}(\mathbf{p})=\kappa_{2}(\mathbf{p}) \neq 0
-$$
-
-
-- **Umbilical**
-
-:::
-
-
-
-::: Example
-
-Consider the surface chart
-$$
-\sss (u, v) = \left(u-v, u+v, u^{2}+v^{2}\right) \,.
-$$
-Show that $\pp = \sss(1,0)$ is an elliptic point.
-
-> *Solution.* In Example \ref{example-weingarten-2} we have shown that the Weingarten matrix of $\sss$ is
-$$
-\WW 
- = 
-\frac{1}{(1 + 2u^2 + 2v^2)^{\frac32}}
-\,\left(\begin{array}{ll}
-1 + 2v^2 & -2uv \\
-- 2uv & 1 + 2u^2
-\end{array}\right) \,.
-$$
-For $u=1$ and $v=1$ we obtain
-$$
-\WW 
- = 
-\frac{1}{3^{\frac32}}
-\,\left(\begin{array}{ll}
-1  & 0 \\
-0 &  3
-\end{array}\right)
-=
-\left(\begin{array}{ll}
-3^{-\frac32}  & 0 \\
-0 &  3^{- \frac12}
-\end{array}\right) \,.
-$$
-Therefore the principal curvatures at $\pp$ are
-$$
-\kappa_1(\pp) = 3^{-\frac32} \,, \quad
-\kappa_2(\pp) = 3^{-\frac12} \,. \quad
-$$
-Since $\kappa_1(\pp) > 0$ and $\kappa_2(\pp) > 0$ we have that $\pp$ is an elliptic point.
-
-:::
