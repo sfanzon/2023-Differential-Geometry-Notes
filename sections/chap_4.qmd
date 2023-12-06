@@ -6099,13 +6099,13 @@ By bilinearity of $II_{\pp}$ we infer
 & \,\,\,\, + \lambda_2 \mu_1  \,  II_{\pp}(\sss_v , \sss_u)  + \mu_1 \mu_2 \,  II_{\pp}(\sss_v , \sss_v) \\
 & = du(\vv) du(\ww) \, II_{\pp}(\sss_u , \sss_u)  +  du(\vv) dv(\ww) \,  II_{\pp}(\sss_u , \sss_v) \\ 
 & \,\,\,\, + dv(\vv) du(\vv)  \,  II_{\pp}(\sss_v , \sss_u)  + dv(\vv) dv(\ww) \,  II_{\pp}(\sss_v , \sss_v) \\
-& = (du (\ww), dv(\ww) )  \, 
+& = (du (\vv), dv(\vv) )  \, 
 \left( 
 \begin{array}{cc}
 II_{\pp}(\sss_u , \sss_u) & II_{\pp}(\sss_u , \sss_v) \\
 II_{\pp}(\sss_v , \sss_u) & II_{\pp}(\sss_v , \sss_v) 
 \end{array}
-\right) \, (du(\vv) , dv(\ww))^T \,.
+\right) \, (du(\ww) , dv(\ww))^T \,.
 \end{align*}
 By Lemma \ref{lemma-weingarten} and Lemma \ref{lemma-normal-derivatives} we have
 $$
@@ -6974,7 +6974,7 @@ $$
 ::: {.Theorem  #theorem-weingarten-diagonal}
 
 Let $\SSS$ be an orientable surface and let $\WW_{\pp,\SSS}$ be the 
-Weingarten map at $\pp$. There exist scalars $\kappa_1, \kappa_2 \in \R$ and a basis 
+Weingarten map at $\pp$. There exist scalars $\kappa_1, \kappa_2 \in \R$ and an orthonormal basis 
 $\{\mathbf{t}_1,\mathbf{t}_2\}$ of $T_{\pp} \SSS$ such that 
 $$
 \WW_{\pp,\SSS} (\mathbf{t}_1) = \kappa_1 \mathbf{t}_1 \,, 
@@ -6989,7 +6989,7 @@ $$
 
 ::: Proof
 
-Let $\{\sss_u,\sss_v\}$ be a basis of $T_{\pp} \SSS$ and let $\WW$ be 
+Let $\sss$ be a chart for $\SSS$ at $\pp$. Then $\{\sss_u,\sss_v\}$ is a basis of $T_{\pp} \SSS$. Let $\WW$ be 
 the matrix of $\WW_{\pp,\SSS}$ with respect to such basis.
 By Theorem \ref{theorem-weingarten} we have
 $$
@@ -7230,6 +7230,122 @@ as shown in @fig-cylinder-principal.
 
 
 ::: Example
+### Sphere  {#example-sphere-principal}
+
+Consider the chart for the sphere
+$$
+\sss(u, v)=(\cos (u) \sin (v), \sin (u) \sin (v), \cos (v))
+$$
+Prove that 
+$$
+\mathcal{F}_1 =
+\mathcal{F}_2 = 
+\left( 
+\begin{array}{cc}
+\sin^2(v) & 0 \\
+0         & 1 
+\end{array}
+\right) \,, \quad 
+\WW = 
+\left( 
+\begin{array}{cc}
+1 & 0 \\
+0 & 1 
+\end{array}
+\right) \,,
+$$
+and
+$$
+K = H = \kappa_1 = \kappa_2 =1 \,, \quad \mathbf{t}_1 = \sss_u \,, \quad
+\mathbf{t}_2 = \sss_v \,.
+$$ 
+
+
+>*Solution.* We compute
+\begin{align*}
+\sss_u & = (-\sin(u)\sin(v), \cos(u)\sin(v),0) \\
+\sss_v & = (\cos(u)\cos(v), \sin(u)\cos(v), - \sin(v)) \\
+E & = \sss_u \cdot \sss_u = \sin^2(v) \\
+F & = \sss_u \cdot \sss_v = 0\\
+G & = \sss_v \cdot \sss_v = 1
+\end{align*}
+and therefore the first fundamental form is
+$$
+\mathcal{F}_1 = 
+\left( 
+\begin{array}{cc}
+\sin^2(v) & 0 \\
+0         & 1 
+\end{array}
+\right) \,.
+$$
+Moreover 
+\begin{align*}
+\sss_u \times \sss_v & = 
+\left| 
+\begin{array}{ccc}
+\ii & \jj & \kk \\
+-\sin(u)\sin(v)  & \cos(u)\sin(v) & 0 \\
+\cos(u)\cos(v) & \sin(u)\cos(v) & - \sin(v)
+\end{array}
+\right| \\
+& = (-\cos(u)\sin^2(v), 
+-\sin(u) \sin^2(v),
+- \cos(v)\sin(v)) \\
+\| \sss_u \times \sss_v \| & = |\sin(v)| \\
+\NN & = (- \cos(u) \sin(v), -\sin(u)\sin(v), -\cos(v) ) \\
+\sss_{uu} & = (-\cos(u)\sin(v), -\sin(u)\sin(v), 0 ) \\ 
+\sss_{uv} & = (-\sin(u)\cos(v), \cos(u)\cos(v), 0 ) \\
+\sss_{vv} & = (-\cos(u)\sin(v), -\sin(u)\sin(v), -\cos(v) ) \\ 
+L & = \sss_{uu} \cdot \NN = \sin^{2}(v) \\
+M & =\sss_{uv} \cdot \NN  = 0 \\
+N & = \sss_{vv} \cdot \NN  = 1 
+\end{align*}
+so that the second fundamental form is 
+$$
+\mathcal{F}_2 = 
+\left( 
+\begin{array}{cc}
+\sin^2(v) & 0 \\
+0         & 1 
+\end{array}
+\right) \,.
+$$
+In particular the matrix of the Weingarten map is
+$$
+\WW = \mathcal{F}_1^{-1}\mathcal{F}_2 = \left( 
+\begin{array}{cc}
+1 & 0 \\
+0 & 1 
+\end{array}
+\right)
+$$
+Since $\WW$ is diagonal, the eigenvalues are the diagonal entries of $\WW$ and
+eigenvectors are 
+$$
+\xx_1 = (1,0)\,, \quad \xx_2 = (0,1) \,.
+$$
+Therefore the principal curvatures are
+$$
+\kappa_1 = \kappa_2 = 1
+$$
+and the principal vectors
+$$
+\mathbf{t}_1 = \sss_u \,, \quad 
+\mathbf{t}_2 = \sss_v \,.
+$$
+Finally, we have that
+$$
+H = \frac{\kappa_1 + \kappa_2}{2} = 1 \,, \quad
+K= \kappa_1 \kappa_2 = 1 \,.
+$$
+
+
+:::
+
+
+
+::: Example
 ### Torus
 
 Consider a circle $\mathcal{C}$ contained in the $xz$-plane, with center 
@@ -7290,99 +7406,6 @@ H & = \frac{\kappa_1 + \kappa_2}{2} =
 \end{align*}
 
 :::
-
-
-
-
-### Local shape of a surface
-
-
-The principal curvatures allow to study the local shape of
-a surface $\SSS$ at a point $\pp$. We distinguish between $4$
-shapes.
-
-
-
-
-::: Definition
-### Local shape types
-
-Let $\SSS$ be a regular surface. A point $\pp \in \SSS$ is
-
-
-- **Elliptic** if 
-$$
-\kappa_1(\pp) > 0 \,, \, \kappa_2(\pp) > 0 \quad \mbox{ or } \quad  \kappa_1(\pp) < 0 \,, \, \kappa_2(\pp) < 0 
-$$
-
-- **Hyperbolic** if 
-$$
-\kappa_{1}(\mathbf{p})<0<\kappa_{2}(\mathbf{p})  \quad \mbox{ or } \quad  \kappa_{1}(\mathbf{p})<0< \kappa_{2}(\mathbf{p})
-$$
-
-- **Parabolic** if 
-$$
-\kappa_{1}(\mathbf{p})=0 \, , \, \kappa_{2}(\mathbf{p}) \neq 0 \quad \mbox{ or } \quad \kappa_{1}(\mathbf{p}) \neq 0, \, \kappa_{2}(\mathbf{p})=0
-$$
-
-- **Planar** if 
-$$
-\kappa_{1}(\mathbf{p})=\kappa_{2}(\mathbf{p}) = 0
-$$
-
-
-In addition we say that $\pp$ is **umbilic** if 
-$$
-\kappa_{1}(\mathbf{p})=\kappa_{2}(\mathbf{p}) \,.
-$$
-In such case $\pp$ might be **planar** or **elliptic**.
-
-:::
-
-
-
-::: Example
-
-Consider the surface chart
-$$
-\sss (u, v) = \left(u-v, u+v, u^{2}+v^{2}\right) \,.
-$$
-Show that $\pp = \sss(1,0)$ is an elliptic point.
-
-> *Solution.* In Example \ref{example-weingarten-2} we have shown that the Weingarten matrix of $\sss$ is
-$$
-\WW 
- = 
-\frac{1}{(1 + 2u^2 + 2v^2)^{\frac32}}
-\,\left(\begin{array}{ll}
-1 + 2v^2 & -2uv \\
-- 2uv & 1 + 2u^2
-\end{array}\right) \,.
-$$
-For $u=1$ and $v=1$ we obtain
-$$
-\WW 
- = 
-\frac{1}{3^{\frac32}}
-\,\left(\begin{array}{ll}
-1  & 0 \\
-0 &  3
-\end{array}\right)
-=
-\left(\begin{array}{ll}
-3^{-\frac32}  & 0 \\
-0 &  3^{- \frac12}
-\end{array}\right) \,.
-$$
-Therefore the principal curvatures at $\pp$ are
-$$
-\kappa_1(\pp) = 3^{-\frac32} \,, \quad
-\kappa_2(\pp) = 3^{-\frac12} \,. \quad
-$$
-Since $\kappa_1(\pp) > 0$ and $\kappa_2(\pp) > 0$ we have that $\pp$ is an elliptic point.
-
-:::
-
 
 
 
@@ -7663,37 +7686,50 @@ Therefore, using Part 1 and Theorem \ref{theorem-sff-chart}, we obtain
 
 
 ::: Example
+### Curves on the sphere  {#example-curves-on-sphere}
 
 Consider the chart for the sphere
 $$
 \sss(u, v)=(\cos (u) \sin (v), \sin (u) \sin (v), \cos (v))
 $$
-Show that the $\kappa_{n}(t)=1$ for all unit speed curves on the sphere.
-
->*Solution.* We compute
-\begin{align*}
-L & =\sin ^{2}(v) \\
-M & =0 \\
-N & =1
-\end{align*}
-so that the normal curvature of a unit speed curve
+Show that 
 $$
-\g(t)=\sigma(u(t), v(t))
+\kappa_{n}(t)=1
 $$ 
-is
+for all unit speed curves on the sphere.
+
+>*Solution.* 
+We have computed in Example \ref{example-sphere-principal} that the 
+second fundamental form of $\sss$ is
 $$
-\kappa_{n}=\sin^{2}(v) \dot{u}^{2}+\dot{v}^{2}
+\mathcal{F}_2 = \sin^{2}(v) du^2 + dv^2 
 $$
-But $\g$ is unit speed, so that
+Let $\g$ be a unit speed curve on the sphere, that is,
+$$
+\g(t)=\sigma(u(t), v(t)) \,.
+$${#eq-sphere-normal-curvature} 
+By Theorem \ref{theorem-normal-curvature} the normal
+curvature of $\g$ is
+$$
+\kappa_{n}=\sin^{2}(v) \dot{u}^{2}+\dot{v}^{2} \,.
+$$
+Differentiating (@eq-sphere-normal-curvature) we get
 \begin{align*}
-1 & =  \|\dg\|^{2} \\
-  & =  \|(-\dot{u} \sin (u) \sin (v)+\dot{v} \cos (u) \cos (v), \dot{u} \cos (u) \sin (v)+ \\
-  & \qquad \dot{v} \sin (u) \cos (v),-\dot{v} \sin (v)) \|^{2} \\
-  & =  \dot{u} \sin^{2}(v)+\dot{v}^{2}
+\dg(t) & = \frac{d}{dt} ( \cos(u(t)) \sin(v(t)), \sin(u(t)) \sin(v(t)), \cos(v(t)) ) \\
+       & = (-\dot{u} \sin (u) \sin (v)+\dot{v} \cos (u) \cos (v), \dot{u} \cos (u) \sin (v)+ \\
+  & \qquad \dot{v} \sin (u) \cos (v),-\dot{v} \sin (v))
 \end{align*}
-Therefore
+so that 
 $$
-\kappa_{n}=\sin^{2}(v) \dot{u}^{2}+\dot{v}^{2} = 1
+\| \dg(t) \|^2 =  \sin^{2}(v) \dot{u}^{2}+\dot{v}^{2} \,.
+$$
+Since $\g$ is unit speed, we also get
+$$ 
+\|\dg\|^{2} = 1 \,,
+$$ 
+showing that 
+$$
+\kappa_{n}=\sin^{2}(v) \dot{u}^{2}+\dot{v}^{2} = 1 \,,
 $$
 as required.
 
@@ -7702,12 +7738,263 @@ as required.
 
 
 
-
+The normal curvature $\kappa_n$ is related to the principal 
+curvatures $\kappa_1$ and $\kappa_2$.
 
 
 
 ::: Theorem
+### Euler's Theorem
 
-Let $\sss$ be a chart for $\SSS$. Then $\kappa_{1}$ and $\kappa_{2}$ are the minimum and maximum values of $\kappa_{n}$ for all unit speed curves on $S$.
+Let $\SSS$ be a regular surface and denote by $\kappa_1, \kappa_2$ the
+principal curvatures with principal vectors $\mathbf{t}_1,\mathbf{t}_2$.
+Let $\g$ be a unit speed curve on $\SSS$. The normal curvature of $\g$ is given by
+$$
+\kappa_n = \kappa_1 \cos^2(\theta) + \kappa_2 \sin^2(\theta) \,,
+$$
+where $\theta$ is the angle between $\dg$ and $\mathbf{t}_1$.
+
+:::
+
+
+::: Proof
+
+Let $\g$ be a unit speed curve on $\SSS$ and set
+$$
+\pp := \g(t) \,.
+$$
+By Theorem \ref{theorem-weingarten-diagonal} the principal vectors 
+$\{ \mathbf{t}_1, \mathbf{t}_2 \}$ form an orthonormal basis of 
+$T_{\pp} \SSS$. Since by definition
+$$ 
+\dg(t) \in T_{\pp} \SSS \,,
+$$
+there exist scalars $\lambda,\mu \in \R$ such that
+$$
+\dg(t) = \lambda \mathbf{t}_1 + \mu \mathbf{t}_2 \,.
+$$
+As $\g$ is unit speed and $\mathbf{t}_1, \mathbf{t}_2$ orthonormal, we infer
+$$
+1 = \norm{\dg(t)}^2 = \dg \cdot \dg = \lambda^2 + \mu^2 \,.
+$$
+Therefore there exists $\theta \in [0,2\pi]$ such that 
+$$
+\lambda = \cos(\theta), \quad 
+\mu = \sin(\theta) \,.
+$$
+Hence 
+$$
+\dg(t) = \cos(\theta) \mathbf{t}_1 + \sin(\theta) \mathbf{t}_2 \,.
+$${#eq-euler-thm-proof}
+In particular, we can take the scalar product of (@eq-euler-thm-proof) with
+$\mathbf{t}_1$ to get
+$$
+\cos(\theta) = \lambda = \dg(t) \cdot \mathbf{t}_1 \,.
+$$
+Since $\dg$ and $\mathbf{t}_1$ are unit vectors, from the above equation we conclude that 
+$\theta$ is the angle between $\dg$ and $\mathbf{t}_1$. In addition, recall
+that
+$$
+\WW_{\pp,\SSS} (\mathbf{t}_1) = \kappa_1 \mathbf{t}_1 \,, \quad 
+\WW_{\pp,\SSS} (\mathbf{t}_2) = \kappa_2 \mathbf{t}_2 \,, 
+$$
+and $\mathbf{t}_1$, $\mathbf{t}_2$ are orthonormal. Thus
+\begin{align*}
+II_{\pp}(\mathbf{t}_1 , \mathbf{t}_1) & = \WW_{\pp,\SSS} (\mathbf{t}_1) \cdot \mathbf{t}_1 = \kappa_1 \norm{\mathbf{t}_1}^2 = \kappa_1 \\
+II_{\pp}(\mathbf{t}_1 , \mathbf{t}_2) & = \WW_{\pp,\SSS} (\mathbf{t}_1) \cdot \mathbf{t}_2 = \kappa_1  \mathbf{t}_1 \cdot \mathbf{t}_2 = 0 \\
+II_{\pp}(\mathbf{t}_2 , \mathbf{t}_1) & = \WW_{\pp,\SSS} (\mathbf{t}_2) \cdot \mathbf{t}_1 = \kappa_2  \mathbf{t}_2 \cdot \mathbf{t}_1 = 0 \\
+II_{\pp}(\mathbf{t}_2 , \mathbf{t}_2) & = \WW_{\pp,\SSS} (\mathbf{t}_2) \cdot \mathbf{t}_2 = \kappa_2 \norm{\mathbf{t}_2}^2 = \kappa_2 \\
+\end{align*}
+By Theorem \ref{theorem-normal-curvature}, equation (@eq-euler-thm-proof), and bilinearity of $II_{\pp}$, we get
+\begin{align*}
+\kappa_n & = {II}_{\pp} (\dg,\dg) \\
+& = \cos^2(\theta) \, II_{\pp}(\mathbf{t}_1 , \mathbf{t}_1)  +  \cos(\theta) \sin(\theta) \,  II_{\pp}(\mathbf{t}_1 , \mathbf{t}_2) \\ 
+& \,\,\,\, + \sin(\theta)\cos(\theta)  \,  II_{\pp}(\mathbf{t}_2 , \mathbf{t}_1)  + \sin^2(\theta)  \,  II_{\pp}(\mathbf{t}_2 , \mathbf{t}_2)  \\
+& = \cos^2(\theta) \kappa_1 + \sin^2(\theta) \kappa_2 
+\end{align*}
+ending the proof. 
+
+:::
+
+
+As an immediate corollary of the Euler's Theorem we get the next
+statement.
+
+
+::: {.Corollary #corollary-euler-thm}
+
+Let $\SSS$ be a regular surface and $\kappa_1, \kappa_2$ its
+principal curvatures at $\pp$ with principal vectors $\mathbf{t}_1,\mathbf{t}_2$. Then:
+
+- $\kappa_{1}$ and $\kappa_{2}$ are the minimum and maximum values of $\kappa_{n}$, for all unit speed curves on $\SSS$ passing through $\pp$.
+
+- The directions of lowest and highest curvature on $\SSS$ are given by $\mathbf{t}_1$ and $\mathbf{t}_2$.
+
+:::
+
+
+In Example \ref{example-curves-on-sphere} we have shown with a direct 
+argument that 
+$$
+\kappa_n = 1
+$$
+for all unit speed curves on the sphere. Thanks to Euler's Theorem we 
+can obtain an immediate proof of this fact.
+
+
+::: Example 
+### Curves on the sphere
+
+Let us consider again the chart for the sphere
+$$
+\sss(u, v)=(\cos (u) \sin (v), \sin (u) \sin (v), \cos (v))
+$$
+as seen in Example \ref{example-curves-on-sphere}. By Example \ref{example-sphere-principal}, the principal curvatures of
+$\sss$ are
+$$
+\kappa_1 = \kappa_2 =  1 \,.
+$$
+By Euler's Theorem, for any curve $\g$ on the sphere we have
+$$
+\kappa_n = \kappa_1 \cos^2(\theta) + \kappa_2 \sin^2(\theta) = 1 \,.
+$$
+
+:::
+
+
+
+
+
+### Local shape of a surface
+
+
+
+The principal curvatures $\kappa_1$ and $\kappa_2$ determine
+the maximum and minimum curvature of a surface $\SSS$, see
+Corollary \ref{corollary-euler-thm}. Hence we can study the local
+shape of $\SSS$ in function of $\kappa_1$ and $\kappa_2$. 
+We distinguish between $4$ shapes.
+
+
+
+
+::: Definition
+### Local shape types
+
+Let $\SSS$ be a regular surface and denote by $\kappa_1(\pp)$ and 
+$\kappa_2(\pp)$ its principal curvatures at $\pp$. The point $\pp$ is
+
+
+- **Elliptic** if 
+$$
+\kappa_1(\pp) > 0 \,, \, \kappa_2(\pp) > 0 \quad \mbox{ or } \quad  \kappa_1(\pp) < 0 \,, \, \kappa_2(\pp) < 0 
+$$
+
+- **Hyperbolic** if 
+$$
+\kappa_{1}(\mathbf{p})<0<\kappa_{2}(\mathbf{p})  \quad \mbox{ or } \quad  \kappa_{1}(\mathbf{p})<0< \kappa_{2}(\mathbf{p})
+$$
+
+- **Parabolic** if 
+$$
+\kappa_{1}(\mathbf{p})=0 \, , \, \kappa_{2}(\mathbf{p}) \neq 0 \quad \mbox{ or } \quad \kappa_{1}(\mathbf{p}) \neq 0, \, \kappa_{2}(\mathbf{p})=0
+$$
+
+- **Planar** if 
+$$
+\kappa_{1}(\mathbf{p})=\kappa_{2}(\mathbf{p}) = 0
+$$
+
+
+:::
+
+
+
+::: Theorem
+### Local structure of surfaces
+
+Let $\SSS$ be a regular surface and $\pp \in \SSS$. In the vicinity of $\pp$ 
+the surface $\SSS$ is approximated by the quadric surface of equation
+$$
+z = x^2 \kappa_1 (\pp) + y^2 \kappa_2(\pp) \,,
+$$
+where $\kappa_1 (\pp),\kappa_2 (\pp)$ are the principal curvatures of
+$\SSS$ at $\pp$.
+
+:::
+
+
+::: Proof
+
+d
+
+:::
+
+
+
+::: Example
+
+Consider the surface chart
+$$
+\sss (u, v) = \left(u-v, u+v, u^{2}+v^{2}\right) \,.
+$$
+Show that $\pp = \sss(1,0)$ is an elliptic point. Therefore $\sss$ is approximated by an *elliptic paraboiloid* in the vicinity of $\pp$.
+
+> *Solution.* In Example \ref{example-weingarten-2} we have shown that the Weingarten matrix of $\sss$ is
+$$
+\WW 
+ = 
+\frac{1}{(1 + 2u^2 + 2v^2)^{\frac32}}
+\,\left(\begin{array}{ll}
+1 + 2v^2 & -2uv \\
+- 2uv & 1 + 2u^2
+\end{array}\right) \,.
+$$
+For $u=1$ and $v=1$ we obtain
+$$
+\WW 
+ = 
+\frac{1}{3^{\frac32}}
+\,\left(\begin{array}{ll}
+1  & 0 \\
+0 &  3
+\end{array}\right)
+=
+\left(\begin{array}{ll}
+3^{-\frac32}  & 0 \\
+0 &  3^{- \frac12}
+\end{array}\right) \,.
+$$
+Therefore the principal curvatures at $\pp$ are
+$$
+\kappa_1(\pp) = 3^{-\frac32} \,, \quad
+\kappa_2(\pp) = 3^{-\frac12} \,. \quad
+$$
+Since $\kappa_1(\pp) > 0$ and $\kappa_2(\pp) > 0$ we have that $\pp$ is an elliptic point.
+
+:::
+
+
+
+
+
+### Umbilical points
+
+
+::: Definition
+### Umbilical point
+
+Let $\SSS$ be a regular surface and denote by $\kappa_1(\pp)$ and 
+$\kappa_2(\pp)$ its principal curvatures at $\pp$. We say that $\pp$ is an **umbilic** if 
+$$
+\kappa_{1}(\mathbf{p})=\kappa_{2}(\mathbf{p}) \,.
+$$
+
+:::
+
+
+::: Remark
+
+Umbilical points might be **planar** or **elliptic**.
 
 :::

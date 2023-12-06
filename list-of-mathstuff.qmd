@@ -1029,28 +1029,42 @@
 
  [**Example 4.172**](#unit-cylinder-3): Unit Cylinder\Pageref{unit-cylinder-3}
 
- [**Example 4.173**](#torus): Torus\Pageref{torus}
+ [**Example 4.173**](#example-sphere-principal): Sphere\Pageref{example-sphere-principal}
 
- [**Definition 4.174**](#local-shape-types): Local shape types\Pageref{local-shape-types}
+ [**Example 4.174**](#torus): Torus\Pageref{torus}
 
- [**Example 4.175**](#Example-4.175)\Pageref{Example-4.175}
-
- [**Proposition 4.176**](#proposition-surface-frame)\Pageref{proposition-surface-frame}
+ [**Proposition 4.175**](#proposition-surface-frame)\Pageref{proposition-surface-frame}
 
  [**Proof**](#Proof*-4.46)\Pageref{Proof*-4.46}
 
  [**Important**](#Important*-4.47)\Pageref{Important*-4.47}
 
- [**Proposition 4.177**](#Proposition-4.177)\Pageref{Proposition-4.177}
+ [**Proposition 4.176**](#Proposition-4.176)\Pageref{Proposition-4.176}
 
  [**Proof**](#Proof*-4.48)\Pageref{Proof*-4.48}
 
- [**Definition 4.178**](#normal-and-geodesic-curvature): Normal and geodesic curvature\Pageref{normal-and-geodesic-curvature}
+ [**Definition 4.177**](#normal-and-geodesic-curvature): Normal and geodesic curvature\Pageref{normal-and-geodesic-curvature}
 
- [**Theorem 4.179**](#theorem-normal-curvature)\Pageref{theorem-normal-curvature}
+ [**Theorem 4.178**](#theorem-normal-curvature)\Pageref{theorem-normal-curvature}
 
  [**Proof**](#Proof*-4.49)\Pageref{Proof*-4.49}
 
- [**Example 4.180**](#Example-4.180)\Pageref{Example-4.180}
+ [**Example 4.179**](#example-curves-on-sphere): Curves on the sphere\Pageref{example-curves-on-sphere}
 
- [**Theorem 4.181**](#Theorem-4.181)\Pageref{Theorem-4.181}
+ [**Theorem 4.180**](#eulers-theorem): Euler’s Theorem\Pageref{eulers-theorem}
+
+ [**Proof**](#Proof*-4.50)\Pageref{Proof*-4.50}
+
+ [**Corollary 4.181**](#corollary-euler-thm)\Pageref{corollary-euler-thm}
+
+ [**Example 4.182**](#curves-on-the-sphere): Curves on the sphere\Pageref{curves-on-the-sphere}
+
+ [**Definition 4.183**](#local-shape-types): Local shape types\Pageref{local-shape-types}
+
+ [**Theorem 4.184**](#local-structure-of-surfaces): Local structure of surfaces\Pageref{local-structure-of-surfaces}
+
+ [**Example 4.185**](#Example-4.185)\Pageref{Example-4.185}
+
+ [**Definition 4.186**](#umbilical-point): Umbilical point\Pageref{umbilical-point}
+
+ [**Remark 4.187**](#Remark-4.187)\Pageref{Remark-4.187}
