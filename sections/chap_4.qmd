@@ -7391,50 +7391,273 @@ Since $\kappa_1(\pp) > 0$ and $\kappa_2(\pp) > 0$ we have that $\pp$ is an ellip
 ### Normal and geodesic curvatures
 
 
+Let $\SSS$ be a regular surface and consider all the curves $\g$ on $\SSS$ 
+passing through the point $\pp \in \SSS$. We have the 
+following natural questions:
+
+- Is there a straight line on $\SSS$ passing through $\pp$?
+- Which curves through $\pp$ have greatest or lowest curvature?
+
+We start our analysis with the following proposition.
+
+
+::: {.Proposition #proposition-surface-frame}
+
+Let $\SSS$ be a regular surface and $\g \colon (a,b) \to \SSS$ be a unit speed curve. Then 
+$$
+\{ \dg , \NN , \NN \times \dg  \}
+$$
+is an orthornormal basis of $\R^3$ for all $t \in (a,b)$, where $\NN$ is the standard unit normal to $\SSS$ evaluated at $\pp = \g(t)$.
+
+:::
+
+::: Proof
+
+By definition 
+$$
+\dg(t) \in T_{\pp} \SSS \,, \quad \pp := \g(t) \,,
+$$
+for all $t \in (a,b)$. This means $\dg$ is tangent to $\SSS$. Thus
+$$
+\dg \cdot \NN = 0 \,.
+$$
+We have $\norm{\dg} = 1$ since $\g$ is unit speed. 
+Moreover $\norm{\NN}=1$ by definition. 
+Since $\dg$ and $\NN$ are orthogonal, we also obtain
+$$
+\norm{\NN \times \dg} = \norm{\NN} \norm{\dg} = 1 \,,
+$$ 
+by the properties of vector product. Finally 
+$$
+ (\NN \times \dg ) \cdot \NN  = 0 \,, \quad 
+ (\NN \times \dg ) \cdot \dg  = 0 \,, \quad 
+$$
+by the properties of vector product.
+
+:::
+
+
+
+::: Important
+
+Notice that the basis
+$$
+\{ \dg , \NN , \NN \times \dg  \}
+$$
+does not coincide with the Frenet frame of $\g$ in general.
+
+:::
+
+
+
+::: Proposition
+
+Let $\SSS$ be a regular surface and $\g \colon (a,b) \to \SSS$ be a 
+unit speed curve. Then
+$$
+\ddg = \kappa_n \NN + \kappa_g \, \left( \NN \times \dg \right) \,,
+$${#eq-surface-curve-curvature}
+where $\NN$ is evaluated at $\pp:=\g(t)$ and $\kappa_n,\kappa_g$ are
+scalars depedent on $\pp$. Moreover
+$$
+\kappa_n = \ddg \cdot \NN \,, \quad \kappa_g = \ddg \cdot \left( \NN \times \dg \right)  \,,
+$${#eq-surface-curve-curvature-1}
+$$
+\kappa^2 = \kappa_n^2 + \kappa_g^2 \,,
+$${#eq-surface-curve-curvature-2}
+$$
+\kappa_n = \kappa \cos (\phi) \,, \quad  \kappa_g = \pm \kappa \sin(\phi) \,,
+$${#eq-surface-curve-curvature-3}
+where $\kappa$ is the curvature of $\g$ and $\phi$ is the angle between 
+$\NN$ and $\nn$, the principal unit normal of $\g$.
+
+:::
+
+
+::: Proof
+
+
+*Part 1.* By Proposition \ref{proposition-surface-frame} we know that
+$$
+\{ \dg , \NN , \NN \times \dg  \}
+$$
+is an orthornormal basis of $\R^3$. Hence 
+$$
+\ddg = a \dg + b \NN + c \left( \NN \times \dg \right) \,,
+$$
+for some coefficients $a,b,c \in \R$. Since $\g$ is unit speed, 
+we have that
+$$
+\dg \cdot \ddg = 0 \,.
+$$
+On the other hand, 
+$$
+\dg \cdot \ddg = a  (\dg \cdot \dg ) + b ( \dg \cdot \NN ) + 
+c \dg \cdot \left( \NN \times \dg \right) = a \,,
+$$
+since $\dg$ is orthogonal to $\NN$ and $\NN \times \dg$, and 
+$$
+\dg \cdot \dg  = \norm{\dg}^2 = 1 \,.
+$$
+Therefore $a = 0$ and 
+$$
+\ddg = b \NN + c \left( \NN \times \dg \right) \,.
+$$
+Setting $\kappa_n := b$ and $\kappa_g := c$ we conclude (@eq-surface-curve-curvature).
+
+*Part 2.* Taking the scalar product of (@eq-surface-curve-curvature) with $\NN$ yields
+$$
+\ddg \cdot \NN = \kappa_n \norm{\NN}^2 + \kappa_g \left( \NN \times \dg  \right) \cdot \NN = \kappa_n \,,
+$$
+where we used that $\NN$ and $\NN \times \dg$ are orthonormal vectors. 
+Similarly, taking the scalar product of (@eq-surface-curve-curvature) with $\NN \times \dg$ yields the second equation in (@eq-surface-curve-curvature-1).
+
+*Part 3.* By (@eq-surface-curve-curvature) we infer
+\begin{align*}
+\norm{\ddg}^2 & = \kappa_n^2 \norm{\NN}^2 + 2 \kappa_n \kappa_g \NN \cdot 
+\left(\NN \times \dg \right) + \kappa_g^2  \norm{\NN \times \dg}^2 \\
+              & = \kappa_n^2 + \kappa_g^2 \,,
+\end{align*}
+where we used that $\NN$ and $\NN \times \dg$ are orthonormal. Since 
+$\kappa(t) = \norm{\ddg(t)}$, we get (@eq-surface-curve-curvature-2).
+
+*Part 4.* Recalling that 
+$$
+\ddg = \kappa \nn \,,
+$$
+from the first equation in (@eq-surface-curve-curvature-1) we obtain
+\begin{align*}
+\kappa_n & = \ddg \cdot \NN \\
+         & = \kappa \nn \cdot \NN \\
+         & = \kappa \| \nn \|^2 \| \NN \|^2 \cos(\phi) \\
+         & = \kappa \cos(\phi) \,,
+\end{align*}
+where we used that $\nn$ and $\NN$ have unit norm. Hence the first 
+equation in (@eq-surface-curve-curvature-3) is established. By 
+(@eq-surface-curve-curvature-2) we get
+\begin{align*}
+\kappa_g^2 & = \kappa^2 - \kappa_n^2 \\
+           & = \kappa^2 \cos^2(\phi) -  \kappa_n^2 \\
+           & = \kappa^2 (\cos^2(\phi) - 1 ) \\
+           & = \kappa^2 \sin^2(\phi) \,,
+\end{align*}
+from which we obtain the second equation in (@eq-surface-curve-curvature-3).
+
+:::
+
+
+The quantities $\kappa_n$ and $\kappa_g$ are the normal and geodesic 
+curvatures of $\g$.
+
 
 ::: Definition 
+### Normal and geodesic curvature
 
-Let $\sss$ be a chart for $\SSS$ and $\g \colon (a,b) \to \SSS$ a unit speed curve on $\SSS$. Then
+Let $\SSS$ be regular and $\g \colon (a,b) \to \SSS$ a unit speed curve. By (@eq-surface-curve-curvature) we have
 $$
 \ddg = \kappa_{n} \NN + \kappa_{g} (\NN \times \dg )
 $$
-for $\NN$ the standard unit normal to $\sss$. We say:
+for $\NN$ the standard unit normal to $\SSS$ and scalars 
+$\kappa_n , \kappa_g \in \R$. We call
 
-- $\kappa_{n}$ is the **normal curvature**,
-- $\kappa_{g}$ is the **geodesic curvature**.
+- $\kappa_{n}$ the **normal curvature** of $\g$,
+- $\kappa_{g}$ the **geodesic curvature** of $\g$.
 
 :::
 
 
-::: Theorem
 
-Let $\sss$ be a chart for $\SSS$ and $\g \colon (a,b) \to \SSS$ a unit speed curve on $\SSS$. Then
+The normal curvature $\kappa_n$ can be computed via the second 
+fundamental form, as shown in the theorem below.
 
+
+::: {.Theorem #theorem-normal-curvature}
+
+Let $\SSS$ be a regular surface and $\g \colon (a,b) \to \SSS$ a 
+unit speed curve. Denote $\pp := \g(t)$. We have:
+
+1. The normal curvature $\kappa_n$ satisfies
 $$
-\kappa^{2}=\kappa_{n}^{2}+\kappa_{g}^{2}
+\kappa_n = {II}_{\pp} (\dg, \dg) \,.
 $$
 
-:::
-
-
-::: Theorem
-
-Let $\sss$ be a chart for $\SSS$. Then $\kappa_{1}$ and $\kappa_{2}$ are the minimum and maximum values of $\kappa_{n}$ for all unit speed curves on $S$.
-
-:::
-
-
-
-::: Theorem
-
-Let $\sss$ be a chart for $\SSS$ and 
+2. Let $\sss$ be a chart for $\SSS$ at $\pp$. Then 
 $$
 \g(t)=\sss(u(t), v(t))
 $$ 
-a unit speed curve on $\SSS$. Then
+for some smooth functions $u,v \colon (a,b) \to \R$, and 
 $$
-\kappa_{n}=L \dot{u}^{2}+2 M \dot{u} \dot{v}+N \dot{v}^{2}
+\kappa_{n}=L \dot{u}^{2}+2 M \dot{u} \dot{v}+N \dot{v}^{2} \,.
 $$
+
+:::
+
+
+::: Proof
+
+*Part 1.* By definition we have
+$$
+\dg (t) \in T_{\pp} \SSS 
+$$
+when $\pp = \g(t)$. Set
+$$
+\tg(t) := \NN( \g(t)) \,.
+$${#eq-theorem-normal-curvature-1}
+By definition of differential we have 
+$$
+d_{\pp} \NN (\dg(t)) = \dtg(t)  \,.
+$${#eq-theorem-normal-curvature-2}
+Note that
+$$
+\tg(t) \cdot \dg(t) = 0 \,,
+$$
+since $\NN$ is normal to $\SSS$ at $\pp$ and $\dg(t) \in T_{\pp}(\SSS)$.
+Differentiating the above expression we get
+\begin{align*}
+0 & = \frac{d}{dt} \left( \tg(t) \cdot \dg(t) \right) \\
+  & = \tg(t) \cdot \ddg(t)  + \dtg(t) \cdot \dg(t)   \\
+  & = \NN (\g(t)) \cdot \ddg(t)  + d_{\pp} \NN (\dg(t)) \cdot \dg(t)  
+\end{align*}
+where in the last equation we used (@eq-theorem-normal-curvature-1) and
+(@eq-theorem-normal-curvature-2). Hence
+$$
+- d_{\pp} \NN (\dg(t)) \cdot \dg(t)  = 
+\NN (\g(t))  \cdot  \ddg(t)   \,.
+$${#eq-theorem-normal-curvature-3}
+By definition of Weingarten and Gauss map we get
+$$
+\WW_{\pp,\SSS} (\dg(t)) = - d_{\pp} \mathcal{G} (\dg(t)) =  
+- d_{\pp} \NN (\dg(t)) \,.
+$${#eq-theorem-normal-curvature-4}
+Therefore, using (@eq-theorem-normal-curvature-3) and (@eq-theorem-normal-curvature-4), we infer
+\begin{align*}
+II_{\pp} (\dg(t) , \dg(t) ) & = \WW_{\pp,\SSS} (\dg(t)) \cdot \dg(t) \\
+                            & = - d_{\pp} \NN (\dg(t)) \cdot \dg(t) \\
+                            & = \NN (\g(t))  \cdot  \ddg(t) \\
+                            & = \kappa_n \,,
+\end{align*}
+where in the last equality we used (@eq-surface-curve-curvature-1).
+
+
+*Part 2.* Let $\sss$ be a chart at $\pp$ and 
+$$
+\g(t) = \sss(u(t),v(t)) \,.
+$$
+Differentiating the above expression we get
+$$
+\dg(t) = \dot{u} \sss_u + \dot{v} \sss_v \,.
+$$
+By definition of $du$ and $dv$, see Definition \ref{definition-coordinate-functions}, we have
+$$
+du(\dg(t)) = \dot{u}(t) \,, \quad 
+dv(\dg(t)) = \dot{v}(t) \,.
+$$
+Therefore, using Part 1 and Theorem \ref{theorem-sff-chart}, we obtain
+\begin{align*}
+\kappa_n & = II_{\pp} (\dg(t) , \dg(t) ) \\
+         & = L du(\dg(t))^2 + 2M du(\dg(t)) dv(\dg(t)) + N dv(\dg(t))^2 \\ 
+         & = L \dot{u}^{2}+2 M \dot{u} \dot{v}+N \dot{v}^{2} \,.
+\end{align*}
 
 :::
 
@@ -7478,3 +7701,13 @@ as required.
 :::
 
 
+
+
+
+
+
+::: Theorem
+
+Let $\sss$ be a chart for $\SSS$. Then $\kappa_{1}$ and $\kappa_{2}$ are the minimum and maximum values of $\kappa_{n}$ for all unit speed curves on $S$.
+
+:::

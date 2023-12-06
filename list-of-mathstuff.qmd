@@ -1035,12 +1035,22 @@
 
  [**Example 4.175**](#Example-4.175)\Pageref{Example-4.175}
 
- [**Definition 4.176**](#Definition-4.176)\Pageref{Definition-4.176}
+ [**Proposition 4.176**](#proposition-surface-frame)\Pageref{proposition-surface-frame}
 
- [**Theorem 4.177**](#Theorem-4.177)\Pageref{Theorem-4.177}
+ [**Proof**](#Proof*-4.46)\Pageref{Proof*-4.46}
 
- [**Theorem 4.178**](#Theorem-4.178)\Pageref{Theorem-4.178}
+ [**Important**](#Important*-4.47)\Pageref{Important*-4.47}
 
- [**Theorem 4.179**](#Theorem-4.179)\Pageref{Theorem-4.179}
+ [**Proposition 4.177**](#Proposition-4.177)\Pageref{Proposition-4.177}
+
+ [**Proof**](#Proof*-4.48)\Pageref{Proof*-4.48}
+
+ [**Definition 4.178**](#normal-and-geodesic-curvature): Normal and geodesic curvature\Pageref{normal-and-geodesic-curvature}
+
+ [**Theorem 4.179**](#theorem-normal-curvature)\Pageref{theorem-normal-curvature}
+
+ [**Proof**](#Proof*-4.49)\Pageref{Proof*-4.49}
 
  [**Example 4.180**](#Example-4.180)\Pageref{Example-4.180}
+
+ [**Theorem 4.181**](#Theorem-4.181)\Pageref{Theorem-4.181}

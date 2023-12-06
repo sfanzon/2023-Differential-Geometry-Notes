@@ -85,7 +85,7 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Important {
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -93,9 +93,9 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
 }
 .Notation {
   --color1: #c6e6ed;
@@ -105,42 +105,6 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
 .Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
@@ -149,9 +113,45 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
 .Question {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
 .Warning {
   --color1: #f4cce0;
@@ -4605,34 +4605,152 @@ H &amp; = \frac{\kappa_1 + \kappa_2}{2} =
 </section>
 <section id="normal-and-geodesic-curvatures" class="level3" data-number="4.13.4">
 <h3 data-number="4.13.4" class="anchored" data-anchor-id="normal-and-geodesic-curvatures"><span class="header-section-number">4.13.4</span> Normal and geodesic curvatures</h3>
-<div id="Definition-176" class="Definition">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 176</strong></summary><div>
-<p>Let <span class="math inline">\({\pmb{\sigma}}\)</span> be a chart for <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathcal{S}\)</span> a unit speed curve on <span class="math inline">\(\mathcal{S}\)</span>. Then <span class="math display">\[
-\ddot{{\pmb{\gamma}}}= \kappa_{n} \mathbf{N}+ \kappa_{g} (\mathbf{N}\times \dot{{\pmb{\gamma}}})
-\]</span> for <span class="math inline">\(\mathbf{N}\)</span> the standard unit normal to <span class="math inline">\({\pmb{\sigma}}\)</span>. We say:</p>
+<p>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and consider all the curves <span class="math inline">\({\pmb{\gamma}}\)</span> on <span class="math inline">\(\mathcal{S}\)</span> passing through the point <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. We have the following natural questions:</p>
 <ul>
-<li><span class="math inline">\(\kappa_{n}\)</span> is the <strong>normal curvature</strong>,</li>
-<li><span class="math inline">\(\kappa_{g}\)</span> is the <strong>geodesic curvature</strong>.</li>
+<li>Is there a straight line on <span class="math inline">\(\mathcal{S}\)</span> passing through <span class="math inline">\(\mathbf{p}\)</span>?</li>
+<li>Which curves through <span class="math inline">\(\mathbf{p}\)</span> have greatest or lowest curvature?</li>
+</ul>
+<p>We start our analysis with the following proposition.</p>
+<div id="proposition-surface-frame" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 176</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathcal{S}\)</span> be a unit speed curve. Then <span class="math display">\[
+\{ \dot{{\pmb{\gamma}}}, \mathbf{N}, \mathbf{N}\times \dot{{\pmb{\gamma}}}\}
+\]</span> is an orthornormal basis of <span class="math inline">\(\mathbb{R}^3\)</span> for all <span class="math inline">\(t \in (a,b)\)</span>, where <span class="math inline">\(\mathbf{N}\)</span> is the standard unit normal to <span class="math inline">\(\mathcal{S}\)</span> evaluated at <span class="math inline">\(\mathbf{p}= {\pmb{\gamma}}(t)\)</span>.<p></p>
+</div></details>
+</div>
+<div id="Proof*-46" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>By definition <span class="math display">\[
+\dot{{\pmb{\gamma}}}(t) \in T_{\mathbf{p}} \mathcal{S}\,, \quad \mathbf{p}:= {\pmb{\gamma}}(t) \,,
+\]</span> for all <span class="math inline">\(t \in (a,b)\)</span>. This means <span class="math inline">\(\dot{{\pmb{\gamma}}}\)</span> is tangent to <span class="math inline">\(\mathcal{S}\)</span>. Thus <span class="math display">\[
+\dot{{\pmb{\gamma}}}\cdot \mathbf{N}= 0 \,.
+\]</span> We have <span class="math inline">\(\left\| \dot{{\pmb{\gamma}}} \right\| = 1\)</span> since <span class="math inline">\({\pmb{\gamma}}\)</span> is unit speed. Moreover <span class="math inline">\(\left\| \mathbf{N} \right\|=1\)</span> by definition. Since <span class="math inline">\(\dot{{\pmb{\gamma}}}\)</span> and <span class="math inline">\(\mathbf{N}\)</span> are orthogonal, we also obtain <span class="math display">\[
+\left\| \mathbf{N}\times \dot{{\pmb{\gamma}}} \right\| = \left\| \mathbf{N} \right\| \left\| \dot{{\pmb{\gamma}}} \right\| = 1 \,,
+\]</span> by the properties of vector product. Finally <span class="math display">\[
+(\mathbf{N}\times \dot{{\pmb{\gamma}}}) \cdot \mathbf{N}= 0 \,, \quad
+(\mathbf{N}\times \dot{{\pmb{\gamma}}}) \cdot \dot{{\pmb{\gamma}}}= 0 \,, \quad
+\]</span> by the properties of vector product.<p></p>
+</div></details>
+</div>
+<div id="Important*-47" class="Important">
+<p></p><details class="Important fbx-simplebox fbx-default" open=""><summary><strong>Important</strong></summary><div>Notice that the basis <span class="math display">\[
+\{ \dot{{\pmb{\gamma}}}, \mathbf{N}, \mathbf{N}\times \dot{{\pmb{\gamma}}}\}
+\]</span> does not coincide with the Frenet frame of <span class="math inline">\({\pmb{\gamma}}\)</span> in general.<p></p>
+</div></details>
+</div>
+<div id="Proposition-177" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 177</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathcal{S}\)</span> be a unit speed curve. Then <span id="eq-surface-curve-curvature"><span class="math display">\[
+\ddot{{\pmb{\gamma}}}= \kappa_n \mathbf{N}+ \kappa_g \, \left( \mathbf{N}\times \dot{{\pmb{\gamma}}}\right) \,,
+\tag{4.12}\]</span></span> where <span class="math inline">\(\mathbf{N}\)</span> is evaluated at <span class="math inline">\(\mathbf{p}:={\pmb{\gamma}}(t)\)</span> and <span class="math inline">\(\kappa_n,\kappa_g\)</span> are scalars depedent on <span class="math inline">\(\mathbf{p}\)</span>. Moreover <span id="eq-surface-curve-curvature-1"><span class="math display">\[
+\kappa_n = \ddot{{\pmb{\gamma}}}\cdot \mathbf{N}\,, \quad \kappa_g = \ddot{{\pmb{\gamma}}}\cdot \left( \mathbf{N}\times \dot{{\pmb{\gamma}}}\right)  \,,
+\tag{4.13}\]</span></span> <span id="eq-surface-curve-curvature-2"><span class="math display">\[
+\kappa^2 = \kappa_n^2 + \kappa_g^2 \,,
+\tag{4.14}\]</span></span> <span id="eq-surface-curve-curvature-3"><span class="math display">\[
+\kappa_n = \kappa \cos (\phi) \,, \quad  \kappa_g = \pm \kappa \sin(\phi) \,,
+\tag{4.15}\]</span></span> where <span class="math inline">\(\kappa\)</span> is the curvature of <span class="math inline">\({\pmb{\gamma}}\)</span> and <span class="math inline">\(\phi\)</span> is the angle between <span class="math inline">\(\mathbf{N}\)</span> and <span class="math inline">\(\mathbf{n}\)</span>, the principal unit normal of <span class="math inline">\({\pmb{\gamma}}\)</span>.<p></p>
+</div></details>
+</div>
+<div id="Proof*-48" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Part 1.</em> By Proposition <a href="chap_4.html#proposition-surface-frame">176</a> we know that <span class="math display">\[
+\{ \dot{{\pmb{\gamma}}}, \mathbf{N}, \mathbf{N}\times \dot{{\pmb{\gamma}}}\}
+\]</span> is an orthornormal basis of <span class="math inline">\(\mathbb{R}^3\)</span>. Hence <span class="math display">\[
+\ddot{{\pmb{\gamma}}}= a \dot{{\pmb{\gamma}}}+ b \mathbf{N}+ c \left( \mathbf{N}\times \dot{{\pmb{\gamma}}}\right) \,,
+\]</span> for some coefficients <span class="math inline">\(a,b,c \in \mathbb{R}\)</span>. Since <span class="math inline">\({\pmb{\gamma}}\)</span> is unit speed, we have that <span class="math display">\[
+\dot{{\pmb{\gamma}}}\cdot \ddot{{\pmb{\gamma}}}= 0 \,.
+\]</span> On the other hand, <span class="math display">\[
+\dot{{\pmb{\gamma}}}\cdot \ddot{{\pmb{\gamma}}}= a  (\dot{{\pmb{\gamma}}}\cdot \dot{{\pmb{\gamma}}}) + b ( \dot{{\pmb{\gamma}}}\cdot \mathbf{N}) +
+c \dot{{\pmb{\gamma}}}\cdot \left( \mathbf{N}\times \dot{{\pmb{\gamma}}}\right) = a \,,
+\]</span> since <span class="math inline">\(\dot{{\pmb{\gamma}}}\)</span> is orthogonal to <span class="math inline">\(\mathbf{N}\)</span> and <span class="math inline">\(\mathbf{N}\times \dot{{\pmb{\gamma}}}\)</span>, and <span class="math display">\[
+\dot{{\pmb{\gamma}}}\cdot \dot{{\pmb{\gamma}}}= \left\| \dot{{\pmb{\gamma}}} \right\|^2 = 1 \,.
+\]</span> Therefore <span class="math inline">\(a = 0\)</span> and <span class="math display">\[
+\ddot{{\pmb{\gamma}}}= b \mathbf{N}+ c \left( \mathbf{N}\times \dot{{\pmb{\gamma}}}\right) \,.
+\]</span> Setting <span class="math inline">\(\kappa_n := b\)</span> and <span class="math inline">\(\kappa_g := c\)</span> we conclude (<a href="#eq-surface-curve-curvature"><span>4.12</span></a>).<p></p>
+<p><em>Part 2.</em> Taking the scalar product of (<a href="#eq-surface-curve-curvature"><span>4.12</span></a>) with <span class="math inline">\(\mathbf{N}\)</span> yields <span class="math display">\[
+\ddot{{\pmb{\gamma}}}\cdot \mathbf{N}= \kappa_n \left\| \mathbf{N} \right\|^2 + \kappa_g \left( \mathbf{N}\times \dot{{\pmb{\gamma}}}\right) \cdot \mathbf{N}= \kappa_n \,,
+\]</span> where we used that <span class="math inline">\(\mathbf{N}\)</span> and <span class="math inline">\(\mathbf{N}\times \dot{{\pmb{\gamma}}}\)</span> are orthonormal vectors. Similarly, taking the scalar product of (<a href="#eq-surface-curve-curvature"><span>4.12</span></a>) with <span class="math inline">\(\mathbf{N}\times \dot{{\pmb{\gamma}}}\)</span> yields the second equation in (<a href="#eq-surface-curve-curvature-1"><span>4.13</span></a>).</p>
+<p><em>Part 3.</em> By (<a href="#eq-surface-curve-curvature"><span>4.12</span></a>) we infer <span class="math display">\[\begin{align*}
+\left\| \ddot{{\pmb{\gamma}}} \right\|^2 &amp; = \kappa_n^2 \left\| \mathbf{N} \right\|^2 + 2 \kappa_n \kappa_g \mathbf{N}\cdot
+\left(\mathbf{N}\times \dot{{\pmb{\gamma}}}\right) + \kappa_g^2  \left\| \mathbf{N}\times \dot{{\pmb{\gamma}}} \right\|^2 \\
+              &amp; = \kappa_n^2 + \kappa_g^2 \,,
+\end{align*}\]</span> where we used that <span class="math inline">\(\mathbf{N}\)</span> and <span class="math inline">\(\mathbf{N}\times \dot{{\pmb{\gamma}}}\)</span> are orthonormal. Since <span class="math inline">\(\kappa(t) = \left\| \ddot{{\pmb{\gamma}}}(t) \right\|\)</span>, we get (<a href="#eq-surface-curve-curvature-2"><span>4.14</span></a>).</p>
+<p><em>Part 4.</em> Recalling that <span class="math display">\[
+\ddot{{\pmb{\gamma}}}= \kappa \mathbf{n}\,,
+\]</span> from the first equation in (<a href="#eq-surface-curve-curvature-1"><span>4.13</span></a>) we obtain <span class="math display">\[\begin{align*}
+\kappa_n &amp; = \ddot{{\pmb{\gamma}}}\cdot \mathbf{N}\\
+         &amp; = \kappa \mathbf{n}\cdot \mathbf{N}\\
+         &amp; = \kappa \| \mathbf{n}\|^2 \| \mathbf{N}\|^2 \cos(\phi) \\
+         &amp; = \kappa \cos(\phi) \,,
+\end{align*}\]</span> where we used that <span class="math inline">\(\mathbf{n}\)</span> and <span class="math inline">\(\mathbf{N}\)</span> have unit norm. Hence the first equation in (<a href="#eq-surface-curve-curvature-3"><span>4.15</span></a>) is established. By (<a href="#eq-surface-curve-curvature-2"><span>4.14</span></a>) we get <span class="math display">\[\begin{align*}
+\kappa_g^2 &amp; = \kappa^2 - \kappa_n^2 \\
+           &amp; = \kappa^2 \cos^2(\phi) -  \kappa_n^2 \\
+           &amp; = \kappa^2 (\cos^2(\phi) - 1 ) \\
+           &amp; = \kappa^2 \sin^2(\phi) \,,
+\end{align*}\]</span> from which we obtain the second equation in (<a href="#eq-surface-curve-curvature-3"><span>4.15</span></a>).</p>
+</div></details>
+</div>
+<p>The quantities <span class="math inline">\(\kappa_n\)</span> and <span class="math inline">\(\kappa_g\)</span> are the normal and geodesic curvatures of <span class="math inline">\({\pmb{\gamma}}\)</span>.</p>
+<div id="normal-and-geodesic-curvature" class="Definition" title="Normal and geodesic curvature">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 178: </strong>Normal and geodesic curvature</summary><div>
+<p>Let <span class="math inline">\(\mathcal{S}\)</span> be regular and <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathcal{S}\)</span> a unit speed curve. By (<a href="#eq-surface-curve-curvature"><span>4.12</span></a>) we have <span class="math display">\[
+\ddot{{\pmb{\gamma}}}= \kappa_{n} \mathbf{N}+ \kappa_{g} (\mathbf{N}\times \dot{{\pmb{\gamma}}})
+\]</span> for <span class="math inline">\(\mathbf{N}\)</span> the standard unit normal to <span class="math inline">\(\mathcal{S}\)</span> and scalars <span class="math inline">\(\kappa_n , \kappa_g \in \mathbb{R}\)</span>. We call</p>
+<ul>
+<li><span class="math inline">\(\kappa_{n}\)</span> the <strong>normal curvature</strong> of <span class="math inline">\({\pmb{\gamma}}\)</span>,</li>
+<li><span class="math inline">\(\kappa_{g}\)</span> the <strong>geodesic curvature</strong> of <span class="math inline">\({\pmb{\gamma}}\)</span>.</li>
 </ul>
 </div></details>
 </div>
-<div id="Theorem-177" class="Theorem">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 177</strong></summary><div>Let <span class="math inline">\({\pmb{\sigma}}\)</span> be a chart for <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathcal{S}\)</span> a unit speed curve on <span class="math inline">\(\mathcal{S}\)</span>. Then<p></p>
-<p><span class="math display">\[
-\kappa^{2}=\kappa_{n}^{2}+\kappa_{g}^{2}
-\]</span></p>
-</div></details>
-</div>
-<div id="Theorem-178" class="Theorem">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 178</strong></summary><div>Let <span class="math inline">\({\pmb{\sigma}}\)</span> be a chart for <span class="math inline">\(\mathcal{S}\)</span>. Then <span class="math inline">\(\kappa_{1}\)</span> and <span class="math inline">\(\kappa_{2}\)</span> are the minimum and maximum values of <span class="math inline">\(\kappa_{n}\)</span> for all unit speed curves on <span class="math inline">\(S\)</span>.<p></p>
-</div></details>
-</div>
-<div id="Theorem-179" class="Theorem">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 179</strong></summary><div>Let <span class="math inline">\({\pmb{\sigma}}\)</span> be a chart for <span class="math inline">\(\mathcal{S}\)</span> and <span class="math display">\[
+<p>The normal curvature <span class="math inline">\(\kappa_n\)</span> can be computed via the second fundamental form, as shown in the theorem below.</p>
+<div id="theorem-normal-curvature" class="Theorem">
+<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 179</strong></summary><div>
+<p>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathcal{S}\)</span> a unit speed curve. Denote <span class="math inline">\(\mathbf{p}:= {\pmb{\gamma}}(t)\)</span>. We have:</p>
+<ol type="1">
+<li><p>The normal curvature <span class="math inline">\(\kappa_n\)</span> satisfies <span class="math display">\[
+\kappa_n = {II}_{\mathbf{p}} (\dot{{\pmb{\gamma}}}, \dot{{\pmb{\gamma}}}) \,.
+\]</span></p></li>
+<li><p>Let <span class="math inline">\({\pmb{\sigma}}\)</span> be a chart for <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>. Then <span class="math display">\[
 {\pmb{\gamma}}(t)={\pmb{\sigma}}(u(t), v(t))
-\]</span> a unit speed curve on <span class="math inline">\(\mathcal{S}\)</span>. Then <span class="math display">\[
-\kappa_{n}=L \dot{u}^{2}+2 M \dot{u} \dot{v}+N \dot{v}^{2}
-\]</span><p></p>
+\]</span> for some smooth functions <span class="math inline">\(u,v \colon (a,b) \to \mathbb{R}\)</span>, and <span class="math display">\[
+\kappa_{n}=L \dot{u}^{2}+2 M \dot{u} \dot{v}+N \dot{v}^{2} \,.
+\]</span></p></li>
+</ol>
+</div></details>
+</div>
+<div id="Proof*-49" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Part 1.</em> By definition we have <span class="math display">\[
+\dot{{\pmb{\gamma}}}(t) \in T_{\mathbf{p}} \mathcal{S}
+\]</span> when <span class="math inline">\(\mathbf{p}= {\pmb{\gamma}}(t)\)</span>. Set <span id="eq-theorem-normal-curvature-1"><span class="math display">\[
+\widetilde{{\pmb{\gamma}}}(t) := \mathbf{N}( {\pmb{\gamma}}(t)) \,.
+\tag{4.16}\]</span></span> By definition of differential we have <span id="eq-theorem-normal-curvature-2"><span class="math display">\[
+d_{\mathbf{p}} \mathbf{N}(\dot{{\pmb{\gamma}}}(t)) = \dot{\widetilde{{\pmb{\gamma}}}}(t)  \,.
+\tag{4.17}\]</span></span> Note that <span class="math display">\[
+\widetilde{{\pmb{\gamma}}}(t) \cdot \dot{{\pmb{\gamma}}}(t) = 0 \,,
+\]</span> since <span class="math inline">\(\mathbf{N}\)</span> is normal to <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\dot{{\pmb{\gamma}}}(t) \in T_{\mathbf{p}}(\mathcal{S})\)</span>. Differentiating the above expression we get <span class="math display">\[\begin{align*}
+0 &amp; = \frac{d}{dt} \left( \widetilde{{\pmb{\gamma}}}(t) \cdot \dot{{\pmb{\gamma}}}(t) \right) \\
+  &amp; = \widetilde{{\pmb{\gamma}}}(t) \cdot \ddot{{\pmb{\gamma}}}(t)  + \dot{\widetilde{{\pmb{\gamma}}}}(t) \cdot \dot{{\pmb{\gamma}}}(t)   \\
+  &amp; = \mathbf{N}({\pmb{\gamma}}(t)) \cdot \ddot{{\pmb{\gamma}}}(t)  + d_{\mathbf{p}} \mathbf{N}(\dot{{\pmb{\gamma}}}(t)) \cdot \dot{{\pmb{\gamma}}}(t)  
+\end{align*}\]</span> where in the last equation we used (<a href="#eq-theorem-normal-curvature-1"><span>4.16</span></a>) and (<a href="#eq-theorem-normal-curvature-2"><span>4.17</span></a>). Hence <span id="eq-theorem-normal-curvature-3"><span class="math display">\[
+- d_{\mathbf{p}} \mathbf{N}(\dot{{\pmb{\gamma}}}(t)) \cdot \dot{{\pmb{\gamma}}}(t)  =
+\mathbf{N}({\pmb{\gamma}}(t))  \cdot  \ddot{{\pmb{\gamma}}}(t)   \,.
+\tag{4.18}\]</span></span> By definition of Weingarten and Gauss map we get <span id="eq-theorem-normal-curvature-4"><span class="math display">\[
+\mathcal{W}_{\mathbf{p},\mathcal{S}} (\dot{{\pmb{\gamma}}}(t)) = - d_{\mathbf{p}} \mathcal{G} (\dot{{\pmb{\gamma}}}(t)) =  
+- d_{\mathbf{p}} \mathbf{N}(\dot{{\pmb{\gamma}}}(t)) \,.
+\tag{4.19}\]</span></span> Therefore, using (<a href="#eq-theorem-normal-curvature-3"><span>4.18</span></a>) and (<a href="#eq-theorem-normal-curvature-4"><span>4.19</span></a>), we infer <span class="math display">\[\begin{align*}
+II_{\mathbf{p}} (\dot{{\pmb{\gamma}}}(t) , \dot{{\pmb{\gamma}}}(t) ) &amp; = \mathcal{W}_{\mathbf{p},\mathcal{S}} (\dot{{\pmb{\gamma}}}(t)) \cdot \dot{{\pmb{\gamma}}}(t) \\
+                            &amp; = - d_{\mathbf{p}} \mathbf{N}(\dot{{\pmb{\gamma}}}(t)) \cdot \dot{{\pmb{\gamma}}}(t) \\
+                            &amp; = \mathbf{N}({\pmb{\gamma}}(t))  \cdot  \ddot{{\pmb{\gamma}}}(t) \\
+                            &amp; = \kappa_n \,,
+\end{align*}\]</span> where in the last equality we used (<a href="#eq-surface-curve-curvature-1"><span>4.13</span></a>).<p></p>
+<p><em>Part 2.</em> Let <span class="math inline">\({\pmb{\sigma}}\)</span> be a chart at <span class="math inline">\(\mathbf{p}\)</span> and <span class="math display">\[
+{\pmb{\gamma}}(t) = {\pmb{\sigma}}(u(t),v(t)) \,.
+\]</span> Differentiating the above expression we get <span class="math display">\[
+\dot{{\pmb{\gamma}}}(t) = \dot{u} {\pmb{\sigma}}_u + \dot{v} {\pmb{\sigma}}_v \,.
+\]</span> By definition of <span class="math inline">\(du\)</span> and <span class="math inline">\(dv\)</span>, see Definition <a href="chap_4.html#definition-coordinate-functions">101</a>, we have <span class="math display">\[
+du(\dot{{\pmb{\gamma}}}(t)) = \dot{u}(t) \,, \quad
+dv(\dot{{\pmb{\gamma}}}(t)) = \dot{v}(t) \,.
+\]</span> Therefore, using Part 1 and Theorem <a href="chap_4.html#theorem-sff-chart">156</a>, we obtain <span class="math display">\[\begin{align*}
+\kappa_n &amp; = II_{\mathbf{p}} (\dot{{\pmb{\gamma}}}(t) , \dot{{\pmb{\gamma}}}(t) ) \\
+         &amp; = L du(\dot{{\pmb{\gamma}}}(t))^2 + 2M du(\dot{{\pmb{\gamma}}}(t)) dv(\dot{{\pmb{\gamma}}}(t)) + N dv(\dot{{\pmb{\gamma}}}(t))^2 \\
+         &amp; = L \dot{u}^{2}+2 M \dot{u} \dot{v}+N \dot{v}^{2} \,.
+\end{align*}\]</span></p>
 </div></details>
 </div>
 <div id="Example-180" class="Example">
@@ -4658,6 +4776,10 @@ N &amp; =1
 \kappa_{n}=\sin^{2}(v) \dot{u}^{2}+\dot{v}^{2} = 1
 \]</span> as required.</p>
 </blockquote>
+</div></details>
+</div>
+<div id="Theorem-181" class="Theorem">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 181</strong></summary><div>Let <span class="math inline">\({\pmb{\sigma}}\)</span> be a chart for <span class="math inline">\(\mathcal{S}\)</span>. Then <span class="math inline">\(\kappa_{1}\)</span> and <span class="math inline">\(\kappa_{2}\)</span> are the minimum and maximum values of <span class="math inline">\(\kappa_{n}\)</span> for all unit speed curves on <span class="math inline">\(S\)</span>.<p></p>
 </div></details>
 </div>
 
