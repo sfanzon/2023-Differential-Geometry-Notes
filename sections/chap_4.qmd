@@ -6364,6 +6364,15 @@ $$
 :::
 
 
+
+::: Notation
+
+In the following we denote the matrix of $\WW_{\pp,\SSS}$ by the symbol $\WW$.
+
+:::
+
+
+
 ::: Example
 ### Helicoid
 
@@ -7259,7 +7268,7 @@ $$
 $$
 and the principal vectors are
 \begin{align*}
-\mathbf{t}_1 & = \sss_u = (-\sin(u),\cos(v),0) \,, \quad 
+\mathbf{t}_1 & = \sss_u = (-\sin(u),\cos(v),0) \,,\\
 \mathbf{t}_2 & = \sss_v = (0,0,1)\,,
 \end{align*}
 as shown in @fig-cylinder-principal.
@@ -7364,12 +7373,7 @@ $$
 \end{array}
 \right)
 $$
-Since $\WW$ is diagonal, the eigenvalues are the diagonal entries of $\WW$ and
-eigenvectors are 
-$$
-\xx_1 = (1,0)\,, \quad \xx_2 = (0,1) \,.
-$$
-Therefore the principal curvatures are
+Since $\WW$ is diagonal, the principal curvatures are
 $$
 \kappa_1 = \kappa_2 = 1
 $$
@@ -7427,12 +7431,7 @@ $$
 \end{array}
 \right) \,.
 $$
-Since $\WW$ is diagonal, the eigenvalues are the diagonal entries of $\WW$ and
-eigenvectors are 
-$$
-\xx_1 = (1,0)\,, \quad \xx_2 = (0,1) \,.
-$$
-Therefore the principal curvatures are
+Since $\WW$ is diagonal, the principal curvatures are
 $$
 \kappa_1 = \frac{1}{b} \,, \quad 
 \kappa_2 = \dfrac{\cos(\theta)}{ a + b \cos(\theta)} \,,
@@ -7459,11 +7458,13 @@ H & = \frac{\kappa_1 + \kappa_2}{2} =
 
 
 Let $\SSS$ be a regular surface and consider all the curves $\g$ on $\SSS$ 
-passing through the point $\pp \in \SSS$. We have the 
-following natural questions:
+passing through the point $\pp \in \SSS$. 
 
-- Is there a straight line on $\SSS$ passing through $\pp$?
-- Which curves through $\pp$ have greatest or lowest curvature?
+::: Question
+
+Which curves through $\pp$ have greatest or lowest curvature?
+
+:::
 
 We start our analysis with the following proposition.
 
@@ -7788,7 +7789,7 @@ curvatures $\kappa_1$ and $\kappa_2$.
 
 
 ::: Theorem
-### Euler's Theorem
+### Euler's Theorem {#theorem-euler-thm}
 
 Let $\SSS$ be a regular surface and denote by $\kappa_1, \kappa_2$ the
 principal curvatures with principal vectors $\mathbf{t}_1,\mathbf{t}_2$.
@@ -8155,6 +8156,122 @@ $$
 Therefore $\kappa_n$ does not depend on $\g$. Intuitively, this 
 can only happen if in the vicinity of $\pp$ the surface looks like
 a sphere or a plane. Indeed, the following theorem holds.
+
+
+::: Theorem
+
+Let $\SSS$ be a regular surface such that every point $\pp \in \SSS$ is
+umbilic. Then $\SSS$ is an open subset of plane or a sphere.
+
+:::
+
+
+::: Proof
+
+By assumption we have
+$$
+\kappa_1 (\pp) = \kappa_2 (\pp) = \kappa (\pp) \,, \quad \forall \, \pp \in \SSS \,.
+$${#eq-theorem-umbilic}
+
+
+*Step 1. $\kappa$ is constant.*
+
+By Theorem \ref{theorem-weingarten-diagonal} the principal vectors
+$\{\mathbf{t}_1,\mathbf{t}_2\}$ are an orthonormal basis of
+$T_{\pp} \SSS$. Hence, for each $\vv \in T_{\pp} \SSS$ there exist
+$\lambda,\mu \in \R$ such that
+$$
+\vv = \lambda \mathbf{t}_1 + \mu \mathbf{t}_2 \,.
+$$
+Using the linearity of $\WW_{\pp,\SSS}$ and (@eq-theorem-umbilic)
+we obtain
+\begin{align*}
+\WW_{\pp,\SSS} (\vv) & = \lambda \WW_{\pp,\SSS} ( \mathbf{t}_1) + \mu  \WW_{\pp,\SSS} (\mathbf{t}_2) \\
+                     & = \lambda \kappa \mathbf{t}_1 + \mu \kappa \mathbf{t}_2 \\
+                     & = \kappa \vv \,,
+\end{align*}
+showing that
+$$
+\WW_{\pp,\SSS} (\vv) = \kappa \vv \,, \quad \forall \, \vv \in T_{\pp} \SSS \,.
+$${#eq-theorem-umbilic-1}
+Let $\sss \colon U \to \R^3$ be a chart of $\SSS$. Up to restricting $\sss$, we can
+assume that $U$ is connected. By Lemma \ref{lemma-weingarten} we have
+$$
+\WW_{\pp,\SSS} (\sss_u) = - \NN_{u} \,, \quad 
+\WW_{\pp,\SSS} (\sss_v) = - \NN_{v} \,.
+$$
+On the other hand, by (@eq-theorem-umbilic-1) we infer
+$$
+\WW_{\pp,\SSS} (\sss_u) = \kappa \sss_u \,, \quad 
+\WW_{\pp,\SSS} (\sss_v) = \kappa \sss_v \,,
+$$
+from which 
+$$
+\NN_{u} = - \kappa \sss_u \,, \quad 
+\NN_{v} = - \kappa \sss_v \,.
+$${#eq-theorem-umbilic-2}
+Thus
+$$
+\left( \kappa \sss_u \right)_v = - \left( \NN_u \right)_v = 
+- \left( \NN_v \right)_u = \left( \kappa \sss_v \right)_u \,.
+$$
+Moreover
+\begin{align*}
+\left( \kappa \sss_u \right)_v & = \kappa_v \sss_u + \kappa \sss_{uv} \\
+\left( \kappa \sss_v \right)_u & = \kappa_u \sss_v + \kappa \sss_{uv} \,,
+\end{align*}
+so that 
+$$
+\kappa_v \sss_u = \kappa_u \sss_v \,.
+$${#eq-theorem-umbilic-3}
+Recall that $\sss_u$ and $\sss_v$ are linearly independent, being $\SSS$ regular. Hence the linear combination at (@eq-theorem-umbilic-3) must be trivial, implying
+$$
+\kappa_u = \kappa_v = 0 \,.
+$$
+Since $U$ is connected, the above implies that $\kappa$ is constant.
+
+
+*Step 2.* We have the two cases $\kappa = 0$ and $\kappa \neq 0$.
+
+- Assume $\kappa = 0$. By (@eq-theorem-umbilic-2) we get that
+$$
+\NN_u = \NN_v = \zero \,,
+$$
+which implies $\NN$ is constant. Therefore 
+$$
+\left( \NN \cdot \sss  \right)_u = \NN_u \cdot \sss + \NN \cdot \sss_u = 0  
+$$
+since $\NN_u = \zero$ and $\NN \cdot \sss_u = 0$ because $\NN$ is orthogonal to $T_{\pp} \SSS$.
+Similarly we get
+$$
+\left( \NN \cdot \sss  \right)_v = 0 \,,
+$$
+showing that $\NN \cdot \sss$ is constant. Hence there exists $c \in \R$ such that
+$$
+\NN \cdot \sss(u,v) = c \,, \quad \forall \, (u,v) \in U \,.
+$$
+This shows $\sss(U)$ is contained in the plane
+$$
+\pi = \{ \xx \in \R^3 \divider  \NN \cdot \xx = c \} \,.
+$$
+
+- Assume $\kappa \neq 0$. Condition (@eq-theorem-umbilic-2) implies 
+$$
+\NN = -\kappa \sss + \mathbf{a}
+$$
+for some $\mathbf{a} \in \R^3$ constant vector. Thus
+$$
+\left\|  \sss - \frac{1}{\kappa} \mathbf{a}  \right\|^2 = 
+\left\| - \frac{1}{\kappa}  \NN  \right\|^2 = \frac{1}{\kappa^2} \,,
+$$
+given that $\| \NN \| = 1$. Therefore $\sss(U)$ is contained in the sphere of center 
+$\mathbf{a}/\kappa$ and radius $1/\kappa$.
+
+
+:::
+
+
+
 
 
 

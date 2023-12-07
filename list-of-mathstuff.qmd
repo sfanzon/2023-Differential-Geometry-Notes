@@ -991,6 +991,8 @@
 
  [**Important**](#Important*-4.39)\Pageref{Important*-4.39}
 
+ [**Notation**](#Notation*-4.40)\Pageref{Notation*-4.40}
+
  [**Example 4.160**](#helicoid): Helicoid\Pageref{helicoid}
 
  [**Example 4.161**](#example-weingarten-2)\Pageref{example-weingarten-2}
@@ -1003,7 +1005,7 @@
 
  [**Proposition 4.164**](#Proposition-4.164)\Pageref{Proposition-4.164}
 
- [**Proof**](#Proof*-4.41)\Pageref{Proof*-4.41}
+ [**Proof**](#Proof*-4.42)\Pageref{Proof*-4.42}
 
  [**Example 4.165**](#plane): Plane\Pageref{plane}
 
@@ -1011,11 +1013,11 @@
 
  [**Theorem 4.167**](#theorem-weingarten-diagonal)\Pageref{theorem-weingarten-diagonal}
 
- [**Proof**](#Proof*-4.42)\Pageref{Proof*-4.42}
+ [**Proof**](#Proof*-4.43)\Pageref{Proof*-4.43}
 
  [**Corollary 4.168**](#corollary-weingarten-diagonal)\Pageref{corollary-weingarten-diagonal}
 
- [**Proof**](#Proof*-4.43)\Pageref{Proof*-4.43}
+ [**Proof**](#Proof*-4.44)\Pageref{Proof*-4.44}
 
  [**Definition 4.169**](#principal-curvatures-and-vectors): Principal curvatures and vectors\Pageref{principal-curvatures-and-vectors}
 
@@ -1025,9 +1027,9 @@
 
  [**Proposition 4.172**](#Proposition-4.172)\Pageref{Proposition-4.172}
 
- [**Proof**](#Proof*-4.44)\Pageref{Proof*-4.44}
+ [**Proof**](#Proof*-4.45)\Pageref{Proof*-4.45}
 
- [**Important**](#Important*-4.45)\Pageref{Important*-4.45}
+ [**Important**](#Important*-4.46)\Pageref{Important*-4.46}
 
  [**Example 4.173**](#unit-cylinder-3): Unit Cylinder\Pageref{unit-cylinder-3}
 
@@ -1035,40 +1037,46 @@
 
  [**Example 4.175**](#torus): Torus\Pageref{torus}
 
- [**Proposition 4.176**](#proposition-surface-frame)\Pageref{proposition-surface-frame}
+ [**Question 4.176**](#Question-4.176)\Pageref{Question-4.176}
 
- [**Proof**](#Proof*-4.46)\Pageref{Proof*-4.46}
+ [**Proposition 4.177**](#proposition-surface-frame)\Pageref{proposition-surface-frame}
 
- [**Important**](#Important*-4.47)\Pageref{Important*-4.47}
+ [**Proof**](#Proof*-4.47)\Pageref{Proof*-4.47}
 
- [**Proposition 4.177**](#Proposition-4.177)\Pageref{Proposition-4.177}
+ [**Important**](#Important*-4.48)\Pageref{Important*-4.48}
 
- [**Proof**](#Proof*-4.48)\Pageref{Proof*-4.48}
-
- [**Definition 4.178**](#normal-and-geodesic-curvature): Normal and geodesic curvature\Pageref{normal-and-geodesic-curvature}
-
- [**Theorem 4.179**](#theorem-normal-curvature)\Pageref{theorem-normal-curvature}
+ [**Proposition 4.178**](#Proposition-4.178)\Pageref{Proposition-4.178}
 
  [**Proof**](#Proof*-4.49)\Pageref{Proof*-4.49}
 
- [**Example 4.180**](#example-curves-on-sphere): Curves on the sphere\Pageref{example-curves-on-sphere}
+ [**Definition 4.179**](#normal-and-geodesic-curvature): Normal and geodesic curvature\Pageref{normal-and-geodesic-curvature}
 
- [**Theorem 4.181**](#eulers-theorem): Euler’s Theorem\Pageref{eulers-theorem}
+ [**Theorem 4.180**](#theorem-normal-curvature)\Pageref{theorem-normal-curvature}
 
  [**Proof**](#Proof*-4.50)\Pageref{Proof*-4.50}
 
- [**Corollary 4.182**](#corollary-euler-thm)\Pageref{corollary-euler-thm}
+ [**Example 4.181**](#example-curves-on-sphere): Curves on the sphere\Pageref{example-curves-on-sphere}
 
- [**Example 4.183**](#curves-on-the-sphere): Curves on the sphere\Pageref{curves-on-the-sphere}
-
- [**Theorem 4.184**](#theorem-local-surface): Local structure of surfaces\Pageref{theorem-local-surface}
+ [**Theorem 4.182**](#theorem-euler-thm): Euler’s Theorem\Pageref{theorem-euler-thm}
 
  [**Proof**](#Proof*-4.51)\Pageref{Proof*-4.51}
 
- [**Definition 4.185**](#local-shape-types): Local shape types\Pageref{local-shape-types}
+ [**Corollary 4.183**](#corollary-euler-thm)\Pageref{corollary-euler-thm}
 
- [**Example 4.186**](#Example-4.186)\Pageref{Example-4.186}
+ [**Example 4.184**](#curves-on-the-sphere): Curves on the sphere\Pageref{curves-on-the-sphere}
 
- [**Definition 4.187**](#umbilical-point): Umbilical point\Pageref{umbilical-point}
+ [**Theorem 4.185**](#theorem-local-surface): Local structure of surfaces\Pageref{theorem-local-surface}
 
- [**Remark 4.188**](#Remark-4.188)\Pageref{Remark-4.188}
+ [**Proof**](#Proof*-4.52)\Pageref{Proof*-4.52}
+
+ [**Definition 4.186**](#local-shape-types): Local shape types\Pageref{local-shape-types}
+
+ [**Example 4.187**](#Example-4.187)\Pageref{Example-4.187}
+
+ [**Definition 4.188**](#umbilical-point): Umbilical point\Pageref{umbilical-point}
+
+ [**Remark 4.189**](#Remark-4.189)\Pageref{Remark-4.189}
+
+ [**Theorem 4.190**](#Theorem-4.190)\Pageref{Theorem-4.190}
+
+ [**Proof**](#Proof*-4.53)\Pageref{Proof*-4.53}
