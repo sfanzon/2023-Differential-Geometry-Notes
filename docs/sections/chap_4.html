@@ -85,15 +85,7 @@ div.csl-indent {
   }
 }</script>
 <style>
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Theorem {
+.Question {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -105,30 +97,6 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
@@ -137,11 +105,11 @@ div.csl-indent {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Warning {
+.Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Question {
+.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -149,13 +117,45 @@ div.csl-indent {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
 }
-.Notation {
+.Definition {
   --color1: #c6e6ed;
   --color2: #1995ad;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Goal {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
 </style>
 
@@ -4401,14 +4401,51 @@ P =
 </div></details>
 </div>
 <div id="Proof*-43" class="Proof">
-<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Since <span class="math display">\[
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>Recall that <span class="math inline">\(\mathcal{W}\)</span> is the matrix of <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span> with respect to the basis <span class="math inline">\(\{{\pmb{\sigma}}_u,{\pmb{\sigma}}_v\}\)</span> of <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. Therefore, by definition of <span class="math inline">\(\mathbf{x}_1\)</span>, <span class="math inline">\(\mathbf{x}_2\)</span> we get <span class="math display">\[
 \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{t}_1) = \mathcal{W}\mathbf{x}_1 \,, \quad
-\mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{t}_2) = \mathcal{W}\mathbf{x}_2 \,,
-\]</span> the thesis follows by Theorem <a href="chap_4.html#theorem-weingarten-diagonal">167</a> and the Spectral Theorem for matrices, see Theorem <a href="chap_4.html#theorem-spectral-matrix">19</a>.<p></p>
+\mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{t}_2) = \mathcal{W}\mathbf{x}_2 \,.
+\]</span> The thesis follows by Theorem <a href="chap_4.html#theorem-weingarten-diagonal">167</a> and the Spectral Theorem for matrices, see Theorem <a href="chap_4.html#theorem-spectral-matrix">19</a>.<p></p>
 </div></details>
 </div>
-<div id="Remark-169" class="Remark">
-<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 169</strong></summary><div>If the matrix of the Weingarten map has the form <span class="math display">\[
+<p>The eigenvalues and eigenvectors of the weingarten map have a name.</p>
+<div id="principal-curvatures-and-vectors" class="Definition" title="Principal curvatures and vectors">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 169: </strong>Principal curvatures and vectors</summary><div>
+<p>Let <span class="math inline">\(\mathcal{S}\)</span> be an orientable surface and <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span> be the Weingarten map of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>. We define:</p>
+<ul>
+<li><p>The <strong>principal curvatures</strong> of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> are the eigenvalues <span class="math inline">\(\kappa_1, \kappa_2\)</span> of <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span>.</p></li>
+<li><p>The <strong>principal vectors</strong> corresponding to <span class="math inline">\(\kappa_1\)</span> and <span class="math inline">\(\kappa_2\)</span> are the eigenvectors <span class="math inline">\(\mathbf{t_1}, \mathbf{t}_2\)</span>.</p></li>
+</ul>
+</div></details>
+</div>
+<div id="computing-principal-curvatures-and-vectors" class="Remark" title="Computing principal curvatures and vectors">
+<details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 170: </strong>Computing principal curvatures and vectors</summary><div>
+<p>Corollary <a href="chap_4.html#corollary-weingarten-diagonal">168</a> gives an explicit way to compute the principal curvatures and vectors:</p>
+<ol type="1">
+<li><p>Compute the eigenvalues of <span class="math inline">\(\mathcal{W}\)</span>. This is done by solving for <span class="math inline">\(\kappa\)</span> the equation <span class="math display">\[
+\det(\mathcal{W}- \kappa I) = 0 \,.
+\]</span> This gives one of the principal curvatures <span class="math display">\[
+\kappa_i = \kappa
+\]</span></p></li>
+<li><p>Compute the eigenvector(s) related to the eigenvalue <span class="math inline">\(\kappa\)</span>. This is done by finding scalars <span class="math inline">\(\lambda\)</span>, <span class="math inline">\(\mu\)</span> which solve the linear system <span class="math display">\[
+(\mathcal{W}- \kappa_i I)
+\left(
+\begin{array}{c}
+\lambda \\
+\mu
+\end{array}
+\right) = 0
+\]</span> This gives the eigenvector of <span class="math inline">\(\mathcal{W}\)</span> <span class="math display">\[
+\mathbf{x}_i = (\lambda,\mu)
+\]</span></p></li>
+<li><p>The principal vector associated to <span class="math inline">\(\kappa_i\)</span> is<br>
+<span class="math display">\[
+\mathbf{t}_i = \lambda {\pmb{\sigma}}_u + \mu {\pmb{\sigma}}_v
+\]</span></p></li>
+</ol>
+</div></details>
+</div>
+<div id="computing-principal-curvatures-and-vectors-1" class="Remark" title="Computing principal curvatures and vectors">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 171: </strong>Computing principal curvatures and vectors</summary><div>If the matrix of the Weingarten map has the form <span class="math display">\[
 \mathcal{W}=
 \left(
 \begin{array}{cc}
@@ -4419,30 +4456,20 @@ P =
 \]</span> then <span class="math inline">\(\mathcal{W}\)</span> is already diagonal. The eigenvalues of <span class="math inline">\(\mathcal{W}\)</span> are <span class="math inline">\(\kappa_1\)</span> and <span class="math inline">\(\kappa_2\)</span>, with eigenvectors <span class="math display">\[
 \mathbf{x}_1 = (1,0) \,, \quad
 \mathbf{x}_2 = (0,1) \,.
-\]</span> Since <span class="math inline">\(\mathcal{W}\)</span> is the matrix of the Weingarten map with respect to the basis <span class="math inline">\(\{{\pmb{\sigma}}_u,{\pmb{\sigma}}_v\}\)</span> of <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>, the above means <span class="math display">\[
+\]</span> Therefore <span class="math inline">\(\kappa_1,\kappa_2\)</span> are the principal curvatures, with principal vectors given by <span class="math display">\[
 \mathbf{t}_1 = {\pmb{\sigma}}_u \,, \quad \mathbf{t}_2 = {\pmb{\sigma}}_v \,.
 \]</span><p></p>
 </div></details>
 </div>
-<p>The eigenvalues and eigenvectors of the weingarten map have a name.</p>
-<div id="principal-curvatures-and-vectors" class="Definition" title="Principal curvatures and vectors">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 170: </strong>Principal curvatures and vectors</summary><div>
-<p>Let <span class="math inline">\(\mathcal{S}\)</span> be an orientable surface and <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span> be the Weingarten map of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>. We define:</p>
-<ul>
-<li><p>The <strong>principal curvatures</strong> of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> are the eigenvalues <span class="math inline">\(\kappa_1, \kappa_2\)</span> of <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span>.</p></li>
-<li><p>The <strong>principal vectors</strong> corresponding to <span class="math inline">\(\kappa_1\)</span> and <span class="math inline">\(\kappa_2\)</span> are the eigenvectors <span class="math inline">\(\mathbf{t_1}, \mathbf{t}_2\)</span>.</p></li>
-</ul>
-</div></details>
-</div>
 <p>The principal curvatures are related to the Gaussian and mean curvatures.</p>
-<div id="Proposition-171" class="Proposition">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 171</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be an orientable surface. Then <span class="math display">\[
+<div id="Proposition-172" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 172</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be an orientable surface. Then <span class="math display">\[
 K = \kappa_1 \kappa_2 \,, \quad H = \frac{\kappa_1 + \kappa_2}{2} \,.
 \]</span><p></p>
 </div></details>
 </div>
 <div id="Proof*-44" class="Proof">
-<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>By Theorem <a href="chap_4.html#theorem-weingarten-diagonal">167</a> we have <span class="math display">\[
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>By Corollary <a href="chap_4.html#corollary-weingarten-diagonal">168</a> we have <span class="math display">\[
 \mathcal{W}= P^{-1} D P \,, \quad
 D =
 \left(
@@ -4477,7 +4504,7 @@ H &amp; = \frac12 \operatorname{trace} (\mathcal{W}) \\
 </div></details>
 </div>
 <div id="unit-cylinder-3" class="Example" title="Unit Cylinder">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 172: </strong>Unit Cylinder</summary><div>Consider the unit cylinder charted by <span class="math display">\[
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 173: </strong>Unit Cylinder</summary><div>Consider the unit cylinder charted by <span class="math display">\[
 {\pmb{\sigma}}(u,v) = (\cos(u), \sin(u), v) \,, \quad u \in (0,2\pi)\,, \, v \in \mathbb{R}\,.
 \]</span> We have already computed in Example <a href="chap_4.html#example-cylinder-curvatures">166</a> that the matrix of the Weingarten map is <span class="math display">\[
 \mathcal{W}=
@@ -4504,7 +4531,7 @@ H &amp; = \frac12 \operatorname{trace} (\mathcal{W}) \\
 </figure>
 </div>
 <div id="example-sphere-principal" class="Example" title="Sphere">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 173: </strong>Sphere</summary><div>
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 174: </strong>Sphere</summary><div>
 <p>Consider the chart for the sphere <span class="math display">\[
 {\pmb{\sigma}}(u, v)=(\cos (u) \sin (v), \sin (u) \sin (v), \cos (v))
 \]</span> Prove that <span class="math display">\[
@@ -4592,7 +4619,7 @@ K= \kappa_1 \kappa_2 = 1 \,.
 </div></details>
 </div>
 <div id="torus" class="Example" title="Torus">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 174: </strong>Torus</summary><div>Consider a circle <span class="math inline">\(\mathcal{C}\)</span> contained in the <span class="math inline">\(xz\)</span>-plane, with center at distance <span class="math inline">\(b&gt;0\)</span> from the <span class="math inline">\(z\)</span>-axis and radius <span class="math inline">\(a\)</span>, with <span class="math inline">\(0&lt;a&lt;b\)</span>. The torus is obtained by rotating <span class="math inline">\(\mathcal{C}\)</span> around the <span class="math inline">\(z\)</span>-axis. This surface is charted by <span class="math display">\[
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 175: </strong>Torus</summary><div>Consider a circle <span class="math inline">\(\mathcal{C}\)</span> contained in the <span class="math inline">\(xz\)</span>-plane, with center at distance <span class="math inline">\(b&gt;0\)</span> from the <span class="math inline">\(z\)</span>-axis and radius <span class="math inline">\(a\)</span>, with <span class="math inline">\(0&lt;a&lt;b\)</span>. The torus is obtained by rotating <span class="math inline">\(\mathcal{C}\)</span> around the <span class="math inline">\(z\)</span>-axis. This surface is charted by <span class="math display">\[
 {\pmb{\sigma}}(\theta,\phi) = \left( \left(a+b \cos(\theta) \right) \cos(\phi), \left(a+b \cos(\theta) \right) \sin(\phi), b\sin(\theta) \right) \,,
 \]</span> where <span class="math inline">\(\theta \in (-\pi/2,\pi/2)\)</span> and <span class="math inline">\(\phi\in (0,2\pi)\)</span>. One can compute that the first and second fundamental forms are <span class="math display">\[\begin{align*}
 \mathscr{F}_1 &amp; =
@@ -4642,7 +4669,7 @@ H &amp; = \frac{\kappa_1 + \kappa_2}{2} =
 </ul>
 <p>We start our analysis with the following proposition.</p>
 <div id="proposition-surface-frame" class="Proposition">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 175</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathcal{S}\)</span> be a unit speed curve. Then <span class="math display">\[
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 176</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathcal{S}\)</span> be a unit speed curve. Then <span class="math display">\[
 \{ \dot{{\pmb{\gamma}}}, \mathbf{N}, \mathbf{N}\times \dot{{\pmb{\gamma}}}\}
 \]</span> is an orthornormal basis of <span class="math inline">\(\mathbb{R}^3\)</span> for all <span class="math inline">\(t \in (a,b)\)</span>, where <span class="math inline">\(\mathbf{N}\)</span> is the standard unit normal to <span class="math inline">\(\mathcal{S}\)</span> evaluated at <span class="math inline">\(\mathbf{p}= {\pmb{\gamma}}(t)\)</span>.<p></p>
 </div></details>
@@ -4666,8 +4693,8 @@ H &amp; = \frac{\kappa_1 + \kappa_2}{2} =
 \]</span> does not coincide with the Frenet frame of <span class="math inline">\({\pmb{\gamma}}\)</span> in general.<p></p>
 </div></details>
 </div>
-<div id="Proposition-176" class="Proposition">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 176</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathcal{S}\)</span> be a unit speed curve. Then <span id="eq-surface-curve-curvature"><span class="math display">\[
+<div id="Proposition-177" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 177</strong></summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathcal{S}\)</span> be a unit speed curve. Then <span id="eq-surface-curve-curvature"><span class="math display">\[
 \ddot{{\pmb{\gamma}}}= \kappa_n \mathbf{N}+ \kappa_g \, \left( \mathbf{N}\times \dot{{\pmb{\gamma}}}\right) \,,
 \tag{4.12}\]</span></span> where <span class="math inline">\(\mathbf{N}\)</span> is evaluated at <span class="math inline">\(\mathbf{p}:={\pmb{\gamma}}(t)\)</span> and <span class="math inline">\(\kappa_n,\kappa_g\)</span> are scalars depedent on <span class="math inline">\(\mathbf{p}\)</span>. Moreover <span id="eq-surface-curve-curvature-1"><span class="math display">\[
 \kappa_n = \ddot{{\pmb{\gamma}}}\cdot \mathbf{N}\,, \quad \kappa_g = \ddot{{\pmb{\gamma}}}\cdot \left( \mathbf{N}\times \dot{{\pmb{\gamma}}}\right)  \,,
@@ -4679,7 +4706,7 @@ H &amp; = \frac{\kappa_1 + \kappa_2}{2} =
 </div></details>
 </div>
 <div id="Proof*-48" class="Proof">
-<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Part 1.</em> By Proposition <a href="chap_4.html#proposition-surface-frame">175</a> we know that <span class="math display">\[
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Part 1.</em> By Proposition <a href="chap_4.html#proposition-surface-frame">176</a> we know that <span class="math display">\[
 \{ \dot{{\pmb{\gamma}}}, \mathbf{N}, \mathbf{N}\times \dot{{\pmb{\gamma}}}\}
 \]</span> is an orthornormal basis of <span class="math inline">\(\mathbb{R}^3\)</span>. Hence <span class="math display">\[
 \ddot{{\pmb{\gamma}}}= a \dot{{\pmb{\gamma}}}+ b \mathbf{N}+ c \left( \mathbf{N}\times \dot{{\pmb{\gamma}}}\right) \,,
@@ -4718,7 +4745,7 @@ c \dot{{\pmb{\gamma}}}\cdot \left( \mathbf{N}\times \dot{{\pmb{\gamma}}}\right) 
 </div>
 <p>The quantities <span class="math inline">\(\kappa_n\)</span> and <span class="math inline">\(\kappa_g\)</span> are the normal and geodesic curvatures of <span class="math inline">\({\pmb{\gamma}}\)</span>.</p>
 <div id="normal-and-geodesic-curvature" class="Definition" title="Normal and geodesic curvature">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 177: </strong>Normal and geodesic curvature</summary><div>
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 178: </strong>Normal and geodesic curvature</summary><div>
 <p>Let <span class="math inline">\(\mathcal{S}\)</span> be regular and <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathcal{S}\)</span> a unit speed curve. By (<a href="#eq-surface-curve-curvature"><span>4.12</span></a>) we have <span class="math display">\[
 \ddot{{\pmb{\gamma}}}= \kappa_{n} \mathbf{N}+ \kappa_{g} (\mathbf{N}\times \dot{{\pmb{\gamma}}})
 \]</span> for <span class="math inline">\(\mathbf{N}\)</span> the standard unit normal to <span class="math inline">\(\mathcal{S}\)</span> and scalars <span class="math inline">\(\kappa_n , \kappa_g \in \mathbb{R}\)</span>. We call</p>
@@ -4730,7 +4757,7 @@ c \dot{{\pmb{\gamma}}}\cdot \left( \mathbf{N}\times \dot{{\pmb{\gamma}}}\right) 
 </div>
 <p>The normal curvature <span class="math inline">\(\kappa_n\)</span> can be computed via the second fundamental form, as shown in the theorem below.</p>
 <div id="theorem-normal-curvature" class="Theorem">
-<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 178</strong></summary><div>
+<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 179</strong></summary><div>
 <p>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\({\pmb{\gamma}}\colon (a,b) \to \mathcal{S}\)</span> a unit speed curve. Denote <span class="math inline">\(\mathbf{p}:= {\pmb{\gamma}}(t)\)</span>. We have:</p>
 <ol type="1">
 <li><p>The normal curvature <span class="math inline">\(\kappa_n\)</span> satisfies <span class="math display">\[
@@ -4784,18 +4811,18 @@ dv(\dot{{\pmb{\gamma}}}(t)) = \dot{v}(t) \,.
 </div></details>
 </div>
 <div id="example-curves-on-sphere" class="Example" title="Curves on the sphere">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 179: </strong>Curves on the sphere</summary><div>
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 180: </strong>Curves on the sphere</summary><div>
 <p>Consider the chart for the sphere <span class="math display">\[
 {\pmb{\sigma}}(u, v)=(\cos (u) \sin (v), \sin (u) \sin (v), \cos (v))
 \]</span> Show that <span class="math display">\[
 \kappa_{n}(t)=1
 \]</span> for all unit speed curves on the sphere.</p>
 <blockquote class="blockquote">
-<p><em>Solution.</em> We have computed in Example <a href="chap_4.html#example-sphere-principal">173</a> that the second fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
+<p><em>Solution.</em> We have computed in Example <a href="chap_4.html#example-sphere-principal">174</a> that the second fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> is <span class="math display">\[
 \mathcal{F}_2 = \sin^{2}(v) du^2 + dv^2
 \]</span> Let <span class="math inline">\({\pmb{\gamma}}\)</span> be a unit speed curve on the sphere, that is, <span id="eq-sphere-normal-curvature"><span class="math display">\[
 {\pmb{\gamma}}(t)=\sigma(u(t), v(t)) \,.
-\tag{4.20}\]</span></span> By Theorem <a href="chap_4.html#theorem-normal-curvature">178</a> the normal curvature of <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math display">\[
+\tag{4.20}\]</span></span> By Theorem <a href="chap_4.html#theorem-normal-curvature">179</a> the normal curvature of <span class="math inline">\({\pmb{\gamma}}\)</span> is <span class="math display">\[
 \kappa_{n}=\sin^{2}(v) \dot{u}^{2}+\dot{v}^{2} \,.
 \]</span> Differentiating (<a href="#eq-sphere-normal-curvature"><span>4.20</span></a>) we get <span class="math display">\[\begin{align*}
 \dot{{\pmb{\gamma}}}(t) &amp; = \frac{d}{dt} ( \cos(u(t)) \sin(v(t)), \sin(u(t)) \sin(v(t)), \cos(v(t)) ) \\
@@ -4813,7 +4840,7 @@ dv(\dot{{\pmb{\gamma}}}(t)) = \dot{v}(t) \,.
 </div>
 <p>The normal curvature <span class="math inline">\(\kappa_n\)</span> is related to the principal curvatures <span class="math inline">\(\kappa_1\)</span> and <span class="math inline">\(\kappa_2\)</span>.</p>
 <div id="eulers-theorem" class="Theorem" title="Euler’s Theorem">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 180: </strong>Euler’s Theorem</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and denote by <span class="math inline">\(\kappa_1, \kappa_2\)</span> the principal curvatures with principal vectors <span class="math inline">\(\mathbf{t}_1,\mathbf{t}_2\)</span>. Let <span class="math inline">\({\pmb{\gamma}}\)</span> be a unit speed curve on <span class="math inline">\(\mathcal{S}\)</span>. The normal curvature of <span class="math inline">\({\pmb{\gamma}}\)</span> is given by <span class="math display">\[
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 181: </strong>Euler’s Theorem</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and denote by <span class="math inline">\(\kappa_1, \kappa_2\)</span> the principal curvatures with principal vectors <span class="math inline">\(\mathbf{t}_1,\mathbf{t}_2\)</span>. Let <span class="math inline">\({\pmb{\gamma}}\)</span> be a unit speed curve on <span class="math inline">\(\mathcal{S}\)</span>. The normal curvature of <span class="math inline">\({\pmb{\gamma}}\)</span> is given by <span class="math display">\[
 \kappa_n = \kappa_1 \cos^2(\theta) + \kappa_2 \sin^2(\theta) \,,
 \]</span> where <span class="math inline">\(\theta\)</span> is the angle between <span class="math inline">\(\dot{{\pmb{\gamma}}}\)</span> and <span class="math inline">\(\mathbf{t}_1\)</span>.<p></p>
 </div></details>
@@ -4842,7 +4869,7 @@ II_{\mathbf{p}}(\mathbf{t}_1 , \mathbf{t}_1) &amp; = \mathcal{W}_{\mathbf{p},\ma
 II_{\mathbf{p}}(\mathbf{t}_1 , \mathbf{t}_2) &amp; = \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{t}_1) \cdot \mathbf{t}_2 = \kappa_1  \mathbf{t}_1 \cdot \mathbf{t}_2 = 0 \\
 II_{\mathbf{p}}(\mathbf{t}_2 , \mathbf{t}_1) &amp; = \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{t}_2) \cdot \mathbf{t}_1 = \kappa_2  \mathbf{t}_2 \cdot \mathbf{t}_1 = 0 \\
 II_{\mathbf{p}}(\mathbf{t}_2 , \mathbf{t}_2) &amp; = \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{t}_2) \cdot \mathbf{t}_2 = \kappa_2 \left\| \mathbf{t}_2 \right\|^2 = \kappa_2 \\
-\end{align*}\]</span> By Theorem <a href="chap_4.html#theorem-normal-curvature">178</a>, equation (<a href="#eq-euler-thm-proof"><span>4.21</span></a>), and bilinearity of <span class="math inline">\(II_{\mathbf{p}}\)</span>, we get <span class="math display">\[\begin{align*}
+\end{align*}\]</span> By Theorem <a href="chap_4.html#theorem-normal-curvature">179</a>, equation (<a href="#eq-euler-thm-proof"><span>4.21</span></a>), and bilinearity of <span class="math inline">\(II_{\mathbf{p}}\)</span>, we get <span class="math display">\[\begin{align*}
 \kappa_n &amp; = {II}_{\mathbf{p}} (\dot{{\pmb{\gamma}}},\dot{{\pmb{\gamma}}}) \\
 &amp; = \cos^2(\theta) \, II_{\mathbf{p}}(\mathbf{t}_1 , \mathbf{t}_1)  +  \cos(\theta) \sin(\theta) \,  II_{\mathbf{p}}(\mathbf{t}_1 , \mathbf{t}_2) \\
 &amp; \,\,\,\, + \sin(\theta)\cos(\theta)  \,  II_{\mathbf{p}}(\mathbf{t}_2 , \mathbf{t}_1)  + \sin^2(\theta)  \,  II_{\mathbf{p}}(\mathbf{t}_2 , \mathbf{t}_2)  \\
@@ -4852,7 +4879,7 @@ II_{\mathbf{p}}(\mathbf{t}_2 , \mathbf{t}_2) &amp; = \mathcal{W}_{\mathbf{p},\ma
 </div>
 <p>As an immediate corollary of the Euler’s Theorem we get the next statement.</p>
 <div id="corollary-euler-thm" class="Corollary">
-<details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 181</strong></summary><div>
+<details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 182</strong></summary><div>
 <p>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\(\kappa_1, \kappa_2\)</span> its principal curvatures at <span class="math inline">\(\mathbf{p}\)</span> with principal vectors <span class="math inline">\(\mathbf{t}_1,\mathbf{t}_2\)</span>. Then:</p>
 <ul>
 <li><p><span class="math inline">\(\kappa_{1}\)</span> and <span class="math inline">\(\kappa_{2}\)</span> are the minimum and maximum values of <span class="math inline">\(\kappa_{n}\)</span>, for all unit speed curves on <span class="math inline">\(\mathcal{S}\)</span> passing through <span class="math inline">\(\mathbf{p}\)</span>.</p></li>
@@ -4860,13 +4887,13 @@ II_{\mathbf{p}}(\mathbf{t}_2 , \mathbf{t}_2) &amp; = \mathcal{W}_{\mathbf{p},\ma
 </ul>
 </div></details>
 </div>
-<p>In Example <a href="chap_4.html#example-curves-on-sphere">179</a> we have shown with a direct argument that <span class="math display">\[
+<p>In Example <a href="chap_4.html#example-curves-on-sphere">180</a> we have shown with a direct argument that <span class="math display">\[
 \kappa_n = 1
 \]</span> for all unit speed curves on the sphere. Thanks to Euler’s Theorem we can obtain an immediate proof of this fact.</p>
 <div id="curves-on-the-sphere" class="Example" title="Curves on the sphere">
-<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 182: </strong>Curves on the sphere</summary><div>Let us consider again the chart for the sphere <span class="math display">\[
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 183: </strong>Curves on the sphere</summary><div>Let us consider again the chart for the sphere <span class="math display">\[
 {\pmb{\sigma}}(u, v)=(\cos (u) \sin (v), \sin (u) \sin (v), \cos (v))
-\]</span> as seen in Example <a href="chap_4.html#example-curves-on-sphere">179</a>. By Example <a href="chap_4.html#example-sphere-principal">173</a>, the principal curvatures of <span class="math inline">\({\pmb{\sigma}}\)</span> are <span class="math display">\[
+\]</span> as seen in Example <a href="chap_4.html#example-curves-on-sphere">180</a>. By Example <a href="chap_4.html#example-sphere-principal">174</a>, the principal curvatures of <span class="math inline">\({\pmb{\sigma}}\)</span> are <span class="math display">\[
 \kappa_1 = \kappa_2 =  1 \,.
 \]</span> By Euler’s Theorem, for any curve <span class="math inline">\({\pmb{\gamma}}\)</span> on the sphere we have <span class="math display">\[
 \kappa_n = \kappa_1 \cos^2(\theta) + \kappa_2 \sin^2(\theta) = 1 \,.
@@ -4876,38 +4903,91 @@ II_{\mathbf{p}}(\mathbf{t}_2 , \mathbf{t}_2) &amp; = \mathcal{W}_{\mathbf{p},\ma
 </section>
 <section id="local-shape-of-a-surface" class="level3" data-number="4.13.4">
 <h3 data-number="4.13.4" class="anchored" data-anchor-id="local-shape-of-a-surface"><span class="header-section-number">4.13.4</span> Local shape of a surface</h3>
-<p>The principal curvatures <span class="math inline">\(\kappa_1\)</span> and <span class="math inline">\(\kappa_2\)</span> determine the maximum and minimum curvature of a surface <span class="math inline">\(\mathcal{S}\)</span>, see Corollary <a href="chap_4.html#corollary-euler-thm">181</a>. Hence we can study the local shape of <span class="math inline">\(\mathcal{S}\)</span> in function of <span class="math inline">\(\kappa_1\)</span> and <span class="math inline">\(\kappa_2\)</span>. We distinguish between <span class="math inline">\(4\)</span> shapes.</p>
+<p>The principal curvatures <span class="math inline">\(\kappa_1\)</span> and <span class="math inline">\(\kappa_2\)</span> determine the maximum and minimum curvature of a surface <span class="math inline">\(\mathcal{S}\)</span>, see Corollary <a href="chap_4.html#corollary-euler-thm">182</a>. Hence we can study the local shape of <span class="math inline">\(\mathcal{S}\)</span> in function of <span class="math inline">\(\kappa_1\)</span> and <span class="math inline">\(\kappa_2\)</span>.</p>
+<div id="theorem-local-surface" class="Theorem" title="Local structure of surfaces">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 184: </strong>Local structure of surfaces</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. In the vicinity of <span class="math inline">\(\mathbf{p}\)</span> the surface <span class="math inline">\(\mathcal{S}\)</span> is approximated by the quadric surface of equation <span id="eq-local-structure"><span class="math display">\[
+z = \frac12 \left( x^2 \kappa_1 (\mathbf{p}) + y^2 \kappa_2(\mathbf{p}) \right) \,,
+\tag{4.22}\]</span></span> where <span class="math inline">\(\kappa_1 (\mathbf{p}),\kappa_2 (\mathbf{p})\)</span> are the principal curvatures of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>.<p></p>
+</div></details>
+</div>
+<div id="Proof*-51" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>By Theorem <a href="chap_4.html#theorem-weingarten-diagonal">167</a> the principal vectors <span class="math inline">\(\{ \mathbf{t}_1, \mathbf{t}_2 \}\)</span> are an orthonormal basis of <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>. Therefore the standard unit normal <span class="math inline">\(\mathbf{N}\)</span> at <span class="math inline">\(\mathbf{p}\)</span> is orthogonal to both <span class="math inline">\(\mathbf{t}_1\)</span> and <span class="math inline">\(\mathbf{t}_2\)</span>. Up to rotations and translations, we can assume WLOG that <span class="math inline">\(\mathbf{p}= {\pmb{0}}\)</span> and <span id="eq-theorem-local-surface"><span class="math display">\[
+\mathbf{t}_1 = (1,0,0) \,, \quad
+\mathbf{t}_2 = (0,1,0) \,, \quad
+\mathbf{N}= (0,0,1) \,.
+\tag{4.23}\]</span></span> Let <span class="math inline">\({\pmb{\sigma}}\)</span> be a chart for <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>. Up to reparametrizing, we can assume that <span class="math display">\[
+{\pmb{\sigma}}(0,0)  = \mathbf{p}= {\pmb{0}}\,.
+\]</span> As <span class="math inline">\(\mathbf{N}= (0,0,1)\)</span>, it follows that <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span> is the <span class="math inline">\(xy\)</span>-plane <span class="math display">\[
+T_{\mathbf{p}} \mathcal{S}= \mathbb{R}^2 = \{ (x,y,0) \, \colon \,x, y \in \mathbb{R}\} \, .
+\]</span> Since <span class="math inline">\(\{{\pmb{\sigma}}_u ,{\pmb{\sigma}}_v\}\)</span> is a basis for <span class="math inline">\(T_{\mathbf{p}} \mathcal{S}\)</span>, we have that for each <span class="math inline">\((x,y) \in \mathbb{R}^2\)</span> there exist <span class="math inline">\((s,t) \in \mathbb{R}^2\)</span> such that <span id="eq-theorem-local-surface-1"><span class="math display">\[
+(x,y,0) = s {\pmb{\sigma}}_u + t {\pmb{\sigma}}_v \,,
+\tag{4.24}\]</span></span> where <span class="math inline">\({\pmb{\sigma}}_u\)</span> and <span class="math inline">\({\pmb{\sigma}}_v\)</span> are evaluated at <span class="math inline">\((0,0)\)</span>. The Taylor approximation of <span class="math inline">\({\pmb{\sigma}}\)</span> at <span class="math inline">\((0,0)\)</span> is <span class="math display">\[\begin{align*}
+{\pmb{\sigma}}(s,t) &amp; = {\pmb{\sigma}}(0,0) + s {\pmb{\sigma}}_u + t {\pmb{\sigma}}_v \\
+          &amp; \qquad + \frac12 \left(  s^2 {\pmb{\sigma}}_{uu} + 2st {\pmb{\sigma}}_{uv} + t^2 {\pmb{\sigma}}_{vv}   \right) + R \,, \\
+          &amp; = (x,y,0) + \frac12 \left(  s^2 {\pmb{\sigma}}_{uu} + 2st {\pmb{\sigma}}_{uv} + t^2 {\pmb{\sigma}}_{vv}   \right) + R
+\end{align*}\]</span> where <span class="math inline">\(R\)</span> is a remainder and the derivatives of <span class="math inline">\({\pmb{\sigma}}\)</span> are evaluated at <span class="math inline">\((0,0)\)</span>. Hence, if <span class="math inline">\(x,y\)</span> are small (and thus <span class="math inline">\(s,t\)</span> are small), we have that <span class="math display">\[
+{\pmb{\sigma}}(s,t) \approx  (x,y,z)
+\]</span> where <span class="math display">\[\begin{align*}
+z &amp; := \frac12 \left(  s^2 {\pmb{\sigma}}_{uu} + 2st {\pmb{\sigma}}_{uv} + t^2 {\pmb{\sigma}}_{vv}   \right) \cdot \mathbf{N}\\
+  &amp; = \frac12 \left( L s^2  + 2M st + N t^2   \right) \,,
+\end{align*}\]</span> with <span class="math inline">\(L,M,N\)</span> coefficients of the second fundamental form of <span class="math inline">\({\pmb{\sigma}}\)</span> at <span class="math inline">\((0,0)\)</span>. Set <span class="math display">\[
+\mathbf{v}:=  s {\pmb{\sigma}}_u + t {\pmb{\sigma}}_v  \,.
+\]</span> By Theorem <a href="chap_4.html#theorem-sff-chart">156</a> we have <span class="math display">\[
+L s^2  + 2M st + N t^2  = II_{\mathbf{p}} (\mathbf{v},\mathbf{v}) = \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{v}) \cdot \mathbf{v}\,.
+\]</span> On the other hand, using (<a href="#eq-theorem-local-surface"><span>4.23</span></a>) and (<a href="#eq-theorem-local-surface-1"><span>4.24</span></a>) we get <span class="math display">\[
+\mathbf{v}= s {\pmb{\sigma}}_u + t {\pmb{\sigma}}_v  = (x,y,0) = x \mathbf{t}_1 + y \mathbf{t}_2 \,.
+\]</span> Since the Weingarten map is linear we get <span class="math display">\[\begin{align*}
+\mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{v}) &amp; = x  \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{t}_1) + y  \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{t}_2) \\
+    &amp; = x \kappa_1 \mathbf{t}_1 + y \kappa_2 \mathbf{t}_2 \,,
+\end{align*}\]</span> where we used that <span class="math inline">\(\mathbf{t}_1\)</span> and <span class="math inline">\(\mathbf{t}_2\)</span> are eigenvectors of <span class="math inline">\(\mathcal{W}_{\mathbf{p},\mathcal{S}}\)</span> with eigenvalues <span class="math inline">\(\kappa_1\)</span> and <span class="math inline">\(\kappa_2\)</span>. Hence <span class="math display">\[\begin{align*}
+\mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{v}) \cdot \mathbf{v}&amp; =  x \kappa_1 \mathbf{t}_1 + y \kappa_2 \mathbf{t}_2 \cdot ( x \mathbf{t}_1 + y  \mathbf{t}_2) \\
+                               &amp; = x^2 \kappa_1 + y^2 \kappa_2  
+\end{align*}\]</span> Therefore <span class="math display">\[\begin{align*}
+z &amp; = \frac12 \left( L s^2  + 2M st + N t^2   \right) \\
+  &amp; = \frac12 \mathcal{W}_{\mathbf{p},\mathcal{S}} (\mathbf{v}) \cdot \mathbf{v}\\
+  &amp; = \frac12 \left( x^2 \kappa_1 + y^2 \kappa_2  \right) \,,
+\end{align*}\]</span> showing that <span class="math display">\[
+{\pmb{\sigma}}(t,s) \approx \left(x,y, \frac12 \left( x^2 \kappa_1 + y^2 \kappa_2  \right)  \right) \,.
+\]</span><p></p>
+</div></details>
+</div>
+<p>Thanks to Theorem <a href="chap_4.html#theorem-local-surface">184</a> we can distinguish between <span class="math inline">\(4\)</span> approximating shapes.</p>
 <div id="local-shape-types" class="Definition" title="Local shape types">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 183: </strong>Local shape types</summary><div>
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 185: </strong>Local shape types</summary><div>
 <p>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and denote by <span class="math inline">\(\kappa_1(\mathbf{p})\)</span> and <span class="math inline">\(\kappa_2(\mathbf{p})\)</span> its principal curvatures at <span class="math inline">\(\mathbf{p}\)</span>. The point <span class="math inline">\(\mathbf{p}\)</span> is</p>
 <ul>
 <li><p><strong>Elliptic</strong> if <span class="math display">\[
 \kappa_1(\mathbf{p}) &gt; 0 \,, \, \kappa_2(\mathbf{p}) &gt; 0 \quad \mbox{ or } \quad  \kappa_1(\mathbf{p}) &lt; 0 \,, \, \kappa_2(\mathbf{p}) &lt; 0
-\]</span></p></li>
+\]</span> Then (<a href="#eq-local-structure"><span>4.22</span></a>) is the equation of an <strong>elliptic paraboloid</strong>.</p></li>
 <li><p><strong>Hyperbolic</strong> if <span class="math display">\[
-\kappa_{1}(\mathbf{p})&lt;0&lt;\kappa_{2}(\mathbf{p})  \quad \mbox{ or } \quad  \kappa_{1}(\mathbf{p})&lt;0&lt; \kappa_{2}(\mathbf{p})
-\]</span></p></li>
+\kappa_{1}(\mathbf{p})&lt;0&lt;\kappa_{2}(\mathbf{p})  \quad \mbox{ or } \quad  \kappa_{2}(\mathbf{p})&lt;0&lt; \kappa_{1}(\mathbf{p})
+\]</span> Then (<a href="#eq-local-structure"><span>4.22</span></a>) is the equation of a <strong>hyperbolic paraboloid</strong>.</p></li>
 <li><p><strong>Parabolic</strong> if <span class="math display">\[
-\kappa_{1}(\mathbf{p})=0 \, , \, \kappa_{2}(\mathbf{p}) \neq 0 \quad \mbox{ or } \quad \kappa_{1}(\mathbf{p}) \neq 0, \, \kappa_{2}(\mathbf{p})=0
-\]</span></p></li>
+\kappa_{1}(\mathbf{p})=0 \, , \, \kappa_{2}(\mathbf{p}) \neq 0 \quad \mbox{ or } \quad \kappa_{2}(\mathbf{p}) \neq 0, \, \kappa_{1}(\mathbf{p})=0
+\]</span> Then (<a href="#eq-local-structure"><span>4.22</span></a>) is the equation of a <strong>parabolic cylinder</strong>.</p></li>
 <li><p><strong>Planar</strong> if <span class="math display">\[
 \kappa_{1}(\mathbf{p})=\kappa_{2}(\mathbf{p}) = 0
-\]</span></p></li>
+\]</span> Then (<a href="#eq-local-structure"><span>4.22</span></a>) is the equation of a <strong>plane</strong>.</p></li>
 </ul>
 </div></details>
 </div>
-<div id="local-structure-of-surfaces" class="Theorem" title="Local structure of surfaces">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 184: </strong>Local structure of surfaces</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and <span class="math inline">\(\mathbf{p}\in \mathcal{S}\)</span>. In the vicinity of <span class="math inline">\(\mathbf{p}\)</span> the surface <span class="math inline">\(\mathcal{S}\)</span> is approximated by the quadric surface of equation <span class="math display">\[
-z = x^2 \kappa_1 (\mathbf{p}) + y^2 \kappa_2(\mathbf{p}) \,,
-\]</span> where <span class="math inline">\(\kappa_1 (\mathbf{p}),\kappa_2 (\mathbf{p})\)</span> are the principal curvatures of <span class="math inline">\(\mathcal{S}\)</span> at <span class="math inline">\(\mathbf{p}\)</span>.<p></p>
-</div></details>
+<div id="fig-elephants" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img src="../images/surfaces_local_shape_1.png" class="img-fluid figure-img"></p>
 </div>
-<div id="Proof*-51" class="Proof">
-<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>d<p></p>
-</div></details>
 </div>
-<div id="Example-185" class="Example">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 185</strong></summary><div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img src="../images/surfaces_local_shape_2.png" class="img-fluid figure-img"></p>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.17: A surface <span class="math inline">\(\mathcal{S}\)</span> is locally approximated by one of the above quadrics, depending on the values of principal curvatures at <span class="math inline">\(\mathbf{p}\)</span>.</figcaption><p></p>
+</figure>
+</div>
+<div id="Example-186" class="Example">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 186</strong></summary><div>
 <p>Consider the surface chart <span class="math display">\[
 {\pmb{\sigma}}(u, v) = \left(u-v, u+v, u^{2}+v^{2}\right) \,.
 \]</span> Show that <span class="math inline">\(\mathbf{p}= {\pmb{\sigma}}(1,0)\)</span> is an elliptic point. Therefore <span class="math inline">\({\pmb{\sigma}}\)</span> is approximated by an <em>elliptic paraboiloid</em> in the vicinity of <span class="math inline">\(\mathbf{p}\)</span>.</p>
@@ -4944,15 +5024,20 @@ z = x^2 \kappa_1 (\mathbf{p}) + y^2 \kappa_2(\mathbf{p}) \,,
 <section id="umbilical-points" class="level3" data-number="4.13.5">
 <h3 data-number="4.13.5" class="anchored" data-anchor-id="umbilical-points"><span class="header-section-number">4.13.5</span> Umbilical points</h3>
 <div id="umbilical-point" class="Definition" title="Umbilical point">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 186: </strong>Umbilical point</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and denote by <span class="math inline">\(\kappa_1(\mathbf{p})\)</span> and <span class="math inline">\(\kappa_2(\mathbf{p})\)</span> its principal curvatures at <span class="math inline">\(\mathbf{p}\)</span>. We say that <span class="math inline">\(\mathbf{p}\)</span> is an <strong>umbilic</strong> if <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 187: </strong>Umbilical point</summary><div>Let <span class="math inline">\(\mathcal{S}\)</span> be a regular surface and denote by <span class="math inline">\(\kappa_1(\mathbf{p})\)</span> and <span class="math inline">\(\kappa_2(\mathbf{p})\)</span> its principal curvatures at <span class="math inline">\(\mathbf{p}\)</span>. We say that <span class="math inline">\(\mathbf{p}\)</span> is an <strong>umbilic</strong> if <span class="math display">\[
 \kappa_{1}(\mathbf{p})=\kappa_{2}(\mathbf{p}) \,.
 \]</span><p></p>
 </div></details>
 </div>
-<div id="Remark-187" class="Remark">
-<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 187</strong></summary><div>Umbilical points might be <strong>planar</strong> or <strong>elliptic</strong>.<p></p>
+<div id="Remark-188" class="Remark">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 188</strong></summary><div>Umbilical points might be <strong>planar</strong> or <strong>elliptic</strong>.<p></p>
 </div></details>
 </div>
+<p>Suppose that <span class="math inline">\(\mathbf{p}\)</span> is an umbilic, that is, <span class="math display">\[
+\kappa_1=\kappa_2
+\]</span> at <span class="math inline">\(\mathbf{p}\)</span>. Let <span class="math inline">\(\kappa_n\)</span> be the normal curvature of a unit speed curve <span class="math inline">\({\pmb{\gamma}}\)</span> passing through <span class="math inline">\(\mathbf{p}\)</span>. By Theorem <span class="math inline">\(\ref{theorem-euler-thm}\)</span> we have <span class="math display">\[
+\kappa_n = \kappa_1 \cos^2(\theta) + \kappa_2 \sin^2(\theta) = \kappa_1 \,.
+\]</span> Therefore <span class="math inline">\(\kappa_n\)</span> does not depend on <span class="math inline">\({\pmb{\gamma}}\)</span>. Intuitively, this can only happen if in the vicinity of <span class="math inline">\(\mathbf{p}\)</span> the surface looks like a sphere or a plane. Indeed, the following theorem holds.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">

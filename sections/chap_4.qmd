@@ -7063,42 +7063,17 @@ $$
 
 ::: Proof
 
-Since 
+Recall that $\WW$ is the matrix of $\WW_{\pp,\SSS}$ with respect to the basis
+$\{\sss_u,\sss_v\}$ of $T_{\pp} \SSS$. Therefore, by definition of $\xx_1$, $\xx_2$ we get
 $$
 \WW_{\pp,\SSS} (\mathbf{t}_1) = \WW \xx_1 \,, \quad
-\WW_{\pp,\SSS} (\mathbf{t}_2) = \WW \xx_2 \,,
+\WW_{\pp,\SSS} (\mathbf{t}_2) = \WW \xx_2 \,.
 $$
-the thesis follows by Theorem \ref{theorem-weingarten-diagonal} and the
+The thesis follows by Theorem \ref{theorem-weingarten-diagonal} and the
 Spectral Theorem for matrices, see Theorem \ref{theorem-spectral-matrix}.
 
 :::
 
-
-
-::: Remark
-
-If the matrix of the Weingarten map has the form
-$$
-\WW = 
-\left(
-\begin{array}{cc}
-\kappa_1 & 0 \\
-0        & \kappa_2
-\end{array}
-\right)
-$$
-then $\WW$ is already diagonal. The eigenvalues of $\WW$ are $\kappa_1$ and $\kappa_2$, with eigenvectors
-$$
-\xx_1 = (1,0) \,, \quad 
-\xx_2 = (0,1) \,. 
-$$
-Since $\WW$ is the matrix of the Weingarten map with respect to the
-basis $\{\sss_u,\sss_v\}$ of $T_{\pp} \SSS$, the above means
-$$
-\mathbf{t}_1 = \sss_u \,, \quad \mathbf{t}_2 = \sss_v \,.
-$$
-
-:::
 
 
 The eigenvalues and eigenvectors of the weingarten map have a name.
@@ -7117,6 +7092,75 @@ of $\WW_{\pp,\SSS}$.
 :::
 
 
+::: Remark
+### Computing principal curvatures and vectors
+
+Corollary \ref{corollary-weingarten-diagonal} gives an explicit way
+to compute the principal curvatures and vectors:
+
+1. Compute the eigenvalues of $\WW$. This is done by solving for $\kappa$ the equation
+$$
+\det(\WW - \kappa I) = 0 \,.
+$$
+This gives one of the principal curvatures 
+$$
+\kappa_i = \kappa
+$$
+
+2. Compute the eigenvector(s) related to the eigenvalue $\kappa$. This is 
+done by finding scalars $\lambda$, $\mu$ which solve the linear system
+$$
+(\WW - \kappa_i I) 
+\left( 
+\begin{array}{c}
+\lambda \\
+\mu
+\end{array}
+\right) = 0 
+$$
+This gives the eigenvector of $\WW$
+$$
+\xx_i = (\lambda,\mu)
+$$
+
+3. The principal vector associated to $\kappa_i$ is  
+$$
+\mathbf{t}_i = \lambda \sss_u + \mu \sss_v 
+$$
+
+
+:::
+
+
+::: Remark
+### Computing principal curvatures and vectors
+
+If the matrix of the Weingarten map has the form
+$$
+\WW = 
+\left(
+\begin{array}{cc}
+\kappa_1 & 0 \\
+0        & \kappa_2
+\end{array}
+\right)
+$$
+then $\WW$ is already diagonal. The eigenvalues of $\WW$ are $\kappa_1$ and $\kappa_2$, with eigenvectors
+$$
+\xx_1 = (1,0) \,, \quad 
+\xx_2 = (0,1) \,. 
+$$
+Therefore $\kappa_1,\kappa_2$ are the principal curvatures, with 
+principal vectors given by
+$$
+\mathbf{t}_1 = \sss_u \,, \quad \mathbf{t}_2 = \sss_v \,.
+$$
+
+:::
+
+
+
+
 The principal curvatures are related to the Gaussian and mean curvatures.
 
 
@@ -7132,7 +7176,7 @@ $$
 
 ::: Proof
 
-By Theorem \ref{theorem-weingarten-diagonal} we have
+By Corollary \ref{corollary-weingarten-diagonal} we have
 $$
 \WW = P^{-1} D P \,, \quad 
 D = 
@@ -7873,7 +7917,111 @@ The principal curvatures $\kappa_1$ and $\kappa_2$ determine
 the maximum and minimum curvature of a surface $\SSS$, see
 Corollary \ref{corollary-euler-thm}. Hence we can study the local
 shape of $\SSS$ in function of $\kappa_1$ and $\kappa_2$. 
-We distinguish between $4$ shapes.
+
+
+
+
+::: Theorem
+### Local structure of surfaces {#theorem-local-surface}
+
+Let $\SSS$ be a regular surface and $\pp \in \SSS$. In the vicinity of $\pp$ 
+the surface $\SSS$ is approximated by the quadric surface of equation
+$$
+z = \frac12 \left( x^2 \kappa_1 (\pp) + y^2 \kappa_2(\pp) \right) \,,
+$${#eq-local-structure}
+where $\kappa_1 (\pp),\kappa_2 (\pp)$ are the principal curvatures of
+$\SSS$ at $\pp$.
+
+:::
+
+
+::: Proof
+
+By Theorem \ref{theorem-weingarten-diagonal} the principal vectors 
+$\{ \mathbf{t}_1, \mathbf{t}_2 \}$ are an orthonormal basis of 
+$T_{\pp} \SSS$. Therefore the standard unit normal $\NN$ at $\pp$ is 
+orthogonal to both 
+$\mathbf{t}_1$ and $\mathbf{t}_2$. Up to rotations and translations, 
+we can assume WLOG that $\pp = \zero$ and
+$$
+\mathbf{t}_1 = (1,0,0) \,, \quad 
+\mathbf{t}_2 = (0,1,0) \,, \quad 
+\NN = (0,0,1) \,.
+$${#eq-theorem-local-surface}
+Let $\sss$ be a chart for $\SSS$ at $\pp$. Up to reparametrizing, 
+we can assume that
+$$
+\sss(0,0)  = \pp = \zero \,.
+$$
+As $\NN = (0,0,1)$, it follows that $T_{\pp} \SSS$ is the $xy$-plane
+$$
+T_{\pp} \SSS = \R^2 = \{ (x,y,0) \divider x, y \in \R \} \, .
+$$
+Since $\{\sss_u ,\sss_v\}$ is a basis for $T_{\pp} \SSS$, we have that 
+for each $(x,y) \in \R^2$ there exist $(s,t) \in \R^2$ such that
+$$
+(x,y,0) = s \sss_u + t \sss_v \,,
+$${#eq-theorem-local-surface-1}
+where $\sss_u$ and $\sss_v$ are evaluated at $(0,0)$. The Taylor 
+approximation of $\sss$ at $(0,0)$ is
+\begin{align*}
+\sss(s,t) & = \sss(0,0) + s \sss_u + t \sss_v \\
+          & \qquad + \frac12 \left(  s^2 \sss_{uu} + 2st \sss_{uv} + t^2 \sss_{vv}   \right) + R \,, \\
+          & = (x,y,0) + \frac12 \left(  s^2 \sss_{uu} + 2st \sss_{uv} + t^2 \sss_{vv}   \right) + R
+\end{align*}
+where $R$ is a remainder and the derivatives of $\sss$ are evaluated
+at $(0,0)$. Hence, if $x,y$ are small (and thus $s,t$ are small), we have
+that
+$$
+\sss(s,t) \approx  (x,y,z)
+$$
+where
+\begin{align*} 
+z & := \frac12 \left(  s^2 \sss_{uu} + 2st \sss_{uv} + t^2 \sss_{vv}   \right) \cdot \NN  \\
+  & = \frac12 \left( L s^2  + 2M st + N t^2   \right) \,,
+\end{align*}
+with $L,M,N$ coefficients of the second fundamental form of $\sss$ at
+$(0,0)$. Set 
+$$
+\vv :=  s \sss_u + t \sss_v  \,.
+$$
+By Theorem \ref{theorem-sff-chart} we have
+$$
+ L s^2  + 2M st + N t^2  = II_{\pp} (\vv,\vv) = \WW_{\pp,\SSS} (\vv) \cdot \vv \,.
+$$
+On the other hand, using (@eq-theorem-local-surface) and
+(@eq-theorem-local-surface-1) we get
+$$
+\vv = s \sss_u + t \sss_v  = (x,y,0) = x \mathbf{t}_1 + y \mathbf{t}_2 \,.
+$$
+Since the Weingarten map is linear we get
+\begin{align*}
+ \WW_{\pp,\SSS} (\vv) & = x  \WW_{\pp,\SSS} (\mathbf{t}_1) + y  \WW_{\pp,\SSS} (\mathbf{t}_2) \\
+    & = x \kappa_1 \mathbf{t}_1 + y \kappa_2 \mathbf{t}_2 \,, 
+\end{align*}
+where we used that $\mathbf{t}_1$ and $\mathbf{t}_2$ are eigenvectors of 
+$\WW_{\pp,\SSS}$ with eigenvalues $\kappa_1$ and $\kappa_2$. Hence
+\begin{align*}
+ \WW_{\pp,\SSS} (\vv) \cdot \vv & =  x \kappa_1 \mathbf{t}_1 + y \kappa_2 \mathbf{t}_2 \cdot ( x \mathbf{t}_1 + y  \mathbf{t}_2) \\
+                               & = x^2 \kappa_1 + y^2 \kappa_2  
+\end{align*}
+Therefore
+\begin{align*}
+z & = \frac12 \left( L s^2  + 2M st + N t^2   \right) \\
+  & = \frac12 \WW_{\pp,\SSS} (\vv) \cdot \vv \\
+  & = \frac12 \left( x^2 \kappa_1 + y^2 \kappa_2  \right) \,,
+\end{align*}
+showing that 
+$$
+\sss(t,s) \approx \left(x,y, \frac12 \left( x^2 \kappa_1 + y^2 \kappa_2  \right)  \right) \,.
+$$
+
+:::
+
+
+
+Thanks to Theorem \ref{theorem-local-surface}
+we can distinguish between $4$ approximating shapes.
 
 
 
@@ -7889,44 +8037,38 @@ $\kappa_2(\pp)$ its principal curvatures at $\pp$. The point $\pp$ is
 $$
 \kappa_1(\pp) > 0 \,, \, \kappa_2(\pp) > 0 \quad \mbox{ or } \quad  \kappa_1(\pp) < 0 \,, \, \kappa_2(\pp) < 0 
 $$
+Then (@eq-local-structure) is the equation of an **elliptic paraboloid**.
 
 - **Hyperbolic** if 
 $$
-\kappa_{1}(\mathbf{p})<0<\kappa_{2}(\mathbf{p})  \quad \mbox{ or } \quad  \kappa_{1}(\mathbf{p})<0< \kappa_{2}(\mathbf{p})
+\kappa_{1}(\mathbf{p})<0<\kappa_{2}(\mathbf{p})  \quad \mbox{ or } \quad  \kappa_{2}(\mathbf{p})<0< \kappa_{1}(\mathbf{p})
 $$
+Then (@eq-local-structure) is the equation of a **hyperbolic paraboloid**.
 
 - **Parabolic** if 
 $$
-\kappa_{1}(\mathbf{p})=0 \, , \, \kappa_{2}(\mathbf{p}) \neq 0 \quad \mbox{ or } \quad \kappa_{1}(\mathbf{p}) \neq 0, \, \kappa_{2}(\mathbf{p})=0
+\kappa_{1}(\mathbf{p})=0 \, , \, \kappa_{2}(\mathbf{p}) \neq 0 \quad \mbox{ or } \quad \kappa_{2}(\mathbf{p}) \neq 0, \, \kappa_{1}(\mathbf{p})=0
 $$
+Then (@eq-local-structure) is the equation of a **parabolic cylinder**.
 
 - **Planar** if 
 $$
 \kappa_{1}(\mathbf{p})=\kappa_{2}(\mathbf{p}) = 0
 $$
+Then (@eq-local-structure) is the equation of a **plane**.
 
 
 :::
 
 
 
-::: Theorem
-### Local structure of surfaces
+::: {#fig-elephants layout-nrow=2}
 
-Let $\SSS$ be a regular surface and $\pp \in \SSS$. In the vicinity of $\pp$ 
-the surface $\SSS$ is approximated by the quadric surface of equation
-$$
-z = x^2 \kappa_1 (\pp) + y^2 \kappa_2(\pp) \,,
-$$
-where $\kappa_1 (\pp),\kappa_2 (\pp)$ are the principal curvatures of
-$\SSS$ at $\pp$.
+![](/images/surfaces_local_shape_1.png){width=70%}
 
-:::
+![](/images/surfaces_local_shape_2.png){width=70%}
 
-
-::: Proof
-
-d
+A surface $\SSS$ is locally approximated by one of the above quadrics, depending on the values of principal curvatures at $\pp$.
 
 :::
 
@@ -7998,3 +8140,21 @@ $$
 Umbilical points might be **planar** or **elliptic**.
 
 :::
+
+
+Suppose that $\pp$ is an umbilic, that is, 
+$$
+\kappa_1=\kappa_2 
+$$
+at $\pp$. Let $\kappa_n$ be the normal curvature of a unit speed
+curve $\g$ passing through $\pp$. By Theorem \ref{theorem-euler-thm}
+we have
+$$
+\kappa_n = \kappa_1 \cos^2(\theta) + \kappa_2 \sin^2(\theta) = \kappa_1 \,.
+$$
+Therefore $\kappa_n$ does not depend on $\g$. Intuitively, this 
+can only happen if in the vicinity of $\pp$ the surface looks like
+a sphere or a plane. Indeed, the following theorem holds.
+
+
+

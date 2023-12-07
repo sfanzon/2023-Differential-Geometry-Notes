@@ -1017,54 +1017,58 @@
 
  [**Proof**](#Proof*-4.43)\Pageref{Proof*-4.43}
 
- [**Remark 4.169**](#Remark-4.169)\Pageref{Remark-4.169}
+ [**Definition 4.169**](#principal-curvatures-and-vectors): Principal curvatures and vectors\Pageref{principal-curvatures-and-vectors}
 
- [**Definition 4.170**](#principal-curvatures-and-vectors): Principal curvatures and vectors\Pageref{principal-curvatures-and-vectors}
+ [**Remark 4.170**](#computing-principal-curvatures-and-vectors): Computing principal curvatures and vectors\Pageref{computing-principal-curvatures-and-vectors}
 
- [**Proposition 4.171**](#Proposition-4.171)\Pageref{Proposition-4.171}
+ [**Remark 4.171**](#computing-principal-curvatures-and-vectors-1): Computing principal curvatures and vectors\Pageref{computing-principal-curvatures-and-vectors-1}
+
+ [**Proposition 4.172**](#Proposition-4.172)\Pageref{Proposition-4.172}
 
  [**Proof**](#Proof*-4.44)\Pageref{Proof*-4.44}
 
  [**Important**](#Important*-4.45)\Pageref{Important*-4.45}
 
- [**Example 4.172**](#unit-cylinder-3): Unit Cylinder\Pageref{unit-cylinder-3}
+ [**Example 4.173**](#unit-cylinder-3): Unit Cylinder\Pageref{unit-cylinder-3}
 
- [**Example 4.173**](#example-sphere-principal): Sphere\Pageref{example-sphere-principal}
+ [**Example 4.174**](#example-sphere-principal): Sphere\Pageref{example-sphere-principal}
 
- [**Example 4.174**](#torus): Torus\Pageref{torus}
+ [**Example 4.175**](#torus): Torus\Pageref{torus}
 
- [**Proposition 4.175**](#proposition-surface-frame)\Pageref{proposition-surface-frame}
+ [**Proposition 4.176**](#proposition-surface-frame)\Pageref{proposition-surface-frame}
 
  [**Proof**](#Proof*-4.46)\Pageref{Proof*-4.46}
 
  [**Important**](#Important*-4.47)\Pageref{Important*-4.47}
 
- [**Proposition 4.176**](#Proposition-4.176)\Pageref{Proposition-4.176}
+ [**Proposition 4.177**](#Proposition-4.177)\Pageref{Proposition-4.177}
 
  [**Proof**](#Proof*-4.48)\Pageref{Proof*-4.48}
 
- [**Definition 4.177**](#normal-and-geodesic-curvature): Normal and geodesic curvature\Pageref{normal-and-geodesic-curvature}
+ [**Definition 4.178**](#normal-and-geodesic-curvature): Normal and geodesic curvature\Pageref{normal-and-geodesic-curvature}
 
- [**Theorem 4.178**](#theorem-normal-curvature)\Pageref{theorem-normal-curvature}
+ [**Theorem 4.179**](#theorem-normal-curvature)\Pageref{theorem-normal-curvature}
 
  [**Proof**](#Proof*-4.49)\Pageref{Proof*-4.49}
 
- [**Example 4.179**](#example-curves-on-sphere): Curves on the sphere\Pageref{example-curves-on-sphere}
+ [**Example 4.180**](#example-curves-on-sphere): Curves on the sphere\Pageref{example-curves-on-sphere}
 
- [**Theorem 4.180**](#eulers-theorem): Euler’s Theorem\Pageref{eulers-theorem}
+ [**Theorem 4.181**](#eulers-theorem): Euler’s Theorem\Pageref{eulers-theorem}
 
  [**Proof**](#Proof*-4.50)\Pageref{Proof*-4.50}
 
- [**Corollary 4.181**](#corollary-euler-thm)\Pageref{corollary-euler-thm}
+ [**Corollary 4.182**](#corollary-euler-thm)\Pageref{corollary-euler-thm}
 
- [**Example 4.182**](#curves-on-the-sphere): Curves on the sphere\Pageref{curves-on-the-sphere}
+ [**Example 4.183**](#curves-on-the-sphere): Curves on the sphere\Pageref{curves-on-the-sphere}
 
- [**Definition 4.183**](#local-shape-types): Local shape types\Pageref{local-shape-types}
+ [**Theorem 4.184**](#theorem-local-surface): Local structure of surfaces\Pageref{theorem-local-surface}
 
- [**Theorem 4.184**](#local-structure-of-surfaces): Local structure of surfaces\Pageref{local-structure-of-surfaces}
+ [**Proof**](#Proof*-4.51)\Pageref{Proof*-4.51}
 
- [**Example 4.185**](#Example-4.185)\Pageref{Example-4.185}
+ [**Definition 4.185**](#local-shape-types): Local shape types\Pageref{local-shape-types}
 
- [**Definition 4.186**](#umbilical-point): Umbilical point\Pageref{umbilical-point}
+ [**Example 4.186**](#Example-4.186)\Pageref{Example-4.186}
 
- [**Remark 4.187**](#Remark-4.187)\Pageref{Remark-4.187}
+ [**Definition 4.187**](#umbilical-point): Umbilical point\Pageref{umbilical-point}
+
+ [**Remark 4.188**](#Remark-4.188)\Pageref{Remark-4.188}
