@@ -368,7 +368,7 @@
     "href": "sections/license.html#citation",
     "title": "License",
     "section": "Citation",
-    "text": "Citation\nFor attribution, please cite this work as:\n\nFanzon, Silvio. (2023). Lecture Notes on Differential Geometry.\nhttps://www.silviofanzon.com/2023-Differential-Geometry-Notes/\n\nBibTex citation:\n@electronic{Danzon-Diff-Geom-2023,\n    author = {Fanzon, Silvio},\n    title = {Lecture Notes on Differential Geometry},\n    url = {https://www.silviofanzon.com/2023-Differential-Geometry-Notes/},\n    year = {2023}}"
+    "text": "Citation\nFor attribution, please cite this work as:\n\nFanzon, Silvio. (2023). Lecture Notes on Differential Geometry.\nhttps://www.silviofanzon.com/2023-Differential-Geometry-Notes/\n\nBibTex citation:\n@electronic{Fanzon-Diff-Geom-2023,\n    author = {Fanzon, Silvio},\n    title = {Lecture Notes on Differential Geometry},\n    url = {https://www.silviofanzon.com/2023-Differential-Geometry-Notes/},\n    year = {2023}}"
   },
   {
     "objectID": "sections/references.html",

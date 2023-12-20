@@ -23,7 +23,7 @@ BibTex citation:
 
 
 ```bibtex
-@electronic{Danzon-Diff-Geom-2023,
+@electronic{Fanzon-Diff-Geom-2023,
 	author = {Fanzon, Silvio},
 	title = {Lecture Notes on Differential Geometry},
 	url = {https://www.silviofanzon.com/2023-Differential-Geometry-Notes/},
