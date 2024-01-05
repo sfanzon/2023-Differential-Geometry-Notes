@@ -66,27 +66,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Warning {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Theorem {
+.Goal {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -98,35 +78,11 @@ ul.task-list li input[type="checkbox"] {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
 }
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Goal {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Assumption {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Question {
+.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -134,9 +90,53 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Proof {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Assumption {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
 </style>
 
@@ -801,16 +801,11 @@ U = \bigcup_{ i \in I } B_{r_i}(x_i) \,,
 \]</span><p></p>
 </div></details>
 </div>
-<p>The following proposition gives a practical way to check if two metrics are equivalent.</p>
+<p>The following proposition gives a sufficent condition for the equivalence of two metrics.</p>
 <div id="proposition-equivalent-metrics" class="Proposition">
-<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 29</strong></summary><div>
-<p>Let <span class="math inline">\(X\)</span> be a set and <span class="math inline">\(d_1,d_2\)</span> be metrics on <span class="math inline">\(X\)</span>. They are equivalent:</p>
-<ol type="1">
-<li><span class="math inline">\(d_1\)</span> and <span class="math inline">\(d_2\)</span> are equivalent metrics.</li>
-<li>There exists a constant <span class="math inline">\(\alpha &gt; 0\)</span> such that <span class="math display">\[
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 29</strong></summary><div>Let <span class="math inline">\(X\)</span> be a set and <span class="math inline">\(d_1,d_2\)</span> be metrics on <span class="math inline">\(X\)</span>. Suppose that there exists a constant <span class="math inline">\(\alpha &gt; 0\)</span> such that <span class="math display">\[
 \frac{1}{\alpha} \, d_2 (x,y) \leq d_1 (x,y) \leq \alpha \, d_2(x,y) \,, \quad \forall \, x,y \in X \,.
-\]</span></li>
-</ol>
+\]</span> Then <span class="math inline">\(d_1\)</span> and <span class="math inline">\(d_2\)</span> are equivalent metrics.<p></p>
 </div></details>
 </div>
 <p>The proof of Proposition <a href="chap_3.html#proposition-equivalent-metrics">29</a> is trivial, and is left as an exercise.</p>

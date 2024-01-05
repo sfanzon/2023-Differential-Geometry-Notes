@@ -938,20 +938,18 @@ $$
 :::
 
 
-The following proposition gives a practical way to check if two metrics are equivalent.
+The following proposition gives a sufficent condition for the equivalence of two metrics.
 
 
 ::: {.Proposition  #proposition-equivalent-metrics}
 
 
-Let $X$ be a set and $d_1,d_2$ be metrics on $X$. They are equivalent:
-
-1. $d_1$ and $d_2$ are equivalent metrics.
-2. There exists a constant $\alpha > 0$ such that
+Let $X$ be a set and $d_1,d_2$ be metrics on $X$. Suppose that 
+there exists a constant $\alpha > 0$ such that
 $$
 \frac{1}{\alpha} \, d_2 (x,y) \leq d_1 (x,y) \leq \alpha \, d_2(x,y) \,, \quad \forall \, x,y \in X \,.
 $$
-
+Then $d_1$ and $d_2$ are equivalent metrics.
 
 :::
 
